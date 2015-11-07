@@ -1,13 +1,6 @@
 #!/bin/sh
 # ~/.profile
 
-# functions
-
-ostype() {
-  uname | tr A-Z a-z
-}
-
-
 # environment variables
 
 export BLOCKSIZE=K
@@ -37,7 +30,7 @@ export LD_LIBRARY_PATH=$LIBRARY_PATH
 
 ## cuda
 
-if [ ostype -eq linux ]
+if [ "$(uname)" = Linux ]
 then
   export PATH=$PATH:/usr/local/cuda/bin
   export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
