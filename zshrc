@@ -26,6 +26,6 @@ bindkey "^[[3~" delete-char
 alias ls='ls -F'
 
 # prompt
-PROMPT='%n@%m %~ %(?..[%?] )%# '
+PROMPT='%n@%m %20<..<%~%<< %(?..[%?] )%# '
 PROMPT2='%_> '
 RPROMPT=' %W %T' # doesn't work well...
