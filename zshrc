@@ -55,11 +55,12 @@ RPROMPT=' %W %T' # doesn't work well...
 
 . "$HOME/.antigen/antigen.zsh"
 
-antigen bundle "zsh-users/zsh-history-substring-search"
 antigen bundle "zsh-users/zsh-syntax-highlighting"
-
+antigen bundle "zsh-users/zsh-history-substring-search"
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 bindkey -M emacs '^H' history-substring-search-down
+antigen bundle "b4b4r07/enhancd"
+export ENHANCD_FILTER=peco
 
 antigen-apply
