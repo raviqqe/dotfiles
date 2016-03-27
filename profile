@@ -47,3 +47,4 @@ export CMAKE_PREFIX_PATH=$LOCAL
 ## go lang
 
 export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
