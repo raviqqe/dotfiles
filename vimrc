@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
@@ -65,6 +66,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 if !has('gui_running')
   set t_md=
 endif
+
+"" vim-indent-guides
+
+let g:indent_guides_start_level=2
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=lightgrey
 
 "" commands
 
