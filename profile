@@ -1,5 +1,4 @@
 #!/bin/sh
-# ~/.profile
 
 # environment variables
 
