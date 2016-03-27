@@ -80,3 +80,5 @@ nnoremap gj j
 nnoremap gk k
 
 map <C-a> :NERDTree<CR>
+map <Leader><Leader>s <Plug>(easymotion-s2)
+map <Leader><Leader>/ <Plug>(easymotion-sn)
