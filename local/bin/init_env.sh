@@ -7,6 +7,15 @@ log_file=$(basename "$0.log")
 
 # functions
 
+message() {
+  echo "$@" >&2
+}
+
+fail() {
+  message "$@"
+  exit 1
+}
+
 install_ghq() {
   go get github.com/motemen/ghq
 }
@@ -38,16 +47,14 @@ install_fzf() {
 check_args() {
   if [ $# -ne 0 ]
   then
-    echo "usage: $0" >&2
-    exit 1
+    fail "usage: $0"
   fi
 }
 
 check_old_log_file() {
   if [ -f "$log_file" ]
   then
-    echo "Log file, \"$log_file\" already exists. Delete it and rerun me." >&2
-    exit 1
+    fail "Log file, \"$log_file\" already exists. Delete it and rerun me."
   fi
 }
 
@@ -69,9 +76,8 @@ check_old_log_file
 
 if [ $? -ne 0 ]
 then
-  echo "Failed to initialize dotfiles environment." \
-       "See $log_file for troubleshooting." >&2
-  exit 1
+  fail "Failed to initialize dotfiles environment." \
+       "See $log_file for troubleshooting."
 else
   rm $log_file
 fi
