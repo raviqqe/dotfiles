@@ -72,7 +72,7 @@ cnoreabbrev Wc wincmd
 
 "" keymaps
 
-"let mapleader = " "
+let mapleader = " "
 
 nnoremap j gj
 nnoremap k gk
