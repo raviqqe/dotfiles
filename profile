@@ -3,7 +3,6 @@
 # environment variables
 
 export BLOCKSIZE=K
-#export DESTDIR=$LOCAL
 export EDITOR=vi
 export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
