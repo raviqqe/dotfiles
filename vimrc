@@ -54,6 +54,7 @@ set list
 set listchars=tab:^I
 set colorcolumn=80
 set hlsearch
+set backspace=indent,eol,start
 
 set background=dark
 colorscheme default
