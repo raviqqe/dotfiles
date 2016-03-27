@@ -1,34 +1,45 @@
 #!/usr/bin/env zsh
 # ~/.zshrc
 
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/raviqqe/.zshrc'
 
 autoload -Uz compinit
 autoload -U colors
 compinit
+colors
 
-
-# history
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# options
-setopt appendhistory autocd extendedglob
+setopt appendhistory autocd extendedglob prompt_subst
 unsetopt beep notify nomatch
 
-# key binds
 bindkey -e
 bindkey "^[[3~" delete-char
 
+
 # aliases
+
 alias ls='ls -F'
 
+
 # prompt
-PROMPT='%n@%m %20<..<%~%<< %(?..[%?] )%# '
+
+git_branch() {
+  branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
+  if [ -n "$branch_name" ]
+  then
+    echo "$branch_name "
+  fi
+}
+
+PROMPT='%n@%m $fg[yellow]%20<..<%~%<< '\
+'$fg[cyan]$(git_branch)'\
+'$fg[red]%(?..[%?] )$fg[magenta]%# $reset_color'
 PROMPT2='%_> '
-RPROMPT=' %W %T' # doesn't work well...
+#RPROMPT=' %W %T' # doesn't work well...
+
 
 # antigen
 
