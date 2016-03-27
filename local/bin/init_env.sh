@@ -47,7 +47,7 @@ install_fzf() {
 check_args() {
   if [ $# -ne 0 ]
   then
-    fail "usage: $0"
+    fail "usage: $(basename $0)"
   fi
 }
 
