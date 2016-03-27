@@ -14,7 +14,6 @@ export TZ=Asia/Tokyo
 LOCAL=$HOME/.local
 
 export PATH=$HOME/bin:$LOCAL/bin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
 export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man:$MANPATH
 
 ## c language
@@ -40,6 +39,10 @@ fi
 export CMAKE_INCLUDE_PATH=$C_INCLUDE_PATH
 export CMAKE_LIBRARY_PATH=$LIBRARY_PATH
 export CMAKE_PREFIX_PATH=$LOCAL
+
+## haskell
+
+export PATH=$HOME/.cabal/bin:$PATH
 
 ## go lang
 
