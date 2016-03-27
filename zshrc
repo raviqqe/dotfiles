@@ -33,8 +33,12 @@ git_branch() {
   fi
 }
 
+git_grep_modified_files() {
+  grep -e "^.M" -e "^M." -e "^A." -e "^D." -e "^.D"
+}
+
 git_modified() {
-  if [ -n "$(git status --porcelain | grep -e "^.M" -e "^M." -e "^A.")" ]
+  if [ -n "$(git status --porcelain | git_grep_modified_files)" ]
   then
     echo "*"
   fi
