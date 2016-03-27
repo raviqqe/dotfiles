@@ -3,7 +3,7 @@
 # environment variables
 
 export BLOCKSIZE=K
-export EDITOR=vi
+export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
 export PAGER=less
