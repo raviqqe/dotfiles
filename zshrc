@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-# ~/.zshrc
 
 zstyle :compinstall filename '/home/raviqqe/.zshrc'
 
