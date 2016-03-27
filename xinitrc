@@ -1,5 +1,4 @@
 #!/bin/sh
-# ~/.xinitrc
 
 export LC_ALL=en_US.UTF-8
 

@@ -1,9 +1,7 @@
 #!/bin/sh
-# ~/.shrc
 
 umask 022
 set -o emacs
-#set -o vi
 alias ls='ls -F'
 
 PS1="$(whoami)@$(hostname | cut -f 1 -d '.'):\W\$ "
