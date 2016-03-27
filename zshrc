@@ -23,6 +23,7 @@ bindkey "^[[3~" delete-char
 alias ls="ls --color=auto"
 #alias ls="ls -F"
 alias peco="peco --select-1"
+alias fzf="fzf --select-1"
 
 
 # prompt
@@ -67,3 +68,8 @@ export ENHANCD_FILTER=peco
 export ENHANCD_DISABLE_DOT=1
 
 antigen-apply
+
+
+# fzf
+
+[ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
