@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+. $HOME/.include.sh
+
+
+# options
+
 zstyle :compinstall filename '/home/raviqqe/.zshrc'
 
 autoload -Uz compinit
@@ -19,14 +24,6 @@ bindkey "^[[3~" delete-char
 
 
 # aliases
-
-on_linux() {
-  [ "$(uname)" = Linux ]
-}
-
-on_freebsd() {
-  [ "$(uname)" = FreeBSD ]
-}
 
 if on_linux
 then

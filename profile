@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. $HOME/.include.sh
+
 # environment variables
 
 export BLOCKSIZE=K
@@ -26,7 +28,7 @@ export LD_LIBRARY_PATH=$LIBRARY_PATH
 
 ## cuda
 
-if [ "$(uname)" = Linux ]
+if on_linux
 then
   export PATH=$PATH:/usr/local/cuda/bin
   export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
