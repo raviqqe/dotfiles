@@ -14,6 +14,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'easymotion/vim-easymotion'
@@ -70,6 +71,8 @@ endif
 cnoreabbrev Wc wincmd
 
 "" keymaps
+
+"let mapleader = " "
 
 nnoremap j gj
 nnoremap k gk
