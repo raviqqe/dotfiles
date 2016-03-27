@@ -20,3 +20,17 @@ set hlsearch
 
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
 autocmd BufWritePre * :%s/\s\+$//e
+
+" vundle
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+call vundle#end()
+filetype plugin on
+
+"" fix tab size
+
+let s:tabwidth=2
+au FileType * let &l:tabstop = s:tabwidth
+au FileType * let &l:shiftwidth = s:tabwidth
+au FileType * let &l:softtabstop = s:tabwidth
