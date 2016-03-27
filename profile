@@ -11,20 +11,17 @@ export TZ=Asia/Tokyo
 
 LOCAL=$HOME/.local
 
-export PATH=$HOME/bin:$LOCAL/bin:$LOCAL/usr/bin:$LOCAL/usr/local/bin:$PATH
-export PATH=$HOME/.cabal/bin:$LOCAL/bin:$PATH
-export MANPATH=/usr/share/man:/usr/local/man:$MANPATH
-export MANPATH=$LOCAL/share/man:$MANPATH
+export PATH=$HOME/bin:$LOCAL/bin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
+export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man:$MANPATH
 
 ## c language
 
 export CC=clang
 export CXX=clang++
-export C_INCLUDE_PATH=$LOCAL/include:$LOCAL/usr/include
-export C_INCLUDE_PATH=$LOCAL/usr/local/include:$C_INCLUDE_PATH
+export C_INCLUDE_PATH=$LOCAL/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=$C_INCLUDE_PATH
-export LIBRARY_PATH=$LOCAL/lib64:$LOCAL/lib:$LOCAL/usr/lib64:$LOCAL/usr/lib
-export LIBRARY_PATH=$LOCAL/usr/local/lib64:$LOCAL/usr/local/lib:$LIBRARY_PATH
+export LIBRARY_PATH=$LOCAL/lib64:$LOCAL/lib
 export LD_LIBRARY_PATH=$LIBRARY_PATH
 
 ## cuda
