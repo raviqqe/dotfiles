@@ -1,0 +1,1 @@
+/home/raviqqe/.dotfiles/dotfiles/local/etc/dwm/config.h
