@@ -29,7 +29,14 @@ git_branch() {
   branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
   if [ -n "$branch_name" ]
   then
-    echo "$branch_name "
+    echo "$branch_name$(git_modified) "
+  fi
+}
+
+git_modified() {
+  if [ -n "$(git status --porcelain | grep -e "^.M" -e "^M." -e "^A.")" ]
+  then
+    echo "*"
   fi
 }
 
