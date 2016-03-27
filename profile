@@ -14,13 +14,13 @@ export TZ=Asia/Tokyo
 LOCAL=$HOME/.local
 
 export PATH=$HOME/bin:$LOCAL/bin:$PATH
-export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man:$MANPATH
+export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man
 
 ## c language
 
 export CC=clang
 export CXX=clang++
-export C_INCLUDE_PATH=$LOCAL/include:$C_INCLUDE_PATH
+export C_INCLUDE_PATH=$LOCAL/include
 export CPLUS_INCLUDE_PATH=$C_INCLUDE_PATH
 export LIBRARY_PATH=$LOCAL/lib64:$LOCAL/lib
 export LD_LIBRARY_PATH=$LIBRARY_PATH
