@@ -20,7 +20,9 @@ bindkey "^[[3~" delete-char
 
 # aliases
 
-alias ls='ls -F'
+alias ls="ls --color=auto"
+#alias ls="ls -F"
+alias peco="peco --select-1"
 
 
 # prompt
@@ -62,5 +64,6 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M emacs '^H' history-substring-search-down
 antigen bundle "b4b4r07/enhancd"
 export ENHANCD_FILTER=peco
+export ENHANCD_DISABLE_DOT=1
 
 antigen-apply
