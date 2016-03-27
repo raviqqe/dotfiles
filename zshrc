@@ -20,8 +20,23 @@ bindkey "^[[3~" delete-char
 
 # aliases
 
-alias ls="ls --color=auto"
-#alias ls="ls -F"
+on_linux() {
+  [ "$(uname)" = Linux ]
+}
+
+on_freebsd() {
+  [ "$(uname)" = FreeBSD ]
+}
+
+if on_linux
+then
+  alias ls="ls --color=auto"
+elif on_freebsd
+then
+  alias ls="ls -G"
+  #alias ls="ls -F"
+fi
+
 alias peco="peco --select-1"
 alias fzf="fzf --select-1"
 
