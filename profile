@@ -48,3 +48,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
+
+## git
+
+unset SSH_ASKPASS
