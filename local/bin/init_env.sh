@@ -54,6 +54,11 @@ install_antizen() {
   fi
 }
 
+install_zsh_plugins() {
+  install_antizen &&
+  zsh $HOME/.local/bin/install_zsh_plugins.zsh
+}
+
 install_fzf() {
   fzf_repo=junegunn/fzf
 
@@ -84,7 +89,7 @@ check_old_log_file
 (
   . $HOME/.profile &&
 
-  install_antizen &&
+  install_zsh_plugins &&
   install_ghq &&
   install_peco &&
   install_fzf &&
