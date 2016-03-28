@@ -2,34 +2,57 @@
 
 # constants
 
-command_name=$(basename $0)
+COMMAND_NAME=$(basename $0)
 
 
 # functions
 
+message() {
+  echo "$@" >&2
+}
+
+fail() {
+  message "$@"
+  exit 1
+}
+
 check_args() {
   if [ $# -ne 1 ]
   then
-    echo "usage: $command_name [-d DIR] S_COMMAND" >&2
-    exit 1
+    fail "usage: $COMMAND_NAME [-d DIR] S_COMMAND"
   fi
+}
+
+is_valid_file() {
+  if [ $# -ne 1 ]
+  then
+    fail "usage: $0 FILE"
+  fi
+
+  local file=$1
+
+  [ -r "$file" ] &&
+  [ -w "$file" ] &&
+  [ -n "$(file "$file" | grep text)" ] &&
+  [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
 }
 
 
 # main routine
 
-check_args "$@"
-s_command=$1
+main() {
+  check_args "$@"
+  local s_command=$1
 
-for file in $(find . -type f)
-do
-  if    [ -r "$file" ] \
-     && [ -w "$file" ] \
-     && [ -n "$(file "$file" | grep text)" ] \
-     && [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
-  then
-    tmp_file=.$file.$command_name.tmp
-    sed "$s_command" "$file" > "$tmp_file"
-    mv "$tmp_file" "$file"
-  fi
-done
+  for file in $(find . -type f)
+  do
+    if is_valid_file "$file"
+    then
+      local tmp_file=.$file.$COMMAND_NAME.tmp
+      sed "$s_command" "$file" > "$tmp_file"
+      mv "$tmp_file" "$file"
+    fi
+  done
+}
+
+main "$@"
