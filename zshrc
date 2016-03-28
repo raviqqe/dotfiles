@@ -53,7 +53,7 @@ git_grep_modified_files() {
 }
 
 git_modified() {
-  if [ -n "$(git status --porcelain | git_grep_modified_files)" ]
+  if [ -n "$(git status --porcelain 2> /dev/null | git_grep_modified_files)" ]
   then
     echo "*"
   fi
