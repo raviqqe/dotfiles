@@ -1,0 +1,11 @@
+[Unit]
+Description=temporary home directory creator
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/tmphome.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
