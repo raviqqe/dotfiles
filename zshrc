@@ -63,7 +63,7 @@ PROMPT='%n@%m %{$fg[yellow]%}%20<..<%~%<< '\
 '%{$fg[cyan]%}$(git_branch)'\
 '%{$fg[red]%}%(?..[%?] )%{$fg[magenta]%}%# %{$reset_color%}'
 PROMPT2='%_> '
-RPROMPT=' %W %T' # doesn't work well...
+RPROMPT=' %W %T'
 
 
 # antigen
