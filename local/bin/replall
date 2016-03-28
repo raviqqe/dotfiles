@@ -1,21 +1,35 @@
 #!/bin/sh
 
-SUFFIX=.replaced.tmp
+# constants
 
-if [ $# -ne 1 ]
-then
-  echo "usage: $0 <s command>" >&2
-  exit 1
-fi
+command_name=$(basename $0)
+
+
+# functions
+
+check_args() {
+  if [ $# -ne 1 ]
+  then
+    echo "usage: $command_name [-d DIR] S_COMMAND" >&2
+    exit 1
+  fi
+}
+
+
+# main routine
+
+check_args "$@"
+s_command=$1
 
 for file in $(find . -type f)
 do
-  if [ -r "$file" ] \
-      && [ -w "$file" ] \
-      && [ -n "$(file "$file" | grep text)" ] \
-      && [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
+  if    [ -r "$file" ] \
+     && [ -w "$file" ] \
+     && [ -n "$(file "$file" | grep text)" ] \
+     && [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
   then
-    sed "$1" "$file" > "$file$SUFFIX"
-    mv "$file$SUFFIX" "$file"
+    tmp_file=.$file.$command_name.tmp
+    sed "$s_command" "$file" > "$tmp_file"
+    mv "$tmp_file" "$file"
   fi
 done
