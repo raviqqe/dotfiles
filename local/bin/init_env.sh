@@ -24,7 +24,24 @@ install_peco() {
   go get github.com/peco/peco/cmd/peco
 }
 
+install_youcompleteme() {
+  ycm=YouCompleteMe
+  ycm_dir="$HOME/.vim/bundle/$ycm"
+
+  mkdir -p "$ycm_dir" &&
+  (
+    cd "$ycm_dir" &&
+    if ! [ -d .git ]
+    then
+      git clone https://github.com/Valloric/$ycm .
+    fi &&
+    git submodule update --init --recursive &&
+    ./install.py
+  )
+}
+
 install_vim_plugins() {
+  install_youcompleteme &&
   vim +PluginInstall +qall
 }
 
@@ -67,11 +84,11 @@ check_old_log_file
 (
   . $HOME/.profile &&
 
+  install_antizen &&
   install_ghq &&
   install_peco &&
-  install_vim_plugins &&
-  install_antizen &&
-  install_fzf
+  install_fzf &&
+  install_vim_plugins
 ) 2> $log_file
 
 if [ $? -ne 0 ]
