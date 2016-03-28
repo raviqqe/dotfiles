@@ -17,17 +17,13 @@ fail() {
 }
 
 check_args() {
-  if [ $# -ne 1 ]
-  then
-    fail "usage: $COMMAND_NAME [-d DIR] S_COMMAND"
-  fi
+  [ $# -ne 1 ] &&
+  fail "usage: $COMMAND_NAME [-d DIR] S_COMMAND"
 }
 
 is_valid_file() {
-  if [ $# -ne 1 ]
-  then
-    fail "usage: $0 FILE"
-  fi
+  [ $# -ne 1 ] &&
+  fail "usage: $0 FILE"
 
   local file=$1
 
@@ -35,6 +31,18 @@ is_valid_file() {
   [ -w "$file" ] &&
   [ -n "$(file "$file" | grep text)" ] &&
   [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
+}
+
+sed_file() {
+  [ $# -ne 2 ] &&
+  fail "usage: $0 S_COMMAND FILE"
+
+  local s_command=$1
+  local file=$2
+
+  local tmp_file=.$file.$COMMAND_NAME.tmp
+  sed "$s_command" "$file" > "$tmp_file"
+  mv "$tmp_file" "$file"
 }
 
 
@@ -46,12 +54,8 @@ main() {
 
   for file in $(find . -type f)
   do
-    if is_valid_file "$file"
-    then
-      local tmp_file=.$file.$COMMAND_NAME.tmp
-      sed "$s_command" "$file" > "$tmp_file"
-      mv "$tmp_file" "$file"
-    fi
+    is_valid_file "$file" &&
+    sed_file "$s_command" "$file"
   done
 }
 
