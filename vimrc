@@ -74,7 +74,11 @@ let g:indent_guides_start_level=2
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=lightgrey
 
-"" Do not display "Pattern not found" during YouCompleteMe completion
+"" YouCompleteMe
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Do not display "Pattern not found" during YouCompleteMe completion
 
 try
   set shortmess+=c
