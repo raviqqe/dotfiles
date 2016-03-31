@@ -54,8 +54,10 @@ main() {
 
   for file in $(find . -type f)
   do
-    is_valid_file "$file" &&
-    sed_file "$s_command" "$file"
+    if is_valid_file "$file"
+    then
+      sed_file "$s_command" "$file"
+    fi
   done
 }
 
