@@ -6,14 +6,19 @@ on_freebsd() {
   [ "$(uname)" = FreeBSD ]
 }
 
-is_git_repo() {
-  if [ $# -ne 1 ]
-  then
-    error "is_git_repo():" "Invalid number of arguments" >&2
-    return 1
-  fi
+is_clean_git_repo() {
+  check_num_of_args is_clean_git_repo 1 $# || return 1
+  dir=$1
 
-  [ -d "$1/.git" ]
+  is_git_repo $dir && [ -z "$(git -C "$dir" status --porcelain)" ] && return 0
+  return 1
+}
+
+is_git_repo() {
+  check_num_of_args is_git_repo 1 $# || return 1
+  dir=$1
+
+  [ -d "$dir/.git" ]
 }
 
 info() {
@@ -22,10 +27,28 @@ info() {
 
 warn() {
   info "WARNING:" "$@"
-  return 1
 }
 
 error() {
   info "ERROR:" "$@"
-  return 1
+}
+
+check_num_of_args() {
+  message="Invalid number of arguments"
+
+  if [ $# -ne 3 ]
+  then
+    error "check_num_of_args():" "$message" >&2
+    return 1
+  fi
+
+  func_name=$1
+  proper_num_of_args=$2
+  actual_num_of_args=$3
+
+  if [ $actual_num_of_args -ne $proper_num_of_args ]
+  then
+    error "$func_name():" "$message" >&2
+    return 1
+  fi
 }
