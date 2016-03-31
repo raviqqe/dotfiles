@@ -6,6 +6,22 @@ on_freebsd() {
   [ "$(uname)" = FreeBSD ]
 }
 
+is_network_alive() {
+  check_num_of_args is_clean_git_repo 0 $# || return 1
+
+  server=8.8.8.8
+
+  {
+    if on_linux
+    then
+      ping -w 1 -c 1 $server
+    elif on_freebsd
+    then
+      ping -t 1 -c 1 $server
+    fi
+  } > /dev/null
+}
+
 is_clean_git_repo() {
   check_num_of_args is_clean_git_repo 1 $# || return 1
   dir=$1
