@@ -92,7 +92,9 @@ antigen-apply
 dotfiles_dir=~/.dotfiles
 if is_clean_git_repo $dotfiles_dir
 then
-  is_network_alive && git -C $dotfiles_dir pull --all > /dev/null
+  {
+    { is_network_alive && git -C $dotfiles_dir pull --all > /dev/null } &
+  } > /dev/null
 else
   warn "dotfiles directory, \"$dotfiles_dir\" is not clean." \
        "Please push the changes to the upstream."
