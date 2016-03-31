@@ -85,3 +85,15 @@ antigen-apply
 # fzf
 
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
+
+
+# initialization
+
+dotfiles_dir=~/.dotfiles
+if is_clean_git_repo $dotfiles_dir
+then
+  is_network_alive && git -C $dotfiles_dir pull --all
+else
+  warn "dotfiles directory, \"$dotfiles_dir\" is not clean." \
+       "Please push the changes to the upstream."
+fi
