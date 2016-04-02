@@ -3,6 +3,8 @@
 # constants
 
 log_file=$(basename "$0.log")
+vim_bundle_dir=$HOME/.vim/bundle
+github_address=https://github.com
 
 
 # functions
@@ -24,6 +26,12 @@ install_peco() {
   go get github.com/peco/peco/cmd/peco
 }
 
+install_vundle() {
+  vundle_dir=$vim_bundle_dir/Vundle.vim
+  mkdir -p "$vundle_dir" &&
+  git clone "$github_address/VundleVim/Vundle.vim" "$vundle_dir"
+}
+
 install_youcompleteme() {
   ycm=YouCompleteMe
   ycm_dir="$HOME/.vim/bundle/$ycm"
@@ -41,6 +49,7 @@ install_youcompleteme() {
 }
 
 install_vim_plugins() {
+  install_vundle &&
   install_youcompleteme &&
   vim +PluginInstall +qall
 }
