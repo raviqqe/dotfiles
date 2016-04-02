@@ -21,3 +21,20 @@ gd() {
 gdc() {
   git diff --cached "$@"
 }
+
+ga() {
+  git add "$@"
+}
+
+gc() {
+  if [ $# -lt 1 ]
+  then
+    echo "Invalid number of arguments" >&2
+    return 1
+  fi
+
+  message=$1
+  shift
+
+  git commit -m "$message" "$@"
+}
