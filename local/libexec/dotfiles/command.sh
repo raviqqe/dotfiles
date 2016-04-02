@@ -2,10 +2,6 @@ gs() {
   git status "$@"
 }
 
-gsc() {
-  git status --cached "$@"
-}
-
 gpl() {
   git pull "$@"
 }
