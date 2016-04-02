@@ -34,14 +34,14 @@ install_vundle() {
 
 install_youcompleteme() {
   ycm=YouCompleteMe
-  ycm_dir="$HOME/.vim/bundle/$ycm"
+  ycm_dir="$vim_bundle_dir/$ycm"
 
   mkdir -p "$ycm_dir" &&
   (
     cd "$ycm_dir" &&
     if ! [ -d .git ]
     then
-      git clone https://github.com/Valloric/$ycm .
+      git clone "$github_address/Valloric/$ycm" .
     fi &&
     git submodule update --init --recursive &&
     ./install.py
@@ -59,7 +59,7 @@ install_antizen() {
 
   if ! [ -d "$antigen_dir" ]
   then
-    git clone https://github.com/zsh-users/antigen.git "$antigen_dir"
+    git clone "$github_address/zsh-users/antigen.git" "$antigen_dir"
   fi
 }
 
