@@ -52,3 +52,14 @@ export PATH=$GOPATH/bin:$PATH
 ## git
 
 unset SSH_ASKPASS
+
+## linuxbrew
+
+if on_linux
+then
+  linuxbrew_dir=$HOME/.linuxbrew
+  export PATH=$linuxbrew_dir/bin:$PATH
+  export MANPATH=$linuxbrew_dir/share/man:$MANPATH
+  export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
+  export LD_LIBRARY_PATH=$LIBRARY_PATH
+fi
