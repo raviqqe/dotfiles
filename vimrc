@@ -12,13 +12,14 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'nathanaelkane/vim-indent-guides'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
 filetype plugin on
@@ -84,6 +85,10 @@ try
   set shortmess+=c
 catch /E539: Illegal character/
 endtry
+
+"" neocomplete
+
+let g:neocomplete#enable_at_startup = 1
 
 "" commands
 
