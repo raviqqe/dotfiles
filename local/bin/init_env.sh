@@ -18,6 +18,10 @@ fail() {
   exit 1
 }
 
+install_linuxbrew() {
+  git clone $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
+}
+
 install_ghq() {
   go get github.com/motemen/ghq
 }
@@ -101,6 +105,11 @@ check_old_log_file
 
 (
   . $HOME/.profile &&
+
+  if on_linux
+  then
+    install_linuxbrew
+  fi
 
   install_zsh_plugins &&
   install_ghq &&
