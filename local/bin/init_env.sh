@@ -28,8 +28,12 @@ install_peco() {
 
 install_vundle() {
   vundle_dir=$vim_bundle_dir/Vundle.vim
-  mkdir -p "$vundle_dir" &&
-  git clone "$github_address/VundleVim/Vundle.vim" "$vundle_dir"
+
+  if ! [ -d "$vundle_dir/.git" ]
+  then
+    mkdir -p "$vundle_dir" &&
+    git clone "$github_address/VundleVim/Vundle.vim" "$vundle_dir"
+  fi
 }
 
 install_youcompleteme() {
