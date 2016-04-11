@@ -18,8 +18,20 @@ fail() {
   exit 1
 }
 
+git_clone_to_dir() {
+  check_num_of_args "git_clone_to_dir" 2 $#
+  address=$1
+  dir=$2
+
+  if ! is_git_repo "$dir"
+  then
+    mkdir -p "$dir" &&
+    git clone "$address" "$dir"
+  fi
+}
+
 install_linuxbrew() {
-  git clone $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
+  git_clone_to_dir $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
 }
 
 install_ghq() {
@@ -31,13 +43,8 @@ install_peco() {
 }
 
 install_vundle() {
-  vundle_dir=$vim_bundle_dir/Vundle.vim
-
-  if ! [ -d "$vundle_dir/.git" ]
-  then
-    mkdir -p "$vundle_dir" &&
-    git clone "$github_address/VundleVim/Vundle.vim" "$vundle_dir"
-  fi
+  git_clone_to_dir $github_address/VundleVim/Vundle.vim \
+                   $vim_bundle_dir/Vundle.vim
 }
 
 install_youcompleteme() {
