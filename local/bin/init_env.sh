@@ -49,15 +49,11 @@ install_vundle() {
 
 install_youcompleteme() {
   ycm=YouCompleteMe
-  ycm_dir="$vim_bundle_dir/$ycm"
+  ycm_dir=$vim_bundle_dir/$ycm
 
-  mkdir -p "$ycm_dir" &&
+  git_clone_to_dir $github_address/Valloric/$ycm $ycm_dir &&
   (
-    cd "$ycm_dir" &&
-    if ! [ -d .git ]
-    then
-      git clone "$github_address/Valloric/$ycm" .
-    fi &&
+    cd $ycm_dir &&
     git submodule update --init --recursive &&
     ./install.py
   )
