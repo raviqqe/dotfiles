@@ -23,8 +23,10 @@ git_clone_to_dir() {
   address=$1
   dir=$2
 
-  if ! is_git_repo "$dir"
+  if is_git_repo "$dir"
   then
+    git -C "$dir" pull
+  else
     mkdir -p "$dir" &&
     git clone "$address" "$dir"
   fi
