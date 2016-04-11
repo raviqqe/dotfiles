@@ -66,12 +66,7 @@ install_vim_plugins() {
 }
 
 install_antizen() {
-  antigen_dir=$HOME/.antigen
-
-  if ! [ -d "$antigen_dir" ]
-  then
-    git clone "$github_address/zsh-users/antigen.git" "$antigen_dir"
-  fi
+  git_clone_to_dir $github_address/zsh-users/antigen.git $HOME/.antigen
 }
 
 install_zsh_plugins() {
