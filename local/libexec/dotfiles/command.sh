@@ -1,30 +1,31 @@
-gs() {
-  git status "$@"
+. $HOME/.local/libexec/dotfiles/util.sh
+
+
+# tmux
+
+alias t=tmux
+alias tls="tmux ls"
+
+ta() {
+  if [ $# -eq 0 ]
+  then
+    tmux a
+  else
+    tmux a -t "$@"
+  fi
 }
 
-gpl() {
-  git pull "$@"
-}
 
-gps() {
-  git push "$@"
-}
+# git
 
-gppa() {
-  git pull --all && git push --all
-}
-
-gd() {
-  git diff "$@"
-}
-
-gdc() {
-  git diff --cached "$@"
-}
-
-ga() {
-  git add "$@"
-}
+alias gs="git status"
+alias gpl="git pull"
+alias gps="git push"
+alias gppa="git pull --all && git push --all"
+alias gl="git log"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias ga="git add"
 
 gc() {
   if [ $# -lt 1 ]
