@@ -39,6 +39,9 @@ install_linuxbrew() {
 install_linuxbrew_packages() {
   brew update &&
 
+  brew tap thoughtbot/formulae &&
+  brew install rcm &&
+
   brew install git tmux the_silver_searcher &&
 
   brew install perl &&
