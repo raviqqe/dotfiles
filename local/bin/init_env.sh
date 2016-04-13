@@ -37,7 +37,9 @@ install_linuxbrew() {
 }
 
 install_linuxbrew_packages() {
-  brew install git tmux &&
+  brew update &&
+
+  brew install git tmux the_silver_searcher &&
 
   brew install perl &&
   brew install vim --with-python3 --with-lua &&
