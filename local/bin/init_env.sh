@@ -36,6 +36,16 @@ install_linuxbrew() {
   git_clone_to_dir $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
 }
 
+install_linuxbrew_packages() {
+  brew install git tmux &&
+
+  brew install perl &&
+  brew install vim --with-python3 --with-lua &&
+
+  brew install unzip &&
+  brew install neovim/neovim/neovim
+}
+
 install_ghq() {
   go get github.com/motemen/ghq
 }
@@ -108,8 +118,9 @@ check_old_log_file
 
   if on_linux
   then
-    install_linuxbrew
-  fi
+    install_linuxbrew &&
+    install_linuxbrew_packages
+  fi &&
 
   install_zsh_plugins &&
   install_ghq &&
