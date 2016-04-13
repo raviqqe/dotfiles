@@ -63,3 +63,7 @@ then
   export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
   export LD_LIBRARY_PATH=$LIBRARY_PATH
 fi
+
+## xdg
+
+export XDG_CONFIG_HOME=$HOME/.config
