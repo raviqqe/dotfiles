@@ -26,6 +26,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 Plugin 'taka84u9/unite-git'
+Plugin 'ujihisa/unite-colorscheme'
 
 call vundle#end()
 filetype plugin on
