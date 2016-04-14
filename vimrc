@@ -91,7 +91,50 @@ endtry
 
 "" neocomplete
 
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_ignore_case = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_fuzzy_completion = 1
+let g:neocomplete#enable_auto_delimiter = 1
+let g:neocomplete#enable_auto_close_preview = 1
+
+""" delimiters
+
+if !exists('g:neocomplete#delimiter_patterns')
+  let g:neocomplete#delimiter_patterns = {}
+endif
+
+let g:neocomplete#delimiter_patterns.vim = ['#']
+let g:neocomplete#delimiter_patterns.cpp = ['::']
+let g:neocomplete#delimiter_patterns.python = ['.']
+
+""" keywords
+
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+
+let g:neocomplete#keyword_patterns._ = '\h\w*'
+
+""" omni completion
+
+autocmd Filetype *
+  \ if &omnifunc == "" |
+  \   setlocal omnifunc=syntaxcomplete#Complete |
+  \ endif
+autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd Filetype html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd Filetype xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
+
+""" keymaps
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
 
 "" commands
 
