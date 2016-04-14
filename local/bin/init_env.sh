@@ -76,10 +76,18 @@ install_youcompleteme() {
   )
 }
 
+compile_vimproc() {
+  (
+    cd $HOME/.vim/bundle/vimproc.vim &&
+    make
+  )
+}
+
 install_vim_plugins() {
   install_vundle &&
   install_youcompleteme &&
-  vim +PluginInstall +qall
+  vim +PluginInstall +qall &&
+  compile_vimproc
 }
 
 install_antizen() {
