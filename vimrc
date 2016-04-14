@@ -177,3 +177,8 @@ map <C-a> :NERDTree<CR>
 
 map <Leader><Leader>s <Plug>(easymotion-s2)
 map <Leader><Leader>/ <Plug>(easymotion-sn)
+
+
+"" unite
+
+command Mapping Unite output:map|map!|lmap
