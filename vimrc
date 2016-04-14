@@ -184,3 +184,8 @@ map <Leader><Leader>/ <Plug>(easymotion-sn)
 "" unite
 
 command Mapping Unite output:map|map!|lmap
+nnoremap <Leader>us :Unite source<CR>
+nnoremap <Leader>ub :Unite buffer<CR>
+nnoremap <Leader>ufc :Unite file<CR>
+nnoremap <Leader>ufr :Unite file_rec<CR>
+nnoremap <Leader>ufm :Unite file_mru<CR>
