@@ -39,3 +39,8 @@ gc() {
 
   git commit -m "$message" "$@"
 }
+
+
+# vim
+
+alias vru="vim -c \":Unite file_mru\""

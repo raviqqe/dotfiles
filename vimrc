@@ -24,6 +24,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neomru.vim'
 
 call vundle#end()
 filetype plugin on
