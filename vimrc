@@ -1,4 +1,4 @@
-" vundle
+" plugins
 
 set nocompatible
 filetype off
@@ -38,7 +38,7 @@ au FileType * let &l:softtabstop = s:tabwidth
 
 
 
-" my preferences
+" pure vim
 
 set encoding=utf-8
 
@@ -68,17 +68,45 @@ colorscheme default
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
 autocmd BufWritePre * :%s/\s\+$//e
 
+"" keymaps
+
+let mapleader = " "
+
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
+"" commands
+
+cnoreabbrev Wc wincmd
+
+function! s:Prefix(prefix, name)
+  try
+    execute ':%s/\(' . a:name . '\)/' . a:prefix . '\1/gc'
+  catch /E486: Pattern not found/
+    echom "Pattern not found!"
+  endtry
+endfunction
+
+command -nargs=* Prefix call s:Prefix(<f-args>)
+
 "" disable bold fonts
 
 if !has('gui_running')
   set t_md=
 endif
 
+
+
+" settings per plugin
+
 "" vim-indent-guides
 
 let g:indent_guides_start_level=2
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=lightgrey
+
 
 "" YouCompleteMe
 
@@ -90,6 +118,7 @@ try
   set shortmess+=c
 catch /E539: Illegal character/
 endtry
+
 
 "" neocomplete
 
@@ -139,29 +168,12 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
-"" commands
-
-cnoreabbrev Wc wincmd
-
-function! s:Prefix(prefix, name)
-  try
-    execute ':%s/\(' . a:name . '\)/' . a:prefix . '\1/gc'
-  catch /E486: Pattern not found/
-    echom "Pattern not found!"
-  endtry
-endfunction
-
-command -nargs=* Prefix call s:Prefix(<f-args>)
-
-"" keymaps
-
-let mapleader = " "
-
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+"" nerdtree
 
 map <C-a> :NERDTree<CR>
+
+
+"" easymotion
+
 map <Leader><Leader>s <Plug>(easymotion-s2)
 map <Leader><Leader>/ <Plug>(easymotion-sn)
