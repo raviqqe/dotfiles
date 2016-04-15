@@ -81,6 +81,9 @@ zplug "ehamberg/zsh-cabal-completion"
 zplug "k4rthik/git-cal", as:command
 
 zplug "mollifier/anyframe"
+zstyle ":anyframe:selector:" use fzf
+zstyle ":anyframe:selector:fzf:" command 'fzf --select-1'
+
 bindkey "^xw" anyframe-widget-select-widget
 bindkey "^xb" anyframe-widget-cdr
 bindkey "^xr" anyframe-widget-execute-history
