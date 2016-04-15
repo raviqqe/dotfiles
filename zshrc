@@ -26,7 +26,7 @@ SAVEHIST=1000
 setopt appendhistory autocd extendedglob prompt_subst
 unsetopt beep notify nomatch
 
-bindkey -e
+bindkey -v
 bindkey "^[[3~" delete-char
 
 
@@ -92,8 +92,8 @@ bindkey "^xk" anyframe-widget-kill
 bindkey "^xf" anyframe-widget-insert-filename
 
 zplug "zsh-users/zsh-history-substring-search"
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
+bindkey -a 'k' history-substring-search-up
+bindkey -a 'j' history-substring-search-down
 
 zplug "b4b4r07/enhancd", of:enhancd.sh
 export ENHANCD_FILTER=fzf
