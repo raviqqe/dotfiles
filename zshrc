@@ -118,7 +118,10 @@ export ENHANCD_FILTER=fzf
 export ENHANCD_DISABLE_DOT=1
 export ENHANCD_COMMAND=c
 
-! zplug check --verbose && zplug install
+if ! zplug check --verbose
+then
+  zplug install
+fi
 zplug load
 
 
