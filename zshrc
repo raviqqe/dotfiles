@@ -5,7 +5,7 @@
 
 # options
 
-zstyle :compinstall filename '/home/raviqqe/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 autoload -U colors
