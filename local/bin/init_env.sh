@@ -14,7 +14,7 @@ info() {
 }
 
 fail() {
-  message "$@"
+  info "$@"
   exit 1
 }
 
@@ -94,7 +94,7 @@ compile_vimproc() {
 install_vim_plugins() {
   install_vundle &&
   info "Installing vim plugins..." &&
-  install_youcompleteme &&
+  #install_youcompleteme &&
   vim +PluginInstall +qall &&
   compile_vimproc
 }
