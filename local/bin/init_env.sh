@@ -9,7 +9,7 @@ github_address=https://github.com
 
 # functions
 
-message() {
+info() {
   echo "$@" >&2
 }
 
