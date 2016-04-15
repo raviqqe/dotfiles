@@ -78,7 +78,7 @@ zplug "zsh-users/zsh-history-substring-search"
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
-zplug "b4b4r07/enhancd"
+zplug "b4b4r07/enhancd", of:enhancd.sh
 export ENHANCD_FILTER=fzf
 export ENHANCD_DISABLE_DOT=1
 
