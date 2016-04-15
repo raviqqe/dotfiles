@@ -8,7 +8,7 @@
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
-autoload -U colors
+autoload -Uz colors
 compinit
 colors
 
