@@ -72,6 +72,7 @@ RPROMPT=' %W %T'
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "ehamberg/zsh-cabal-completion"
+zplug "k4rthik/git-cal", as:command
 
 zplug "zsh-users/zsh-history-substring-search"
 bindkey -M emacs '^P' history-substring-search-up
