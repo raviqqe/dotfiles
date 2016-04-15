@@ -95,15 +95,12 @@ install_antizen() {
 }
 
 install_zplug() {
-  git clone https://github.com/b4b4r07/zplug $HOME/.zplug
+  git_clone_to_dir https://github.com/b4b4r07/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
   install_zplug &&
-  (
-    . $HOME/.zprofile &&
-    . $HOME/.zshrc
-  )
+  zsh -c ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
 install_fzf() {
