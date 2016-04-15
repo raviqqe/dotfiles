@@ -28,6 +28,7 @@ unsetopt beep notify nomatch
 
 bindkey -v
 bindkey "^[[3~" delete-char
+bindkey -a '?' history-incremental-pattern-search-backward
 
 
 # aliases
@@ -107,6 +108,7 @@ zplug load
 # fzf
 
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
+bindkey -a '?' fzf-history-widget
 
 
 # initialization
