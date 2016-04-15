@@ -66,23 +66,24 @@ PROMPT2='%_> '
 RPROMPT=' %W %T'
 
 
-# antigen
+# plugins
 
-. "$HOME/.antigen/antigen.zsh"
+. "$HOME/.zplug/zplug"
 
-antigen bundle "zsh-users/zsh-syntax-highlighting"
-antigen bundle "ehamberg/zsh-cabal-completion"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "ehamberg/zsh-cabal-completion"
 
-antigen bundle "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-history-substring-search"
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 bindkey -M emacs '^H' history-substring-search-down
 
-antigen bundle "b4b4r07/enhancd"
+zplug "b4b4r07/enhancd"
 export ENHANCD_FILTER=fzf
 export ENHANCD_DISABLE_DOT=1
 
-antigen-apply
+! zplug check --verbose && zplug install
+zplug load
 
 
 # fzf

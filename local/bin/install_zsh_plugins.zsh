@@ -1,2 +1,0 @@
-. $HOME/.zprofile
-. $HOME/.zshrc

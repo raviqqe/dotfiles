@@ -94,9 +94,16 @@ install_antizen() {
   git_clone_to_dir $github_address/zsh-users/antigen.git $HOME/.antigen
 }
 
+install_zplug() {
+  git clone https://github.com/b4b4r07/zplug $HOME/.zplug
+}
+
 install_zsh_plugins() {
-  install_antizen &&
-  zsh $HOME/.local/bin/install_zsh_plugins.zsh
+  install_zplug &&
+  (
+    . $HOME/.zprofile &&
+    . $HOME/.zshrc
+  )
 }
 
 install_fzf() {
