@@ -38,7 +38,6 @@ then
 elif on_freebsd
 then
   alias ls="ls -G"
-  #alias ls="ls -F"
 fi
 
 alias peco="peco --select-1"
