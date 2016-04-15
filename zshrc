@@ -8,9 +8,15 @@
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
-autoload -Uz colors
 compinit
+
+autoload -Uz colors
 colors
+
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle 'completion:*:*:cdr:*:*' menu selection
+zstyle ':chpwd:*' recent-dirs-insert always
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -73,6 +79,14 @@ RPROMPT=' %W %T'
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "ehamberg/zsh-cabal-completion"
 zplug "k4rthik/git-cal", as:command
+
+zplug "mollifier/anyframe"
+bindkey "^xw" anyframe-widget-select-widget
+bindkey "^xb" anyframe-widget-cdr
+bindkey "^xr" anyframe-widget-execute-history
+bindkey "^xp" anyframe-widget-put-history
+bindkey "^xk" anyframe-widget-kill
+bindkey "^xf" anyframe-widget-insert-filename
 
 zplug "zsh-users/zsh-history-substring-search"
 bindkey -M emacs '^P' history-substring-search-up
