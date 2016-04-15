@@ -66,12 +66,29 @@ git_modified() {
   fi
 }
 
-PROMPT='%n@%m %{$fg[yellow]%}%20<..<%~%<< '\
+prompt_with_vimode() {
+  echo '%n@%m %{$fg[yellow]%}%20<..<%~%<< '\
 '%{$fg[cyan]%}$(git_branch)'\
-'%{$fg[red]%}%(?..[%?] )%{$fg[magenta]%}%# %{$reset_color%}'
+'%{$fg[red]%}%(?..[%?] )'\
+"$1"'%{$fg[magenta]%}%# %{$reset_color%}'
+}
+
+insert_mode='%{$fg[magenta]%}I'
+normal_mode='%{$fg[white]%}N'
+visual_mode='%{$fg[yellow]%}V'
+
+PROMPT=$(prompt_with_vimode $insert_mode)
 PROMPT2='%_> '
 RPROMPT=' %W %T'
 
+function zle-line-init zle-keymap-select {
+  PROMPT=$(prompt_with_vimode \
+           ${${KEYMAP/vicmd/$normal_mode}/(main|viins)/$insert_mode})
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # plugins
 
