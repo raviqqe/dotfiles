@@ -33,10 +33,13 @@ git_clone_to_dir() {
 }
 
 install_linuxbrew() {
+  info "Installing linuxbrew..." &&
   git_clone_to_dir $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
 }
 
 install_linuxbrew_packages() {
+  info "Installing linuxbrew packages..." &&
+
   brew update &&
 
   brew tap thoughtbot/formulae &&
@@ -52,19 +55,24 @@ install_linuxbrew_packages() {
 }
 
 install_ghq() {
+  info "Installing ghq..." &&
   go get github.com/motemen/ghq
 }
 
 install_peco() {
+  info "Installing peco..." &&
   go get github.com/peco/peco/cmd/peco
 }
 
 install_vundle() {
+  info "Installing vundle..." &&
   git_clone_to_dir $github_address/VundleVim/Vundle.vim \
                    $vim_bundle_dir/Vundle.vim
 }
 
 install_youcompleteme() {
+  info "Installing YouCompleteMe..." &&
+
   ycm=YouCompleteMe
   ycm_dir=$vim_bundle_dir/$ycm
 
@@ -85,25 +93,31 @@ compile_vimproc() {
 
 install_vim_plugins() {
   install_vundle &&
+  info "Installing vim plugins..." &&
   install_youcompleteme &&
   vim +PluginInstall +qall &&
   compile_vimproc
 }
 
 install_antizen() {
+  info "Installing antigen..." &&
   git_clone_to_dir $github_address/zsh-users/antigen.git $HOME/.antigen
 }
 
 install_zplug() {
+  info "Installing zplug..." &&
   git_clone_to_dir https://github.com/b4b4r07/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
   install_zplug &&
+  info "Installing zsh plugins..." &&
   zsh -c ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
 install_fzf() {
+  info "Installing fzf..." &&
+
   fzf_repo=junegunn/fzf
 
   ghq get $fzf_repo &&
