@@ -76,7 +76,6 @@ zplug "ehamberg/zsh-cabal-completion"
 zplug "zsh-users/zsh-history-substring-search"
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
-bindkey -M emacs '^H' history-substring-search-down
 
 zplug "b4b4r07/enhancd"
 export ENHANCD_FILTER=fzf
