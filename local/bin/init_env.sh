@@ -87,7 +87,12 @@ install_youcompleteme() {
 compile_vimproc() {
   (
     cd $HOME/.vim/bundle/vimproc.vim &&
-    make
+    if which gmake > /dev/null
+    then
+      gmake
+    else
+      make
+    fi
   )
 }
 
