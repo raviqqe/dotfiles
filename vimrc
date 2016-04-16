@@ -47,6 +47,8 @@ au FileType * let &l:softtabstop = s:tabwidth
 
 set encoding=utf-8
 set nocompatible
+set ttyfast
+set lazyredraw
 set nobackup
 set nowritebackup
 set swapfile
@@ -76,6 +78,8 @@ set shiftwidth=2  " width of tabs as auto indent
 set softtabstop=2 " width of movement of curor for groups of spaces
 set list
 set listchars=tab:^I
+set autoindent
+set shiftround
 
 "" appearance
 
@@ -83,8 +87,14 @@ syntax on
 set number
 set background=dark
 set colorcolumn=80
+set showmode
+set showcmd
 set wrap
+set incsearch
 set hlsearch
+set splitbelow
+set splitright
+set cursorline
 set backspace=indent,eol,start
 set completeopt=menu
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
@@ -112,6 +122,8 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 nnoremap <esc><esc> :nohlsearch<cr><esc>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
 
 "" commands
 
