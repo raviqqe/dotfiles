@@ -18,6 +18,9 @@ add-zsh-hook chpwd chpwd_recent_dirs
 zstyle 'completion:*:*:cdr:*:*' menu selection
 zstyle ':chpwd:*' recent-dirs-insert fallback
 zstyle ':chpwd:*' recent-dirs-pushd true
+autoload -Uz select-bracketed select-quoted
+zle -N select-bracketed
+zle -N select-quoted
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
