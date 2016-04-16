@@ -69,7 +69,8 @@ set backspace=indent,eol,start
 set completeopt=menu
 
 set background=dark
-colorscheme default
+let g:solarized_termcolors=256
+colorscheme solarized
 
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
 autocmd BufWritePre * :%s/\s\+$//e
