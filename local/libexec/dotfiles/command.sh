@@ -3,6 +3,7 @@
 
 # tmux
 
+alias tmux="TERM=screen-256color tmux"
 alias t=tmux
 alias tls="tmux ls"
 
