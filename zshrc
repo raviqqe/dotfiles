@@ -96,6 +96,7 @@ zle -N zle-keymap-select
 . "$HOME/.zplug/zplug"
 
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
 zplug "ehamberg/zsh-cabal-completion"
 zplug "k4rthik/git-cal", as:command
 
