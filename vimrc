@@ -56,7 +56,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "" viminfo
 
-set viminfo='16,\"128,:32,%,n~/.viminfo
+if has('nvim')
+  set viminfo='16,\"128,:32,%,n~/.cache/nvim/nviminfo
+else
+  set viminfo='16,\"128,:32,%,n~/.viminfo
+endif
 
 function! RestoreCursor()
   if line("'\"") <= line("$")
