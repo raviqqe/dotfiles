@@ -112,7 +112,7 @@ install_zplug() {
 install_zsh_plugins() {
   install_zplug &&
   info "Installing zsh plugins..." &&
-  zsh -c ". $HOME/.zprofile && . $HOME/.zshrc"
+  zsh -ic ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
 install_fzf() {
