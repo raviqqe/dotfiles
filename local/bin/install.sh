@@ -129,6 +129,11 @@ install_fzf() {
   yes | "$fzf_dir/install" --no-update-rc
 }
 
+install_tpm() {
+  info "Installing tpm..." &&
+  git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
+}
+
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -162,6 +167,7 @@ check_old_log_file
   install_ghq &&
   install_peco &&
   install_fzf &&
+  install_tpm &&
   install_vim_plugins
 ) 2> $log_file
 
