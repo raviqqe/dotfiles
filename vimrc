@@ -46,13 +46,11 @@ au FileType * let &l:softtabstop = s:tabwidth
 " pure vim
 
 set encoding=utf-8
-
-syntax on
-
 set nocompatible
-set number
 set nobackup
 set nowritebackup
+set swapfile
+autocmd BufWritePre * :%s/\s\+$//e
 
 "" viminfo
 
@@ -76,15 +74,20 @@ set expandtab     " expands tabs to spaces
 set tabstop=2     " width of tabs
 set shiftwidth=2  " width of tabs as auto indent
 set softtabstop=2 " width of movement of curor for groups of spaces
-
 set list
 set listchars=tab:^I
+
+"" appearance
+
+syntax on
+set number
+set background=dark
 set colorcolumn=80
+set wrap
 set hlsearch
 set backspace=indent,eol,start
 set completeopt=menu
-
-set background=dark
+autocmd BufRead,BufNewFile *.sh set filetype=zsh
 
 let term=$TERM
 if term =~ '256color'
@@ -94,12 +97,15 @@ else
   colorscheme default
 endif
 
-autocmd BufRead,BufNewFile *.sh set filetype=zsh
-autocmd BufWritePre * :%s/\s\+$//e
+""" disable bold fonts
+
+if !has('gui_running')
+  set t_md=
+endif
 
 "" keymaps
 
-let mapleader = " "
+let mapleader = "\<space>"
 
 nnoremap j gj
 nnoremap k gk
@@ -120,12 +126,6 @@ function! s:Prefix(prefix, name)
 endfunction
 
 command -nargs=* Prefix call s:Prefix(<f-args>)
-
-"" disable bold fonts
-
-if !has('gui_running')
-  set t_md=
-endif
 
 
 
