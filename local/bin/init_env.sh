@@ -118,10 +118,10 @@ install_zsh_plugins() {
 install_fzf() {
   info "Installing fzf..." &&
 
-  fzf_repo=junegunn/fzf
+  fzf_dir=$HOME/.fzf
 
-  ghq get $fzf_repo &&
-  yes | ${GHQ_ROOT:-$HOME/.ghq}/github.com/$fzf_repo/install --no-update-rc
+  git_clone_to_dir "$github_address/junegunn/fzf" "$fzf_dir" &&
+  yes | "$fzf_dir/install" --no-update-rc
 }
 
 check_args() {
