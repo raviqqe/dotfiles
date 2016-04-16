@@ -29,6 +29,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'taka84u9/unite-git'
 Plugin 'ujihisa/unite-colorscheme'
+Plugin 'junegunn/fzf'
 
 call vundle#end()
 filetype plugin on
