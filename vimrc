@@ -54,6 +54,22 @@ set number
 set nobackup
 set nowritebackup
 
+"" viminfo
+
+set viminfo='16,\"128,:32,%,n~/.viminfo
+
+function! RestoreCursor()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup restoreCursor
+  autocmd!
+  autocmd BufWinEnter * call RestoreCursor()
+augroup END
+
 "" tab setting
 
 set expandtab     " expands tabs to spaces
