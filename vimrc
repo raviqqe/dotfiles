@@ -30,6 +30,7 @@ Plugin 'Shougo/unite.vim'
 Plugin 'taka84u9/unite-git'
 Plugin 'ujihisa/unite-colorscheme'
 Plugin 'junegunn/fzf'
+Plugin 'tsukkee/unite-help'
 
 call vundle#end()
 filetype plugin on
@@ -217,20 +218,31 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 "" nerdtree
 
-map <C-a> :NERDTree<CR>
+nnoremap <C-a> :NERDTree<CR>
 
 
 "" easymotion
 
-map <Leader><Leader>s <Plug>(easymotion-s2)
-map <Leader><Leader>/ <Plug>(easymotion-sn)
+nnoremap <Leader>s <Plug>(easymotion-s)
+nnoremap <Leader>/ <Plug>(easymotion-sn)
 
 
 "" unite
 
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+let g:unite_enable_start_insert = 1
+let g:unite_source_history_enable = 1
+
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_enable_grep_default_opts = '--nocolor --nogroup -S -C4'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 command Mapping Unite output:map|map!|lmap
-nnoremap <Leader>us :Unite source<CR>
-nnoremap <Leader>ub :Unite buffer<CR>
-nnoremap <Leader>ufc :Unite file<CR>
-nnoremap <Leader>ufr :Unite file_rec<CR>
-nnoremap <Leader>ufm :Unite file_mru<CR>
+nnoremap <Leader>a :Unite source<CR>
+nnoremap <Leader>b :Unite buffer<CR>
+nnoremap <Leader>f :Unite file<CR>
+nnoremap <Leader>r :Unite file_rec<CR>
+nnoremap <Leader>m :Unite file_mru<CR>
+nnoremap <leader>h :Unite help<cr>
