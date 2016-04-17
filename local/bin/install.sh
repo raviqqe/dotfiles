@@ -45,7 +45,7 @@ install_linuxbrew_packages() {
   brew tap thoughtbot/formulae &&
   brew install rcm &&
 
-  brew install git tmux the_silver_searcher &&
+  brew install git tmux pt &&
 
   brew install perl &&
   brew install vim --with-python3 --with-lua &&
@@ -54,14 +54,11 @@ install_linuxbrew_packages() {
   brew install neovim/neovim/neovim
 }
 
-install_ghq() {
-  info "Installing ghq..." &&
+install_go_packages() {
+  info "Installing go packages..." &&
   go get github.com/motemen/ghq
-}
-
-install_peco() {
-  info "Installing peco..." &&
   go get github.com/peco/peco/cmd/peco
+  go get github.com/monochromegane/the_platinum_searcher
 }
 
 install_vundle() {
@@ -164,8 +161,7 @@ check_old_log_file
   fi &&
 
   install_zsh_plugins &&
-  install_ghq &&
-  install_peco &&
+  install_go_packages &&
   install_fzf &&
   install_tpm &&
   install_vim_plugins
