@@ -45,7 +45,7 @@ install_linuxbrew_packages() {
   brew tap thoughtbot/formulae &&
   brew install rcm &&
 
-  brew install git tmux pt &&
+  brew install git tmux &&
 
   brew install perl &&
   brew install vim --with-python3 --with-lua &&
@@ -56,9 +56,9 @@ install_linuxbrew_packages() {
 
 install_go_packages() {
   info "Installing go packages..." &&
-  go get github.com/motemen/ghq
-  go get github.com/peco/peco/cmd/peco
-  go get github.com/monochromegane/the_platinum_searcher
+  go get github.com/motemen/ghq &&
+  go get github.com/peco/peco/cmd/peco &&
+  go get github.com/monochromegane/the_platinum_searcher/...
 }
 
 install_vundle() {
