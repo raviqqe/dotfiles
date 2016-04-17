@@ -255,3 +255,4 @@ nnoremap <Leader>r :Unite file_rec<CR>
 nnoremap <Leader>m :Unite file_mru<CR>
 nnoremap <leader>h :Unite help<cr>
 nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
+nnoremap <leader>c :Unite -auto-preview colorscheme<cr>
