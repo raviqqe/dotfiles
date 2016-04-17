@@ -28,6 +28,7 @@ Plugin 'Shougo/neomru.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neoyank.vim'
+Plugin 'thinca/vim-unite-history'
 Plugin 'taka84u9/unite-git'
 Plugin 'ujihisa/unite-colorscheme'
 Plugin 'junegunn/fzf'
@@ -256,5 +257,5 @@ nnoremap <Leader>r :Unite file_rec<CR>
 nnoremap <Leader>m :Unite file_mru<CR>
 nnoremap <leader>h :Unite help<cr>
 nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
-nnoremap <leader>c :Unite -auto-preview colorscheme<cr>
 nnoremap <leader>y :Unite history/yank<cr>
+nnoremap <leader>c :Unite history/command<cr>
