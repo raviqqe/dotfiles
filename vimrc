@@ -233,10 +233,14 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_enable = 1
 
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_enable_grep_default_opts = '--nocolor --nogroup -S -C4'
+let grep_alternative = 'pt'
+if executable(grep_alternative)
+  let g:unite_source_grep_command = grep_alternative
+  let g:unite_source_rec_async_command = grep_alternative
+                                         \ . ' --nocolor --nogroup -g .'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup'
   let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
 endif
 
 command Mapping Unite output:map|map!|lmap
@@ -246,3 +250,4 @@ nnoremap <Leader>f :Unite file<CR>
 nnoremap <Leader>r :Unite file_rec<CR>
 nnoremap <Leader>m :Unite file_mru<CR>
 nnoremap <leader>h :Unite help<cr>
+nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
