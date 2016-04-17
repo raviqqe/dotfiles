@@ -231,8 +231,11 @@ nnoremap <Leader>/ <Plug>(easymotion-sn)
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('grep', 'matchers', 'matcher_fuzzy')
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_enable = 1
+let g:unite_matcher_fuzzy_max_input_length = 256
+let g:unite_prompt = '> '
 
 let grep_alternative = 'pt'
 if executable(grep_alternative)
