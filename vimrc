@@ -238,6 +238,7 @@ let g:unite_enable_start_insert = 1
 let g:unite_source_history_enable = 1
 let g:unite_matcher_fuzzy_max_input_length = 256
 let g:unite_prompt = '> '
+let g:unite_ignore_case = 1
 
 let grep_alternative = 'pt'
 if executable(grep_alternative)
