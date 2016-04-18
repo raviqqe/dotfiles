@@ -27,6 +27,7 @@ alias gl="git log"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias ga="git add"
+alias gap="git add --patch"
 
 gc() {
   if [ $# -lt 1 ]
