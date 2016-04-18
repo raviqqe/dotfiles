@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'flazz/vim-colorschemes'
-Plug 'altercation/vim-colors-solarized.git'
+Plug 'altercation/vim-colors-solarized'
 Plug 'nathanaelkane/vim-indent-guides'
 
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
