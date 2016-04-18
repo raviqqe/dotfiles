@@ -154,9 +154,8 @@ command -nargs=* Prefix call s:Prefix(<f-args>)
 "" vim-indent-guides
 
 let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_start_level = 2
 hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=lightgrey
+hi IndentGuidesEven ctermbg=darkgrey
 
 
 "" YouCompleteMe
