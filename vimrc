@@ -122,6 +122,16 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap Q :q!
 
+inoremap <c-h> <left>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
+
+cnoremap <c-h> <left>
+cnoremap <c-j> <c-n>
+cnoremap <c-k> <c-p>
+cnoremap <c-l> <right>
+
 "" commands
 
 cnoreabbrev Wc wincmd
@@ -217,6 +227,11 @@ nnoremap <c-a> :NERDTree<cr>
 
 nnoremap <leader>s <plug>(easymotion-s)
 nnoremap <leader>/ <plug>(easymotion-sn)
+
+
+"" auto-pairs
+
+let g:AutoPairsMapCh = 0
 
 
 "" unite
