@@ -235,8 +235,8 @@ nnoremap <c-a> :NERDTree<cr>
 
 "" easymotion
 
-nnoremap <leader>s <plug>(easymotion-s)
-nnoremap <leader>/ <plug>(easymotion-sn)
+nmap <leader>s <plug>(easymotion-s)
+nmap <leader>/ <plug>(easymotion-sn)
 
 
 "" auto-pairs
