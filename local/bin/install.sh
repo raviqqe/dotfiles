@@ -61,54 +61,16 @@ install_go_packages() {
   go get github.com/monochromegane/the_platinum_searcher/...
 }
 
-install_vundle() {
-  info "Installing vundle..." &&
-  git_clone_to_dir $github_address/VundleVim/Vundle.vim \
-                   $vim_bundle_dir/Vundle.vim
-}
-
 install_vim_plug() {
   info "Installing vim-plug..." &&
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-install_youcompleteme() {
-  info "Installing YouCompleteMe..." &&
-
-  ycm=YouCompleteMe
-  ycm_dir=$vim_bundle_dir/$ycm
-
-  git_clone_to_dir $github_address/Valloric/$ycm $ycm_dir &&
-  (
-    cd $ycm_dir &&
-    git submodule update --init --recursive &&
-    ./install.py
-  )
-}
-
-compile_vimproc() {
-  (
-    cd $HOME/.vim/bundle/vimproc.vim &&
-    if which gmake > /dev/null
-    then
-      gmake
-    else
-      make
-    fi
-  )
-}
-
 install_vim_plugins() {
   install_vim_plug &&
   info "Installing vim plugins..." &&
-  #install_youcompleteme &&
   vim +PlugInstall +qall
-}
-
-install_antizen() {
-  info "Installing antigen..." &&
-  git_clone_to_dir $github_address/zsh-users/antigen.git $HOME/.antigen
 }
 
 install_zplug() {
