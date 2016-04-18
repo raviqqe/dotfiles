@@ -86,7 +86,6 @@ set shiftround
 
 syntax on
 set number
-set background=dark
 set colorcolumn=80
 set showmode
 set showcmd
@@ -100,6 +99,7 @@ set backspace=indent,eol,start
 set completeopt=menu
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
 
+set background=dark " background is set to light by solarized eventually
 let term=$TERM
 if term =~ '256color'
   let g:solarized_termcolors=256
