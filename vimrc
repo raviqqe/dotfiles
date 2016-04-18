@@ -30,6 +30,7 @@ Plug 'ujihisa/unite-colorscheme'
 Plug 'tsukkee/unite-help'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -156,6 +157,12 @@ command -nargs=* Prefix call s:Prefix(<f-args>)
 let g:indent_guides_enable_on_vim_startup = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+
+
+"" indentLine
+
+let g:indentLine_char = '>'
+let g:indentLine_color_term = 240
 
 
 "" YouCompleteMe
