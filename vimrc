@@ -44,6 +44,7 @@ set lazyredraw
 set nobackup
 set nowritebackup
 set swapfile
+filetype plugin indent on
 autocmd BufWritePre * :%s/\s\+$//e
 
 "" viminfo
