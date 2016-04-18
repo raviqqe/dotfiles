@@ -128,9 +128,10 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-nnoremap <esc><esc> :nohlsearch<cr><esc>
+nnoremap <esc><esc> :nohlsearch<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+nnoremap Q :q!
 
 "" commands
 
