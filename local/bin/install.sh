@@ -67,6 +67,12 @@ install_vundle() {
                    $vim_bundle_dir/Vundle.vim
 }
 
+install_vim_plug() {
+  info "Installing vim-plug..." &&
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
 install_youcompleteme() {
   info "Installing YouCompleteMe..." &&
 
@@ -94,11 +100,10 @@ compile_vimproc() {
 }
 
 install_vim_plugins() {
-  install_vundle &&
+  install_vim_plug &&
   info "Installing vim plugins..." &&
   #install_youcompleteme &&
-  vim +PluginInstall +qall &&
-  compile_vimproc
+  vim +PlugInstall +qall
 }
 
 install_antizen() {

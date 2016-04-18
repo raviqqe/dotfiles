@@ -1,48 +1,36 @@
 " plugins
 
-set nocompatible
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized.git'
+Plug 'nathanaelkane/vim-indent-guides'
 
-Plugin 'VundleVim/Vundle.vim'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'easymotion/vim-easymotion'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimproc.vim',
+  \ { 'do': 'if which gmake; then gmake; else make; fi' }
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/neoyank.vim'
+Plug 'thinca/vim-unite-history'
+Plug 'taka84u9/unite-git'
+Plug 'ujihisa/unite-colorscheme'
+Plug 'tsukkee/unite-help'
+Plug 'junegunn/fzf'
 
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'nathanaelkane/vim-indent-guides'
-
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'Shougo/neomru.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/neoyank.vim'
-Plugin 'thinca/vim-unite-history'
-Plugin 'taka84u9/unite-git'
-Plugin 'ujihisa/unite-colorscheme'
-Plugin 'junegunn/fzf'
-Plugin 'tsukkee/unite-help'
-
-call vundle#end()
-filetype plugin on
-
-"" fix tab size for vundle
-
-let s:tabwidth=2
-au FileType * let &l:tabstop = s:tabwidth
-au FileType * let &l:shiftwidth = s:tabwidth
-au FileType * let &l:softtabstop = s:tabwidth
+call plug#end()
 
 
 
