@@ -29,6 +29,7 @@ Plug 'taka84u9/unite-git'
 Plug 'ujihisa/unite-colorscheme'
 Plug 'tsukkee/unite-help'
 Plug 'junegunn/fzf'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
