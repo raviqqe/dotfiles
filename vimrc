@@ -261,3 +261,18 @@ nnoremap <leader>h :Unite help<cr>
 nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
 nnoremap <leader>y :Unite history/yank<cr>
 nnoremap <leader>c :Unite history/command<cr>
+
+
+" Don't ruin the last register pasting its content in visual mode
+
+function RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+
+vmap <silent> <expr> p <sid>Repl()
