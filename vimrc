@@ -214,19 +214,19 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 """ keymaps
 
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
 "" nerdtree
 
-nnoremap <C-a> :NERDTree<CR>
+nnoremap <c-a> :NERDTree<cr>
 
 
 "" easymotion
 
-nnoremap <Leader>s <Plug>(easymotion-s)
-nnoremap <Leader>/ <Plug>(easymotion-sn)
+nnoremap <leader>s <plug>(easymotion-s)
+nnoremap <leader>/ <plug>(easymotion-sn)
 
 
 "" unite
@@ -251,11 +251,11 @@ if executable(grep_alternative)
 endif
 
 command Mapping Unite output:map|map!|lmap
-nnoremap <Leader>a :Unite source<CR>
-nnoremap <Leader>b :Unite buffer<CR>
-nnoremap <Leader>f :Unite file<CR>
-nnoremap <Leader>r :Unite file_rec<CR>
-nnoremap <Leader>m :Unite file_mru<CR>
+nnoremap <leader>a :Unite source<cr>
+nnoremap <leader>b :Unite buffer<cr>
+nnoremap <leader>f :Unite file<cr>
+nnoremap <leader>r :Unite file_rec<cr>
+nnoremap <leader>m :Unite file_mru<cr>
 nnoremap <leader>h :Unite help<cr>
 nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
 nnoremap <leader>y :Unite history/yank<cr>
