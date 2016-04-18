@@ -125,7 +125,7 @@ nnoremap gk k
 nnoremap <esc><esc> :nohlsearch<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap Q :q!
+nnoremap Q :q!<cr>
 
 inoremap <c-h> <left>
 inoremap <c-j> <down>
