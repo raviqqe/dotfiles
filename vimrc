@@ -45,6 +45,9 @@ set lazyredraw
 set nobackup
 set nowritebackup
 set swapfile
+set visualbell
+set wildmenu
+set wildmode=full
 filetype plugin indent on
 autocmd BufWritePre * :%s/\s\+$//e
 
