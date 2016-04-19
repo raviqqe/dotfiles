@@ -32,6 +32,8 @@ Plug 'tsukkee/unite-help'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Yggdroot/indentLine'
+Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-comment'
+Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-sort'
 
 call plug#end()
 
