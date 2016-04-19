@@ -47,6 +47,7 @@ set nobackup
 set nowritebackup
 set swapfile
 set visualbell
+set tildeop
 set wildmenu
 set wildmode=full
 filetype plugin indent on
