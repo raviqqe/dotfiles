@@ -4,34 +4,37 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
-Plug 'nathanaelkane/vim-indent-guides'
-
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-"Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'Yggdroot/indentLine'
+
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neosnippet.vim'
                             \ | Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neomru.vim'
-Plug 'Shougo/vimproc.vim',
-  \ { 'do': 'if which gmake; then gmake; else make; fi' }
+
 Plug 'Shougo/unite.vim' | Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/unite.vim' | Plug 'thinca/vim-unite-history'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim' | Plug 'taka84u9/unite-git'
 Plug 'Shougo/unite.vim' | Plug 'ujihisa/unite-colorscheme'
 Plug 'Shougo/unite.vim' | Plug 'tsukkee/unite-help'
-Plug 'junegunn/fzf'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'Yggdroot/indentLine'
+Plug 'Shougo/vimproc.vim',
+  \ { 'do': 'if which gmake; then gmake; else make; fi' }
+
 Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-comment'
 Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-sort'
+
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
