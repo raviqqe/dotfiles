@@ -44,7 +44,6 @@ then
   alias ls="ls -G"
 fi
 
-alias e="vim"
 alias peco="peco --select-1"
 alias fzf="fzf --select-1"
 
