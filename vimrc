@@ -48,6 +48,10 @@ call plug#end()
 
 " pure vim
 
+augroup DefaultAG
+  autocmd!
+augroup END
+
 set encoding=utf-8
 set nocompatible
 set ttyfast
@@ -84,14 +88,24 @@ augroup END
 
 "" tab setting
 
-set expandtab     " expands tabs to spaces
-set tabstop=2     " width of tabs
-set shiftwidth=2  " width of tabs as auto indent
-set softtabstop=2 " width of movement of curor for groups of spaces
-set list
-set listchars=tab:^I
 set autoindent
+set smartindent
 set shiftround
+
+function s:set_tab()
+  set expandtab
+  set tabstop=2
+  set shiftwidth=2
+  set softtabstop=2
+  set list
+  set listchars=tab:^I
+endfunction
+
+call s:set_tab()
+
+for thefiletype in ['python', 'vim']
+  exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_tab()'
+endfor
 
 "" appearance
 
