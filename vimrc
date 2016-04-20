@@ -32,6 +32,12 @@ Plug 'Shougo/vimproc.vim',
 Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-comment'
 Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-sort'
 
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-function' " only for vim
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-comment'
+Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
+
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'scrooloose/nerdtree'
