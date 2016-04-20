@@ -54,6 +54,29 @@ install_linuxbrew_packages() {
   brew install neovim/neovim/neovim
 }
 
+install_freebsd_pkg() {
+  if ! pkg -N
+  then
+    sudo pkg bootstrap
+  fi
+}
+
+install_freebsd_packages() {
+  yes | sudo pkg install \
+      sudo nmap arping \
+      portmaster portlint \
+      zsh vim-lite tmux lynx irssi \
+      git subversion fossil \
+      python ruby go rust nasm \
+      qemu \
+      bsdtris bsdgames \
+      xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
+      xrandr xrefresh \
+      dwm xdm rxvt-unicode surf-browser feh \
+      firefox thunderbird chromium pcmanfm inkscape gimp \
+      terminus-font ja-font-ipa ubuntu-font
+}
+
 install_go_packages() {
   info "Installing go packages..." &&
   go get github.com/motemen/ghq &&
@@ -125,6 +148,12 @@ check_old_log_file
   then
     install_linuxbrew &&
     install_linuxbrew_packages
+  fi &&
+
+  if on_freebsd
+  then
+    install_freebsd_pkg &&
+    install_freebsd_packages
   fi &&
 
   install_zsh_plugins &&
