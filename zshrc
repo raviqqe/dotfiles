@@ -47,6 +47,11 @@ fi
 alias peco="peco --select-1"
 alias fzf="fzf --select-1"
 
+if which ninja-build > /dev/null 2>&1
+then
+  alias ninja=ninja-build
+fi
+
 
 # prompt
 
