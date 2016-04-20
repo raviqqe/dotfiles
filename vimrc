@@ -14,7 +14,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'Yggdroot/indentLine'
 
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neosnippet.vim'
                             \ | Plug 'Shougo/neosnippet-snippets'
@@ -39,6 +38,7 @@ Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-comment'
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
 
 "Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'Yggdroot/indentLine'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'scrooloose/nerdtree'
 
