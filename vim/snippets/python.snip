@@ -1,0 +1,14 @@
+snippet get_args
+	def get_args():
+		arg_parser = argparse.ArgumentParser()
+		arg_parser.add_argument("${1}")
+		return arg_parser.parse_args()
+
+snippet main_func
+abbr def main() ... if ...
+	def main():
+		args = get_args()
+
+
+	if __name__ == "__main__":
+		main()
