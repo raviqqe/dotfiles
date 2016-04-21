@@ -128,6 +128,11 @@ install_tpm() {
   git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 }
 
+install_wallpapers() {
+  message_installing "wallpapers" &&
+  git_clone_to_dir git://git.raviqqe.com/wallpapers.git "$HOME/.wallpapers"
+}
+
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -167,7 +172,8 @@ check_old_log_file
     install_zsh_plugins &&
     install_go_packages &&
     install_fzf &&
-    install_tpm
+    install_tpm &&
+    install_wallpapers
   } 2>&1 | tee -a "$log_file" &&
 
   install_vim_plugins 2>> "$log_file"
