@@ -59,7 +59,7 @@ install_linuxbrew_packages() {
 
 install_freebsd_pkg() {
   message_installing "freebsd pkg command" &&
-  if ! pkg -N
+  if ! pkg -N > /dev/null 2>&1
   then
     sudo pkg bootstrap
   fi
