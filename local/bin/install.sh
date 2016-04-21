@@ -67,7 +67,7 @@ install_freebsd_packages() {
       portmaster portlint \
       zsh vim-lite tmux lynx irssi \
       git subversion fossil \
-      python ruby go rust nasm \
+      python ruby go rust nasm gmake \
       qemu \
       bsdtris bsdgames \
       xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
