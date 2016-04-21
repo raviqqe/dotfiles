@@ -1,5 +1,5 @@
 #!/bin/sh
 
-feh -zr --bg-fill $(find "/usr/local/lib/X11/xdm/wallpapers/" \
-                         -name *.png -or -name *.jpg -or -name *.jpeg | \
-                    sort -R | head -n 1)
+feh --bg-fill $(find "/usr/local/lib/X11/xdm/wallpapers/" \
+                     -name *.png -or -name *.jpg -or -name *.jpeg | \
+                sort -R | head -n 1)
