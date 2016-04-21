@@ -149,24 +149,27 @@ check_old_log_file
 (
   . $HOME/.profile &&
 
-  if on_linux
-  then
-    install_linuxbrew &&
-    install_linuxbrew_packages
-  fi &&
+  {
+    if on_linux
+    then
+      install_linuxbrew &&
+      install_linuxbrew_packages
+    fi &&
 
-  if on_freebsd
-  then
-    install_freebsd_pkg &&
-    install_freebsd_packages
-  fi &&
+    if on_freebsd
+    then
+      install_freebsd_pkg &&
+      install_freebsd_packages
+    fi &&
 
-  install_zsh_plugins &&
-  install_go_packages &&
-  install_fzf &&
-  install_tpm &&
-  install_vim_plugins
-) 2> $log_file
+    install_zsh_plugins &&
+    install_go_packages &&
+    install_fzf &&
+    install_tpm
+  } 2>&1 | tee -a "$log_file" &&
+
+  install_vim_plugins 2>> "$log_file"
+)
 
 if [ $? -ne 0 ]
 then
