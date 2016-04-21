@@ -18,7 +18,7 @@ fail() {
 }
 
 message_installing() {
-  info "Installing" "$@" "..."
+  info "$(basename $0): Installing" "$@" "..."
 }
 
 git_clone_to_dir() {
