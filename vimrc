@@ -63,7 +63,8 @@ set visualbell
 set tildeop
 set wildmenu
 set wildmode=full
-filetype plugin indent on
+filetype plugin on
+filetype indent off
 autocmd BufWritePre * :%s/\s\+$//e
 
 "" viminfo
@@ -275,6 +276,7 @@ nmap <leader>/ <plug>(easymotion-sn)
 "" auto-pairs
 
 let g:AutoPairsMapCh = 0
+let g:AutoPairsMapCR = 0
 
 
 "" unite
