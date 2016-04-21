@@ -1,5 +1,3 @@
-Xcursor.theme: whiteglass
-
 xlogin*login.translations: #override \
   Ctrl<Key>R: abort-display()\n\
   <Key>F1: set-session-argument(failsafe) finish-field()\n\
@@ -17,14 +15,14 @@ xlogin*greeting: Welcome to CLIENTHOST
 xlogin*namePrompt: Login:
 xlogin*fail: Login incorrect or forbidden by policy
 
-xlogin*greetFont: Terminus-12
-xlogin*font: Terminus-12
-xlogin*promptFont: Terminus-12
-xlogin*failFont: Terminus-12
-xlogin*greetFace: Terminus-12
-xlogin*face: Terminus-12
-xlogin*promptFace: Terminus-12
-xlogin*failFace: Terminus-12
+xlogin*greetFont: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*font: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*promptFont: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*failFont: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*greetFace: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*face: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*promptFace: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+xlogin*failFace: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
 
 xlogin*x: 64
 xlogin*y: 64
@@ -44,7 +42,7 @@ xlogin*useShape: true
 Chooser*geometry: 700x500+300+200
 Chooser*allowShellResize: false
 Chooser*viewport.forceBars: true
-Chooser*label.font: *-new century schoolbook-bold-i-normal-*-240-*
+Chooser*label.font: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
 Chooser*label.label: XDMCP Host Menu from CLIENTHOST
-Chooser*list.font: -*-*-medium-r-normal-*-*-230-*-*-c-*-iso8859-1
-Chooser*Command.font: *-new century schoolbook-bold-r-normal-*-180-*
+Chooser*list.font: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
+Chooser*Command.font: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
