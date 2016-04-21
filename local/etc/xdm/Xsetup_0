@@ -1,2 +1,5 @@
 #!/bin/sh
-#xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail
+
+feh -zr --bg-fill $(find "/usr/local/lib/X11/xdm/wallpapers/" \
+                         -name *.png -or -name *.jpg -or -name *.jpeg | \
+                    sort -R | head -n 1)
