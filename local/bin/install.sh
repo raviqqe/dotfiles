@@ -76,12 +76,14 @@ install_freebsd_packages() {
       qemu \
       bsdtris bsdgames \
       xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
-      xrandr xrefresh \
-      dwm xdm rxvt-unicode surf-browser feh \
-      firefox thunderbird chromium pcmanfm inkscape gimp \
-      terminus-font ja-font-ipa ubuntu-font \
+      xrandr xrefresh fontconfig \
+      dwm xdm rxvt-unicode surf-browser feh scrot \
+      firefox thunderbird chromium pcmanfm inkscape gimp libreoffice \
+      terminus-font terminus-ttf ja-font-ipa ubuntu-font \
       ja-ibus-mozc &&
-  sudo DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h portmaster -Gy vim dwm
+  sudo DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h \
+       portmaster -Gy vim dwm &&
+  fc-cache -f
 }
 
 install_go_packages() {
