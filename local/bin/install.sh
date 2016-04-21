@@ -73,7 +73,7 @@ install_freebsd_packages() {
       zsh neovim tmux lynx irssi \
       git subversion fossil \
       python ruby go rust nasm gmake ninja \
-      qemu \
+      qemu rcm \
       bsdtris bsdgames \
       xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
       xrandr xrefresh fontconfig \
