@@ -18,6 +18,10 @@ fail() {
   exit 1
 }
 
+message_installing() {
+  info "Installing" "$@" "..."
+}
+
 git_clone_to_dir() {
   check_num_of_args "git_clone_to_dir" 2 $#
   address=$1
@@ -33,12 +37,12 @@ git_clone_to_dir() {
 }
 
 install_linuxbrew() {
-  info "Installing linuxbrew..." &&
+  message_installing "linuxbrew" &&
   git_clone_to_dir $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
 }
 
 install_linuxbrew_packages() {
-  info "Installing linuxbrew packages..." &&
+  message_installing "linuxbrew packages" &&
 
   brew update &&
 
@@ -78,37 +82,37 @@ install_freebsd_packages() {
 }
 
 install_go_packages() {
-  info "Installing go packages..." &&
+  message_installing "go packages" &&
   go get github.com/motemen/ghq &&
   go get github.com/peco/peco/cmd/peco &&
   go get github.com/monochromegane/the_platinum_searcher/...
 }
 
 install_vim_plug() {
-  info "Installing vim-plug..." &&
+  message_installing "vim-plug" &&
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_vim_plugins() {
   install_vim_plug &&
-  info "Installing vim plugins..." &&
+  message_installing "vim plugins" &&
   vim +PlugInstall +qall
 }
 
 install_zplug() {
-  info "Installing zplug..." &&
+  message_installing "zplug" &&
   git_clone_to_dir https://github.com/b4b4r07/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
   install_zplug &&
-  info "Installing zsh plugins..." &&
+  message_installing "zsh plugins" &&
   zsh -ic ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
 install_fzf() {
-  info "Installing fzf..." &&
+  message_installing "fzf" &&
 
   fzf_dir=$HOME/.fzf
 
@@ -117,7 +121,7 @@ install_fzf() {
 }
 
 install_tpm() {
-  info "Installing tpm..." &&
+  message_installing "tpm" &&
   git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 }
 
