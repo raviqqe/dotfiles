@@ -1,0 +1,50 @@
+Xcursor.theme: whiteglass
+
+xlogin*login.translations: #override \
+  Ctrl<Key>R: abort-display()\n\
+  <Key>F1: set-session-argument(failsafe) finish-field()\n\
+  <Key>Delete: delete-character()\n\
+  <Key>Left: move-backward-character()\n\
+  <Key>Right: move-forward-character()\n\
+  <Key>Home: move-to-begining()\n\
+  <Key>End: move-to-end()\n\
+  Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+  <Key>KP_Enter: set-session-argument() finish-field()\n\
+  Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+  <Key>Return: set-session-argument() finish-field()
+
+xlogin*greeting: Welcome to CLIENTHOST
+xlogin*namePrompt: Login:
+xlogin*fail: Login incorrect or forbidden by policy
+
+xlogin*greetFont: Terminus-12
+xlogin*font: Terminus-12
+xlogin*promptFont: Terminus-12
+xlogin*failFont: Terminus-12
+xlogin*greetFace: Terminus-12
+xlogin*face: Terminus-12
+xlogin*promptFace: Terminus-12
+xlogin*failFace: Terminus-12
+
+xlogin*x: 64
+xlogin*y: 64
+xlogin*borderWidth: 8
+xlogin*frameWidth: 1
+xlogin*innerFramesWidth: 1
+xlogin*shdColor: white
+xlogin*hiColor: white
+xlogin*background: black
+xlogin*foreground: white
+xlogin*greetColor: white
+xlogin*failColor: red
+*Foreground: white
+*Background: black
+
+xlogin*useShape: true
+Chooser*geometry: 700x500+300+200
+Chooser*allowShellResize: false
+Chooser*viewport.forceBars: true
+Chooser*label.font: *-new century schoolbook-bold-i-normal-*-240-*
+Chooser*label.label: XDMCP Host Menu from CLIENTHOST
+Chooser*list.font: -*-*-medium-r-normal-*-*-230-*-*-c-*-iso8859-1
+Chooser*Command.font: *-new century schoolbook-bold-r-normal-*-180-*
