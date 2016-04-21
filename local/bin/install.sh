@@ -59,6 +59,7 @@ install_linuxbrew_packages() {
 }
 
 install_freebsd_pkg() {
+  message_installing "freebsd pkg command" &&
   if ! pkg -N
   then
     sudo pkg bootstrap
@@ -66,6 +67,7 @@ install_freebsd_pkg() {
 }
 
 install_freebsd_packages() {
+  message_installing "freebsd packages" &&
   yes | sudo pkg install \
       sudo nmap arping \
       portmaster portlint \
