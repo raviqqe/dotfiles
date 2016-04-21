@@ -80,7 +80,7 @@ install_freebsd_packages() {
       dwm xdm rxvt-unicode surf-browser feh \
       firefox thunderbird chromium pcmanfm inkscape gimp \
       terminus-font ja-font-ipa ubuntu-font &&
-  sudo portmaster -Gy vim
+  sudo DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h portmaster -Gy vim dwm
 }
 
 install_go_packages() {
