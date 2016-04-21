@@ -70,16 +70,17 @@ install_freebsd_packages() {
   yes | sudo pkg install \
       sudo nmap arping \
       portmaster portlint \
-      zsh vim-lite tmux lynx irssi \
+      zsh neovim tmux lynx irssi \
       git subversion fossil \
-      python ruby go rust nasm gmake \
+      python ruby go rust nasm gmake ninja \
       qemu \
       bsdtris bsdgames \
       xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
       xrandr xrefresh \
       dwm xdm rxvt-unicode surf-browser feh \
       firefox thunderbird chromium pcmanfm inkscape gimp \
-      terminus-font ja-font-ipa ubuntu-font
+      terminus-font ja-font-ipa ubuntu-font &&
+  sudo portmaster -Gy vim
 }
 
 install_go_packages() {
