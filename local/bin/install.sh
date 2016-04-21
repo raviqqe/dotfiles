@@ -3,7 +3,6 @@
 # constants
 
 log_file=$(basename "$0.log")
-vim_bundle_dir=$HOME/.vim/bundle
 github_address=https://github.com
 
 
