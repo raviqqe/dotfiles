@@ -1,5 +1,8 @@
 #!/bin/sh
 
+. $HOME/.include.sh
+
+
 export LC_ALL=en_US.UTF-8
 
 export GTK_IM_MODULE=ibus
@@ -10,7 +13,7 @@ ibus-daemon -r --daemonize --xim
 
 xset b off
 
-if [ "$(uname)" = FreeBSD ]
+if on_freebsd
 then
   while :
   do
@@ -18,7 +21,7 @@ then
     cpu_load=" | $(uptime | grep -o 'load.*')"
     date=" | $(TZ=Asia/Tokyo date | sed 's/  */ /g')"
 
-    if acpiconf -i 0
+    if acpiconf -i 0 > /dev/null 2>&1
     then
       capacity=$(acpiconf -i 0 | grep 'Remaining capacity:' |
                  grep -o '[^[:blank:]]*$')
@@ -38,7 +41,7 @@ fi
 
 while :
 do
-  feh -zr --bg-fill $HOME/.wallpaper
+  feh -zr --bg-fill $HOME/.wallpapers
   sleep 1800
 done &
 
