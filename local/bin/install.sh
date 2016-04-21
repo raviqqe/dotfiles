@@ -78,7 +78,7 @@ install_freebsd_packages() {
       xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
       xrandr xrefresh fontconfig \
       dwm xdm rxvt-unicode surf-browser feh scrot \
-      firefox thunderbird chromium pcmanfm inkscape gimp libreoffice \
+      firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
       terminus-font terminus-ttf ja-font-ipa ubuntu-font \
       ja-ibus-mozc &&
   sudo DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h \
