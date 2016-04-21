@@ -41,7 +41,9 @@ fi
 
 while :
 do
-  feh -zr --bg-fill $HOME/.wallpapers
+  feh --bg-fill $(find "$HOME/.wallpapers/" \
+                       -name *.png -or -name *.jpg -or -name *.jpeg | \
+                  sort -R | head -n 1)
   sleep 1800
 done &
 
