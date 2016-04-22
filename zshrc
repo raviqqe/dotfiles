@@ -35,25 +35,6 @@ bindkey "^[[3~" delete-char
 bindkey -a '?' history-incremental-pattern-search-backward
 
 
-# aliases
-
-if on_linux
-then
-  alias ls="ls --color=auto"
-elif on_freebsd
-then
-  alias ls="ls -G"
-fi
-
-alias peco="peco --select-1"
-alias fzf="fzf --select-1"
-
-if which ninja-build > /dev/null 2>&1
-then
-  alias ninja=ninja-build
-fi
-
-
 # prompt
 
 git_branch() {

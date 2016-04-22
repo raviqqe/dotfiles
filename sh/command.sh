@@ -1,6 +1,13 @@
 . $HOME/.sh/util.sh
 
 
+# interactive filters
+
+alias peco="peco --select-1"
+alias fzf="fzf --select-1"
+alias filter="fzf"
+
+
 # tmux
 
 alias tmux="TERM=screen-256color tmux"
@@ -48,3 +55,22 @@ gc() {
 alias e="vim"
 alias eru="vim -c \":Unite file_mru\""
 alias vimupdate="vim +PlugInstall +qall"
+
+
+# ls
+
+if on_linux
+then
+  alias ls="ls --color=auto"
+elif on_freebsd
+then
+  alias ls="ls -G"
+fi
+
+
+# ninja
+
+if which ninja-build > /dev/null 2>&1
+then
+  alias ninja=ninja-build
+fi
