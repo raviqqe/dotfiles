@@ -1,0 +1,1 @@
+. $HOME/.sh/command.sh

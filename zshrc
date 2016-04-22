@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-. $HOME/.include.sh
+. $HOME/.zsh/util.zsh
+. $HOME/.zsh/command.zsh
 
 
 # options

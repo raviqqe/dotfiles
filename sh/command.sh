@@ -1,4 +1,4 @@
-. $HOME/.local/libexec/dotfiles/util.sh
+. $HOME/.sh/util.sh
 
 
 # tmux

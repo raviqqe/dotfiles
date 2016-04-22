@@ -1,6 +1,7 @@
 #!/bin/sh
 
-. $HOME/.include.sh
+. $HOME/.sh/util.sh
+
 
 # environment variables
 

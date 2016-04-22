@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.include.sh
+. $HOME/.sh/util.sh
 
 
 export LC_ALL=en_US.UTF-8
