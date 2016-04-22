@@ -2,14 +2,32 @@ snippet argparse
 abbr def get_args(): ...
 	def get_args():
 		arg_parser = argparse.ArgumentParser()
-		arg_parser.add_argument("${1}")
+		arg_parser.add_argument("${1:first_argument}")
 		return arg_parser.parse_args()
 
-snippet main_func
+
+snippet main
 abbr def main() ... if ...
 	def main():
-		${1}
+		${1:# some code...}
 
 
 	if __name__ == "__main__":
 		main()
+
+
+snippet main with docopt
+abbr # main routine ... def main(args): ...
+	# main routine
+
+	def main(args):
+		"""
+		Usage:
+		  ${1:my_command}
+		"""
+
+		${2:# some code...}
+
+
+	if __name__ == "__main__":
+		main(docopt.docopt(main.__doc__))
