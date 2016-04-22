@@ -50,7 +50,7 @@ gc() {
 }
 
 
-# vim
+# editor
 
 alias e="vim"
 alias eru="vim -c \":Unite file_mru\""
