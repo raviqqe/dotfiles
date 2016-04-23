@@ -6,6 +6,10 @@ on_freebsd() {
   [ "$(uname)" = FreeBSD ]
 }
 
+on_zsh() {
+  ps $$ | grep -o '[^a-zA-Z]zsh' > /dev/null
+}
+
 is_network_alive() {
   check_num_of_args is_clean_git_repo 0 $# || return 1
 

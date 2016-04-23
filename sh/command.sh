@@ -1,4 +1,6 @@
 . $HOME/.sh/util.sh
+. $HOME/.sh/command/fzcd.sh
+
 
 
 # interactive filters
@@ -6,59 +8,6 @@
 alias peco="peco --select-1"
 alias fzf="fzf --select-1"
 alias filter="fzf"
-
-
-# cd
-
-: ${cd_history:=$HOME}
-max_cd_history=256
-
-c() {
-  _original_cd "$@" &&
-  cd_history=$(pwd | sed 's/:/\\:/g'):$cd_history
-  _truncate_cd_history
-}
-
-cm() {
-  c $(_directories_in_home | grep -v "/\\." | filter)
-}
-
-cma() {
-  c $(_directories_in_home | filter)
-}
-
-ch() {
-  c $(_print_cd_history | filter)
-}
-
-_directories_in_home() {
-  find "$HOME" -type d
-}
-
-_original_cd() {
-  if type builtin > /dev/null 2>&1
-  then
-    builtin cd "$@"
-  else
-    cd "$@"
-  fi
-}
-
-_print_cd_history() {
-  echo "$cd_history" | sed 's/\([^\]\):/\1\
-/g' | uniq
-}
-
-_truncate_cd_history() {
-  local dir_entry='\([^:]\|\\\\:\)\+'
-  local truncated_cd_history=$(echo "$cd_history" | grep -o \
-        '\('"$dir_entry"':\)\{'"$(expr $max_cd_history - 1)"'\}'"$dir_entry")
-
-  if [ -n "$truncated_cd_history" ]
-  then
-    cd_history=$truncated_cd_history
-  fi
-}
 
 
 # tmux
