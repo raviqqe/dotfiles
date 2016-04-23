@@ -19,15 +19,19 @@ c() {
 }
 
 cm() {
-  c $(find "$HOME" | grep -v "/\\." | filter)
+  c $(_directories_in_home | grep -v "/\\." | filter)
 }
 
 cma() {
-  c $(find "$HOME" | filter)
+  c $(_directories_in_home | filter)
 }
 
 ch() {
   c $(_print_cd_history | filter)
+}
+
+_directories_in_home() {
+  find "$HOME" -type d
 }
 
 _original_cd() {
