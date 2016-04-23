@@ -48,7 +48,7 @@ install_linuxbrew_packages() {
   brew tap thoughtbot/formulae &&
   brew install rcm &&
 
-  brew install git tmux &&
+  brew install git tmux lynx links &&
 
   brew install perl &&
   brew install vim --with-python3 --with-lua &&
