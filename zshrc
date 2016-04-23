@@ -87,7 +87,6 @@ zle -N zle-keymap-select
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "ehamberg/zsh-cabal-completion"
-zplug "k4rthik/git-cal", as:command
 
 zplug "mollifier/anyframe"
 zstyle ":anyframe:selector:" use fzf
