@@ -28,6 +28,7 @@ ta() {
 
 # git
 
+alias gco="git checkout"
 alias gs="git status"
 alias gpl="git pull"
 alias gps="git push"
@@ -35,8 +36,16 @@ alias gppa="git pull --all && git push --all"
 alias gl="git log"
 alias gd="git diff"
 alias gdc="git diff --cached"
-alias ga="git add"
 alias gap="git add --patch"
+
+ga() {
+  if [ $# -eq 0 ]
+  then
+    git add .
+  else
+    git add "$@"
+  fi
+}
 
 gc() {
   if [ $# -lt 1 ]
