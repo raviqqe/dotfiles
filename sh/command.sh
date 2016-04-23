@@ -1,5 +1,6 @@
 . $HOME/.sh/util.sh
 . $HOME/.sh/command/fzcd.sh
+. $HOME/.sh/command/stacd.sh
 
 
 
@@ -7,7 +8,20 @@
 
 alias peco="peco --select-1"
 alias fzf="fzf --select-1"
-alias filter="fzf"
+alias filter=fzf
+
+
+# cd
+
+export FZCD_CD_COMMAND=stacd
+export FZCD_HISTORY_COMMAND=stacd-history
+export FZCD_FILTER_COMMAND=fzf
+
+alias cd=stacd
+alias c=cd
+alias ch=fzcd-history
+alias cm=fzcd-home
+alias cma=fzcd-home-all
 
 
 # tmux
