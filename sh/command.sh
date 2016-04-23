@@ -15,7 +15,8 @@ max_cd_history=256
 
 c() {
   _original_cd "$@" &&
-  cd_history=$cd_history:$(pwd | sed 's/:/\\:/g')
+  cd_history=$(pwd | sed 's/:/\\:/g'):$cd_history
+  _truncate_cd_history
 }
 
 cm() {
@@ -46,6 +47,17 @@ _original_cd() {
 _print_cd_history() {
   echo "$cd_history" | sed 's/\([^\]\):/\1\
 /g' | uniq
+}
+
+_truncate_cd_history() {
+  local dir_entry='\([^:]\|\\\\:\)\+'
+  local truncated_cd_history=$(echo "$cd_history" | grep -o \
+        '\('"$dir_entry"':\)\{'"$(expr $max_cd_history - 1)"'\}'"$dir_entry")
+
+  if [ -n "$truncated_cd_history" ]
+  then
+    cd_history=$truncated_cd_history
+  fi
 }
 
 
