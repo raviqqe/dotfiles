@@ -104,11 +104,6 @@ zplug "zsh-users/zsh-history-substring-search"
 bindkey -a 'k' history-substring-search-up
 bindkey -a 'j' history-substring-search-down
 
-zplug "b4b4r07/enhancd", of:enhancd.sh
-export ENHANCD_FILTER=fzf
-export ENHANCD_DISABLE_DOT=1
-export ENHANCD_COMMAND=c
-
 if ! zplug check --verbose
 then
   zplug install

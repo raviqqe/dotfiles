@@ -8,6 +8,43 @@ alias fzf="fzf --select-1"
 alias filter="fzf"
 
 
+# cd
+
+: ${cd_history:=$HOME}
+max_cd_history=256
+
+c() {
+  _original_cd "$@" &&
+  cd_history=$cd_history:$(pwd | sed 's/:/\\:/g')
+}
+
+cm() {
+  c $(find "$HOME" | grep -v "/\\." | filter)
+}
+
+cma() {
+  c $(find "$HOME" | filter)
+}
+
+ch() {
+  c $(_print_cd_history | filter)
+}
+
+_original_cd() {
+  if type builtin > /dev/null 2>&1
+  then
+    builtin cd "$@"
+  else
+    cd "$@"
+  fi
+}
+
+_print_cd_history() {
+  echo "$cd_history" | sed 's/\([^\]\):/\1\
+/g' | uniq
+}
+
+
 # tmux
 
 alias tmux="TERM=screen-256color tmux"
