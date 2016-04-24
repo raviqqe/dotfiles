@@ -71,7 +71,7 @@ install_freebsd_packages() {
       sudo nmap arping \
       portmaster portlint \
       zsh neovim tmux lynx irssi \
-      git subversion fossil \
+      git subversion fossil hub \
       python ruby go rust nasm gmake ninja \
       qemu rcm \
       bsdtris bsdgames \
