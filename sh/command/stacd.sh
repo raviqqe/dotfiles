@@ -20,7 +20,7 @@ stacd() {
 
 stacd-history() {
   echo "$_stacd_history" | sed 's/\([^\]\):/\1\
-/g' | sort | uniq
+/g' | sed 's/\\:/:/g' | sort | uniq
 }
 
 _stacd_push_dir() {
