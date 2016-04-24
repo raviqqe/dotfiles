@@ -1,3 +1,6 @@
+. $HOME/.sh/util.sh
+
+
 # variables
 
 export FZCD_FILTER_COMMAND=fzf
@@ -7,24 +10,32 @@ export FZCD_HISTORY_COMMAND="dirs -p"
 
 # commands
 
-fzcd-home() {
+fzcd() {
+  check_num_of_args fzcd 1 $# &&
+
   _fzcd_check_filter &&
   $FZCD_CD_COMMAND \
-      $(_fzcd_directories_in_home | grep -v "/\\." | $FZCD_FILTER_COMMAND)
+      $(_fzcd_search_directories "$1" | grep -v "/\\." | $FZCD_FILTER_COMMAND)
 }
 
-fzcd-home-all() {
+fzcd-all() {
+  check_num_of_args fzcd-all 1 $# &&
+
   _fzcd_check_filter &&
-  $FZCD_CD_COMMAND $(_fzcd_directories_in_home | $FZCD_FILTER_COMMAND)
+  $FZCD_CD_COMMAND $(_fzcd_search_directories "$1" | $FZCD_FILTER_COMMAND)
 }
 
 fzcd-history() {
+  check_num_of_args fzcd-history 0 $# &&
+
   _fzcd_check_filter &&
   $FZCD_CD_COMMAND $($FZCD_HISTORY_COMMAND | $FZCD_FILTER_COMMAND)
 }
 
-_fzcd_directories_in_home() {
-  find "$HOME" -type d
+_fzcd_search_directories() {
+  check_num_of_args _fzcd_search_directories 1 $# &&
+
+  find "$1" -type d
 }
 
 _fzcd_check_filter() {

@@ -20,8 +20,9 @@ export FZCD_FILTER_COMMAND=fzf
 alias cd=stacd
 alias c=cd
 alias ch=fzcd-history
-alias cm=fzcd-home
-alias cma=fzcd-home-all
+alias cm="fzcd $HOME"
+alias cma="fzcd-all $HOME"
+alias cs="fzcd $GHQ_ROOT"
 
 
 # tmux
