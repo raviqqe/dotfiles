@@ -12,6 +12,8 @@ export XMODIFIERS=@im=ibus
 ibus-daemon -r --daemonize --xim
 
 xset b off
+xset s blank
+xset s 60
 
 if on_freebsd
 then
