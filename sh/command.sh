@@ -82,6 +82,10 @@ alias e="vim"
 alias eu="vim -c \":Unite file_mru\""
 alias vimupdate="vim +PlugInstall +qall"
 
+es() {
+  e $(find "$GHQ_ROOT" | grep -v '/\\.' | filter)
+}
+
 
 # ls
 
