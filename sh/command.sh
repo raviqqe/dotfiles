@@ -92,6 +92,8 @@ then
   alias ls="ls -G"
 fi
 
+alias s=ls
+
 
 # ninja
 
