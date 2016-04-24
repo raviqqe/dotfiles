@@ -305,7 +305,8 @@ nnoremap <leader>a :Unite source<cr>
 nnoremap <leader>b :Unite buffer<cr>
 nnoremap <leader>f :Unite file<cr>
 nnoremap <leader>r :Unite file_rec<cr>
-nnoremap <leader>m :Unite file_mru<cr>
+nnoremap <leader>m :Unite file_rec:~<cr>
+nnoremap <leader>u :Unite file_mru<cr>
 nnoremap <leader>h :Unite help<cr>
 nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
 nnoremap <leader>y :Unite history/yank<cr>
