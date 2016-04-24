@@ -68,3 +68,7 @@ fi
 ## xdg
 
 export XDG_CONFIG_HOME=$HOME/.config
+
+## ghq
+
+export GHQ_ROOT=$HOME/src
