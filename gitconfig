@@ -4,6 +4,3 @@ email = raviqqe@gmail.com
 
 [push]
 default = simple
-
-[merge]
-ff = no
