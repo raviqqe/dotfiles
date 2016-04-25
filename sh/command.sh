@@ -82,9 +82,38 @@ alias e="vim"
 alias eu="vim -c \":Unite file_mru\""
 alias vimupdate="vim +PlugInstall +qall"
 
-es() {
-  e $(find "$GHQ_ROOT" | grep -v '/\\.' | filter)
+el() {
+  local filter_hidden_files="grep -v /\\\\."
+
+  while getopts a option
+  do
+    case $option in
+    a)
+      filter_hidden_files=cat
+      ;;
+    esac
+  done
+
+  shift $(expr $OPTIND - 1)
+
+  if [ $# -eq 1 ]
+  then
+    local file
+    file=$(find "$1" | eval "$filter_hidden_files" | filter) &&
+    e "$file"
+    return
+  elif [ $# -eq 0 ]
+  then
+    el .
+    return
+  fi
+
+  error "Invalid number of arguments."
 }
+
+alias es="el \"$GHQ_ROOT\""
+alias em="el \"$HOME\""
+alias ema="el -a \"$HOME\""
 
 
 # ls
