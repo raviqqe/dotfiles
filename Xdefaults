@@ -18,7 +18,7 @@ urxvt*inputMethod: ibus
 !urxvt*color2: green
 !urxvt*color3: yellow
 urxvt*color4: #0088ff
-!urxvt*color12: cyan
+urxvt*color12: #0088ff
 
 xterm*foreground: white
 xterm*background: black
