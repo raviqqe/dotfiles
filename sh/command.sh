@@ -83,13 +83,13 @@ alias eh="vim -c \":Unite file_mru\""
 alias vimupdate="vim +PlugInstall +qall"
 
 el() {
-  local filter_hidden_files="grep -v /\\\\."
+  local show_hidden_files=false
 
   while getopts a option
   do
     case $option in
     a)
-      filter_hidden_files=cat
+      show_hidden_files=true
       ;;
     esac
   done
@@ -99,8 +99,14 @@ el() {
   if [ $# -eq 1 ]
   then
     local file
-    file=$(find "$1" | eval "$filter_hidden_files" | filter) &&
+    file=$(find "$1" |
+           if [ $show_hidden_files = true ]; then cat; else grep -v '/\.'; fi |
+           filter) &&
     e "$file"
+    return
+  elif [ $# -eq 0 -a $show_hidden_files = true ]
+  then
+    el -a .
     return
   elif [ $# -eq 0 ]
   then
