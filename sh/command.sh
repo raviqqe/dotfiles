@@ -79,7 +79,7 @@ gc() {
 # editor
 
 alias e="vim"
-alias eu="vim -c \":Unite file_mru\""
+alias eh="vim -c \":Unite file_mru\""
 alias vimupdate="vim +PlugInstall +qall"
 
 el() {
