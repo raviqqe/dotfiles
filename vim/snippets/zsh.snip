@@ -1,0 +1,12 @@
+snippet getopts
+abbr while getopts ... done
+	while getopts ${1} option
+	do
+		case $option in
+		${2:# first option})
+			${3:# some code ...}
+			;;
+		esac
+	done
+
+	shift $(expr $OPTIND - 1)
