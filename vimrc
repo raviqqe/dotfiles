@@ -93,8 +93,7 @@ set autoindent
 set smartindent
 set shiftround
 
-function s:set_tab()
-  set expandtab
+function s:set_2_space_tab()
   set tabstop=2
   set shiftwidth=2
   set softtabstop=2
@@ -102,10 +101,24 @@ function s:set_tab()
   set listchars=tab:^I
 endfunction
 
-call s:set_tab()
+function s:set_soft_tab()
+  set expandtab
+  call s:set_2_space_tab()
+endfunction
+
+function s:set_hard_tab()
+  set noexpandtab
+  call s:set_2_space_tab()
+endfunction
+
+call s:set_soft_tab()
 
 for thefiletype in ['python', 'vim']
-  exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_tab()'
+  exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_soft_tab()'
+endfor
+
+for thefiletype in ['make', 'neosnippet']
+  exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_hard_tab()'
 endfor
 
 "" appearance
