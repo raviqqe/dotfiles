@@ -12,24 +12,30 @@ export FZCD_HISTORY_COMMAND="dirs -p"
 
 fzcd() {
   check_num_of_args fzcd 1 $# &&
-
   _fzcd_check_filter &&
-  $FZCD_CD_COMMAND \
-      $(_fzcd_search_directories "$1" | grep -v "/\\." | $FZCD_FILTER_COMMAND)
+
+  local dir &&
+  dir=$(_fzcd_search_directories "$1" | grep -v "/\\." \
+                                      | $FZCD_FILTER_COMMAND) &&
+  $FZCD_CD_COMMAND "$dir"
 }
 
 fzcd-all() {
   check_num_of_args fzcd-all 1 $# &&
-
   _fzcd_check_filter &&
-  $FZCD_CD_COMMAND $(_fzcd_search_directories "$1" | $FZCD_FILTER_COMMAND)
+
+  local dir &&
+  dir=$(_fzcd_search_directories "$1" | $FZCD_FILTER_COMMAND) &&
+  $FZCD_CD_COMMAND "$dir"
 }
 
 fzcd-history() {
   check_num_of_args fzcd-history 0 $# &&
-
   _fzcd_check_filter &&
-  $FZCD_CD_COMMAND $($FZCD_HISTORY_COMMAND | $FZCD_FILTER_COMMAND)
+
+  local dir &&
+  dir=$($FZCD_HISTORY_COMMAND | $FZCD_FILTER_COMMAND) &&
+  $FZCD_CD_COMMAND "$dir"
 }
 
 _fzcd_search_directories() {
