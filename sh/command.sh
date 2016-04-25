@@ -122,6 +122,11 @@ alias em="el \"$HOME\""
 alias ema="el -a \"$HOME\""
 
 
+# src
+
+alias sl="ghq list --full-path"
+
+
 # ls
 
 if on_linux
