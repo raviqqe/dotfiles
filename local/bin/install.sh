@@ -76,8 +76,8 @@ install_freebsd_packages() {
       qemu rcm \
       bsdtris bsdgames \
       xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
-      xrandr xrefresh fontconfig \
-      dwm xdm rxvt-unicode surf-browser feh scrot \
+      xrandr xrefresh fontconfig xautolock \
+      dwm xdm rxvt-unicode surf-browser feh scrot slock \
       firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
       terminus-font terminus-ttf ja-font-ipa ubuntu-font \
       ja-ibus-mozc &&
