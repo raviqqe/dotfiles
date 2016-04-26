@@ -70,7 +70,7 @@ install_freebsd_packages() {
   yes | sudo pkg install \
       sudo nmap arping \
       portmaster portlint \
-      zsh neovim tmux lynx irssi \
+      zsh neovim tmux lynx ii simpleirc \
       git subversion fossil hub \
       python ruby go rust nasm gmake ninja \
       qemu rcm \
