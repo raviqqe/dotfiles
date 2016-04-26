@@ -14,7 +14,7 @@ ibus-daemon -r --daemonize --xim
 xset b off
 xset s blank
 xset s 60
-xautolock -time 1 -locker slock &
+xautolock -time 2 -locker slock &
 
 if on_freebsd
 then
