@@ -176,7 +176,7 @@ check_old_log_file
     install_fzf &&
     install_tpm &&
     install_wallpapers &&
-    local last_status=$?
+    last_status=$?
   } 2>&1 | tee -a "$log_file"
 
   [ $last_status -eq 0 ] &&
