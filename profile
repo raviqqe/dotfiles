@@ -64,7 +64,7 @@ then
   export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
   export LD_LIBRARY_PATH=$LIBRARY_PATH
 
-  if type nproc
+  if type nproc > /dev/null 2>&1
   then
     export HOMEBREW_MAKE_JOBS=$(nproc)
   else
