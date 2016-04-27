@@ -157,6 +157,7 @@ check_old_log_file
 
 (
   . $HOME/.profile &&
+  success_file=$0.first_step_completed.tmp
 
   {
     if on_linux
@@ -176,11 +177,14 @@ check_old_log_file
     install_fzf &&
     install_tpm &&
     install_wallpapers &&
-    last_status=$?
+    : > "$success_file"
   } 2>&1 | tee -a "$log_file"
 
-  [ $last_status -eq 0 ] &&
-  install_vim_plugins 2>> "$log_file"
+  if [ -f "$success_file" ]
+  then
+    rm "$success_file" &&
+    install_vim_plugins 2>> "$log_file"
+  fi
 )
 
 if [ $? -ne 0 ]
