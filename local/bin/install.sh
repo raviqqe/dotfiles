@@ -102,7 +102,7 @@ install_vim_plug() {
 install_vim_plugins() {
   install_vim_plug &&
   message_installing "vim plugins" &&
-  vim +PlugInstall +qall
+  yes | vim +PlugInstall +qall
 }
 
 install_zplug() {
