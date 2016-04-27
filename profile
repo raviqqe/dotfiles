@@ -63,6 +63,13 @@ then
   export MANPATH=$linuxbrew_dir/share/man:$MANPATH
   export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
   export LD_LIBRARY_PATH=$LIBRARY_PATH
+
+  if type nproc
+  then
+    export HOMEBREW_MAKE_JOBS=$(nproc)
+  else
+    export HOMEBREW_MAKE_JOBS=2
+  fi
 fi
 
 ## xdg
