@@ -137,7 +137,7 @@ then
   alias ls="ls -G"
 fi
 
-alias s=ls
+alias d=ls
 
 
 # ninja
