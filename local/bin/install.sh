@@ -175,9 +175,11 @@ check_old_log_file
     install_go_packages &&
     install_fzf &&
     install_tpm &&
-    install_wallpapers
-  } 2>&1 | tee -a "$log_file" &&
+    install_wallpapers &&
+    local last_status=$?
+  } 2>&1 | tee -a "$log_file"
 
+  [ $last_status -eq 0 ] &&
   install_vim_plugins 2>> "$log_file"
 )
 
