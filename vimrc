@@ -292,6 +292,11 @@ let g:AutoPairsMapCh = 0
 let g:AutoPairsMapCR = 0
 
 
+"" syntastic
+
+let g:syntastic_python_python_exec = "/usr/bin/env python3"
+
+
 "" unite
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
