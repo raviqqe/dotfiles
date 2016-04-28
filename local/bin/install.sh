@@ -152,45 +152,49 @@ check_old_log_file() {
 
 # main routine
 
-check_args "$@"
-check_old_log_file
+main() {
+  check_args "$@"
+  check_old_log_file
 
-(
-  . $HOME/.profile &&
-  success_file=$0.first_step_completed.tmp
+  (
+    . $HOME/.profile &&
+    success_file=$0.first_step_completed.tmp
 
-  {
-    if on_linux
+    {
+      if on_linux
+      then
+        install_linuxbrew &&
+        install_linuxbrew_packages
+      fi &&
+
+      if on_freebsd
+      then
+        install_freebsd_pkg &&
+        install_freebsd_packages
+      fi &&
+
+      install_zsh_plugins &&
+      install_go_packages &&
+      install_fzf &&
+      install_tpm &&
+      install_wallpapers &&
+      : > "$success_file"
+    } 2>&1 | tee -a "$log_file"
+
+    if [ -f "$success_file" ]
     then
-      install_linuxbrew &&
-      install_linuxbrew_packages
-    fi &&
+      rm "$success_file" &&
+      install_vim_plugins 2>> "$log_file"
+    fi
+  )
 
-    if on_freebsd
-    then
-      install_freebsd_pkg &&
-      install_freebsd_packages
-    fi &&
-
-    install_zsh_plugins &&
-    install_go_packages &&
-    install_fzf &&
-    install_tpm &&
-    install_wallpapers &&
-    : > "$success_file"
-  } 2>&1 | tee -a "$log_file"
-
-  if [ -f "$success_file" ]
+  if [ $? -ne 0 ]
   then
-    rm "$success_file" &&
-    install_vim_plugins 2>> "$log_file"
+    fail "Failed to initialize dotfiles environment." \
+         "See $log_file for troubleshooting."
+  else
+    rm $log_file
   fi
-)
+}
 
-if [ $? -ne 0 ]
-then
-  fail "Failed to initialize dotfiles environment." \
-       "See $log_file for troubleshooting."
-else
-  rm $log_file
-fi
+main "$@"
