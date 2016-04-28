@@ -138,7 +138,7 @@ install_wallpapers() {
 check_args() {
   if [ $# -ne 0 ]
   then
-    fail "usage: $(basename $0)"
+    fail "usage: $(basename $0) [-b]"
   fi
 }
 
@@ -153,6 +153,18 @@ check_old_log_file() {
 # main routine
 
 main() {
+  batch_mode=false
+
+  while getopts b option
+  do
+    case $option in
+    b)
+      batch_mode=true
+      ;;
+    esac
+  done
+  shift $(expr $OPTIND - 1)
+
   check_args "$@"
   check_old_log_file
 
@@ -181,7 +193,7 @@ main() {
       : > "$success_file"
     } 2>&1 | tee -a "$log_file"
 
-    if [ -f "$success_file" ]
+    if [ $batch_mode = false -a -f "$success_file" ]
     then
       rm "$success_file" &&
       install_vim_plugins 2>> "$log_file"
