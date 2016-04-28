@@ -158,7 +158,7 @@ main() {
 
   (
     . $HOME/.profile &&
-    success_file=$0.first_step_completed.tmp
+    success_file=$(basename "$0").first_step_completed.tmp
 
     {
       if on_linux
