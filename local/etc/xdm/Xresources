@@ -14,6 +14,7 @@ xlogin*login.translations: #override \
 xlogin*greeting: Welcome to CLIENTHOST
 xlogin*namePrompt: Login:
 xlogin*fail: Login incorrect or forbidden by policy
+xlogin*echoPasswd: true
 
 xlogin*greetFont: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
 xlogin*font: -*-terminus-medium-r-normal--16-*-*-*-*-*-*
