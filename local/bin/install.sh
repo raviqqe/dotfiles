@@ -195,9 +195,10 @@ main() {
 
     if [ $batch_mode = false -a -f "$success_file" ]
     then
-      rm "$success_file" &&
       install_vim_plugins 2>> "$log_file"
     fi
+
+    rm -f "$success_file"
   )
 
   if [ $? -ne 0 ]
