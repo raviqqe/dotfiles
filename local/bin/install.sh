@@ -158,7 +158,7 @@ install_wallpapers() {
 check_args() {
   if [ $# -ne 0 ]
   then
-    fail "usage: $(basename $0) [-b]"
+    fail "usage: $(basename $0) [-b] [-d]"
   fi
 }
 
