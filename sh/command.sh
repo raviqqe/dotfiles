@@ -124,8 +124,8 @@ alias ema="el -a \"$HOME\""
 e() {
   if [ $# -eq 0 ]
   then
-    el . &&
-    return 0
+    el .
+    return $?
   fi
 
   edit "$@"
