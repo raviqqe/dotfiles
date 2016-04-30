@@ -66,24 +66,44 @@ install_freebsd_pkg() {
 }
 
 install_freebsd_packages() {
+  install_desktop_apps=false
+
+  while getopts d option
+  do
+    case $option in
+    d)
+      install_desktop_apps=true
+      ;;
+    esac
+  done
+  shift $(expr $OPTIND - 1)
+
+  local portmaster="sudo -E portmaster -Gy"
+  local pkg_install="sudo pkg install -y"
+
   message_installing "freebsd packages" &&
-  yes | sudo pkg install \
+  $pkg_install \
       sudo nmap arping \
       portmaster portlint \
       zsh neovim tmux lynx ii simpleirc \
       git subversion fossil hub \
       python ruby go rust nasm gmake ninja \
       qemu rcm \
-      bsdtris bsdgames \
-      xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
-      xrandr xrefresh fontconfig xautolock \
-      dwm xdm rxvt-unicode surf-browser feh scrot slock \
-      firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
-      terminus-font terminus-ttf ja-font-ipa ubuntu-font \
-      ja-ibus-mozc &&
-  sudo DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h \
-       portmaster -Gy vim dwm &&
-  fc-cache -f
+      bsdtris bsdgames &&
+  $portmaster vim &&
+
+  if [ $install_desktop_apps = true ]
+  then
+    $pkg_install \
+        xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
+        xrandr xrefresh fontconfig xautolock \
+        dwm xdm rxvt-unicode surf-browser feh scrot slock \
+        firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
+        terminus-font terminus-ttf ja-font-ipa ubuntu-font \
+        ja-ibus-mozc &&
+    DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h $portmaster dwm &&
+    fc-cache -f
+  fi
 }
 
 install_go_packages() {
@@ -154,12 +174,16 @@ check_old_log_file() {
 
 main() {
   batch_mode=false
+  install_desktop_apps=false
 
-  while getopts b option
+  while getopts bd option
   do
     case $option in
     b)
       batch_mode=true
+      ;;
+    d)
+      install_desktop_apps=true
       ;;
     esac
   done
@@ -179,7 +203,11 @@ main() {
         install_linuxbrew_packages
       fi &&
 
-      if on_freebsd
+      if on_freebsd && [ $install_desktop_apps = true ]
+      then
+        install_freebsd_pkg &&
+        install_freebsd_packages -d
+      elif on_freebsd
       then
         install_freebsd_pkg &&
         install_freebsd_packages
