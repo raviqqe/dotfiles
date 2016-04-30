@@ -78,7 +78,7 @@ install_freebsd_packages() {
   done
   shift $(expr $OPTIND - 1)
 
-  local portmaster="sudo -E portmaster -Gdy"
+  local portmaster="sudo -E portmaster -Gdy --no-confirm"
   local pkg_install="sudo pkg install -y"
 
   message_installing "freebsd packages" &&
