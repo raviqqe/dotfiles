@@ -18,8 +18,7 @@ export FZCD_HISTORY_COMMAND=stacd-history
 export FZCD_FILTER_COMMAND=fzf
 
 alias cd=stacd
-alias c=cd
-alias cw="fzcd ."
+alias c="fzcd ."
 alias ch=fzcd-history
 alias cm="fzcd $HOME"
 alias cma="fzcd-all $HOME"
@@ -79,7 +78,7 @@ gc() {
 
 # editor
 
-alias e="vim"
+alias edit="vim"
 alias eh="vim -c \":Unite file_mru\""
 alias vimupdate="vim +PlugInstall +qall"
 
@@ -103,7 +102,7 @@ el() {
     file=$(find "$1" |
            if [ $show_hidden_files = true ]; then cat; else grep -v '/\.'; fi |
            filter) &&
-    e "$file"
+    edit "$file"
     return
   elif [ $# -eq 0 -a $show_hidden_files = true ]
   then
@@ -118,10 +117,19 @@ el() {
   error "Invalid number of arguments."
 }
 
-alias ew="el ."
 alias es="el \"$GHQ_ROOT\""
 alias em="el \"$HOME\""
 alias ema="el -a \"$HOME\""
+
+e() {
+  if [ $# -eq 0 ]
+  then
+    el . &&
+    return 0
+  fi
+
+  edit "$@"
+}
 
 
 # ls
