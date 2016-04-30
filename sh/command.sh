@@ -99,7 +99,7 @@ el() {
   if [ $# -eq 1 ]
   then
     local file
-    file=$(find "$1" |
+    file=$(find "$1" -type f |
            if [ $show_hidden_files = true ]; then cat; else grep -v '/\.'; fi |
            filter) &&
     edit "$file"
