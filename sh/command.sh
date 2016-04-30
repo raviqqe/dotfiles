@@ -19,6 +19,7 @@ export FZCD_FILTER_COMMAND=fzf
 
 alias cd=stacd
 alias c=cd
+alias cw="fzcd ."
 alias ch=fzcd-history
 alias cm="fzcd $HOME"
 alias cma="fzcd-all $HOME"
@@ -117,6 +118,7 @@ el() {
   error "Invalid number of arguments."
 }
 
+alias ew="el ."
 alias es="el \"$GHQ_ROOT\""
 alias em="el \"$HOME\""
 alias ema="el -a \"$HOME\""
