@@ -49,6 +49,7 @@ install_linuxbrew_packages() {
   brew install rcm &&
 
   brew install git tmux lynx links hub irssi &&
+  brew install gawk && # for zplug
 
   brew install perl &&
   brew install vim --with-python3 --with-lua &&
