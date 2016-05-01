@@ -91,7 +91,7 @@ install_freebsd_packages() {
       go rust nasm gmake ninja \
       qemu rcm \
       bsdtris bsdgames &&
-  $portmaster editors/vim python ruby &&
+  $portmaster editors/vim lang/python lang/ruby23 &&
 
   if [ $install_desktop_apps = true ]
   then
