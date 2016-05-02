@@ -52,6 +52,7 @@ alias gl="git log"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
+alias gb="git branch"
 
 ga() {
   if [ $# -eq 0 ]
