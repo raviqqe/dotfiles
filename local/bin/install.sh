@@ -128,7 +128,7 @@ install_vim_plugins() {
 
 install_zplug() {
   message_installing "zplug" &&
-  git_clone_to_dir https://github.com/b4b4r07/zplug $HOME/.zplug
+  git_clone_to_dir https://github.com/zplug/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
