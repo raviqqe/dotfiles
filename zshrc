@@ -124,3 +124,10 @@ then
   warn "dotfiles directory, \"$dotfiles_dir\" is not clean." \
        "Please push the changes to the upstream."
 fi
+
+
+# host dependent
+
+hidden_file="$HOME/.hidden.sh"
+[ -r "$hidden_file" ] &&
+. "$hidden_file"
