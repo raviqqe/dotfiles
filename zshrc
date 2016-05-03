@@ -129,5 +129,7 @@ fi
 # host dependent
 
 hidden_file="$HOME/.hidden.sh"
-[ -r "$hidden_file" ] &&
-. "$hidden_file"
+if [ -r "$hidden_file" ]
+then
+  . "$hidden_file"
+fi
