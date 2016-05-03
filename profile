@@ -24,7 +24,6 @@ export CXX=clang++
 export C_INCLUDE_PATH=$LOCAL/include
 export CPLUS_INCLUDE_PATH=$C_INCLUDE_PATH
 export LIBRARY_PATH=$LOCAL/lib64:$LOCAL/lib
-export LD_LIBRARY_PATH=$LIBRARY_PATH
 
 ## cuda
 
@@ -32,7 +31,6 @@ if on_linux
 then
   export PATH=$PATH:/usr/local/cuda/bin
   export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 fi
 
 ## cmake configuration
@@ -62,7 +60,6 @@ then
   export PATH=$linuxbrew_dir/bin:$PATH
   export MANPATH=$linuxbrew_dir/share/man:$MANPATH
   export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
-  export LD_LIBRARY_PATH=$LIBRARY_PATH
 
   if type nproc > /dev/null 2>&1
   then
@@ -79,3 +76,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 ## ghq
 
 export GHQ_ROOT=$HOME/src
+
+## LD_LIBRARY_PATH
+
+# Because exporting LD_LIBRARY_PATH causes some unexpectable problems,
+# unexport it as default and export it only when it needed.
+
+ld_library_path=$LIBRARY_PATH
