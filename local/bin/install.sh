@@ -67,13 +67,13 @@ install_freebsd_pkg() {
 }
 
 install_freebsd_packages() {
-  install_desktop_apps=false
+  desktop_mode=false
 
   while getopts d option
   do
     case $option in
     d)
-      install_desktop_apps=true
+      desktop_mode=true
       ;;
     esac
   done
@@ -93,7 +93,7 @@ install_freebsd_packages() {
       bsdtris bsdgames &&
   $portmaster editors/vim lang/python lang/ruby23 &&
 
-  if [ $install_desktop_apps = true ]
+  if [ $desktop_mode = true ]
   then
     $pkg_install \
         xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
@@ -175,7 +175,7 @@ check_old_log_file() {
 
 main() {
   batch_mode=false
-  install_desktop_apps=false
+  desktop_mode=false
 
   while getopts bd option
   do
@@ -184,7 +184,7 @@ main() {
       batch_mode=true
       ;;
     d)
-      install_desktop_apps=true
+      desktop_mode=true
       ;;
     esac
   done
@@ -204,7 +204,7 @@ main() {
         install_linuxbrew_packages
       fi &&
 
-      if on_freebsd && [ $install_desktop_apps = true ]
+      if on_freebsd && [ $desktop_mode = true ]
       then
         install_freebsd_pkg &&
         install_freebsd_packages -d
@@ -218,7 +218,12 @@ main() {
       install_go_packages &&
       install_fzf &&
       install_tpm &&
-      install_wallpapers &&
+
+      if [ $desktop_mode = true ]
+      then
+        install_wallpapers
+      fi &&
+
       : > "$success_file"
     } 2>&1 | tee -a "$log_file"
 
