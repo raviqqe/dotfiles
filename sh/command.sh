@@ -144,6 +144,9 @@ then
 fi
 
 alias d=ls
+alias da="ls -a"
+alias dl="ls -l"
+alias dla="ls -la"
 alias ds="ghq list --full-path"
 
 
