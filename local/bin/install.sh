@@ -236,7 +236,7 @@ main() {
     rm -f "$success_file" &&
     (exit $last_status) &&
 
-    if [ -n "$batch_mode" ]
+    if [ -z "$batch_mode" ]
     then
       install_vim_plugins 2>> "$log_file"
     fi
