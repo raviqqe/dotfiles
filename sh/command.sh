@@ -29,7 +29,7 @@ alias cs="fzcd $GHQ_ROOT"
 
 alias tmux="TERM=screen-256color tmux"
 alias t=tmux
-alias tls="tmux ls"
+alias tl="tmux ls"
 
 ta() {
   if [ $# -eq 0 ]
