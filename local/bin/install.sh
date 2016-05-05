@@ -67,13 +67,14 @@ install_freebsd_pkg() {
 }
 
 install_freebsd_packages() {
-  desktop_mode=false
-
-  while getopts d option
+  while getopts dx option
   do
     case $option in
     d)
       desktop_mode=true
+      ;;
+    x)
+      extra_mode=true
       ;;
     esac
   done
@@ -83,6 +84,7 @@ install_freebsd_packages() {
   local pkg_install="sudo pkg install -y"
 
   message_installing "freebsd packages" &&
+  message_installing "freebsd base packages" &&
   $pkg_install \
       sudo nmap arping \
       portmaster portlint \
@@ -93,8 +95,9 @@ install_freebsd_packages() {
       bsdtris bsdgames &&
   $portmaster editors/vim lang/python lang/ruby23 &&
 
-  if [ $desktop_mode = true ]
+  if [ -n "$desktop_mode" ]
   then
+    message_installing "freebsd desktop packages" &&
     $pkg_install \
         xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
         xrandr xrefresh fontconfig xautolock \
@@ -104,6 +107,12 @@ install_freebsd_packages() {
         ja-ibus-mozc &&
     DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h $portmaster dwm &&
     fc-cache -f
+  fi &&
+
+  if [ -n "$extra_mode" ]
+  then
+    message_installing "freebsd extra packages" &&
+    $pkg_install texlive-full
   fi
 }
 
@@ -174,10 +183,7 @@ check_old_log_file() {
 # main routine
 
 main() {
-  batch_mode=false
-  desktop_mode=false
-
-  while getopts bd option
+  while getopts bdx option
   do
     case $option in
     b)
@@ -185,6 +191,9 @@ main() {
       ;;
     d)
       desktop_mode=true
+      ;;
+    x)
+      extra_mode=true
       ;;
     esac
   done
@@ -204,14 +213,10 @@ main() {
         install_linuxbrew_packages
       fi &&
 
-      if on_freebsd && [ $desktop_mode = true ]
+      if on_freebsd
       then
         install_freebsd_pkg &&
-        install_freebsd_packages -d
-      elif on_freebsd
-      then
-        install_freebsd_pkg &&
-        install_freebsd_packages
+        install_freebsd_packages ${desktop_mode:+-d} ${extra_mode:+-x}
       fi &&
 
       install_zsh_plugins &&
@@ -219,7 +224,7 @@ main() {
       install_fzf &&
       install_tpm &&
 
-      if [ $desktop_mode = true ]
+      if [ -n "$desktop_mode" ]
       then
         install_wallpapers
       fi &&
@@ -231,7 +236,7 @@ main() {
     rm -f "$success_file" &&
     (exit $last_status) &&
 
-    if [ $batch_mode = false ]
+    if [ -n "$batch_mode" ]
     then
       install_vim_plugins 2>> "$log_file"
     fi
