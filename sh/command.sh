@@ -7,7 +7,7 @@
 # interactive filters
 
 alias peco="peco --select-1"
-alias fzf="fzf --select-1"
+alias fzf="fzf --select-1 --exit-0"
 alias filter=fzf
 
 
