@@ -15,7 +15,7 @@ alias filter=fzf
 
 export FZCD_CD_COMMAND=stacd
 export FZCD_HISTORY_COMMAND=stacd-history
-export FZCD_FILTER_COMMAND=fzf
+export FZCD_FILTER_COMMAND=filter
 
 alias cd=stacd
 alias c="fzcd ."
