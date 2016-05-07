@@ -147,6 +147,8 @@ alias d=ls
 alias da="ls -a"
 alias dl="ls -lh"
 alias dla="ls -lha"
+alias dm="ls \"$HOME\""
+alias dma="ls -a \"$HOME\""
 alias ds="ghq list --full-path"
 
 
