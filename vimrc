@@ -65,7 +65,12 @@ set wildmenu
 set wildmode=full
 filetype plugin on
 filetype indent off
-autocmd BufWritePre * :%s/\s\+$//e
+
+autocmd BufWritePre * DeleteBlanks
+command DeleteBlanks let lastview = winsaveview() |
+                   \ :%s/\s\+$//e |
+                   \ :%s/\(\s*$\n\?\)\+\%$//e |
+                   \ call winrestview(lastview)
 
 "" viminfo
 
