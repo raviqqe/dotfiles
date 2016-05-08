@@ -157,6 +157,9 @@ endif
 
 let mapleader = "\<space>"
 
+nnoremap ; :
+nnoremap : ;
+
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
