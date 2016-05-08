@@ -14,6 +14,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
 
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neosnippet.vim'
                             \ | Plug 'Shougo/neosnippet-snippets'
@@ -65,12 +66,6 @@ set wildmenu
 set wildmode=full
 filetype plugin on
 filetype indent off
-
-autocmd BufWritePre * DeleteBlanks
-command DeleteBlanks let lastview = winsaveview() |
-                   \ :%s/\s\+$//e |
-                   \ :%s/\(\s*$\n\?\)\+\%$//e |
-                   \ call winrestview(lastview)
 
 "" viminfo
 
