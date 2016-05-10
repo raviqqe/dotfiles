@@ -118,9 +118,10 @@ install_freebsd_packages() {
 
 install_go_packages() {
   message_installing "go packages" &&
-  go get github.com/motemen/ghq &&
-  go get github.com/peco/peco/cmd/peco &&
-  go get github.com/monochromegane/the_platinum_searcher/...
+  go_get="go get -u" &&
+  $go_get github.com/motemen/ghq &&
+  $go_get github.com/peco/peco/cmd/peco &&
+  $go_get github.com/monochromegane/the_platinum_searcher/...
 }
 
 install_vim_plug() {
