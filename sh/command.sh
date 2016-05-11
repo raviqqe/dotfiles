@@ -56,6 +56,8 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
 alias gb="git branch"
+alias gm="git merge"
+alias gsmu="git submodule update --init --recursive"
 
 ga() {
   if [ $# -eq 0 ]
