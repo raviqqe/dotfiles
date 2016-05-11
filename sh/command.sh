@@ -157,6 +157,11 @@ alias dma="ls -a \"$HOME\""
 alias ds="ghq list --full-path"
 
 
+# less
+
+alias less="less -R"
+
+
 # ninja
 
 if which ninja-build > /dev/null 2>&1
