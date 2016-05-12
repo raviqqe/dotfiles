@@ -159,6 +159,8 @@ let mapleader = "\<space>"
 
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 nnoremap j gj
 nnoremap k gk
