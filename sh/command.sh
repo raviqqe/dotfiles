@@ -126,6 +126,7 @@ el() {
 alias es="el \"$GHQ_ROOT\""
 alias em="el \"$HOME\""
 alias ema="el -a \"$HOME\""
+alias er="vim -R"
 
 e() {
   if [ $# -eq 0 ]
