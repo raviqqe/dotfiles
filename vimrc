@@ -14,6 +14,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'JuliaLang/julia-vim'
 Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
 
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neosnippet.vim'
@@ -137,6 +138,7 @@ set cursorline
 set backspace=indent,eol,start
 set completeopt=menu
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
+autocmd BufRead,BufNewFile *.jl set filetype=julia
 
 set background=dark " background is set to light by solarized eventually
 let term=$TERM
