@@ -165,8 +165,8 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-nnoremap j gj
-nnoremap k gk
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 nnoremap gj j
 nnoremap gk k
 nnoremap <esc><esc> :nohlsearch<cr>
