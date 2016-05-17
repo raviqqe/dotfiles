@@ -172,6 +172,7 @@ nnoremap <esc><esc> :nohlsearch<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap Q :q!<cr>
+nnoremap Y y$
 
 inoremap <c-h> <left>
 inoremap <c-j> <down>
