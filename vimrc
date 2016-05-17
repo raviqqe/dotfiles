@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
@@ -23,7 +24,6 @@ Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neomru.vim'
 
 Plug 'Shougo/unite.vim' | Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/unite.vim' | Plug 'thinca/vim-unite-history'
-Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim' | Plug 'taka84u9/unite-git'
 Plug 'Shougo/unite.vim' | Plug 'ujihisa/unite-colorscheme'
 Plug 'Shougo/unite.vim' | Plug 'tsukkee/unite-help'
@@ -42,7 +42,6 @@ Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'Yggdroot/indentLine'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-"Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -286,6 +285,12 @@ xmap <c-k> <plug>(neosnippet_expand_target)
 "" nerdtree
 
 nnoremap <c-a> :NERDTree<cr>
+
+" close nerttree when it is the last and only buffer
+autocmd bufenter * if (winnr("$") == 1
+                     \ && exists("b:NERDTree")
+                     \ && b:NERDTree.isTabTree())
+                     \ | q | endif
 
 
 "" easymotion
