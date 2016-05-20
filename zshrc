@@ -35,6 +35,26 @@ bindkey "^[[3~" delete-char
 bindkey -a '?' history-incremental-pattern-search-backward
 
 
+# emacs key mapping
+
+bindkey -v '\er' history-incremental-pattern-search-forward
+bindkey -v '^?' backward-delete-char
+bindkey -v '^A' beginning-of-line
+bindkey -v '^B' backward-char
+bindkey -v '^D' delete-char-or-list
+bindkey -v '^E' end-of-line
+bindkey -v '^F' forward-char
+bindkey -v '^G' send-break
+bindkey -v '^H' backward-delete-char
+bindkey -v '^K' kill-line
+bindkey -v '^N' down-line-or-history
+bindkey -v '^P' up-line-or-history
+bindkey -v '^R' history-incremental-pattern-search-backward
+bindkey -v '^U' backward-kill-line
+bindkey -v '^W' backward-kill-word
+bindkey -v '^Y' yank
+
+
 # prompt
 
 git_branch() {
@@ -80,6 +100,7 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+
 # plugins
 
 . "$HOME/.zplug/zplug"
@@ -108,26 +129,6 @@ then
   zplug install
 fi
 zplug load
-
-
-# emacs key mapping
-
-bindkey -v '\er' history-incremental-pattern-search-forward
-bindkey -v '^?' backward-delete-char
-bindkey -v '^A' beginning-of-line
-bindkey -v '^B' backward-char
-bindkey -v '^D' delete-char-or-list
-bindkey -v '^E' end-of-line
-bindkey -v '^F' forward-char
-bindkey -v '^G' send-break
-bindkey -v '^H' backward-delete-char
-bindkey -v '^K' kill-line
-bindkey -v '^N' down-line-or-history
-bindkey -v '^P' up-line-or-history
-bindkey -v '^R' history-incremental-pattern-search-backward
-bindkey -v '^U' backward-kill-line
-bindkey -v '^W' backward-kill-word
-bindkey -v '^Y' yank
 
 
 # fzf
