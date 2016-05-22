@@ -267,7 +267,7 @@ autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd Filetype html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd Filetype xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
+autocmd Filetype python setlocal omnifunc=python3complete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 """ keymaps
