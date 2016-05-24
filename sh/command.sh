@@ -57,6 +57,8 @@ alias gdc="git diff --cached"
 alias gap="git add --patch"
 alias gb="git branch"
 alias gm="git merge"
+alias gsm="git submodule"
+alias gsma="git submodule add"
 alias gsmu="git submodule update --init --recursive"
 
 ga() {
