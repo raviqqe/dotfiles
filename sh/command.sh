@@ -165,6 +165,11 @@ alias ds="ghq list --full-path"
 alias less="less -R"
 
 
+# tail -f
+
+alias f="tail -f"
+
+
 # ninja
 
 if which ninja-build > /dev/null 2>&1
