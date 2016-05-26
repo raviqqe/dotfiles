@@ -60,6 +60,7 @@ alias gm="git merge"
 alias gsm="git submodule"
 alias gsma="git submodule add"
 alias gsmu="git submodule update --init --recursive"
+alias gcp="git cherry-pick"
 
 ga() {
   if [ $# -eq 0 ]
