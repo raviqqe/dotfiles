@@ -12,7 +12,6 @@ main() {
     usage
   fi
 
-  git pull --all &&
   git checkout "$1" &&
   git submodule update --init --recursive
 }
