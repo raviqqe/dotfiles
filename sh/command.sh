@@ -61,6 +61,7 @@ alias gsm="git submodule"
 alias gsma="git submodule add"
 alias gsmu="git submodule update --init --recursive"
 alias gcp="git cherry-pick"
+alias gcb="git chbr"
 
 ga() {
   if [ $# -eq 0 ]
