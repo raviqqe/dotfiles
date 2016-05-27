@@ -1,0 +1,20 @@
+#!/bin/sh
+
+
+usage() {
+  echo "Usage: git chbr <commit>" >&2
+  exit 1
+}
+
+main() {
+  if [ $# -ne 1 ]
+  then
+    usage
+  fi
+
+  git pull --all &&
+  git checkout "$1" &&
+  git submodule update --init --recursive
+}
+
+main "$@"
