@@ -90,10 +90,10 @@ install_freebsd_packages() {
       portmaster portlint \
       zsh neovim tmux lynx ii simpleirc \
       git subversion fossil hub \
-      go rust nasm gmake ninja ruby \
+      go rust nasm gmake ninja \
       qemu rcm \
       bsdtris bsdgames &&
-  $portmaster editors/vim lang/python &&
+  $portmaster editors/vim lang/python lang/ruby22 devel/ruby-gems &&
 
   if [ -n "$desktop_mode" ]
   then
