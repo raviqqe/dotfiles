@@ -104,7 +104,7 @@ install_freebsd_packages() {
         dwm xdm rxvt-unicode surf-browser feh scrot slock \
         firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
         terminus-font terminus-ttf ja-font-ipa ubuntu-font \
-        ja-ibus-mozc &&
+        ja-ibus-mozc poppler-utils &&
     DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h $portmaster dwm &&
     fc-cache -f
   fi &&
