@@ -91,7 +91,7 @@ install_freebsd_packages() {
       zsh neovim tmux lynx ii simpleirc \
       git subversion fossil hub \
       go rust nasm gmake ninja \
-      qemu rcm \
+      qemu rcm py27-letsencrypt \
       bsdtris bsdgames &&
   $portmaster editors/vim lang/python lang/ruby22 devel/ruby-gems &&
 
