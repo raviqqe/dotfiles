@@ -44,6 +44,7 @@ install_linuxbrew_packages() {
   message_installing "linuxbrew packages" &&
 
   brew update &&
+  brew update &&
 
   brew tap thoughtbot/formulae &&
   brew install rcm &&
