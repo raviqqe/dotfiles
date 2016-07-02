@@ -94,7 +94,8 @@ install_freebsd_packages() {
       go rust nasm gmake ninja \
       qemu rcm py27-letsencrypt \
       bsdtris bsdgames &&
-  $portmaster editors/vim lang/python lang/ruby22 devel/ruby-gems &&
+  $portmaster editors/vim lang/python devel/py-pip lang/ruby22 \
+              devel/ruby-gems &&
 
   if [ -n "$desktop_mode" ]
   then
