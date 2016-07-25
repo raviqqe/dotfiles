@@ -27,7 +27,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt appendhistory autocd autopushd extendedglob prompt_subst
+setopt share_history autocd autopushd extendedglob prompt_subst
 unsetopt beep notify nomatch
 
 bindkey -v
