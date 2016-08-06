@@ -331,8 +331,8 @@ let g:unite_ignore_case = 1
 let grep_alternative = 'pt'
 if executable(grep_alternative)
   let g:unite_source_grep_command = grep_alternative
-  let g:unite_source_rec_async_command = grep_alternative
-                                         \ . ' --nocolor --nogroup -g .'
+  let g:unite_source_rec_async_command
+      \ = [grep_alternative, "--nocolor", "--nogroup", "-g", "."]
   let g:unite_source_grep_default_opts = '--nocolor --nogroup'
   let g:unite_source_grep_recursive_opt = ''
   let g:unite_source_grep_encoding = 'utf-8'

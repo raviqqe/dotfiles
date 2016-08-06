@@ -46,6 +46,7 @@ ta() {
 
 # git
 
+alias gcl="git clone --recursive"
 alias gco="git checkout"
 alias gs="git status"
 alias gpl="git pull"

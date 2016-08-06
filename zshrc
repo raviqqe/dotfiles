@@ -23,11 +23,11 @@ autoload -Uz select-bracketed select-quoted
 zle -N select-bracketed
 zle -N select-quoted
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE=~/.zhistory
+HISTSIZE=$((2 ** 16))
+SAVEHIST=$((2 ** 17))
 
-setopt appendhistory autocd autopushd extendedglob prompt_subst
+setopt share_history autocd autopushd extendedglob prompt_subst
 unsetopt beep notify nomatch
 
 bindkey -v
