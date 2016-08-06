@@ -19,6 +19,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'JuliaLang/julia-vim'
 Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
 
+Plug 'phildawes/racer'
+Plug 'rust-lang-nursery/rustfmt'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neosnippet.vim'
                             \ | Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neomru.vim'
@@ -114,7 +119,7 @@ endfunction
 
 call s:set_soft_tab()
 
-for thefiletype in ['python', 'vim']
+for thefiletype in ['python', 'vim', 'rust']
   exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_soft_tab()'
 endfor
 
