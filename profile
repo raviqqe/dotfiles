@@ -43,10 +43,14 @@ export CMAKE_PREFIX_PATH=$LOCAL
 
 export PATH=$HOME/.cabal/bin:$PATH
 
-## go lang
+## go
 
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
+
+## rust
+
+export PATH=$HOME/.cargo/bin:$PATH
 
 ## git
 
