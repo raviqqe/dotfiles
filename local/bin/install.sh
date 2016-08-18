@@ -118,6 +118,11 @@ install_freebsd_packages() {
   fi
 }
 
+install_rust_packages() {
+  message_installing "rust packages" &&
+  cargo install --force racer
+}
+
 install_go_packages() {
   message_installing "go packages" &&
   go_get="go get -u" &&
@@ -223,9 +228,10 @@ main() {
       fi &&
 
       install_zsh_plugins &&
+      install_tpm &&
+      install_rust_packages &&
       install_go_packages &&
       install_fzf &&
-      install_tpm &&
 
       if [ -n "$desktop_mode" ]
       then
