@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-. $HOME/.zsh/util.zsh
-. $HOME/.zsh/command.zsh
+. ~/.zsh/util.zsh
+. ~/.zsh/command.zsh
 
 
 # options
@@ -103,7 +103,7 @@ zle -N zle-keymap-select
 
 # plugins
 
-. "$HOME/.zplug/zplug"
+. ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
