@@ -173,6 +173,11 @@ install_wallpapers() {
   git_clone_to_dir git://git.raviqqe.com/wallpapers.git "$HOME/.wallpapers"
 }
 
+install_haskell_stack() {
+  message_installing "haskell stack" &&
+  curl -sSL https://get.haskellstack.org/ | sh
+}
+
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -231,6 +236,7 @@ main() {
       install_tpm &&
       install_rust_packages &&
       install_go_packages &&
+      install_haskell_stack &&
       install_fzf &&
 
       if [ -n "$desktop_mode" ]
