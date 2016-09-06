@@ -95,7 +95,7 @@ install_freebsd_packages() {
       qemu rcm \
       bsdtris bsdgames &&
   $portmaster editors/vim lang/python devel/py-pip lang/ruby22 \
-              devel/ruby-gems &&
+              devel/ruby-gems ghc hs-cabal-install &&
 
   if [ -n "$desktop_mode" ]
   then
