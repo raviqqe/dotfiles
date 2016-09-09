@@ -82,13 +82,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export GHQ_ROOT=$HOME/src
 
-## tex
-
-if on_freebsd
-then
-  export TEXMF=/usr/local/share/texmf-dist
-fi
-
 ## LD_LIBRARY_PATH
 
 # Because exporting LD_LIBRARY_PATH causes some unexpectable problems,
