@@ -39,23 +39,6 @@ export CMAKE_INCLUDE_PATH=$C_INCLUDE_PATH
 export CMAKE_LIBRARY_PATH=$LIBRARY_PATH
 export CMAKE_PREFIX_PATH=$LOCAL
 
-## haskell
-
-export PATH=$HOME/.cabal/bin:$PATH
-
-## go
-
-export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
-
-## rust
-
-export PATH=$HOME/.cargo/bin:$PATH
-
-## git
-
-unset SSH_ASKPASS
-
 ## linuxbrew
 
 if on_linux
@@ -73,6 +56,23 @@ then
     export HOMEBREW_MAKE_JOBS=2
   fi
 fi
+
+## haskell
+
+export PATH=$HOME/.cabal/bin:$PATH
+
+## go
+
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
+
+## rust
+
+export PATH=$HOME/.cargo/bin:$PATH
+
+## git
+
+unset SSH_ASKPASS
 
 ## xdg
 
