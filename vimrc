@@ -315,6 +315,7 @@ let g:AutoPairsMapCR = 0
 "" syntastic
 
 let g:syntastic_python_python_exec = "/usr/bin/env python3"
+let g:syntastic_mode_map = { 'mode' : 'active', 'passive_filetypes' : ['java'] }
 
 
 "" unite
