@@ -120,7 +120,11 @@ install_freebsd_packages() {
 
 install_rust_packages() {
   message_installing "rust packages" &&
-  cargo install --force racer
+
+  for crate in racer clippy
+  do
+    cargo install --force $crate
+  done
 }
 
 install_go_packages() {
