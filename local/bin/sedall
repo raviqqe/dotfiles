@@ -41,8 +41,9 @@ sed_file() {
   local file=$2
 
   local tmp_file=$file.$COMMAND_NAME.tmp
-  sed "$s_command" "$file" > "$tmp_file"
-  mv "$tmp_file" "$file"
+  sed "$s_command" "$file" > "$tmp_file" &&
+  mv "$tmp_file" "$file" ||
+  rm "$tmp_file"
 }
 
 
