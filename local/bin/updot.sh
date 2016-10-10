@@ -52,7 +52,6 @@ install_linuxbrew_packages() {
   brew install git tmux lynx links hub irssi rust &&
   brew install gawk && # for zplug
 
-  brew install vim --with-python3 --with-lua --with-luajit --with-ruby &&
   brew install neovim/neovim/neovim
 }
 
