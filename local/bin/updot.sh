@@ -148,7 +148,7 @@ install_neovim_plugins() {
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
 
   message_installing "neovim plugins" &&
-  pip3 install --upgrade neovim &&
+  pip3 install --user --upgrade neovim &&
   nvim +PlugInstall +qall
 }
 
