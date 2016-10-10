@@ -255,14 +255,6 @@ let g:deoplete#delimiter_patterns.vim = ['#']
 let g:deoplete#delimiter_patterns.cpp = ['::']
 let g:deoplete#delimiter_patterns.python = ['.']
 
-""" keywords
-
-if !exists('g:deoplete#keyword_patterns')
-  let g:deoplete#keyword_patterns = {}
-endif
-
-let g:deoplete#keyword_patterns._ = '\h\w*'
-
 """ omni completion
 
 autocmd Filetype *
