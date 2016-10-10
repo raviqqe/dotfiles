@@ -24,9 +24,10 @@ Plug 'rust-lang-nursery/rustfmt'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
-Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neosnippet.vim'
-                            \ | Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neocomplete.vim' | Plug 'Shougo/neomru.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' }
+  \ | Plug 'Shougo/neosnippet.vim'
+  \ | Plug 'Shougo/neosnippet-snippets'
+  \ | Plug 'Shougo/neomru.vim'
 
 Plug 'Shougo/unite.vim' | Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/unite.vim' | Plug 'thinca/vim-unite-history'
@@ -233,34 +234,34 @@ catch /E539: Illegal character/
 endtry
 
 
-"" neocomplete
+"" deoplete
 
 let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_ignore_case = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#enable_fuzzy_completion = 1
-let g:neocomplete#enable_auto_delimiter = 1
-let g:neocomplete#enable_auto_close_preview = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources#syntax#min_keyword_length = 3
+let g:deoplete#enable_fuzzy_completion = 1
+let g:deoplete#enable_auto_delimiter = 1
+let g:deoplete#enable_auto_close_preview = 1
 
 """ delimiters
 
-if !exists('g:neocomplete#delimiter_patterns')
-  let g:neocomplete#delimiter_patterns = {}
+if !exists('g:deoplete#delimiter_patterns')
+  let g:deoplete#delimiter_patterns = {}
 endif
 
-let g:neocomplete#delimiter_patterns.vim = ['#']
-let g:neocomplete#delimiter_patterns.cpp = ['::']
-let g:neocomplete#delimiter_patterns.python = ['.']
+let g:deoplete#delimiter_patterns.vim = ['#']
+let g:deoplete#delimiter_patterns.cpp = ['::']
+let g:deoplete#delimiter_patterns.python = ['.']
 
 """ keywords
 
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
+if !exists('g:deoplete#keyword_patterns')
+  let g:deoplete#keyword_patterns = {}
 endif
 
-let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:deoplete#keyword_patterns._ = '\h\w*'
 
 """ omni completion
 
