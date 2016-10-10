@@ -179,7 +179,14 @@ install_wallpapers() {
 
 install_haskell_stack() {
   message_installing "haskell stack" &&
-  curl -sSL https://get.haskellstack.org/ | sh
+
+  if [ -z "$(which stack)" ]
+  then
+    curl -sSL https://get.haskellstack.org/ | sh &&
+    return
+  fi
+
+  stack upgrade
 }
 
 check_args() {
