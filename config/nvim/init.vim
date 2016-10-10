@@ -50,7 +50,6 @@ Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
 
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'Yggdroot/indentLine'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 
@@ -222,18 +221,6 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 let g:indentLine_char = '>'
 let g:indentLine_color_term = 240
-
-
-"" YouCompleteMe
-
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" Do not display "Pattern not found" during YouCompleteMe completion
-
-try
-  set shortmess+=c
-catch /E539: Illegal character/
-endtry
 
 
 "" deoplete
