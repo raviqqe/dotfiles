@@ -120,7 +120,7 @@ install_rust_packages() {
 
   for crate in racer
   do
-    cargo install --force $crate
+    cargo install $crate | :
   done
 }
 
