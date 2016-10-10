@@ -6,7 +6,7 @@
 # environment variables
 
 export BLOCKSIZE=K
-export EDITOR=nvim
+export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
 export PAGER=less
