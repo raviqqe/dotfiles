@@ -24,7 +24,7 @@ Plug 'rust-lang-nursery/rustfmt'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
-Plug 'Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   \ | Plug 'Shougo/neosnippet.vim'
   \ | Plug 'Shougo/neosnippet-snippets'
   \ | Plug 'Shougo/neomru.vim'
