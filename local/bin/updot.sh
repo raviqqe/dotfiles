@@ -141,7 +141,7 @@ install_vim_plug() {
 install_vim_plugins() {
   install_vim_plug &&
   message_installing "vim plugins" &&
-  yes | vim +PlugInstall +qall
+  vim +PlugInstall +qall
 }
 
 install_neovim_plugins() {
@@ -150,7 +150,7 @@ install_neovim_plugins() {
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
 
   message_installing "neovim plugins" &&
-  yes | nvim +PlugInstall +qall
+  nvim +PlugInstall +qall
 }
 
 install_zplug() {
