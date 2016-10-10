@@ -29,6 +29,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   \ | Plug 'Shougo/neosnippet-snippets'
   \ | Plug 'Shougo/neomru.vim'
   \ | Plug 'zchee/deoplete-jedi'
+  \ | Plug 'sebastianmarkow/deoplete-rust'
 
 Plug 'Shougo/unite.vim' | Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/unite.vim' | Plug 'thinca/vim-unite-history'

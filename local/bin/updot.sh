@@ -118,7 +118,15 @@ install_rust_packages() {
   for crate in racer
   do
     cargo install $crate | :
-  done
+  done &&
+
+  if [ -n "$RUST_SRC_PATH" ]
+  then
+    git_clone_to_dir https://github.com/rust-lang/rust/ \
+                     "$(dirname "$RUST_SRC_PATH")"
+  else
+    fail '$RUST_SRC_PATH is not set.'
+  fi
 }
 
 install_go_packages() {
