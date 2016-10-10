@@ -92,9 +92,10 @@ gc() {
 
 # editor
 
-alias edit="vim"
-alias eh="vim -c \":Unite file_mru\""
-alias vimupdate="vim +PlugInstall +qall"
+alias vim-default=nvim
+alias edit=vim-default
+alias eh="vim-default -c \":Unite file_mru\""
+alias vimupdate="vim-default +PlugInstall +qall"
 
 el() {
   local show_hidden_files=false
@@ -134,7 +135,7 @@ el() {
 alias es="el \"$GHQ_ROOT\""
 alias em="el \"$HOME\""
 alias ema="el -a \"$HOME\""
-alias er="vim -R"
+alias er="vim-default -R"
 
 e() {
   if [ $# -eq 0 ]
