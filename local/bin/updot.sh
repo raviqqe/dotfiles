@@ -144,6 +144,15 @@ install_vim_plugins() {
   yes | vim +PlugInstall +qall
 }
 
+install_neovim_plugins() {
+  message_installing "vim-plug for neovim" &&
+  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &&
+
+  message_installing "neovim plugins" &&
+  yes | nvim +PlugInstall +qall
+}
+
 install_zplug() {
   message_installing "zplug" &&
   git_clone_to_dir https://github.com/zplug/zplug $HOME/.zplug
@@ -261,7 +270,8 @@ main() {
 
     if [ -z "$batch_mode" ]
     then
-      install_vim_plugins 2>> "$log_file"
+      install_vim_plugins 2>> "$log_file" &&
+      install_neovim_plugins 2>> "$log_file"
     fi
   )
 
