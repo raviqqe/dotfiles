@@ -1,6 +1,6 @@
 " plugins
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
