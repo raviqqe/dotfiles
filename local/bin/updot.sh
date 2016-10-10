@@ -118,7 +118,7 @@ install_freebsd_packages() {
 install_rust_packages() {
   message_installing "rust packages" &&
 
-  for crate in racer clippy
+  for crate in racer
   do
     cargo install --force $crate
   done
