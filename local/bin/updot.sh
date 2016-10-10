@@ -86,13 +86,11 @@ install_freebsd_packages() {
   $pkg_install \
       sudo nmap arping \
       portmaster portlint \
-      zsh neovim tmux lynx ii simpleirc \
+      zsh neovim tmux lynx ii simpleirc rcm \
       git subversion fossil hub \
-      go rust nasm gmake ninja \
-      qemu rcm \
-      bsdtris bsdgames &&
-  $portmaster editors/vim lang/python devel/py-pip lang/ruby22 \
-              devel/ruby-gems ghc hs-cabal-install &&
+      go rust nasm gmake ninja ghc hs-cabal-install \
+      qemu bsdtris bsdgames &&
+  $portmaster lang/python devel/py-pip lang/ruby23 devel/ruby-gems &&
 
   if [ -n "$desktop_mode" ]
   then
