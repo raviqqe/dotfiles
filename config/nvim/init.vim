@@ -263,6 +263,12 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
+"" deoplete-rust
+
+let g:deoplete#sources#rust#racer_binary = '/home/raviqqe/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
+
+
 "" neosnippet
 
 let g:neosnippet#snippets_directory = '~/.vim/snippets'
