@@ -81,17 +81,20 @@ install_freebsd_packages() {
   local pkg_install="sudo pkg install -y"
 
   message_installing "freebsd packages" &&
+  sudo pkg upgrade -y &&
   sudo portsnap fetch update &&
 
   message_installing "freebsd base packages" &&
   $pkg_install \
       sudo nmap arping \
       portmaster portlint \
-      zsh neovim tmux lynx ii simpleirc rcm \
+      zsh bash neovim tmux lynx ii simpleirc rcm \
       git subversion fossil hub \
-      go rust nasm gmake ninja ghc hs-cabal-install \
+      go rust cargo ghc hs-cabal-install stack nasm gmake ninja \
+      python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
-  $portmaster lang/python devel/py-pip lang/ruby23 devel/ruby-gems &&
+  # $portmaster some/port # currently not used
+  python3.5 -m ensurepip --user --upgrade
 
   if [ -n "$desktop_mode" ]
   then
@@ -184,6 +187,12 @@ install_wallpapers() {
 
 install_haskell_stack() {
   message_installing "haskell stack" &&
+
+  if on_freebsd
+  then
+    info "Already installed from ports on FreeBSD"
+    return
+  fi
 
   if [ -z "$(which stack)" ]
   then
