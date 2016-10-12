@@ -86,7 +86,7 @@ install_freebsd_packages() {
 
   message_installing "freebsd base packages" &&
   $pkg_install \
-      sudo nmap arping \
+      sudo nmap arping htop \
       portmaster portlint \
       zsh bash neovim tmux lynx ii simpleirc rcm \
       git subversion fossil hub \
