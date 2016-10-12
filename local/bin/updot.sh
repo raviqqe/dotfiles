@@ -81,6 +81,8 @@ install_freebsd_packages() {
   local pkg_install="sudo pkg install -y"
 
   message_installing "freebsd packages" &&
+  sudo portsnap fetch update &&
+
   message_installing "freebsd base packages" &&
   $pkg_install \
       sudo nmap arping \
