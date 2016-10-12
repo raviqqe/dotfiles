@@ -48,8 +48,8 @@ bindkey -v '^G' send-break
 bindkey -v '^H' backward-delete-char
 bindkey -v '^K' kill-line
 bindkey -v '^N' down-line-or-history
-bindkey -v '^P' up-line-or-history
-bindkey -v '^R' history-incremental-pattern-search-backward
+bindkey -v '^P' history-substring-search-up
+bindkey -v '^R' history-substring-search-down
 bindkey -v '^U' backward-kill-line
 bindkey -v '^W' backward-kill-word
 bindkey -v '^Y' yank
