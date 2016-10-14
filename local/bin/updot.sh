@@ -203,6 +203,19 @@ install_haskell_stack() {
   stack upgrade
 }
 
+install_ruby_gem_credential() {
+  message_installing "ruby gem credentials"
+
+  local credential_file=$HOME/.gem/credentials
+
+  if [ ! -r "$credential_file" ]
+  then
+    curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
+         > "$credential_file" &&
+    chmod 600 "$credential_file"
+  fi
+}
+
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -278,6 +291,7 @@ main() {
 
     if [ -z "$batch_mode" ]
     then
+      install_ruby_gem_credential &&
       install_vim_plugins 2>> "$log_file"
     fi
   )
