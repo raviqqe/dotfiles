@@ -74,6 +74,7 @@ set wildmenu
 set wildmode=full
 filetype plugin on
 filetype indent off
+autocmd BufEnter * set mouse=
 
 "" viminfo
 
