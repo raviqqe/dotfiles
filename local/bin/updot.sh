@@ -49,7 +49,7 @@ install_linuxbrew_packages() {
   brew tap thoughtbot/formulae &&
   brew install rcm &&
 
-  brew install git tmux lynx links hub irssi rust &&
+  brew install git hub tig gist tmux lynx links irssi rust &&
   brew install gawk && # for zplug
 
   brew install neovim/neovim/neovim
