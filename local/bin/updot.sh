@@ -89,7 +89,7 @@ install_freebsd_packages() {
       sudo nmap arping htop ca_root_nss \
       portmaster portlint \
       zsh bash neovim tmux lynx ii simpleirc rcm \
-      git subversion fossil hub \
+      git subversion fossil hub tig gist \
       go rust cargo ghc hs-cabal-install stack nasm gmake ninja \
       python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
