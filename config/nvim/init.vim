@@ -100,6 +100,7 @@ augroup END
 set autoindent
 set smartindent
 set shiftround
+set smarttab
 
 function s:set_2_space_tab()
   set tabstop=2
