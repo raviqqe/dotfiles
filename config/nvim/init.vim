@@ -72,8 +72,7 @@ set visualbell
 set tildeop
 set wildmenu
 set wildmode=full
-filetype plugin on
-filetype indent off
+filetype plugin indent on
 autocmd BufEnter * set mouse=
 
 "" viminfo
