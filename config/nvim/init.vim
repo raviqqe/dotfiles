@@ -17,6 +17,7 @@ Plug 'wellle/targets.vim'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'JuliaLang/julia-vim'
+Plug 'lervag/vimtex'
 Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
 
 Plug 'phildawes/racer'
@@ -305,6 +306,11 @@ let g:AutoPairsMapCR = 0
 
 let g:syntastic_python_python_exec = "/usr/bin/env python3"
 let g:syntastic_mode_map = { 'mode' : 'active', 'passive_filetypes' : ['java'] }
+
+
+"" vimtex
+
+let g:vimtex_latexmk_enabled = 0
 
 
 "" unite
