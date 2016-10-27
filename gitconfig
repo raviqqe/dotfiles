@@ -6,7 +6,7 @@ email = raviqqe@gmail.com
 default = simple
 
 [credential]
-helper = cache
+helper = cache --timeout 1800
 
 [diff]
 compactionHeuristic = true
