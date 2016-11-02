@@ -55,7 +55,7 @@ install_linuxbrew_packages() {
   brew tap thoughtbot/formulae &&
   brew install rcm &&
 
-  brew install git tmux lynx links hub irssi rust &&
+  brew install git hub tig gist tmux lynx links irssi rust bmake &&
   brew install gawk && # for zplug
 
   brew install neovim/neovim/neovim
@@ -92,10 +92,10 @@ install_freebsd_packages() {
 
   message_installing "freebsd base packages" &&
   $pkg_install \
-      sudo nmap arping htop \
+      sudo nmap arping htop ca_root_nss \
       portmaster portlint \
       zsh bash neovim tmux lynx ii simpleirc rcm \
-      git subversion fossil hub \
+      git subversion fossil hub tig gist \
       go rust cargo ghc hs-cabal-install stack nasm gmake ninja \
       python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
@@ -209,6 +209,19 @@ install_haskell_stack() {
   stack upgrade
 }
 
+install_ruby_gem_credential() {
+  message_installing "ruby gem credentials"
+
+  local credential_file=$HOME/.gem/credentials
+
+  if [ ! -r "$credential_file" ]
+  then
+    curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
+         > "$credential_file" &&
+    chmod 600 "$credential_file"
+  fi
+}
+
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -284,6 +297,7 @@ main() {
 
     if [ -z "$batch_mode" ]
     then
+      install_ruby_gem_credential &&
       install_vim_plugins 2>> "$log_file"
     fi
   )

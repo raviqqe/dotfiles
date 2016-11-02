@@ -33,19 +33,6 @@ is_valid_file() {
   [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
 }
 
-sed_file() {
-  [ $# -ne 2 ] &&
-  fail "usage: $0 S_COMMAND FILE"
-
-  local s_command=$1
-  local file=$2
-
-  local tmp_file=$file.$COMMAND_NAME.tmp
-  sed "$s_command" "$file" > "$tmp_file" &&
-  mv "$tmp_file" "$file" ||
-  rm "$tmp_file"
-}
-
 
 # main routine
 
@@ -57,7 +44,7 @@ main() {
   do
     if is_valid_file "$file"
     then
-      sed_file "$s_command" "$file"
+      sed -i "$s_command" "$file"
     fi
   done
 }

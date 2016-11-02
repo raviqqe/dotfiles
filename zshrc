@@ -28,7 +28,7 @@ HISTSIZE=$((2 ** 16))
 SAVEHIST=$((2 ** 17))
 
 setopt share_history autocd autopushd extendedglob prompt_subst
-unsetopt beep notify nomatch
+unsetopt beep notify nomatch banghist
 
 bindkey -v
 bindkey "^[[3~" delete-char
