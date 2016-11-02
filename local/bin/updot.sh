@@ -37,7 +37,13 @@ git_clone_to_dir() {
 
 install_linuxbrew() {
   message_installing "linuxbrew" &&
-  git_clone_to_dir $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
+
+  linuxbrew_dir=$HOME/.linuxbrew
+
+  if [ ! -d $linuxbrew_dir ]
+  then
+    git clone $github_address/Linuxbrew/linuxbrew.git $linuxbrew_dir
+  fi
 }
 
 install_linuxbrew_packages() {
