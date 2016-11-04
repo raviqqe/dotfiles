@@ -157,7 +157,9 @@ install_vim_plug() {
 install_vim_plugins() {
   install_vim_plug &&
   message_installing "neovim plugins" &&
+  pip2 install --user --upgrade neovim &&
   pip3 install --user --upgrade neovim &&
+  gem install neovim &&
   nvim +PlugInstall +qall
 }
 
