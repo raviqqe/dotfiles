@@ -216,6 +216,7 @@ install_ruby_gem_credential() {
 
   if [ ! -r "$credential_file" ]
   then
+    mkdir -p $(dirname $credential_file) &&
     curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
          > "$credential_file" &&
     chmod 600 "$credential_file"
@@ -240,7 +241,7 @@ check_old_log_file() {
 # main routine
 
 main() {
-  while getopts bdx option
+  while getopts bdhlx option
   do
     case $option in
     b)
@@ -248,6 +249,12 @@ main() {
       ;;
     d)
       desktop_mode=true
+      ;;
+    h)
+      no_linuxbrew=true
+      ;;
+    l)
+      no_extra_lang=true
       ;;
     x)
       extra_mode=true
@@ -264,7 +271,7 @@ main() {
     success_file=$(basename "$0").first_step_completed.tmp
 
     {
-      if on_linux
+      if on_linux && [ -z $no_linuxbrew ]
       then
         install_linuxbrew &&
         install_linuxbrew_packages
@@ -278,10 +285,14 @@ main() {
 
       install_zsh_plugins &&
       install_tpm &&
-      install_rust_packages &&
       install_go_packages &&
-      install_haskell_stack &&
       install_fzf &&
+
+      if [ -z $no_extra_lang ]
+      then
+        install_rust_packages &&
+        install_haskell_stack
+      fi &&
 
       if [ -n "$desktop_mode" ]
       then
