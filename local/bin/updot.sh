@@ -309,7 +309,7 @@ main() {
     if [ -z "$batch_mode" ]
     then
       install_ruby_gem_credential &&
-      install_vim_plugins 2>> "$log_file"
+      install_vim_plugins
     fi
   )
 
