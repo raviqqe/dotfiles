@@ -55,6 +55,8 @@ install_linuxbrew_packages() {
   brew tap thoughtbot/formulae &&
   brew install rcm &&
 
+  brew install gperf &&
+
   brew install git hub tig gist tmux lynx links irssi rust bmake &&
   brew install gawk && # for zplug
 
