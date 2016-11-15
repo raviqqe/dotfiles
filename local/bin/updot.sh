@@ -59,8 +59,9 @@ install_linuxbrew_packages() {
   brew install gperf &&
 
   brew install libevent --without-doxygen &&
-  brew install zsh git hub tig gist tmux lynx links irssi rust bmake &&
-  brew install gawk && # for zplug
+  brew install zsh git hub tig gist tmux lynx links irssi rust bmake \
+               haskell-stack \
+               gawk && # for zplug
 
   brew install neovim/neovim/neovim
 }
@@ -197,24 +198,6 @@ install_wallpapers() {
   git_clone_to_dir git://git.raviqqe.com/wallpapers.git "$HOME/.wallpapers"
 }
 
-install_haskell_stack() {
-  message_installing "haskell stack" &&
-
-  if on_freebsd
-  then
-    info "Already installed from ports on FreeBSD"
-    return
-  fi
-
-  if [ -z "$(which stack)" ]
-  then
-    curl -sSL https://get.haskellstack.org/ | sh &&
-    return
-  fi
-
-  stack upgrade
-}
-
 install_ruby_gem_credential() {
   message_installing "ruby gem credentials"
 
@@ -296,8 +279,7 @@ main() {
 
       if [ -z $no_extra_lang ]
       then
-        install_rust_packages &&
-        install_haskell_stack
+        install_rust_packages
       fi &&
 
       if [ -n "$desktop_mode" ]
