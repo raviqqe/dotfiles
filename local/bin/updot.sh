@@ -59,7 +59,8 @@ install_linuxbrew_packages() {
   brew install gperf &&
 
   brew install libevent --without-doxygen &&
-  brew install zsh git hub gist tmux lynx links irssi rust bmake \
+  brew install zsh git hub gist tmux lynx links irssi bmake \
+               rust go ruby python python3 \
                gawk && # for zplug
   # brew install tig haskell-stack && # broken formulae
 
