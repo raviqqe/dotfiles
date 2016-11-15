@@ -1,1 +1,1 @@
-exec /usr/bin/env zsh -l
+alias z='exec /bin/zsh -l'
