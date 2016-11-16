@@ -309,6 +309,7 @@ let g:AutoPairsMapCR = 0
 
 let g:syntastic_python_python_exec = "/usr/bin/env python3"
 let g:syntastic_mode_map = { 'mode' : 'active', 'passive_filetypes' : ['java'] }
+let g:syntastic_python_checkers = ['python']
 
 
 "" vimtex
