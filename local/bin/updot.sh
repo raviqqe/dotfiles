@@ -177,7 +177,7 @@ install_gvm() {
   zsh -c '
     . "$HOME/.gvm/scripts/gvm" &&
     tag=go1.7
-    gvm install $tag && gvm use $tag'
+    gvm install $tag --prefer-binary && gvm use $tag'
 }
 
 install_go_packages() {
