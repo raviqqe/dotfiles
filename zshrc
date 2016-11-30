@@ -136,6 +136,9 @@ zplug load
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
 bindkey -a '?' fzf-history-widget
 
+# gvm
+
+[[ -s "/home/raviqqe/.gvm/scripts/gvm" ]] && source "/home/raviqqe/.gvm/scripts/gvm"
 
 # initialization
 
