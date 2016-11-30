@@ -185,6 +185,12 @@ install_rust_packages() {
 install_gvm() {
   message_installing "gvm" &&
 
+  if [ -n "$(uname -a | grep -o arm)" ]
+  then
+    info "gvm doesn't work well on arm..."
+    return
+  fi
+
   if [ ! -d "$HOME/.gvm" ]
   then
     curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
