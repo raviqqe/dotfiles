@@ -52,8 +52,11 @@ install_linuxbrew_packages() {
   brew update &&
   brew update &&
 
-  brew tap thoughtbot/formulae &&
-  brew install rcm &&
+  if [ $(getconf LONG_BIT) = 64 ]
+  then
+    brew tap thoughtbot/formulae &&
+    brew install rcm
+  fi &&
 
   brew tap homebrew/dupes &&
   brew install gperf m4 &&
