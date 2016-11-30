@@ -59,7 +59,7 @@ install_linuxbrew_packages() {
   brew install gperf m4 &&
 
   brew install libevent --without-doxygen &&
-  brew install zsh git hub gist tmux lynx links irssi bmake \
+  brew install zsh git tmux lynx links irssi bmake \
                rust go ruby python python3 \
                gawk && # for zplug
   # brew install tig haskell-stack && # broken formulae
@@ -101,7 +101,7 @@ install_freebsd_packages() {
       sudo nmap arping htop ca_root_nss \
       portmaster portlint \
       zsh bash neovim tmux lynx ii simpleirc rcm \
-      git subversion fossil hub tig gist \
+      git subversion fossil tig \
       go rust cargo ghc hs-cabal-install stack nasm gmake ninja \
       python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
@@ -149,9 +149,15 @@ install_rust_packages() {
 install_go_packages() {
   message_installing "go packages" &&
   go_get="go get -u" &&
+  $go_get github.com/github/hub &&
   $go_get github.com/motemen/ghq &&
   $go_get github.com/peco/peco/cmd/peco &&
   $go_get github.com/monochromegane/the_platinum_searcher/...
+}
+
+install_ruby_gems() {
+  message_installing "ruby gems" &&
+  gem install gist
 }
 
 install_vim_plug() {
@@ -276,6 +282,7 @@ main() {
       install_zsh_plugins &&
       install_tpm &&
       install_go_packages &&
+      install_ruby_gems &&
       install_fzf &&
 
       if [ -z $no_extra_lang ]
