@@ -63,7 +63,7 @@ install_linuxbrew_packages() {
 
   brew install libevent --without-doxygen &&
   brew install zsh git tmux lynx links irssi bmake \
-               go ruby python python3 \
+               ruby python python3 \
                gawk && # for zplug
   # brew install tig haskell-stack && # broken formulae
 
@@ -156,6 +156,14 @@ install_rust_packages() {
                      "$(dirname "$RUST_SRC_PATH")"
   else
     fail '$RUST_SRC_PATH is not set.'
+  fi
+}
+
+install_gvm() {
+  message_installing "gvm" &&
+  if [ ! -d "$HOME/.gvm" ]
+  then
+    curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
   fi
 }
 
@@ -294,6 +302,7 @@ main() {
 
       install_zsh_plugins &&
       install_tpm &&
+      install_gvm &&
       install_go_packages &&
       install_ruby_gems &&
       install_fzf &&
