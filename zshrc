@@ -138,9 +138,11 @@ bindkey -a '?' fzf-history-widget
 
 # gvm
 
-[[ -s "/home/raviqqe/.gvm/scripts/gvm" ]] &&
-. "/home/raviqqe/.gvm/scripts/gvm" &&
-gvm use go1.7 > /dev/null
+[[ -s "/home/raviqqe/.gvm/scripts/gvm" ]] && source "/home/raviqqe/.gvm/scripts/gvm"
+if which gvm > /dev/null
+then
+  gvm use go1.7 > /dev/null
+fi
 
 # initialization
 
