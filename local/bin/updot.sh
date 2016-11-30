@@ -79,7 +79,7 @@ install_linuxbrew_packages() {
 
   brew install neovim/neovim/neovim &&
 
-  if $desktop_mode
+  if [ -n "$desktop_mode" ]
   then
     brew tap homebrew/x11 &&
     brew install feh
