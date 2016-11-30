@@ -56,7 +56,7 @@ install_linuxbrew_packages() {
   brew install rcm &&
 
   brew tap homebrew/dupes &&
-  brew install gperf &&
+  brew install gperf m4 &&
 
   brew install libevent --without-doxygen &&
   brew install zsh git hub gist tmux lynx links irssi bmake \
