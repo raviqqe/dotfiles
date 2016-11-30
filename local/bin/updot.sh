@@ -59,7 +59,7 @@ install_linuxbrew_packages() {
   fi &&
 
   brew tap homebrew/dupes &&
-  brew install gperf m4 &&
+  brew install gperf m4 bison &&
 
   brew install libevent --without-doxygen &&
   brew install zsh git tmux lynx links irssi bmake \
