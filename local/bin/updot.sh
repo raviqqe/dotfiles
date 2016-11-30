@@ -135,7 +135,7 @@ install_freebsd_packages() {
 install_rustup() {
   message_installing "rustup" &&
 
-  script=/tmp/rustup.sh
+  script=/tmp/$$-rustup.sh
 
   curl https://sh.rustup.rs -sSf > $script &&
   sh $script -y &&
