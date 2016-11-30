@@ -47,6 +47,16 @@ install_linuxbrew() {
 }
 
 install_linuxbrew_packages() {
+  while getopts d option
+  do
+    case $option in
+    d)
+      desktop_mode=true
+      ;;
+    esac
+  done
+  shift $(expr $OPTIND - 1)
+
   message_installing "linuxbrew packages" &&
 
   brew update &&
@@ -67,7 +77,13 @@ install_linuxbrew_packages() {
                gawk && # for zplug
   # brew install ghc haskell-stack &&
 
-  brew install neovim/neovim/neovim
+  brew install neovim/neovim/neovim &&
+
+  if $desktop_mode
+  then
+    brew tap homebrew/x11 &&
+    brew install feh
+  fi
 }
 
 install_freebsd_pkg() {
@@ -304,7 +320,7 @@ main() {
       if on_linux && [ -z $no_linuxbrew ]
       then
         install_linuxbrew &&
-        install_linuxbrew_packages
+        install_linuxbrew_packages ${desktop_mode:+-d}
       fi &&
 
       if on_freebsd
