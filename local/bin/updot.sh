@@ -60,7 +60,7 @@ install_linuxbrew_packages() {
 
   brew install libevent --without-doxygen &&
   brew install zsh git tmux lynx links irssi bmake \
-               rust go ruby python python3 \
+               go ruby python python3 \
                gawk && # for zplug
   # brew install tig haskell-stack && # broken formulae
 
@@ -127,6 +127,16 @@ install_freebsd_packages() {
     message_installing "freebsd extra packages" &&
     $pkg_install texlive-full
   fi
+}
+
+install_rustup() {
+  message_installing "rustup" &&
+
+  script=/tmp/rustup.sh
+
+  curl https://sh.rustup.rs -sSf > $script &&
+  sh $script -y &&
+  rm $script
 }
 
 install_rust_packages() {
@@ -287,6 +297,7 @@ main() {
 
       if [ -z $no_extra_lang ]
       then
+        install_rustup &&
         install_rust_packages
       fi &&
 
