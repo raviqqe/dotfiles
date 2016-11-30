@@ -135,11 +135,18 @@ install_freebsd_packages() {
 install_rustup() {
   message_installing "rustup" &&
 
-  script=/tmp/$$-rustup.sh
+  if ! which rustup
+  then
+    script=/tmp/$$-rustup.sh
+    curl https://sh.rustup.rs -sSf > $script &&
+    sh $script -y &&
+    rm $script
+  fi &&
 
-  curl https://sh.rustup.rs -sSf > $script &&
-  sh $script -y &&
-  rm $script
+  rustup self update &&
+  rustup update &&
+  rustup install nightly &&
+  rustup default nightly
 }
 
 install_rust_packages() {
