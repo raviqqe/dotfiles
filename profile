@@ -69,7 +69,7 @@ export PATH=$GOPATH/bin:$PATH
 
 ## rust
 
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.cache/racer/rust/src
 
 ## git
