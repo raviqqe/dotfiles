@@ -161,10 +161,16 @@ install_rust_packages() {
 
 install_gvm() {
   message_installing "gvm" &&
+
   if [ ! -d "$HOME/.gvm" ]
   then
     curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
-  fi
+  fi &&
+
+  zsh -c '
+    . "$HOME/.gvm/scripts/gvm" &&
+    tag=go1.7
+    gvm install $tag && gvm use $tag'
 }
 
 install_go_packages() {
