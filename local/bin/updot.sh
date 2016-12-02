@@ -270,7 +270,8 @@ install_tpm() {
 
 install_wallpapers() {
   message_installing "wallpapers" &&
-  git_clone_to_dir git://git.raviqqe.com/wallpapers.git "$HOME/.wallpapers"
+  git_clone_to_dir https://git.raviqqe.com/funny/wallpapers.git \
+                   "$HOME/.wallpapers"
 }
 
 install_ruby_gem_credential() {
