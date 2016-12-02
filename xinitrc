@@ -16,31 +16,28 @@ xset s blank
 xset s 180
 xautolock -time 5 -locker slock &
 
-if on_freebsd
-then
-  while :
-  do
-    identity="$(whoami)@$(hostname -s)"
-    cpu_load=" | $(uptime | grep -o 'load.*')"
-    date=" | $(TZ=Asia/Tokyo date | sed 's/  */ /g')"
+while :
+do
+  identity="$(whoami)@$(hostname -s)"
+  cpu_load=" | $(uptime | grep -o 'load.*')"
+  date=" | $(TZ=Asia/Tokyo date | sed 's/  */ /g')"
 
-    if acpiconf -i 0 > /dev/null 2>&1
+  if acpiconf -i 0 > /dev/null 2>&1
+  then
+    capacity=$(acpiconf -i 0 | grep 'Remaining capacity:' |
+                grep -o '[^[:blank:]]*$')
+
+    if [ -z $(acpiconf -i 0 | grep 'State:' | grep -o discharging) ]
     then
-      capacity=$(acpiconf -i 0 | grep 'Remaining capacity:' |
-                 grep -o '[^[:blank:]]*$')
-
-      if [ -z $(acpiconf -i 0 | grep 'State:' | grep -o discharging) ]
-      then
-        charging=", charging"
-      fi
-
-      battery_state=" | battery: $capacity$charging"
+      charging=", charging"
     fi
 
-    xsetroot -name "$identity$cpu_load$battery_state$date"
-    sleep 0.3
-  done &
-fi
+    battery_state=" | battery: $capacity$charging"
+  fi
+
+  xsetroot -name "$identity$cpu_load$battery_state$date"
+  sleep 0.3
+done &
 
 while :
 do
