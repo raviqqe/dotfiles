@@ -251,6 +251,18 @@ install_fzf() {
   yes | "$fzf_dir/install" --no-update-rc
 }
 
+install_dwm() {
+  message_installing "dwm" &&
+
+  ghq get raviqqe/dwm &&
+  (
+    cd $HOME/src/github.com/raviqqe/dwm &&
+    git checkout freebsd-theme &&
+    make &&
+    cp dwm $HOME/.local/bin
+  )
+}
+
 install_tpm() {
   message_installing "tpm" &&
   git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
@@ -350,6 +362,7 @@ main() {
 
       if [ -n "$desktop_mode" ]
       then
+        install_dwm &&
         install_wallpapers
       fi &&
 
