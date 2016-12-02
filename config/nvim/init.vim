@@ -4,7 +4,6 @@ call plug#begin()
 
 Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -48,6 +47,10 @@ Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-function' " only for vim
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-comment'
 Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
+
+if !has('nvim')
+  Plug 'tpope/vim-sensible'
+endif
 
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'Yggdroot/indentLine'
@@ -306,6 +309,7 @@ let g:AutoPairsMapCR = 0
 
 let g:syntastic_python_python_exec = "/usr/bin/env python3"
 let g:syntastic_mode_map = { 'mode' : 'active', 'passive_filetypes' : ['java'] }
+let g:syntastic_python_checkers = ['python']
 
 
 "" vimtex

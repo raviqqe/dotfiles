@@ -48,6 +48,7 @@ then
   export MANPATH=$linuxbrew_dir/share/man:$MANPATH
   export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
   export HOMEBREW_BUILD_FROM_SOURCE=1
+  export HOMEBREW_NO_EMOJI=1
 
   if type nproc > /dev/null 2>&1
   then
@@ -68,7 +69,7 @@ export PATH=$GOPATH/bin:$PATH
 
 ## rust
 
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.cache/racer/rust/src
 
 ## git

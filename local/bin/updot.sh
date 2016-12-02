@@ -37,22 +37,53 @@ git_clone_to_dir() {
 
 install_linuxbrew() {
   message_installing "linuxbrew" &&
-  git_clone_to_dir $github_address/Linuxbrew/linuxbrew.git $HOME/.linuxbrew
+
+  linuxbrew_dir=$HOME/.linuxbrew
+
+  if [ ! -d $linuxbrew_dir ]
+  then
+    git clone $github_address/Linuxbrew/linuxbrew.git $linuxbrew_dir
+  fi
 }
 
 install_linuxbrew_packages() {
+  while getopts d option
+  do
+    case $option in
+    d)
+      desktop_mode=true
+      ;;
+    esac
+  done
+  shift $(expr $OPTIND - 1)
+
   message_installing "linuxbrew packages" &&
 
   brew update &&
   brew update &&
 
-  brew tap thoughtbot/formulae &&
-  brew install rcm &&
+  if [ $(getconf LONG_BIT) = 64 ]
+  then
+    brew tap thoughtbot/formulae &&
+    brew install rcm
+  fi &&
 
-  brew install git hub tig gist tmux lynx links irssi rust bmake &&
-  brew install gawk && # for zplug
+  brew tap homebrew/dupes &&
+  brew install gperf m4 bison &&
 
-  brew install neovim/neovim/neovim
+  brew install libevent --without-doxygen &&
+  brew install zsh git tmux lynx links irssi bmake htop tig \
+               ruby python python3 \
+               gawk && # for zplug
+  # brew install ghc haskell-stack &&
+
+  brew install neovim/neovim/neovim &&
+
+  if [ -n "$desktop_mode" ]
+  then
+    brew tap homebrew/x11 &&
+    brew install feh
+  fi
 }
 
 install_freebsd_pkg() {
@@ -89,7 +120,7 @@ install_freebsd_packages() {
       sudo nmap arping htop ca_root_nss \
       portmaster portlint \
       zsh bash neovim tmux lynx ii simpleirc rcm \
-      git subversion fossil hub tig gist \
+      git subversion fossil tig \
       go rust cargo ghc hs-cabal-install stack nasm gmake ninja \
       python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
@@ -117,12 +148,29 @@ install_freebsd_packages() {
   fi
 }
 
+install_rustup() {
+  message_installing "rustup" &&
+
+  if ! which rustup
+  then
+    script=/tmp/$$-rustup.sh
+    curl https://sh.rustup.rs -sSf > $script &&
+    sh $script -y &&
+    rm $script
+  fi &&
+
+  rustup self update &&
+  rustup update &&
+  rustup install nightly &&
+  rustup default nightly
+}
+
 install_rust_packages() {
   message_installing "rust packages" &&
 
   for crate in racer
   do
-    cargo install $crate | :
+    rustup run stable cargo install $crate | :
   done &&
 
   if [ -n "$RUST_SRC_PATH" ]
@@ -134,12 +182,38 @@ install_rust_packages() {
   fi
 }
 
+install_gvm() {
+  message_installing "gvm" &&
+
+  if [ -n "$(uname -a | grep -o arm)" ]
+  then
+    info "gvm doesn't work well on arm..."
+    return
+  fi
+
+  if [ ! -d "$HOME/.gvm" ]
+  then
+    curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
+  fi &&
+
+  zsh -c '
+    . "$HOME/.gvm/scripts/gvm" &&
+    tag=go1.7
+    gvm install $tag --prefer-binary && gvm use $tag'
+}
+
 install_go_packages() {
   message_installing "go packages" &&
   go_get="go get -u" &&
+  $go_get github.com/github/hub &&
   $go_get github.com/motemen/ghq &&
   $go_get github.com/peco/peco/cmd/peco &&
   $go_get github.com/monochromegane/the_platinum_searcher/...
+}
+
+install_ruby_gems() {
+  message_installing "ruby gems" &&
+  gem install gist
 }
 
 install_vim_plug() {
@@ -151,7 +225,9 @@ install_vim_plug() {
 install_vim_plugins() {
   install_vim_plug &&
   message_installing "neovim plugins" &&
+  pip2 install --user --upgrade neovim &&
   pip3 install --user --upgrade neovim &&
+  gem install neovim &&
   nvim +PlugInstall +qall
 }
 
@@ -175,6 +251,18 @@ install_fzf() {
   yes | "$fzf_dir/install" --no-update-rc
 }
 
+install_dwm() {
+  message_installing "dwm" &&
+
+  ghq get raviqqe/dwm &&
+  (
+    cd $HOME/src/github.com/raviqqe/dwm &&
+    git checkout freebsd-theme &&
+    make &&
+    cp dwm $HOME/.local/bin
+  )
+}
+
 install_tpm() {
   message_installing "tpm" &&
   git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
@@ -182,25 +270,8 @@ install_tpm() {
 
 install_wallpapers() {
   message_installing "wallpapers" &&
-  git_clone_to_dir git://git.raviqqe.com/wallpapers.git "$HOME/.wallpapers"
-}
-
-install_haskell_stack() {
-  message_installing "haskell stack" &&
-
-  if on_freebsd
-  then
-    info "Already installed from ports on FreeBSD"
-    return
-  fi
-
-  if [ -z "$(which stack)" ]
-  then
-    curl -sSL https://get.haskellstack.org/ | sh &&
-    return
-  fi
-
-  stack upgrade
+  git_clone_to_dir https://git.raviqqe.com/funny/wallpapers.git \
+                   "$HOME/.wallpapers"
 }
 
 install_ruby_gem_credential() {
@@ -210,6 +281,7 @@ install_ruby_gem_credential() {
 
   if [ ! -r "$credential_file" ]
   then
+    mkdir -p $(dirname $credential_file) &&
     curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
          > "$credential_file" &&
     chmod 600 "$credential_file"
@@ -234,7 +306,7 @@ check_old_log_file() {
 # main routine
 
 main() {
-  while getopts bdx option
+  while getopts bdhlx option
   do
     case $option in
     b)
@@ -242,6 +314,12 @@ main() {
       ;;
     d)
       desktop_mode=true
+      ;;
+    h)
+      no_linuxbrew=true
+      ;;
+    l)
+      no_extra_lang=true
       ;;
     x)
       extra_mode=true
@@ -258,10 +336,10 @@ main() {
     success_file=$(basename "$0").first_step_completed.tmp
 
     {
-      if on_linux
+      if on_linux && [ -z $no_linuxbrew ]
       then
         install_linuxbrew &&
-        install_linuxbrew_packages
+        install_linuxbrew_packages ${desktop_mode:+-d}
       fi &&
 
       if on_freebsd
@@ -272,13 +350,20 @@ main() {
 
       install_zsh_plugins &&
       install_tpm &&
-      install_rust_packages &&
+      install_gvm &&
       install_go_packages &&
-      install_haskell_stack &&
+      install_ruby_gems &&
       install_fzf &&
+
+      if [ -z $no_extra_lang ]
+      then
+        install_rustup &&
+        install_rust_packages
+      fi &&
 
       if [ -n "$desktop_mode" ]
       then
+        install_dwm &&
         install_wallpapers
       fi &&
 
@@ -292,7 +377,7 @@ main() {
     if [ -z "$batch_mode" ]
     then
       install_ruby_gem_credential &&
-      install_vim_plugins 2>> "$log_file"
+      install_vim_plugins
     fi
   )
 
