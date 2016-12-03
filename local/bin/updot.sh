@@ -208,7 +208,8 @@ install_go_packages() {
   $go_get github.com/github/hub &&
   $go_get github.com/motemen/ghq &&
   $go_get github.com/peco/peco/cmd/peco &&
-  $go_get github.com/monochromegane/the_platinum_searcher/...
+  $go_get github.com/monochromegane/the_platinum_searcher/... &&
+  $go_get github.com/hashicorp/terraform
 }
 
 install_ruby_gems() {
