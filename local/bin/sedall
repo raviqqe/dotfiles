@@ -1,5 +1,8 @@
 #!/bin/sh
 
+. $HOME/.sh/util.sh
+
+
 # constants
 
 COMMAND_NAME=$(basename $0)
@@ -33,6 +36,15 @@ is_valid_file() {
   [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
 }
 
+in-place-sed() {
+  if on_freebsd
+  then
+    sed -I '' "$@"
+  else
+    sed -i "$@"
+  fi
+}
+
 
 # main routine
 
@@ -44,7 +56,7 @@ main() {
   do
     if is_valid_file "$file"
     then
-      sed -i "$s_command" "$file"
+      in-place-sed "$s_command" "$file"
     fi
   done
 }
