@@ -36,7 +36,7 @@ is_valid_file() {
   [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
 }
 
-in-place-sed() {
+in_place_sed() {
   if on_freebsd
   then
     sed -I '' "$@"
@@ -56,7 +56,7 @@ main() {
   do
     if is_valid_file "$file"
     then
-      in-place-sed "$s_command" "$file"
+      in_place_sed "$s_command" "$file"
     fi
   done
 }
