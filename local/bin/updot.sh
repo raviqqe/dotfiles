@@ -17,7 +17,7 @@ fail() {
   exit 1
 }
 
-message_installing() {
+info_installing() {
   info "$(basename $0): Installing" "$@" "..."
 }
 
@@ -36,7 +36,7 @@ git_clone_to_dir() {
 }
 
 install_linuxbrew() {
-  message_installing "linuxbrew" &&
+  info_installing "linuxbrew" &&
 
   linuxbrew_dir=$HOME/.linuxbrew
 
@@ -57,7 +57,7 @@ install_linuxbrew_packages() {
   done
   shift $(expr $OPTIND - 1)
 
-  message_installing "linuxbrew packages" &&
+  info_installing "linuxbrew packages" &&
 
   brew update &&
   brew update &&
@@ -87,7 +87,7 @@ install_linuxbrew_packages() {
 }
 
 install_freebsd_pkg() {
-  message_installing "freebsd pkg command" &&
+  info_installing "freebsd pkg command" &&
   if ! pkg -N > /dev/null 2>&1
   then
     sudo pkg bootstrap
@@ -111,11 +111,11 @@ install_freebsd_packages() {
   local portmaster="sudo -E portmaster -Gdy --no-confirm"
   local pkg_install="sudo pkg install -y"
 
-  message_installing "freebsd packages" &&
+  info_installing "freebsd packages" &&
   sudo pkg upgrade -y &&
   sudo portsnap fetch update &&
 
-  message_installing "freebsd base packages" &&
+  info_installing "freebsd base packages" &&
   $pkg_install \
       sudo nmap arping htop ca_root_nss \
       portmaster portlint \
@@ -129,7 +129,7 @@ install_freebsd_packages() {
 
   if [ -n "$desktop_mode" ]
   then
-    message_installing "freebsd desktop packages" &&
+    info_installing "freebsd desktop packages" &&
     $pkg_install \
         xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
         xrandr xrefresh fontconfig xautolock \
@@ -143,13 +143,13 @@ install_freebsd_packages() {
 
   if [ -n "$extra_mode" ]
   then
-    message_installing "freebsd extra packages" &&
+    info_installing "freebsd extra packages" &&
     $pkg_install texlive-full
   fi
 }
 
 install_rustup() {
-  message_installing "rustup" &&
+  info_installing "rustup" &&
 
   if ! which rustup
   then
@@ -166,7 +166,7 @@ install_rustup() {
 }
 
 install_rust_packages() {
-  message_installing "rust packages" &&
+  info_installing "rust packages" &&
 
   for crate in racer
   do
@@ -183,7 +183,7 @@ install_rust_packages() {
 }
 
 install_gvm() {
-  message_installing "gvm" &&
+  info_installing "gvm" &&
 
   if [ -n "$(uname -a | grep -o arm)" ]
   then
@@ -203,7 +203,7 @@ install_gvm() {
 }
 
 install_go_packages() {
-  message_installing "go packages" &&
+  info_installing "go packages" &&
   go_get="go get -u" &&
   $go_get github.com/github/hub &&
   $go_get github.com/motemen/ghq &&
@@ -213,12 +213,12 @@ install_go_packages() {
 }
 
 install_ruby_gems() {
-  message_installing "ruby gems" &&
+  info_installing "ruby gems" &&
   gem install gist
 }
 
 install_ruby_gem_credential() {
-  message_installing "ruby gem credentials"
+  info_installing "ruby gem credentials"
 
   local credential_file=$HOME/.gem/credentials
 
@@ -232,14 +232,14 @@ install_ruby_gem_credential() {
 }
 
 install_vim_plug() {
-  message_installing "vim-plug" &&
+  info_installing "vim-plug" &&
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_vim_plugins() {
   install_vim_plug &&
-  message_installing "neovim plugins" &&
+  info_installing "neovim plugins" &&
   pip2 install --user --upgrade neovim &&
   pip3 install --user --upgrade neovim &&
   gem install neovim &&
@@ -247,18 +247,18 @@ install_vim_plugins() {
 }
 
 install_zplug() {
-  message_installing "zplug" &&
+  info_installing "zplug" &&
   git_clone_to_dir https://github.com/zplug/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
   install_zplug &&
-  message_installing "zsh plugins" &&
+  info_installing "zsh plugins" &&
   zsh -ic ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
 install_fzf() {
-  message_installing "fzf" &&
+  info_installing "fzf" &&
 
   fzf_dir=$HOME/.fzf
 
@@ -267,7 +267,7 @@ install_fzf() {
 }
 
 install_dwm() {
-  message_installing "dwm" &&
+  info_installing "dwm" &&
 
   ghq get raviqqe/dwm &&
   (
@@ -279,18 +279,18 @@ install_dwm() {
 }
 
 install_tpm() {
-  message_installing "tpm" &&
+  info_installing "tpm" &&
   git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 }
 
 install_wallpapers() {
-  message_installing "wallpapers" &&
+  info_installing "wallpapers" &&
   git_clone_to_dir https://git.raviqqe.com/funny/wallpapers.git \
                    "$HOME/.wallpapers"
 }
 
 install_google_cloud_sdk() {
-  message_installing "google cloud SDK" &&
+  info_installing "google cloud SDK" &&
 
   google_dir=$HOME/.google
   archive=$google_dir/gcloud-$$.tgz
