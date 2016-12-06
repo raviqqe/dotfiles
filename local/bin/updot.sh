@@ -289,6 +289,24 @@ install_ruby_gem_credential() {
   fi
 }
 
+install_google_cloud_sdk() {
+  message_installing "google cloud SDK" &&
+
+  google_dir=$HOME/.google
+  archive=$google_dir/gcloud-$$.tgz
+
+  mkdir -p $google_dir &&
+  curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-136.0.0-linux-x86_64.tar.gz > $archive &&
+  (
+    cd $google_dir &&
+    tar xf $archive &&
+    ./google-cloud-sdk/install.sh \
+        --command-completion false \
+        --path-update false \
+        --quiet
+  )
+}
+
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -366,6 +384,11 @@ main() {
       then
         install_dwm &&
         install_wallpapers
+      fi &&
+
+      if on_linux
+      then
+        install_google_cloud_sdk
       fi &&
 
       : > "$success_file"
