@@ -144,6 +144,16 @@ then
   gvm use go1.7 > /dev/null
 fi
 
+# google cloud sdk
+
+if [ -f /home/raviqqe/.google/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/raviqqe/.google/google-cloud-sdk/path.zsh.inc'
+fi
+
+if [ -f /home/raviqqe/.google/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/raviqqe/.google/google-cloud-sdk/completion.zsh.inc'
+fi
+
 # initialization
 
 dotfiles_dir=~/.dotfiles
