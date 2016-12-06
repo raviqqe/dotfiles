@@ -217,6 +217,20 @@ install_ruby_gems() {
   gem install gist
 }
 
+install_ruby_gem_credential() {
+  message_installing "ruby gem credentials"
+
+  local credential_file=$HOME/.gem/credentials
+
+  if [ ! -r "$credential_file" ]
+  then
+    mkdir -p $(dirname $credential_file) &&
+    curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
+         > "$credential_file" &&
+    chmod 600 "$credential_file"
+  fi
+}
+
 install_vim_plug() {
   message_installing "vim-plug" &&
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -273,20 +287,6 @@ install_wallpapers() {
   message_installing "wallpapers" &&
   git_clone_to_dir https://git.raviqqe.com/funny/wallpapers.git \
                    "$HOME/.wallpapers"
-}
-
-install_ruby_gem_credential() {
-  message_installing "ruby gem credentials"
-
-  local credential_file=$HOME/.gem/credentials
-
-  if [ ! -r "$credential_file" ]
-  then
-    mkdir -p $(dirname $credential_file) &&
-    curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
-         > "$credential_file" &&
-    chmod 600 "$credential_file"
-  fi
 }
 
 install_google_cloud_sdk() {
