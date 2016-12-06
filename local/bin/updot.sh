@@ -386,7 +386,7 @@ main() {
         install_wallpapers
       fi &&
 
-      if on_linux
+      if on_linux && [ "$(uname -m)" = x86_64 ]
       then
         install_google_cloud_sdk
       fi &&
