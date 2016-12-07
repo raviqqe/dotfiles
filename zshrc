@@ -154,6 +154,13 @@ if [ -f /home/raviqqe/.google/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/raviqqe/.google/google-cloud-sdk/completion.zsh.inc'
 fi
 
+# ssh-agent
+
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+  eval `ssh-agent` && ssh-add
+fi > /dev/null 2>&1
+
 # initialization
 
 dotfiles_dir=~/.dotfiles

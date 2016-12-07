@@ -84,10 +84,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export GHQ_ROOT=$HOME/src
 
-## ssh-agent
-
-SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
-
 ## LD_LIBRARY_PATH
 
 # Because exporting LD_LIBRARY_PATH causes some unexpectable problems,
