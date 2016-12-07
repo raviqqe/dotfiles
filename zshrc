@@ -156,9 +156,15 @@ fi
 
 # ssh-agent
 
+linked_socket="$HOME/.ssh/agent.sock"
+
 if [ -z "$SSH_AUTH_SOCK" ]
 then
   eval `ssh-agent` && ssh-add
+elif [ "$SSH_AUTH_SOCK" != "$linked_socket" ]
+then
+  ln -sf "$SSH_AUTH_SOCK" "$linked_socket"
+  SSH_AUTH_SOCK=$linked_socket
 fi > /dev/null 2>&1
 
 # initialization
