@@ -18,6 +18,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
 Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
+Plug 'hashivim/vim-hashicorp-tools'
 
 Plug 'phildawes/racer'
 Plug 'rust-lang-nursery/rustfmt'
