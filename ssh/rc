@@ -1,0 +1,4 @@
+if [ -n "$SSH_AUTH_SOCK" ]
+then
+  ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/agent.sock"
+fi
