@@ -137,7 +137,7 @@ install_freebsd_packages() {
         dwm xdm rxvt-unicode surf-browser feh scrot slock \
         firefox thunderbird pcmanfm inkscape gimp libreoffice mupdf \
         terminus-font terminus-ttf ja-font-ipa ubuntu-font \
-        ja-ibus-mozc poppler-utils &&
+        ja-ibus-mozc poppler-utils libX11 libXft freetype2 &&
     DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h $portmaster dwm &&
     fc-cache -f
   fi &&
@@ -286,7 +286,13 @@ install_dwm() {
   ghq get raviqqe/dwm &&
   (
     cd $HOME/src/github.com/raviqqe/dwm &&
-    git checkout freebsd-theme &&
+
+    if on_freebsd
+    then
+      git checkout freebsd
+    else
+      git checkout freebsd-theme
+    fi &&
     make &&
     cp dwm $HOME/.local/bin
   )
