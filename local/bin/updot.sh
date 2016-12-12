@@ -170,7 +170,7 @@ install_rust_packages() {
 
   for crate in racer
   do
-    rustup run stable cargo install $crate | :
+    rustup run stable cargo install --force $crate | :
   done &&
 
   if [ -n "$RUST_SRC_PATH" ]
