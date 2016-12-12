@@ -128,7 +128,7 @@ if ! zplug check --verbose
 then
   zplug install
 fi
-zplug load
+zplug load > /dev/null
 
 
 # fzf
