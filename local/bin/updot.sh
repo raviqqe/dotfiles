@@ -108,7 +108,7 @@ install_freebsd_packages() {
   done
   shift $(expr $OPTIND - 1)
 
-  local portmaster="sudo -E portmaster -Gdy --no-confirm"
+  local portmaster="sudo portmaster -Gdy --no-confirm"
   local pkg_install="sudo pkg install -y"
 
   info_installing "freebsd packages" &&
@@ -119,13 +119,14 @@ install_freebsd_packages() {
   $pkg_install \
       sudo nmap arping htop ca_root_nss \
       portmaster portlint \
-      zsh bash neovim tmux lynx ii simpleirc rcm \
+      zsh bash tmux lynx ii simpleirc rcm \
       git subversion fossil tig \
       go ghc hs-cabal-install stack nasm gmake ninja \
       python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
-  # $portmaster some/port # currently not used
-  python3.5 -m ensurepip --user --upgrade
+  (cd /usr/ports/editors/neovim && sudo make reinstall) &&
+  # $portmaster neovim &&
+  python3.5 -m ensurepip --user --upgrade &&
 
   if [ -n "$desktop_mode" ]
   then
