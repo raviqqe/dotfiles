@@ -34,6 +34,10 @@ bindkey -v
 bindkey "^[[3~" delete-char
 bindkey -a '?' history-incremental-pattern-search-backward
 
+function chpwd {
+  ls
+}
+
 
 # emacs key mapping
 
