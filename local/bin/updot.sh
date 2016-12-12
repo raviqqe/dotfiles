@@ -139,7 +139,6 @@ install_freebsd_packages() {
         firefox thunderbird pcmanfm inkscape gimp libreoffice mupdf \
         terminus-font terminus-ttf ja-font-ipa ubuntu-font \
         ja-ibus-mozc poppler-utils libX11 libXft freetype2 &&
-    DWM_CONF=$HOME/.dotfiles/local/etc/dwm/config.h $portmaster dwm &&
     fc-cache -f
   fi &&
 
