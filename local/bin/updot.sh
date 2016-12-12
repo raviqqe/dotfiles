@@ -136,7 +136,7 @@ install_freebsd_packages() {
         xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
         xrandr xrefresh fontconfig xautolock nvidia-driver \
         dwm xdm rxvt-unicode surf-browser feh scrot slock \
-        firefox thunderbird pcmanfm inkscape gimp libreoffice mupdf \
+        firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
         terminus-font terminus-ttf ja-font-ipa ubuntu-font \
         ja-ibus-mozc poppler-utils libX11 libXft freetype2 &&
     fc-cache -f
