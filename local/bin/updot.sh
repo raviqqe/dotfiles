@@ -134,7 +134,7 @@ install_freebsd_packages() {
     info_installing "freebsd desktop packages" &&
     $pkg_install \
         xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
-        xrandr xrefresh fontconfig xautolock \
+        xrandr xrefresh fontconfig xautolock nvidia-driver \
         dwm xdm rxvt-unicode surf-browser feh scrot slock \
         firefox thunderbird pcmanfm inkscape gimp libreoffice mupdf \
         terminus-font terminus-ttf ja-font-ipa ubuntu-font \
