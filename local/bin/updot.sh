@@ -121,7 +121,7 @@ install_freebsd_packages() {
       portmaster portlint \
       zsh bash neovim tmux lynx ii simpleirc rcm \
       git subversion fossil tig \
-      go rust cargo ghc hs-cabal-install stack nasm gmake ninja \
+      go ghc hs-cabal-install stack nasm gmake ninja \
       python35 ruby devel/ruby-gems \
       qemu bsdtris bsdgames &&
   # $portmaster some/port # currently not used
@@ -240,7 +240,16 @@ install_vim_plug() {
 install_vim_plugins() {
   install_vim_plug &&
   info_installing "neovim plugins" &&
-  pip2 install --user --upgrade neovim &&
+
+  pip2=pip
+
+  if which -s pip2
+  then
+    pip2=pip2
+  fi &&
+
+  $pip2 install --user --upgrade neovim &&
+
   pip3 install --user --upgrade neovim &&
   gem install neovim &&
   nvim +PlugInstall +qall
@@ -358,7 +367,8 @@ main() {
       if on_linux && [ -z $no_linuxbrew ]
       then
         install_linuxbrew &&
-        install_linuxbrew_packages ${desktop_mode:+-d}
+        install_linuxbrew_packages ${desktop_mode:+-d} &&
+        install_gvm
       fi &&
 
       if on_freebsd
@@ -369,7 +379,6 @@ main() {
 
       install_zsh_plugins &&
       install_tpm &&
-      install_gvm &&
       install_go_packages &&
       install_ruby_gems &&
       install_fzf &&
