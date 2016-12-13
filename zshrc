@@ -143,7 +143,7 @@ bindkey -a '?' fzf-history-widget
 # gvm
 
 [[ -s "/home/raviqqe/.gvm/scripts/gvm" ]] && source "/home/raviqqe/.gvm/scripts/gvm"
-if which gvm > /dev/null
+if which gvm > /dev/null 2>&1
 then
   gvm use go1.7 > /dev/null
 fi
