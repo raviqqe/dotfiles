@@ -244,7 +244,7 @@ install_vim_plugins() {
 
   pip2=pip
 
-  if which -s pip2
+  if which pip2 > /dev/null 2>&1
   then
     pip2=pip2
   fi &&
