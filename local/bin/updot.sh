@@ -252,12 +252,8 @@ install_vim_plugins() {
   $pip2 install --user --upgrade neovim &&
 
   pip3 install --user --upgrade neovim &&
-  gem install neovim &&
-
-  if ! on_freebsd
-  then
-    nvim +PlugInstall +qall
-  fi
+  gem install neovim
+  #nvim +PlugInstall +qall
 }
 
 install_zplug() {
