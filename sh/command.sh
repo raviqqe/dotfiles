@@ -177,6 +177,11 @@ alias less="less -R"
 alias f="tail -f"
 
 
+# ack clone
+
+alias s=rg
+
+
 # ninja
 
 if which ninja-build > /dev/null 2>&1
