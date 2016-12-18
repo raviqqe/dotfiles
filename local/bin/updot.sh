@@ -169,10 +169,10 @@ install_rustup() {
 install_rust_packages() {
   info_installing "rust packages" &&
 
-  for crate in racer ripgrep
-  do
-    rustup run stable cargo install --force $crate | :
-  done &&
+  cargo='rustup run stable cargo'
+
+  $cargo install --force cargo-update
+  $cargo install-update racer ripgrep
 
   if [ -n "$RUST_SRC_PATH" ]
   then
