@@ -307,7 +307,7 @@ nnoremap <leader>r :Ag<cr>
 
 " Don't ruin the last register pasting its content in visual mode
 
-function RestoreRegister()
+function! RestoreRegister()
   let @" = s:restore_reg
   return ''
 endfunction
