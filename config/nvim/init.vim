@@ -18,8 +18,6 @@ Plug 'tpope/vim-endwise'
 Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/vimproc.vim',
-  \ { 'do': 'if which gmake > /dev/null 2>&1; then gmake; else make; fi' }
 Plug 'wellle/targets.vim'
 
 "" fuzzy finder
