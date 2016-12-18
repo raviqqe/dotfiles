@@ -220,7 +220,8 @@ install_go_packages() {
       github.com/motemen/ghq \
       github.com/motemen/gore \
       github.com/nsf/gocode \
-      github.com/peco/peco/cmd/peco
+      github.com/peco/peco/cmd/peco \
+      github.com/rogpeppe/godef
 }
 
 install_ruby_gems() {
