@@ -205,12 +205,16 @@ install_gvm() {
 
 install_go_packages() {
   info_installing "go packages" &&
-  go_get="go get -u" &&
-  $go_get github.com/github/hub &&
-  $go_get github.com/motemen/ghq &&
-  $go_get github.com/peco/peco/cmd/peco &&
-  $go_get github.com/monochromegane/the_platinum_searcher/... &&
-  $go_get github.com/hashicorp/terraform
+  go get -u \
+      github.com/github/hub \
+      github.com/motemen/ghq \
+      github.com/peco/peco/cmd/peco \
+      github.com/monochromegane/the_platinum_searcher/... \
+      github.com/hashicorp/terraform \
+      github.com/motemen/gore \
+      github.com/nsf/gocode \
+      github.com/k0kubun/pp \
+      golang.org/x/tools/cmd/godoc
 }
 
 install_ruby_gems() {
