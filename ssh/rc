@@ -1,0 +1,8 @@
+. $HOME/.profile
+
+
+
+if which tmux > /dev/null 2>&1
+then
+  tmux ls
+fi
