@@ -1,5 +1,5 @@
 urxvt*loginShell: True
-urxvt*termName: xterm
+urxvt*termName: xterm-256color
 urxvt*foreground: white
 urxvt*background: black
 urxvt*transparent: true

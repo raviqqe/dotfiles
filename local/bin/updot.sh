@@ -169,7 +169,7 @@ install_rustup() {
 install_rust_packages() {
   info_installing "rust packages" &&
 
-  for crate in racer
+  for crate in racer ripgrep
   do
     rustup run stable cargo install --force $crate | :
   done &&
@@ -253,7 +253,7 @@ install_vim_plugins() {
 
   pip3 install --user --upgrade neovim &&
   gem install neovim
-  #nvim +PlugInstall +qall
+  nvim +PlugInstall +qall
 }
 
 install_zplug() {
@@ -264,7 +264,7 @@ install_zplug() {
 install_zsh_plugins() {
   install_zplug &&
   info_installing "zsh plugins" &&
-  zsh -ic ". $HOME/.zprofile && . $HOME/.zshrc"
+  zsh -c ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
 install_fzf() {
