@@ -8,39 +8,46 @@ Plug 'altercation/vim-colors-solarized'
 
 " misc
 
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'easymotion/vim-easymotion'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'easymotion/vim-easymotion'
-Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/vimproc.vim',
+  \ { 'do': 'if which gmake > /dev/null 2>&1; then gmake; else make; fi' }
 Plug 'wellle/targets.vim'
+
+" fuzzy finder
+
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'christoomey/vim-tmux-navigator'
 
 " language
 
+Plug 'fatih/vim-go'
+Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
-Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
-Plug 'hashivim/vim-hashicorp-tools'
+
+"" rust
 
 Plug 'phildawes/racer'
 Plug 'rust-lang-nursery/rustfmt'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
+" deoplete
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'zchee/deoplete-jedi'
 Plug 'sebastianmarkow/deoplete-rust'
-
-Plug 'Shougo/vimproc.vim',
-  \ { 'do': 'if which gmake; then gmake; else make; fi' }
 
 " operators
 
@@ -51,11 +58,11 @@ Plug 'emonkak/vim-operator-sort'
 " text objects
 
 Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-function' " only for vim
 Plug 'kana/vim-textobj-indent'
-Plug 'thinca/vim-textobj-comment'
+Plug 'kana/vim-textobj-line'
 Plug 'bps/vim-textobj-python'
+Plug 'thinca/vim-textobj-comment'
 
 call plug#end()
 
