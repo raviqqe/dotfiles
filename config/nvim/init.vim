@@ -2,11 +2,11 @@
 
 call plug#begin()
 
-" color
+"" color
 
 Plug 'altercation/vim-colors-solarized'
 
-" misc
+"" misc
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
@@ -22,26 +22,26 @@ Plug 'Shougo/vimproc.vim',
   \ { 'do': 'if which gmake > /dev/null 2>&1; then gmake; else make; fi' }
 Plug 'wellle/targets.vim'
 
-" fuzzy finder
+"" fuzzy finder
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-" language
+"" language
 
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
 
-"" rust
+""" rust
 
 Plug 'phildawes/racer'
 Plug 'rust-lang-nursery/rustfmt'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
-" deoplete
+"" deoplete
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
@@ -49,13 +49,13 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'zchee/deoplete-jedi'
 Plug 'sebastianmarkow/deoplete-rust'
 
-" operators
+"" operators
 
 Plug 'kana/vim-operator-user'
 Plug 'emonkak/vim-operator-comment'
 Plug 'emonkak/vim-operator-sort'
 
-" text objects
+"" text objects
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-function' " only for vim
