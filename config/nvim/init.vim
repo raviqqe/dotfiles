@@ -35,17 +35,17 @@ Plug 'lervag/vimtex'
 """ rust
 
 Plug 'phildawes/racer'
+Plug 'racer-rust/vim-racer'
 Plug 'rust-lang-nursery/rustfmt'
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 "" deoplete
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'zchee/deoplete-jedi'
 Plug 'sebastianmarkow/deoplete-rust'
+Plug 'zchee/deoplete-jedi'
 
 "" operators
 
