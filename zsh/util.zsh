@@ -1,1 +1,0 @@
-. $HOME/.sh/util.sh

@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-. ~/.zsh/util.zsh
-. ~/.zsh/command.zsh
+. ~/.sh/util.sh
+. ~/.sh/command.sh
 
 
 # options
