@@ -142,8 +142,7 @@ autocmd BufRead,BufNewFile *.sh set filetype=zsh
 autocmd BufRead,BufNewFile *.jl set filetype=julia
 
 set background=dark " background is set to light by solarized eventually
-let term=$TERM
-if term =~ '256color'
+if $TERM =~ '256color'
   let g:solarized_termcolors=256
   colorscheme solarized
 else
@@ -202,19 +201,6 @@ command -nargs=* Prefix call s:Prefix(<f-args>)
 
 
 " settings per plugin
-
-"" vim-indent-guides
-
-let g:indent_guides_enable_on_vim_startup = 0
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
-
-
-"" indentLine
-
-let g:indentLine_char = '>'
-let g:indentLine_color_term = 240
-
 
 "" deoplete
 
