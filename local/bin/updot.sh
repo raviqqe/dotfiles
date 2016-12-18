@@ -171,8 +171,12 @@ install_rust_packages() {
 
   cargo='rustup run stable cargo'
 
-  $cargo install --force cargo-update
-  $cargo install-update racer ripgrep
+  if ! which cargo-install-update
+  then
+    $cargo install cargo-update
+  fi &&
+
+  $cargo install-update cargo-update racer ripgrep &&
 
   if [ -n "$RUST_SRC_PATH" ]
   then
@@ -214,7 +218,8 @@ install_go_packages() {
       github.com/motemen/gore \
       github.com/nsf/gocode \
       github.com/k0kubun/pp \
-      golang.org/x/tools/cmd/godoc
+      golang.org/x/tools/cmd/godoc \
+      github.com/constabulary/gb/...
 }
 
 install_ruby_gems() {
