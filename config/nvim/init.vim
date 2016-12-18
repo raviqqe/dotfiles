@@ -86,14 +86,6 @@ set wildmode=full
 filetype plugin indent on
 autocmd BufEnter * set mouse=
 
-"" viminfo
-
-if has('nvim')
-  set viminfo='16,\"128,:32,%,n~/.cache/nvim/nviminfo
-else
-  set viminfo='16,\"128,:32,%,n~/.viminfo
-endif
-
 function! RestoreCursor()
   if line("'\"") <= line("$")
     normal! g`"
