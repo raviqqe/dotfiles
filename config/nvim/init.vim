@@ -200,7 +200,7 @@ command -nargs=* Prefix call s:Prefix(<f-args>)
 
 
 
-" settings per plugin
+" plugin settings
 
 "" deoplete
 
