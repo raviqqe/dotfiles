@@ -15,7 +15,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
+Plug 'raviqqe/vim-non-blank'
+Plug 'raviqqe/vim-pastplace'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'wellle/targets.vim'
@@ -85,18 +86,6 @@ set wildmenu
 set wildmode=full
 filetype plugin indent on
 autocmd BufEnter * set mouse=
-
-function! RestoreCursor()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-
-augroup restoreCursor
-  autocmd!
-  autocmd BufWinEnter * call RestoreCursor()
-augroup END
 
 "" tab setting
 
