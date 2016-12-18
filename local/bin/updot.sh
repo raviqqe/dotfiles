@@ -210,6 +210,7 @@ install_gvm() {
 install_go_packages() {
   info_installing "go packages" &&
   go get -u \
+      golang.org/x/tools/cmd/... \
       github.com/github/hub \
       github.com/motemen/ghq \
       github.com/peco/peco/cmd/peco \
@@ -218,7 +219,6 @@ install_go_packages() {
       github.com/motemen/gore \
       github.com/nsf/gocode \
       github.com/k0kubun/pp \
-      golang.org/x/tools/cmd/godoc \
       github.com/constabulary/gb/...
 }
 
