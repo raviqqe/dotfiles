@@ -211,16 +211,16 @@ install_go_packages() {
   info_installing "go packages" &&
   go get -u \
       golang.org/x/tools/cmd/... \
-      github.com/golang/lint/golint \
+      github.com/constabulary/gb/... \
       github.com/github/hub \
-      github.com/motemen/ghq \
-      github.com/peco/peco/cmd/peco \
-      github.com/monochromegane/the_platinum_searcher/... \
+      github.com/golang/lint/golint \
       github.com/hashicorp/terraform \
+      github.com/k0kubun/pp \
+      github.com/monochromegane/the_platinum_searcher/... \
+      github.com/motemen/ghq \
       github.com/motemen/gore \
       github.com/nsf/gocode \
-      github.com/k0kubun/pp \
-      github.com/constabulary/gb/...
+      github.com/peco/peco/cmd/peco
 }
 
 install_ruby_gems() {
