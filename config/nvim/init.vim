@@ -2,8 +2,12 @@
 
 call plug#begin()
 
-Plug 'flazz/vim-colorschemes'
+" color
+
 Plug 'altercation/vim-colors-solarized'
+
+" misc
+
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -14,7 +18,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+
+" language
+
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
 Plug 'raviqqe/vim-non-blank', { 'branch': 'develop' }
@@ -26,35 +34,28 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  \ | Plug 'Shougo/neosnippet.vim'
-  \ | Plug 'Shougo/neosnippet-snippets'
-  \ | Plug 'Shougo/neomru.vim'
-  \ | Plug 'zchee/deoplete-jedi'
-  \ | Plug 'sebastianmarkow/deoplete-rust'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'zchee/deoplete-jedi'
+Plug 'sebastianmarkow/deoplete-rust'
 
-Plug 'Shougo/unite.vim' | Plug 'Shougo/neoyank.vim'
-Plug 'Shougo/unite.vim' | Plug 'thinca/vim-unite-history'
-Plug 'Shougo/unite.vim' | Plug 'taka84u9/unite-git'
-Plug 'Shougo/unite.vim' | Plug 'ujihisa/unite-colorscheme'
-Plug 'Shougo/unite.vim' | Plug 'tsukkee/unite-help'
 Plug 'Shougo/vimproc.vim',
   \ { 'do': 'if which gmake; then gmake; else make; fi' }
 
-Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-comment'
-Plug 'kana/vim-operator-user' | Plug 'emonkak/vim-operator-sort'
+" operators
 
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-function' " only for vim
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-comment'
-Plug 'kana/vim-textobj-user' | Plug 'bps/vim-textobj-python'
+Plug 'kana/vim-operator-user'
+Plug 'emonkak/vim-operator-comment'
+Plug 'emonkak/vim-operator-sort'
 
-if !has('nvim')
-  Plug 'tpope/vim-sensible'
-endif
+" text objects
 
-"Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'Yggdroot/indentLine'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-function' " only for vim
+Plug 'kana/vim-textobj-indent'
+Plug 'thinca/vim-textobj-comment'
+Plug 'bps/vim-textobj-python'
 
 call plug#end()
 
@@ -318,39 +319,18 @@ let g:syntastic_python_checkers = ['python']
 let g:vimtex_latexmk_enabled = 0
 
 
-"" unite
+"" fzf
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom#source('grep', 'matchers', 'matcher_fuzzy')
-let g:unite_enable_start_insert = 1
-let g:unite_source_history_enable = 1
-let g:unite_matcher_fuzzy_max_input_length = 256
-let g:unite_prompt = '> '
-let g:unite_ignore_case = 1
-let g:unite_split_rule = 'botright'
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>c :History:<cr>
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fg :GFiles<cr>
+nnoremap <leader>fh :History<cr>
+nnoremap <leader>h :Helptags<cr>
+nnoremap <leader>l :Lines<cr>
+nnoremap <leader>m :Maps<cr>
+nnoremap <leader>r :Ag<cr>
 
-let grep_alternative = 'pt'
-if executable(grep_alternative)
-  let g:unite_source_grep_command = grep_alternative
-  let g:unite_source_rec_async_command
-      \ = [grep_alternative, "--nocolor", "--nogroup", "-g", "."]
-  let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-  let g:unite_source_grep_recursive_opt = ''
-  let g:unite_source_grep_encoding = 'utf-8'
-endif
-
-command Mapping Unite output:map|map!|lmap
-nnoremap <leader>a :Unite source<cr>
-nnoremap <leader>b :Unite buffer<cr>
-nnoremap <leader>f :Unite file<cr>
-nnoremap <leader>r :Unite file_rec<cr>
-nnoremap <leader>m :Unite file_rec:~<cr>
-nnoremap <leader>u :Unite file_mru<cr>
-nnoremap <leader>h :Unite help<cr>
-nnoremap <leader>g :execute 'Unite grep:' . getcwd()<cr>
-nnoremap <leader>y :Unite history/yank<cr>
-nnoremap <leader>c :Unite history/command<cr>
 
 
 " Don't ruin the last register pasting its content in visual mode
