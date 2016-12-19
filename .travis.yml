@@ -10,5 +10,5 @@ addons:
 script:
   - git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
   - yes | rcup
-  - updot -b
+  - updot -b || rm updot.log
   - updot -b
