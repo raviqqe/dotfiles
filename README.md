@@ -2,7 +2,9 @@
 
 ## Requirement
 
-- OS: FreeBSD or Linux
+- OS
+  - FreeBSD
+  - Linux
 - [rcm](https://github.com/thoughtbot/rcm)
 
 
