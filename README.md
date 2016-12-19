@@ -1,5 +1,8 @@
 # dotfiles
 
+[![Build Status](https://travis-ci.org/raviqqe/dotfiles.svg?branch=master)](https://travis-ci.org/raviqqe/dotfiles)
+[![License](https://img.shields.io/badge/license-unlicense-lightgray.svg)](https://unlicense.org)
+
 ## Requirement
 
 - OS
