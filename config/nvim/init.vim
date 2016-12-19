@@ -295,13 +295,13 @@ let g:vimtex_latexmk_enabled = 0
 
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>c :History:<cr>
-nnoremap <leader>ff :Files<cr>
-nnoremap <leader>fg :GFiles<cr>
-nnoremap <leader>fh :History<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>g :GFiles<cr>
 nnoremap <leader>h :Helptags<cr>
 nnoremap <leader>l :Lines<cr>
 nnoremap <leader>m :Maps<cr>
 nnoremap <leader>r :Ag<cr>
+nnoremap <leader>u :History<cr>
 
 
 
