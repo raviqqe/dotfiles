@@ -1,0 +1,14 @@
+dist: trusty
+
+addons:
+  apt:
+    sources:
+      - sourceline: ppa:martin-frost/thoughtbot-rcm
+    packages:
+      - rcm
+
+script:
+  - git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
+  - yes | rcup
+  - updot -b
+  - updot -b
