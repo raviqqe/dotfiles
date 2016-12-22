@@ -96,7 +96,7 @@ gc() {
 
 alias edit="vim"
 alias eh="vim -c \":Unite file_mru\""
-alias vimupdate="vim +PlugInstall +qall"
+alias vimupdate="vim +PlugClean! +PlugInstall +qall"
 
 el() {
   local show_hidden_files=false
