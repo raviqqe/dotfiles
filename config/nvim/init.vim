@@ -307,7 +307,7 @@ nnoremap <leader>u :History<cr>
 
 "" autoformat
 
-autocmd BufWrite * :Autoformat
+autocmd BufWrite *.py,*.vim :Autoformat
 let g:formatters_python = ['autopep8']
 
 
