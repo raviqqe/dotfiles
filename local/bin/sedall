@@ -50,7 +50,7 @@ in_place_sed() {
 
 main() {
   check_args "$@"
-  local s_command=$1
+  local s_command="$1"
 
   for file in $(find . -type f)
   do
