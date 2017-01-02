@@ -123,6 +123,10 @@ for thefiletype in ['make', 'neosnippet']
   exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_hard_tab()'
 endfor
 
+for thefiletype in ['go']
+  exec 'autocmd DefaultAG FileType ' . thefiletype . ' set nolist'
+endfor
+
 "" appearance
 
 syntax on
