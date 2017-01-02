@@ -226,15 +226,15 @@ let g:deoplete#delimiter_patterns.python = ['.']
 
 """ omni completion
 
-autocmd Filetype *
+autocmd FileType *
       \ if &omnifunc == "" |
       \   setlocal omnifunc=syntaxcomplete#Complete |
       \ endif
-autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd Filetype html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd Filetype xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd Filetype python setlocal omnifunc=python3complete#Complete
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 """ keymaps
