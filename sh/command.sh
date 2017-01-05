@@ -53,6 +53,8 @@ alias gpl="git pull"
 alias gps="git push"
 alias gppa="git pull --all && git push --all"
 alias gl="git log"
+alias glp="git log -p"
+alias glf="git log -p --name-only"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gdh="git diff HEAD^ HEAD"
@@ -95,7 +97,7 @@ gc() {
 
 alias edit="vim"
 alias eh="vim -c \":Unite file_mru\""
-alias vimupdate="vim +PlugInstall +qall"
+alias vimupdate="vim +PlugClean! +PlugInstall +qall"
 
 el() {
   local show_hidden_files=false

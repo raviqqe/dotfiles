@@ -8,6 +8,7 @@ Plug 'altercation/vim-colors-solarized'
 
 "" misc
 
+Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
@@ -114,12 +115,16 @@ endfunction
 
 call s:set_soft_tab()
 
-for thefiletype in ['python', 'vim', 'rust']
+for thefiletype in ['vim', 'rust']
   exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_soft_tab()'
 endfor
 
 for thefiletype in ['make', 'neosnippet']
   exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_hard_tab()'
+endfor
+
+for thefiletype in ['go']
+  exec 'autocmd DefaultAG FileType ' . thefiletype . ' set nolist'
 endfor
 
 "" appearance
@@ -225,15 +230,15 @@ let g:deoplete#delimiter_patterns.python = ['.']
 
 """ omni completion
 
-autocmd Filetype *
-  \ if &omnifunc == "" |
-  \   setlocal omnifunc=syntaxcomplete#Complete |
-  \ endif
-autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd Filetype html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd Filetype xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd Filetype python setlocal omnifunc=python3complete#Complete
+autocmd FileType *
+      \ if &omnifunc == "" |
+      \   setlocal omnifunc=syntaxcomplete#Complete |
+      \ endif
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 """ keymaps
@@ -262,9 +267,9 @@ nnoremap <c-a> :NERDTree<cr>
 
 " close nerttree when it is the last and only buffer
 autocmd bufenter * if (winnr("$") == 1
-                     \ && exists("b:NERDTree")
-                     \ && b:NERDTree.isTabTree())
-                     \ | q | endif
+      \ && exists("b:NERDTree")
+      \ && b:NERDTree.isTabTree())
+      \ | q | endif
 
 
 "" easymotion
@@ -302,6 +307,12 @@ nnoremap <leader>l :Lines<cr>
 nnoremap <leader>m :Maps<cr>
 nnoremap <leader>r :Ag<cr>
 nnoremap <leader>u :History<cr>
+
+
+"" autoformat
+
+autocmd BufWrite *.py,*.vim :Autoformat
+let g:formatters_python = ['autopep8']
 
 
 

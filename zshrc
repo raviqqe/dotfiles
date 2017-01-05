@@ -93,7 +93,6 @@ visual_mode='%{$fg[yellow]%}V'
 
 PROMPT=$(prompt_with_vimode $insert_mode)
 PROMPT2='%_> '
-RPROMPT=' %W %T'
 
 function zle-line-init zle-keymap-select {
   PROMPT=$(prompt_with_vimode \
