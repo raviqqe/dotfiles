@@ -41,7 +41,7 @@ function chpwd {
 
 # suffix alias
 
-for suffix in txt go c cxx cc h rs
+for suffix in txt go c cxx cc h rs yml json
 do
   alias -s $suffix=$EDITOR
 done
