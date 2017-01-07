@@ -39,6 +39,14 @@ function chpwd {
 }
 
 
+# suffix alias
+
+for suffix in txt go c cxx cc h rs
+do
+  alias -s $suffix=$EDITOR
+done
+
+
 # emacs key mapping
 
 bindkey -v '\er' history-incremental-pattern-search-forward
