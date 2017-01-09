@@ -41,9 +41,14 @@ function chpwd {
 
 # suffix alias
 
-for suffix in txt go c cxx cc h rs yml json
+for suffix in md go c cxx cc h rs yml json
 do
   alias -s $suffix=$EDITOR
+done
+
+for suffix in txt log
+do
+  alias -s $suffix=less
 done
 
 
