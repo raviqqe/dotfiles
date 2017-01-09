@@ -122,7 +122,7 @@ install_freebsd_packages() {
       zsh bash tmux lynx ii simpleirc rcm \
       git subversion fossil tig \
       go ghc hs-cabal-install stack nasm gmake ninja \
-      python35 python ruby devel/ruby-gems \
+      python35 python ruby devel/ruby-gems clojure \
       qemu bsdtris bsdgames &&
   (cd /usr/ports/editors/neovim && sudo make reinstall) &&
   # $portmaster neovim &&
