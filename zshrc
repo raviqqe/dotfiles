@@ -41,7 +41,7 @@ function chpwd {
 
 # suffix alias
 
-for suffix in md go c cxx cc h rs yml json
+for suffix in md go c cxx cc h rs yml json vim
 do
   alias -s $suffix=$EDITOR
 done
