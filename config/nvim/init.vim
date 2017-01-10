@@ -20,6 +20,7 @@ Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/vim-auto-save'
 Plug 'wellle/targets.vim'
 
 "" fuzzy finder
@@ -313,6 +314,12 @@ nnoremap <leader>u :History<cr>
 
 autocmd BufWrite *.py,*.vim :Autoformat
 let g:formatters_python = ['autopep8']
+
+
+"" auto-save
+
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
 
 
 
