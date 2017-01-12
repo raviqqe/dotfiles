@@ -225,6 +225,11 @@ install_go_packages() {
       github.com/rogpeppe/godef
 }
 
+install_python_packages() {
+  info_installing "python packages" &&
+  pip3 install --user --upgrade twine autopep8 shakyo
+}
+
 install_ruby_gems() {
   info_installing "ruby gems" &&
   gem install gist
@@ -399,6 +404,7 @@ main() {
       install_zsh_plugins &&
       install_tpm &&
       install_go_packages &&
+      install_python_packages &&
       install_ruby_gems &&
       install_fzf &&
 
