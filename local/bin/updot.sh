@@ -217,7 +217,6 @@ install_go_packages() {
       github.com/golang/lint/golint \
       github.com/hashicorp/terraform \
       github.com/k0kubun/pp \
-      github.com/monochromegane/the_platinum_searcher/... \
       github.com/motemen/ghq \
       github.com/motemen/gore \
       github.com/nsf/gocode \
