@@ -147,19 +147,13 @@ set completeopt=menu
 autocmd BufRead,BufNewFile *.sh set filetype=zsh
 autocmd BufRead,BufNewFile *.jl set filetype=julia
 
+
+"" solarized
+
 set background=dark " background is set to light by solarized eventually
-if $TERM =~ '256color'
-  let g:solarized_termcolors=256
-  colorscheme solarized
-else
-  colorscheme default
-endif
-
-""" disable bold fonts
-
-if !has('gui_running')
-  set t_md=
-endif
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 "" keymaps
 
