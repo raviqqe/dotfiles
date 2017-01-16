@@ -19,8 +19,8 @@ export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man
 
 ## c language
 
-export CC=clang
-export CXX=clang++
+# export CC=clang
+# export CXX=clang++
 export C_INCLUDE_PATH=$LOCAL/include
 export CPLUS_INCLUDE_PATH=$C_INCLUDE_PATH
 export LIBRARY_PATH=$LOCAL/lib64:$LOCAL/lib
