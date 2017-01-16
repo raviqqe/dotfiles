@@ -36,6 +36,11 @@ do
     battery_state=" | battery: $capacity$charging"
   fi
 
+  if upower --dump | grep percentage > /dev/null 2>&1
+  then
+    battery_state=" | battery: $(upower --dump | grep percentage | head -1 | grep -o '[0-9]*%')"
+  fi
+
   xsetroot -name "$identity$cpu_load$battery_state$date"
   sleep 0.3
 done &
