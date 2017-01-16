@@ -77,7 +77,7 @@ install_linuxbrew_packages() {
                gawk && # for zplug
   # brew install ghc haskell-stack &&
 
-  brew install neovim/neovim/neovim &&
+  brew install neovim/neovim/neovim --without-jemalloc &&
 
   if [ -n "$desktop_mode" ]
   then
