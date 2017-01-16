@@ -30,10 +30,14 @@ Plug 'junegunn/fzf.vim'
 
 "" language
 
-Plug 'fatih/vim-go'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
+
+""" go
+
+Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go'
 
 """ rust
 
