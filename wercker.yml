@@ -1,0 +1,20 @@
+box: ubuntu
+
+build:
+  steps:
+    - script:
+      name: install
+      code: |
+        apt -y update --fix-missing
+        apt -y install software-properties-common
+        apt-add-repository ppa:martin-frost/thoughtbot-rcm
+        apt -y update --fix-missing
+        apt -y install git ruby curl build-essential
+        apt -y install rcm
+        useradd -m tester
+        su -c 'git clone https://github.com/raviqqe/dotfiles ~/.dotfiles' tester
+        su -c 'yes | rcup' tester
+
+    - script:
+      name: build
+      code: su -c 'export PATH=$HOME/.local/bin:$PATH; cd $HOME && updot -b || rm updot.log && updot -b' tester
