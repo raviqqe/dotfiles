@@ -30,6 +30,7 @@ Plug 'junegunn/fzf.vim'
 
 "" language
 
+Plug 'alfredodeza/pytest.vim'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
