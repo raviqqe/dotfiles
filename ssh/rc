@@ -4,5 +4,5 @@
 
 if which tmux > /dev/null 2>&1
 then
-  tmux ls
+  tmux ls 2> /dev/null
 fi
