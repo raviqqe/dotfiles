@@ -72,8 +72,8 @@ install_linuxbrew_packages() {
   brew install gperf m4 bison &&
 
   brew install libevent --without-doxygen &&
-  brew install zsh git tmux lynx links irssi bmake htop tig diff-so-fancy \
-               ruby python python3 node \
+  brew install zsh git tmux lynx links irssi bmake htop tig \
+               ruby python python3 node npm \
                gawk && # for zplug
   # brew install ghc haskell-stack &&
 
@@ -122,7 +122,7 @@ install_freebsd_packages() {
       zsh bash tmux lynx ii simpleirc rcm \
       git subversion fossil tig \
       go ghc hs-cabal-install stack nasm gmake ninja \
-      python35 python ruby devel/ruby-gems clojure \
+      python35 python ruby devel/ruby-gems clojure npm \
       qemu bsdtris bsdgames &&
   (cd /usr/ports/editors/neovim && sudo make reinstall) &&
   # $portmaster neovim &&
@@ -246,6 +246,11 @@ install_ruby_gem_credential() {
          > "$credential_file" &&
     chmod 600 "$credential_file"
   fi
+}
+
+install_npm_packages() {
+  info_installing "npm packages" &&
+  npm install -g https://github.com/so-fancy/diff-so-fancy
 }
 
 install_vim_plug() {
@@ -405,6 +410,7 @@ main() {
       install_go_packages &&
       install_python_packages &&
       install_ruby_gems &&
+      install_npm_packages &&
       install_fzf &&
 
       if [ -z $no_extra_lang ]
