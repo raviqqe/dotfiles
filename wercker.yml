@@ -1,5 +1,7 @@
 box: ubuntu
 
+no-response-timeout: 20
+
 build:
   steps:
     - script:
