@@ -1,8 +1,13 @@
 . $HOME/.profile
 
 
+echo
 
 if which tmux > /dev/null 2>&1
 then
   tmux ls 2> /dev/null
+  echo
 fi
+
+( ls --color || ls -G ) 2> /dev/null
+echo
