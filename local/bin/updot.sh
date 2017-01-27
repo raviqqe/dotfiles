@@ -351,13 +351,6 @@ check_args() {
   fi
 }
 
-check_old_log_file() {
-  if [ -f "$log_file" ]
-  then
-    fail "Log file, \"$log_file\" already exists. Delete it and rerun me."
-  fi
-}
-
 
 # main routine
 
@@ -385,7 +378,6 @@ main() {
   shift $(expr $OPTIND - 1)
 
   check_args "$@"
-  check_old_log_file
 
   (
     . $HOME/.profile &&
