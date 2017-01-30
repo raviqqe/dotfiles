@@ -250,7 +250,7 @@ install_ruby_gem_credential() {
 
 install_npm_packages() {
   info_installing "npm packages" &&
-  npm install -g https://github.com/so-fancy/diff-so-fancy
+  npm install -g git-recall https://github.com/so-fancy/diff-so-fancy
 }
 
 install_vim_plug() {
