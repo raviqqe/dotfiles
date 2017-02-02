@@ -154,13 +154,6 @@ autocmd BufRead,BufNewFile *.sh set filetype=zsh
 autocmd BufRead,BufNewFile *.jl set filetype=julia
 
 
-"" solarized
-
-set background=dark " background is set to light by solarized eventually
-let g:solarized_termcolors=256
-let g:solarized_termtrans = 1
-colorscheme solarized
-
 "" keymaps
 
 let mapleader = "\<space>"
@@ -319,6 +312,24 @@ let g:auto_save_silent = 1
 "" neomake
 
 autocmd BufWritePost * Neomake
+
+let g:neomake_error_sign = {'text': 'EE', 'texthl': 'NeomakeError'}
+let g:neomake_warning_sign = {'text': 'WW', 'texthl': 'NeomakeWarning'}
+
+augroup neomake_signs
+  autocmd!
+  for [name, colour] in [['Error', 'red'], ['Warning', 'yellow']]
+    exec 'autocmd ColorScheme * hi Neomake'.name.' ctermfg='.colour
+  endfor
+augroup END
+
+
+"" solarized
+
+set background=dark " background is set to light by solarized eventually
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 
 
