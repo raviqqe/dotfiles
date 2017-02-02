@@ -142,6 +142,7 @@ set colorcolumn=80
 set showmode
 set showcmd
 set wrap
+set inccommand=nosplit
 set incsearch
 set hlsearch
 set splitbelow
