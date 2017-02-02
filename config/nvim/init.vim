@@ -12,6 +12,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -19,7 +20,6 @@ Plug 'tpope/vim-endwise'
 Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'wellle/targets.vim'
 
@@ -283,13 +283,6 @@ nmap <leader>/ <plug>(easymotion-sn)
 
 let g:AutoPairsMapCh = 0
 let g:AutoPairsMapCR = 0
-
-
-"" syntastic
-
-let g:syntastic_python_python_exec = "/usr/bin/env python3"
-let g:syntastic_mode_map = { 'mode' : 'active', 'passive_filetypes' : ['java'] }
-let g:syntastic_python_checkers = ['python']
 
 
 "" vimtex
