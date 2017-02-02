@@ -316,6 +316,11 @@ let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
 
+"" neomake
+
+autocmd BufWritePost * Neomake
+
+
 
 " Don't ruin the last register pasting its content in visual mode
 
