@@ -280,7 +280,7 @@ let g:AutoPairsMapCR = 0
 
 "" vimtex
 
-let g:vimtex_latexmk_enabled = 0
+let g:vimtex_view_method = 'mupdf'
 
 
 "" fzf
