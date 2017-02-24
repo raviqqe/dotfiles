@@ -121,7 +121,7 @@ install_freebsd_packages() {
       zsh bash tmux lynx ii simpleirc rcm \
       git subversion fossil tig \
       go ghc hs-cabal-install stack nasm gmake ninja \
-      python35 python ruby devel/ruby-gems clojure npm \
+      python36 python ruby devel/ruby-gems clojure npm \
       qemu bsdtris bsdgames &&
   (cd /usr/ports/editors/neovim && sudo make reinstall) &&
   # $portmaster neovim &&
@@ -203,7 +203,7 @@ install_gvm() {
 
   zsh -c '
     . "$HOME/.gvm/scripts/gvm" &&
-    tag=go1.7
+    tag=go1.8
     gvm install $tag --prefer-binary && gvm use $tag'
 }
 
