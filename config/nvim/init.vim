@@ -31,6 +31,7 @@ Plug 'junegunn/fzf.vim'
 "" language
 
 Plug 'alfredodeza/pytest.vim'
+Plug 'ElmCast/elm-vim'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
@@ -281,6 +282,11 @@ let g:AutoPairsMapCR = 0
 "" vimtex
 
 let g:vimtex_view_method = 'mupdf'
+
+
+"" elm-vim
+
+let g:elm_format_autosave = 1
 
 
 "" fzf

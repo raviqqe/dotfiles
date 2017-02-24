@@ -73,9 +73,8 @@ install_linuxbrew_packages() {
 
   brew install libevent --without-doxygen &&
   brew install zsh git tmux lynx links irssi bmake htop tig \
-               ruby python python3 node npm \
+               ruby python python3 node npm ghc haskell-stack elm-format \
                gawk && # for zplug
-  # brew install ghc haskell-stack &&
 
   brew install neovim/neovim/neovim --without-jemalloc &&
 
