@@ -44,6 +44,11 @@ ta() {
 }
 
 
+# homebrew
+
+alias brew="unset LD_LIBRARY_PATH && brew"
+
+
 # git
 
 alias gcl="git clone --recursive"
