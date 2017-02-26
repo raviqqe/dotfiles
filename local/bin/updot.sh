@@ -188,26 +188,6 @@ install_rust_packages() {
   fi
 }
 
-install_gvm() {
-  info_installing "gvm" &&
-
-  if [ -n "$(uname -a | grep -o arm)" ]
-  then
-    info "gvm doesn't work well on arm..."
-    return
-  fi
-
-  if [ ! -d "$HOME/.gvm" ]
-  then
-    curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
-  fi &&
-
-  zsh -c '
-    . "$HOME/.gvm/scripts/gvm" &&
-    tag=go1.8
-    gvm install $tag --prefer-binary && gvm use $tag'
-}
-
 install_go_packages() {
   info_installing "go packages" &&
   go get -u \
@@ -388,7 +368,6 @@ main() {
       then
         install_linuxbrew &&
         install_linuxbrew_packages ${desktop_mode:+-d} &&
-        install_gvm
       fi &&
 
       if on_freebsd
