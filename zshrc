@@ -155,12 +155,10 @@ bindkey -a '?' fzf-history-widget
 # gvm
 
 gvm_script=$HOME/.gvm/scripts/gvm
-[[ -s "$gvm_script" ]] && . "$gvm_script"
 
-if which gvm > /dev/null 2>&1
-then
-  gvm use go1.7 > /dev/null
-fi
+gopath=$GOPATH
+[[ -s "$gvm_script" ]] && . "$gvm_script"
+export GOPATH=$gopath
 
 # google cloud sdk
 
