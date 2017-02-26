@@ -152,6 +152,16 @@ zplug load > /dev/null
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
 bindkey -a '?' fzf-history-widget
 
+# gvm
+
+gvm_script=$HOME/.gvm/scripts/gvm
+[[ -s "$gvm_script" ]] && . "$gvm_script"
+
+if which gvm > /dev/null 2>&1
+then
+  gvm use go1.7 > /dev/null
+fi
+
 # google cloud sdk
 
 if [ -f /home/raviqqe/.google/google-cloud-sdk/path.zsh.inc ]; then
