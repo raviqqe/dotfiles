@@ -200,17 +200,22 @@ install_gvm() {
   if [ ! -d "$HOME/.gvm" ]
   then
     curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
-  fi &&
+  fi
+}
 
-  zsh -c '
-    . "$HOME/.gvm/scripts/gvm" &&
-    tag=go1.8
-    gvm install $tag --prefer-binary && gvm use $tag'
+with_gvm() {
+  tag=go1.8
+
+  zsh -c "
+    . $HOME/.gvm/scripts/gvm &&
+    gvm install $tag --prefer-binary &&
+    gvm use $tag &&
+    $*"
 }
 
 install_go_packages() {
   info_installing "go packages" &&
-  go get -u \
+  with_gvm go get -u \
       golang.org/x/tools/cmd/... \
       github.com/constabulary/gb/... \
       github.com/github/hub \
