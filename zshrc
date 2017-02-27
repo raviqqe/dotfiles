@@ -157,7 +157,7 @@ bindkey -a '?' fzf-history-widget
 gvm_script=$HOME/.gvm/scripts/gvm
 
 gopath=$GOPATH
-[[ -s "$gvm_script" ]] && . "$gvm_script"
+[[ -s "$gvm_script" ]] && . "$gvm_script" && gvm use go1.8 > /dev/null 2>&1
 export GOPATH=$gopath
 
 # google cloud sdk

@@ -204,13 +204,14 @@ install_gvm() {
 }
 
 with_gvm() {
+  gopath=$GOPATH
   tag=go1.8
 
   zsh -c "
     . $HOME/.gvm/scripts/gvm &&
     gvm install $tag --prefer-binary &&
     gvm use $tag &&
-    $*"
+    GOPATH=$gopath $*"
 }
 
 install_go_packages() {
