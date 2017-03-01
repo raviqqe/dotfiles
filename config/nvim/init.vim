@@ -319,20 +319,21 @@ let g:auto_save_silent = 1
 
 autocmd BufWritePost * Neomake
 
-let g:neomake_error_sign = {'text': 'EE', 'texthl': 'NeomakeError'}
-let g:neomake_warning_sign = {'text': 'WW', 'texthl': 'NeomakeWarning'}
-
-augroup neomake_signs
-  autocmd!
-  for [name, colour] in [['Error', 'red'], ['Warning', 'yellow']]
-    exec 'autocmd ColorScheme * hi Neomake'.name.' ctermfg='.colour
-  endfor
-augroup END
+let g:neomake_error_sign = {'text': 'EE'}
+let g:neomake_warning_sign = {'text': 'WW'}
 
 
 "" colorscheme
 
 colorscheme iceberg
+
+for name in ['Error', 'Warning']
+  let link = 'highlight link Neomake'.name
+  let color = ' icebergLL'.name
+  exec link.'Sign'.color
+  exec link.color
+endfor
+
 highlight Normal      ctermbg=none
 highlight NonText     ctermbg=none
 highlight EndOfBuffer ctermbg=none
