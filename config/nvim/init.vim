@@ -4,7 +4,7 @@ call plug#begin()
 
 "" color
 
-Plug 'altercation/vim-colors-solarized'
+Plug 'cocopon/iceberg.vim'
 
 "" misc
 
@@ -330,13 +330,13 @@ augroup neomake_signs
 augroup END
 
 
-"" solarized
+"" colorscheme
 
-set background=dark " background is set to light by solarized eventually
-let g:solarized_termcolors=256
-let g:solarized_termtrans = 1
-colorscheme solarized
-
+colorscheme iceberg
+highlight Normal      ctermbg=none
+highlight NonText     ctermbg=none
+highlight EndOfBuffer ctermbg=none
+highlight VertSplit   cterm=none ctermfg=240 ctermbg=240
 
 
 " Don't ruin the last register pasting its content in visual mode
