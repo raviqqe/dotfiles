@@ -329,9 +329,8 @@ colorscheme iceberg
 
 for name in ['Error', 'Warning']
   let link = 'highlight link Neomake'.name
-  let color = ' icebergLL'.name
-  exec link.'Sign'.color
-  exec link.color
+  exec link.' '.name.'Msg'
+  exec link.'Sign icebergLL'.name
 endfor
 
 highlight Normal      ctermbg=none
