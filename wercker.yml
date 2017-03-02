@@ -7,6 +7,7 @@ build:
     - script:
       name: install
       code: |
+        locale-gen en_US.UTF-8
         apt -y update --fix-missing
         apt -y install software-properties-common
         apt-add-repository ppa:martin-frost/thoughtbot-rcm
