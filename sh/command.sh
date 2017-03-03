@@ -154,6 +154,10 @@ e() {
   edit "$@"
 }
 
+eg() {
+  e $(s "$1" | fzf | awk -F : '{print "+" $2 " " $1}')
+}
+
 
 # ls
 
@@ -186,7 +190,7 @@ alias f="tail -f"
 
 # ack clone
 
-alias s=rg
+alias s='rg --line-number'
 
 
 # ninja
