@@ -317,7 +317,7 @@ let g:auto_save_silent = 1
 
 "" neomake
 
-autocmd BufWritePost * Neomake
+autocmd BufEnter,BufWritePost * Neomake
 
 let g:neomake_error_sign = {'text': 'EE'}
 let g:neomake_warning_sign = {'text': 'WW'}
