@@ -93,7 +93,7 @@ set tildeop
 set wildmenu
 set wildmode=full
 filetype plugin indent on
-autocmd BufEnter * set mouse=
+autocmd BufWinEnter * set mouse=
 
 "" tab setting
 
