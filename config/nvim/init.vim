@@ -20,7 +20,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
-Plug 'scrooloose/nerdtree'
 Plug 'thinca/vim-quickrun'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'wellle/targets.vim'
@@ -79,7 +78,7 @@ call plug#end()
 
 " pure vim
 
-augroup DefaultAG
+augroup Rc
   autocmd!
 augroup END
 
@@ -95,7 +94,7 @@ set tildeop
 set wildmenu
 set wildmode=full
 filetype plugin indent on
-autocmd BufWinEnter * set mouse=
+autocmd Rc BufWinEnter * set mouse=
 
 "" tab setting
 
@@ -125,15 +124,15 @@ endfunction
 call s:set_soft_tab()
 
 for thefiletype in ['vim', 'rust']
-  exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_soft_tab()'
+  exec 'autocmd Rc FileType ' . thefiletype . ' call s:set_soft_tab()'
 endfor
 
 for thefiletype in ['make', 'neosnippet']
-  exec 'autocmd DefaultAG FileType ' . thefiletype . ' call s:set_hard_tab()'
+  exec 'autocmd Rc FileType ' . thefiletype . ' call s:set_hard_tab()'
 endfor
 
 for thefiletype in ['go']
-  exec 'autocmd DefaultAG FileType ' . thefiletype . ' set nolist'
+  exec 'autocmd Rc FileType ' . thefiletype . ' set nolist'
 endfor
 
 "" appearance
@@ -153,8 +152,8 @@ set splitright
 set cursorline
 set backspace=indent,eol,start
 set completeopt=menu
-autocmd BufRead,BufNewFile *.sh set filetype=zsh
-autocmd BufRead,BufNewFile *.jl set filetype=julia
+autocmd Rc BufRead,BufNewFile *.sh set filetype=zsh
+autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
 
 
 "" keymaps
@@ -227,16 +226,16 @@ let g:deoplete#delimiter_patterns.python = ['.']
 
 """ omni completion
 
-autocmd FileType *
+autocmd Rc FileType *
       \ if &omnifunc == "" |
       \   setlocal omnifunc=syntaxcomplete#Complete |
       \ endif
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType python setlocal omnifunc=python3complete#Complete
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd Rc FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd Rc FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd Rc FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd Rc FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd Rc FileType python setlocal omnifunc=python3complete#Complete
+autocmd Rc FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 """ keymaps
 
@@ -256,17 +255,6 @@ let g:neosnippet#snippets_directory = '~/.vim/snippets'
 imap <c-k> <plug>(neosnippet_expand_or_jump)
 smap <c-k> <plug>(neosnippet_expand_or_jump)
 xmap <c-k> <plug>(neosnippet_expand_target)
-
-
-"" nerdtree
-
-nnoremap <c-a> :NERDTree<cr>
-
-" close nerttree when it is the last and only buffer
-autocmd bufenter * if (winnr("$") == 1
-      \ && exists("b:NERDTree")
-      \ && b:NERDTree.isTabTree())
-      \ | q | endif
 
 
 "" easymotion
@@ -312,7 +300,7 @@ nnoremap <leader>u :History<cr>
 
 "" autoformat
 
-autocmd BufWrite *.py,*.vim,*.tex :Autoformat
+autocmd Rc BufWrite *.py,*.vim,*.tex :Autoformat
 let g:formatters_python = ['autopep8']
 
 
@@ -325,7 +313,7 @@ let g:auto_save_silent = 1
 
 "" neomake
 
-autocmd BufEnter,BufWritePost * Neomake
+autocmd Rc BufEnter,BufWritePost * Neomake
 
 let g:neomake_error_sign = {'text': 'EE'}
 let g:neomake_warning_sign = {'text': 'WW'}
