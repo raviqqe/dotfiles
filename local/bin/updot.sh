@@ -228,7 +228,8 @@ install_go_packages() {
       github.com/motemen/gore \
       github.com/nsf/gocode \
       github.com/peco/peco/cmd/peco \
-      github.com/rogpeppe/godef
+      github.com/rogpeppe/godef \
+      honnef.co/go/tools/...
 }
 
 install_python_packages() {
