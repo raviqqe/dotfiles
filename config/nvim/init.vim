@@ -12,6 +12,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -344,18 +345,3 @@ highlight Normal      ctermbg=none
 highlight NonText     ctermbg=none
 highlight EndOfBuffer ctermbg=none
 highlight VertSplit   cterm=none ctermfg=240 ctermbg=240
-
-
-" Don't ruin the last register pasting its content in visual mode
-
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-
-vmap <silent> <expr> p <sid>Repl()
