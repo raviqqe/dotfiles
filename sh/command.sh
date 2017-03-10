@@ -106,7 +106,7 @@ gc() {
 
 alias edit=vim
 alias eh='vim -c :History'
-alias vimupdate='vim +PlugClean! +PlugInstall +qall'
+alias vimupdate='vim +PlugUpgrade +PlugClean! +PlugUpdate +qall'
 
 el() {
   local show_hidden_files=false
