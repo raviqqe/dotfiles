@@ -20,6 +20,7 @@ Plug 'tpope/vim-endwise'
 Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
 Plug 'scrooloose/nerdtree'
+Plug 'thinca/vim-quickrun'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'wellle/targets.vim'
 
@@ -287,6 +288,12 @@ let g:vimtex_view_method = 'mupdf'
 "" elm-vim
 
 let g:elm_format_autosave = 1
+
+
+"" quickrun
+
+let g:quickrun_config = get(g:, 'quickrun_config', {})
+let g:quickrun_config.clojure = {'command' : 'clojure'}
 
 
 "" fzf
