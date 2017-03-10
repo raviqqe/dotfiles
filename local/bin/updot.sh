@@ -170,7 +170,7 @@ install_rust_packages() {
   info_installing "rust packages" &&
 
   cargo='rustup run stable cargo'
-  packages='cargo-update racer ripgrep skim'
+  packages='cargo-update racer ripgrep skim rustfmt'
 
   for package in $packages
   do
@@ -240,7 +240,7 @@ install_python_packages() {
 
 install_ruby_gems() {
   info_installing "ruby gems" &&
-  gem install gist
+  gem install gist rubocop
 }
 
 install_ruby_gem_credential() {
