@@ -84,7 +84,6 @@ augroup Rc
 augroup END
 
 set encoding=utf-8
-set nocompatible
 set ttyfast
 set lazyredraw
 set nobackup
@@ -124,16 +123,16 @@ endfunction
 
 call s:set_soft_tab()
 
-for thefiletype in ['vim', 'rust']
-  exec 'autocmd Rc FileType ' . thefiletype . ' call s:set_soft_tab()'
+for s:filetype in ['vim', 'rust']
+  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_soft_tab()'
 endfor
 
-for thefiletype in ['make', 'neosnippet']
-  exec 'autocmd Rc FileType ' . thefiletype . ' call s:set_hard_tab()'
+for s:filetype in ['make', 'neosnippet']
+  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab()'
 endfor
 
-for thefiletype in ['go']
-  exec 'autocmd Rc FileType ' . thefiletype . ' set nolist'
+for s:filetype in ['go']
+  exec 'autocmd Rc FileType ' . s:filetype . ' set nolist'
 endfor
 
 "" appearance
@@ -159,7 +158,7 @@ autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
 
 "" keymaps
 
-let mapleader = "\<space>"
+let g:mapleader = "\<space>"
 
 nnoremap ; :
 nnoremap : ;
@@ -194,7 +193,7 @@ function! s:Prefix(prefix, name)
   try
     execute ':%s/\(' . a:name . '\)/' . a:prefix . '\1/gc'
   catch /E486: Pattern not found/
-    echom "Pattern not found!"
+    echom 'Pattern not found!'
   endtry
 endfunction
 
@@ -325,10 +324,10 @@ let g:neomake_warning_sign = {'text': 'WW'}
 
 colorscheme iceberg
 
-for name in ['Error', 'Warning']
-  let link = 'highlight link Neomake'.name
-  exec link.' '.name.'Msg'
-  exec link.'Sign icebergLL'.name
+for s:name in ['Error', 'Warning']
+  let s:link = 'highlight link Neomake'.s:name
+  exec s:link.' '.s:name.'Msg'
+  exec s:link.'Sign icebergLL'.s:name
 endfor
 
 highlight Normal      ctermbg=none
