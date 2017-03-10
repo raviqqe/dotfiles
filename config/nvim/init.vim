@@ -31,11 +31,15 @@ Plug 'junegunn/fzf.vim'
 
 "" language
 
-Plug 'alfredodeza/pytest.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
+
+""" python
+
+Plug 'alfredodeza/pytest.vim'
+Plug 'zchee/deoplete-jedi'
 
 """ go
 
@@ -48,28 +52,25 @@ Plug 'phildawes/racer'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang-nursery/rustfmt'
 Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
 
 "" deoplete
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'sebastianmarkow/deoplete-rust'
-Plug 'zchee/deoplete-jedi'
 
 "" operators
 
 Plug 'kana/vim-operator-user'
-Plug 'emonkak/vim-operator-comment'
 Plug 'emonkak/vim-operator-sort'
 
 "" text objects
 
 Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-function' " only for vim
+Plug 'bps/vim-textobj-python'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-Plug 'bps/vim-textobj-python'
 Plug 'thinca/vim-textobj-comment'
 
 call plug#end()
