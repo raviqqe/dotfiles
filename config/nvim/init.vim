@@ -301,7 +301,8 @@ nnoremap <leader>u :History<cr>
 
 "" autoformat
 
-autocmd Rc BufWrite *.py,*.vim,*.tex :Autoformat
+autocmd Rc BufWrite * :Autoformat
+autocmd Rc FileType sh,zsh let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
 
 
