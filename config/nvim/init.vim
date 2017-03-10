@@ -22,6 +22,8 @@ Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
 Plug 'thinca/vim-quickrun'
 Plug 'vim-scripts/vim-auto-save'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'
 
 "" fuzzy finder
@@ -83,7 +85,6 @@ augroup Rc
   autocmd!
 augroup END
 
-set encoding=utf-8
 set ttyfast
 set lazyredraw
 set nobackup
@@ -296,6 +297,22 @@ nnoremap <leader>l :Lines<cr>
 nnoremap <leader>m :Maps<cr>
 nnoremap <leader>r :Ag<cr>
 nnoremap <leader>u :History<cr>
+
+
+"" airline
+
+let g:airline_theme = 'bubblegum'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols = {}
+let g:airline_symbols.branch = ''
+let g:airline_symbols.crypt = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.notexists = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.spell = ''
+let g:airline_symbols.whitespace = ''
 
 
 "" autoformat
