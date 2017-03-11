@@ -229,7 +229,7 @@ install_go_packages() {
 
 install_python_packages() {
   info_installing "python packages" &&
-  pip3 install --user --upgrade twine autopep8 shakyo vim-vint
+  pip3 install --user --upgrade autopep8 mypy shakyo twine vim-vint
 }
 
 install_ruby_gems() {
