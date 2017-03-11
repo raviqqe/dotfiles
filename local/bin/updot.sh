@@ -187,10 +187,14 @@ install_rust_packages() {
   fi
 }
 
+on_arm() {
+  [ -n "$(uname -a | grep -o arm)" ]
+}
+
 install_gvm() {
   info_installing "gvm" &&
 
-  if [ -n "$(uname -a | grep -o arm)" ]
+  if on_arm
   then
     info "gvm doesn't work well on arm..."
     return
@@ -215,7 +219,13 @@ with_gvm() {
 
 install_go_packages() {
   info_installing "go packages" &&
-  with_gvm go get -u \
+
+  if ! on_arm
+  then
+    with_gvm=with_gvm
+  fi
+
+  $with_gvm go get -u \
       golang.org/x/tools/cmd/... \
       github.com/constabulary/gb/... \
       github.com/github/hub \
