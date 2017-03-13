@@ -155,6 +155,7 @@ set backspace=indent,eol,start
 set completeopt=menu
 autocmd Rc BufRead,BufNewFile *.sh set filetype=zsh
 autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
+autocmd Rc BufRead,BufNewFile *.tisp set filetype=tisp
 
 
 "" keymaps
@@ -318,7 +319,7 @@ let g:airline_symbols.whitespace = ''
 "" autoformat
 
 autocmd Rc BufWrite * :Autoformat
-autocmd Rc FileType sh,zsh,yaml,markdown let b:autoformat_autoindent = 0
+autocmd Rc FileType sh,zsh,yaml,markdown,tisp let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
 
 
