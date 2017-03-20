@@ -142,6 +142,7 @@ syntax on
 set number
 set relativenumber
 set colorcolumn=80
+set showmatch
 set showmode
 set showcmd
 set wrap
