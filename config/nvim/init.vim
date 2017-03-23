@@ -333,7 +333,7 @@ let g:auto_save_silent = 1
 
 "" neomake
 
-autocmd Rc BufEnter,BufWritePost * Neomake
+autocmd Rc BufWinEnter,BufWritePost * Neomake
 
 let g:neomake_error_sign = {'text': 'EE'}
 let g:neomake_warning_sign = {'text': 'WW'}
