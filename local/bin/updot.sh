@@ -256,6 +256,18 @@ install_npm_packages() {
   npm install -g git-recall https://github.com/so-fancy/diff-so-fancy
 }
 
+install_elm_format() {
+  info_installing "elm-format" &&
+
+  if [ "$(uname -m)" = 'x86_64' ] && uname -a | grep Linux > /dev/null
+  then
+    file=/tmp/elm-format-$$.tgz
+    curl -sSL 'https://github.com/avh4/elm-format/releases/download/0.6.0-alpha/elm-format-0.18-0.6.0-alpha-linux-x64.tgz' > $file &&
+    ( cd $(dirname $file) && tar xf $file ) &&
+    mv /tmp/elm-format ~/.local/bin
+  fi
+}
+
 install_vim_plug() {
   info_installing "vim-plug" &&
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -407,6 +419,7 @@ main() {
       install_ruby_gems &&
       install_npm_packages &&
       install_fzf &&
+      install_elm_format &&
 
       if [ -z $no_extra_lang ]
       then
