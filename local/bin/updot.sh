@@ -213,6 +213,7 @@ install_go_packages() {
   with_gvm go get -u \
       golang.org/x/tools/cmd/... \
       github.com/constabulary/gb/... \
+      github.com/fatih/hclfmt \
       github.com/github/hub \
       github.com/golang/lint/golint \
       github.com/hashicorp/terraform \

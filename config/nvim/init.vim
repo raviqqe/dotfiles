@@ -34,6 +34,7 @@ Plug 'junegunn/fzf.vim'
 "" language
 
 Plug 'ElmCast/elm-vim'
+Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
@@ -320,7 +321,7 @@ let g:airline_symbols.whitespace = ''
 "" autoformat
 
 autocmd Rc BufWrite * :Autoformat
-autocmd Rc FileType elm,sh,zsh,yaml,markdown,tisp let b:autoformat_autoindent = 0
+autocmd Rc FileType * let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
 
 
