@@ -12,6 +12,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
@@ -265,6 +266,18 @@ xmap <c-k> <plug>(neosnippet_expand_target)
 
 nmap <leader>s <plug>(easymotion-s)
 nmap <leader>/ <plug>(easymotion-sn)
+
+
+"" sneak
+
+nmap t <plug>Sneak_s
+nmap T <plug>Sneak_S
+xmap t <plug>Sneak_s
+xmap T <plug>Sneak_S
+omap t <plug>Sneak_s
+omap T <plug>Sneak_S
+
+let g:sneak#s_next = 1
 
 
 "" auto-pairs
