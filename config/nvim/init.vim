@@ -333,8 +333,10 @@ let g:airline_symbols.whitespace = ''
 
 "" autoformat
 
+autocmd Rc BufEnter,BufWinEnter,BufRead,BufNewFile *
+      \ if &filetype == "" | set filetype=text | endif
 autocmd Rc BufWrite * :Autoformat
-autocmd Rc FileType elm,sh,zsh,yaml,markdown,tisp let b:autoformat_autoindent = 0
+autocmd Rc FileType elm,sh,zsh,yaml,markdown,tisp,text let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
 
 
