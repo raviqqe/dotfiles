@@ -35,6 +35,10 @@ git_clone_to_dir() {
   fi
 }
 
+gem_install() {
+  gem install "$@" && gem update "$@"
+}
+
 install_linuxbrew() {
   info_installing "linuxbrew" &&
 
@@ -237,7 +241,7 @@ install_python_packages() {
 
 install_ruby_gems() {
   info_installing "ruby gems" &&
-  gem install gist rubocop
+  gem_install gist rubocop
 }
 
 install_ruby_gem_credential() {
@@ -291,7 +295,7 @@ install_vim_plugins() {
   $pip2 install --user --upgrade neovim &&
 
   pip3 install --user --upgrade neovim &&
-  gem install neovim
+  gem_install neovim
   nvim +PlugUpgrade +PlugClean! +PlugUpdate +qall
 }
 
