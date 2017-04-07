@@ -236,7 +236,7 @@ install_go_packages() {
 
 install_python_packages() {
   info_installing "python packages" &&
-  pip3 install --user --upgrade autopep8 awscli mkdocs mypy shakyo twine vim-vint
+  pip3 install --user --upgrade autopep8 awscli mkdocs mypy shakyo pylint twine vim-vint
 }
 
 install_ruby_gems() {
