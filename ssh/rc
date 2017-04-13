@@ -7,7 +7,7 @@ newline() {
 
 newline
 
-if which tmux > /dev/null 2>&1
+if tmux ls > /dev/null 2>&1
 then
   tmux ls >&2 2> /dev/null
   newline
