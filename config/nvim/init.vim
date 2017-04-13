@@ -353,6 +353,7 @@ autocmd Rc BufWinEnter,BufWritePost * Neomake
 
 let g:neomake_error_sign = {'text': 'EE'}
 let g:neomake_warning_sign = {'text': 'WW'}
+let g:neomake_python_enabled_makers = ['frosted', 'pylama']
 
 
 "" colorscheme
