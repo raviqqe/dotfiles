@@ -172,7 +172,7 @@ install_haskell_packages() {
   if which cabal
   then
     cabal update
-    cabal install ShellCheck
+    cabal install --upgrade-dependencies ShellCheck
   fi
 }
 
