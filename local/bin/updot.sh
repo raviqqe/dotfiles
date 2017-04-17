@@ -167,13 +167,14 @@ install_elm_format() {
 install_haskell_packages() {
   info_installing "haskell packages" &&
 
-  install_elm_format &&
+  install_elm_format
 
-  if which cabal
-  then
-    cabal update
-    cabal install --upgrade-dependencies ShellCheck
-  fi
+  # Cabal doesn't work on low-memory systems.
+  # if which cabal
+  # then
+  #   cabal update
+  #   cabal install --upgrade-dependencies ShellCheck
+  # fi
 }
 
 install_rustup() {
