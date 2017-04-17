@@ -230,7 +230,7 @@ with_gvm() {
 
   zsh -c "
     . $HOME/.gvm/scripts/gvm &&
-    gvm install go1.4 &&
+    CGO_ENABLED=0 gvm install go1.4 &&
     export GOROOT_BOOTSTRAP=$HOME/.gvm/gos/go1.4 &&
     gvm install $tag &&
     gvm use $tag &&
