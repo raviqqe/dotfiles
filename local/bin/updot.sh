@@ -197,7 +197,7 @@ install_rustup() {
 install_rust_packages() {
   info_installing "rust packages" &&
 
-  cargo='rustup run stable cargo'
+  cargo='rustup run nightly cargo'
   packages='cargo-update racer ripgrep skim rustfmt'
 
   for package in $packages
