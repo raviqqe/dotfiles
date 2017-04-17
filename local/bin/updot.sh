@@ -167,13 +167,14 @@ install_elm_format() {
 install_haskell_packages() {
   info_installing "haskell packages" &&
 
-  install_elm_format &&
+  install_elm_format
 
-  if which cabal
-  then
-    cabal update
-    cabal install --upgrade-dependencies ShellCheck
-  fi
+  # Cabal doesn't work on low-memory systems.
+  # if which cabal
+  # then
+  #   cabal update
+  #   cabal install --upgrade-dependencies ShellCheck
+  # fi
 }
 
 install_rustup() {
@@ -230,7 +231,7 @@ with_gvm() {
 
   zsh -c "
     . $HOME/.gvm/scripts/gvm &&
-    gvm install go1.4 &&
+    CGO_ENABLED=0 gvm install go1.4 &&
     export GOROOT_BOOTSTRAP=$HOME/.gvm/gos/go1.4 &&
     gvm install $tag &&
     gvm use $tag &&
