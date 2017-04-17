@@ -47,7 +47,6 @@ then
   export PATH=$linuxbrew_dir/bin:$linuxbrew_dir/sbin:$PATH
   export MANPATH=$linuxbrew_dir/share/man:$MANPATH
   export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
-  export HOMEBREW_BUILD_FROM_SOURCE=1
   export HOMEBREW_NO_EMOJI=1
 
   if type nproc > /dev/null 2>&1
