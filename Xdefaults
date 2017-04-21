@@ -7,10 +7,10 @@ urxvt*shading: 16
 urxvt*scrollBar: false
 urxvt*pointerBlank: true
 urxvt*pointerBlankDelay: 1
-urxvt*font: xft:Terminus (TTF):pixelsize=12:antialias=false,xft:IPAGothic:size=12:antialias=false
-urxvt*italicFont: xft:Terminus (TTF):pixelsize=12:antialias=false
-urxvt*boldFont: xft:Terminus (TTF):bold:pixelsize=12:antialias=false
-urxvt*boldItalicFont: xft:Terminus (TTF):bold:pixelsize=12:antialias=false
+urxvt*font: xft:Terminus:pixelsize=12:antialias=false,xft:Terminus (TTF):pixelsize=12:antialias=false,xft:IPAGothic:size=12:antialias=false
+urxvt*italicFont: xft:Terminus:pixelsize=12:antialias=false,xft:Terminus (TTF):pixelsize=12:antialias=false
+urxvt*boldFont: xft:Terminus:bold:pixelsize=12:antialias=false,xft:Terminus (TTF):bold:pixelsize=12:antialias=false
+urxvt*boldItalicFont: xft:Terminus:bold:pixelsize=12:antialias=false,xft:Terminus (TTF):bold:pixelsize=12:antialias=false
 ! for ibus
 urxvt*inputMethod: ibus
 ! urxvt colors
