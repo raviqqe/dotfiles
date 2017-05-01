@@ -106,32 +106,32 @@ set smartindent
 set shiftround
 set smarttab
 
-function s:set_2_space_tab()
-  set tabstop=2
-  set shiftwidth=2
-  set softtabstop=2
+function s:set_tab_size(num)
+  exec 'set tabstop=' . a:num
+  exec 'set shiftwidth=' . a:num
+  exec 'set softtabstop=' . a:num
   set list
   set listchars=tab:^I
 endfunction
 
-function s:set_soft_tab()
+function s:set_soft_tab(num)
   set expandtab
-  call s:set_2_space_tab()
+  call s:set_tab_size(a:num)
 endfunction
 
-function s:set_hard_tab()
+function s:set_hard_tab(num)
   set noexpandtab
-  call s:set_2_space_tab()
+  call s:set_tab_size(a:num)
 endfunction
 
-call s:set_soft_tab()
+call s:set_soft_tab(2)
 
-for s:filetype in ['vim', 'rust']
-  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_soft_tab()'
+for s:filetype in ['javascript']
+  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_soft_tab(4)'
 endfor
 
 for s:filetype in ['make', 'neosnippet']
-  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab()'
+  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab(2)'
 endfor
 
 for s:filetype in ['go']
