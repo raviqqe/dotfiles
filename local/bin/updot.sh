@@ -263,7 +263,8 @@ install_go_packages() {
 install_python_packages() {
   info_installing "python packages" &&
   pip3 install --user --upgrade \
-      autopep8 awscli frosted mkdocs mypy shakyo pylama pylint twine vim-vint
+      autopep8 awscli frosted jsbeautifier mkdocs mypy shakyo pylama pylint \
+      twine vim-vint
 }
 
 install_ruby_gems() {
