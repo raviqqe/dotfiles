@@ -1,8 +1,5 @@
 #!/bin/sh
 
-. $HOME/.sh/util.sh
-
-
 # environment variables
 
 export BLOCKSIZE=K
@@ -27,11 +24,8 @@ export LIBRARY_PATH=$LOCAL/lib64:$LOCAL/lib
 
 ## cuda
 
-if on_linux
-then
-  export PATH=$PATH:/usr/local/cuda/bin
-  export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
-fi
+export PATH=$PATH:/usr/local/cuda/bin
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
 
 ## cmake configuration
 
@@ -41,20 +35,17 @@ export CMAKE_PREFIX_PATH=$LOCAL
 
 ## linuxbrew
 
-if on_linux
-then
-  linuxbrew_dir=$HOME/.linuxbrew
-  export PATH=$linuxbrew_dir/bin:$linuxbrew_dir/sbin:$PATH
-  export MANPATH=$linuxbrew_dir/share/man:$MANPATH
-  export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
-  export HOMEBREW_NO_EMOJI=1
+linuxbrew_dir=$HOME/.linuxbrew
+export PATH=$linuxbrew_dir/bin:$linuxbrew_dir/sbin:$PATH
+export MANPATH=$linuxbrew_dir/share/man:$MANPATH
+export LIBRARY_PATH=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$LIBRARY_PATH
+export HOMEBREW_NO_EMOJI=1
 
-  if type nproc > /dev/null 2>&1
-  then
-    export HOMEBREW_MAKE_JOBS=$(nproc)
-  else
-    export HOMEBREW_MAKE_JOBS=2
-  fi
+if type nproc > /dev/null 2>&1
+then
+  export HOMEBREW_MAKE_JOBS=$(nproc)
+else
+  export HOMEBREW_MAKE_JOBS=2
 fi
 
 ## haskell

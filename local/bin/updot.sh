@@ -1,5 +1,8 @@
 #!/bin/sh
 
+. $HOME/.sh/util.sh
+
+
 # constants
 
 log_file=$(basename "$0.log")
@@ -86,69 +89,6 @@ install_linuxbrew_packages() {
   then
     brew tap homebrew/x11 &&
     brew install feh
-  fi
-}
-
-install_freebsd_pkg() {
-  info_installing "freebsd pkg command" &&
-  if ! pkg -N > /dev/null 2>&1
-  then
-    sudo pkg bootstrap
-  fi
-}
-
-install_freebsd_packages() {
-  while getopts dx option
-  do
-    case $option in
-    d)
-      desktop_mode=true
-      ;;
-    x)
-      extra_mode=true
-      ;;
-    esac
-  done
-  shift $(expr $OPTIND - 1)
-
-  local portmaster="sudo portmaster -Gdy --no-confirm"
-  local pkg_install="sudo pkg install -y"
-
-  info_installing "freebsd packages" &&
-  sudo pkg upgrade -y &&
-  sudo portsnap fetch update &&
-
-  info_installing "freebsd base packages" &&
-  $pkg_install \
-      sudo nmap arping htop ca_root_nss \
-      portmaster portlint \
-      zsh bash tmux lynx ii simpleirc rcm \
-      git subversion fossil tig \
-      go ghc hs-cabal-install stack nasm gmake ninja \
-      python36 python ruby devel/ruby-gems clojure npm \
-      qemu bsdtris bsdgames &&
-  (cd /usr/ports/editors/neovim && sudo make reinstall) &&
-  # $portmaster neovim &&
-  python3.5 -m ensurepip --user --upgrade &&
-  python -m ensurepip --user --upgrade &&
-
-  if [ -n "$desktop_mode" ]
-  then
-    info_installing "freebsd desktop packages" &&
-    $pkg_install \
-        xorg-minimal xorg-docs xsetroot xset xlsfonts xfontsel xrdb xsm \
-        xrandr xrefresh fontconfig xautolock nvidia-driver \
-        dwm xdm rxvt-unicode surf-browser feh scrot slock \
-        firefox thunderbird chromium pcmanfm inkscape gimp libreoffice mupdf \
-        terminus-font terminus-ttf ja-font-ipa ubuntu-font \
-        ja-ibus-mozc poppler-utils libX11 libXft freetype2 &&
-    fc-cache -f
-  fi &&
-
-  if [ -n "$extra_mode" ]
-  then
-    info_installing "freebsd extra packages" &&
-    $pkg_install texlive-full
   fi
 }
 
@@ -343,13 +283,7 @@ install_dwm() {
   ghq get raviqqe/dwm &&
   (
     cd $HOME/src/github.com/raviqqe/dwm &&
-
-    if on_freebsd
-    then
-      git checkout freebsd
-    else
-      git checkout freebsd-theme
-    fi &&
+    git checkout freebsd-theme &&
     make &&
     cp dwm $HOME/.local/bin
   )
@@ -424,17 +358,11 @@ main() {
     success_file=$(basename "$0").first_step_completed.tmp
 
     {
-      if on_linux && [ -z $no_linuxbrew ]
+      if [ -z $no_linuxbrew ]
       then
         install_linuxbrew &&
         install_linuxbrew_packages ${desktop_mode:+-d} &&
         install_gvm
-      fi &&
-
-      if on_freebsd
-      then
-        install_freebsd_pkg &&
-        install_freebsd_packages ${desktop_mode:+-d} ${extra_mode:+-x}
       fi &&
 
       install_zsh_plugins &&
@@ -458,7 +386,7 @@ main() {
         install_wallpapers
       fi &&
 
-      if on_linux && [ "$(uname -m)" = x86_64 ]
+      if [ "$(uname -m)" = x86_64 ]
       then
         install_google_cloud_sdk
       fi &&

@@ -1,11 +1,3 @@
-on_linux() {
-  [ "$(uname)" = Linux ]
-}
-
-on_freebsd() {
-  [ "$(uname)" = FreeBSD ]
-}
-
 on_zsh() {
   ps $$ | grep -o '[^a-zA-Z]zsh' > /dev/null
 }
@@ -13,17 +5,7 @@ on_zsh() {
 is_network_alive() {
   check_num_of_args is_clean_git_repo 0 $# || return 1
 
-  server=8.8.8.8
-
-  {
-    if on_linux
-    then
-      ping -w 1 -c 1 $server
-    elif on_freebsd
-    then
-      ping -t 1 -c 1 $server
-    fi
-  } > /dev/null
+  ping -w 1 -c 1 8.8.8.8 > /dev/null
 }
 
 is_clean_git_repo() {

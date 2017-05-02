@@ -165,14 +165,7 @@ eg() {
 
 # ls
 
-if on_linux
-then
-  alias ls="ls --color=auto"
-elif on_freebsd
-then
-  alias ls="ls -G"
-fi
-
+alias ls="ls --color=auto"
 alias d=ls
 alias da="ls -a"
 alias dl="ls -lh"
