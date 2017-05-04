@@ -203,7 +203,7 @@ install_go_packages() {
 install_python_packages() {
   info_installing "python packages" &&
   pip3 install --user --upgrade \
-      autopep8 awscli frosted jsbeautifier mkdocs mypy shakyo pylama pylint \
+      autopep8 awscli frosted mkdocs mypy shakyo pylama pylint \
       twine vim-vint
 }
 
@@ -229,7 +229,8 @@ install_ruby_gem_credential() {
 install_npm_packages() {
   info_installing "npm packages" &&
   npm install -g \
-      eslint gulp jshint jsonlint git-recall remark-cli serverless stylelint \
+      eslint gulp js-beautify jshint jsonlint git-recall remark-cli \
+      serverless stylelint xo \
       https://github.com/so-fancy/diff-so-fancy
 }
 
