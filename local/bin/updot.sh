@@ -75,12 +75,9 @@ install_linuxbrew_packages() {
     brew install rcm
   fi &&
 
-  brew tap homebrew/dupes &&
-  brew install gperf m4 bison &&
-
-  brew install libevent --without-doxygen &&
-  brew install zsh git tmux lynx links irssi bmake htop tig \
-               ruby python python3 node npm gawk --without-icu4c &&
+  brew install --without-icu4c --without-doxygen \
+      zsh git tmux lynx links irssi bmake htop tig \
+      ruby python python3 node npm gawk &&
   # ghc haskell-stack elm-format git-lfs
 
   brew install neovim/neovim/neovim --without-jemalloc &&
