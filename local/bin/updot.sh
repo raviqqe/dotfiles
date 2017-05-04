@@ -197,6 +197,7 @@ install_go_packages() {
       github.com/mvdan/interfacer/... \
       github.com/nsf/gocode \
       github.com/peco/peco/cmd/peco \
+      github.com/raviqqe/bstie \
       github.com/rogpeppe/godef \
       honnef.co/go/tools/...
 }
