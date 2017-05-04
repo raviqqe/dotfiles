@@ -80,6 +80,7 @@ install_linuxbrew_packages() {
       ruby python python3 node npm gawk &&
   # ghc haskell-stack elm-format git-lfs
 
+  brew tap neovim/neovim &&
   brew install neovim/neovim/neovim --without-jemalloc &&
 
   if [ -n "$desktop_mode" ]
