@@ -230,7 +230,7 @@ install_ruby_gem_credential() {
 install_npm_packages() {
   info_installing "npm packages" &&
   npm install -g \
-      eslint jshint jsonlint git-recall serverless stylelint \
+      eslint jshint jsonlint git-recall remark-cli serverless stylelint \
       https://github.com/so-fancy/diff-so-fancy
 }
 
