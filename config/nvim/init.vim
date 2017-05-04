@@ -14,7 +14,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -25,6 +24,7 @@ Plug 'thinca/vim-quickrun'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 
 "" fuzzy finder
@@ -347,24 +347,9 @@ let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
 
-"" neomake
-
-autocmd Rc BufWinEnter,BufWritePost * Neomake
-
-let g:neomake_error_sign = {'text': 'EE'}
-let g:neomake_warning_sign = {'text': 'WW'}
-let g:neomake_python_enabled_makers = ['frosted', 'pylama']
-
-
 "" colorscheme
 
 colorscheme iceberg
-
-for s:name in ['Error', 'Warning']
-  let s:link = 'highlight link Neomake'.s:name
-  exec s:link.' '.s:name.'Msg'
-  exec s:link.'Sign icebergLL'.s:name
-endfor
 
 highlight Normal      ctermbg=none
 highlight NonText     ctermbg=none
