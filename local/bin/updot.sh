@@ -188,7 +188,8 @@ install_go_packages() {
       github.com/github/hub \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
-      github.com/hashicorp/terraform \
+      $(uname -a | grep arm > /dev/null 2>&1 ||
+        echo github.com/hashicorp/terraform) \
       github.com/k0kubun/pp \
       github.com/mitchellh/gox \
       github.com/motemen/ghq \
