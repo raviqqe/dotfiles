@@ -38,6 +38,10 @@ git_clone_to_dir() {
   fi
 }
 
+is_64_bit() {
+  [ $(getconf LONG_BIT) = 64 ]
+}
+
 gem_install() {
   gem install "$@" && gem update "$@"
 }
@@ -69,7 +73,7 @@ install_linuxbrew_packages() {
   brew update &&
   brew update &&
 
-  if [ $(getconf LONG_BIT) = 64 ]
+  if is_64_bit
   then
     brew tap thoughtbot/formulae &&
     brew install rcm
@@ -186,8 +190,7 @@ install_go_packages() {
       github.com/github/hub \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
-      $(uname -a | grep arm > /dev/null 2>&1 ||
-        echo github.com/hashicorp/terraform) \
+      $(is_64_bit && echo github.com/hashicorp/terraform) \
       github.com/k0kubun/pp \
       github.com/mitchellh/gox \
       github.com/motemen/ghq \
