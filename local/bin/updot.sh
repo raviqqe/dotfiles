@@ -132,14 +132,14 @@ install_rustup() {
 
   rustup self update &&
   rustup update &&
-  rustup install nightly &&
-  rustup default nightly
+  rustup install stable &&
+  rustup default stable
 }
 
 install_rust_packages() {
   info_installing "rust packages" &&
 
-  cargo='rustup run nightly cargo'
+  cargo='rustup run stable cargo'
   packages='cargo-update racer ripgrep skim rustfmt'
 
   for package in $packages
