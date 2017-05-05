@@ -256,7 +256,7 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
 "" neosnippet
 
-let g:neosnippet#snippets_directory = '~/.vim/snippets'
+let g:neosnippet#snippets_directory = '~/.config/nvim/snippets'
 imap <c-k> <plug>(neosnippet_expand_or_jump)
 smap <c-k> <plug>(neosnippet_expand_or_jump)
 xmap <c-k> <plug>(neosnippet_expand_target)
