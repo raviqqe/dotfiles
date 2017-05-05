@@ -90,7 +90,7 @@ install_linuxbrew_packages() {
   if [ -n "$desktop_mode" ]
   then
     brew tap homebrew/x11 &&
-    brew install feh
+    brew install feh mupdf
   fi
 }
 
