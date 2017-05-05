@@ -63,6 +63,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH=$HOME/.cache/racer/rust/src
 export RUSTUP_USE_HYPER=1
 
+## python
+
+export MYPYPATH=$HOME/.local/lib/python3.6/site-packages
+
 ## git
 
 unset SSH_ASKPASS
