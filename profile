@@ -75,6 +75,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export GHQ_ROOT=$HOME/src
 
+## android
+
+export ANDROID_HOME=$HOME/.linuxbrew/opt/android-sdk
+
 ## LD_LIBRARY_PATH
 
 # Because exporting LD_LIBRARY_PATH causes some unexpectable problems,
