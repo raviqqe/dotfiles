@@ -63,6 +63,7 @@ Plug 'sebastianmarkow/deoplete-rust'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
 
 "" operators
 
@@ -256,8 +257,11 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
 "" neosnippet
 
-let g:neosnippet#snippets_directory = '~/.config/nvim/snippets'
 let g:neosnippet#enable_auto_clear_markers = 0
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = [
+      \ '~/.config/nvim/snippets',
+      \ '~/.config/nvim/plugged/vim-snippets/snippets']
 imap <c-k> <plug>(neosnippet_expand_or_jump)
 smap <c-k> <plug>(neosnippet_expand_or_jump)
 xmap <c-k> <plug>(neosnippet_expand_target)
