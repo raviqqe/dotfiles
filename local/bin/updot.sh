@@ -42,6 +42,10 @@ is_64_bit() {
   [ $(getconf LONG_BIT) = 64 ]
 }
 
+is_x86_64() {
+  [ "$(uname -m)" = x86_64 ]
+}
+
 gem_install() {
   gem install "$@" && gem update "$@"
 }
@@ -97,7 +101,7 @@ install_linuxbrew_packages() {
 install_elm_format() {
   info_installing "elm-format" &&
 
-  if [ "$(uname -m)" = 'x86_64' ] && uname -a | grep Linux > /dev/null
+  if is_x86_64 && uname -a | grep Linux > /dev/null
   then
     file=/tmp/elm-format-$$.tgz
     curl -sSL 'https://github.com/avh4/elm-format/releases/download/0.6.0-alpha/elm-format-0.18-0.6.0-alpha-linux-x64.tgz' > $file &&
@@ -386,7 +390,7 @@ main() {
         install_wallpapers
       fi &&
 
-      if [ "$(uname -m)" = x86_64 ]
+      if is_x86_64
       then
         install_google_cloud_sdk
       fi &&
