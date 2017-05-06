@@ -212,7 +212,7 @@ install_python_packages() {
 
 install_ruby_gems() {
   info_installing "ruby gems" &&
-  gem_install gist rubocop ruby-beautify
+  gem_install gist rubocop
 }
 
 install_ruby_gem_credential() {
