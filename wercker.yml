@@ -1,6 +1,6 @@
 box: ubuntu
 
-no-response-timeout: 30
+no-response-timeout: 60
 
 build:
   steps:
