@@ -120,19 +120,25 @@ function s:set_soft_tab(num)
   call s:set_tab_size(a:num)
 endfunction
 
-function s:set_hard_tab(num)
+function s:set_visible_hard_tab(num)
+  set list
   set noexpandtab
   call s:set_tab_size(a:num)
+endfunction
+
+function s:set_hard_tab(num)
+  call s:set_visible_hard_tab(a:num)
+  set nolist
 endfunction
 
 call s:set_soft_tab(2)
 
 for s:filetype in ['make', 'neosnippet']
-  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab(2)'
+  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_visible_hard_tab(2)'
 endfor
 
 for s:filetype in ['go', 'javascript']
-  exec 'autocmd Rc FileType ' . s:filetype . ' set nolist'
+  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab(2)'
 endfor
 
 "" appearance
