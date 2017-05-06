@@ -235,7 +235,8 @@ install_ruby_gem_credential() {
 
 install_npm_packages() {
   info_installing "npm packages" &&
-  npm update -g \
+
+  npm install -g \
       eslint gulp js-beautify jshint jsonlint git-recall remark-cli \
       serverless stylelint xo \
       https://github.com/so-fancy/diff-so-fancy
