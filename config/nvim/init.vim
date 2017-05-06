@@ -127,15 +127,11 @@ endfunction
 
 call s:set_soft_tab(2)
 
-for s:filetype in ['javascript']
-  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_soft_tab(4)'
-endfor
-
 for s:filetype in ['make', 'neosnippet']
   exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab(2)'
 endfor
 
-for s:filetype in ['go']
+for s:filetype in ['go', 'javascript']
   exec 'autocmd Rc FileType ' . s:filetype . ' set nolist'
 endfor
 
