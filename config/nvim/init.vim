@@ -111,24 +111,24 @@ function s:set_tab_size(num)
   exec 'set tabstop=' . a:num
   exec 'set shiftwidth=' . a:num
   exec 'set softtabstop=' . a:num
-  set list
   set listchars=tab:^I
 endfunction
 
 function s:set_soft_tab(num)
+  set list
   set expandtab
   call s:set_tab_size(a:num)
 endfunction
 
-function s:set_visible_hard_tab(num)
-  set list
+function s:set_hard_tab(num)
+  set nolist
   set noexpandtab
   call s:set_tab_size(a:num)
 endfunction
 
-function s:set_hard_tab(num)
-  call s:set_visible_hard_tab(a:num)
-  set nolist
+function s:set_visible_hard_tab(num)
+  call s:set_hard_tab(a:num)
+  set list
 endfunction
 
 call s:set_soft_tab(2)
