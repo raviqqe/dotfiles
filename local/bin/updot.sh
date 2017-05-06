@@ -310,8 +310,12 @@ install_google_cloud_sdk() {
   google_dir=$HOME/.google
 
   mkdir -p $google_dir &&
-  curl https://sdk.cloud.google.com |
-  bash /dev/stdin --disable-prompts --install-dir $google_dir
+
+  if [ ! -d $google_dir/google-cloud-sdk ]
+  then
+    curl https://sdk.cloud.google.com |
+    bash /dev/stdin --disable-prompts --install-dir $google_dir
+  fi
 }
 
 check_args() {
