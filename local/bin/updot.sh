@@ -189,6 +189,7 @@ install_go_packages() {
 
   with_gvm go get -u \
       golang.org/x/tools/cmd/... \
+      github.com/client9/misspell/... \
       github.com/constabulary/gb/... \
       github.com/fatih/hclfmt \
       github.com/github/hub \
