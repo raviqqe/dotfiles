@@ -152,13 +152,6 @@ zplug load > /dev/null
 [ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
 bindkey -a '?' fzf-history-widget
 
-# gvm
-
-gvm_script=$HOME/.gvm/scripts/gvm
-
-gopath=$GOPATH
-[[ -s "$gvm_script" ]] && . "$gvm_script" && gvm use go1.8 > /dev/null 2>&1
-export GOPATH=$gopath
 
 # google cloud sdk
 
@@ -169,6 +162,7 @@ fi
 if [ -f /home/raviqqe/.google/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/raviqqe/.google/google-cloud-sdk/completion.zsh.inc'
 fi
+
 
 # ssh-agent
 
@@ -189,6 +183,7 @@ fi > /dev/null 2>&1
 #   ln -sf "$SSH_AUTH_SOCK" "$linked_socket"
 #   SSH_AUTH_SOCK=$linked_socket
 # fi
+
 
 # initialization
 
