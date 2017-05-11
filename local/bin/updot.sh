@@ -162,32 +162,10 @@ install_rust_packages() {
   fi
 }
 
-install_gvm() {
-  info_installing "gvm" &&
-
-  if [ ! -d "$HOME/.gvm" ]
-  then
-    curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
-  fi
-}
-
-with_gvm() {
-  gopath=$GOPATH
-  tag=go1.8
-
-  zsh -c "
-    . $HOME/.gvm/scripts/gvm &&
-    CGO_ENABLED=0 gvm install go1.4 &&
-    export GOROOT_BOOTSTRAP=$HOME/.gvm/gos/go1.4 &&
-    gvm install $tag &&
-    gvm use $tag &&
-    GOPATH=$gopath $*"
-}
-
 install_go_packages() {
   info_installing "go packages" &&
 
-  with_gvm go get -u \
+  go get -u \
       golang.org/x/tools/cmd/... \
       github.com/client9/misspell/... \
       github.com/constabulary/gb/... \
@@ -366,8 +344,7 @@ main() {
       if [ -z $no_linuxbrew ]
       then
         install_linuxbrew &&
-        install_linuxbrew_packages ${desktop_mode:+-d} &&
-        install_gvm
+        install_linuxbrew_packages ${desktop_mode:+-d}
       fi &&
 
       install_zsh_plugins &&
