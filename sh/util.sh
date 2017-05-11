@@ -2,6 +2,10 @@ on_zsh() {
   ps $$ | grep -o '[^a-zA-Z]zsh' > /dev/null
 }
 
+on_mac() {
+  uname -a | grep Darwin > /dev/null 2>&1
+}
+
 is_network_alive() {
   check_num_of_args is_clean_git_repo 0 $# || return 1
 
