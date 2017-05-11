@@ -165,7 +165,7 @@ eg() {
 
 # ls
 
-alias ls="ls --color=auto"
+alias ls="ls $(on_mac && echo -G || echo --color=auto)"
 alias d=ls
 alias da="ls -a"
 alias dl="ls -lh"
