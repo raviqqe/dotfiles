@@ -137,7 +137,7 @@ for s:filetype in ['make', 'neosnippet']
   exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_visible_hard_tab(2)'
 endfor
 
-for s:filetype in ['go', 'javascript']
+for s:filetype in ['go']
   exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab(2)'
 endfor
 
@@ -345,6 +345,12 @@ autocmd Rc BufEnter,BufWinEnter,BufRead,BufNewFile *
 autocmd Rc BufWrite * :Autoformat
 autocmd Rc FileType elm,sh,zsh,yaml,markdown,tisp,text,xdefaults let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
+let g:formatters_javascript = ['standard_javascript']
+
+
+"" ale
+
+let g:ale_linters = { 'javascript' : ['standard'] }
 
 
 "" auto-save
@@ -352,11 +358,6 @@ let g:formatters_python = ['autopep8']
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
-
-
-"" ale
-
-let g:ale_linters = { 'javascript' : ['xo'] }
 
 
 "" colorscheme
