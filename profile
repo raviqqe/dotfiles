@@ -1,5 +1,11 @@
 #!/bin/sh
 
+. $HOME/.sh/util.sh
+
+
+LOCAL=$HOME/.local
+
+
 # environment variables
 
 export BLOCKSIZE=K
@@ -8,8 +14,6 @@ export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
 export PAGER=less
 export TZ=Asia/Tokyo
-
-LOCAL=$HOME/.local
 
 export PATH=$HOME/bin:$LOCAL/bin:$PATH
 export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man
@@ -65,7 +69,14 @@ export RUSTUP_USE_HYPER=1
 
 ## python
 
-export MYPYPATH=$HOME/.local/lib/python3.6/site-packages
+if on_mac
+then
+  mac_python=$HOME/Library/Python/3.6
+  export MYPYPATH=$mac_python/lib/python/site-packages
+  export PATH=$mac_python/bin:$PATH
+else
+  export MYPYPATH=$LOCAL/lib/python3.6/site-packages
+fi
 
 ## git
 
