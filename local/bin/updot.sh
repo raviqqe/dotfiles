@@ -216,8 +216,8 @@ install_npm_packages() {
   info_installing "npm packages" &&
 
   npm install -g \
-      diff-so-fancy gulp js-beautify jshint jsonlint git-recall remark-cli \
-      serverless stylelint xo
+      babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint git-recall \
+      remark-cli serverless stylelint xo
 }
 
 install_vim_plug() {
