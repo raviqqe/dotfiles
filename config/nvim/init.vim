@@ -350,7 +350,10 @@ let g:formatters_javascript = ['standard_javascript']
 
 "" ale
 
-let g:ale_linters = { 'javascript' : ['standard'] }
+let g:ale_linters = {
+      \ 'javascript' : ['standard'],
+      \ 'python': ['flake8', 'pylint'],
+      \ }
 
 
 "" auto-save
