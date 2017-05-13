@@ -33,6 +33,15 @@ is_valid_file() {
   [ -z "$(echo "$file" | grep -e '/\.' -e '^\.[^/]')" ]
 }
 
+gnu_sed() {
+  if which gsed > /dev/null 2>&1
+  then
+    gsed "$@"
+  else
+    sed "$@"
+  fi
+}
+
 
 # main routine
 
@@ -44,7 +53,7 @@ main() {
   do
     if is_valid_file "$file"
     then
-      sed -i "$s_command" "$file"
+      gnu_sed -i "$s_command" "$file"
     fi
   done
 }
