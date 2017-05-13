@@ -85,7 +85,7 @@ install_linuxbrew_packages() {
 
   brew install --without-icu4c --without-doxygen \
       zsh git tmux lynx links bmake htop tig \
-      go ruby python python3 node npm yarn gawk &&
+      go ruby python python3 node npm yarn gawk gnu-sed &&
   # ghc haskell-stack elm-format git-lfs
 
   brew tap neovim/neovim &&
