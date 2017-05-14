@@ -159,7 +159,8 @@ e() {
 }
 
 eg() {
-  e $(s "$1" | fzf | awk -F : '{print "+" $2 " " $1}')
+  filename=$(s "$1" | fzf | awk -F : '{print "+" $2 " " $1}')
+  [ -n "$filename" ] && e $filename
 }
 
 
