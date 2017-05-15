@@ -85,7 +85,7 @@ install_linuxbrew_packages() {
 
   brew install --without-icu4c --without-doxygen \
       zsh git tmux lynx links bmake htop tig \
-      $(is_x86_64 && echo go) ruby python python3 node npm yarn gawk gnu-sed &&
+      $(is_x86_64 && echo go) ruby python python3 node npm gawk gnu-sed &&
   # ghc haskell-stack elm-format git-lfs
 
   brew tap neovim/neovim &&
@@ -217,7 +217,7 @@ install_npm_packages() {
 
   npm install -g \
       babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint git-recall \
-      remark-cli serverless stylelint xo
+      remark-cli serverless stylelint xo yarn
 }
 
 install_vim_plug() {
