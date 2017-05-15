@@ -121,12 +121,12 @@ zle -N zle-keymap-select
 
 . ~/.zplug/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-completions"
+zplug zsh-users/zsh-syntax-highlighting
+zplug zsh-users/zsh-completions
 
-zplug "mollifier/anyframe"
-zstyle ":anyframe:selector:" use fzf
-zstyle ":anyframe:selector:fzf:" command 'fzf --select-1'
+zplug mollifier/anyframe
+zstyle :anyframe:selector: use fzf
+zstyle :anyframe:selector:fzf: command 'fzf --select-1'
 
 bindkey "^xw" anyframe-widget-select-widget
 bindkey "^xb" anyframe-widget-cdr
@@ -135,9 +135,9 @@ bindkey "^xp" anyframe-widget-put-history
 bindkey "^xk" anyframe-widget-kill
 bindkey "^xf" anyframe-widget-insert-filename
 
-zplug "zsh-users/zsh-history-substring-search"
-bindkey -a 'k' history-substring-search-up
-bindkey -a 'j' history-substring-search-down
+zplug zsh-users/zsh-history-substring-search
+bindkey -a k history-substring-search-up
+bindkey -a j history-substring-search-down
 
 if ! zplug check --verbose
 then
@@ -191,6 +191,6 @@ fi > /dev/null 2>&1
 dotfiles_dir=~/.dotfiles
 if ! is_clean_git_repo $dotfiles_dir
 then
-  warn "dotfiles directory, \"$dotfiles_dir\" is not clean." \
+  warn "dotfiles directory, $dotfiles_dir is not clean." \
        "Please push the changes to the upstream."
 fi
