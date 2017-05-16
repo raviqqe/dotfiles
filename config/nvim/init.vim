@@ -39,7 +39,7 @@ Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
-Plug 'mxw/vim-jsx'
+Plug 'neoclide/vim-jsx-improve'
 
 """ python
 
@@ -292,11 +292,6 @@ let g:sneak#s_next = 1
 
 let g:AutoPairsMapCh = 0
 let g:AutoPairsMapCR = 0
-
-
-"" vim-jsx
-
-let g:jsx_ext_required = 0
 
 
 "" vimtex
