@@ -27,7 +27,8 @@ HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 16))
 SAVEHIST=$((2 ** 17))
 
-setopt autocd autopushd extendedglob prompt_subst sh_word_split share_history
+setopt autocd autopushd correct extendedglob prompt_subst sh_word_split \
+       share_history
 unsetopt beep notify nomatch banghist
 
 bindkey -v
