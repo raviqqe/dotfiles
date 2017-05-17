@@ -90,7 +90,7 @@ augroup Rc
 augroup END
 
 set ttyfast
-set lazyredraw
+set nolazyredraw
 set nobackup
 set nowritebackup
 set swapfile
