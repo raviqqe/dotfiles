@@ -39,6 +39,7 @@ Plug 'ElmCast/elm-vim'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'JuliaLang/julia-vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
 Plug 'neoclide/vim-jsx-improve'
 
@@ -161,9 +162,10 @@ set splitright
 set cursorline
 set backspace=indent,eol,start
 set completeopt=menu
-autocmd Rc BufRead,BufNewFile *.sh set filetype=zsh
 autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
+autocmd Rc BufRead,BufNewFile *.sh set filetype=zsh
 autocmd Rc BufRead,BufNewFile *.tisp set filetype=tisp
+autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
 
 
 "" keymaps
