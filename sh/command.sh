@@ -25,10 +25,13 @@ alias c="fzcd ."
 alias ch=fzcd-history
 alias cm="fzcd $HOME"
 alias cma="fzcd-all $HOME"
-alias cs="fzcd $GHQ_ROOT"
 
 cg() {
   cd "$(git rev-parse --show-toplevel)"
+}
+
+cs() {
+  cd "$(ds | fzf)"
 }
 
 
