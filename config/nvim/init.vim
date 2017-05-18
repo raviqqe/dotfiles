@@ -305,6 +305,11 @@ let g:vimtex_view_method = 'mupdf'
 let g:elm_format_autosave = 1
 
 
+"" markdown
+
+let g:vim_markdown_folding_disabled = 1
+
+
 "" quickrun
 
 let g:quickrun_config = get(g:, 'quickrun_config', {})
