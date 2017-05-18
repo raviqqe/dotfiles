@@ -361,6 +361,7 @@ let g:ale_linters = {
       \ 'javascript' : ['standard'],
       \ 'python': ['flake8', 'pylint'],
       \ }
+let g:ale_javascript_standard_options = '--global describe --global it'
 
 
 "" auto-save
