@@ -322,14 +322,8 @@ main() {
     d)
       desktop_mode=true
       ;;
-    h)
-      no_linuxbrew=true
-      ;;
     l)
-      no_extra_lang=true
-      ;;
-    x)
-      extra_mode=true
+      low_memory=true
       ;;
     esac
   done
@@ -342,25 +336,22 @@ main() {
     success_file=$(basename "$0").first_step_completed.tmp
 
     {
-      if [ -z $no_linuxbrew ]
-      then
-        install_linuxbrew &&
-        install_linuxbrew_packages ${desktop_mode:+-d}
-      fi &&
+      install_linuxbrew &&
+      install_linuxbrew_packages ${desktop_mode:+-d} &&
 
       install_zsh_plugins &&
       install_tpm &&
-      install_go_packages &&
       install_python_packages &&
       install_ruby_gems &&
       install_npm_packages &&
       install_fzf &&
       install_haskell_packages &&
+      install_rustup &&
+      install_rust_packages &&
 
-      if [ -z $no_extra_lang ]
+      if [ -z $low_memory ]
       then
-        install_rustup &&
-        install_rust_packages
+        install_go_packages
       fi &&
 
       if [ -n "$desktop_mode" ]
