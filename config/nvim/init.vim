@@ -18,10 +18,11 @@ Plug 'plasticboy/vim-markdown'
 Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
 Plug 'thinca/vim-quickrun'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -109,40 +110,9 @@ set autoindent
 set smartindent
 set shiftround
 set smarttab
-
-function s:set_tab_size(num)
-  exec 'set tabstop=' . a:num
-  exec 'set shiftwidth=' . a:num
-  exec 'set softtabstop=' . a:num
-  set listchars=tab:^I
-endfunction
-
-function s:set_soft_tab(num)
-  set list
-  set expandtab
-  call s:set_tab_size(a:num)
-endfunction
-
-function s:set_hard_tab(num)
-  set nolist
-  set noexpandtab
-  call s:set_tab_size(a:num)
-endfunction
-
-function s:set_visible_hard_tab(num)
-  call s:set_hard_tab(a:num)
-  set list
-endfunction
-
-call s:set_soft_tab(2)
-
-for s:filetype in ['make', 'neosnippet']
-  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_visible_hard_tab(2)'
-endfor
-
-for s:filetype in ['go']
-  exec 'autocmd Rc FileType ' . s:filetype . ' call s:set_hard_tab(2)'
-endfor
+set shiftwidth=2
+set tabstop=2
+set list
 
 "" appearance
 
