@@ -88,7 +88,9 @@ ga() {
     git add .
   else
     git add "$@"
-  fi
+  fi &&
+
+  git status
 }
 
 gc() {
