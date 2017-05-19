@@ -167,20 +167,6 @@ cnoremap <c-j> <c-n>
 cnoremap <c-k> <c-p>
 cnoremap <c-l> <right>
 
-"" commands
-
-cnoreabbrev Wc wincmd
-
-function! s:Prefix(prefix, name)
-  try
-    execute ':%s/\(' . a:name . '\)/' . a:prefix . '\1/gc'
-  catch /E486: Pattern not found/
-    echom 'Pattern not found!'
-  endtry
-endfunction
-
-command -nargs=* Prefix call s:Prefix(<f-args>)
-
 
 
 " plugin settings
