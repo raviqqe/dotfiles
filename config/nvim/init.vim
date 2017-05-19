@@ -20,7 +20,6 @@ Plug 'raviqqe/vim-pastplace'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/vim-auto-save'
@@ -89,7 +88,7 @@ call plug#end()
 " pure vim
 
 augroup Rc
-  autocmd!
+	autocmd!
 augroup END
 
 set ttyfast
@@ -173,40 +172,7 @@ cnoremap <c-l> <right>
 
 "" deoplete
 
-let g:acp_enableAtStartup = 0
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources#syntax#min_keyword_length = 3
-let g:deoplete#enable_fuzzy_completion = 1
-let g:deoplete#enable_auto_delimiter = 1
-let g:deoplete#enable_auto_close_preview = 1
-
-""" delimiters
-
-if !exists('g:deoplete#delimiter_patterns')
-  let g:deoplete#delimiter_patterns = {}
-endif
-
-let g:deoplete#delimiter_patterns.vim = ['#']
-let g:deoplete#delimiter_patterns.cpp = ['::']
-let g:deoplete#delimiter_patterns.python = ['.']
-
-""" omni completion
-
-autocmd Rc FileType *
-      \ if &omnifunc == "" |
-      \   setlocal omnifunc=syntaxcomplete#Complete |
-      \ endif
-autocmd Rc FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd Rc FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd Rc FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd Rc FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd Rc FileType python setlocal omnifunc=python3complete#Complete
-autocmd Rc FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-""" keymaps
-
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
@@ -222,8 +188,8 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 let g:neosnippet#enable_auto_clear_markers = 0
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory = [
-      \ '~/.config/nvim/snippets',
-      \ '~/.config/nvim/plugged/vim-snippets/snippets']
+			\ '~/.config/nvim/snippets',
+			\ '~/.config/nvim/plugged/vim-snippets/snippets']
 imap <c-k> <plug>(neosnippet_expand_or_jump)
 smap <c-k> <plug>(neosnippet_expand_or_jump)
 xmap <c-k> <plug>(neosnippet_expand_target)
@@ -306,7 +272,7 @@ let g:airline_symbols.whitespace = ''
 "" autoformat
 
 autocmd Rc BufEnter,BufWinEnter,BufRead,BufNewFile *
-      \ if &filetype == "" | set filetype=text | endif
+			\ if &filetype == "" | set filetype=text | endif
 autocmd Rc BufWrite * :Autoformat
 autocmd Rc FileType elm,gitrebase,sh,zsh,yaml,markdown,tisp,text,xdefaults let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
@@ -316,9 +282,9 @@ let g:formatters_javascript = ['standard_javascript']
 "" ale
 
 let g:ale_linters = {
-      \ 'javascript' : ['standard'],
-      \ 'python': ['flake8', 'pylint'],
-      \ }
+			\ 'javascript' : ['standard'],
+			\ 'python': ['flake8', 'pylint'],
+			\ }
 let g:ale_javascript_standard_options = '--global describe --global it'
 
 
