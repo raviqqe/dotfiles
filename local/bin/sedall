@@ -54,8 +54,10 @@ main() {
     if is_valid_file "$file"
     then
       gnu_sed -i "$s_command" "$file"
-    fi
+    fi &
   done
+
+  wait
 }
 
 main "$@"
