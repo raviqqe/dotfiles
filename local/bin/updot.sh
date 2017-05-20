@@ -144,7 +144,7 @@ install_rust_packages() {
   info_installing "rust packages" &&
 
   cargo='rustup run stable cargo'
-  packages='cargo-update racer ripgrep skim rustfmt'
+  packages='cargo-update racer ripgrep rustfmt skim'
 
   for package in $packages
   do
@@ -152,6 +152,8 @@ install_rust_packages() {
   done &&
 
   $cargo install-update $packages &&
+
+  $cargo install --no-default-features --git https://github.com/ogham/exa &&
 
   if [ -n "$RUST_SRC_PATH" ]
   then
