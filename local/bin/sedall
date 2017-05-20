@@ -18,7 +18,7 @@ fail() {
 
 check_args() {
   [ $# -ne 1 ] &&
-  fail "usage: $COMMAND_NAME [-d DIR] S_COMMAND"
+  fail "usage: $COMMAND_NAME SED_COMMAND"
 }
 
 is_valid_file() {
