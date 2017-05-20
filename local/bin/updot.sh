@@ -153,7 +153,8 @@ install_rust_packages() {
 
   $cargo install-update $packages &&
 
-  $cargo install --no-default-features --git https://github.com/ogham/exa &&
+  $cargo install --force --no-default-features \
+                 --git https://github.com/ogham/exa &&
 
   if [ -n "$RUST_SRC_PATH" ]
   then
