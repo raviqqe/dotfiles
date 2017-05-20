@@ -1,3 +1,5 @@
 settings:
     bullet: "-"
+    emphasis: "*"
     fences: true
+    listItemIndent: 1
