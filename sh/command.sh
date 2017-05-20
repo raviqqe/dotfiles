@@ -171,14 +171,14 @@ eg() {
 
 # ls
 
-alias ls="ls $(on_mac && echo -G || echo --color=auto)"
+alias ls=exa
 alias d=ls
-alias da="ls -a"
-alias dl="ls -lh"
-alias dla="ls -lha"
+alias da='ls -a'
+alias dl='ls -l'
+alias dla='ls -la'
 alias dm="ls \"$HOME\""
 alias dma="ls -a \"$HOME\""
-alias ds="ghq list --full-path"
+alias ds='ghq list --full-path'
 
 
 # less
