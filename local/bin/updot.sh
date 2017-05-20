@@ -217,8 +217,8 @@ install_npm_packages() {
 
   npm install -g \
       babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint git-recall \
-      mocha remark-cli serverless standard stylelint tslint typescript \
-      typescript-formatter yarn
+      mocha npm-check-updates remark-cli serverless standard stylelint tslint \
+      typescript typescript-formatter yarn
 }
 
 install_vim_plug() {
