@@ -132,10 +132,9 @@ set cursorline
 set backspace=indent,eol,start
 set completeopt=menu
 autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
-autocmd Rc BufRead,BufNewFile *.sh set filetype=zsh
 autocmd Rc BufRead,BufNewFile *.tisp set filetype=tisp
 autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
-
+autocmd Rc FileType sh set filetype=zsh
 
 "" keymaps
 
