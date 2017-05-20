@@ -85,7 +85,7 @@ install_linuxbrew_packages() {
 
   brew install --without-icu4c --without-doxygen \
       zsh git tmux lynx links bmake htop tig \
-      $(is_x86_64 && echo go) ruby python python3 node npm gawk gnu-sed &&
+      $(is_x86_64 && echo go) ruby python python3 node gawk gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
 
   brew tap neovim/neovim &&
@@ -214,13 +214,13 @@ install_ruby_gem_credential() {
   fi
 }
 
-install_npm_packages() {
-  info_installing "npm packages" &&
+install_yarn_packages() {
+  info_installing "yarn packages" &&
 
-  npm install -g \
+  yarn global upgrade \
       babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint git-recall \
-      mocha npm-check-updates remark-cli serverless standard stylelint tslint \
-      typescript typescript-formatter yarn
+      mocha npm npm-check-updates remark-cli serverless standard stylelint \
+      tslint typescript typescript-formatter
 }
 
 install_vim_plug() {
@@ -345,7 +345,7 @@ main() {
       install_tpm &&
       install_python_packages &&
       install_ruby_gems &&
-      install_npm_packages &&
+      install_yarn_packages &&
       install_fzf &&
       install_haskell_packages &&
       install_rustup &&
