@@ -78,6 +78,10 @@ else
   export MYPYPATH=$LOCAL/lib/python3.6/site-packages
 fi
 
+## javascript
+
+export PATH=$(yarn global bin 2> /dev/null):$PATH
+
 ## git
 
 unset SSH_ASKPASS
