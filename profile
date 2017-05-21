@@ -80,7 +80,10 @@ fi
 
 ## javascript
 
-export PATH=$(yarn global bin 2> /dev/null):$PATH
+if which yarn > /dev/null 2>&1
+then
+  export PATH=$(yarn global bin):$PATH
+fi
 
 ## git
 
