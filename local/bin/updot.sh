@@ -46,7 +46,7 @@ is_x86_64() {
 }
 
 is_go_1_8() {
-  go version | grep -o 1.8
+  go version | grep -o 1.8 > /dev/null 2>&1
 }
 
 gem_install() {
