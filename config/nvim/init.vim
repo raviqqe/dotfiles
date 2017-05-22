@@ -30,7 +30,7 @@ Plug 'wellle/targets.vim'
 
 "" fuzzy finder
 
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 "" language
