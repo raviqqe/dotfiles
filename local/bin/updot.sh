@@ -88,7 +88,7 @@ install_linuxbrew_packages() {
   fi &&
 
   brew install --without-icu4c --without-doxygen \
-      curl zsh git tmux lynx links bmake htop tig \
+      curl exa zsh git tmux lynx links bmake htop tig \
       $(is_x86_64 && echo go) ruby python python3 node gawk gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
 
@@ -153,9 +153,6 @@ install_rust_packages() {
   done &&
 
   $cargo install-update $packages &&
-
-  $cargo install --force --no-default-features \
-                 --git https://github.com/ogham/exa &&
 
   if [ -n "$RUST_SRC_PATH" ]
   then
