@@ -326,58 +326,44 @@ main() {
 
   (
     . $HOME/.profile &&
-    success_file=$(basename "$0").first_step_completed.tmp
 
-    {
-      install_linuxbrew &&
-      install_linuxbrew_packages ${desktop_mode:+-d} &&
+    install_linuxbrew &&
+    install_linuxbrew_packages ${desktop_mode:+-d} &&
 
-      install_zsh_plugins &&
-      install_tpm &&
-      install_python_packages &&
-      install_ruby_gems &&
-      install_yarn_packages &&
-      install_haskell_packages &&
-      install_rustup &&
-      install_rust_packages &&
+    install_zsh_plugins &&
+    install_tpm &&
+    install_python_packages &&
+    install_ruby_gems &&
+    install_yarn_packages &&
+    install_haskell_packages &&
+    install_rustup &&
+    install_rust_packages &&
 
-      if [ -z $low_memory ]
-      then
-        install_go_packages
-      fi &&
+    if [ -z $low_memory ]
+    then
+      install_go_packages
+    fi &&
 
-      if [ -n "$desktop_mode" ]
-      then
-        install_dwm &&
-        install_wallpapers
-      fi &&
+    if [ -n "$desktop_mode" ]
+    then
+      install_dwm &&
+      install_wallpapers
+    fi &&
 
-      if is_x86_64
-      then
-        install_google_cloud_sdk
-      fi &&
-
-      : > "$success_file"
-    } 2>&1 | tee -a "$log_file"
-
-    last_status=$([ -f "$success_file" ]; echo $?) &&
-    rm -f "$success_file" &&
-    (exit $last_status) &&
+    if is_x86_64
+    then
+      install_google_cloud_sdk
+    fi &&
 
     if [ -z "$batch_mode" ]
     then
       install_ruby_gem_credential &&
       install_vim_plugins
     fi
-  )
+  ) ||
 
-  if [ $? -ne 0 ]
-  then
-    fail "Failed to initialize dotfiles environment." \
-         "See $log_file for troubleshooting."
-  else
-    rm $log_file
-  fi
+  fail "Failed to initialize dotfiles environment." \
+       "See $log_file for troubleshooting."
 }
 
 main "$@"
