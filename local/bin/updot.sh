@@ -174,6 +174,7 @@ install_go_packages() {
       github.com/client9/misspell/... \
       github.com/constabulary/gb/... \
       github.com/fatih/hclfmt \
+      github.com/junegunn/fzf/src/fzf \
       $(is_go_1_8 && echo github.com/github/hub) \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
@@ -260,15 +261,6 @@ install_zsh_plugins() {
   zsh -c ". $HOME/.zprofile && . $HOME/.zshrc"
 }
 
-install_fzf() {
-  info_installing "fzf" &&
-
-  fzf_dir=$HOME/.fzf
-
-  git_clone_to_dir "$github_address/junegunn/fzf" "$fzf_dir" &&
-  yes | "$fzf_dir/install" --no-update-rc
-}
-
 install_dwm() {
   info_installing "dwm" &&
 
@@ -348,7 +340,6 @@ main() {
       install_python_packages &&
       install_ruby_gems &&
       install_yarn_packages &&
-      install_fzf &&
       install_haskell_packages &&
       install_rustup &&
       install_rust_packages &&
