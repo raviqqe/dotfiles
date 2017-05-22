@@ -5,7 +5,6 @@
 
 # constants
 
-log_file=$(basename "$0.log")
 github_address=https://github.com
 
 
@@ -362,8 +361,7 @@ main() {
     fi
   ) ||
 
-  fail "Failed to initialize dotfiles environment." \
-       "See $log_file for troubleshooting."
+  fail "Failed to initialize dotfiles environment."
 }
 
 main "$@"
