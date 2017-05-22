@@ -46,6 +46,10 @@ is_x86_64() {
   [ "$(uname -m)" = x86_64 ]
 }
 
+is_go_1_8() {
+  go version | grep -o 1.8
+}
+
 gem_install() {
   gem install "$@" && gem update "$@"
 }
@@ -170,7 +174,7 @@ install_go_packages() {
       github.com/client9/misspell/... \
       github.com/constabulary/gb/... \
       github.com/fatih/hclfmt \
-      github.com/github/hub \
+      $(is_go_1_8 && echo github.com/github/hub) \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
       $(is_64_bit && echo github.com/hashicorp/terraform) \
