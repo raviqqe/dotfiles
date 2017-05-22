@@ -6,8 +6,6 @@
 
 # interactive filters
 
-alias fzf="fzf --select-1 --exit-0"
-
 filter() {
   fzf
 }

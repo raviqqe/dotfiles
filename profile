@@ -103,6 +103,10 @@ export ANDROID_HOME=$HOME/.linuxbrew/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+## fzf
+
+export FZF_DEFAULT_OPTS='--exit-0 --select-1'
+
 ## LD_LIBRARY_PATH
 
 # Because exporting LD_LIBRARY_PATH causes some unexpectable problems,
