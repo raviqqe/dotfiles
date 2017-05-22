@@ -128,10 +128,7 @@ install_rustup() {
 
   if ! which rustup
   then
-    script=/tmp/$$-rustup.sh
-    curl https://sh.rustup.rs -sSf > $script &&
-    sh $script -y &&
-    rm $script
+    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
   fi &&
 
   rustup self update &&
