@@ -9,7 +9,10 @@ jobs:
     steps:
       - run:
           name: OS Setup
-          command: locale-gen en_US.UTF-8
+          command: |
+            apt -y update --fix-missing
+            apt -y install locales
+            locale-gen en_US.UTF-8
       - run:
           name: Install rcm
           command: |
