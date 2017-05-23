@@ -87,7 +87,7 @@ install_linuxbrew_packages() {
   fi &&
 
   brew install \
-      --without-doxygen --without-gold --without-icu4c --without-libgit2 \
+      --without-doxygen --without-icu4c --without-libgit2 \
       curl exa zsh git tmux lynx links bmake htop tig \
       $(is_x86_64 && echo go) ruby python python3 node gawk gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
