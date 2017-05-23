@@ -1,0 +1,16 @@
+test:
+  pre:
+    - apt -y update --fix-missing
+    - apt -y install locales
+    - locale-gen en_US.UTF-8
+    - apt -y update --fix-missing
+    - apt -y install software-properties-common
+    - apt-add-repository ppa:martin-frost/thoughtbot-rcm
+    - apt -y update --fix-missing
+    - apt -y install build-essential curl git rcm ruby
+    - useradd -m tester
+    - su -c 'git clone https://github.com/raviqqe/dotfiles ~/.dotfiles' tester
+    - su -c 'yes | rcup' tester
+
+  override:
+    - su -c 'export PATH=$HOME/.local/bin:$PATH; cd $HOME && updot -b || rm updot.log && updot -b' tester
