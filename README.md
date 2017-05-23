@@ -1,6 +1,6 @@
 # dotfiles
 
-[![Circle CI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/raviqqe/dotfiles)
+[![Circle CI](https://img.shields.io/circleci/project/github/raviqqe/dotfiles.svg)](https://circleci.com/gh/raviqqe/dotfiles)
 [![License](https://img.shields.io/badge/license-unlicense-lightgray.svg)](https://unlicense.org)
 
 ## Requirement
