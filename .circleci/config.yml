@@ -11,7 +11,7 @@ jobs:
           name: OS Setup
           command: |
             apt -y update --fix-missing
-            apt -y install locales
+            apt -y install locales sudo
             locale-gen en_US.UTF-8
       - run:
           name: Install rcm
