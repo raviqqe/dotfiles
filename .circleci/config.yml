@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: buildpack-deps:trusty
+    working_directory: ~/
+    environment:
+      - TERM: xterm-256color
+    steps:
+      - run:
+          name: OS Setup
+          command: locale-gen en_US.UTF-8
+      - run:
+          name: Install rcm
+          command: |
+            apt -y update --fix-missing
+            apt -y install software-properties-common
+            apt-add-repository -y ppa:martin-frost/thoughtbot-rcm
+      - run:
+          name: Install dependencies
+          command: |
+            apt -y update --fix-missing
+            apt -y install build-essential curl git rcm ruby
+      - run:
+          name: Create user
+          command: useradd -m tester
+      - run:
+          name: Install dotfiles
+          working_directory: /home/tester
+          command: |
+            sudo -u tester git clone https://github.com/raviqqe/dotfiles /home/tester/.dotfiles
+            sudo -iu tester rcup -f
+      - run:
+          name: Test updot command
+          working_directory: /home/tester
+          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && updot -b || updot -b'
