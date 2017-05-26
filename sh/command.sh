@@ -103,6 +103,12 @@ gc() {
   git commit -m "$message" "$@"
 }
 
+grh() {
+  message=$(git log --format=%B -n 1 HEAD^)
+  git reset --soft HEAD^^ &&
+  git commit -m "$message"
+}
+
 
 # editor
 
