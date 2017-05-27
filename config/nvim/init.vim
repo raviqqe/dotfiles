@@ -24,8 +24,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/vim-auto-save'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 
@@ -253,22 +252,6 @@ nnoremap <leader>r :Ag<cr>
 nnoremap <leader>u :History<cr>
 
 
-"" airline
-
-let g:airline_theme = 'bubblegum'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols = {}
-let g:airline_symbols.branch = ''
-let g:airline_symbols.crypt = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.notexists = ''
-let g:airline_symbols.paste = ''
-let g:airline_symbols.spell = ''
-let g:airline_symbols.whitespace = ''
-
-
 "" autoformat
 
 autocmd Rc BufEnter,BufWinEnter,BufRead,BufNewFile *
@@ -295,6 +278,11 @@ let g:ale_javascript_standard_options = '--global describe --global it'
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
+
+
+"" lightline
+
+let g:lightline = { 'colorscheme': 'seoul256' }
 
 
 "" colorscheme
