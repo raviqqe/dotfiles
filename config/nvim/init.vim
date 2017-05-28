@@ -91,6 +91,7 @@ augroup Rc
 	autocmd!
 augroup END
 
+set autoread
 set ttyfast
 set nolazyredraw
 set nobackup
