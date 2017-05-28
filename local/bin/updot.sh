@@ -192,7 +192,7 @@ install_python_packages() {
 
 install_ruby_gems() {
   info_installing "ruby gems" &&
-  gem_install gist rubocop
+  gem_install aruba gist rubocop
 }
 
 install_ruby_gem_credential() {
@@ -212,9 +212,10 @@ install_ruby_gem_credential() {
 install_yarn_packages() {
   info_installing "yarn packages" &&
 
-  packages='babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint karma
-            git-recall mocha npm npm-check-updates remark-cli serverless
-            standard stylelint tslint typescript typescript-formatter'
+  packages='babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint
+            karma git-recall mocha npm npm-check-updates remark-cli rollup
+            serverless standard stylelint tslint typescript
+            typescript-formatter'
   yarn global add $packages &&
   yarn global upgrade $packages
 }
