@@ -215,7 +215,7 @@ install_yarn_packages() {
   packages='babel-eslint diff-so-fancy gulp js-beautify jshint jsonlint
             karma git-recall mocha npm npm-check-updates remark-cli rollup
             serverless standard stylelint tslint typescript
-            typescript-formatter'
+            typescript-formatter webpack'
   yarn global add $packages &&
   yarn global upgrade $packages
 }
