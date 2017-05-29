@@ -192,7 +192,7 @@ install_python_packages() {
 
 install_ruby_gems() {
   info_installing "ruby gems" &&
-  gem_install aruba gitlab gist rubocop
+  gem_install aruba bundler gitlab gist rubocop
 }
 
 install_ruby_gem_credential() {
