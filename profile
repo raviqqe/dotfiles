@@ -82,7 +82,7 @@ fi
 
 if which yarn > /dev/null 2>&1
 then
-  export PATH=$(yarn global bin):$PATH
+  export PATH=$(yarn global bin):$HOME/.config/yarn/global/node_modules/.bin:$PATH
 fi
 
 ## git
