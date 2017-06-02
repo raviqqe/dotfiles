@@ -89,7 +89,13 @@ fi
 
 mkdir -p "$HOME/.nvm"
 export NVM_DIR="$HOME/.nvm"
-. "$HOME/.linuxbrew/opt/nvm/nvm.sh"
+
+nvm_script="$HOME/.linuxbrew/opt/nvm/nvm.sh"
+
+if [ -f "$nvm_script" ]
+then
+  . "$nvm_script"
+fi
 
 ## git
 
