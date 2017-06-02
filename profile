@@ -85,6 +85,12 @@ then
   export PATH=$(yarn global bin):$HOME/.config/yarn/global/node_modules/.bin:$PATH
 fi
 
+## nvm
+
+mkdir -p "$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"
+. "$HOME/.linuxbrew/opt/nvm/nvm.sh"
+
 ## git
 
 unset SSH_ASKPASS
