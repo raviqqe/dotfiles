@@ -177,6 +177,7 @@ install_go_packages() {
       github.com/motemen/ghq \
       github.com/motemen/gore \
       github.com/mvdan/interfacer/... \
+      github.com/mvdan/sh/cmd/shfmt \
       github.com/nsf/gocode \
       github.com/raviqqe/bstie \
       github.com/rogpeppe/godef \
