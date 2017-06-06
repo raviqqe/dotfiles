@@ -167,7 +167,7 @@ install_go_packages() {
       github.com/client9/misspell/... \
       github.com/constabulary/gb/... \
       github.com/fatih/hclfmt \
-      github.com/junegunn/fzf/src/fzf \
+      github.com/junegunn/fzf \
       github.com/github/hub \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
