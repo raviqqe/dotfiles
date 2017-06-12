@@ -64,9 +64,6 @@ bindkey -v '^F' forward-char
 bindkey -v '^G' send-break
 bindkey -v '^H' backward-delete-char
 bindkey -v '^K' kill-line
-bindkey -v '^N' down-line-or-history
-bindkey -v '^P' history-substring-search-up
-bindkey -v '^R' history-substring-search-down
 bindkey -v '^U' backward-kill-line
 bindkey -v '^W' backward-kill-word
 bindkey -v '^Y' yank
@@ -127,6 +124,8 @@ zplug zsh-users/zsh-completions
 zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-history-substring-search
 
+bindkey -v '^P' history-substring-search-up
+bindkey -v '^N' history-substring-search-down
 bindkey -a k history-substring-search-up
 bindkey -a j history-substring-search-down
 
