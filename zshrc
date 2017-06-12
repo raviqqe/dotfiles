@@ -64,11 +64,8 @@ bindkey -v '^F' forward-char
 bindkey -v '^G' send-break
 bindkey -v '^H' backward-delete-char
 bindkey -v '^K' kill-line
-bindkey -v '^N' down-line-or-history
-bindkey -v '^P' history-substring-search-up
-bindkey -v '^R' history-substring-search-down
 bindkey -v '^U' backward-kill-line
-bindkey -v '^W' backward-kill-word
+bindkey -v '^W' forward-word
 bindkey -v '^Y' yank
 
 
@@ -121,12 +118,16 @@ zle -N zle-keymap-select
 
 . ~/.zplug/init.zsh
 
-zplug zsh-users/zsh-syntax-highlighting
-zplug zsh-users/zsh-completions
-
 zplug mollifier/anyframe
-zstyle :anyframe:selector: use fzf
-zstyle :anyframe:selector:fzf: command 'fzf --select-1'
+zplug zsh-users/zsh-autosuggestions
+zplug zsh-users/zsh-completions
+zplug zsh-users/zsh-syntax-highlighting
+zplug zsh-users/zsh-history-substring-search
+
+bindkey -v '^P' history-substring-search-up
+bindkey -v '^N' history-substring-search-down
+bindkey -a k history-substring-search-up
+bindkey -a j history-substring-search-down
 
 bindkey "^xw" anyframe-widget-select-widget
 bindkey "^xb" anyframe-widget-cdr
@@ -135,15 +136,16 @@ bindkey "^xp" anyframe-widget-put-history
 bindkey "^xk" anyframe-widget-kill
 bindkey "^xf" anyframe-widget-insert-filename
 
-zplug zsh-users/zsh-history-substring-search
-bindkey -a k history-substring-search-up
-bindkey -a j history-substring-search-down
+zstyle :anyframe:selector: use fzf
+zstyle :anyframe:selector:fzf: command 'fzf --select-1'
 
 if ! zplug check --verbose
 then
   zplug install
 fi
 zplug load > /dev/null
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=6
 
 
 # fzf
