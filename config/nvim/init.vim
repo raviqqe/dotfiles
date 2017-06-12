@@ -259,7 +259,7 @@ autocmd Rc BufEnter,BufWinEnter,BufRead,BufNewFile *
 			\ if &filetype == "" | set filetype=text | endif
 autocmd Rc BufWrite * :Autoformat
 autocmd Rc FileType
-			\ cucumber,diff,elm,gitrebase,markdown,sh,text,tisp,xdefaults,yaml,zsh
+			\ conf,cucumber,diff,elm,gitrebase,markdown,sh,text,tisp,xdefaults,yaml,zsh
 			\ let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
 let g:formatters_javascript = ['standard_javascript']
