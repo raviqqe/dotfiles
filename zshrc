@@ -121,12 +121,14 @@ zle -N zle-keymap-select
 
 . ~/.zplug/init.zsh
 
-zplug zsh-users/zsh-syntax-highlighting
-zplug zsh-users/zsh-completions
-
 zplug mollifier/anyframe
-zstyle :anyframe:selector: use fzf
-zstyle :anyframe:selector:fzf: command 'fzf --select-1'
+zplug zsh-users/zsh-autosuggestions
+zplug zsh-users/zsh-completions
+zplug zsh-users/zsh-syntax-highlighting
+zplug zsh-users/zsh-history-substring-search
+
+bindkey -a k history-substring-search-up
+bindkey -a j history-substring-search-down
 
 bindkey "^xw" anyframe-widget-select-widget
 bindkey "^xb" anyframe-widget-cdr
@@ -135,15 +137,16 @@ bindkey "^xp" anyframe-widget-put-history
 bindkey "^xk" anyframe-widget-kill
 bindkey "^xf" anyframe-widget-insert-filename
 
-zplug zsh-users/zsh-history-substring-search
-bindkey -a k history-substring-search-up
-bindkey -a j history-substring-search-down
+zstyle :anyframe:selector: use fzf
+zstyle :anyframe:selector:fzf: command 'fzf --select-1'
 
 if ! zplug check --verbose
 then
   zplug install
 fi
 zplug load > /dev/null
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=6
 
 
 # fzf
