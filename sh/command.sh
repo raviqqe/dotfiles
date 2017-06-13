@@ -11,6 +11,11 @@ filter() {
 }
 
 
+# history
+
+alias r='eval "$( fc -ln 0 | fzf )"'
+
+
 # cd
 
 export FZCD_CD_COMMAND=stacd
