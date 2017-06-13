@@ -190,11 +190,6 @@ alias ds='ghq list --full-path'
 alias less="less -R"
 
 
-# tail -f
-
-alias f="tail -f"
-
-
 # ack clone
 
 alias s='rg --line-number'
