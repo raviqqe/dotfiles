@@ -60,30 +60,31 @@ alias brew="unset LD_LIBRARY_PATH && brew"
 
 # git
 
-alias gcl="git clone --recursive"
-alias gco="git checkout"
-alias gs="git status"
-alias gpl="git pull"
-alias gps="git push"
-alias gpp="git pull && git push"
-alias gppa="git pull --all && git push --all"
-alias gl="git log"
-alias glp="git log -p"
-alias glf="git log -p --name-only"
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias gdh="git diff HEAD^ HEAD"
-alias gap="git add --patch"
-alias gb="git branch"
-alias gba="git branch -a"
-alias gbd="git branch -d"
-alias gm="git merge"
-alias gri="git rebase -i"
-alias gsm="git submodule"
-alias gsma="git submodule add"
-alias gsmu="git submodule update --init --recursive"
-alias gcp="git cherry-pick"
-alias gcb="git chbr"
+alias gcl='git clone --recursive'
+alias gcf='git commit -m "TEMPORARY COMMIT"'
+alias gco='git checkout'
+alias gs='git status'
+alias gpl='git pull'
+alias gps='git push'
+alias gpp='git pull && git push'
+alias gppa='git pull --all && git push --all'
+alias gl='git log'
+alias glp='git log -p'
+alias glf='git log -p --name-only'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdh='git diff HEAD^ HEAD'
+alias gap='git add --patch'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+alias gm='git merge'
+alias gri='git rebase -i'
+alias gsm='git submodule'
+alias gsma='git submodule add'
+alias gsmu='git submodule update --init --recursive'
+alias gcp='git cherry-pick'
+alias gcb='git chbr'
 
 ga() {
   if [ $# -eq 0 ]
