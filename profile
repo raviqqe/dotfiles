@@ -111,7 +111,7 @@ export GHQ_ROOT=$HOME/src
 
 ## android
 
-export ANDROID_HOME=$HOME/.linuxbrew/opt/android-sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
