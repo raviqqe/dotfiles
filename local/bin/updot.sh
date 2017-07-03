@@ -83,13 +83,12 @@ install_linuxbrew_packages() {
   fi &&
 
   brew install \
-      --without-docs --without-doxygen --without-icu4c --without-libgit2 \
+      --without-docs --without-doxygen --without-icu4c --without-jemalloc \
+      --without-libgit2 \
       curl $(is_x86_64 && echo exa) zsh git tmux lynx links bmake htop tig \
-      $(is_x86_64 && echo go) ruby python python3 node nvm gawk gnu-sed yarn &&
+      $(is_x86_64 && echo go) ruby python python3 neovim node nvm gawk \
+      gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
-
-  brew tap neovim/neovim &&
-  brew install neovim/neovim/neovim --without-jemalloc &&
 
   if [ -n "$desktop_mode" ]
   then
