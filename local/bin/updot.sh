@@ -316,6 +316,9 @@ main() {
     l)
       low_memory=true
       ;;
+    h)
+      homebrew=false
+      ;;
     esac
   done
   shift $(expr $OPTIND - 1)
@@ -325,8 +328,11 @@ main() {
   (
     . $HOME/.profile &&
 
-    install_linuxbrew &&
-    install_linuxbrew_packages ${desktop_mode:+-d} &&
+    if [ -z "$homebrew" ]
+    then
+      install_linuxbrew &&
+      install_linuxbrew_packages ${desktop_mode:+-d}
+    fi &&
 
     install_zsh_plugins &&
     install_tpm &&
