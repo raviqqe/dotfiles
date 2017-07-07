@@ -168,6 +168,7 @@ install_go_packages() {
       github.com/fatih/hclfmt \
       github.com/junegunn/fzf \
       github.com/github/hub \
+      github.com/ethereum/go-ethereum/cmd/geth \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
       $(is_64_bit && echo github.com/hashicorp/terraform) \
