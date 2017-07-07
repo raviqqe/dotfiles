@@ -42,6 +42,7 @@ Plug 'JuliaLang/julia-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
 Plug 'neoclide/vim-jsx-improve'
+Plug 'tomlion/vim-solidity'
 
 """ python
 
