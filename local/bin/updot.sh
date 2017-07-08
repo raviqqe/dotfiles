@@ -151,8 +151,10 @@ install_rust_packages() {
 
   if [ -n "$RUST_SRC_PATH" ]
   then
-    git_clone_to_dir https://github.com/rust-lang/rust \
-                     "$(dirname "$RUST_SRC_PATH")"
+    repo="$(dirname "$RUST_SRC_PATH")"
+
+    rm -rf "$repo" &&
+    git clone --depth 1 https://github.com/rust-lang/rust "$repo"
   else
     fail '$RUST_SRC_PATH is not set.'
   fi
