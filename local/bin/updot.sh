@@ -221,8 +221,8 @@ install_yarn_packages() {
             jsonlint karma git-recall leasot mocha npm npm-check-updates
             remark-cli rollup serverless standard stylelint tslint typescript
             typescript-formatter webpack'
-  yarn global add $packages &&
-  yarn global upgrade $packages
+  yarn global add --ignore-scripts $packages &&
+  yarn global upgrade --ignore-scripts $packages
 }
 
 install_vim_plug() {
