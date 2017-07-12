@@ -76,6 +76,8 @@ install_linuxbrew_packages() {
   brew update &&
   brew update &&
 
+  brew upgrade &&
+
   if is_64_bit
   then
     brew tap thoughtbot/formulae &&
