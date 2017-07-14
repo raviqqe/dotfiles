@@ -2,7 +2,7 @@ snippet argparse
 abbr def get_args(): ...
 	def get_args():
 		arg_parser = argparse.ArgumentParser()
-		arg_parser.add_argument("${1:first_argument}")
+		arg_parser.add_argument('${1:first_argument}')
 		return arg_parser.parse_args()
 
 
@@ -12,7 +12,7 @@ abbr def main() ... if ...
 		${1:# some code...}
 
 
-	if __name__ == "__main__":
+	if __name__ == '__main__':
 		main()
 
 
@@ -29,5 +29,5 @@ abbr # main routine ... def main(args): ...
 		${2:# some code...}
 
 
-	if __name__ == "__main__":
+	if __name__ == '__main__':
 		main(docopt.docopt(main.__doc__))
