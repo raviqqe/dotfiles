@@ -193,9 +193,9 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory = [
 			\ '~/.config/nvim/snippets',
 			\ '~/.config/nvim/plugged/vim-snippets/snippets']
-imap <c-k> <plug>(neosnippet_expand_or_jump)
-smap <c-k> <plug>(neosnippet_expand_or_jump)
-xmap <c-k> <plug>(neosnippet_expand_target)
+imap <c-s> <plug>(neosnippet_expand_or_jump)
+smap <c-s> <plug>(neosnippet_expand_or_jump)
+xmap <c-s> <plug>(neosnippet_expand_target)
 
 
 "" easymotion
