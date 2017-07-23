@@ -65,7 +65,7 @@ install_linuxbrew_packages() {
   do
     case $option in
     d)
-      desktop_mode=true
+      desktop=true
       ;;
     v)
       verbose=true
@@ -95,7 +95,7 @@ install_linuxbrew_packages() {
       gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
 
-  if [ -n "$desktop_mode" ]
+  if [ -n "$desktop" ]
   then
     brew tap homebrew/x11 &&
     brew install feh mupdf
@@ -316,11 +316,11 @@ main() {
   do
     case $option in
     b)
-      batch_mode=true
+      batch=true
       ;;
     d)
       homebrew_options="$homebrew_options -v"
-      desktop_mode=true
+      desktop=true
       ;;
     l)
       low_memory=true
@@ -343,7 +343,7 @@ main() {
     if [ -z "$homebrew" ]
     then
       install_linuxbrew &&
-      install_linuxbrew_packages ${desktop_mode:+-d} ${verbose:+-v}
+      install_linuxbrew_packages ${desktop:+-d} ${verbose:+-v}
     fi &&
 
     install_zsh_plugins &&
@@ -360,7 +360,7 @@ main() {
       install_go_packages
     fi &&
 
-    if [ -n "$desktop_mode" ]
+    if [ -n "$desktop" ]
     then
       install_dwm &&
       install_wallpapers
@@ -371,7 +371,7 @@ main() {
       install_google_cloud_sdk
     fi &&
 
-    if [ -z "$batch_mode" ]
+    if [ -z "$batch" ]
     then
       install_ruby_gem_credential &&
       install_vim_plugins
