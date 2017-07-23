@@ -168,7 +168,7 @@ install_rust_packages() {
 install_go_packages() {
   info_installing "go packages" &&
 
-  go get -u \
+  go get "$@" -u \
       golang.org/x/tools/cmd/... \
       github.com/alecthomas/gometalinter \
       github.com/client9/misspell/... \
@@ -357,7 +357,7 @@ main() {
 
     if [ -z $low_memory ]
     then
-      install_go_packages
+      install_go_packages ${verbose:+-v}
     fi &&
 
     if [ -n "$desktop" ]
