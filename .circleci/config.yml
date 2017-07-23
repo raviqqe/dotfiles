@@ -37,4 +37,4 @@ jobs:
           name: Test updot command
           working_directory: /home/tester
           no_output_timeout: 30m
-          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && updot -bv || updot -b'
+          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && updot -bv || updot -bv'
