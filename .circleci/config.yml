@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: buildpack-deps:zesty
+      - image: ubuntu:devel
     working_directory: ~/
     environment:
       - TERM: xterm-256color
@@ -11,7 +11,7 @@ jobs:
           name: OS Setup
           command: |
             apt -y update --fix-missing
-            apt -y install locales sudo
+            apt -y install locales
             locale-gen en_US.UTF-8
       - run:
           name: Install rcm
@@ -23,7 +23,8 @@ jobs:
           name: Install dependencies
           command: |
             apt -y update --fix-missing
-            apt -y install build-essential curl git rcm ruby
+            apt -y upgrade
+            apt -y install build-essential curl git rcm ruby sudo
       - run:
           name: Create user
           command: useradd -m tester
