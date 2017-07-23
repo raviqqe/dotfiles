@@ -61,11 +61,14 @@ install_linuxbrew() {
 }
 
 install_linuxbrew_packages() {
-  while getopts d option
+  while getopts dv option
   do
     case $option in
     d)
       desktop_mode=true
+      ;;
+    v)
+      verbose=true
       ;;
     esac
   done
@@ -84,7 +87,7 @@ install_linuxbrew_packages() {
     brew install rcm
   fi &&
 
-  brew install \
+  brew install ${verbose:+-v} \
       --without-docs --without-doxygen --without-icu4c --without-jemalloc \
       --without-libgit2 \
       curl $(is_x86_64 && echo exa) zsh git tmux lynx links htop tig \
@@ -309,13 +312,14 @@ check_args() {
 # main routine
 
 main() {
-  while getopts bdhlx option
+  while getopts bdhlv option
   do
     case $option in
     b)
       batch_mode=true
       ;;
     d)
+      homebrew_options="$homebrew_options -v"
       desktop_mode=true
       ;;
     l)
@@ -323,6 +327,9 @@ main() {
       ;;
     h)
       homebrew=false
+      ;;
+    v)
+      verbose=true
       ;;
     esac
   done
@@ -336,7 +343,7 @@ main() {
     if [ -z "$homebrew" ]
     then
       install_linuxbrew &&
-      install_linuxbrew_packages ${desktop_mode:+-d}
+      install_linuxbrew_packages ${desktop_mode:+-d} ${verbose:+-v}
     fi &&
 
     install_zsh_plugins &&
