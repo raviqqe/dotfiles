@@ -319,7 +319,6 @@ main() {
       batch=true
       ;;
     d)
-      homebrew_options="$homebrew_options -v"
       desktop=true
       ;;
     l)
