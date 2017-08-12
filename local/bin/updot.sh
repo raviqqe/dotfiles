@@ -221,7 +221,7 @@ install_ruby_gem_credential() {
 install_yarn_packages() {
   info_installing "yarn packages" &&
 
-  packages='ava babel-eslint depcheck diff-so-fancy git-recall gulp jest
+  packages='ava babel-eslint depcheck diff-so-fancy git-recall gulp gtop jest
             js-beautify jshint jsonlint karma leasot mocha npm
             npm-check-updates remark-cli rollup serverless standard stylelint
             tslint typescript typescript-formatter webpack'
