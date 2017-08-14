@@ -179,7 +179,7 @@ install_go_packages() {
       github.com/ethereum/go-ethereum/cmd/geth \
       github.com/golang/lint/golint \
       github.com/hashicorp/packer \
-      $(is_64_bit && echo github.com/hashicorp/terraform) \
+      github.com/hashicorp/terraform \
       github.com/k0kubun/pp \
       github.com/mitchellh/gox \
       github.com/motemen/ghq \
