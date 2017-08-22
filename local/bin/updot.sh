@@ -224,7 +224,8 @@ install_yarn_packages() {
   packages='ava babel-eslint depcheck diff-so-fancy git-recall gulp gtop jest
             js-beautify jshint jsonlint karma leasot mocha npm
             npm-check-updates remark-cli rollup serverless standard stylelint
-            tslint typescript typescript-formatter webpack'
+            stylelint-config-standard tslint typescript typescript-formatter
+            webpack'
   yarn global add --ignore-scripts $packages &&
   yarn global upgrade --ignore-scripts $packages
 }
