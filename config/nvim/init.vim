@@ -137,6 +137,7 @@ autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
 autocmd Rc BufRead,BufNewFile *.tisp set filetype=tisp
 autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
 autocmd Rc BufRead,BufNewFile *.aiml set filetype=text
+autocmd Rc BufRead,BufNewFile *.rules set filetype=text
 autocmd Rc FileType sh set filetype=zsh
 
 "" keymaps
