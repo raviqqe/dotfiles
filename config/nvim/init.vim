@@ -69,11 +69,6 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 
-"" operators
-
-Plug 'kana/vim-operator-user'
-Plug 'emonkak/vim-operator-sort'
-
 "" text objects
 
 Plug 'kana/vim-textobj-user'
