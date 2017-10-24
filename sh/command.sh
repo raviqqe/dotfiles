@@ -181,7 +181,7 @@ eg() {
 
 # ls
 
-alias ls=exa
+alias ls=$(which exa > /dev/null 2>&1 && echo exa || echo /bin/ls)
 alias d=ls
 alias da='ls -a'
 alias dl='ls -l'
