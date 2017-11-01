@@ -84,6 +84,7 @@ nvm_script="$HOME/.linuxbrew/opt/nvm/nvm.sh"
 if [ -f "$nvm_script" ]
 then
   . "$nvm_script"
+  . "$nvm_script" # Update PATH properly
 fi
 
 ## git
