@@ -48,7 +48,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 ## go
 
 export GOPATH=$HOME
-export PATH=$GOPATH/bin:$PATH
+export PATH=$GOPATH/bin:$HOME/.local/go/bin:$PATH
 
 ## rust
 
