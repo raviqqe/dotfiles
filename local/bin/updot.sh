@@ -144,15 +144,14 @@ install_rustup() {
 install_rust_packages() {
   info_installing "rust packages" &&
 
-  cargo='rustup run stable cargo'
   packages='cargo-update fd-find racer ripgrep rustfmt tokei'
 
   for package in $packages
   do
-    $cargo install $package || :
+    cargo install $package || :
   done &&
 
-  $cargo install-update $packages &&
+  cargo install-update $packages &&
 
   if [ -n "$RUST_SRC_PATH" ]
   then
@@ -351,7 +350,13 @@ main() {
     install_ruby_gems &&
     install_yarn_packages &&
     install_haskell_packages &&
-    install_rustup &&
+
+    if is_x86_64
+    then
+      # rustup installation fails on ARM with OpenSSL errors.
+      install_rustup
+    fi &&
+
     install_rust_packages &&
 
     if [ -z $low_memory ]
