@@ -107,4 +107,5 @@ export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
 ## LD_LIBRARY_PATH
 
+export LIBRARY_PATH=$library_path
 ld_library_path=$library_path
