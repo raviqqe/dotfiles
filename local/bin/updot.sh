@@ -183,12 +183,12 @@ install_go_packages() {
       github.com/mitchellh/gox \
       github.com/motemen/ghq \
       github.com/motemen/gore \
-      github.com/mvdan/interfacer/... \
-      github.com/mvdan/sh/cmd/shfmt \
       github.com/nsf/gocode \
       github.com/raviqqe/bstie \
       github.com/rogpeppe/godef \
-      honnef.co/go/tools/...
+      honnef.co/go/tools/... \
+      mvdan.cc/interfacer \
+      mvdan.cc/sh/cmd/shfmt
 }
 
 install_python_packages() {
