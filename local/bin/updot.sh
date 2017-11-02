@@ -220,8 +220,8 @@ install_ruby_gem_credential() {
 install_yarn_packages() {
   info_installing "yarn packages" &&
 
-  packages='ava babel-eslint depcheck diff-so-fancy git-recall gulp gtop
-            js-beautify jshint jsonlint karma leasot npm npm-check-updates
+  packages='babel-eslint depcheck diff-so-fancy gulp
+            js-beautify jshint jsonlint leasot
             remark-cli serverless standard stylelint stylelint-config-standard
             tslint typescript-formatter'
   yarn global add --ignore-scripts $packages &&
