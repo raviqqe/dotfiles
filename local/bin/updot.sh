@@ -299,7 +299,7 @@ install_google_cloud_sdk() {
 check_args() {
   if [ $# -ne 0 ]
   then
-    fail "usage: $(basename $0) [-b] [-d]"
+    fail "usage: $(basename $0) [-bdh]"
   fi
 }
 
