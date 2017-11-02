@@ -18,4 +18,4 @@ $ updot
 
 ## License
 
-[The Unlicense](https://unlicense.org) except for quotes.
+[The Unlicense](https://unlicense.org)
