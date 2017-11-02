@@ -1,8 +1,5 @@
 #!/bin/sh
 
-. $HOME/.sh/util.sh
-
-
 # constants
 
 github_address=https://github.com
@@ -24,11 +21,10 @@ info_installing() {
 }
 
 git_clone_to_dir() {
-  check_num_of_args "git_clone_to_dir" 2 $#
   address=$1
   dir=$2
 
-  if is_git_repo "$dir"
+  if [ -d "$dir/.git" ]
   then
     git -C "$dir" pull
   else
