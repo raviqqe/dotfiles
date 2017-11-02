@@ -91,7 +91,7 @@ install_linuxbrew_packages() {
       --without-docs --without-doxygen --without-icu4c --without-jemalloc \
       --without-libgit2 \
       asdf curl zsh git tmux htop tig \
-      $(is_x86_64 && echo go) ruby python3 neovim node nvm gawk \
+      $(is_x86_64 && echo go) ruby python3 neovim node gawk \
       gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
 
