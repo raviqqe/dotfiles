@@ -320,9 +320,6 @@ main() {
     d)
       desktop=true
       ;;
-    l)
-      low_memory=true
-      ;;
     h)
       homebrew=false
       ;;
@@ -358,11 +355,7 @@ main() {
     fi &&
 
     install_rust_packages &&
-
-    if [ -z $low_memory ]
-    then
-      install_go_packages ${verbose:+-v}
-    fi &&
+    install_go_packages &&
 
     if [ -n "$desktop" ]
     then
