@@ -90,7 +90,7 @@ install_linuxbrew_packages() {
   brew install ${verbose:+-v} \
       --without-docs --without-doxygen --without-icu4c --without-jemalloc \
       --without-libgit2 \
-      asdf curl $(is_x86_64 && echo exa) zsh git tmux htop tig \
+      asdf curl zsh git tmux htop tig \
       $(is_x86_64 && echo go) ruby python python3 neovim node nvm gawk \
       gnu-sed yarn &&
   # ghc haskell-stack elm-format git-lfs
@@ -144,7 +144,7 @@ install_rustup() {
 install_rust_packages() {
   info_installing "rust packages" &&
 
-  packages='cargo-update fd-find racer ripgrep rustfmt tokei'
+  packages='cargo-update exa fd-find racer ripgrep rustfmt tokei'
 
   for package in $packages
   do
