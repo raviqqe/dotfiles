@@ -3,7 +3,7 @@
 [![Circle CI](https://img.shields.io/circleci/project/github/raviqqe/dotfiles.svg)](https://circleci.com/gh/raviqqe/dotfiles)
 [![License](https://img.shields.io/badge/license-unlicense-lightgray.svg)](https://unlicense.org)
 
-## Requirement
+## Requirements
 
 - Linux
 - [rcm](https://github.com/thoughtbot/rcm)
