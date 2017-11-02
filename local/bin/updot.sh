@@ -323,9 +323,6 @@ main() {
     h)
       homebrew=false
       ;;
-    v)
-      verbose=true
-      ;;
     esac
   done
   shift $(expr $OPTIND - 1)
@@ -338,7 +335,7 @@ main() {
     if [ -z "$homebrew" ]
     then
       install_linuxbrew &&
-      install_linuxbrew_packages ${desktop:+-d} ${verbose:+-v}
+      install_linuxbrew_packages ${desktop:+-d}
     fi &&
 
     install_zsh_plugins &&

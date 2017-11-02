@@ -37,4 +37,4 @@ jobs:
       - run:
           name: Test updot command
           working_directory: /home/tester
-          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && updot -bv || updot -bv'
+          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && updot -b || updot -b'
