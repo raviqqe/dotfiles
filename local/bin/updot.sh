@@ -63,9 +63,6 @@ install_linuxbrew_packages() {
     d)
       desktop=true
       ;;
-    v)
-      verbose=true
-      ;;
     esac
   done
   shift $(expr $OPTIND - 1)
@@ -83,7 +80,7 @@ install_linuxbrew_packages() {
     brew install rcm
   fi &&
 
-  brew install ${verbose:+-v} \
+  brew install \
       --without-docs --without-doxygen --without-icu4c --without-jemalloc \
       --without-libgit2 \
       asdf curl zsh git tmux htop tig \
@@ -163,7 +160,7 @@ install_rust_packages() {
 install_go_packages() {
   info_installing "go packages" &&
 
-  go get "$@" -u \
+  go get -u \
       golang.org/x/tools/cmd/... \
       github.com/alecthomas/gometalinter \
       github.com/client9/misspell/... \
