@@ -1,8 +1,5 @@
 #!/bin/sh
 
-. $HOME/.sh/util.sh
-
-
 LOCAL=$HOME/.local
 
 
@@ -58,14 +55,7 @@ export RUSTUP_USE_HYPER=1
 
 ## python
 
-if on_mac
-then
-  mac_python=$HOME/Library/Python/3.6
-  export MYPYPATH=$mac_python/lib/python/site-packages
-  export PATH=$mac_python/bin:$PATH
-else
-  export MYPYPATH=$LOCAL/lib/python3.6/site-packages
-fi
+export MYPYPATH=$LOCAL/lib/python3.6/site-packages
 
 ## javascript
 
