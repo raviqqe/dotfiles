@@ -370,10 +370,7 @@ main() {
       install_wallpapers
     fi &&
 
-    if is_x86_64
-    then
-      install_google_cloud_sdk
-    fi &&
+    install_google_cloud_sdk &&
 
     if [ -z "$batch" ]
     then
