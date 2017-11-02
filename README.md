@@ -1,7 +1,7 @@
 # dotfiles
 
-[![Circle CI](https://img.shields.io/circleci/project/github/raviqqe/dotfiles.svg)](https://circleci.com/gh/raviqqe/dotfiles)
-[![License](https://img.shields.io/badge/license-unlicense-lightgray.svg)](https://unlicense.org)
+[![Circle CI](https://img.shields.io/circleci/project/github/raviqqe/dotfiles.svg?style=flat-square)](https://circleci.com/gh/raviqqe/dotfiles)
+[![License](https://img.shields.io/badge/license-unlicense-lightgray.svg?style=flat-square)](https://unlicense.org)
 
 ## Requirements
 
