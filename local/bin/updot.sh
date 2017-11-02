@@ -356,14 +356,13 @@ main() {
 
     install_rust_packages &&
     install_go_packages &&
+    install_google_cloud_sdk &&
 
     if [ -n "$desktop" ]
     then
       install_dwm &&
       install_wallpapers
     fi &&
-
-    install_google_cloud_sdk &&
 
     if [ -z "$batch" ]
     then
