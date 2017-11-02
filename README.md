@@ -10,10 +10,10 @@
 
 ## Installation
 
-```
-$ git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
-$ rcup
-$ updot
+```sh
+git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
+rcup
+updot
 ```
 
 ## License
