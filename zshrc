@@ -119,8 +119,8 @@ zle -N zle-keymap-select
 
 . ~/.zplug/init.zsh
 
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-completions
+zplug zsh-users/zsh-autosuggestions, lazy:true
+zplug zsh-users/zsh-completions, lazy:true
 zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-history-substring-search
 
