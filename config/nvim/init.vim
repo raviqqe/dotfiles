@@ -8,6 +8,7 @@ Plug 'cocopon/iceberg.vim'
 
 "" misc
 
+Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
