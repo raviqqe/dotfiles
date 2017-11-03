@@ -16,7 +16,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'plasticboy/vim-markdown'
 Plug 'raviqqe/vim-non-blank'
 Plug 'raviqqe/vim-pastplace'
 Plug 'thinca/vim-quickrun'
@@ -39,11 +38,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'JuliaLang/julia-vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'lervag/vimtex'
-Plug 'neoclide/vim-jsx-improve'
-Plug 'tomlion/vim-solidity'
+Plug 'sheerun/vim-polyglot'
 
 """ python
 
@@ -52,7 +47,6 @@ Plug 'zchee/deoplete-jedi'
 
 """ go
 
-Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go'
 
 """ rust
@@ -60,7 +54,6 @@ Plug 'zchee/deoplete-go'
 Plug 'phildawes/racer'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang-nursery/rustfmt'
-Plug 'rust-lang/rust.vim'
 Plug 'sebastianmarkow/deoplete-rust'
 
 "" deoplete
@@ -217,21 +210,6 @@ let g:sneak#s_next = 1
 
 let g:AutoPairsMapCh = 0
 let g:AutoPairsMapCR = 0
-
-
-"" vimtex
-
-let g:vimtex_view_method = 'mupdf'
-
-
-"" elm-vim
-
-let g:elm_format_autosave = 1
-
-
-"" markdown
-
-let g:vim_markdown_folding_disabled = 1
 
 
 "" quickrun
