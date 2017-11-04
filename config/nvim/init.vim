@@ -35,7 +35,6 @@ Plug 'junegunn/fzf.vim'
 
 "" language
 
-Plug 'ElmCast/elm-vim'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'sheerun/vim-polyglot'
