@@ -163,13 +163,11 @@ install_go_packages() {
   go get -u \
       golang.org/x/tools/cmd/... \
       github.com/alecthomas/gometalinter \
-      github.com/client9/misspell/... \
       github.com/constabulary/gb/... \
       github.com/fatih/hclfmt \
       github.com/junegunn/fzf \
       github.com/github/hub \
       github.com/ethereum/go-ethereum/cmd/geth \
-      github.com/golang/lint/golint \
       github.com/hashicorp/packer \
       github.com/hashicorp/terraform \
       github.com/k0kubun/pp \
@@ -178,10 +176,9 @@ install_go_packages() {
       github.com/motemen/gore \
       github.com/nsf/gocode \
       github.com/raviqqe/bstie \
-      github.com/rogpeppe/godef \
-      honnef.co/go/tools/... \
-      mvdan.cc/interfacer \
-      mvdan.cc/sh/cmd/shfmt
+      github.com/rogpeppe/godef &&
+
+  gometalinter --install
 }
 
 install_python_packages() {
