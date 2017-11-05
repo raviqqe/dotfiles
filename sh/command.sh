@@ -83,11 +83,11 @@ alias gri='git rebase -i'
 alias gsm='git submodule'
 alias gsma='git submodule add'
 alias gsmu='git submodule update --init --recursive'
-alias gt='git stash'
-alias gtp='git stash pop'
-alias gtl='git stash list'
 alias gcp='git cherry-pick'
 alias gcb='git chbr'
+alias gz='git stash'
+alias gzp='git stash pop'
+alias gzl='git stash list'
 
 ga() {
   if [ $# -eq 0 ]
