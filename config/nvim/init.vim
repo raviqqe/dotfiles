@@ -12,12 +12,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
+Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'raviqqe/vim-nonblank'
-Plug 'raviqqe/vim-pastplace'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -127,6 +127,7 @@ autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
 autocmd Rc BufRead,BufNewFile *.aiml set filetype=text
 autocmd Rc BufRead,BufNewFile *.rules set filetype=text
 autocmd Rc FileType sh set filetype=zsh
+autocmd Rc BufEnter * EnableStripWhitespaceOnSave
 
 "" keymaps
 
