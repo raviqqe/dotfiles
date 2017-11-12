@@ -14,7 +14,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
-Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pbrisbin/vim-mkdir'
@@ -190,20 +189,8 @@ xmap <c-s> <plug>(neosnippet_expand_target)
 
 "" easymotion
 
-nmap <leader>s <plug>(easymotion-s)
-nmap <leader>/ <plug>(easymotion-sn)
-
-
-"" sneak
-
-nmap t <plug>Sneak_s
-nmap T <plug>Sneak_S
-xmap t <plug>Sneak_s
-xmap T <plug>Sneak_S
-omap t <plug>Sneak_s
-omap T <plug>Sneak_S
-
-let g:sneak#s_next = 1
+nmap t <plug>(easymotion-s2)
+nmap / <plug>(easymotion-sn)
 
 
 "" auto-pairs
