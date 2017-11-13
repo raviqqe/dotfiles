@@ -92,7 +92,7 @@ set wildmode=full
 filetype plugin indent on
 autocmd Rc BufWinEnter * set mouse=
 
-"" tab setting
+"" space setting
 
 set autoindent
 set smartindent
