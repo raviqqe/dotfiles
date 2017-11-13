@@ -199,12 +199,6 @@ let g:AutoPairsMapCh = 0
 let g:AutoPairsMapCR = 0
 
 
-"" quickrun
-
-let g:quickrun_config = get(g:, 'quickrun_config', {})
-let g:quickrun_config.clojure = {'command' : 'clojure'}
-
-
 "" fzf
 
 nnoremap <leader>b :Buffers<cr>
