@@ -105,6 +105,7 @@ set inccommand=nosplit
 set incsearch
 set number
 set relativenumber
+set shortmess=a
 set showcmd
 set showmatch
 set showmode
