@@ -72,13 +72,13 @@ augroup Rc
 augroup END
 
 set autoread
-set ttyfast
-set nolazyredraw
 set nobackup
+set nolazyredraw
 set nowritebackup
 set swapfile
-set visualbell
 set tildeop
+set ttyfast
+set visualbell
 set wildmenu
 set wildmode=full
 filetype plugin indent on
@@ -87,35 +87,34 @@ autocmd Rc BufWinEnter * set mouse=
 "" space setting
 
 set autoindent
-set smartindent
-set shiftround
-set smarttab
-set shiftwidth=2
-set tabstop=2
 set list
+set shiftround
+set shiftwidth=2
+set smartindent
+set smarttab
+set tabstop=2
 
 "" appearance
 
 syntax on
-set number
-set relativenumber
+set backspace=indent,eol,start
 set colorcolumn=80
-set showmatch
-set showmode
-set showcmd
-set wrap
+set completeopt=menu
+set cursorline
+set hlsearch
 set inccommand=nosplit
 set incsearch
-set hlsearch
+set number
+set relativenumber
+set showcmd
+set showmatch
+set showmode
 set splitbelow
 set splitright
-set cursorline
-set backspace=indent,eol,start
-set completeopt=menu
+set wrap
 autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
 autocmd Rc BufRead,BufNewFile *.tisp set filetype=tisp
 autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
-autocmd Rc BufRead,BufNewFile *.aiml set filetype=text
 autocmd Rc BufRead,BufNewFile *.rules set filetype=text
 autocmd Rc FileType sh set filetype=zsh
 autocmd Rc BufEnter * EnableStripWhitespaceOnSave
