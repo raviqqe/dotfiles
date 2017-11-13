@@ -247,7 +247,7 @@ let g:auto_save_silent = 1
 
 "" lightline
 
-let g:lightline = { 'colorscheme': 'seoul256' }
+let g:lightline = { 'colorscheme': 'iceberg' }
 
 
 "" colorscheme
