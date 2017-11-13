@@ -2,12 +2,6 @@
 
 call plug#begin()
 
-"" color
-
-Plug 'cocopon/iceberg.vim'
-
-"" misc
-
 Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
@@ -59,6 +53,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
+
+"" color
+
+Plug 'cocopon/iceberg.vim'
 
 call plug#end()
 
