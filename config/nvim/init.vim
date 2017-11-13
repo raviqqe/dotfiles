@@ -61,14 +61,6 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 
-"" text objects
-
-Plug 'kana/vim-textobj-user'
-Plug 'bps/vim-textobj-python'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-line'
-Plug 'thinca/vim-textobj-comment'
-
 call plug#end()
 
 
