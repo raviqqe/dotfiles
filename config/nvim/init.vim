@@ -177,7 +177,6 @@ xmap <c-s> <plug>(neosnippet_expand_target)
 "" easymotion
 
 nmap t <plug>(easymotion-s2)
-nmap / <plug>(easymotion-sn)
 
 
 "" auto-pairs
