@@ -178,6 +178,8 @@ install_go_packages() {
       github.com/raviqqe/bstie \
       github.com/rogpeppe/godef &&
 
+  go get -u -tags most github.com/xo/usql &&
+
   gometalinter --install
 }
 
