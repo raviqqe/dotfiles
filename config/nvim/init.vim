@@ -61,7 +61,6 @@ Plug 'cocopon/iceberg.vim'
 call plug#end()
 
 
-
 " pure vim
 
 augroup Rc
@@ -145,7 +144,6 @@ cnoremap <c-h> <left>
 cnoremap <c-j> <c-n>
 cnoremap <c-k> <c-p>
 cnoremap <c-l> <right>
-
 
 
 " plugin settings
