@@ -1,0 +1,3 @@
+#!/bin/sh
+
+vim +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
