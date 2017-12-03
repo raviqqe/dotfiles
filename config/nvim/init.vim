@@ -38,6 +38,7 @@ Plug 'zchee/deoplete-jedi'
 
 """ go
 
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go'
 
 """ rust
