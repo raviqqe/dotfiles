@@ -23,4 +23,4 @@ then
   exit 1
 fi &&
 
-find . -type f | filter | xargs -n 128 sed -i "$1"
+find . -type f | filter | xargs -n 1024 sed -i "$1"
