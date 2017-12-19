@@ -216,7 +216,7 @@ install_yarn_packages() {
   packages='babel-eslint depcheck diff-so-fancy gulp
             js-beautify jshint jsonlint leasot
             remark-cli serverless standard stylelint stylelint-config-standard
-            tslint typescript typescript-formatter'
+            tldr tslint typescript typescript-formatter'
   yarn global add --ignore-scripts $packages &&
   yarn global upgrade --ignore-scripts $packages
 }
