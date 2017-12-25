@@ -208,7 +208,6 @@ autocmd Rc FileType
 			\ let b:autoformat_autoindent = 0
 let g:formatters_python = ['autopep8']
 let g:formatters_javascript = ['standard_javascript']
-let g:formatters_markdown = []
 
 
 "" ale
