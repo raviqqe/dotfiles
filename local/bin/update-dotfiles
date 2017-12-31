@@ -175,6 +175,7 @@ install_go_packages() {
       github.com/motemen/ghq \
       github.com/motemen/gore \
       github.com/nsf/gocode \
+      github.com/rakyll/hey \
       github.com/raviqqe/bstie \
       github.com/raviqqe/liche \
       github.com/rogpeppe/godef &&
