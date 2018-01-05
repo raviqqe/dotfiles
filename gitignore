@@ -4,5 +4,6 @@ __pycache__
 node_modules
 .cache
 *.log
+*.test
 build
 dist
