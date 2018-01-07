@@ -13,7 +13,7 @@ filter() {
 
 # history
 
-alias r='eval "$( fc -ln 0 | fzf )"'
+alias r='eval "$( fc -ln 0 | sort -u | fzf )"'
 
 
 # cd
