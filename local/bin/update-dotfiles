@@ -125,7 +125,8 @@ install_rustup() {
 
   if ! which rustup
   then
-    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+    curl https://sh.rustup.rs -sSf |
+    SSL_CERT_DIR=/etc/ssl/certs sh -s -- -y --no-modify-path
   fi &&
 
   rustup self update &&
@@ -338,12 +339,7 @@ main() {
     install_ruby_gems &&
     install_yarn_packages &&
     install_haskell_packages &&
-
-    if is_x86_64
-    then
-      # rustup installation fails on ARM with OpenSSL errors.
-      install_rustup
-    fi &&
+    install_rustup &&
 
     install_rust_packages &&
     install_go_packages &&
