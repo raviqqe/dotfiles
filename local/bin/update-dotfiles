@@ -132,8 +132,8 @@ install_rustup() {
 
   rustup self update &&
   rustup update &&
-  rustup install stable &&
-  rustup default stable
+  rustup install nightly &&
+  rustup default nightly
 }
 
 install_rust_packages() {
