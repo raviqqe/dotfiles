@@ -3,7 +3,6 @@
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
-Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'farmergreg/vim-lastplace'
@@ -11,6 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'sbdchd/neoformat'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -198,16 +198,10 @@ nnoremap <leader>m :Maps<cr>
 nnoremap <leader>r :Ag<cr>
 
 
-"" autoformat
+"" neoformat
 
-autocmd Rc BufEnter,BufWinEnter,BufRead,BufNewFile *
-			\ if &filetype == "" | set filetype=text | endif
-autocmd Rc BufWrite * :Autoformat
-autocmd Rc FileType
-			\ conf,cucumber,diff,elm,gitrebase,groovy,markdown,sh,text,tisp,xdefaults,yaml,zsh
-			\ let b:autoformat_autoindent = 0
-let g:formatters_python = ['autopep8']
-let g:formatters_javascript = ['standard_javascript']
+autocmd Rc BufWrite * undojoin | Neoformat
+let g:neoformat_only_msg_on_error = 1
 
 
 "" ale
