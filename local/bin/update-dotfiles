@@ -123,10 +123,11 @@ install_haskell_packages() {
 install_rustup() {
   info_installing "rustup" &&
 
+  export SSL_CERT_DIR=/etc/ssl/certs
+
   if ! which rustup
   then
-    curl https://sh.rustup.rs -sSf |
-    SSL_CERT_DIR=/etc/ssl/certs sh -s -- -y --no-modify-path
+    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
   fi &&
 
   rustup self update &&
