@@ -171,7 +171,6 @@ install_go_packages() {
       github.com/fatih/hclfmt \
       github.com/junegunn/fzf \
       github.com/github/hub \
-      # github.com/ethereum/go-ethereum/cmd/geth \
       github.com/hashicorp/packer \
       github.com/hashicorp/terraform \
       github.com/k0kubun/pp \
@@ -183,6 +182,7 @@ install_go_packages() {
       github.com/raviqqe/bstie \
       github.com/raviqqe/liche \
       github.com/rogpeppe/godef &&
+      # github.com/ethereum/go-ethereum/cmd/geth \
 
   go get -u -tags most github.com/xo/usql &&
 
