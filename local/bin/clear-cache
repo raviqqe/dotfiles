@@ -3,4 +3,6 @@
 for d in Homebrew pip yarn
 do
 	rm -rf ~/.cache/$d
-done
+done &&
+
+brew cleanup
