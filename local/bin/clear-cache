@@ -5,4 +5,5 @@ do
 	rm -rf ~/.cache/$d
 done &&
 
-brew cleanup
+brew cleanup &&
+gem cleanup
