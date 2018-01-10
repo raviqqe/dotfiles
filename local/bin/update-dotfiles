@@ -171,7 +171,7 @@ install_go_packages() {
       github.com/fatih/hclfmt \
       github.com/junegunn/fzf \
       github.com/github/hub \
-      github.com/ethereum/go-ethereum/cmd/geth \
+      # github.com/ethereum/go-ethereum/cmd/geth \
       github.com/hashicorp/packer \
       github.com/hashicorp/terraform \
       github.com/k0kubun/pp \
