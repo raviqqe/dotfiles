@@ -43,8 +43,6 @@ Plug 'zchee/deoplete-go'
 
 """ rust
 
-Plug 'phildawes/racer'
-Plug 'racer-rust/vim-racer'
 Plug 'rust-lang-nursery/rustfmt'
 Plug 'sebastianmarkow/deoplete-rust'
 
