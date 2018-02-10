@@ -219,7 +219,7 @@ install_yarn_packages() {
   info_installing "yarn packages" &&
 
   packages='babel-eslint depcheck diff-so-fancy gulp
-            js-beautify jshint jsonlint leasot
+            js-beautify jshint jsonlint leasot parcel-bundler
             remark-cli serverless standard stylelint stylelint-config-standard
             svg-term-cli tldr tslint typescript typescript-formatter'
   yarn global add --ignore-scripts $packages &&
