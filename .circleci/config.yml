@@ -35,6 +35,6 @@ jobs:
             sudo -u tester git clone https://github.com/raviqqe/dotfiles /home/tester/.dotfiles
             sudo -iu tester rcup -f
       - run:
-          name: Test updot command
+          name: Test command
           working_directory: /home/tester
-          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && updot -b || updot -b'
+          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && update dotfiles -b || update dotfiles -b'
