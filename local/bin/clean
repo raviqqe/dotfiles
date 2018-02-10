@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for d in Homebrew pip yarn
+for d in Homebrew pip
 do
 	rm -rf ~/.cache/$d
 done &&

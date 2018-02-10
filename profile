@@ -57,13 +57,6 @@ export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
 
 export MYPYPATH=$LOCAL/lib/python3.6/site-packages
 
-## javascript
-
-if which yarn > /dev/null 2>&1
-then
-  export PATH=$(yarn global bin):$HOME/.config/yarn/global/node_modules/.bin:$PATH
-fi
-
 ## git
 
 unset SSH_ASKPASS
