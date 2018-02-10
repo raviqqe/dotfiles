@@ -85,7 +85,7 @@ install_linuxbrew_packages() {
       --without-libgit2 \
       asdf curl zsh git tmux htop tig \
       $(is_x86_64 && echo go) ruby python3 neovim node gawk \
-      gnu-sed yarn &&
+      gnu-sed &&
   # ghc haskell-stack elm-format git-lfs
 
   if [ -n "$desktop" ]
@@ -209,15 +209,16 @@ install_ruby_gem_credential() {
   fi
 }
 
-install_yarn_packages() {
-  info_installing "yarn packages" &&
+install_node_packages() {
+  info_installing "node packages" &&
 
-  packages='babel-eslint depcheck diff-so-fancy gulp
-            js-beautify jshint jsonlint leasot
-            remark-cli serverless standard stylelint stylelint-config-standard
-            svg-term-cli tldr tslint typescript typescript-formatter'
-  yarn global add --ignore-scripts $packages &&
-  yarn global upgrade --ignore-scripts $packages
+  npm install --global --ignore-scripts \
+      babel-eslint depcheck diff-so-fancy gulp \
+      js-beautify jshint jsonlint leasot \
+      remark-cli serverless standard stylelint stylelint-config-standard \
+      svg-term-cli tldr tslint typescript typescript-formatter &&
+
+  npm update --global
 }
 
 install_vim_plug() {
@@ -334,7 +335,7 @@ main() {
     install_tpm &&
     install_python_packages &&
     install_ruby_gems &&
-    install_yarn_packages &&
+    install_node_packages &&
     install_haskell_packages &&
     install_rustup &&
 
