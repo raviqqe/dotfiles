@@ -202,14 +202,6 @@ autocmd Rc BufWritePre * undojoin | Neoformat
 let g:neoformat_only_msg_on_error = 1
 
 
-"" ale
-
-let g:ale_linters = {
-			\ 'javascript' : ['standard'],
-			\ 'python': ['flake8', 'pylint'],
-			\ }
-
-
 "" auto-save
 
 let g:auto_save = 1
