@@ -165,6 +165,7 @@ install_go_packages() {
   info_installing "go packages" &&
 
   go get -u \
+      golang.org/x/lint/golint \
       golang.org/x/tools/cmd/... \
       github.com/alecthomas/gometalinter \
       github.com/fatih/hclfmt \
