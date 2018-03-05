@@ -66,6 +66,7 @@ augroup Rc
 	autocmd!
 augroup END
 
+set autochdir
 set autoread
 set nobackup
 set nolazyredraw
