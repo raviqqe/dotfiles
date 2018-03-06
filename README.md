@@ -13,7 +13,7 @@
 ```sh
 git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
 rcup
-updot
+update dotfiles
 ```
 
 ## License
