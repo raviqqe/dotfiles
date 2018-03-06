@@ -186,7 +186,8 @@ install_go_packages() {
 
 install_python_packages() {
   info_installing "python packages" &&
-  pip3 install --user --upgrade \
+
+  pip install --user --upgrade \
       autopep8 awscli codemod flake8 frosted httpie mkdocs mypy shakyo pylama \
       pylint twine vim-vint
 }
@@ -232,16 +233,12 @@ install_vim_plugins() {
   install_vim_plug &&
   info_installing "neovim plugins" &&
 
-  pip2=pip
-
-  if which pip2 > /dev/null 2>&1
+  if which pip2
   then
-    pip2=pip2
+    pip2 install --user --upgrade neovim
   fi &&
 
-  $pip2 install --user --upgrade neovim &&
-
-  pip3 install --user --upgrade neovim &&
+  pip install --user --upgrade neovim &&
   gem_install neovim
   nvim +PlugUpgrade +PlugClean! +PlugUpdate +qall
 }
