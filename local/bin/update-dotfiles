@@ -100,7 +100,7 @@ install_linuxbrew_packages() {
 install_elm_format() {
   info_installing "elm-format" &&
 
-  if is_x86_64 && uname -a | grep Linux > /dev/null
+  if is_x86_64 && uname -a | grep Linux
   then
     file=/tmp/elm-format-$$.tgz
     curl -sSL 'https://github.com/avh4/elm-format/releases/download/0.6.0-alpha/elm-format-0.18-0.6.0-alpha-linux-x64.tgz' > $file &&
