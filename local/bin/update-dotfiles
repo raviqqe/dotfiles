@@ -82,7 +82,7 @@ install_linuxbrew_packages() {
 
   brew install \
       --without-docs --without-doxygen --without-icu4c --without-jemalloc \
-      --without-libgit2 --without-tcl-tk \
+      --without-libgit2 \
       asdf curl zsh git tmux htop tig \
       $(is_x86_64 && echo go) ruby python neovim node gawk \
       gnu-sed &&
