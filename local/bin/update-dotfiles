@@ -239,7 +239,7 @@ install_vim_plugins() {
 
   pip3 install --user --upgrade neovim &&
   gem_install neovim
-  nvim +PlugUpgrade +PlugClean! +PlugUpdate +qall
+  nvim +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
 }
 
 install_zplug() {
