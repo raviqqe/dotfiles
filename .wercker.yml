@@ -1,0 +1,40 @@
+box: ubuntu
+
+command-timeout: 240
+
+build:
+  steps:
+      - script:
+          name: OS Setup
+          code: |
+            apt -y update --fix-missing
+            apt -y install locales
+            locale-gen en_US.UTF-8
+      - script:
+          name: Install rcm
+          code: |
+            apt -y update --fix-missing
+            apt -y install software-properties-common
+            apt-add-repository -y ppa:martin-frost/thoughtbot-rcm
+      - script:
+          name: Install dependencies
+          code: |
+            apt -y update --fix-missing
+            apt -y upgrade
+            apt -y install build-essential clang curl git rcm ruby sudo
+      - script:
+          name: Create user
+          code: useradd -m tester
+      - script:
+          name: Test
+          code: |
+            cat > test.sh <<EOF
+            cd
+            cp -r /pipeline/source /home/tester/.dotfiles
+            rcup -Cf
+            export PATH=$HOME/.local/bin:$PATH
+            ./.local/bin/update-dotfiles -b || :
+            ./.local/bin/update-dotfiles -b
+            EOF
+
+            su tester -c 'sh test.sh'
