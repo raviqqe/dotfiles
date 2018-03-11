@@ -26,24 +26,10 @@ Plug 'junegunn/fzf.vim'
 
 "" language
 
+Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'sheerun/vim-polyglot'
-
-""" python
-
-Plug 'alfredodeza/pytest.vim'
-Plug 'zchee/deoplete-jedi'
-
-""" go
-
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'zchee/deoplete-go'
-
-""" rust
-
-Plug 'rust-lang-nursery/rustfmt'
-Plug 'sebastianmarkow/deoplete-rust'
+Plug 'sheerun/vim-polyglot', { 'do': ':GoInstallBinaries' }
 
 "" deoplete
 
@@ -51,6 +37,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
+
+Plug 'sebastianmarkow/deoplete-rust'
+Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-jedi'
 
 "" color
 
