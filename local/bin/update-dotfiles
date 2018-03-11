@@ -20,19 +20,6 @@ info_installing() {
   info "$(basename $0): Installing" "$@" "..."
 }
 
-git_clone_to_dir() {
-  address=$1
-  dir=$2
-
-  if [ -d "$dir/.git" ]
-  then
-    git -C "$dir" pull
-  else
-    mkdir -p "$dir" &&
-    git clone "$address" "$dir"
-  fi
-}
-
 is_64_bit() {
   [ $(getconf LONG_BIT) = 64 ]
 }
@@ -244,7 +231,7 @@ install_vim_plugins() {
 
 install_zplug() {
   info_installing "zplug" &&
-  git_clone_to_dir $github_address/zplug/zplug $HOME/.zplug
+  git clone-or-update $github_address/zplug/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
@@ -267,12 +254,12 @@ install_dwm() {
 
 install_tpm() {
   info_installing "tpm" &&
-  git_clone_to_dir "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
+  git clone-or-update "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 }
 
 install_wallpapers() {
   info_installing "wallpapers" &&
-  git_clone_to_dir https://git.raviqqe.com/funny/wallpapers.git \
+  git clone-or-update https://git.raviqqe.com/funny/wallpapers.git \
                    "$HOME/.wallpapers"
 }
 
