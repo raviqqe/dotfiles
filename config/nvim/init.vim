@@ -4,7 +4,6 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'easymotion/vim-easymotion'
 Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
@@ -172,11 +171,6 @@ let g:neosnippet#snippets_directory = [
 imap <c-s> <plug>(neosnippet_expand_or_jump)
 smap <c-s> <plug>(neosnippet_expand_or_jump)
 xmap <c-s> <plug>(neosnippet_expand_target)
-
-
-"" easymotion
-
-nmap t <plug>(easymotion-s2)
 
 
 "" auto-pairs
