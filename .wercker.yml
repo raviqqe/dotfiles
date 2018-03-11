@@ -1,40 +1,38 @@
 box: ubuntu
 
-command-timeout: 240
+command-timeout: 60
 
 build:
   steps:
       - script:
-          name: OS Setup
+          name: Initialize locale
           code: |
             apt -y update --fix-missing
             apt -y install locales
             locale-gen en_US.UTF-8
+
       - script:
-          name: Install rcm
+          name: Update PPA
           code: |
             apt -y update --fix-missing
             apt -y install software-properties-common
             apt-add-repository -y ppa:martin-frost/thoughtbot-rcm
+
       - script:
-          name: Install dependencies
+          name: Install Dependencies
           code: |
             apt -y update --fix-missing
             apt -y upgrade
             apt -y install build-essential clang curl git rcm ruby sudo
+
       - script:
           name: Create user
           code: useradd -m tester
-      - script:
-          name: Test
-          code: |
-            cat > test.sh <<EOF
-            cd
-            cp -r /pipeline/source /home/tester/.dotfiles
-            rcup -Cf
-            export PATH=$HOME/.local/bin:$PATH
-            ./.local/bin/update-dotfiles -b || :
-            ./.local/bin/update-dotfiles -b
-            EOF
 
-            su tester -c 'sh test.sh'
+      - script:
+          name: Initialize dotfiles
+          code: su tester -c 'cp -r /pipeline/source /home/tester/.dotfiles && rcup -f'
+
+      - script:
+          name: Update homebrew
+          code: su tester -c '. ~/.profile && update-homebrew'
