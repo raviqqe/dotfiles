@@ -20,10 +20,6 @@ info_installing() {
   info "$(basename $0): Installing" "$@" "..."
 }
 
-is_64_bit() {
-  [ $(getconf LONG_BIT) = 64 ]
-}
-
 is_x86_64() {
   [ "$(uname -m)" = x86_64 ]
 }
