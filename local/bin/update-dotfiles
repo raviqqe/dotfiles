@@ -276,20 +276,6 @@ install_wallpapers() {
                    "$HOME/.wallpapers"
 }
 
-install_google_cloud_sdk() {
-  info_installing "google cloud SDK" &&
-
-  google_dir=$HOME/.google
-
-  mkdir -p $google_dir &&
-
-  if [ ! -d $google_dir/google-cloud-sdk ]
-  then
-    curl https://sdk.cloud.google.com |
-    bash /dev/stdin --disable-prompts --install-dir $google_dir
-  fi
-}
-
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -338,7 +324,7 @@ main() {
 
     install_rust_packages &&
     install_go_packages &&
-    install_google_cloud_sdk &&
+    update gcp &&
 
     if [ -n "$desktop" ]
     then
