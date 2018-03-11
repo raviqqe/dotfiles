@@ -103,7 +103,7 @@ install_elm_format() {
   if is_x86_64 && uname -a | grep Linux
   then
     file=/tmp/elm-format-$$.tgz
-    curl -sSL 'https://github.com/avh4/elm-format/releases/download/0.6.0-alpha/elm-format-0.18-0.6.0-alpha-linux-x64.tgz' > $file &&
+    curl -sSL $github_address/avh4/elm-format/releases/download/0.6.0-alpha/elm-format-0.18-0.6.0-alpha-linux-x64.tgz > $file &&
     ( cd $(dirname $file) && tar xf $file ) &&
     mv /tmp/elm-format ~/.local/bin
   fi
@@ -155,7 +155,7 @@ install_rust_packages() {
     repo="$(dirname "$RUST_SRC_PATH")"
 
     rm -rf "$repo" &&
-    git clone --depth 1 https://github.com/rust-lang/rust "$repo"
+    git clone --depth 1 $github_address/rust-lang/rust "$repo"
   else
     fail '$RUST_SRC_PATH is not set.'
   fi
@@ -244,7 +244,7 @@ install_vim_plugins() {
 
 install_zplug() {
   info_installing "zplug" &&
-  git_clone_to_dir https://github.com/zplug/zplug $HOME/.zplug
+  git_clone_to_dir $github_address/zplug/zplug $HOME/.zplug
 }
 
 install_zsh_plugins() {
