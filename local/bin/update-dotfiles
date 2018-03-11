@@ -53,45 +53,6 @@ install_haskell_packages() {
   # fi
 }
 
-install_rustup() {
-  info_installing "rustup" &&
-
-  export SSL_CERT_DIR=/etc/ssl/certs
-
-  if ! which rustup
-  then
-    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-  fi &&
-
-  rustup self update &&
-  rustup update &&
-  rustup install nightly &&
-  rustup default nightly
-}
-
-install_rust_packages() {
-  info_installing "rust packages" &&
-
-  packages='cargo-update clippy exa fd-find racer ripgrep rustfmt tokei'
-
-  for package in $packages
-  do
-    cargo install $package || :
-  done &&
-
-  cargo install-update $packages &&
-
-  if [ -n "$RUST_SRC_PATH" ]
-  then
-    repo="$(dirname "$RUST_SRC_PATH")"
-
-    rm -rf "$repo" &&
-    git clone --depth 1 $github_address/rust-lang/rust "$repo"
-  else
-    fail '$RUST_SRC_PATH is not set.'
-  fi
-}
-
 install_go_packages() {
   info_installing "go packages" &&
 
@@ -250,10 +211,9 @@ main() {
     install_ruby_gems &&
     install_node_packages &&
     install_haskell_packages &&
-    install_rustup &&
 
-    install_rust_packages &&
     install_go_packages &&
+    update rust &&
     update gcp &&
 
     if [ -n "$desktop" ]

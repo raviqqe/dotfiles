@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+export SSL_CERT_DIR=/etc/ssl/certs
+
+toolchain=nightly
+
+if ! which rustup
+then
+  curl -sSf https://sh.rustup.rs |
+  sh -s -- -y --no-modify-path --default-toolchain $toolchain
+fi
+
+rustup self update
+rustup update
+
+packages='cargo-update clippy exa fd-find racer ripgrep rustfmt tokei'
+
+for package in $packages
+do
+  cargo install $package || :
+done
+
+cargo install-update $packages
+
+if [ -n "$RUST_SRC_PATH" ]
+then
+  repo="$(dirname "$RUST_SRC_PATH")"
+
+  rm -rf "$repo"
+  git clone --depth 1 https://github.com/rust-lang/rust "$repo"
+else
+  fail '$RUST_SRC_PATH is not set.'
+fi
