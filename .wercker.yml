@@ -35,4 +35,4 @@ build:
 
       - script:
           name: Update homebrew
-          code: su tester -c '. ~/.profile && update-homebrew'
+          code: su tester -c '. ~/.profile && update homebrew'
