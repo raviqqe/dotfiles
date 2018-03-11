@@ -32,58 +32,6 @@ gem_install() {
   gem install "$@" && gem update "$@"
 }
 
-install_linuxbrew() {
-  info_installing "linuxbrew" &&
-
-  linuxbrew_dir=$HOME/.linuxbrew
-
-  if [ ! -d $linuxbrew_dir ]
-  then
-    git clone $github_address/Linuxbrew/linuxbrew.git $linuxbrew_dir
-  fi
-}
-
-install_linuxbrew_packages() {
-  while getopts dv option
-  do
-    case $option in
-    d)
-      desktop=true
-      ;;
-    esac
-  done
-  shift $(expr $OPTIND - 1)
-
-  info_installing "linuxbrew packages" &&
-
-  brew update &&
-  brew update &&
-
-  brew upgrade &&
-
-  if is_64_bit
-  then
-    brew tap thoughtbot/formulae &&
-    brew install rcm
-  fi &&
-
-  brew install \
-      --without-docs --without-doxygen --without-icu4c --without-jemalloc \
-      --without-libgit2 \
-      asdf curl zsh git tmux htop tig \
-      $(is_x86_64 && echo go) ruby python neovim node gawk \
-      gnu-sed &&
-  # ghc haskell-stack elm-format git-lfs
-
-  if [ -n "$desktop" ]
-  then
-    brew tap homebrew/x11 &&
-    brew install feh mupdf
-  fi &&
-
-  brew cleanup
-}
-
 install_elm_format() {
   info_installing "elm-format" &&
 
@@ -297,8 +245,7 @@ main() {
 
     if [ -z "$homebrew" ]
     then
-      install_linuxbrew &&
-      install_linuxbrew_packages ${desktop:+-d}
+      update homebrew ${desktop:+-d}
     fi &&
 
     install_zsh_plugins &&

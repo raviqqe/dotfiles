@@ -36,3 +36,7 @@ build:
       - script:
           name: Update homebrew
           code: su tester -c '. ~/.profile && update homebrew'
+
+      - script:
+          name: Update all
+          code: su tester -c '. ~/.profile && update dotfiles -b'
