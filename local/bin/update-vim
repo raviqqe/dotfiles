@@ -1,3 +1,29 @@
 #!/bin/sh
 
-vim +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
+set -e
+
+while getopts b option
+do
+  case $option in
+  b)
+    batch=true
+    ;;
+  esac
+done
+shift $(expr $OPTIND - 1)
+
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+if which pip2
+then
+  pip2 install --user --upgrade neovim
+fi
+
+pip3 install --user --upgrade neovim
+
+gem install neovim
+gem update rubocop
+
+nvim ${batch:+--headless} \
+     +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall

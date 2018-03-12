@@ -114,26 +114,6 @@ install_node_packages() {
   npm update --global
 }
 
-install_vim_plug() {
-  info_installing "vim-plug" &&
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
-
-install_vim_plugins() {
-  install_vim_plug &&
-  info_installing "neovim plugins" &&
-
-  if which pip2
-  then
-    pip2 install --user --upgrade neovim
-  fi &&
-
-  pip3 install --user --upgrade neovim &&
-  gem_install neovim
-  nvim +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
-}
-
 install_zplug() {
   info_installing "zplug" &&
   git clone-or-update $github_address/zplug/zplug $HOME/.zplug
@@ -215,6 +195,7 @@ main() {
     install_go_packages &&
     update rust &&
     update gcp &&
+    update vim ${batch:+-b} &&
 
     if [ -n "$desktop" ]
     then
@@ -224,8 +205,7 @@ main() {
 
     if [ -z "$batch" ]
     then
-      install_ruby_gem_credential &&
-      install_vim_plugins
+      install_ruby_gem_credential
     fi
   ) ||
 
