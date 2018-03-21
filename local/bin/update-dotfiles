@@ -114,17 +114,6 @@ install_node_packages() {
   npm update --global
 }
 
-install_zplug() {
-  info_installing "zplug" &&
-  git clone-or-update $github_address/zplug/zplug $HOME/.zplug
-}
-
-install_zsh_plugins() {
-  install_zplug &&
-  info_installing "zsh plugins" &&
-  zsh -c ". $HOME/.zprofile && . $HOME/.zshrc"
-}
-
 install_dwm() {
   info_installing "dwm" &&
 
@@ -185,7 +174,7 @@ main() {
       update homebrew ${desktop:+-d}
     fi &&
 
-    install_zsh_plugins &&
+    update zsh &&
     install_tpm &&
     install_python_packages &&
     install_ruby_gems &&

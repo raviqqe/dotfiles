@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+git clone-or-update https://github.com/zplug/zplug ~/.zplug
+zsh -c '. ~/.zprofile && . ~/.zshrc'
