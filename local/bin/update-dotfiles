@@ -53,29 +53,6 @@ install_haskell_packages() {
   # fi
 }
 
-install_go_packages() {
-  info_installing "go packages" &&
-
-  go get -u \
-      golang.org/x/lint/golint \
-      golang.org/x/tools/cmd/... \
-      github.com/alecthomas/gometalinter \
-      github.com/fatih/hclfmt \
-      github.com/junegunn/fzf \
-      github.com/github/hub \
-      github.com/hashicorp/terraform \
-      github.com/k0kubun/pp \
-      github.com/motemen/ghq \
-      github.com/motemen/gore \
-      github.com/nsf/gocode \
-      github.com/raviqqe/bstie \
-      github.com/raviqqe/liche \
-      github.com/xo/usql &&
-      # github.com/ethereum/go-ethereum/cmd/geth \
-
-  gometalinter --install
-}
-
 install_python_packages() {
   info_installing "python packages" &&
   pip3 install --user --upgrade \
@@ -181,7 +158,7 @@ main() {
     install_node_packages &&
     install_haskell_packages &&
 
-    install_go_packages &&
+    update go &&
     update rust &&
     update gcp &&
     update vim ${batch:+-b} &&
