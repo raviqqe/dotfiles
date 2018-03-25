@@ -17,19 +17,6 @@ do
   cpu_load=" | $(uptime | grep -o 'load.*')"
   date=" | $(TZ=Asia/Tokyo date | sed 's/  */ /g')"
 
-  if acpiconf -i 0 > /dev/null 2>&1
-  then
-    capacity=$(acpiconf -i 0 | grep 'Remaining capacity:' |
-                grep -o '[^[:blank:]]*$')
-
-    if [ -z $(acpiconf -i 0 | grep 'State:' | grep -o discharging) ]
-    then
-      charging=", charging"
-    fi
-
-    battery_state=" | battery: $capacity$charging"
-  fi
-
   if upower --dump | grep percentage > /dev/null 2>&1
   then
     battery_state=" | battery: $(upower --dump | grep percentage | head -1 | grep -o '[0-9]*%')"
