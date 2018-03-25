@@ -91,27 +91,9 @@ install_node_packages() {
   npm update --global
 }
 
-install_dwm() {
-  info_installing "dwm" &&
-
-  ghq get raviqqe/dwm &&
-  (
-    cd $HOME/src/github.com/raviqqe/dwm &&
-    git checkout freebsd-theme &&
-    make &&
-    cp dwm $HOME/.local/bin
-  )
-}
-
 install_tpm() {
   info_installing "tpm" &&
   git clone-or-update "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
-}
-
-install_wallpapers() {
-  info_installing "wallpapers" &&
-  git clone-or-update https://git.raviqqe.com/funny/wallpapers.git \
-                   "$HOME/.wallpapers"
 }
 
 check_args() {
@@ -125,14 +107,14 @@ check_args() {
 # main routine
 
 main() {
-  while getopts bdhlv option
+  while getopts bgh option
   do
     case $option in
     b)
       batch=true
       ;;
-    d)
-      desktop=true
+    g)
+      gui=true
       ;;
     h)
       homebrew=false
@@ -148,7 +130,7 @@ main() {
 
     if [ -z "$homebrew" ]
     then
-      update homebrew ${desktop:+-d}
+      update homebrew
     fi &&
 
     update zsh &&
@@ -163,10 +145,9 @@ main() {
     update gcp &&
     update vim ${batch:+-b} &&
 
-    if [ -n "$desktop" ]
+    if [ -n $gui ]
     then
-      install_dwm &&
-      install_wallpapers
+      update gui
     fi &&
 
     if [ -z "$batch" ]

@@ -39,4 +39,4 @@ build:
 
       - script:
           name: Update all
-          code: su tester -c '. ~/.profile && update dotfiles -bd'
+          code: su tester -c '. ~/.profile && update dotfiles -bg'

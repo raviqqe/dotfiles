@@ -10,16 +10,6 @@ is_x86_64() {
   [ $(uname -m) = x86_64 ]
 }
 
-while getopts d option
-do
-  case $option in
-  d)
-    desktop=true
-    ;;
-  esac
-done
-shift $(expr $OPTIND - 1)
-
 if [ ! -d ~/.linuxbrew ]
 then
   git clone https://github.com/Linuxbrew/brew ~/.linuxbrew
@@ -43,11 +33,5 @@ brew install \
     $(is_x86_64 && echo go) ruby python neovim node gawk \
     gnu-sed
     # ghc haskell-stack elm-format git-lfs
-
-if [ -n "$desktop" ]
-then
-  brew tap linuxbrew/homebrew-xorg
-  brew install feh mupdf rxvt-unicode
-fi
 
 brew cleanup
