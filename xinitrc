@@ -3,7 +3,6 @@
 . ~/.profile
 . ~/.sh/util.sh
 
-
 export LC_ALL=en_US.UTF-8
 
 xset b off
