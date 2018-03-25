@@ -46,8 +46,8 @@ brew install \
 
 if [ -n "$desktop" ]
 then
-  brew tap homebrew/x11
-  brew install feh mupdf
+  brew tap linuxbrew/homebrew-xorg
+  brew install feh mupdf rxvt-unicode
 fi
 
 brew cleanup
