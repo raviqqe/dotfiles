@@ -1,16 +1,10 @@
 #!/bin/sh
 
-. $HOME/.profile
-. $HOME/.sh/util.sh
+. ~/.profile
+. ~/.sh/util.sh
 
 
 export LC_ALL=en_US.UTF-8
-
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=xim
-export XMODIFIERS=@im=ibus
-/usr/local/bin/mozc start
-ibus-daemon -r --daemonize --xim
 
 xset b off
 xset s blank
