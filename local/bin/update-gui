@@ -5,13 +5,6 @@ set -e
 brew tap linuxbrew/homebrew-xorg
 brew install feh mupdf rxvt-unicode
 
-(
-  set -e
-  ghq get raviqqe/dwm
-  cd ~/src/github.com/raviqqe/dwm
-  git checkout freebsd-theme
-  make
-  cp dwm ~/.local/bin
-)
+cargo install-update -i way-cooler
 
 git clone-or-update https://git.raviqqe.com/funny/wallpapers.git ~/.wallpapers

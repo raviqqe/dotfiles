@@ -34,4 +34,4 @@ do
 done &
 
 urxvt &
-exec dwm
+exec way-cooler
