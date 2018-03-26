@@ -1,9 +1,11 @@
 #!/bin/sh
 
-for d in Homebrew pip
-do
-	rm -rf ~/.cache/$d
-done &&
+set -e
 
-brew cleanup &&
+for d in .cache/Homebrew .cache/pip .rustup/downloads/*
+do
+	rm -rf ~/$d
+done
+
+brew cleanup
 gem cleanup
