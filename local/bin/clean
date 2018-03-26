@@ -9,3 +9,4 @@ done
 
 brew cleanup
 gem cleanup
+npm cache clean --force
