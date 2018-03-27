@@ -10,7 +10,6 @@ then
   sh -s -- -y --no-modify-path --default-toolchain nightly
 fi
 
-rustup self update
 rustup update
 
 for package in cargo-update clippy exa fd-find racer ripgrep rustfmt tokei
