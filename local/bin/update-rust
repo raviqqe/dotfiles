@@ -10,10 +10,11 @@ then
   sh -s -- -y --no-modify-path --default-toolchain nightly
 fi
 
+rustup component add rustfmt-preview
 rustup update
 
 cargo install cargo-update || :
-cargo install-update -i cargo-update clippy exa fd-find racer ripgrep rustfmt tokei
+cargo install-update -i cargo-update clippy exa fd-find racer ripgrep tokei
 
 if [ -z "$RUST_SRC_PATH" ]
 then
