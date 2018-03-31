@@ -41,3 +41,7 @@ build:
       - script:
           name: Update all
           code: su tester -c '. ~/.profile && update dotfiles -bg'
+
+      - script:
+          name: Rerun
+          code: su tester -c '. ~/.profile && update dotfiles -bg'
