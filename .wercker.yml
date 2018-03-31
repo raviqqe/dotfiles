@@ -24,6 +24,7 @@ build:
             apt -y update --fix-missing
             apt -y upgrade
             apt -y install build-essential clang curl git libcurl4-openssl-dev rcm ruby sudo zlib1g zlib1g-dev
+            apt -y install libcairo-dev libdbus-1-dev libfreetype6-dev libfontconfig1-dev libgdk-pixbuf2.0-dev libx11-dev xclip
 
       - script:
           name: Create user
