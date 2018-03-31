@@ -40,8 +40,8 @@ build:
 
       - script:
           name: Update all
-          code: su tester -c '. ~/.profile && update dotfiles -bg'
+          code: su tester -c '. ~/.profile && update all -bg'
 
       - script:
           name: Rerun
-          code: su tester -c '. ~/.profile && update dotfiles -bg'
+          code: su tester -c '. ~/.profile && update all -bg'
