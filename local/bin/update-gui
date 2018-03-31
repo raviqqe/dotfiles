@@ -4,7 +4,14 @@ set -e
 
 if which apt
 then
-	sudo apt install libfreetype6-dev libfontconfig1-dev xclip
+	sudo apt install \
+		libcairo-dev \
+		libdbus-1-dev \
+		libfreetype6-dev \
+		libfontconfig1-dev \
+		libgdk-pixbuf2.0-dev \
+		libx11-dev \
+		xclip
 fi
 
 cargo install-update -i --git https://github.com/jwilm/alacritty way-cooler
