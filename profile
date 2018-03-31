@@ -82,4 +82,4 @@ ld_library_path=$library_path
 
 ## pkg-config
 
-export pkg_config_path=$(/usr/bin/pkg-config --variable pc_path pkg-config)
+export PKG_CONFIG_PATH=$(/usr/bin/pkg-config --variable pc_path pkg-config)
