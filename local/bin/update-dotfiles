@@ -145,7 +145,7 @@ main() {
     update gcp &&
     update vim ${batch:+-b} &&
 
-    if [ -n $gui ]
+    if [ -n "$gui" ]
     then
       update gui
     fi &&
