@@ -12,12 +12,8 @@ fi
 
 rustup update
 
-for package in cargo-update clippy exa fd-find racer ripgrep rustfmt tokei
-do
-  cargo install $package || :
-done
-
-cargo install-update -a
+cargo install cargo-update || :
+cargo install-update -i cargo-update clippy exa fd-find racer ripgrep rustfmt tokei
 
 if [ -z "$RUST_SRC_PATH" ]
 then
