@@ -91,11 +91,6 @@ install_node_packages() {
   npm update --global
 }
 
-install_tpm() {
-  info_installing "tpm" &&
-  git clone-or-update "$github_address/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
-}
-
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -134,7 +129,7 @@ main() {
     fi &&
 
     update zsh &&
-    install_tpm &&
+    update tmux &&
     install_python_packages &&
     install_ruby_gems &&
     install_node_packages &&
