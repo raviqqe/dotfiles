@@ -23,7 +23,7 @@ build:
           code: |
             apt -y update --fix-missing
             apt -y upgrade
-            apt -y install build-essential clang curl git libcairo-dev libcurl4-openssl-dev libdbus-glib-1-dev libx11-dev rcm ruby sudo zlib1g zlib1g-dev
+            apt -y install build-essential clang curl git libcurl4-openssl-dev rcm ruby sudo zlib1g zlib1g-dev
 
       - script:
           name: Create user
