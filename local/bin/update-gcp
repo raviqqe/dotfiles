@@ -1,11 +1,15 @@
 #!/bin/sh
 
-google_dir=$HOME/.google
+set -e
 
-mkdir -p $google_dir &&
+google_dir=~/.google
 
-if [ ! -d $google_dir/google-cloud-sdk ]
+mkdir -p $google_dir
+
+if ! which gcloud
 then
   curl https://sdk.cloud.google.com |
   bash /dev/stdin --disable-prompts --install-dir $google_dir
 fi
+
+gcloud components update
