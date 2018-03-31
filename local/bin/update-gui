@@ -2,5 +2,9 @@
 
 set -e
 
-brew install rxvt-unicode
-cargo install-update -i way-cooler
+if which apt
+then
+	sudo apt install libfreetype6-dev libfontconfig1-dev xclip
+fi
+
+cargo install-update -i --git https://github.com/jwilm/alacritty way-cooler
