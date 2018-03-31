@@ -2,4 +2,10 @@
 
 set -e
 
-cargo install-update -i --git https://github.com/jwilm/alacritty way-cooler
+if ! which alacritty
+then
+	cargo install --git https://github.com/jwilm/alacritty
+fi
+
+cargo install-update -i way-cooler
+cargo install-update -ga
