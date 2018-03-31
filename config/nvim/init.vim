@@ -7,8 +7,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'raviqqe/vim-nonblank'
 Plug 'sbdchd/neoformat'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
@@ -103,7 +103,6 @@ autocmd Rc BufRead,BufNewFile *.rules set filetype=text
 autocmd Rc BufRead,BufNewFile *.tisp set filetype=tisp
 autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
 autocmd Rc FileType sh set filetype=zsh
-autocmd Rc BufEnter * EnableStripWhitespaceOnSave
 
 "" keymaps
 
