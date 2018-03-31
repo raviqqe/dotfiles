@@ -79,7 +79,3 @@ export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
 export LIBRARY_PATH=$library_path
 ld_library_path=$library_path
-
-## pkg-config
-
-export PKG_CONFIG_PATH=$(/usr/bin/pkg-config --variable pc_path pkg-config)
