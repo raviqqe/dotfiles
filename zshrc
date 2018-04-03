@@ -146,14 +146,9 @@ bindkey -a '?' fzf-history-widget
 
 # google cloud sdk
 
-if [ -f $HOME/.google/google-cloud-sdk/path.zsh.inc ]
+if [ -f ~/.google/google-cloud-sdk/completion.zsh.inc ]
 then
-  . $HOME/.google/google-cloud-sdk/path.zsh.inc
-fi
-
-if [ -f $HOME/.google/google-cloud-sdk/completion.zsh.inc ]
-then
-  . $HOME/.google/google-cloud-sdk/completion.zsh.inc
+  . ~/.google/google-cloud-sdk/completion.zsh.inc
 fi
 
 

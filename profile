@@ -69,6 +69,10 @@ export GHQ_ROOT=$HOME/src
 
 export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
+## Google Cloud SDK
+
+export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
+
 ## LD_LIBRARY_PATH
 
 export LIBRARY_PATH=$library_path
