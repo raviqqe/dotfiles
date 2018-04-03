@@ -39,8 +39,8 @@ build:
 
       - script:
           name: Update all
-          code: su tester -c '. ~/.profile && update all -bg'
+          code: su tester -c '. ~/.profile && update all -b'
 
       - script:
           name: Rerun
-          code: su tester -c '. ~/.profile && update all -bg'
+          code: su tester -c '. ~/.profile && update all -b'

@@ -90,14 +90,11 @@ check_args() {
 # main routine
 
 main() {
-  while getopts bgh option
+  while getopts bh option
   do
     case $option in
     b)
       batch=true
-      ;;
-    g)
-      gui=true
       ;;
     h)
       homebrew=false
@@ -127,11 +124,6 @@ main() {
     update node &&
     update gcp &&
     update vim ${batch:+-b} &&
-
-    if [ -n "$gui" ]
-    then
-      update gui
-    fi &&
 
     if [ -z "$batch" ]
     then
