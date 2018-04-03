@@ -24,10 +24,6 @@ is_x86_64() {
   [ "$(uname -m)" = x86_64 ]
 }
 
-gem_install() {
-  gem install "$@" && gem update "$@"
-}
-
 install_elm_format() {
   info_installing "elm-format" &&
 
@@ -58,25 +54,6 @@ install_python_packages() {
   pip3 install --user --upgrade \
       autopep8 awscli codemod flake8 frosted httpie mkdocs mypy shakyo pylama \
       pylint twine vim-vint
-}
-
-install_ruby_gems() {
-  info_installing "ruby gems" &&
-  gem_install aruba bundler gitlab gist rubocop sass
-}
-
-install_ruby_gem_credential() {
-  info_installing "ruby gem credentials"
-
-  local credential_file=$HOME/.gem/credentials
-
-  if [ ! -r "$credential_file" ]
-  then
-    mkdir -p $(dirname $credential_file) &&
-    curl -u raviqqe https://rubygems.org/api/v1/api_key.yaml \
-         > "$credential_file" &&
-    chmod 600 "$credential_file"
-  fi
 }
 
 check_args() {
@@ -116,19 +93,14 @@ main() {
     update zsh &&
     update tmux &&
     install_python_packages &&
-    install_ruby_gems &&
     install_haskell_packages &&
 
+    update ruby ${batch:+-b} &&
+    update node &&
     update go &&
     update rust &&
-    update node &&
     update gcp &&
-    update vim ${batch:+-b} &&
-
-    if [ -z "$batch" ]
-    then
-      install_ruby_gem_credential
-    fi
+    update vim ${batch:+-b}
   ) ||
 
   fail "Failed to initialize dotfiles environment."
