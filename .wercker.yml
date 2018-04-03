@@ -35,12 +35,12 @@ build:
 
       - script:
           name: Update homebrew
-          code: su tester -c '. ~/.profile && update homebrew'
+          code: su tester -lc 'update homebrew'
 
       - script:
           name: Update all
-          code: su tester -c '. ~/.profile && update all -b'
+          code: su tester -lc 'update all -b'
 
       - script:
           name: Rerun
-          code: su tester -c '. ~/.profile && update all -b'
+          code: su tester -lc 'update all -b'
