@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+pip3 install --user --upgrade \
+  autopep8 awscli codemod flake8 frosted httpie mkdocs mypy shakyo pylama \
+  pylint twine vim-vint

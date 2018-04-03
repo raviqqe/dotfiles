@@ -49,13 +49,6 @@ install_haskell_packages() {
   # fi
 }
 
-install_python_packages() {
-  info_installing "python packages" &&
-  pip3 install --user --upgrade \
-      autopep8 awscli codemod flake8 frosted httpie mkdocs mypy shakyo pylama \
-      pylint twine vim-vint
-}
-
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -92,9 +85,9 @@ main() {
 
     update zsh &&
     update tmux &&
-    install_python_packages &&
     install_haskell_packages &&
 
+    update python &&
     update ruby ${batch:+-b} &&
     update node &&
     update go &&
