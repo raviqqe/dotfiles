@@ -65,12 +65,6 @@ unset SSH_ASKPASS
 
 export GHQ_ROOT=$HOME/src
 
-## android
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 ## fzf
 
 export FZF_DEFAULT_OPTS='--exit-0 --select-1'
