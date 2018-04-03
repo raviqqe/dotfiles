@@ -1,102 +1,25 @@
 #!/bin/sh
 
-# constants
+set -e
 
-github_address=https://github.com
+while getopts bh option
+do
+  case $option in
+  b)
+    batch=true
+    ;;
+  h)
+    homebrew=false
+    ;;
+  esac
+done
 
+if [ -z "$homebrew" ]
+then
+  update homebrew
+fi
 
-# functions
-
-info() {
-  echo "$@" >&2
-}
-
-fail() {
-  info "$@"
-  exit 1
-}
-
-info_installing() {
-  info "$(basename $0): Installing" "$@" "..."
-}
-
-is_x86_64() {
-  [ "$(uname -m)" = x86_64 ]
-}
-
-install_elm_format() {
-  info_installing "elm-format" &&
-
-  if is_x86_64 && uname -a | grep Linux
-  then
-    file=/tmp/elm-format-$$.tgz
-    curl -sSL $github_address/avh4/elm-format/releases/download/0.6.0-alpha/elm-format-0.18-0.6.0-alpha-linux-x64.tgz > $file &&
-    ( cd $(dirname $file) && tar xf $file ) &&
-    mv /tmp/elm-format ~/.local/bin
-  fi
-}
-
-install_haskell_packages() {
-  info_installing "haskell packages" &&
-
-  install_elm_format
-
-  # Cabal doesn't work on low-memory systems.
-  # if which cabal
-  # then
-  #   cabal update
-  #   cabal install --upgrade-dependencies ShellCheck
-  # fi
-}
-
-check_args() {
-  if [ $# -ne 0 ]
-  then
-    fail "usage: $(basename $0) [-bdh]"
-  fi
-}
-
-
-# main routine
-
-main() {
-  while getopts bh option
-  do
-    case $option in
-    b)
-      batch=true
-      ;;
-    h)
-      homebrew=false
-      ;;
-    esac
-  done
-  shift $(expr $OPTIND - 1)
-
-  check_args "$@"
-
-  (
-    . $HOME/.profile &&
-
-    if [ -z "$homebrew" ]
-    then
-      update homebrew
-    fi &&
-
-    update zsh &&
-    update tmux &&
-    install_haskell_packages &&
-
-    update python &&
-    update ruby ${batch:+-b} &&
-    update node &&
-    update go &&
-    update rust &&
-    update gcp &&
-    update vim ${batch:+-b}
-  ) ||
-
-  fail "Failed to initialize dotfiles environment."
-}
-
-main "$@"
+for subcommand in zsh tmux python ruby node go rust gcp vim
+do
+  update $subcommand ${batch:+-b}
+done
