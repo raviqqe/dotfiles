@@ -159,20 +159,7 @@ fi
 
 # ssh-agent
 
-linked_socket="$HOME/.ssh/agent.sock"
-
 if [ -z "$SSH_AUTH_SOCK" ]
 then
   eval `ssh-agent` && ssh-add
 fi > /dev/null 2>&1
-
-# `ssh $(hostname)` and then `ssh-add -l` would be stuck with the code below.
-# So, it is commented out.
-# Moreover, I don't use ssh from inside tmux sessions when forwarding
-# credentials.
-#
-# if [ "$SSH_AUTH_SOCK" != "$linked_socket" ]
-# then
-#   ln -sf "$SSH_AUTH_SOCK" "$linked_socket"
-#   SSH_AUTH_SOCK=$linked_socket
-# fi
