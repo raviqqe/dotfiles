@@ -79,18 +79,6 @@ install_ruby_gem_credential() {
   fi
 }
 
-install_node_packages() {
-  info_installing "node packages" &&
-
-  npm install --global --ignore-scripts \
-      babel-eslint depcheck diff-so-fancy gulp \
-      js-beautify jshint jsonlint leasot \
-      remark-cli serverless stylelint stylelint-config-standard \
-      svg-term-cli tldr tslint typescript typescript-formatter &&
-
-  npm update --global
-}
-
 check_args() {
   if [ $# -ne 0 ]
   then
@@ -132,11 +120,11 @@ main() {
     update tmux &&
     install_python_packages &&
     install_ruby_gems &&
-    install_node_packages &&
     install_haskell_packages &&
 
     update go &&
     update rust &&
+    update node &&
     update gcp &&
     update vim ${batch:+-b} &&
 
