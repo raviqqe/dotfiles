@@ -1,35 +1,32 @@
 #!/bin/sh
 
-LOCAL=$HOME/.local
-
+local=$HOME/.local
 
 export BLOCKSIZE=K
 export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
 export PAGER=less
-export TZ=Asia/Tokyo
 
-export PATH=$HOME/bin:$LOCAL/bin:$PATH
-export MANPATH=$LOCAL/share/man:/usr/share/man:/usr/local/man
+export PATH=$HOME/bin:$local/bin:$PATH
 
-## c language
+## C
 
-export c_include_path=$LOCAL/include
-export library_path=$LOCAL/lib64:$LOCAL/lib
+include_path=$local/include
+library_path=$local/lib64:$local/lib
 
-## cuda
+## CUDA
 
 export PATH=$PATH:/usr/local/cuda/bin
-export library_path=$library_path:/usr/local/cuda/lib64
+library_path=$library_path:/usr/local/cuda/lib64
 
-## linuxbrew
+## Linuxbrew
 
 linuxbrew_dir=$HOME/.linuxbrew
 export PATH=$linuxbrew_dir/bin:$linuxbrew_dir/sbin:$PATH
 export MANPATH=$linuxbrew_dir/share/man:$MANPATH
-export library_path=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$library_path
 export HOMEBREW_NO_EMOJI=1
+library_path=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$library_path
 
 if type nproc > /dev/null 2>&1
 then
@@ -38,24 +35,24 @@ else
   export HOMEBREW_MAKE_JOBS=2
 fi
 
-## haskell
+## Haskell
 
 export PATH=$HOME/.cabal/bin:$PATH
 
-## go
+## Go
 
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$HOME/.local/go/bin:$PATH
 
-## rust
+## Rust
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$HOME/.cargo/bin:$PATH
 export RUST_SRC_PATH=$HOME/.cache/racer/rust/src
 export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
 
-## python
+## Python
 
-export MYPYPATH=$LOCAL/lib/python3.6/site-packages
+export MYPYPATH=$(echo $local/lib/python3.*/site-packages)
 
 ## git
 
@@ -72,8 +69,3 @@ export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 ## Google Cloud SDK
 
 export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
-
-## LD_LIBRARY_PATH
-
-export LIBRARY_PATH=$library_path
-ld_library_path=$library_path
