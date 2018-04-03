@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e pipefail
+set -e
 
 for subcommand in "update --fix-missing" dist-upgrade autoremove clean
 do
