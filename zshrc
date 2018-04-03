@@ -6,7 +6,7 @@
 
 # options
 
-zstyle :compinstall filename "$HOME/.zshrc"
+zstyle :compinstall filename ~/.zshrc
 
 autoload -Uz compinit
 compinit
