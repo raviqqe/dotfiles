@@ -101,8 +101,6 @@ zplug zsh-users/zsh-completions, lazy:true
 zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-history-substring-search
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=6
-
 bindkey -a ? fzf-history-widget
 bindkey -v '^P' history-substring-search-up
 bindkey -v '^N' history-substring-search-down
