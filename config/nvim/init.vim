@@ -181,7 +181,7 @@ nnoremap <leader>r :Ag<cr>
 
 "" neoformat
 
-autocmd Rc BufWritePre * undojoin | Neoformat
+autocmd Rc BufWritePre * silent! undojoin | Neoformat
 let g:neoformat_only_msg_on_error = 1
 
 
