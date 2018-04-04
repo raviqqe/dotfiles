@@ -1,17 +1,12 @@
-. $HOME/.profile
+. ~/.profile
 
-
-newline() {
-  echo >&2
-}
-
-newline
+echo >&2
 
 if tmux ls > /dev/null 2>&1
 then
   tmux ls >&2 2> /dev/null
-  newline
+  echo >&2
 fi
 
 ( ls --color || ls -G ) >&2 2> /dev/null
-newline
+echo >&2
