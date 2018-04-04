@@ -133,7 +133,7 @@ fi > /dev/null 2>&1
 
 # Extra commands
 
-. ~/.sh/command.sh
+. ~/.sh/commands.sh
 
 function chpwd {
   ls
