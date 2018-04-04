@@ -33,10 +33,6 @@ HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 16))
 SAVEHIST=$((2 ** 17))
 
-function chpwd {
-  ls
-}
-
 for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yml
 do
   alias -s $suffix=$EDITOR
@@ -138,3 +134,7 @@ fi > /dev/null 2>&1
 # Extra commands
 
 . ~/.sh/command.sh
+
+function chpwd {
+  ls
+}
