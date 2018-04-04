@@ -1,4 +1,4 @@
-. $HOME/.profile
+. ~/.profile
 
 if [ -f ~/.bashrc ]
 then
