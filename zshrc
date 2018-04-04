@@ -52,6 +52,7 @@ done
 
 git_branch() {
   branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
+
   if [ -n "$branch_name" ]
   then
     echo "$branch_name$(git_modified) "
