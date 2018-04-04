@@ -70,10 +70,11 @@ git_modified() {
 }
 
 prompt_with_vimode() {
-  echo '%n@%m %{$fg[yellow]%}%20<..<%~%<< '\
-'%{$fg[cyan]%}$(git_branch)'\
-'%{$fg[red]%}%(?..[%?] )'\
-"$1"'%{$fg[magenta]%}%# %{$reset_color%}'
+  echo -n '%n@%m %{$fg[yellow]%}%20<..<%~%<< '
+  echo -n '%{$fg[cyan]%}$(git_branch)'
+  echo -n '%{$fg[red]%}%(?..[%?] )'
+  echo -n "$1"
+  echo -n '%{$fg[magenta]%}%# %{$reset_color%}'
 }
 
 insert_mode='%{$fg[magenta]%}I'
