@@ -1,13 +1,13 @@
 # cd
 
-alias chdir=cd
 alias cg='c "$(git rev-parse --show-toplevel)"'
-alias ch='chdir "$(dirs -lp | sort -u | fzf)"'
-alias cs='chdir "$(ghq list --full-path | fzf)"'
+alias ch='cd "$(dirs -lp | sort -u | fzf)"'
+alias cs='cd "$(ghq list --full-path | fzf)"'
 
 c() {
   local dir=$(find "${1:-.}" -type d | grep -v '/\.' | fzf)
-  [ -n "$dir" ] && chdir "$dir"
+
+  [ -n "$dir" ] && cd "$dir"
 }
 
 
