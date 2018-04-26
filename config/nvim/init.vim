@@ -29,7 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'sheerun/vim-polyglot', { 'do': ':GoUpdateBinaries' }
+Plug 'sheerun/vim-polyglot'
 
 "" deoplete
 
