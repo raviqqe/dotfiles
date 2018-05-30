@@ -16,6 +16,7 @@ go get -u \
     github.com/nsf/gocode \
     github.com/raviqqe/bstie \
     github.com/raviqqe/liche \
+    github.com/raviqqe/muffet \
     github.com/xo/usql
     # github.com/ethereum/go-ethereum/cmd/geth
 
