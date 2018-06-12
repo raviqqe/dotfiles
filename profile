@@ -54,6 +54,11 @@ export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
 
 export MYPYPATH=$(echo $local/lib/python3.*/site-packages)
 
+## Cloe
+
+export CLOE_PATH=$HOME/.cloe
+export PATH=$CLOE_PATH/bin:$PATH
+
 ## git
 
 unset SSH_ASKPASS
