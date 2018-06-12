@@ -2,7 +2,7 @@
 
 set -e
 
-for d in .cache/Homebrew .cache/pip .rustup/downloads/* pkg/*
+for d in .cache/Homebrew .cache/pip .rustup/downloads/* .rustup/tmp/* pkg/*
 do
 	rm -rf ~/$d
 done
