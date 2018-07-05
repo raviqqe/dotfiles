@@ -1,3 +1,0 @@
-#!/bin/sh
-
-host-wayland weston --fullscreen --backend=wayland-backend.so -Swayland-1 --modules=xwayland.so

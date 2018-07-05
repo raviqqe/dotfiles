@@ -1,0 +1,3 @@
+#!/bin/sh
+
+host-wayland /usr/bin/xinit -- /usr/bin/Xwayland
