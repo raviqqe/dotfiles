@@ -1,3 +1,4 @@
 xterm*foreground: white
 xterm*background: black
 xterm*termName: xterm-256color
+xterm.vt100.metaSendsEscape: true
