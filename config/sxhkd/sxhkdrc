@@ -15,3 +15,6 @@ alt + Return
 
 alt + shift + c
 	bspc node -c
+
+alt + shift + {1-9}
+	bspc desktop -f {1-9}.local
