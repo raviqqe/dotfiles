@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sxhkd &
+
+bspc config window_gap 0

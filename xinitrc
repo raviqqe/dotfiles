@@ -3,5 +3,4 @@
 . ~/.profile
 
 uxterm &
-sxhkd &
 exec bspwm
