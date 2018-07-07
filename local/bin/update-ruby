@@ -11,7 +11,7 @@ do
   esac
 done
 
-gems='aruba bundler gitlab gist rubocop sass'
+gems='bundler gitlab gist rubocop'
 
 gem install $gems
 gem update $gems
