@@ -110,6 +110,7 @@ eg() {
 
 alias ls="$(which exa > /dev/null 2>&1 && echo exa || echo /bin/ls --color)"
 alias d=ls
+alias d1='ls -1'
 alias da='ls -a'
 alias dl='ls -l'
 alias dla='ls -la'
