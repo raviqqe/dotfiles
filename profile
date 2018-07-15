@@ -48,7 +48,7 @@ export PATH=$GOPATH/bin:$HOME/.local/go/bin:$PATH
 
 export PATH=$HOME/.cargo/bin:$PATH
 export RUST_SRC_PATH=$HOME/.cache/racer/rust/src
-export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$(rustc --print sysroot 2> /dev/null)/lib:$LD_LIBRARY_PATH
 
 ## Python
 
