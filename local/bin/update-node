@@ -4,6 +4,6 @@ set -e
 
 npm install --global --ignore-scripts \
     depcheck diff-so-fancy js-beautify jshint jsonlint leasot npm \
-    prettier remark-cli serverless tslint typescript
+    prettier serverless tslint typescript
 
 npm update --global
