@@ -50,10 +50,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 export RUST_SRC_PATH=$HOME/.cache/racer/rust/src
 export LD_LIBRARY_PATH=$(rustc --print sysroot 2> /dev/null)/lib:$LD_LIBRARY_PATH
 
-## Python
-
-export MYPYPATH=$(echo $local/lib/python3.*/site-packages)
-
 ## Cloe
 
 export PATH=$HOME/.cloe/bin:$PATH
