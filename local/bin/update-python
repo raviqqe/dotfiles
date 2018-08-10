@@ -3,5 +3,4 @@
 set -e
 
 pip3 install --user --upgrade \
-  autopep8 awscli codemod flake8 frosted httpie mypy pylama \
-  pylint twine vim-vint
+  autopep8 awscli codemod httpie mypy pylint twine vim-vint
