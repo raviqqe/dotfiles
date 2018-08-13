@@ -33,7 +33,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 16))
 SAVEHIST=$((2 ** 17))
 
-for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yml
+for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yaml yml
 do
   alias -s $suffix=$EDITOR
 done
