@@ -3,4 +3,4 @@
 set -e
 
 pip3 install --user --upgrade \
-  autopep8 awscli codemod httpie mypy pylint twine vim-vint
+  autopep8 awscli codemod httpie mypy pyaml pylint twine vim-vint
