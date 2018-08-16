@@ -122,5 +122,11 @@ alias ds='ghq list --full-path'
 # Others
 
 alias less='less -R'
-alias s='rg --line-number'
 alias r='eval "$( fc -ln 0 | sort -u | fzf )"'
+
+if which rg > /dev/null 2>&1
+then
+  alias s='rg --line-number'
+else
+  alias s='grep -Hnr --color'
+fi
