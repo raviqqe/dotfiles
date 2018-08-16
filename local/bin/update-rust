@@ -11,10 +11,11 @@ then
 fi
 
 rustup component add rustfmt-preview
+rustup component add clippy-preview --toolchain=nightly
 rustup update
 
 cargo install cargo-update || :
-cargo install-update -i bat cargo-update clippy exa fd-find racer ripgrep tokei
+cargo install-update -i bat cargo-update exa fd-find racer ripgrep tokei
 
 if [ -z "$RUST_SRC_PATH" ]
 then
