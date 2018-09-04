@@ -28,13 +28,6 @@ export MANPATH=$linuxbrew_dir/share/man:$MANPATH
 export HOMEBREW_NO_EMOJI=1
 library_path=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$library_path
 
-if type nproc > /dev/null 2>&1
-then
-  export HOMEBREW_MAKE_JOBS=$(nproc)
-else
-  export HOMEBREW_MAKE_JOBS=2
-fi
-
 ## Haskell
 
 export PATH=$HOME/.cabal/bin:$PATH
