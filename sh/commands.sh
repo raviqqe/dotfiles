@@ -88,7 +88,7 @@ grh() {
 # Editor
 
 alias eh='nvim -c :History'
-alias er='nvim -R'
+alias er='nvim -c :GitFiles'
 
 e() {
   if [ $# -eq 0 ]
