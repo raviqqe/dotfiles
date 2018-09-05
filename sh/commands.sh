@@ -1,6 +1,6 @@
 # cd
 
-alias cg='c "$(git rev-parse --show-toplevel)"'
+alias cr='c "$(git rev-parse --show-toplevel)"'
 alias ch='cd "$(dirs -lp | sort -u | fzf)"'
 alias cs='cd "$(ghq list --full-path | fzf)"'
 
