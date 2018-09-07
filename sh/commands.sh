@@ -94,6 +94,7 @@ e() {
   if [ $# -eq 0 ]
   then
     local file=$(fd -t f . | fzf)
+
     [ -n "$file" ] && nvim "$file"
   else
     nvim "$@"
@@ -102,6 +103,7 @@ e() {
 
 eg() {
   local line=$(s "$1" | fzf)
+
   [ -n "$line" ] && nvim +$(echo "$line" | cut -d : -f 2) "$(echo "$line" | cut -d : -f 1)"
 }
 
