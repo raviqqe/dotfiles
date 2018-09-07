@@ -5,7 +5,7 @@ alias ch='cd "$(dirs -lp | sort -u | fzf)"'
 alias cs='cd "$(ghq list --full-path | fzf)"'
 
 c() {
-  local dir=$(fd -t d "${1:-.}" | grep -v '/\.' | fzf)
+  local dir=$(fd -t d "${1:-.}" | fzf)
 
   [ -n "$dir" ] && cd "$dir"
 }
@@ -93,7 +93,7 @@ alias er='nvim -c :GitFiles'
 e() {
   if [ $# -eq 0 ]
   then
-    local file=$(fd -t f . | grep -v '/\.' | fzf)
+    local file=$(fd -t f . | fzf)
     [ -n "$file" ] && nvim "$file"
   else
     nvim "$@"
