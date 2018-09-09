@@ -1,7 +1,7 @@
 # dotfiles
 
-[![Wercker branch](https://img.shields.io/wercker/ci/raviqqe/dotfiles/master.svg?style=flat-square)](https://app.wercker.com/raviqqe/dotfiles)
-[![License](https://img.shields.io/github/license/raviqqe/dotfiles.svg?style=flat-square)](UNLICENSE)
+[![wercker status](https://app.wercker.com/status/4cbcaf0a2e926f5bd1e7e556ae623c09/s/master)](https://app.wercker.com/project/byKey/4cbcaf0a2e926f5bd1e7e556ae623c09)
+[![license](https://img.shields.io/github/license/raviqqe/dotfiles.svg)](UNLICENSE)
 
 ## Requirements
 
