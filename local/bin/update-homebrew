@@ -32,5 +32,3 @@ brew install \
     asdf curl zsh git tmux htop tig \
     $(is_x86_64 && echo go) ruby python neovim node
     # ghc haskell-stack elm-format git-lfs
-
-brew cleanup
