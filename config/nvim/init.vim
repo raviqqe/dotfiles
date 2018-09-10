@@ -153,6 +153,11 @@ let g:deoplete#sources#rust#racer_binary = $HOME . '/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
 
+"" nvim-typescript
+
+let g:nvim_typescript#diagnosticsEnable = 0
+
+
 "" neosnippet
 
 let g:neosnippet#enable_auto_clear_markers = 0
