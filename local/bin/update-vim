@@ -24,5 +24,7 @@ pip3 install --user --upgrade neovim
 gem install neovim
 gem update rubocop
 
+npm install -g neovim
+
 nvim ${batch:+--headless} \
      +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
