@@ -155,7 +155,7 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
 "" nvim-typescript
 
-let g:nvim_typescript#diagnosticsEnable = 0
+let g:nvim_typescript#diagnostics_enable = 0
 
 
 "" neosnippet
