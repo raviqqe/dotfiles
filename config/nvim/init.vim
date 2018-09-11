@@ -155,6 +155,8 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 "" nvim-typescript
 
 let g:nvim_typescript#diagnostics_enable = 0
+autocmd Rc BufRead,BufNewFile *.ts,*.tsx
+	\ nnoremap <leader>d :TSDef<cr> | nnoremap <leader>e :TSRefs<cr>
 
 
 "" neosnippet
