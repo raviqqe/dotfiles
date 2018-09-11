@@ -108,7 +108,7 @@ autocmd Rc FileType sh set filetype=zsh
 
 "" keymaps
 
-let g:mapleader = "\<space>"
+let g:mapleader = ' '
 
 nnoremap ; :
 nnoremap : ;
