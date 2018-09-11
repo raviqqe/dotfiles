@@ -8,7 +8,6 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'raviqqe/vim-nonblank'
 Plug 'sbdchd/neoformat'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
@@ -186,6 +185,14 @@ nnoremap <leader>r :GitFiles<cr>
 nnoremap <leader>h :History<cr>
 nnoremap <leader>l :Lines<cr>
 nnoremap <leader>g :Rg<cr>
+
+
+"" ale
+
+let g:ale_fixers = {
+	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+	\ 'typescript': ['tslint'] }
+let g:ale_fix_on_save = 1
 
 
 "" neoformat
