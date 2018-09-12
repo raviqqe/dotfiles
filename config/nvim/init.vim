@@ -40,8 +40,6 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
-Plug 'zchee/deoplete-go'
-Plug 'zchee/deoplete-jedi'
 
 "" color
 
