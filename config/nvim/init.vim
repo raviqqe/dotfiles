@@ -172,7 +172,8 @@ let g:neosnippet#enable_auto_clear_markers = 0
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory = [
 	\ '~/.config/nvim/snippets',
-	\ '~/.config/nvim/plugged/vim-snippets/snippets']
+	\ '~/.config/nvim/plugged/vim-snippets/snippets',
+	\ ]
 imap <c-s> <plug>(neosnippet_expand_or_jump)
 smap <c-s> <plug>(neosnippet_expand_or_jump)
 xmap <c-s> <plug>(neosnippet_expand_target)
@@ -199,7 +200,8 @@ nnoremap <leader>g :Rg<cr>
 
 let g:ale_fixers = {
 	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-	\ 'typescript': ['tslint'] }
+	\ 'typescript': ['tslint'],
+	\ }
 let g:ale_fix_on_save = 1
 
 
