@@ -152,7 +152,7 @@ let g:nvim_typescript#diagnostics_enable = 0
 
 let g:LanguageClient_diagnosticsEnable = 0
 let g:LanguageClient_serverCommands = {
-	\ 'go': ['go-langserver'],
+	\ 'go': ['go-langserver', '-gocodecompletion', '-usebinarypkgcache'],
 	\ 'javascript': ['javascript-typescript-stdio'],
 	\ 'typescript': ['javascript-typescript-stdio'],
 	\ 'python': ['pyls'],
