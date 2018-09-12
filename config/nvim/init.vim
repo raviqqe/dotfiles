@@ -26,6 +26,7 @@ Plug 'junegunn/fzf.vim'
 "" language
 
 Plug 'alfredodeza/pytest.vim'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'sh install.sh' }
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
@@ -59,6 +60,7 @@ augroup END
 
 set autochdir
 set autoread
+set hidden " for LanguageClient-neovim
 set nobackup
 set nolazyredraw
 set nowritebackup
@@ -154,8 +156,24 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 "" nvim-typescript
 
 let g:nvim_typescript#diagnostics_enable = 0
-autocmd Rc BufRead,BufNewFile *.ts,*.tsx
-	\ nnoremap <leader>d :TSDef<cr> | nnoremap <leader>e :TSRefs<cr>
+
+
+"" LanguageClient-neovim
+
+let g:LanguageClient_diagnosticsEnable = 0
+let g:LanguageClient_serverCommands = {
+	\ 'go': ['go-langserver'],
+	\ 'javascript': ['javascript-typescript-stdio'],
+	\ 'typescript': ['javascript-typescript-stdio'],
+	\ 'python': ['pyls'],
+	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+	\ }
+let g:LanguageClient_windowLogMessageLevel = 'Error'
+
+nnoremap <leader>m :call LanguageClient_contextMenu()<cr>
+nnoremap <leader>d :call LanguageClient#textDocument_definition()<cr>
+nnoremap <leader>e :call LanguageClient#textDocument_references()<cr>
+nnoremap <leader>n :call LanguageClient#textDocument_rename()<cr>
 
 
 "" neosnippet

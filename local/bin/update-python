@@ -3,4 +3,4 @@
 set -e
 
 pip3 install --user --upgrade \
-  awscli black codemod httpie mypy pip pylint twine vim-vint
+  awscli black codemod httpie mypy pip pylint python-language-server twine vim-vint

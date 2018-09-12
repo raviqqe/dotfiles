@@ -12,6 +12,7 @@ fi
 
 rustup component add rustfmt-preview
 rustup component add clippy-preview --toolchain=nightly
+rustup component add rls-preview rust-analysis rust-src
 rustup update
 
 cargo install cargo-update || :
