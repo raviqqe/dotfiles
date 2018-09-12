@@ -77,6 +77,7 @@ key_bindings:
   - { key: C,     mods: Command, action: Copy   }
   - { key: V,     mods: Command, action: Paste  }
   - { key: Space, mods: Control, chars:  "\x00" }
+  - { key: Space, mods: Alt,     chars:  "\x1b " }
   - { key: Left,                 chars: "\x1b[D" }
   - { key: Right,                chars: "\x1b[C" }
   - { key: Up,                   chars: "\x1b[A" }
