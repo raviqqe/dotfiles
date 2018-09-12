@@ -2,8 +2,6 @@
 
 set -e
 
-export SSL_CERT_DIR=/etc/ssl/certs
-
 if ! which rustup
 then
   curl -sSf https://sh.rustup.rs |
@@ -16,14 +14,4 @@ rustup component add rls-preview rust-analysis rust-src
 rustup update
 
 cargo install cargo-update || :
-cargo install-update -i bat cargo-update exa fd-find racer ripgrep tokei
-
-if [ -z "$RUST_SRC_PATH" ]
-then
-  exit 1
-fi
-
-repo="$(dirname "$RUST_SRC_PATH")"
-
-rm -rf "$repo"
-git clone --depth 1 https://github.com/rust-lang/rust "$repo"
+cargo install-update -i bat cargo-update exa fd-find ripgrep tokei

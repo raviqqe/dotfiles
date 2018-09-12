@@ -2,9 +2,11 @@
 
 call plug#begin()
 
+Plug '907th/vim-auto-save'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'farmergreg/vim-lastplace'
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'pbrisbin/vim-mkdir'
@@ -14,9 +16,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
-Plug '907th/vim-auto-save'
 
 "" fuzzy finder
 
@@ -36,12 +36,10 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "" deoplete
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
-
-Plug 'sebastianmarkow/deoplete-rust'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
 Plug 'zchee/deoplete-go'
 Plug 'zchee/deoplete-jedi'
 
@@ -145,12 +143,6 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-
-"" deoplete-rust
-
-let g:deoplete#sources#rust#racer_binary = $HOME . '/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
 
 "" nvim-typescript
