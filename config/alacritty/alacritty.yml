@@ -1,22 +1,3 @@
-env:
-  TERM: xterm-256color
-
-dimensions:
-  columns: 80
-  lines: 24
-
-padding:
-  x: 2
-  y: 2
-
-dpi:
-  x: 96.0
-  y: 96.0
-
-tabspaces: 8
-
-draw_bold_text_with_bright_colors: true
-
 font:
   normal:
     family: Menlo
@@ -26,76 +7,33 @@ font:
     family: Menlo
   size: 11
   offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
   glyph_offset:
-    x: 0.0
-    y: 0.0
-
-render_timer: false
-
-colors:
-  primary:
-    background: '0x000000'
-    foreground: '0xeaeaea'
-
-  normal:
-    black:   '0x000000'
-    red:     '0xd54e53'
-    green:   '0xb9ca4a'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
-    white:   '0xffffff'
-
-  bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0xffffff'
-
-  dim:
-￼   black:   '0x333333'
-￼   red:     '0xf2777a'
-￼   green:   '0x99cc99'
-￼   yellow:  '0xffcc66'
-￼   blue:    '0x6699cc'
-￼   magenta: '0xcc99cc'
-￼   cyan:    '0x66cccc'
-￼   white:   '0xdddddd'
-
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
-
+    x: 0
+    y: 0
 key_bindings:
-  - { key: C,     mods: Command, action: Copy   }
-  - { key: V,     mods: Command, action: Paste  }
-  - { key: Space, mods: Control, chars:  "\x00" }
-  - { key: Space, mods: Alt,     chars:  "\x1b " }
-  - { key: Left,                 chars: "\x1b[D" }
-  - { key: Right,                chars: "\x1b[C" }
-  - { key: Up,                   chars: "\x1b[A" }
-  - { key: Down,                 chars: "\x1b[B" }
-
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
-
-mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-
-hide_cursor_when_typing: true
-
+  - key: C
+    mods: Command
+    action: Copy
+  - key: V
+    mods: Command
+    action: Paste
+  - key: Space
+    mods: Control
+    chars: "\x00"
+  - key: Space
+    mods: Alt
+    chars: "\x1b "
+  - key: Left
+    chars: "\x1b[D"
+  - key: Right
+    chars: "\x1b[C"
+  - key: Up
+    chars: "\x1b[A"
+  - key: Down
+    chars: "\x1b[B"
 shell:
- program: /bin/zsh
- args:
-   - -l
+  program: /bin/zsh
+  args:
+    - -l
