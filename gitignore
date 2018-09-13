@@ -1,7 +1,6 @@
 *.bookmark
 *.egg-info
 *.log
-*.test
 .*_cache
 .cache
 __pycache__
