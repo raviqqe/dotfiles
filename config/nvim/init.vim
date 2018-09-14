@@ -12,6 +12,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'sbdchd/neoformat'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -214,6 +215,13 @@ let g:ale_fixers = {
 	\ 'typescript': ['tslint'],
 	\ }
 let g:ale_fix_on_save = 1
+
+
+"" vim-multiple-cursors
+
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_select_all_word_key = '<c-n>'
+let g:multi_cursor_quit_key = '<esc>'
 
 
 "" neoformat
