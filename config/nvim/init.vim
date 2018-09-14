@@ -165,7 +165,7 @@ nnoremap <leader>n :call LanguageClient#textDocument_rename()<cr>
 "" nvim-typescript
 
 let g:nvim_typescript#diagnostics_enable = 0
-autocmd Rc BufRead,BufNewFile *.ts
+autocmd Rc FileType typescript
 	\ nnoremap <leader>d :TSDef<cr> |
 	\ nnoremap <leader>e :TSRefs<cr> |
 	\ nnoremap <leader>n :TSRename<cr>
