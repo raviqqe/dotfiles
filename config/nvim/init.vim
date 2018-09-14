@@ -152,7 +152,9 @@ let g:LanguageClient_diagnosticsEnable = 0
 let g:LanguageClient_serverCommands = {
 	\ 'go': ['go-langserver', '-gocodecompletion', '-usebinarypkgcache'],
 	\ 'javascript': ['javascript-typescript-stdio'],
+	\ 'javascript.jsx': ['javascript-typescript-stdio'],
 	\ 'typescript': ['javascript-typescript-stdio'],
+	\ 'typescript.jsx': ['javascript-typescript-stdio'],
 	\ 'python': ['pyls'],
 	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
 	\ }
