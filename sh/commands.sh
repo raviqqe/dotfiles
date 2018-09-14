@@ -125,7 +125,17 @@ alias ds='ghq list --full-path'
 # Others
 
 alias less='less -R'
-alias r='eval "$( fc -ln 0 | sort -u | fzf )"'
+alias r='eval "$(fc -ln 0 | sort -u | fzf)"'
+
+f() {
+  if [ $# -eq 0 ]
+  then
+    bat "$(fd -t f | fzf)"
+    return
+  fi
+
+  bat "$@"
+}
 
 if which rg > /dev/null 2>&1
 then
