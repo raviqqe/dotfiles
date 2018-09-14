@@ -201,6 +201,12 @@ nnoremap <leader>l :Lines<cr>
 nnoremap <leader>g :Rg<cr>
 
 
+"" easymotion
+
+let g:EasyMotion_do_mapping = 0
+nmap <leader>s <plug>(easymotion-overwin-w)
+
+
 "" ale
 
 let g:ale_fixers = {
