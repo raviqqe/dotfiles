@@ -44,60 +44,17 @@ do
 done
 
 
-# Prompt
-
-git_branch() {
-  branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
-
-  if [ -n "$branch_name" ]
-  then
-    echo "$branch_name$(git_modified) "
-  fi
-}
-
-git_grep_modified_files() {
-  grep -e "^.M" -e "^M." -e "^A." -e "^D." -e "^.D"
-}
-
-git_modified() {
-  if [ -n "$(git status --porcelain 2> /dev/null | git_grep_modified_files)" ]
-  then
-    echo "*"
-  fi
-}
-
-prompt_with_vimode() {
-  echo -n '%n@%m %{$fg[yellow]%}%20<..<%~%<< '
-  echo -n '%{$fg[cyan]%}$(git_branch)'
-  echo -n '%{$fg[red]%}%(?..[%?] )'
-  echo -n "$1"
-  echo -n '%{$fg[magenta]%}%# %{$reset_color%}'
-}
-
-insert_mode='%{$fg[magenta]%}I'
-normal_mode='%{$fg[white]%}N'
-
-PROMPT=$(prompt_with_vimode $insert_mode)
-PROMPT2='%_> '
-
-function zle-line-init zle-keymap-select {
-  PROMPT=$(prompt_with_vimode ${${KEYMAP/vicmd/$normal_mode}/(main|viins)/$insert_mode})
-  zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-
 # Plugins
 
 . ~/.zplug/init.zsh
 
 zplug junegunn/fzf, use:shell/*.zsh
+zplug mafredri/zsh-async
+zplug sindresorhus/pure, use:pure.zsh, as:theme
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-completions, lazy:true
-zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-history-substring-search
+zplug zsh-users/zsh-syntax-highlighting
 
 bindkey -a ? fzf-history-widget
 bindkey -v '^P' history-substring-search-up
