@@ -205,10 +205,10 @@ command! -bang -nargs=* Rg
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>c :History:<cr>
 nnoremap <leader>f :Files!<cr>
-nnoremap <leader>r :GitFiles!<cr>
+nnoremap <leader>g :Rg!<cr>
 nnoremap <leader>h :History!<cr>
 nnoremap <leader>l :Lines!<cr>
-nnoremap <leader>g :Rg!<cr>
+nnoremap <leader>r :GitFiles!<cr>
 
 
 "" easymotion
