@@ -195,6 +195,13 @@ let g:AutoPairsMapCR = 0
 
 "" fzf
 
+command! -bang -nargs=* Rg
+	\ call fzf#vim#grep(
+		\ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
+		\ 1,
+		\ { 'dir': systemlist('git rev-parse --show-toplevel')[0] },
+		\ <bang>0)
+
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>c :History:<cr>
 nnoremap <leader>f :Files<cr>
