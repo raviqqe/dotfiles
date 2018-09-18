@@ -12,6 +12,7 @@ font:
   glyph_offset:
     x: 0
     y: 0
+hide_cursor_when_typing: true
 key_bindings:
   - key: C
     mods: Command
