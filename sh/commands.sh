@@ -88,6 +88,7 @@ grh() {
 
 # Editor
 
+alias eg='nvim -c :Rg!'
 alias eh='nvim -c :History!'
 alias er='nvim -c :GitFiles!'
 
@@ -100,12 +101,6 @@ e() {
   else
     nvim "$@"
   fi
-}
-
-eg() {
-  local line=$(s "$1" | fzf)
-
-  [ -n "$line" ] && nvim +$(echo "$line" | cut -d : -f 2) "$(echo "$line" | cut -d : -f 1)"
 }
 
 
