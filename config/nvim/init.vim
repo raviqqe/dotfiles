@@ -226,13 +226,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 
-"" vim-multiple-cursors
-
-let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_select_all_word_key = '<c-n>'
-let g:multi_cursor_quit_key = '<esc>'
-
-
 "" neoformat
 
 autocmd Rc BufWritePre * silent! undojoin | Neoformat
