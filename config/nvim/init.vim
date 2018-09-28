@@ -238,6 +238,12 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
+
+"" vim-go
+
+let g:go_version_warning = 0
+
+
 "" vue
 
 let g:vue_disable_pre_processors = 1
