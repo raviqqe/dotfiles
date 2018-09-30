@@ -5,6 +5,7 @@ call plug#begin()
 Plug '907th/vim-auto-save'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'cocopon/iceberg.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'farmergreg/vim-lastplace'
 Plug 'itchyny/lightline.vim'
@@ -43,10 +44,6 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
-
-"" color
-
-Plug 'cocopon/iceberg.vim'
 
 call plug#end()
 
@@ -261,4 +258,3 @@ colorscheme iceberg
 highlight Normal      ctermbg=none
 highlight NonText     ctermbg=none
 highlight EndOfBuffer ctermbg=none
-highlight VertSplit   cterm=none ctermfg=240 ctermbg=240
