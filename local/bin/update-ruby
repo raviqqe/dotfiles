@@ -2,25 +2,7 @@
 
 set -e
 
-while getopts b option
-do
-  case $option in
-  b)
-    batch=true
-    ;;
-  esac
-done
-
 gems='bundler gitlab gist rubocop'
 
 gem install $gems
 gem update $gems
-
-credential_file=~/.gem/credentials
-
-if [ -z "$batch" -a ! -r $credential_file ]
-then
-  mkdir -p $(dirname $credential_file)
-  curl -fu raviqqe https://rubygems.org/api/v1/api_key.yaml > $credential_file
-  chmod 600 $credential_file
-fi
