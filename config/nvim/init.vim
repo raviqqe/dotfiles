@@ -192,7 +192,7 @@ let g:AutoPairsMapCR = 0
 
 "" fzf
 
-command! -bang -nargs=* Rg
+command! -bang -nargs=* RgGlobal
 	\ call fzf#vim#grep(
 		\ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
 		\ 1,
@@ -203,6 +203,7 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>c :History:<cr>
 nnoremap <leader>f :Files!<cr>
 nnoremap <leader>g :Rg!<cr>
+nnoremap <leader>a :RgGlobal!<cr>
 nnoremap <leader>h :History!<cr>
 nnoremap <leader>l :Lines!<cr>
 nnoremap <leader>r :GitFiles!<cr>
