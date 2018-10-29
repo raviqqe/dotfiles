@@ -59,6 +59,7 @@ alias gsmu='git submodule update --init --recursive'
 alias gz='git stash'
 alias gzl='git stash list'
 alias gzp='git stash pop'
+alias gzs='git stash show -p'
 
 ga() {
   if [ $# -eq 0 ]
