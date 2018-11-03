@@ -14,4 +14,4 @@ rustup component add rls-preview rust-analysis rust-src
 rustup update
 
 cargo install cargo-update || :
-cargo install-update -i bat cargo-update exa fd-find ripgrep tealdeer tokei
+cargo install-update -i bat cargo-update dutree exa fd-find ripgrep tealdeer tokei
