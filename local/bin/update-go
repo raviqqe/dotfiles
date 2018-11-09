@@ -2,7 +2,7 @@
 
 set -e
 
-go get -u \
+go get -u -v \
     github.com/alecthomas/gometalinter \
     github.com/fatih/hclfmt \
     github.com/github/hub \
