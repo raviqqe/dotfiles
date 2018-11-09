@@ -1,4 +1,4 @@
-setopt autocd autopushd extendedglob hist_ignore_dups prompt_subst sh_word_split share_history
+setopt autocd autopushd extendedglob hist_ignore_all_dups prompt_subst sh_word_split share_history
 unsetopt banghist beep nomatch notify
 
 autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted
