@@ -156,6 +156,7 @@ let g:LanguageClient_serverCommands = {
 	\ 'python': ['pyls'],
 	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
 	\ }
+let g:LanguageClient_hasSnippetSupport = 0
 let g:LanguageClient_windowLogMessageLevel = 'Error'
 nnoremap <leader>m :call LanguageClient_contextMenu()<cr>
 nnoremap <leader>d :call LanguageClient#textDocument_definition()<cr>
