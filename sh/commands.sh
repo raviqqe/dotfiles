@@ -4,6 +4,15 @@ alias cr='cd "$(fd -at d . $(git rev-parse --show-toplevel) | fzf)"'
 alias ch='cd "$(dirs -lp | sort -u | fzf)"'
 alias cs='cd "$(ghq list --full-path | fzf)"'
 
+times() {
+  yes $2 | head -$1 | tr -d [:space:]
+}
+
+for n in $(seq 3 8)
+do
+  alias $(times $n .)=$(times $(expr $n - 1) ../)
+done
+
 c() {
   local dir=$(fd -t d "${1:-.}" | fzf)
 
