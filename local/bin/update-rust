@@ -15,3 +15,5 @@ rustup update
 
 cargo install cargo-update || :
 cargo install-update -i bat cargo-update dutree exa fd-find ripgrep tealdeer tokei
+
+tldr --update
