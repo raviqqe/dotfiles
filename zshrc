@@ -30,8 +30,8 @@ bindkey -v '^W' forward-word
 bindkey -v '^Y' yank
 
 HISTFILE=~/.zhistory
-HISTSIZE=$((2 ** 16))
-SAVEHIST=$((2 ** 17))
+HISTSIZE=$((2 ** 32))
+SAVEHIST=$HISTSIZE
 
 for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yaml yml
 do
