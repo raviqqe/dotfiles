@@ -3,7 +3,7 @@
 set -e
 
 npm install --global --ignore-scripts \
-    diff-so-fancy javascript-typescript-langserver jshint npm prettier \
+    diff-so-fancy javascript-typescript-langserver npm prettier \
     serverless tslint typescript
 
 npm update --global
