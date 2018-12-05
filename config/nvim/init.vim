@@ -151,8 +151,8 @@ let g:LanguageClient_serverCommands = {
 	\ 'go': ['go-langserver', '-gocodecompletion', '-usebinarypkgcache'],
 	\ 'javascript': ['javascript-typescript-stdio'],
 	\ 'javascript.jsx': ['javascript-typescript-stdio'],
-	\ 'typescript': ['javascript-typescript-stdio'],
-	\ 'typescript.jsx': ['javascript-typescript-stdio'],
+	\ 'typescript': ['typescript-language-server', '--stdio'],
+	\ 'typescript.jsx': ['typescript-language-server', '--stdio'],
 	\ 'python': ['pyls'],
 	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
 	\ }
@@ -167,10 +167,6 @@ nnoremap <leader>n :call LanguageClient#textDocument_rename()<cr>
 "" nvim-typescript
 
 let g:nvim_typescript#diagnostics_enable = 0
-autocmd Rc FileType typescript
-	\ nnoremap <leader>d :TSDef<cr> |
-	\ nnoremap <leader>e :TSRefs<cr> |
-	\ nnoremap <leader>n :TSRename<cr>
 
 
 "" neosnippet
