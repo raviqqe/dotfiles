@@ -74,7 +74,7 @@ alias gzs='git stash show -p'
 ga() {
   if [ $# -eq 0 ]
   then
-    git add .
+    git add --all
   else
     git add "$@"
   fi &&
