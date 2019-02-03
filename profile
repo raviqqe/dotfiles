@@ -20,13 +20,14 @@ library_path=$local/lib64:$local/lib
 export PATH=$PATH:/usr/local/cuda/bin
 library_path=$library_path:/usr/local/cuda/lib64
 
-## Linuxbrew
+## Homebrew
 
-linuxbrew_dir=$HOME/.linuxbrew
-export PATH=$linuxbrew_dir/bin:$linuxbrew_dir/sbin:$PATH
-export MANPATH=$linuxbrew_dir/share/man:$MANPATH
 export HOMEBREW_NO_EMOJI=1
-library_path=$linuxbrew_dir/lib64:$linuxbrew_dir/lib:$library_path
+
+if [ -d ~/.homebrew ]
+then
+  eval $(~/.homebrew/bin/brew shellenv)
+fi
 
 ## Haskell
 

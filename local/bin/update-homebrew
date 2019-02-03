@@ -10,9 +10,10 @@ is_x86_64() {
   [ $(uname -m) = x86_64 ]
 }
 
-if [ ! -d ~/.linuxbrew ]
+if [ ! -d ~/.homebrew ]
 then
-  git clone https://github.com/Linuxbrew/brew ~/.linuxbrew
+  git clone https://github.com/Homebrew/brew ~/.homebrew
+  eval $(~/.homebrew/bin/brew shellenv)
 fi
 
 brew update
@@ -27,8 +28,6 @@ then
 fi
 
 brew install \
-    --without-docs --without-doxygen --without-icu4c --without-jemalloc \
-    --without-libgit2 \
     asdf curl zsh git tmux htop tig \
     $(is_x86_64 && echo go) ruby python neovim node
     # ghc haskell-stack elm-format git-lfs
