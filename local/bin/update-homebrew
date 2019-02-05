@@ -29,5 +29,5 @@ fi
 
 brew install \
     asdf curl zsh git tmux htop tig \
-    $(is_x86_64 && echo go) ruby python neovim node
+    $(is_x86_64 && echo go) ruby python neovim node watch
     # ghc haskell-stack elm-format git-lfs
