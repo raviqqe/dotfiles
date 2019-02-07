@@ -2,14 +2,6 @@
 
 set -e
 
-is_64_bit() {
-  [ $(getconf LONG_BIT) = 64 ]
-}
-
-is_x86_64() {
-  [ $(uname -m) = x86_64 ]
-}
-
 if [ ! -d ~/.homebrew ]
 then
   git clone https://github.com/Homebrew/brew ~/.homebrew
@@ -17,17 +9,11 @@ then
 fi
 
 brew update
-brew update
-
 brew upgrade
 
-if is_64_bit
-then
-  brew tap thoughtbot/formulae
-  brew install rcm
-fi
+brew tap thoughtbot/formulae
+brew install rcm
 
 brew install \
-    asdf curl zsh git tmux htop tig \
-    $(is_x86_64 && echo go) ruby python neovim node watch
-    # ghc haskell-stack elm-format git-lfs
+    asdf curl elm-format ghc git git-lfs go haskell-stack htop neovim \
+    node python ruby tig tmux watch zsh
