@@ -29,6 +29,10 @@ then
   eval $(~/.homebrew/bin/brew shellenv)
 fi
 
+### OpenSSL
+
+export SSL_CERT_FILE=~/.homebrew/etc/openssl/cert.pem
+
 ## Haskell
 
 export PATH=$HOME/.cabal/bin:$PATH
