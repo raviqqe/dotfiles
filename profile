@@ -63,6 +63,13 @@ export GHQ_ROOT=$HOME/src
 
 export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
+## zsh
+
+export PURE_PROMPT_SYMBOL='>'
+export PURE_PROMPT_VICMD_SYMBOL='<'
+export PURE_GIT_DOWN_ARROW=v
+export PURE_GIT_UP_ARROW=^
+
 ## Google Cloud SDK
 
 export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
