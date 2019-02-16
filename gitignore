@@ -4,6 +4,5 @@
 .*_cache
 .cache
 __pycache__
-build
 dist
 node_modules
