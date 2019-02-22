@@ -46,7 +46,7 @@ done
 
 # Plugins
 
-. ~/.zplug/init.zsh
+. $ZPLUG_HOME/init.zsh
 
 zplug junegunn/fzf, use:shell/*.zsh
 zplug mafredri/zsh-async

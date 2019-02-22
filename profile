@@ -70,6 +70,8 @@ export PURE_PROMPT_VICMD_SYMBOL='<'
 export PURE_GIT_DOWN_ARROW=v
 export PURE_GIT_UP_ARROW=^
 
+export ZPLUG_HOME=$HOME/.homebrew/opt/zplug
+
 ## Google Cloud SDK
 
 export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
