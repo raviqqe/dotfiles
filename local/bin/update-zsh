@@ -1,5 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 set -e
 
-zsh -c '. ~/.zprofile && . ~/.zshrc'
+. ~/.profile
+. $ZPLUG_HOME/init.zsh
+
+if ! zplug check
+then
+	zplug install
+fi
+
+zplug update
