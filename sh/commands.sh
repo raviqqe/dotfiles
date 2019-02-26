@@ -67,7 +67,6 @@ alias gsm='git submodule'
 alias gsma='git submodule add'
 alias gsmu='git submodule update --init --recursive'
 alias gw='git worktree'
-alias gwa='git worktree add'
 alias gwc='cd "$(git worktree list | cut -f 1 -d " " | fzf)"'
 alias gwl='git worktree list'
 alias gwr='git worktree remove "$(git worktree list | cut -f 1 -d " " | fzf)"'
@@ -101,6 +100,14 @@ grh() {
   local message=$(git log --format=%B -n 1 HEAD^)
   git reset --soft HEAD^^ &&
   git commit -m "$message"
+}
+
+gwa() {
+  local branch=$(git branch --format '%(refname:short)' | fzf)
+  local dir=~/worktree/"$branch"
+
+  git worktree add ~/worktree/"$branch" "$branch" &&
+  cd $dir
 }
 
 
