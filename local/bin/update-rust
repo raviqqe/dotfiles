@@ -8,6 +8,7 @@ then
   sh -s -- -y --no-modify-path --default-toolchain nightly
 fi
 
+rustup install stable
 rustup component add rustfmt --toolchain=nightly
 rustup component add clippy rls rust-analysis rust-src --toolchain=stable
 rustup update
