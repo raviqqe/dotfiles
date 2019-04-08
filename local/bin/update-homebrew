@@ -16,4 +16,4 @@ brew install rcm
 
 brew install \
     asdf curl elm-format ghc git git-lfs go haskell-stack htop neovim \
-    node pgformatter python ruby tig tmux watch zplug zsh
+    node pgformatter python ruby terraform tig tmux watch zplug zsh
