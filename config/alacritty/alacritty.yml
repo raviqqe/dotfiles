@@ -1,3 +1,5 @@
+window:
+  start_maximized: true
 font:
   normal:
     family: Menlo
