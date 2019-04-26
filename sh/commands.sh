@@ -14,7 +14,7 @@ do
 done
 
 c() {
-  local dir=$(fd -t d "${1:-.}" | fzf)
+  local dir=$(fd -t d . | fzf)
 
   [ -n "$dir" ] && cd "$dir"
 }
@@ -24,16 +24,8 @@ c() {
 
 alias tmux='TERM=screen-256color tmux'
 alias t=tmux
+alias ta='tmux a'
 alias tl='tmux ls'
-
-ta() {
-  if [ $# -eq 0 ]
-  then
-    tmux a
-  else
-    tmux a -t "$@"
-  fi
-}
 
 
 # git
@@ -106,7 +98,7 @@ gwa() {
   local branch=$(git branch --format '%(refname:short)' | fzf)
   local dir=~/worktree/"$branch"
 
-  git worktree add ~/worktree/"$branch" "$branch" &&
+  git worktree add "$dir" "$branch" &&
   cd $dir
 }
 
