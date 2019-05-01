@@ -41,6 +41,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$HOME/.local/go/bin:$PATH
+export GO111MODULE=on
 
 ## Rust
 
