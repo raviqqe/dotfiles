@@ -1,0 +1,9 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-useless-constructor": "off",
+    "sort-imports": "error"
+  }
+}
