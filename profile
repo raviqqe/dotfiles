@@ -48,9 +48,9 @@ export GO111MODULE=on
 export PATH=$HOME/.cargo/bin:$PATH
 export LD_LIBRARY_PATH=$(rustc --print sysroot 2> /dev/null)/lib:$LD_LIBRARY_PATH
 
-## Cloe
+## Ruby
 
-export PATH=$HOME/.cloe/bin:$PATH
+export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin):$PATH
 
 ## git
 
