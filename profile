@@ -50,7 +50,10 @@ export LD_LIBRARY_PATH=$(rustc --print sysroot 2> /dev/null)/lib:$LD_LIBRARY_PAT
 
 ## Ruby
 
-export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin):$PATH
+if [ -d ~/.homebrew/Cellar/ruby ]
+then
+  export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin):$PATH
+fi
 
 ## git
 
