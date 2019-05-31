@@ -33,16 +33,6 @@ HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 32))
 SAVEHIST=$HISTSIZE
 
-for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yaml yml
-do
-  alias -s $suffix=$EDITOR
-done
-
-for suffix in txt log
-do
-  alias -s $suffix=$PAGER
-done
-
 
 # Plugins
 
