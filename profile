@@ -37,6 +37,10 @@ export SSL_CERT_FILE=~/.homebrew/etc/openssl/cert.pem
 
 export PATH=$HOME/.cabal/bin:$PATH
 
+## OCaml
+
+export PATH=$HOME/.opam/default/bin:$PATH
+
 ## Go
 
 export GOPATH=$HOME
