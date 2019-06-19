@@ -3,38 +3,29 @@ jobs:
   build:
     docker:
       - image: ubuntu
-    working_directory: ~/
-    environment:
-      - TERM: xterm-256color
     steps:
-      - run:
-          name: OS Setup
-          command: |
-            apt -y update --fix-missing
-            apt -y install locales
-            locale-gen en_US.UTF-8
-      - run:
-          name: Install rcm
-          command: |
-            apt -y update --fix-missing
-            apt -y install software-properties-common
-            apt-add-repository -y ppa:martin-frost/thoughtbot-rcm
+      - checkout
       - run:
           name: Install dependencies
           command: |
             apt -y update --fix-missing
             apt -y upgrade
-            apt -y install build-essential clang curl git rcm ruby sudo
+            apt -y install build-essential curl git
       - run:
           name: Create user
           command: useradd -m tester
       - run:
-          name: Install dotfiles
+          name: Copy dotfiles
+          command: |
+            cp -r . /home/tester/.dotfiles
+            chown -R tester /home/tester/.dotfiles
+      - run:
+          name: Update Homebrew
           working_directory: /home/tester
           command: |
-            sudo -u tester git clone https://github.com/raviqqe/dotfiles /home/tester/.dotfiles
-            sudo -iu tester rcup -f
+            su tester -c '. ~/.dotfiles/profile && ~/.dotfiles/local/bin/update-homebrew'
+            su tester -c '. ~/.dotfiles/profile && rcup -f'
       - run:
-          name: Test command
+          name: Update all
           working_directory: /home/tester
-          command: sudo -iu tester sh -c 'export PATH=$HOME/.local/bin:$PATH && update dotfiles -b || update dotfiles -b'
+          command: su tester -c '. ~/.profile && update all -b'

@@ -1,7 +1,7 @@
 # dotfiles
 
-[![wercker status](https://app.wercker.com/status/4cbcaf0a2e926f5bd1e7e556ae623c09/s/master)](https://app.wercker.com/project/byKey/4cbcaf0a2e926f5bd1e7e556ae623c09)
-[![license](https://img.shields.io/github/license/raviqqe/dotfiles.svg)](UNLICENSE)
+[![Circle CI](https://img.shields.io/circleci/project/github/raviqqe/dotfiles/master.svg?style=flat-square)](https://circleci.com/gh/raviqqe/dotfiles)
+[![license](https://img.shields.io/github/license/raviqqe/dotfiles.svg?style=flat-square)](UNLICENSE)
 
 ## Requirements
 
