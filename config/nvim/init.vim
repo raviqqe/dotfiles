@@ -155,6 +155,7 @@ let g:LanguageClient_serverCommands = {
 	\ 'javascript.jsx': ['javascript-typescript-stdio'],
 	\ 'typescript': ['typescript-language-server', '--stdio'],
 	\ 'typescript.jsx': ['typescript-language-server', '--stdio'],
+	\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
 	\ 'python': ['pyls'],
 	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
 	\ }
