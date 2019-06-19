@@ -15,5 +15,25 @@ brew tap thoughtbot/formulae
 brew install rcm
 
 brew install \
-    asdf curl elm-format ghc git git-lfs go haskell-stack htop neovim \
-    node pgformatter python ruby terraform tig tmux watch zplug zsh
+    asdf \
+    curl \
+    elm-format \
+    ghc \
+    git \
+    git-lfs \
+    go \
+    haskell-stack \
+    htop \
+    neovim \
+    node \
+    ocaml \
+    opam \
+    pgformatter \
+    python \
+    ruby \
+    terraform \
+    tig \
+    tmux \
+    watch \
+    zplug \
+    zsh
