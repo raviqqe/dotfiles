@@ -9,8 +9,8 @@ then
 fi
 
 rustup install stable
-rustup component add rustfmt --toolchain=nightly
-rustup component add clippy rls rust-analysis rust-src --toolchain=stable
+rustup component add rls rustfmt rust-src --toolchain=nightly
+rustup component add clippy rust-analysis --toolchain=stable
 rustup update
 
 cargo install cargo-update || :
