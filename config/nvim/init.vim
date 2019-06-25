@@ -157,7 +157,7 @@ let g:LanguageClient_serverCommands = {
 	\ 'typescript.jsx': ['typescript-language-server', '--stdio'],
 	\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
 	\ 'python': ['pyls'],
-	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+	\ 'rust': ['rls'],
 	\ }
 let g:LanguageClient_hasSnippetSupport = 0
 let g:LanguageClient_windowLogMessageLevel = 'Error'
