@@ -150,6 +150,8 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 let g:LanguageClient_diagnosticsEnable = 0
 let g:LanguageClient_serverCommands = {
+	\ 'c': ['clangd'],
+	\ 'cpp': ['clangd'],
 	\ 'go': ['go-langserver', '-gocodecompletion', '-usebinarypkgcache'],
 	\ 'javascript': ['javascript-typescript-stdio'],
 	\ 'javascript.jsx': ['javascript-typescript-stdio'],
