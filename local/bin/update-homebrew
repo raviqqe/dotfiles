@@ -18,7 +18,6 @@ brew install \
     elm-format \
     ghc \
     git \
-    git-lfs \
     go \
     htop \
     neovim \
