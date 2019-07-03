@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: ubuntu
+        environment:
+          TERM: xterm-256color
     steps:
       - checkout
       - run:
