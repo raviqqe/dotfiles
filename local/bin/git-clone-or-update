@@ -3,10 +3,9 @@
 address=$1
 dir=$2
 
-if [ -d "$dir/.git" ]
-then
-  git -C "$dir" pull
+if [ -d "$dir/.git" ]; then
+	git -C "$dir" pull
 else
-  mkdir -p "$dir" &&
-  git clone "$address" "$dir"
+	mkdir -p "$dir" &&
+		git clone "$address" "$dir"
 fi

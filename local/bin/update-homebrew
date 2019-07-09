@@ -2,10 +2,9 @@
 
 set -e
 
-if [ ! -d ~/.homebrew ]
-then
-  git clone https://github.com/Homebrew/brew ~/.homebrew
-  eval $(~/.homebrew/bin/brew shellenv)
+if [ ! -d ~/.homebrew ]; then
+	git clone https://github.com/Homebrew/brew ~/.homebrew
+	eval $(~/.homebrew/bin/brew shellenv)
 fi
 
 brew update
@@ -14,23 +13,23 @@ brew upgrade
 brew tap thoughtbot/formulae
 
 brew install \
-    curl \
-    elm-format \
-    ghc \
-    git \
-    go \
-    htop \
-    neovim \
-    node \
-    ocaml \
-    opam \
-    pgformatter \
-    python \
-    rcm \
-    ruby \
-    terraform \
-    tig \
-    tmux \
-    watch \
-    zplug \
-    zsh
+	curl \
+	elm-format \
+	ghc \
+	git \
+	go \
+	htop \
+	neovim \
+	node \
+	ocaml \
+	opam \
+	pgformatter \
+	python \
+	rcm \
+	ruby \
+	terraform \
+	tig \
+	tmux \
+	watch \
+	zplug \
+	zsh

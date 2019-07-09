@@ -24,8 +24,7 @@ library_path=$library_path:/usr/local/cuda/lib64
 
 export HOMEBREW_NO_EMOJI=1
 
-if [ -d ~/.homebrew ]
-then
+if [ -d ~/.homebrew ]; then
   eval $(~/.homebrew/bin/brew shellenv)
 fi
 
@@ -50,12 +49,11 @@ export GO111MODULE=on
 ## Rust
 
 export PATH=$HOME/.cargo/bin:$PATH
-export LD_LIBRARY_PATH=$(rustc --print sysroot 2> /dev/null)/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$(rustc --print sysroot 2>/dev/null)/lib:$LD_LIBRARY_PATH
 
 ## Ruby
 
-if [ -d ~/.homebrew/Cellar/ruby ]
-then
+if [ -d ~/.homebrew/Cellar/ruby ]; then
   export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin):$PATH
 fi
 

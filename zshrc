@@ -33,7 +33,6 @@ HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 32))
 SAVEHIST=$HISTSIZE
 
-
 # Plugins
 
 . $ZPLUG_HOME/init.zsh
@@ -52,36 +51,30 @@ bindkey -v '^N' history-substring-search-down
 bindkey -a k history-substring-search-up
 bindkey -a j history-substring-search-down
 
-if ! zplug check
-then
+if ! zplug check; then
   zplug install
 fi
 
 zplug load
 
-
 # Google Cloud SDK
 
 include_file=~/.google/google-cloud-sdk/completion.zsh.inc
 
-if [ -f $include_file ]
-then
+if [ -f $include_file ]; then
   . $include_file
 fi
 
-
 # ssh-agent
 
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-  eval `ssh-agent` && ssh-add
-fi > /dev/null 2>&1
-
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval $(ssh-agent) && ssh-add
+fi >/dev/null 2>&1
 
 # Extra commands
 
 . ~/.sh/commands.sh
 
-function chpwd {
+function chpwd() {
   ls
 }

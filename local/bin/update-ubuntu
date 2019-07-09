@@ -2,8 +2,7 @@
 
 set -e
 
-for subcommand in "update --fix-missing" dist-upgrade autoremove clean
-do
+for subcommand in "update --fix-missing" dist-upgrade autoremove clean; do
 	echo ">>> $subcommand" >&2
 	sudo apt -y $subcommand
 done

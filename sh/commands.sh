@@ -8,8 +8,7 @@ times() {
   yes $2 | head -$1 | tr -d [:space:]
 }
 
-for n in $(seq 3 8)
-do
+for n in $(seq 3 8); do
   alias $(times $n .)=$(times $(expr $n - 1) ../)
 done
 
@@ -19,14 +18,12 @@ c() {
   [ -n "$dir" ] && cd "$dir"
 }
 
-
 # tmux
 
 alias tmux='TERM=screen-256color tmux'
 alias t=tmux
 alias ta='tmux a'
 alias tl='tmux ls'
-
 
 # git
 
@@ -70,19 +67,16 @@ alias gzp='git stash pop'
 alias gzs='git stash show -p'
 
 ga() {
-  if [ $# -eq 0 ]
-  then
+  if [ $# -eq 0 ]; then
     git add --all
   else
     git add "$@"
   fi &&
-
-  git status
+    git status
 }
 
 gc() {
-  if [ $# -eq 0 ]
-  then
+  if [ $# -eq 0 ]; then
     return 1
   fi
 
@@ -92,7 +86,7 @@ gc() {
 grh() {
   local message=$(git log --format=%B -n 1 HEAD^)
   git reset --soft HEAD^^ &&
-  git commit -m "$message"
+    git commit -m "$message"
 }
 
 gwa() {
@@ -100,9 +94,8 @@ gwa() {
   local dir=~/worktree/"$branch"
 
   git worktree add "$dir" "$branch" &&
-  cd $dir
+    cd $dir
 }
-
 
 # Editor
 
@@ -111,8 +104,7 @@ alias eh='nvim -c :History!'
 alias er='nvim -c :GitFiles!'
 
 e() {
-  if [ $# -eq 0 ]
-  then
+  if [ $# -eq 0 ]; then
     local file=$(fd -t f . | fzf)
 
     [ -n "$file" ] && nvim "$file"
@@ -121,10 +113,9 @@ e() {
   fi
 }
 
-
 # ls
 
-alias ls="$(which exa > /dev/null 2>&1 && echo exa || echo /bin/ls --color)"
+alias ls="$(which exa >/dev/null 2>&1 && echo exa || echo /bin/ls --color)"
 alias d=ls
 alias d1='ls -1'
 alias da='ls -a'
@@ -134,15 +125,13 @@ alias dm='ls ~'
 alias dma='ls -a ~'
 alias ds='ghq list --full-path'
 
-
 # Others
 
 alias less='less -R'
 alias r='eval "$(fc -ln 0 | sort -u | fzf)"'
 
 f() {
-  if [ $# -eq 0 ]
-  then
+  if [ $# -eq 0 ]; then
     bat "$(fd -t f | fzf)"
     return
   fi
@@ -150,8 +139,7 @@ f() {
   bat "$@"
 }
 
-if which rg > /dev/null 2>&1
-then
+if which rg >/dev/null 2>&1; then
   alias s='rg --line-number'
 else
   alias s='grep -Hnr --color'

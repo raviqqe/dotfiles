@@ -4,8 +4,7 @@ set -e
 
 brew install fontconfig # for alacritty
 
-if ! which alacritty
-then
+if ! which alacritty; then
 	cargo install --git https://github.com/jwilm/alacritty
 fi
 

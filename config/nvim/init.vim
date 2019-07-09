@@ -68,7 +68,9 @@ set ttyfast
 set visualbell
 set wildmenu
 set wildmode=full
+
 filetype plugin indent on
+
 autocmd Rc BufWinEnter * set mouse=
 
 "" space setting
@@ -84,6 +86,7 @@ set tabstop=2
 "" appearance
 
 syntax on
+
 set backspace=indent,eol,start
 set colorcolumn=80
 set completeopt=menu
@@ -100,6 +103,7 @@ set showmode
 set splitbelow
 set splitright
 set wrap
+
 autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
 autocmd Rc BufRead,BufNewFile *.lua set filetype=lua
 autocmd Rc BufRead,BufNewFile *.rules set filetype=text
@@ -230,7 +234,16 @@ let g:ale_fix_on_save = 1
 "" neoformat
 
 autocmd Rc BufWritePre * silent! undojoin | Neoformat
+
 let g:neoformat_only_msg_on_error = 1
+
+let g:neoformat_zsh_shfmt = {
+	\ 'exe': 'shfmt',
+	\ 'args': ['-i ' . shiftwidth()],
+	\ 'stdin': 1,
+	\ }
+
+let g:neoformat_enabled_zsh = ['shfmt']
 
 
 "" auto-save

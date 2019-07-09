@@ -6,10 +6,9 @@ google_dir=~/.google
 
 mkdir -p $google_dir
 
-if ! which gcloud
-then
-  curl https://sdk.cloud.google.com |
-  bash /dev/stdin --disable-prompts --install-dir $google_dir
+if ! which gcloud; then
+	curl https://sdk.cloud.google.com |
+		bash /dev/stdin --disable-prompts --install-dir $google_dir
 fi
 
 ~/.google/google-cloud-sdk/bin/gcloud components update --quiet

@@ -5,8 +5,7 @@ set -e
 . ~/.profile
 . $ZPLUG_HOME/init.zsh
 
-if ! zplug check
-then
+if ! zplug check; then
 	zplug install
 fi
 
