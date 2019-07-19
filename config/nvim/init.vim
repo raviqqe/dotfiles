@@ -35,7 +35,6 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'sh install.sh'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'rhysd/vim-llvm'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
