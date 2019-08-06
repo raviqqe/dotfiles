@@ -3,4 +3,4 @@
 subcommand=$1
 shift
 
-update-$subcommand $@
+update-${subcommand:-all} $@
