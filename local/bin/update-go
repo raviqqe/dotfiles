@@ -7,7 +7,6 @@ go get -u \
   github.com/github/hub \
   github.com/junegunn/fzf \
   github.com/k0kubun/pp \
-  github.com/goreleaser/goreleaser \
   github.com/Microsoft/ethr \
   github.com/motemen/ghq \
   github.com/motemen/gore \
