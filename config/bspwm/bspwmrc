@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sxhkd &
-
-bspc monitor -d $(seq 9)
-bspc config window_gap 0
