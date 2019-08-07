@@ -1,28 +1,17 @@
 #!/bin/sh
 
-local=$HOME/.local
-
 export BLOCKSIZE=K
 export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
 export PAGER=less
 
-export PATH=$HOME/bin:$local/bin:$PATH
-
-## C
-
-include_path=$local/include
-library_path=$local/lib64:$local/lib
-
-## CUDA
-
-export PATH=$PATH:/usr/local/cuda/bin
-library_path=$library_path:/usr/local/cuda/lib64
+export PATH=$HOME/.local/bin:$PATH
 
 ## Homebrew
 
 export HOMEBREW_NO_EMOJI=1
+export LD_LIBRARY_PATH=$HOME/.homebrew/lib:$LD_LIBRARY_PATH
 
 if [ -d ~/.homebrew ]; then
   eval $(~/.homebrew/bin/brew shellenv)
@@ -30,7 +19,7 @@ fi
 
 ### OpenSSL
 
-export SSL_CERT_FILE=~/.homebrew/etc/openssl/cert.pem
+export SSL_CERT_FILE=$HOME/.homebrew/etc/openssl/cert.pem
 
 ## Haskell
 
@@ -43,8 +32,8 @@ export PATH=$HOME/.opam/default/bin:$PATH
 ## Go
 
 export GOPATH=$HOME
-export PATH=$GOPATH/bin:$HOME/.local/go/bin:$PATH
 export GO111MODULE=on
+export PATH=$GOPATH/bin:$PATH
 
 ## Rust
 
