@@ -1,6 +1,9 @@
 #!/bin/sh
 
 subcommand=$1
-shift
+
+if [ $# -gt 0 ]; then
+  shift
+fi
 
 update-${subcommand:-all} $@
