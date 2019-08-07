@@ -43,7 +43,7 @@ export LD_LIBRARY_PATH=$(rustc --print sysroot 2>/dev/null)/lib:$LD_LIBRARY_PATH
 ## Ruby
 
 if [ -d ~/.homebrew/Cellar/ruby ]; then
-  export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin):$PATH
+  export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin ~/.gem/ruby/*/bin | tr ' ' :):$PATH
 fi
 
 ## git
