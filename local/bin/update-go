@@ -15,7 +15,6 @@ go get -u \
   github.com/sourcegraph/go-langserver \
   github.com/xo/usql \
   golang.org/x/lint/golint
-# github.com/ethereum/go-ethereum/cmd/geth
 
 GO111MODULE=off go get -u \
   github.com/jackc/sqlfmt/... \
