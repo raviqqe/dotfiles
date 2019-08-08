@@ -172,11 +172,6 @@ nnoremap <leader>e :call LanguageClient#textDocument_references()<cr>
 nnoremap <leader>n :call LanguageClient#textDocument_rename()<cr>
 
 
-"" nvim-typescript
-
-let g:nvim_typescript#diagnostics_enable = 0
-
-
 "" neosnippet
 
 let g:neosnippet#enable_auto_clear_markers = 0
