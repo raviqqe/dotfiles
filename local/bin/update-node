@@ -3,8 +3,7 @@
 set -e
 
 npm install --global --ignore-scripts \
-	@typescript-eslint/eslint-plugin @typescript-eslint/parser \
-	diff-so-fancy eslint javascript-typescript-langserver npm prettier \
-	serverless tslint typescript typescript-language-server
+  diff-so-fancy javascript-typescript-langserver npm prettier \
+  typescript typescript-language-server
 
 npm update --global
