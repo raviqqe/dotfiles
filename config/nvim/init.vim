@@ -220,7 +220,7 @@ nmap <leader>s <plug>(easymotion-overwin-w)
 
 let g:ale_fixers = {
 	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-	\ 'typescript': ['eslint'],
+	\ 'typescript': ['eslint', 'tslint'],
 	\ }
 let g:ale_fix_on_save = 1
 
