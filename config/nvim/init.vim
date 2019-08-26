@@ -35,7 +35,6 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'sh install.sh'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'rhysd/vim-llvm'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -251,11 +250,6 @@ let g:auto_save_silent = 1
 "" vim-go
 
 let g:go_fmt_autosave = 0
-
-
-"" nvim-typescript
-
-let g:nvim_typescript#diagnostics_enable = 0
 
 
 "" vue
