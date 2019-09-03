@@ -57,6 +57,7 @@ augroup END
 
 set autochdir
 set autoread
+set completeopt+=noinsert,noselect
 set hidden " for LanguageClient-neovim
 set nobackup
 set nolazyredraw
@@ -88,7 +89,6 @@ syntax on
 
 set backspace=indent,eol,start
 set colorcolumn=80
-set completeopt=menu
 set cursorline
 set hlsearch
 set inccommand=nosplit
@@ -144,7 +144,6 @@ cnoremap <c-l> <right>
 "" deoplete
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_start_length = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
