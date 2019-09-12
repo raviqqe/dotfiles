@@ -139,7 +139,7 @@ cnoremap <c-l> <right>
 
 "" coc.nvim
 
-inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<c-r>"
+inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
