@@ -6,7 +6,7 @@ set -e
 . $ZPLUG_HOME/init.zsh
 
 if ! zplug check; then
-	zplug install
+  zplug install
 fi
 
 zplug update

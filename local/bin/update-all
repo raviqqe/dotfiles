@@ -3,20 +3,20 @@
 set -e
 
 while getopts bh option; do
-	case $option in
-	b)
-		batch=true
-		;;
-	h)
-		homebrew=false
-		;;
-	esac
+  case $option in
+  b)
+    batch=true
+    ;;
+  h)
+    homebrew=false
+    ;;
+  esac
 done
 
 if [ -z "$homebrew" ]; then
-	update homebrew
+  update homebrew
 fi
 
 for subcommand in zsh tmux python ruby node go rust gcp vim; do
-	update $subcommand ${batch:+-b}
+  update $subcommand ${batch:+-b}
 done
