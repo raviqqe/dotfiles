@@ -11,13 +11,13 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rhysd/clever-f.vim'
 Plug 'sbdchd/neoformat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -35,16 +35,11 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'sh install.sh'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
+Plug 'neoclide/coc-rls', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'rhysd/vim-llvm'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
-"" deoplete
-
-Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neosnippet.vim'
 
 call plug#end()
 
@@ -65,6 +60,7 @@ set nowritebackup
 set swapfile
 set tildeop
 set ttyfast
+set updatetime=500
 set visualbell
 set wildmenu
 set wildmode=full
@@ -141,9 +137,9 @@ cnoremap <c-l> <right>
 
 " plugin settings
 
-"" deoplete
+"" coc.nvim
 
-let g:deoplete#enable_at_startup = 1
+inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<c-r>"
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
