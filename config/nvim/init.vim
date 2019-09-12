@@ -251,3 +251,8 @@ colorscheme iceberg
 highlight Normal      ctermbg=none
 highlight NonText     ctermbg=none
 highlight EndOfBuffer ctermbg=none
+
+highlight CocErrorSign ctermfg=Red ctermbg=235
+highlight CocWarningSign ctermfg=Brown ctermbg=235
+highlight CocInfoSign ctermfg=Yellow ctermbg=235
+highlight CocHintSign ctermfg=Blue ctermbg=235
