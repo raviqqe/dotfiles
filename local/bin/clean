@@ -2,6 +2,12 @@
 
 set -e
 
+pids=$(ps ax | grep -e tsserver -e eslint -e typescript-language-server | grep -v grep | awk '{ print $1 }')
+
+if [ -n "$pids" ]; then
+  kill $pids
+fi
+
 for d in .cache/Homebrew .cache/pip .rustup/downloads/* .rustup/tmp/*; do
   rm -rf ~/$d
 done
