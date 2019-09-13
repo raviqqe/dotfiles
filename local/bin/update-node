@@ -4,6 +4,6 @@ set -e
 
 npm install --global --ignore-scripts \
   diff-so-fancy javascript-typescript-langserver npm prettier \
-  typescript typescript-language-server
+  typescript typescript-language-server yarn
 
 npm update --global

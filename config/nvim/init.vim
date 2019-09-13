@@ -11,17 +11,14 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rhysd/clever-f.vim'
-Plug 'sbdchd/neoformat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
 
 "" fuzzy finder
 
@@ -30,16 +27,16 @@ Plug 'junegunn/fzf.vim'
 
 "" language
 
-Plug 'alfredodeza/pytest.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'sh install.sh' }
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'neoclide/coc-rls', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'rhysd/vim-llvm'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -53,7 +50,7 @@ augroup END
 set autochdir
 set autoread
 set completeopt+=noinsert,noselect
-set hidden " for LanguageClient-neovim
+set hidden
 set nobackup
 set nolazyredraw
 set nowritebackup
@@ -143,28 +140,10 @@ inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-
-"" LanguageClient-neovim
-
-let g:LanguageClient_diagnosticsEnable = 0
-let g:LanguageClient_serverCommands = {
-	\ 'c': ['clangd'],
-	\ 'cpp': ['clangd'],
-	\ 'go': ['go-langserver', '-gocodecompletion', '-usebinarypkgcache'],
-	\ 'javascript': ['javascript-typescript-stdio'],
-	\ 'javascript.jsx': ['javascript-typescript-stdio'],
-	\ 'typescript': ['typescript-language-server', '--stdio'],
-	\ 'typescript.jsx': ['typescript-language-server', '--stdio'],
-	\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
-	\ 'python': ['pyls'],
-	\ 'rust': ['rls'],
-	\ }
-let g:LanguageClient_hasSnippetSupport = 0
-let g:LanguageClient_windowLogMessageLevel = 'Error'
-nnoremap <leader>m :call LanguageClient_contextMenu()<cr>
-nnoremap <leader>d :call LanguageClient#textDocument_definition()<cr>
-nnoremap <leader>e :call LanguageClient#textDocument_references()<cr>
-nnoremap <leader>n :call LanguageClient#textDocument_rename()<cr>
+nmap <leader>d <plug>(coc-definition)
+nmap <leader>n <plug>(coc-rename)
+nmap <leader>e <plug>(coc-references)
+nmap <leader>y <plug>(coc-implementations)
 
 
 "" auto-pairs
