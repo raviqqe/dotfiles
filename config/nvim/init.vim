@@ -141,8 +141,9 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 nmap <leader>d <plug>(coc-definition)
-nmap <leader>n <plug>(coc-rename)
 nmap <leader>e <plug>(coc-references)
+nmap <leader>n <plug>(coc-rename)
+nmap <leader>t <plug>(coc-type-definition)
 nmap <leader>y <plug>(coc-implementations)
 
 
