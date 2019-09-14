@@ -19,6 +19,7 @@
         "diagnosticsEnabled": true,
         "lintTool": "golint"
       }
-    }
+    },
+    "rust": { "command": "rls", "filetypes": ["rust"] }
   }
 }

@@ -30,7 +30,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'neoclide/coc-rls', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
