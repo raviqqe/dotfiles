@@ -1,5 +1,16 @@
 {
   "languageserver": {
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": [
+        "typescript",
+        "typescript.jsx",
+        "typescript.tsx",
+        "javascript",
+        "javascript.jsx"
+      ]
+    },
     "golang": {
       "command": "go-langserver",
       "filetypes": ["go"],
