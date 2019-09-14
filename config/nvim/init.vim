@@ -179,6 +179,9 @@ nmap <leader>s <plug>(easymotion-overwin-w)
 
 "" ale
 
+let g:ale_linters = {
+	\ 'typescript': ['eslint', 'tslint'],
+	\ }
 let g:ale_fixers = {
 	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
 	\ 'typescript': ['eslint', 'tslint'],
