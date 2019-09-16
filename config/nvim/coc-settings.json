@@ -8,7 +8,9 @@
         "typescript.jsx",
         "typescript.tsx",
         "javascript",
-        "javascript.jsx"
+        "javascript.jsx",
+        "javascriptreact",
+        "typescriptreact"
       ]
     },
     "golang": {
