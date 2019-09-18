@@ -46,6 +46,10 @@ if [ -d ~/.homebrew/Cellar/ruby ]; then
   export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin ~/.gem/ruby/*/bin | tr ' ' :):$PATH
 fi
 
+## Node.js
+
+export NODE_OPTIONS="--max-old-space-size=4092"
+
 ## git
 
 unset SSH_ASKPASS
