@@ -47,6 +47,7 @@ augroup END
 
 set autochdir
 set autoread
+set clipboard+=unnamedplus
 set completeopt+=noinsert,noselect
 set hidden
 set nobackup
