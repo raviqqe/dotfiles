@@ -75,6 +75,6 @@ fi >/dev/null 2>&1
 
 . ~/.sh/commands.sh
 
-function chpwd() {
+chpwd() {
   ls
 }
