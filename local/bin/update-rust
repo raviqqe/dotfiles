@@ -4,12 +4,10 @@ set -e
 
 if ! which rustup; then
   curl -sSf https://sh.rustup.rs |
-    sh -s -- -y --no-modify-path --default-toolchain nightly
+    sh -s -- -y --no-modify-path --default-toolchain stable
 fi
 
-rustup install stable
-rustup component add rls rustfmt rust-src --toolchain=nightly
-rustup component add clippy rust-analysis --toolchain=stable
+rustup component add clippy rls rustfmt rust-analysis rust-src
 rustup update
 
 cargo install cargo-update || :
