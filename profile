@@ -11,11 +11,12 @@ export PATH=$HOME/.local/bin:$PATH
 ## Homebrew
 
 export HOMEBREW_NO_EMOJI=1
-export LD_LIBRARY_PATH=$HOME/.homebrew/lib:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=$(brew --prefix)/opt/openssl/lib/pkgconfig
 
 if [ -d ~/.homebrew ]; then
   eval $(~/.homebrew/bin/brew shellenv)
+
+  export LD_LIBRARY_PATH=$(brew --prefix)/lib:$LD_LIBRARY_PATH
+  export PKG_CONFIG_PATH=$(brew --prefix)/opt/openssl/lib/pkgconfig
 fi
 
 ### OpenSSL
