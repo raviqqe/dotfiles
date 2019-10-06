@@ -73,7 +73,7 @@ fi >/dev/null 2>&1
 
 # Extra commands
 
-. ~/.sh/commands.sh
+. ~/.config/sh/commands.sh
 
 chpwd() {
   ls
