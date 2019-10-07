@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ubuntu
+      - image: archlinux/base
         environment:
           TERM: xterm-256color
     steps:
@@ -10,17 +10,12 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            apt -y update --fix-missing
-            apt -y upgrade
-            apt -y install build-essential curl git libclang-dev locales zlib1g-dev
-            locale-gen en_US.UTF-8
-            update-ca-certificates
+            pacman -Syu --noconfirm base-devel clang git libnsl
+            locale-gen
       - run:
-          name: Create user
-          command: useradd -m tester
-      - run:
-          name: Copy dotfiles
+          name: Set up user
           command: |
+            useradd -m tester
             cp -r . /home/tester/.dotfiles
             chown -R tester /home/tester/.dotfiles
       - run:
