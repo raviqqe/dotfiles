@@ -131,4 +131,4 @@ alias ds='ghq list --full-path'
 alias f="run_command_with_file bat"
 alias less='less -R'
 alias r='eval "$(fc -ln 0 | sort -u | fzf)"'
-alias s=$(which rg >/dev/null 2>&1 && echo 'rg --line-number' || echo 'grep -Hnr --color')
+alias s="$(which rg >/dev/null 2>&1 && echo 'rg --line-number' || echo 'grep -Hnr --color')"
