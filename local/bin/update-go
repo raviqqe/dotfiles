@@ -18,6 +18,3 @@ go get -u \
   github.com/xo/usql \
   golang.org/x/lint/golint \
   golang.org/x/tools/cmd/...
-
-GO111MODULE=off go get -u \
-  github.com/jackc/sqlfmt/... \
