@@ -100,11 +100,9 @@ grh() {
 }
 
 gwa() {
-  local branch=$(git branch --format '%(refname:short)' | fzf)
-  local dir=~/worktree/"$branch"
+  local dir=~/worktree/$(openssl rand -hex 8)
 
-  git worktree add "$dir" "$branch" &&
-    cd $dir
+  git worktree add $dir "$(git branch --format '%(refname:short)' | fzf)" && cd $dir
 }
 
 # Editor
