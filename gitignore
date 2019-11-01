@@ -4,5 +4,6 @@
 .*_cache
 .cache
 __pycache__
+coverage
 dist
 node_modules
