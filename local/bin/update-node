@@ -3,7 +3,12 @@
 set -e
 
 npm install --global --ignore-scripts \
-  diff-so-fancy javascript-typescript-langserver npm prettier \
-  typescript typescript-language-server yarn
+  assemblyscript \
+  diff-so-fancy \
+  npm \
+  prettier \
+  typescript \
+  typescript-language-server \
+  yarn
 
 npm update --global
