@@ -13,7 +13,6 @@ brew upgrade
 brew tap thoughtbot/formulae
 
 brew install \
-  binaryen \
   curl \
   elm-format \
   git \
