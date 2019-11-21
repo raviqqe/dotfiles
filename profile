@@ -14,9 +14,6 @@ export HOMEBREW_NO_EMOJI=1
 
 if [ -d ~/.homebrew ]; then
   eval $(~/.homebrew/bin/brew shellenv)
-
-  export LD_LIBRARY_PATH=$(brew --prefix)/lib:$LD_LIBRARY_PATH
-  export PKG_CONFIG_PATH=$(brew --prefix)/opt/openssl/lib/pkgconfig
 fi
 
 ### OpenSSL
@@ -40,7 +37,6 @@ export PATH=$GOPATH/bin:$PATH
 ## Rust
 
 export PATH=$HOME/.cargo/bin:$PATH
-export LD_LIBRARY_PATH=$(rustc --print sysroot 2>/dev/null)/lib:$LD_LIBRARY_PATH
 
 ## Ruby
 
