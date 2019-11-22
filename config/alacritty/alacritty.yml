@@ -29,14 +29,6 @@ key_bindings:
   - key: Space
     mods: Alt
     chars: "\x1b "
-  - key: Left
-    chars: "\x1b[D"
-  - key: Right
-    chars: "\x1b[C"
-  - key: Up
-    chars: "\x1b[A"
-  - key: Down
-    chars: "\x1b[B"
 shell:
   program: /bin/zsh
   args:
