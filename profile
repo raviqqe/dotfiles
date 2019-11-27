@@ -19,6 +19,7 @@ fi
 ### OpenSSL
 
 export SSL_CERT_FILE=$HOME/.homebrew/etc/openssl/cert.pem
+export CURL_CA_BUNDLE=$SSL_CERT_FILE
 
 ## Haskell
 
