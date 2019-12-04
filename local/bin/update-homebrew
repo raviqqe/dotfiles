@@ -33,3 +33,5 @@ brew install \
   watch \
   zplug \
   zsh
+
+brew uninstall --force pkg-config
