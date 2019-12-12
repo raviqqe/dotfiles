@@ -29,6 +29,10 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 export PATH=$HOME/.opam/default/bin:$PATH
 
+## Ein
+
+export EIN_ROOT=$HOME/src/github.com/ein-lang/ein
+
 ## Go
 
 export GOPATH=$HOME
