@@ -5,7 +5,6 @@ set -e
 npm install --global --ignore-scripts \
   assemblyscript \
   diff-so-fancy \
-  npm \
   prettier \
   typescript \
   typescript-language-server \
