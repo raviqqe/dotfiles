@@ -34,4 +34,4 @@ brew install \
   zplug \
   zsh
 
-brew uninstall --force pkg-config
+brew uninstall --force gobject-introspection pkg-config
