@@ -18,6 +18,7 @@ brew install \
   git \
   go \
   htop \
+  ldns \
   neovim \
   node \
   ocaml \
