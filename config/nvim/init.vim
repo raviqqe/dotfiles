@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
-"" language
+"" languages
 
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
@@ -43,7 +43,7 @@ call plug#end()
 
 augroup Rc
 	autocmd!
-augroup END
+augroup end
 
 set autochdir
 set autoread
