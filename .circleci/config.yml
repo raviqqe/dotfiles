@@ -24,6 +24,7 @@ jobs:
           command: |
             su tester -c '. ~/.dotfiles/profile && ~/.dotfiles/local/bin/update-homebrew'
             su tester -c '. ~/.dotfiles/profile && rcup -f'
+      - run: cat ~/.homebrew/etc/openssl/cert.pem
       - run:
           name: Update all
           working_directory: /home/tester
