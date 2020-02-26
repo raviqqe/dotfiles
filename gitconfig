@@ -23,6 +23,3 @@
 
 [diff-so-fancy]
   useUnicodeRuler = false
-
-[http]
-  sslCAInfo = ~/.homebrew/etc/openssl/cert.pem
