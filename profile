@@ -16,10 +16,6 @@ if [ -d ~/.homebrew ]; then
   eval $(~/.homebrew/bin/brew shellenv)
 fi
 
-### OpenSSL
-
-export CURL_CA_BUNDLE=$SSL_CERT_FILE
-
 ## Haskell
 
 export PATH=$HOME/.cabal/bin:$PATH
