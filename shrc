@@ -15,7 +15,7 @@ run_command_with_file() {
   fi
 }
 
-times() {
+repeat_string() {
   yes $2 | head -$1 | tr -d [:space:]
 }
 
@@ -27,7 +27,7 @@ alias cs='cd "$(ghq list --full-path | fzf)"'
 alias ct='cd "$(git rev-parse --show-toplevel)"'
 
 for n in $(seq 3 8); do
-  alias $(times $n .)=$(times $(expr $n - 1) ../)
+  alias $(repeat_string $n .)=$(repeat_string $(expr $n - 1) ../)
 done
 
 c() {
