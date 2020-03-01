@@ -23,3 +23,6 @@
 
 [diff-so-fancy]
   useUnicodeRuler = false
+
+[github]
+  user = raviqqe
