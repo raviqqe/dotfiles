@@ -5,3 +5,9 @@ set -e
 brew install getantibody/tap/antibody
 
 antibody bundle <~/.config/zsh_plugins.txt >~/.cache/zsh_plugins.sh
+
+cd ~/.cache/antibody
+
+for script in **/*.zsh; do
+  zcompile "$script"
+done
