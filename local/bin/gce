@@ -11,7 +11,7 @@ gcloud compute instances create \
   --deletion-protection \
   --image-family=arch \
   --image-project=arch-linux-gce \
-  --machine-type e2-standard-4 \
+  --machine-type e2-highcpu-4 \
   --preemptible \
   --restart-on-failure \
   --tags https-server \
