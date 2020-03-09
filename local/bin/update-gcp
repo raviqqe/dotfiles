@@ -11,4 +11,4 @@ if ! which gcloud; then
     bash /dev/stdin --disable-prompts --install-dir $google_dir
 fi
 
-~/.google/google-cloud-sdk/bin/gcloud components update --quiet
+$google_dir/google-cloud-sdk/bin/gcloud components update --quiet
