@@ -2,11 +2,6 @@
 
 set -e
 
-. ~/.profile
-. $ZPLUG_HOME/init.zsh
+brew install getantibody/tap/antibody
 
-if ! zplug check; then
-  zplug install
-fi
-
-zplug update
+antibody bundle <~/.config/zsh_plugins.txt >~/.cache/zsh_plugins.sh

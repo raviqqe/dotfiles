@@ -1,0 +1,7 @@
+junegunn/fzf path:shell
+mafredri/zsh-async
+sindresorhus/pure path:pure.zsh
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting

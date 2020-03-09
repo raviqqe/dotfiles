@@ -1,9 +1,8 @@
 setopt autocd autopushd extendedglob hist_ignore_all_dups prompt_subst sh_word_split share_history
 unsetopt banghist beep nomatch notify
 
-autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs select-bracketed select-quoted
 
-compinit
 add-zsh-hook chpwd chpwd_recent_dirs
 
 zstyle completion:*:*:cdr:*:* menu selection
@@ -35,27 +34,13 @@ SAVEHIST=$HISTSIZE
 
 # Plugins
 
-. $ZPLUG_HOME/init.zsh
-
-zplug junegunn/fzf, use:shell/*.zsh
-zplug mafredri/zsh-async
-zplug sindresorhus/pure, use:pure.zsh, as:theme
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-completions, lazy:true
-zplug zsh-users/zsh-history-substring-search
-zplug zsh-users/zsh-syntax-highlighting
+. ~/.cache/zsh_plugins.sh
 
 bindkey -a ? fzf-history-widget
 bindkey -v '^P' history-substring-search-up
 bindkey -v '^N' history-substring-search-down
 bindkey -a k history-substring-search-up
 bindkey -a j history-substring-search-down
-
-if ! zplug check; then
-  zplug install
-fi
-
-zplug load
 
 # Google Cloud SDK
 

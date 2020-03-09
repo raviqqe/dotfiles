@@ -11,10 +11,7 @@ export PATH=$HOME/.local/bin:$PATH
 ## Homebrew
 
 export HOMEBREW_NO_EMOJI=1
-
-if [ -d ~/.homebrew ]; then
-  eval $(~/.homebrew/bin/brew shellenv)
-fi
+export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 ## Haskell
 
