@@ -10,8 +10,6 @@ fi
 brew update
 brew upgrade
 
-brew tap thoughtbot/formulae
-
 brew install \
   curl \
   elm-format \
@@ -25,9 +23,9 @@ brew install \
   opam \
   pgformatter \
   python \
-  rcm \
   ruby \
   terraform \
+  thoughtbot/formulae/rcm \
   tig \
   tmux \
   wabt \
