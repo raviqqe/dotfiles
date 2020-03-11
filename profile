@@ -27,7 +27,7 @@ export EIN_ROOT=$HOME/src/github.com/ein-lang/ein
 
 ## Go
 
-export GOPATH=$HOME
+export GOPATH=$HOME/.go
 export GO111MODULE=on
 export PATH=$GOPATH/bin:$PATH
 
