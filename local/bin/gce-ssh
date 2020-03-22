@@ -8,6 +8,6 @@ fi
 
 gcloud compute instances start $1
 
-gcloud compute ssh $1 -- -o ConnectTimeout=1 -o ConnectionAttempts=8
+gcloud compute ssh $1 -- -o ConnectTimeout=1 -o ConnectionAttempts=16
 
 gcloud compute instances stop --async $1
