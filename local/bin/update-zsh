@@ -2,9 +2,19 @@
 
 set -e
 
+plugins() {
+  echo junegunn/fzf path:shell
+  echo mafredri/zsh-async
+  echo sindresorhus/pure path:pure.zsh
+  echo zsh-users/zsh-autosuggestions
+  echo zsh-users/zsh-completions
+  echo zsh-users/zsh-history-substring-search
+  echo zsh-users/zsh-syntax-highlighting
+}
+
 brew install getantibody/tap/antibody
 
-antibody bundle <~/.config/zsh_plugins.txt >~/.cache/zsh_plugins.sh
+plugins | antibody bundle >~/.cache/zsh_plugins.sh
 
 if [ -d ~/.cache/antibody ]; then
   cd ~/.cache/antibody
