@@ -12,6 +12,7 @@ gcloud compute instances create \
   --image-family=arch \
   --image-project=arch-linux-gce \
   --machine-type e2-highcpu-4 \
+  --preemptible \
   --restart-on-failure \
   --tags https-server \
   --zone us-west1-b \
