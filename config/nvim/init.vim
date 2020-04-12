@@ -33,6 +33,7 @@ Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }

@@ -15,7 +15,8 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 pip3 install --user --upgrade pynvim
 gem install neovim
-npm install -g neovim
+# yarn is for coc extensions.
+npm install -g neovim yarn
 
 nvim ${batch:+--headless} \
   +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
