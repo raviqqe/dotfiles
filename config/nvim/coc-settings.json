@@ -22,6 +22,11 @@
         "lintTool": "golint"
       }
     },
-    "rust": { "command": "rls", "filetypes": ["rust"] }
+    "rust": { "command": "rls", "filetypes": ["rust"] },
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
+    }
   }
 }
