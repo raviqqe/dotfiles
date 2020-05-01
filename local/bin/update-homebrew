@@ -17,7 +17,6 @@ brew install \
   go \
   htop \
   ldns \
-  neovim \
   node \
   ocaml \
   opam \
@@ -32,5 +31,7 @@ brew install \
   watch \
   zplug \
   zsh
+
+brew install --HEAD neovim
 
 brew uninstall --force gobject-introspection pkg-config

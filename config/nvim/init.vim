@@ -4,6 +4,7 @@ call plug#begin()
 
 Plug '907th/vim-auto-save'
 Plug 'airblade/vim-gitgutter'
+Plug 'BrandonRoehl/auto-omni'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cocopon/iceberg.vim'
 Plug 'easymotion/vim-easymotion'
@@ -13,6 +14,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/vim-gist'
 Plug 'mattn/webapi-vim'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'neovim/nvim-lsp'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rhysd/clever-f.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -32,11 +34,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -51,7 +50,6 @@ augroup end
 set autochdir
 set autoread
 set clipboard+=unnamedplus
-set completeopt+=noinsert,noselect
 set hidden
 set nobackup
 set nolazyredraw
@@ -134,10 +132,12 @@ cnoremap <c-j> <c-n>
 cnoremap <c-k> <c-p>
 cnoremap <c-l> <right>
 
+"" Auto completion
 
-" plugin settings
+set omnifunc=v:lua.vim.lsp.omnifunc
+set completeopt+=menuone,noinsert,noselect
 
-"" coc.nvim
+lua require'nvim_lsp'.tsserver.setup{}
 
 inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -149,6 +149,8 @@ nmap <leader>n <plug>(coc-rename)
 nmap <leader>t <plug>(coc-type-definition)
 nmap <leader>y <plug>(coc-implementations)
 
+
+" Plugin settings
 
 "" auto-pairs
 
