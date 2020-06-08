@@ -5,6 +5,9 @@
 [push]
   default = simple
 
+[pull]
+  rebase = false
+
 [credential]
   helper = cache --timeout 1800
 
