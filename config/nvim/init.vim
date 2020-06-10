@@ -151,7 +151,7 @@ nmap <leader>d <plug>(coc-definition)
 nmap <leader>e <plug>(coc-references)
 nmap <leader>n <plug>(coc-rename)
 nmap <leader>t <plug>(coc-type-definition)
-nmap <leader>y <plug>(coc-implementations)
+nmap <leader>y <plug>(coc-implementation)
 
 
 "" auto-pairs
