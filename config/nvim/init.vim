@@ -30,6 +30,7 @@ Plug 'junegunn/fzf.vim'
 "" languages
 
 Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+Plug 'ein-lang/ein.vim'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
