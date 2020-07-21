@@ -14,6 +14,6 @@ go get -u \
   github.com/raviqqe/muffet \
   github.com/x-motemen/ghq \
   golang.org/x/lint/golint \
-  golang.org/x/tools/...
+  golang.org/x/tools/gopls
 
 go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
