@@ -3,9 +3,9 @@
 set -e
 
 go get -u \
-  github.com/cli/cli/cmd/gh \
   github.com/fatih/hclfmt \
   github.com/github/hub \
+  github.com/golangci/golangci-lint/cmd/golangci-lint \
   github.com/junegunn/fzf \
   github.com/k0kubun/pp \
   github.com/Microsoft/ethr \
@@ -15,5 +15,3 @@ go get -u \
   github.com/x-motemen/ghq \
   golang.org/x/lint/golint \
   golang.org/x/tools/gopls
-
-go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
