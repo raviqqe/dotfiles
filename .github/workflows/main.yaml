@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash -eil {0}
+        shell: zsh -el {0}
     steps:
       - uses: actions/checkout@main
       - run: cp -r . ~/.dotfiles
