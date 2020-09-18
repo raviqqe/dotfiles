@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash -ec ". ~/.profile && . {0}"
+        shell: sh -ec ". ~/.profile && . {0}"
     steps:
       - uses: actions/checkout@main
       - run: cp -r . ~/.dotfiles
