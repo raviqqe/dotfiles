@@ -9,8 +9,8 @@ jobs:
       - run: cp -r . ~/.dotfiles
       - run: cp ~/.dotfiles/profile ~/.profile
       - run: update-homebrew
-        shell: sh -el {0}
+        shell: bash -el {0}
       - run: rcup -f
-        shell: sh -el {0}
+        shell: bash -el {0}
       - run: update
-        shell: sh -el {0}
+        shell: bash -el {0}
