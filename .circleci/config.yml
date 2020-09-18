@@ -27,4 +27,4 @@ jobs:
       - run:
           name: Update all
           working_directory: /home/tester
-          command: su tester -c '. ~/.profile && update all -b'
+          command: su tester -c '. ~/.profile && update -b'
