@@ -13,4 +13,4 @@ jobs:
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
-      - run: update
+      - run: update -s go
