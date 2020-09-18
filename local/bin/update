@@ -1,9 +1,20 @@
 #!/bin/sh
 
-subcommand=$1
+set -e
 
-if [ $# -gt 0 ]; then
-  shift
-fi
+while getopts bs: option; do
+  case $option in
+  b)
+    batch=true
+    ;;
+  s)
+    skipped_subcommands=$OPTARG
+    ;;
+  esac
+done
 
-update-${subcommand:-all} $@
+for subcommand in homebrew zsh tmux python ruby node go rust gcp vim; do
+  if ! echo "$skipped_subcommands" | grep $subcommand >/dev/null; then
+    update-$subcommand ${batch:+-b}
+  fi
+done
