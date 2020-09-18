@@ -13,8 +13,8 @@ brew upgrade
 brew install \
   curl \
   elm-format \
+  gh \
   git \
-  github/gh/gh \
   go \
   htop \
   ldns \

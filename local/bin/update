@@ -2,19 +2,23 @@
 
 set -e
 
-while getopts bs: option; do
+while getopts s: option; do
   case $option in
-  b)
-    batch=true
-    ;;
   s)
     skipped_subcommands=$OPTARG
     ;;
   esac
 done
 
+shift $(expr $OPTIND - 1)
+
+if [ $# -eq 1 ]; then
+  update-$1
+  exit
+fi
+
 for subcommand in homebrew zsh tmux python ruby node go rust gcp vim; do
   if ! echo "$skipped_subcommands" | grep $subcommand >/dev/null; then
-    update-$subcommand ${batch:+-b}
+    update-$subcommand
   fi
 done

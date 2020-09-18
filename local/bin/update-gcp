@@ -3,12 +3,13 @@
 set -e
 
 google_dir=~/.google
+sdk_dir=$google_dir/google-cloud-sdk
 
 mkdir -p $google_dir
 
-if ! which gcloud; then
+if [ ! -d $sdk_dir ]; then
   curl https://sdk.cloud.google.com |
     bash /dev/stdin --disable-prompts --install-dir $google_dir
 fi
 
-$google_dir/google-cloud-sdk/bin/gcloud components update --quiet
+$sdk_dir/bin/gcloud components update --quiet
