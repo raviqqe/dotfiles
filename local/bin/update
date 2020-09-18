@@ -10,6 +10,13 @@ while getopts s: option; do
   esac
 done
 
+shift $(expr $OPTIND - 1)
+
+if [ $# -eq 1 ]; then
+  update-$1
+  exit
+fi
+
 for subcommand in homebrew zsh tmux python ruby node go rust gcp vim; do
   if ! echo "$skipped_subcommands" | grep $subcommand >/dev/null; then
     update-$subcommand
