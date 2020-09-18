@@ -7,9 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - run: cp -r . ~/.dotfiles
-      - run: |
-          . ~/.dotfiles/profile
-          ~/.dotfiles/local/bin/update-homebrew
-          rcup -f
+      - run: cp ~/.dotfiles/profile ~/.profile
+      - run: update-homebrew
+        shell: sh -el {0}
+      - run: rcup -f
+        shell: sh -el {0}
       - run: update
-        shell: sh
+        shell: sh -el {0}
