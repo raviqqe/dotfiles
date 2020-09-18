@@ -1,0 +1,16 @@
+name: main
+on:
+  - push
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: cp -r . ~/.dotfiles
+      - run: |
+          . ~/.dotfiles/profile
+          ~/.dotfiles/local/bin/update-homebrew
+      - run: |
+          . ~/.dotfiles/profile
+          rcup -f
+      - run: update
