@@ -9,8 +9,8 @@ jobs:
         shell: sh -ec ". ~/.profile && . {0}"
     steps:
       - uses: actions/checkout@main
+      - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
-      - run: cp ~/.dotfiles/profile ~/.profile
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update
