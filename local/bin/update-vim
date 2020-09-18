@@ -2,14 +2,6 @@
 
 set -e
 
-while getopts b option; do
-  case $option in
-  b)
-    batch=true
-    ;;
-  esac
-done
-
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -18,5 +10,5 @@ gem install neovim
 # yarn is for coc extensions.
 npm install -g neovim yarn
 
-nvim ${batch:+--headless} \
+nvim ${CI:+--headless} \
   +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
