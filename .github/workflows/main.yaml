@@ -10,7 +10,6 @@ jobs:
       - run: |
           . ~/.dotfiles/profile
           ~/.dotfiles/local/bin/update-homebrew
-      - run: |
-          . ~/.dotfiles/profile
           rcup -f
       - run: update
+        shell: sh
