@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@main
       - run: cp -r . ~/.dotfiles
       - run: cp ~/.dotfiles/profile ~/.profile
-      - run: update-homebrew
+      - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update
