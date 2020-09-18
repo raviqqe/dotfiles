@@ -14,3 +14,5 @@ jobs:
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update -s go
+      - run: update go
+        continue-on-error: true
