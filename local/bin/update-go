@@ -14,4 +14,5 @@ go get -u \
   github.com/raviqqe/muffet \
   github.com/x-motemen/ghq \
   golang.org/x/lint/golint \
-  golang.org/x/tools/gopls
+  golang.org/x/tools/gopls \
+  mvdan.cc/gofumpt/...
