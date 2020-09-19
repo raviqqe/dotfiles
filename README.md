@@ -1,6 +1,6 @@
 # dotfiles
 
-[![Circle CI](https://img.shields.io/circleci/project/github/raviqqe/dotfiles/master.svg?style=flat-square)](https://circleci.com/gh/raviqqe/dotfiles)
+[![GitHub Action](https://img.shields.io/github/workflow/status/raviqqe/dotfiles/main?style=flat-square)](https://github.com/raviqqe/dotfiles/actions)
 [![license](https://img.shields.io/github/license/raviqqe/dotfiles.svg?style=flat-square)](UNLICENSE)
 
 ## Requirements
