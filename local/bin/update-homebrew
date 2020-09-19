@@ -12,24 +12,19 @@ brew upgrade
 
 brew install \
   curl \
-  elm-format \
   gh \
   git \
   go \
   htop \
-  ldns \
   neovim \
   node \
-  ocaml \
-  opam \
   pgformatter \
   python \
+  rcm \
   ruby \
   terraform \
-  thoughtbot/formulae/rcm \
   tig \
   tmux \
-  wabt \
   watch \
   zplug \
   zsh
