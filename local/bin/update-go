@@ -5,7 +5,6 @@ set -e
 go get -u \
   github.com/fatih/hclfmt \
   github.com/github/hub \
-  github.com/golangci/golangci-lint/cmd/golangci-lint \
   github.com/junegunn/fzf \
   github.com/k0kubun/pp \
   github.com/Microsoft/ethr \
