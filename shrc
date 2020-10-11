@@ -140,23 +140,3 @@ di() {
 
   diff "$1" "$2" | bat -l diff
 }
-
-r() {
-  if [ $# -ne 3 ]; then
-    return 1
-  fi
-
-  extension=$1
-  pattern=$2
-  substitution=$3
-
-  for filename in $(fd "\\.$extension$"); do
-    new_filename=$(echo $filename | sed "s/$pattern/$substitution/")
-
-    if [ "$filename" != "$new_filename" ]; then
-      mv $filename $new_filename
-    fi
-  done
-
-  codemod --accept-all --extension $extension $pattern $substitution
-}
