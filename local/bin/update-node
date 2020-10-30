@@ -2,12 +2,10 @@
 
 set -e
 
-for subcommand in install update; do
-  npm $subcommand --global --ignore-scripts \
-    assemblyscript \
-    diff-so-fancy \
-    git-file-history \
-    prettier \
-    typescript \
-    typescript-language-server
-done
+npm install --global --ignore-scripts \
+  assemblyscript \
+  diff-so-fancy \
+  git-file-history \
+  prettier \
+  typescript \
+  typescript-language-server
