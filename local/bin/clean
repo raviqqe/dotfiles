@@ -8,7 +8,7 @@ if [ -n "$pids" ]; then
   kill $pids
 fi
 
-for d in .cache/go-build .cache/Homebrew .cache/pip .rustup/downloads/* .rustup/tmp/*; do
+for d in .cache/go-build .cache/Homebrew .cache/pip .cache/yarn .rustup/downloads/* .rustup/tmp/*; do
   rm -rf ~/$d
 done
 
