@@ -28,5 +28,3 @@ brew install \
   watch \
   zplug \
   zsh
-
-brew uninstall --force gobject-introspection pkg-config
