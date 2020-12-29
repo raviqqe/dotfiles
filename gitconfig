@@ -29,3 +29,6 @@
 
 [github]
   user = raviqqe
+
+[init]
+  defaultBranch = main
