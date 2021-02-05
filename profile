@@ -46,6 +46,10 @@ fi
 
 export NODE_OPTIONS=--max-old-space-size=4096
 
+## Java
+
+export PATH=$HOME/.homebrew/opt/openjdk/bin:$PATH
+
 ## git
 
 unset SSH_ASKPASS
