@@ -12,7 +12,7 @@ plugins() {
   echo zsh-users/zsh-syntax-highlighting
 }
 
-brew install getantibody/tap/antibody
+brew install antibody
 
 plugins | antibody bundle >~/.cache/zsh_plugins.sh
 
