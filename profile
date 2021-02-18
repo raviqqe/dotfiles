@@ -38,8 +38,8 @@ export RUST_MIN_STACK=8388608
 
 ## Ruby
 
-if [ -d ~/.homebrew/Cellar/ruby ]; then
-  export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin ~/.gem/ruby/*/bin | tr ' ' :):$PATH
+if which gem >/dev/null; then
+  export PATH=$(gem environment gempath | sed 's/\(:\|$\)/\/bin\1/g'):$PATH
 fi
 
 ## Node.js
