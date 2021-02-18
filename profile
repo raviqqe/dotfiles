@@ -38,6 +38,8 @@ export RUST_MIN_STACK=8388608
 
 ## Ruby
 
+export PATH=$HOME/.homebrew/opt/ruby/bin:$PATH
+
 if which gem >/dev/null; then
   export PATH=$(gem environment gempath | sed 's/\(:\|$\)/\/bin\1/g'):$PATH
 fi
