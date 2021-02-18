@@ -72,6 +72,8 @@ export PURE_GIT_DOWN_ARROW=v
 export PURE_GIT_UP_ARROW=^
 export PURE_GIT_STASH_SYMBOL==
 
+export NVM_AUTO_USE=true # for zsh-nvm
+
 ## Google Cloud SDK
 
 export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
