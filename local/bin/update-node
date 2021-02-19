@@ -7,5 +7,6 @@ npm install --global --ignore-scripts \
   diff-so-fancy \
   git-file-history \
   prettier \
+  prettier-plugin-toml \
   typescript \
   typescript-language-server

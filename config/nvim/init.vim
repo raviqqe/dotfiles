@@ -216,6 +216,14 @@ let g:neoformat_zsh_shfmt = {
 
 let g:neoformat_enabled_zsh = ['shfmt']
 
+let g:neoformat_toml_prettier = {
+	\ 'exe': 'prettier',
+	\ 'args': ['--parser', 'toml'],
+	\ 'stdin': 1,
+	\ }
+
+let g:neoformat_enabled_toml = ['prettier']
+
 
 "" auto-save
 
