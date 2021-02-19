@@ -29,6 +29,7 @@ Plug 'junegunn/fzf.vim'
 
 "" languages
 
+Plug 'ap/vim-css-color'
 Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ein-lang/ein.vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
