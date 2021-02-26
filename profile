@@ -50,7 +50,8 @@ export NODE_OPTIONS=--max-old-space-size=4096
 
 ## Java
 
-export PATH=$HOME/.homebrew/opt/openjdk/bin:$PATH
+export JAVA_HOME=$HOME/.homebrew/opt/openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 ## git
 
