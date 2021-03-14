@@ -225,6 +225,11 @@ let g:neoformat_toml_prettier = {
 
 let g:neoformat_enabled_toml = ['prettier']
 
+let g:neoformat_rust_rustfmt = {
+	\ 'exe': 'rustfmt',
+	\ 'stdin': 1,
+	\ }
+
 
 "" auto-save
 
