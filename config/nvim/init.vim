@@ -230,6 +230,14 @@ let g:neoformat_rust_rustfmt = {
 	\ 'stdin': 1,
 	\ }
 
+let g:neoformat_jsonc_prettier = {
+	\ 'exe': 'prettier',
+	\ 'args': ['--parser', 'json'],
+	\ 'stdin': 1,
+	\ }
+
+let g:neoformat_enabled_jsonc = ['prettier']
+
 
 "" auto-save
 
