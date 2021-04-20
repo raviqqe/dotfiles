@@ -3,6 +3,8 @@
 *.log
 .*_cache
 .cache
+.pnp.js
+.yarn
 __pycache__
 coverage
 dist
