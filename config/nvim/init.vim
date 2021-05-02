@@ -30,18 +30,10 @@ Plug 'junegunn/fzf.vim'
 "" languages
 
 Plug 'ap/vim-css-color'
-Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ein-lang/ein.vim'
-Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'iamcco/coc-spell-checker', {'do': 'yarn install --frozen-lockfile'}
-Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
