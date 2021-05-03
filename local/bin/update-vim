@@ -12,4 +12,4 @@ npm install -g neovim yarn
 
 nvim ${CI:+--headless} +PlugUpgrade +PlugClean! +PlugUpdate +UpdateRemotePlugins +qall
 nvim ${CI:+--headless} +'CocInstall -sync coc-clangd coc-go coc-java coc-python coc-rls coc-spell-checker coc-tabnine coc-tsserver' +qall
-nvim +CocUpdateSync +qall
+nvim ${CI:+--headless} +CocUpdateSync +qall
