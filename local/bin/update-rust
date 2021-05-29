@@ -11,6 +11,6 @@ rustup component add clippy rls rustfmt rust-analysis rust-src
 rustup update
 
 cargo install cargo-update || :
-cargo install-update -i bat bottom cargo-update du-dust exa fd-find hexyl procs ripgrep tealdeer tokei
+cargo install-update -i bat bottom cargo-update du-dust exa fastmod fd-find hexyl procs ripgrep tealdeer tokei
 
 tldr --update
