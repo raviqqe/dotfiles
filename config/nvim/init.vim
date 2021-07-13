@@ -34,7 +34,8 @@ Plug 'ein-lang/ein.vim'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'hrsh7th/nvim-compe'
+Plug 'neovim/nvim-lspconfig'
 Plug 'pen-lang/pen.vim'
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
@@ -53,7 +54,7 @@ augroup end
 set autochdir
 set autoread
 set clipboard+=unnamedplus
-set completeopt+=noinsert,noselect
+set completeopt=menuone,noselect
 set hidden
 set nobackup
 set nolazyredraw
@@ -92,7 +93,7 @@ set inccommand=nosplit
 set incsearch
 set number
 set relativenumber
-set shortmess=a
+set shortmess+=c
 set showcmd
 set showmatch
 set showmode
@@ -140,17 +141,49 @@ cnoremap <c-l> <right>
 
 " plugin settings
 
-"" coc.nvim
+"" neovim-lspconfig
 
-inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+lua << EOF
+local lsp = require('lspconfig')
 
-nmap <leader>d <plug>(coc-definition)
-nmap <leader>e <plug>(coc-references)
-nmap <leader>n <plug>(coc-rename)
-nmap <leader>t <plug>(coc-type-definition)
-nmap <leader>y <plug>(coc-implementation)
+local on_attach = function(client, buffer)
+  local function keymap(key, command) vim.api.nvim_buf_set_keymap(buffer, 'n', key, command, { noremap = true, silent = true }) end
+
+  keymap('<leader>d', '<cmd>lua vim.lsp.buf.definition()<cr>')
+  keymap('<leader>e', '<cmd>lua vim.lsp.buf.references()<cr>')
+  keymap('<leader>n', '<cmd>lua vim.lsp.buf.rename()<cr>')
+  keymap('<leader>t', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+  keymap('<leader>y', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+end
+
+for _, command in ipairs({ "gopls", "rust_analyzer", "tsserver" }) do
+  lsp[command].setup{ on_attach = on_attach }
+end
+EOF
+
+
+"" nvim-compe
+
+lua <<EOF
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  min_length = 1;
+  preselect = 'enable';
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+  };
+}
+EOF
+
+inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <silent><expr> <cr> compe#confirm('<cr>')
 
 
 "" auto-pairs
