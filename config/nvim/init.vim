@@ -48,7 +48,7 @@ call plug#end()
 " pure vim
 
 augroup Rc
-	autocmd!
+  autocmd!
 augroup end
 
 set autochdir
@@ -147,7 +147,9 @@ lua << EOF
 local lsp = require('lspconfig')
 
 local on_attach = function(client, buffer)
-  local function keymap(key, command) vim.api.nvim_buf_set_keymap(buffer, 'n', key, command, { noremap = true, silent = true }) end
+  local keymap = function(key, command)
+    vim.api.nvim_buf_set_keymap(buffer, 'n', key, command, { noremap = true, silent = true })
+  end
 
   keymap('<leader>d', '<cmd>lua vim.lsp.buf.definition()<cr>')
   keymap('<leader>e', '<cmd>lua vim.lsp.buf.references()<cr>')
@@ -157,27 +159,26 @@ local on_attach = function(client, buffer)
 end
 
 for _, command in ipairs({ "gopls", "rust_analyzer", "tsserver" }) do
-  lsp[command].setup{ on_attach = on_attach }
+  lsp[command].setup { on_attach = on_attach }
 end
 EOF
 
 
 "" nvim-compe
 
-lua <<EOF
+lua << EOF
 require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  min_length = 1;
-  preselect = 'enable';
-
+  enabled = true,
+  autocomplete = true,
+  min_length = 1,
+  preselect = 'enable',
   source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-  };
+    path = true,
+    buffer = true,
+    calc = true,
+    nvim_lsp = true,
+    nvim_lua = true,
+  },
 }
 EOF
 
@@ -195,11 +196,11 @@ let g:AutoPairsMapCR = 0
 "" fzf
 
 command! -bang -nargs=* RgGlobal
-	\ call fzf#vim#grep(
-		\ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
-		\ 1,
-		\ { 'dir': systemlist('git rev-parse --show-toplevel')[0] },
-		\ <bang>0)
+  \ call fzf#vim#grep(
+    \ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
+    \ 1,
+    \ { 'dir': systemlist('git rev-parse --show-toplevel')[0] },
+    \ <bang>0)
 
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>c :History:<cr>
@@ -220,12 +221,12 @@ nmap <leader>s <plug>(easymotion-overwin-w)
 "" ale
 
 let g:ale_linters = {
-	\ 'typescript': ['eslint', 'tslint'],
-	\ }
+  \ 'typescript': ['eslint', 'tslint'],
+  \ }
 let g:ale_fixers = {
-	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-	\ 'typescript': ['eslint', 'tslint'],
-	\ }
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'typescript': ['eslint', 'tslint'],
+  \ }
 let g:ale_fix_on_save = 1
 
 
@@ -236,31 +237,31 @@ autocmd Rc BufWritePre * silent! undojoin | Neoformat
 let g:neoformat_only_msg_on_error = 1
 
 let g:neoformat_zsh_shfmt = {
-	\ 'exe': 'shfmt',
-	\ 'args': ['-i ' . shiftwidth()],
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'shfmt',
+  \ 'args': ['-i ' . shiftwidth()],
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_enabled_zsh = ['shfmt']
 
 let g:neoformat_toml_prettier = {
-	\ 'exe': 'prettier',
-	\ 'args': ['--parser', 'toml'],
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'prettier',
+  \ 'args': ['--parser', 'toml'],
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_enabled_toml = ['prettier']
 
 let g:neoformat_rust_rustfmt = {
-	\ 'exe': 'rustfmt',
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'rustfmt',
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_jsonc_prettier = {
-	\ 'exe': 'prettier',
-	\ 'args': ['--parser', 'json'],
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'prettier',
+  \ 'args': ['--parser', 'json'],
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_enabled_jsonc = ['prettier']
 
