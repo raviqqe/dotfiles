@@ -32,9 +32,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-css-color'
 Plug 'ein-lang/ein.vim'
 Plug 'fatih/vim-go'
-Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'hrsh7th/nvim-compe'
+Plug 'neovim/nvim-lspconfig'
 Plug 'pen-lang/pen.vim'
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
@@ -47,13 +47,13 @@ call plug#end()
 " pure vim
 
 augroup Rc
-	autocmd!
+  autocmd!
 augroup end
 
 set autochdir
 set autoread
 set clipboard+=unnamedplus
-set completeopt+=noinsert,noselect
+set completeopt=menuone,noselect
 set hidden
 set nobackup
 set nolazyredraw
@@ -92,7 +92,7 @@ set inccommand=nosplit
 set incsearch
 set number
 set relativenumber
-set shortmess=a
+set shortmess+=c
 set showcmd
 set showmatch
 set showmode
@@ -140,17 +140,52 @@ cnoremap <c-l> <right>
 
 " plugin settings
 
-"" coc.nvim
+"" neovim-lspconfig
 
-inoremap <expr><cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+lua << EOF
+local lsp = require('lspconfig')
 
-nmap <leader>d <plug>(coc-definition)
-nmap <leader>e <plug>(coc-references)
-nmap <leader>n <plug>(coc-rename)
-nmap <leader>t <plug>(coc-type-definition)
-nmap <leader>y <plug>(coc-implementation)
+local on_attach = function(client, buffer)
+  local keymap = function(key, command)
+    vim.api.nvim_buf_set_keymap(buffer, 'n', key, command, { noremap = true, silent = true })
+  end
+
+  keymap('<leader>d', '<cmd>lua vim.lsp.buf.definition()<cr>')
+  keymap('<leader>e', '<cmd>lua vim.lsp.buf.references()<cr>')
+  keymap('<leader>n', '<cmd>lua vim.lsp.buf.rename()<cr>')
+  keymap('<leader>t', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+  keymap('<leader>y', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+end
+
+for _, command in ipairs({ "gopls", "rust_analyzer", "tsserver" }) do
+  lsp[command].setup { on_attach = on_attach }
+end
+EOF
+
+
+"" nvim-compe
+
+lua << EOF
+require'compe'.setup {
+  enabled = true,
+  autocomplete = true,
+  min_length = 1,
+  preselect = 'enable',
+  source = {
+    path = true,
+    buffer = true,
+    calc = true,
+    nvim_lsp = true,
+    nvim_lua = true,
+  },
+}
+EOF
+
+inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <silent><expr> <cr> compe#confirm('<cr>')
+
+autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
 
 
 "" auto-pairs
@@ -162,11 +197,11 @@ let g:AutoPairsMapCR = 0
 "" fzf
 
 command! -bang -nargs=* RgGlobal
-	\ call fzf#vim#grep(
-		\ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
-		\ 1,
-		\ { 'dir': systemlist('git rev-parse --show-toplevel')[0] },
-		\ <bang>0)
+  \ call fzf#vim#grep(
+    \ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
+    \ 1,
+    \ { 'dir': systemlist('git rev-parse --show-toplevel')[0] },
+    \ <bang>0)
 
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>c :History:<cr>
@@ -187,12 +222,12 @@ nmap <leader>s <plug>(easymotion-overwin-w)
 "" ale
 
 let g:ale_linters = {
-	\ 'typescript': ['eslint', 'tslint'],
-	\ }
+  \ 'typescript': ['eslint', 'tslint'],
+  \ }
 let g:ale_fixers = {
-	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-	\ 'typescript': ['eslint', 'tslint'],
-	\ }
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'typescript': ['eslint', 'tslint'],
+  \ }
 let g:ale_fix_on_save = 1
 
 
@@ -203,31 +238,31 @@ autocmd Rc BufWritePre * silent! undojoin | Neoformat
 let g:neoformat_only_msg_on_error = 1
 
 let g:neoformat_zsh_shfmt = {
-	\ 'exe': 'shfmt',
-	\ 'args': ['-i ' . shiftwidth()],
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'shfmt',
+  \ 'args': ['-i ' . shiftwidth()],
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_enabled_zsh = ['shfmt']
 
 let g:neoformat_toml_prettier = {
-	\ 'exe': 'prettier',
-	\ 'args': ['--parser', 'toml'],
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'prettier',
+  \ 'args': ['--parser', 'toml'],
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_enabled_toml = ['prettier']
 
 let g:neoformat_rust_rustfmt = {
-	\ 'exe': 'rustfmt',
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'rustfmt',
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_jsonc_prettier = {
-	\ 'exe': 'prettier',
-	\ 'args': ['--parser', 'json'],
-	\ 'stdin': 1,
-	\ }
+  \ 'exe': 'prettier',
+  \ 'args': ['--parser', 'json'],
+  \ 'stdin': 1,
+  \ }
 
 let g:neoformat_enabled_jsonc = ['prettier']
 
@@ -261,8 +296,3 @@ colorscheme iceberg
 highlight Normal      ctermbg=none
 highlight NonText     ctermbg=none
 highlight EndOfBuffer ctermbg=none
-
-highlight CocErrorSign ctermfg=Red ctermbg=235
-highlight CocWarningSign ctermfg=Brown ctermbg=235
-highlight CocInfoSign ctermfg=Yellow ctermbg=235
-highlight CocHintSign ctermfg=Blue ctermbg=235
