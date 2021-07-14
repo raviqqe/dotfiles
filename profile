@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export BLOCKSIZE=K
-export EDITOR=vim
+export EDITOR=nvim
 export LC_ALL=en_US.UTF-8
 export MANWIDTH=tty
 export PAGER=less
@@ -21,10 +21,6 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 export PATH=$HOME/.opam/default/bin:$PATH
 
-## Ein
-
-export EIN_ROOT=$HOME/src/github.com/ein-lang/ein
-
 ## Go
 
 export GOPATH=$HOME/.go
@@ -34,16 +30,29 @@ export PATH=$GOPATH/bin:$PATH
 ## Rust
 
 export PATH=$HOME/.cargo/bin:$PATH
+export RUST_MIN_STACK=8388608
 
 ## Ruby
 
-if [ -d ~/.homebrew/Cellar/ruby ]; then
-  export PATH=$(echo ~/.homebrew/Cellar/ruby/*/bin ~/.gem/ruby/*/bin | tr ' ' :):$PATH
+export PATH=$HOME/.homebrew/opt/ruby/bin:$PATH
+
+if which gem >/dev/null; then
+  export PATH=$(gem environment gempath | sed 's/\(:\|$\)/\/bin\1/g'):$PATH
 fi
 
 ## Node.js
 
-export NODE_OPTIONS="--max-old-space-size=4092"
+export NODE_OPTIONS=--max-old-space-size=4096
+
+## Java
+
+export JAVA_HOME=$HOME/.homebrew/opt/openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+## My languages
+
+export EIN_ROOT=$HOME/src/github.com/ein-lang/ein
+export PEN_ROOT=$HOME/src/github.com/pen-lang/pen
 
 ## git
 
@@ -65,7 +74,7 @@ export PURE_GIT_DOWN_ARROW=v
 export PURE_GIT_UP_ARROW=^
 export PURE_GIT_STASH_SYMBOL==
 
-export ZPLUG_HOME=$HOME/.homebrew/opt/zplug
+export NVM_AUTO_USE=true # for zsh-nvm
 
 ## Google Cloud SDK
 

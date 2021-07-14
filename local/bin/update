@@ -2,10 +2,10 @@
 
 set -e
 
-while getopts s: option; do
+while getopts x: option; do
   case $option in
-  s)
-    skipped_subcommands=$OPTARG
+  x)
+    excluded_subcommands=$OPTARG
     ;;
   esac
 done
@@ -18,7 +18,7 @@ if [ $# -eq 1 ]; then
 fi
 
 for subcommand in homebrew zsh tmux python ruby node go rust gcp vim; do
-  if ! echo "$skipped_subcommands" | grep $subcommand >/dev/null; then
+  if ! echo "$excluded_subcommands" | grep $subcommand >/dev/null; then
     update-$subcommand
   fi
 done

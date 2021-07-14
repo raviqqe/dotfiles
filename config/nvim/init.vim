@@ -10,13 +10,13 @@ Plug 'easymotion/vim-easymotion'
 Plug 'farmergreg/vim-lastplace'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/vim-gist'
 Plug 'mattn/webapi-vim'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rhysd/clever-f.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
@@ -29,17 +29,13 @@ Plug 'junegunn/fzf.vim'
 
 "" languages
 
-Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+Plug 'ap/vim-css-color'
 Plug 'ein-lang/ein.vim'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'pen-lang/pen.vim'
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -105,6 +101,7 @@ set splitright
 set wrap
 
 autocmd Rc BufRead,BufNewFile *.jl set filetype=julia
+autocmd Rc BufRead,BufNewFile *.ll set filetype=llvm
 autocmd Rc BufRead,BufNewFile *.lua set filetype=lua
 autocmd Rc BufRead,BufNewFile *.rules set filetype=text
 autocmd Rc BufRead,BufNewFile *.ts set filetype=typescript
@@ -212,6 +209,27 @@ let g:neoformat_zsh_shfmt = {
 	\ }
 
 let g:neoformat_enabled_zsh = ['shfmt']
+
+let g:neoformat_toml_prettier = {
+	\ 'exe': 'prettier',
+	\ 'args': ['--parser', 'toml'],
+	\ 'stdin': 1,
+	\ }
+
+let g:neoformat_enabled_toml = ['prettier']
+
+let g:neoformat_rust_rustfmt = {
+	\ 'exe': 'rustfmt',
+	\ 'stdin': 1,
+	\ }
+
+let g:neoformat_jsonc_prettier = {
+	\ 'exe': 'prettier',
+	\ 'args': ['--parser', 'json'],
+	\ 'stdin': 1,
+	\ }
+
+let g:neoformat_enabled_jsonc = ['prettier']
 
 
 "" auto-save

@@ -47,8 +47,8 @@ alias gap='git add --patch'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
-alias gc="git commit -m"
-alias gca="git commit --amend -m"
+alias gc="git commit"
+alias gca="git commit --amend"
 alias gcw='git commit -m WIP'
 alias gco='git checkout'
 alias gcp='git cherry-pick'
@@ -63,6 +63,7 @@ alias gm='git merge'
 alias gpl='git pull'
 alias gpp='git pull && git push'
 alias gppa='git pull --all && git push'
+alias gpr='gh pr checkout $(gh pr list | fzf | cut -f 1)'
 alias gps='git push'
 alias gpsu='git push -u origin $(git symbolic-ref --short HEAD)'
 alias grc='git rebase --continue'
@@ -139,24 +140,4 @@ di() {
   fi
 
   diff "$1" "$2" | bat -l diff
-}
-
-r() {
-  if [ $# -ne 3 ]; then
-    return 1
-  fi
-
-  extension=$1
-  pattern=$2
-  substitution=$3
-
-  for filename in $(fd "\\.$extension$"); do
-    new_filename=$(echo $filename | sed "s/$pattern/$substitution/")
-
-    if [ "$filename" != "$new_filename" ]; then
-      mv $filename $new_filename
-    fi
-  done
-
-  codemod --accept-all --extension $extension $pattern $substitution
 }

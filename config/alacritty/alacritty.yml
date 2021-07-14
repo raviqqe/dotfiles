@@ -1,12 +1,6 @@
 window:
   startup_mode: Fullscreen
 font:
-  normal:
-    family: Menlo
-  bold:
-    family: Menlo
-  italic:
-    family: Menlo
   size: 11
   offset:
     x: 0

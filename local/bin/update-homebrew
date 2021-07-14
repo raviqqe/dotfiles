@@ -16,6 +16,7 @@ brew install \
   git \
   go \
   htop \
+  ldns \
   neovim \
   node \
   pgformatter \
@@ -25,8 +26,6 @@ brew install \
   terraform \
   tig \
   tmux \
+  wabt \
   watch \
-  zplug \
   zsh
-
-brew uninstall --force gobject-introspection pkg-config

@@ -8,10 +8,13 @@ if [ -n "$pids" ]; then
   kill $pids
 fi
 
-for d in .cache/go-build .cache/Homebrew .cache/pip .rustup/downloads/* .rustup/tmp/*; do
+for d in .rustup/downloads/* .rustup/tmp/*; do
   rm -rf ~/$d
 done
 
-brew cleanup
+brew cleanup -s --prune all
 gem cleanup
 npm cache clean --force
+yarn cache clean
+pip3 cache purge || :
+go clean -cache
