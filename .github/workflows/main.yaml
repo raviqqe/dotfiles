@@ -9,6 +9,8 @@ jobs:
         shell: sh -ec ". ~/.profile && . {0}"
     steps:
       - uses: actions/checkout@main
+      - run: sudo apt -y update --fix-missing
+      - run: sudo apt install -y openssl
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
