@@ -157,8 +157,18 @@ local on_attach = function(client, buffer)
   keymap('<leader>y', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
 for _, command in ipairs({ "gopls", "rust_analyzer", "tsserver" }) do
-  lsp[command].setup { on_attach = on_attach }
+  lsp[command].setup { capabilities = capabilities, on_attach = on_attach }
 end
 EOF
 
