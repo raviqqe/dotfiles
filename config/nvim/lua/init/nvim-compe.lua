@@ -14,9 +14,10 @@ require'compe'.setup {
     }
 }
 
+local options = {expr = true, noremap = true, silent = true}
+
 vim.api.nvim_set_keymap('i', '<tab>', "v:lua.pumvisible('<c-n>', '<tab>')",
-                        {expr = true, noremap = true})
+                        options)
 vim.api.nvim_set_keymap('i', '<s-tab>', "v:lua.pumvisible('<c-p>', '<tab>')",
-                        {expr = true, noremap = true})
-vim.api.nvim_set_keymap('i', '<cr>', "compe#confirm('<cr>')",
-                        {expr = true, noremap = true, silent = true})
+                        options)
+vim.api.nvim_set_keymap('i', '<cr>', "compe#confirm('<cr>')", options)
