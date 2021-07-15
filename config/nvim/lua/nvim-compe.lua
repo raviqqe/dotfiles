@@ -1,4 +1,4 @@
-require('util')
+require 'util'
 
 require'compe'.setup {
     enabled = true,
