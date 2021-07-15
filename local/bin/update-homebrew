@@ -17,6 +17,8 @@ brew install \
   go \
   htop \
   ldns \
+  lua \
+  luarocks \
   neovim \
   node \
   pgformatter \

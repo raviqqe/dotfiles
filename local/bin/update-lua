@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+luarocks install --server=https://luarocks.org/dev luaformatter
