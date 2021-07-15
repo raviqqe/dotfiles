@@ -143,11 +143,11 @@ cnoremap <c-l> <right>
 
 "" nvim-lspconfig
 
-lua require('nvim-lspconfig')
+lua require('init.nvim-lspconfig')
 
 "" nvim-compe
 
-lua require('nvim-compe')
+lua require('init.nvim-compe')
 
 autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
 
