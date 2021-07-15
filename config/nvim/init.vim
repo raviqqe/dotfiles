@@ -148,10 +148,6 @@ lua require('nvim-lspconfig')
 
 lua require('nvim-compe')
 
-inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-inoremap <silent><expr> <cr> compe#confirm('<cr>')
-
 autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
 
 
