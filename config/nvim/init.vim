@@ -12,6 +12,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/webapi-vim'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rhysd/clever-f.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -149,6 +150,11 @@ lua require('nvim-lspconfig')
 lua require('nvim-compe')
 
 autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
+
+
+"" nvim-treesitter
+
+lua require('init.nvim-treesitter')
 
 
 "" auto-pairs
