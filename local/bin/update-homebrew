@@ -25,6 +25,7 @@ brew install \
   python \
   rcm \
   ruby \
+  rust-analyzer \
   terraform \
   tig \
   tmux \
