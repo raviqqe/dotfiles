@@ -140,56 +140,13 @@ cnoremap <c-l> <right>
 
 " plugin settings
 
-"" neovim-lspconfig
+"" nvim-lspconfig
 
-lua << EOF
-local lsp = require('lspconfig')
-
-local on_attach = function(client, buffer)
-  local keymap = function(key, command)
-    vim.api.nvim_buf_set_keymap(buffer, 'n', key, command, { noremap = true, silent = true })
-  end
-
-  keymap('<leader>d', '<cmd>lua vim.lsp.buf.definition()<cr>')
-  keymap('<leader>e', '<cmd>lua vim.lsp.buf.references()<cr>')
-  keymap('<leader>n', '<cmd>lua vim.lsp.buf.rename()<cr>')
-  keymap('<leader>t', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
-  keymap('<leader>y', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
-
-for _, command in ipairs({ "gopls", "rust_analyzer", "tsserver" }) do
-  lsp[command].setup { capabilities = capabilities, on_attach = on_attach }
-end
-EOF
-
+lua require('nvim-lspconfig')
 
 "" nvim-compe
 
-lua << EOF
-require'compe'.setup {
-  enabled = true,
-  autocomplete = true,
-  min_length = 1,
-  preselect = 'enable',
-  source = {
-    path = true,
-    buffer = true,
-    calc = true,
-    nvim_lsp = true,
-    nvim_lua = true,
-  },
-}
-EOF
+lua require('nvim-compe')
 
 inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
