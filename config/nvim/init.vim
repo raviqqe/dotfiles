@@ -1,51 +1,4 @@
-" plugins
-
-call plug#begin()
-
-Plug '907th/vim-auto-save'
-Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'cocopon/iceberg.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'farmergreg/vim-lastplace'
-Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/webapi-vim'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'pbrisbin/vim-mkdir'
-Plug 'rhysd/clever-f.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'thinca/vim-quickrun'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-
-"" fuzzy finder
-
-Plug 'junegunn/fzf', { 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-
-"" languages
-
-Plug 'ap/vim-css-color'
-Plug 'ein-lang/ein.vim'
-Plug 'fatih/vim-go'
-Plug 'hashivim/vim-hashicorp-tools'
-Plug 'hrsh7th/nvim-compe'
-Plug 'neovim/nvim-lspconfig'
-Plug 'pen-lang/pen.vim'
-Plug 'sbdchd/neoformat'
-Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'w0rp/ale'
-
-call plug#end()
-
-
-" pure vim
+" options
 
 augroup Rc
   autocmd!
@@ -139,7 +92,10 @@ cnoremap <c-k> <c-p>
 cnoremap <c-l> <right>
 
 
-" plugin settings
+" plugins
+
+lua require('init.packer')
+
 
 "" nvim-lspconfig
 
