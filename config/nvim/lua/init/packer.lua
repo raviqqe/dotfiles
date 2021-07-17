@@ -20,7 +20,6 @@ require'packer'.startup(function()
     use 'itchyny/lightline.vim'
     use 'jiangmiao/auto-pairs'
     use 'mattn/webapi-vim'
-    use 'maxbrunsfeld/vim-yankstack'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'pbrisbin/vim-mkdir'
     use 'rhysd/clever-f.vim'
