@@ -12,7 +12,6 @@ set hidden
 set nobackup
 set nolazyredraw
 set nowritebackup
-set spell
 set swapfile
 set tildeop
 set ttyfast
