@@ -91,6 +91,8 @@ cnoremap <c-j> <c-n>
 cnoremap <c-k> <c-p>
 cnoremap <c-l> <right>
 
+vnoremap p "0p
+
 
 " plugins
 
