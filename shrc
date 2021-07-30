@@ -51,6 +51,7 @@ alias gc="git commit"
 alias gca="git commit --amend"
 alias gcw='git commit -m WIP'
 alias gco='git checkout'
+alias gcom='git checkout $(git_default_branch)'
 alias gcp='git cherry-pick'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -68,7 +69,7 @@ alias gps='git push'
 alias gpsu='git push -u origin $(git symbolic-ref --short HEAD)'
 alias grc='git rebase --continue'
 alias gri='git rebase -i'
-alias grm='git rebase $(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s%.*/%%")'
+alias grm='git rebase $(git_default_branch)'
 alias gs='git status'
 alias gsm='git submodule'
 alias gsma='git submodule add'
@@ -83,6 +84,10 @@ alias gzd='git stash drop'
 alias gzl='git stash list'
 alias gzp='git stash pop'
 alias gzs='git stash show -p'
+
+git_default_branch() {
+  git symbolic-ref --short refs/remotes/origin/HEAD | sed "s%.*/%%"
+}
 
 ga() {
   if [ $# -eq 0 ]; then
