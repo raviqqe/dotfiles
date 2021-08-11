@@ -21,6 +21,7 @@ brew install \
   luarocks \
   neovim \
   node \
+  pen-lang/pen/pen \
   pgformatter \
   python \
   rcm \
