@@ -86,6 +86,7 @@ alias gzp='git stash pop'
 alias gzs='git stash show -p'
 
 git_default_branch() {
+  git remote set-head origin --auto >/dev/null
   git symbolic-ref --short refs/remotes/origin/HEAD | sed "s%.*/%%"
 }
 
