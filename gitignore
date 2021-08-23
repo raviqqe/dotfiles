@@ -4,6 +4,7 @@
 .*_cache
 .cache
 .pnp.js
+.ultra.cache.json
 .yarn
 __pycache__
 coverage
