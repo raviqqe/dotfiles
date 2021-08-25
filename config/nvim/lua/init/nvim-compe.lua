@@ -1,17 +1,17 @@
 require 'init.util'
 
-require'compe'.setup {
-    enabled = true,
-    autocomplete = true,
-    min_length = 1,
-    preselect = 'enable',
-    source = {
-        path = true,
-        buffer = true,
-        calc = true,
-        nvim_lsp = true,
-        nvim_lua = true
-    }
+local cmp = require 'cmp'
+
+cmp.setup {
+    mapping = {
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true
+        })
+    },
+    sources = {{name = 'buffer'}, {name = 'nvim-lsp'}}
 }
 
 local options = {expr = true, noremap = true, silent = true}
@@ -20,4 +20,3 @@ vim.api.nvim_set_keymap('i', '<tab>', "v:lua.pumvisible('<c-n>', '<tab>')",
                         options)
 vim.api.nvim_set_keymap('i', '<s-tab>', "v:lua.pumvisible('<c-p>', '<tab>')",
                         options)
-vim.api.nvim_set_keymap('i', '<cr>', "compe#confirm('<cr>')", options)

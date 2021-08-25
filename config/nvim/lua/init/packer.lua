@@ -42,7 +42,10 @@ require'packer'.startup(function()
     use 'ein-lang/ein.vim'
     use 'fatih/vim-go'
     use 'hashivim/vim-hashicorp-tools'
-    use 'hrsh7th/nvim-compe'
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {'hrsh7th/cmp-buffer', 'hrsh7th/cmp-nvim-lsp'}
+    }
     use 'neovim/nvim-lspconfig'
     use 'pen-lang/pen.vim'
     use 'sbdchd/neoformat'
