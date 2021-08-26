@@ -12,10 +12,7 @@ keymap('<leader>y', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {'documentation', 'detail', 'additionalTextEdits'}
-}
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 for _, command in ipairs({"gopls", "rust_analyzer", "tsserver"}) do
     lsp[command].setup {capabilities = capabilities}

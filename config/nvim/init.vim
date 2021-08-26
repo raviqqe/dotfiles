@@ -103,11 +103,12 @@ lua require('init.packer')
 
 lua require('init.nvim-lspconfig')
 
-"" nvim-compe
+"" nvim-cmp
 
-lua require('init.nvim-compe')
+lua require('init.nvim-cmp')
 
 autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
+autocmd Rc FileType * lua require'cmp'.setup.buffer { sources = { { name = 'buffer' }, { name = 'nvim_lsp' } } }
 
 
 "" nvim-treesitter
