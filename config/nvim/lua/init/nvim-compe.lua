@@ -11,7 +11,7 @@ cmp.setup {
             select = true
         })
     },
-    sources = {{name = 'buffer'}, {name = 'nvim-lsp'}}
+    sources = {{name = 'buffer'}, {name = 'nvim_lsp'}}
 }
 
 local options = {expr = true, noremap = true, silent = true}
