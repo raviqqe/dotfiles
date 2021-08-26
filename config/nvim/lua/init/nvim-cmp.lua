@@ -4,9 +4,9 @@ local cmp = require 'cmp'
 
 cmp.setup {
     mapping = {
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<CR>'] = cmp.mapping.confirm({
+        ['<c-p>'] = cmp.mapping.select_prev_item(),
+        ['<c-n>'] = cmp.mapping.select_next_item(),
+        ['<cr>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true
         })
