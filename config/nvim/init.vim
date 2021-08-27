@@ -91,6 +91,15 @@ cnoremap <c-j> <c-n>
 cnoremap <c-k> <c-p>
 cnoremap <c-l> <right>
 
+nnoremap d "*d
+nnoremap D "*D
+nnoremap dd "*dd
+nnoremap p "*p
+nnoremap x "*x
+nnoremap yy "*yy
+vnoremap p "*p
+vnoremap y "*y
+
 
 " plugins
 
