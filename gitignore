@@ -1,6 +1,7 @@
 *.bookmark
 *.egg-info
 *.log
+*.wasm
 .*_cache
 .cache
 .pnp.js
@@ -11,3 +12,4 @@ coverage
 dist
 node_modules
 target
+vgcore.*
