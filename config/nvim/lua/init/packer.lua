@@ -16,6 +16,7 @@ require'packer'.startup(function()
     use 'christoomey/vim-tmux-navigator'
     use 'cocopon/iceberg.vim'
     use 'easymotion/vim-easymotion'
+    use 'mg979/vim-yanktools'
     use 'farmergreg/vim-lastplace'
     use 'itchyny/lightline.vim'
     use 'jiangmiao/auto-pairs'
