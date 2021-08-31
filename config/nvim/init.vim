@@ -94,10 +94,10 @@ cnoremap <c-l> <right>
 nnoremap d "*d
 nnoremap D "*D
 nnoremap dd "*dd
-nnoremap p "*p
+nnoremap p "_dP
 nnoremap x "*x
 nnoremap yy "*yy
-vnoremap p "*p
+vnoremap p "_dP
 vnoremap y "*y
 
 
