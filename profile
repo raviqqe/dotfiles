@@ -32,6 +32,10 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export RUST_MIN_STACK=8388608
 
+## Python
+
+export PATH=$(python3 -m site --user-base)/bin:$PATH
+
 ## Ruby
 
 export PATH=$HOME/.homebrew/opt/ruby/bin:$PATH
