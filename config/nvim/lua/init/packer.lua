@@ -17,7 +17,7 @@ require'packer'.startup(function()
     use 'cocopon/iceberg.vim'
     use 'easymotion/vim-easymotion'
     use 'farmergreg/vim-lastplace'
-    use 'itchyny/lightline.vim'
+    use 'hoob3rt/lualine.nvim'
     use 'jiangmiao/auto-pairs'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'pbrisbin/vim-mkdir'

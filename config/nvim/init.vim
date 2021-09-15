@@ -123,6 +123,11 @@ autocmd Rc FileType * lua require'cmp'.setup.buffer { sources = { { name = 'buff
 lua require('init.nvim-treesitter')
 
 
+"" lualine
+
+lua require('init.lualine')
+
+
 "" auto-pairs
 
 let g:AutoPairsMapCh = 0
@@ -212,16 +217,6 @@ let g:auto_save_silent = 1
 "" vim-go
 
 let g:go_fmt_autosave = 0
-
-
-"" vue
-
-let g:vue_disable_pre_processors = 1
-
-
-"" lightline
-
-let g:lightline = { 'colorscheme': 'iceberg' }
 
 
 "" colorscheme
