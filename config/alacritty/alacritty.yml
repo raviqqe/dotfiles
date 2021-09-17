@@ -1,5 +1,5 @@
 window:
-  startup_mode: SimpleFullscreen
+  startup_mode: Fullscreen
 font:
   size: 11
   offset:
