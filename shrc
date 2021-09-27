@@ -109,7 +109,12 @@ gsw() {
     return 1
   fi
 
-  git switch -C $1 $1
+  if git rev-parse --verify >/dev/null 2>&1; then
+    git checkout $1
+  else
+    git switch -C $1
+  fi
+
 }
 
 gwa() {
