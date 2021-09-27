@@ -19,9 +19,9 @@ require'packer'.startup(function()
     use 'farmergreg/vim-lastplace'
     use 'hoob3rt/lualine.nvim'
     use 'jiangmiao/auto-pairs'
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'pbrisbin/vim-mkdir'
     use 'rhysd/clever-f.vim'
+    use 'svermeulen/vim-yoink'
     use 'terryma/vim-multiple-cursors'
     use 'thinca/vim-quickrun'
     use 'tpope/vim-abolish'
@@ -29,6 +29,7 @@ require'packer'.startup(function()
     use 'tpope/vim-fugitive'
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- fuzzy finder
 
