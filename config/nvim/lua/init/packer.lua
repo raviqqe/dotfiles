@@ -19,6 +19,7 @@ require'packer'.startup(function()
     use 'farmergreg/vim-lastplace'
     use 'hoob3rt/lualine.nvim'
     use 'jiangmiao/auto-pairs'
+    use 'lukas-reineke/indent-blankline.nvim'
     use 'pbrisbin/vim-mkdir'
     use 'rhysd/clever-f.vim'
     use 'svermeulen/vim-yoink'
