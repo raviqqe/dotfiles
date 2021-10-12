@@ -52,5 +52,6 @@ require'packer'.startup(function()
     use 'sbdchd/neoformat'
     use 'sheerun/vim-polyglot'
     use {'styled-components/vim-styled-components', branch = 'main'}
+    use {'tzachar/cmp-tabnine', run = './install.sh'}
     use 'w0rp/ale'
 end)

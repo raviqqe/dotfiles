@@ -9,7 +9,10 @@ cmp.setup {
             select = true
         })
     },
-    sources = {{name = 'buffer'}, {name = 'nvim_lsp'}, {name = 'path'}}
+    sources = {
+        {name = "cmp_tabnine"}, {name = 'buffer'}, {name = 'nvim_lsp'},
+        {name = 'path'}
+    }
 }
 
 vim.api.nvim_exec(
