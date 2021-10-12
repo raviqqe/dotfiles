@@ -115,25 +115,25 @@ require('init.nvim-cmp')
 require('init.nvim-lspconfig')
 require('init.nvim-treesitter')
 
--- auto-save
+--- auto-save
 
 vim.g.auto_save = true
 vim.g.auto_save_in_insert_mode = false
 vim.g.auto_save_silent = true
 
--- auto-pairs
+--- auto-pairs
 
 vim.g.AutoPairsMapCh = false
 vim.g.AutoPairsMapCR = false
 
--- neoformat
+--- neoformat
 
 vim.api.nvim_exec([[autocmd Rc BufWritePre * silent! undojoin | Neoformat]],
                   true)
 
 vim.g.neoformat_only_msg_on_error = true
 
--- ale
+--- ale
 
 vim.g.ale_linters = {typescript = {'eslint'}}
 vim.g.ale_fixers = {
@@ -142,16 +142,16 @@ vim.g.ale_fixers = {
 }
 vim.g.ale_fix_on_save = 1
 
--- vim-go
+--- vim-go
 
 vim.g.go_fmt_autosave = false
 
--- easymotion
+--- easymotion
 
 vim.g.EasyMotion_do_mapping = false
 vim.api.nvim_set_keymap('n', '<leader>s', '<plug>(easymotion-overwin-w)', {})
 
--- fzf
+--- fzf
 
 vim.api.nvim_exec([[
 command! -bang -nargs=* RgGlobal
