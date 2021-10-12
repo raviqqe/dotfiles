@@ -47,8 +47,10 @@ require'packer'.startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
+    use 'L3MON4D3/LuaSnip'
     use 'neovim/nvim-lspconfig'
     use 'pen-lang/pen.vim'
+    use 'ray-x/cmp-treesitter'
     use 'sbdchd/neoformat'
     use 'sheerun/vim-polyglot'
     use {'styled-components/vim-styled-components', branch = 'main'}
