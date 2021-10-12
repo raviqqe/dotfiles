@@ -1,14 +1,17 @@
 local lsp = require('lspconfig')
 
-local function keymap(key, command)
-    vim.api.nvim_set_keymap('n', key, command, {noremap = true, silent = true})
-end
+local options = {noremap = true, silent = true}
 
-keymap('<leader>d', '<cmd>lua vim.lsp.buf.definition()<cr>')
-keymap('<leader>e', '<cmd>lua vim.lsp.buf.references()<cr>')
-keymap('<leader>n', '<cmd>lua vim.lsp.buf.rename()<cr>')
-keymap('<leader>t', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
-keymap('<leader>y', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+vim.api.nvim_set_keymap('n', '<leader>d',
+                        '<cmd>lua vim.lsp.buf.definition()<cr>', options)
+vim.api.nvim_set_keymap('n', '<leader>e',
+                        '<cmd>lua vim.lsp.buf.references()<cr>', options)
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>lua vim.lsp.buf.rename()<cr>',
+                        options)
+vim.api.nvim_set_keymap('n', '<leader>t',
+                        '<cmd>lua vim.lsp.buf.type_definition()<cr>', options)
+vim.api.nvim_set_keymap('n', '<leader>y',
+                        '<cmd>lua vim.lsp.buf.implementation()<cr>', options)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
