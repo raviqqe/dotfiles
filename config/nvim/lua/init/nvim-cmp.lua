@@ -1,6 +1,12 @@
 local cmp = require('cmp')
 
 cmp.setup {
+    formatting = {
+        format = function(entry, item)
+            item.menu = entry.source.name
+            return item
+        end
+    },
     mapping = {
         ['<s-tab>'] = cmp.mapping.select_prev_item(),
         ['<tab>'] = cmp.mapping.select_next_item(),
