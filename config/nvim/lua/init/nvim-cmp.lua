@@ -1,6 +1,6 @@
-require 'init.util'
+require('init.util')
 
-local cmp = require 'cmp'
+local cmp = require('cmp')
 
 cmp.setup {
     mapping = {
@@ -11,7 +11,7 @@ cmp.setup {
             select = true
         })
     },
-    sources = {{name = 'buffer'}, {name = 'nvim_lsp'}}
+    sources = {{name = 'buffer'}, {name = 'nvim_lsp'}, {name = 'path'}}
 }
 
 local options = {expr = true, noremap = true, silent = true}
@@ -23,5 +23,4 @@ vim.api.nvim_set_keymap('i', '<s-tab>', "v:lua.pumvisible('<c-p>', '<tab>')",
 
 vim.api.nvim_exec([[
     autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>
-    autocmd Rc FileType * lua require'cmp'.setup.buffer { sources = { { name = 'buffer' }, { name = 'nvim_lsp' } } }
 ]], true)

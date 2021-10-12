@@ -61,7 +61,7 @@ vim.api.nvim_exec([[
 
 vim.g.mapleader = ' '
 
-options = {noremap = true}
+local options = {noremap = true}
 
 vim.api.nvim_set_keymap('n', ';', ':', options)
 vim.api.nvim_set_keymap('n', ':', ';', options)
