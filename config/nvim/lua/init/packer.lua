@@ -1,4 +1,4 @@
-local install_path = vim.fn.stdpath 'data' ..
+local install_path = vim.fn.stdpath('data') ..
                          '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -8,7 +8,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     })
 end
 
-require'packer'.startup(function()
+require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     use '907th/vim-auto-save'
@@ -54,7 +54,7 @@ require'packer'.startup(function()
     use 'ray-x/cmp-treesitter'
     use 'sbdchd/neoformat'
     use 'sheerun/vim-polyglot'
-    use {'styled-components/vim-styled-components', branch = 'main'}
+    use 'styled-components/vim-styled-components'
     use {'tzachar/cmp-tabnine', run = './install.sh'}
     use 'w0rp/ale'
 end)
