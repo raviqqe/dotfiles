@@ -19,8 +19,8 @@ cmp.setup {
         expand = function(args) require('luasnip').lsp_expand(args.body) end
     },
     sources = {
-        {name = "cmp_tabnine"}, {name = 'buffer'}, {name = 'emoji'},
-        {name = 'nvim_lsp'}, {name = 'path'}, {name = 'treesitter'}
+        {name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'emoji'},
+        {name = 'path'}, {name = "cmp_tabnine"}, {name = 'treesitter'}
     }
 }
 
