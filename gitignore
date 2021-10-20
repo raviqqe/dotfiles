@@ -8,6 +8,7 @@
 .ultra.cache.json
 .yarn
 __pycache__
+callgrind.*
 coverage
 dist
 node_modules
