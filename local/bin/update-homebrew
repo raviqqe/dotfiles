@@ -11,6 +11,7 @@ brew update
 brew upgrade
 
 brew install \
+  clang-format \
   curl \
   gh \
   git \
