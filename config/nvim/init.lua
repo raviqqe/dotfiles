@@ -111,6 +111,7 @@ vim.api.nvim_exec([[
 -- Plugins
 
 require('init.lualine')
+require('init.null-ls')
 require('init.nvim-cmp')
 require('init.nvim-lspconfig')
 require('init.nvim-treesitter')
@@ -125,22 +126,6 @@ vim.g.auto_save_silent = true
 
 vim.g.AutoPairsMapCh = false
 vim.g.AutoPairsMapCR = false
-
---- neoformat
-
-vim.api.nvim_exec([[autocmd Rc BufWritePre * silent! undojoin | Neoformat]],
-                  true)
-
-vim.g.neoformat_only_msg_on_error = true
-
---- ale
-
-vim.g.ale_linters = {typescript = {'eslint'}}
-vim.g.ale_fixers = {
-    ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
-    typescript = {'eslint'}
-}
-vim.g.ale_fix_on_save = true
 
 --- vim-go
 

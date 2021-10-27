@@ -48,13 +48,15 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+    })
     use 'L3MON4D3/LuaSnip'
     use 'neovim/nvim-lspconfig'
     use 'pen-lang/pen.vim'
     use 'ray-x/cmp-treesitter'
-    use 'sbdchd/neoformat'
     use 'sheerun/vim-polyglot'
     use 'styled-components/vim-styled-components'
     use {'tzachar/cmp-tabnine', run = './install.sh'}
-    use 'w0rp/ale'
 end)
