@@ -25,4 +25,4 @@ cmp.setup {
 }
 
 vim.api.nvim_exec(
-    [[autocmd Rc FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>]], true)
+    [[autocmd Init FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>]], true)

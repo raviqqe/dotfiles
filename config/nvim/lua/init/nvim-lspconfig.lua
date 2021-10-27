@@ -23,5 +23,5 @@ for _, command in ipairs({"gopls", "rust_analyzer", "tsserver"}) do
     lsp[command].setup {capabilities = capabilities}
 end
 
-vim.api.nvim_exec([[autocmd Rc BufWritePre * lua vim.lsp.buf.formatting()]],
+vim.api.nvim_exec([[autocmd Init BufWritePre * lua vim.lsp.buf.formatting()]],
                   true)
