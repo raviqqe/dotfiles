@@ -40,7 +40,6 @@ require('packer').startup(function()
     -- languages
 
     use 'ap/vim-css-color'
-    use 'ein-lang/ein.vim'
     use 'fatih/vim-go'
     use 'hashivim/vim-hashicorp-tools'
     use 'hrsh7th/cmp-buffer'
