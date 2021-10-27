@@ -99,13 +99,7 @@ vim.api.nvim_exec([[
     autocmd!
   augroup end
 
-  autocmd Init BufRead,BufNewFile *.jl set filetype=julia
   autocmd Init BufRead,BufNewFile *.ll set filetype=llvm
-  autocmd Init BufRead,BufNewFile *.lua set filetype=lua
-  autocmd Init BufRead,BufNewFile *.rules set filetype=text
-  autocmd Init BufRead,BufNewFile *.ts set filetype=typescript
-  autocmd Init BufRead,BufNewFile *.tsx set filetype=typescript.tsx
-  autocmd Init FileType sh set filetype=zsh
 ]], true)
 
 -- Plugins
