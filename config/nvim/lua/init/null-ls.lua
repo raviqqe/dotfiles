@@ -10,9 +10,7 @@ null_ls.config({
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.lua_format,
-        null_ls.builtins.formatting.prettier,
-
-        null_ls.builtins.formatting.rustfmt, null_ls.builtins.formatting.shfmt,
+        null_ls.builtins.formatting.prettier, null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.terraform_fmt,
         null_ls.builtins.formatting.zigfmt
     }
