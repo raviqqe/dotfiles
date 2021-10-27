@@ -4,7 +4,6 @@ set -e
 
 packages() {
   for url in \
-    github.com/fatih/hclfmt \
     github.com/junegunn/fzf \
     github.com/microsoft/ethr \
     github.com/mvdan/sh/cmd/shfmt \
