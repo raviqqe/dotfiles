@@ -3,5 +3,4 @@
 set -e
 
 pip3 install --user --upgrade pynvim
-gem install neovim
 npm install -g neovim
