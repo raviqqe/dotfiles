@@ -20,7 +20,12 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 for _, command in ipairs({"gopls", "rust_analyzer", "tsserver"}) do
-    lsp[command].setup {capabilities = capabilities}
+    lsp[command].setup({
+        capabilities = capabilities,
+        on_attach = function(client)
+            client.resolved_capabilities.document_formatting = false
+        end
+    })
 end
 
 vim.api.nvim_exec([[autocmd Init BufWritePre * lua vim.lsp.buf.formatting()]],
