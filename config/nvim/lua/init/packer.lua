@@ -13,6 +13,7 @@ require('packer').startup(function()
 
     use '907th/vim-auto-save'
     use 'airblade/vim-gitgutter'
+    use {'raviqqe/trim.nvim', branch = "bug/config"}
     use 'christoomey/vim-tmux-navigator'
     use 'cocopon/iceberg.vim'
     use 'easymotion/vim-easymotion'

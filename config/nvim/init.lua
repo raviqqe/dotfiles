@@ -110,6 +110,8 @@ require('init.nvim-cmp')
 require('init.nvim-lspconfig')
 require('init.nvim-treesitter')
 
+require('trim').setup({})
+
 --- auto-save
 
 vim.g.auto_save = true
