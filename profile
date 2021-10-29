@@ -11,8 +11,7 @@ export PATH=$HOME/.local/bin:$PATH
 ## Homebrew
 
 export HOMEBREW_NO_EMOJI=1
-export HOMEBREW_HOME=$HOME/.homebrew
-export PATH=$HOMEBREW_HOME/bin:$HOMEBREW_HOME/sbin:$HOMEBREW_HOME/opt/ruby/bin:$PATH
+export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.homebrew/opt/ruby/bin:$PATH
 
 ## Haskell
 
@@ -49,7 +48,7 @@ export NODE_OPTIONS=--max-old-space-size=4096
 
 ## Java
 
-export JAVA_HOME=$HOMEBREW_HOME/opt/openjdk
+export JAVA_HOME=$HOME/.homebrew/opt/openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 ## My languages
