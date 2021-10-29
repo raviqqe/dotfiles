@@ -22,7 +22,7 @@ cargo install-update -i \
   hexyl \
   procs \
   ripgrep \
-  taplo \
+  taplo-cli \
   tealdeer \
   tokei
 
