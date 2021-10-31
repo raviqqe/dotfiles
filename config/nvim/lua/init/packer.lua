@@ -21,7 +21,7 @@ require('packer').startup(function()
     use 'hoob3rt/lualine.nvim'
     use 'jiangmiao/auto-pairs'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'nvim-telescope/telescope.nvim'
+    use {'nvim-telescope/telescope.nvim', requires = {"nvim-lua/plenary.nvim"}}
     use 'pbrisbin/vim-mkdir'
     use 'rhysd/clever-f.vim'
     use 'svermeulen/vim-yoink'
