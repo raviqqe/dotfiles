@@ -21,6 +21,7 @@ require('packer').startup(function()
     use 'hoob3rt/lualine.nvim'
     use 'jiangmiao/auto-pairs'
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'nvim-telescope/telescope.nvim'
     use 'pbrisbin/vim-mkdir'
     use 'rhysd/clever-f.vim'
     use 'svermeulen/vim-yoink'
@@ -30,11 +31,6 @@ require('packer').startup(function()
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-
-    -- fuzzy finder
-
-    use {'junegunn/fzf', run = './install --bin'}
-    use 'junegunn/fzf.vim'
 
     -- languages
 

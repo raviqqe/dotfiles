@@ -109,8 +109,7 @@ require('init.null-ls')
 require('init.nvim-cmp')
 require('init.nvim-lspconfig')
 require('init.nvim-treesitter')
-
-require('trim').setup({})
+require('init.telescope')
 
 --- auto-save
 
@@ -132,22 +131,6 @@ vim.g.go_fmt_autosave = false
 vim.g.EasyMotion_do_mapping = false
 vim.api.nvim_set_keymap('n', '<leader>s', '<plug>(easymotion-overwin-w)', {})
 
---- fzf
+-- trim.nvim
 
-vim.api.nvim_exec([[
-command! -bang -nargs=* RgGlobal
-  \ call fzf#vim#grep(
-    \ 'rg --column --no-heading --color=always --smart-case '.shellescape(<q-args>),
-    \ 1,
-    \ { 'dir': systemlist('git rev-parse --show-toplevel')[0] },
-    \ <bang>0)
-]], true)
-
-vim.api.nvim_set_keymap('n', '<leader>b', ':Buffers<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>c', ':History:<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>f', ':Files!<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>g', ':Rg!<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>a', ':RgGlobal!<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>h', ':History!<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>l', ':Lines!<cr>', options)
-vim.api.nvim_set_keymap('n', '<leader>r', ':GitFiles!<cr>', options)
+require('trim').setup({})
