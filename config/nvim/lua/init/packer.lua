@@ -24,8 +24,6 @@ require('packer').startup(function()
     use 'pbrisbin/vim-mkdir'
     use 'rhysd/clever-f.vim'
     use 'svermeulen/vim-yoink'
-    use 'terryma/vim-multiple-cursors'
-    use 'thinca/vim-quickrun'
     use 'tpope/vim-abolish'
     use 'tpope/vim-commentary'
     use 'tpope/vim-fugitive'
