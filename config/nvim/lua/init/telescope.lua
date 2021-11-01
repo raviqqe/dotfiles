@@ -1,5 +1,6 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
+local builtin = require('telescope.builtin')
 
 telescope.setup({defaults = {mappings = {i = {["<esc>"] = actions.close}}}})
 
@@ -12,7 +13,7 @@ vim.api.nvim_set_keymap('n', '<leader>c',
                         [[<cmd>lua require('telescope.builtin').command_history()<cr>]],
                         options)
 vim.api.nvim_set_keymap('n', '<leader>f',
-                        [[<cmd>lua require('telescope.builtin').find_files()<cr>]],
+                        [[<cmd>lua require('init.telescope').find_files()<cr>]],
                         options)
 vim.api.nvim_set_keymap('n', '<leader>g',
                         [[<cmd>lua require('telescope.builtin').live_grep()<cr>]],
@@ -20,3 +21,9 @@ vim.api.nvim_set_keymap('n', '<leader>g',
 vim.api.nvim_set_keymap('n', '<leader>r',
                         [[<cmd>lua require('telescope.builtin').git_files({use_git_root=true})<cr>]],
                         options)
+
+return {
+    find_files = function()
+        if not pcall(builtin.git_files) then builtin.find_files() end
+    end
+}

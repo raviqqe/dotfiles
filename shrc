@@ -130,9 +130,14 @@ gwa() {
 # Editor
 
 alias e="run_command_with_file nvim"
-alias eg='nvim -c :Rg!'
-alias eh='nvim -c :History!'
-alias er='nvim -c :GitFiles!'
+
+eg() {
+  nvim -c ":lua require('telescope.builtin').live_grep()"
+}
+
+er() {
+  nvim -c ":lua require('init.telescope').find_files()"
+}
 
 # ls
 
