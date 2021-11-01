@@ -7,7 +7,7 @@ null_ls.config({
         null_ls.builtins.diagnostics.rubocop, null_ls.builtins.diagnostics.vint,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.clang_format,
-        null_ls.builtins.formatting.gofmt,
+        null_ls.builtins.formatting.eslint, null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.lua_format,
         null_ls.builtins.formatting.prettier,
