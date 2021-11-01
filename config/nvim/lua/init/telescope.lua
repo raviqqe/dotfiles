@@ -24,6 +24,8 @@ vim.api.nvim_set_keymap('n', '<leader>r',
 
 return {
     find_files = function()
-        if not pcall(builtin.git_files) then builtin.find_files() end
+        if not pcall(builtin.git_files, {use_git_root = false}) then
+            builtin.find_files()
+        end
     end
 }
