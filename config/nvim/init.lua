@@ -117,16 +117,15 @@ vim.g.auto_save = true
 vim.g.auto_save_in_insert_mode = false
 vim.g.auto_save_silent = true
 
---- auto-pairs
+--- nvim-autopairs
 
-vim.g.AutoPairsMapCh = false
-vim.g.AutoPairsMapCR = false
+require('nvim-autopairs').setup({})
 
 --- vim-go
 
 vim.g.go_fmt_autosave = false
 
---- hop
+--- hop.nvim
 
 require('hop').setup()
 

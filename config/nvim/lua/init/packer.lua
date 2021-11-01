@@ -18,7 +18,6 @@ require('packer').startup(function()
     use 'cocopon/iceberg.vim'
     use 'farmergreg/vim-lastplace'
     use 'hoob3rt/lualine.nvim'
-    use 'jiangmiao/auto-pairs'
     use 'lukas-reineke/indent-blankline.nvim'
     use {'nvim-telescope/telescope.nvim', requires = {"nvim-lua/plenary.nvim"}}
     use 'pbrisbin/vim-mkdir'
@@ -30,6 +29,7 @@ require('packer').startup(function()
     use 'tpope/vim-fugitive'
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
+    use 'windwp/nvim-autopairs'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- languages
