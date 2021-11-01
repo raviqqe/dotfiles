@@ -126,11 +126,13 @@ vim.g.AutoPairsMapCR = false
 
 vim.g.go_fmt_autosave = false
 
---- easymotion
+--- hop
 
-vim.g.EasyMotion_do_mapping = false
-vim.api.nvim_set_keymap('n', '<leader>s', '<plug>(easymotion-overwin-w)', {})
+require('hop').setup()
 
--- trim.nvim
+vim.api.nvim_set_keymap('n', '<leader>s',
+                        "<cmd>lua require('hop').hint_words()<cr>", {})
+
+--- trim.nvim
 
 require('trim').setup({})
