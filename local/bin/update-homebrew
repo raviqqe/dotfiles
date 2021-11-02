@@ -33,4 +33,5 @@ brew install \
   tmux \
   wabt \
   watch \
+  zig \
   zsh
