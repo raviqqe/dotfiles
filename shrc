@@ -136,7 +136,7 @@ eg() {
 }
 
 er() {
-  nvim -c ":lua require('init.telescope').find_files()"
+  nvim -c ":lua require('telescope.builtin').git_files({use_git_root=true})"
 }
 
 # ls
