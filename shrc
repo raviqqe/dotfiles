@@ -132,7 +132,9 @@ gwa() {
 alias e="run_command_with_file nvim"
 
 eg() {
-  nvim -c ":lua require('telescope.builtin').live_grep()"
+  file=$(rg . | fzf | cut -f 1 -d :)
+
+  [ -n "$file" ] && nvim "$file"
 }
 
 er() {
