@@ -137,13 +137,13 @@ eg() {
 
 er() {
   root_directory=$(git rev-parse --show-toplevel)
-  file=$(git ls-files --full-name | sed "s%^%$root_directory/%" | fzf)
+  file=$(git ls-files --full-name $root_directory | fzf)
 
   if [ -z "$file" ]; then
     return 1
   fi
 
-  nvim "$file"
+  nvim "$root_directory/$file"
 }
 
 # ls
