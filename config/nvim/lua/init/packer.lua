@@ -13,6 +13,7 @@ require('packer').startup(function()
 
     use '907th/vim-auto-save'
     use 'airblade/vim-gitgutter'
+    use 'b3nj5m1n/kommentary'
     use 'cappyzawa/trim.nvim'
     use 'christoomey/vim-tmux-navigator'
     use 'cocopon/iceberg.vim'
@@ -25,7 +26,6 @@ require('packer').startup(function()
     use 'rhysd/clever-f.vim'
     use 'svermeulen/vim-yoink'
     use 'tpope/vim-abolish'
-    use 'tpope/vim-commentary'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
