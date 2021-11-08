@@ -20,11 +20,11 @@ require('packer').startup(function()
     use 'farmergreg/vim-lastplace'
     use 'hoob3rt/lualine.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'maxbrunsfeld/vim-yankstack'
     use {'nvim-telescope/telescope.nvim', requires = {"nvim-lua/plenary.nvim"}}
     use 'pbrisbin/vim-mkdir'
     use 'phaazon/hop.nvim'
     use 'rhysd/clever-f.vim'
-    use 'svermeulen/vim-yoink'
     use 'tpope/vim-abolish'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-sleuth'
