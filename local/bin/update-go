@@ -17,8 +17,10 @@ packages() {
   done
 }
 
-go get -d $(packages)
+packages=$(packages)
 
-for url in $(packages); do
+go get -d $packages
+
+for url in $packages; do
   go install $url
 done
