@@ -12,6 +12,7 @@ null_ls.config({
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.lua_format,
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.rubocop,
         null_ls.builtins.formatting.rustfmt.with({ignore_stderr = true}),
         null_ls.builtins.formatting.shfmt.with({args = {"-i", "2"}}),
         null_ls.builtins.formatting.taplo,
