@@ -135,3 +135,9 @@ vim.api.nvim_set_keymap('n', '<leader>s',
 --- trim.nvim
 
 require('trim').setup({})
+
+--- kommentary
+
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true
+})
