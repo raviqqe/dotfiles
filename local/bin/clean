@@ -8,8 +8,10 @@ if [ -n "$pids" ]; then
   kill $pids
 fi
 
-for d in .rustup/downloads/* .rustup/tmp/*; do
-  rm -rf ~/$d
+set -x
+
+for directory in .rustup/downloads/* .rustup/tmp/* .cache/sccache; do
+  rm -rf ~/$directory
 done
 
 brew cleanup -s --prune all
