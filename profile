@@ -32,6 +32,10 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export RUST_MIN_STACK=8388608
 
+if which sccache >/dev/null; then
+  export RUSTC_WRAPPER=sccache
+fi
+
 ## Python
 
 export PATH=$(python3 -m site --user-base)/bin:$PATH
