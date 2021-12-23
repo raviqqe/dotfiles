@@ -1,5 +1,3 @@
-local lsp = require('lspconfig')
-
 local options = {noremap = true, silent = true}
 
 vim.api.nvim_set_keymap('n', '<leader>d',
@@ -20,7 +18,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 for _, command in ipairs({"gopls", "rust_analyzer", "tsserver"}) do
-    lsp[command].setup({
+    require('lspconfig')[command].setup({
         capabilities = capabilities,
         on_attach = function(client)
             client.resolved_capabilities.document_formatting = false
