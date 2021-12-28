@@ -19,7 +19,7 @@ tools:
   prettier: &prettier
     format-command: prettier
   shfmt: &shfmt
-    format-command: shfmt -s
+    format-command: shfmt -i 2 -s
     format-stdin: true
   taplo: &taplo
     format-command: taplo format -
