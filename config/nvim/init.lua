@@ -105,7 +105,6 @@ vim.api.nvim_exec([[
 -- Plugins
 
 require('init.lualine')
-require('init.null-ls')
 require('init.nvim-cmp')
 require('init.nvim-lspconfig')
 require('init.nvim-treesitter')

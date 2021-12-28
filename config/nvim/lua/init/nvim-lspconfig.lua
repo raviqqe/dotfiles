@@ -17,14 +17,26 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-for _, command in ipairs({"gopls", "rust_analyzer", "tsserver"}) do
-    require('lspconfig')[command].setup({
-        capabilities = capabilities,
-        on_attach = function(client)
-            client.resolved_capabilities.document_formatting = false
-        end
-    })
+local lspconfig = require('lspconfig')
+
+for _, command in ipairs({"gopls", "rust_analyzer"}) do
+    lspconfig[command].setup({capabilities = capabilities})
 end
+
+lspconfig.tsserver.setup({
+    capabilities = capabilities,
+    on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+    end
+})
+
+lspconfig.efm.setup({
+    capabilities = capabilities,
+    filetypes = {
+        "html", "javascript", "json", "lua", "markdown", "python", "sh",
+        "typescript", "yaml", "zsh"
+    }
+})
 
 vim.api.nvim_exec([[autocmd Init BufWritePre * lua vim.lsp.buf.formatting()]],
                   true)

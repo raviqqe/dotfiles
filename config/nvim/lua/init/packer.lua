@@ -42,10 +42,6 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        requires = {"nvim-lua/plenary.nvim"}
-    })
     use 'L3MON4D3/LuaSnip'
     use 'neovim/nvim-lspconfig'
     use 'pen-lang/pen.vim'

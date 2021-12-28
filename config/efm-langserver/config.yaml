@@ -1,0 +1,49 @@
+version: 2
+root-markers:
+  - .git/
+lint-debounce: 1s
+tools:
+  black: &black
+    format-command: black --quiet -
+    format-stdin: true
+  shfmt: &shfmt
+    format-command: shfmt -s
+    format-stdin: true
+  eslint: &eslint
+    lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - "%f(%l,%c): %tarning %m"
+      - "%f(%l,%c): %rror %m"
+  prettier: &prettier
+    format-command: prettier
+  lua-format: &lua-format
+    format-command: lua-format -i
+    format-stdin: true
+languages:
+  html:
+    - <<: *prettier
+  javascript:
+    - <<: *eslint
+    - <<: *prettier
+  json:
+    - <<: *prettier
+  lua:
+    - <<: *lua-format
+  markdown:
+    - <<: *prettier
+  python:
+    - <<: *black
+  sh:
+    - <<: *shfmt
+  typescript:
+    - <<: *eslint
+    - <<: *prettier
+  typescriptreact:
+    - <<: *eslint
+    - <<: *prettier
+  yaml:
+    - <<: *prettier
+  zsh:
+    - <<: *shfmt
