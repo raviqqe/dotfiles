@@ -6,9 +6,6 @@ tools:
   black: &black
     format-command: black --quiet -
     format-stdin: true
-  shfmt: &shfmt
-    format-command: shfmt -s
-    format-stdin: true
   eslint: &eslint
     lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
     lint-ignore-exit-code: true
@@ -16,10 +13,16 @@ tools:
     lint-formats:
       - "%f(%l,%c): %tarning %m"
       - "%f(%l,%c): %rror %m"
-  prettier: &prettier
-    format-command: prettier
   lua-format: &lua-format
     format-command: lua-format -i
+    format-stdin: true
+  prettier: &prettier
+    format-command: prettier
+  shfmt: &shfmt
+    format-command: shfmt -s
+    format-stdin: true
+  taplo: &taplo
+    format-command: taplo format -
     format-stdin: true
 languages:
   html:
@@ -37,6 +40,8 @@ languages:
     - <<: *black
   sh:
     - <<: *shfmt
+  toml:
+    - <<: *taplo
   typescript:
     - <<: *eslint
     - <<: *prettier
