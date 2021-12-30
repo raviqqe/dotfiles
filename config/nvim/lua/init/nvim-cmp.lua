@@ -20,7 +20,7 @@ cmp.setup {
     },
     sources = {
         {name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'emoji'},
-        {name = 'path'}, {name = "cmp_tabnine"}, {name = 'treesitter'}
+        {name = 'path'}, {name = 'treesitter'}
     }
 }
 

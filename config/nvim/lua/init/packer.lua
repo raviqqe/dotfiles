@@ -48,5 +48,4 @@ require('packer').startup(function()
     use 'ray-x/cmp-treesitter'
     use 'sheerun/vim-polyglot'
     use 'styled-components/vim-styled-components'
-    use {'tzachar/cmp-tabnine', run = './install.sh'}
 end)
