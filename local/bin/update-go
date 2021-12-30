@@ -5,6 +5,7 @@ set -e
 packages() {
   for url in \
     github.com/junegunn/fzf \
+    github.com/mattn/efm-langserver \
     github.com/microsoft/ethr \
     github.com/muesli/duf \
     github.com/raviqqe/bstie \
