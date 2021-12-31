@@ -132,9 +132,15 @@ gwa() {
 alias e="run_command_with_file nvim"
 
 eg() {
-  file=$(rg . | fzf | cut -f 1 -d :)
+  line=$(rg -n . | fzf)
 
-  [ -n "$file" ] && nvim "$file"
+  field() {
+    echo "$line" | cut -f $1 -d :
+  }
+
+  file=$(field 1)
+
+  [ -n "$file" ] && nvim +$(field 2) "$file"
 }
 
 er() {
