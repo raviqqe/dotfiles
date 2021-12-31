@@ -1,6 +1,6 @@
 version: 2
 root-markers:
-  - .git/
+  - .git
 lint-debounce: 1s
 tools:
   black: &black
