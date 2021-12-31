@@ -17,7 +17,8 @@ tools:
     format-command: lua-format -i
     format-stdin: true
   prettier: &prettier
-    format-command: prettier
+    format-command: prettier --stdin-filepath ${INPUT}
+    format-stdin: true
   shfmt: &shfmt
     format-command: shfmt -i 2 -s
     format-stdin: true
