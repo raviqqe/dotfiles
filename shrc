@@ -140,7 +140,7 @@ eg() {
 
   file=$(field 1)
 
-  [ -n "$file" ] && nvim +$(field 2) "$file"
+  [ -n "$file" ] && nvim +"execute $(field 2) | normal zz" "$file"
 }
 
 er() {
