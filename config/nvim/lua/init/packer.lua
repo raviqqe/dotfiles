@@ -14,7 +14,6 @@ require('packer').startup(function()
     use '907th/vim-auto-save'
     use 'airblade/vim-gitgutter'
     use 'b3nj5m1n/kommentary'
-    use 'cappyzawa/trim.nvim'
     use 'christoomey/vim-tmux-navigator'
     use 'cocopon/iceberg.vim'
     use 'farmergreg/vim-lastplace'

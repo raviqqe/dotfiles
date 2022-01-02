@@ -19,6 +19,9 @@ tools:
   prettier: &prettier
     format-command: prettier --stdin-filepath ${INPUT}
     format-stdin: true
+  sed: &sed
+    format-command: sed s/[[:blank:]]*$//g
+    format-stdin: true
   shfmt: &shfmt
     format-command: shfmt -i 2 -s
     format-stdin: true
@@ -41,6 +44,8 @@ languages:
     - <<: *black
   sh:
     - <<: *shfmt
+  text:
+    - <<: *sed
   toml:
     - <<: *taplo
   typescript:

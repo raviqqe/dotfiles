@@ -131,10 +131,6 @@ require('hop').setup()
 vim.api.nvim_set_keymap('n', '<leader>s',
                         "<cmd>lua require('hop').hint_words()<cr>", {})
 
---- trim.nvim
-
-require('trim').setup({})
-
 --- kommentary
 
 require('kommentary.config').configure_language("default", {
