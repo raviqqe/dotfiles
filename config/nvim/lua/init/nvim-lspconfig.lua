@@ -33,8 +33,8 @@ lspconfig.tsserver.setup({
 lspconfig.efm.setup({
     capabilities = capabilities,
     filetypes = {
-        "html", "javascript", "json", "lua", "markdown", "python", "sh", "text",
-        "toml", "typescript", "yaml", "zsh"
+        "html", "javascript", "json", "lua", "markdown", "python", "sh", "sql",
+        "text", "toml", "typescript", "yaml", "zsh"
     }
 })
 
