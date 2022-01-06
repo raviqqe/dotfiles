@@ -17,10 +17,10 @@ require('packer').startup(function()
     use 'christoomey/vim-tmux-navigator'
     use 'cocopon/iceberg.vim'
     use 'farmergreg/vim-lastplace'
+    use 'folke/trouble.nvim'
     use 'hoob3rt/lualine.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'maxbrunsfeld/vim-yankstack'
-    use {'nvim-telescope/telescope.nvim', requires = {"nvim-lua/plenary.nvim"}}
     use 'pbrisbin/vim-mkdir'
     use 'phaazon/hop.nvim'
     use 'rhysd/clever-f.vim'
@@ -29,6 +29,7 @@ require('packer').startup(function()
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
     use 'windwp/nvim-autopairs'
+    use {'nvim-telescope/telescope.nvim', requires = {"nvim-lua/plenary.nvim"}}
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- languages

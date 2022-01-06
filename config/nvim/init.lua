@@ -110,15 +110,25 @@ require('init.nvim-lspconfig')
 require('init.nvim-treesitter')
 require('init.telescope')
 
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true
+})
+require('nvim-autopairs').setup({})
+require('trouble').setup({
+    auto_open = true,
+    auto_close = true,
+    fold_open = 'v',
+    fold_closed = '>',
+    icons = false,
+    padding = false,
+    use_diagnostic_signs = true
+})
+
 --- auto-save
 
 vim.g.auto_save = true
 vim.g.auto_save_in_insert_mode = false
 vim.g.auto_save_silent = true
-
---- nvim-autopairs
-
-require('nvim-autopairs').setup({})
 
 --- vim-go
 
@@ -131,8 +141,3 @@ require('hop').setup()
 vim.api.nvim_set_keymap('n', '<leader>s',
                         "<cmd>lua require('hop').hint_words()<cr>", {})
 
---- kommentary
-
-require('kommentary.config').configure_language("default", {
-    prefer_single_line_comments = true
-})
