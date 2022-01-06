@@ -57,7 +57,7 @@ vim.api.nvim_exec([[
   highlight EndOfBuffer ctermbg=none
 ]], true)
 
--- Kepmaps
+-- Keymaps
 
 vim.g.mapleader = ' '
 
