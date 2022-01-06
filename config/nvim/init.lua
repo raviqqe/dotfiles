@@ -114,6 +114,10 @@ require('kommentary.config').configure_language("default", {
     prefer_single_line_comments = true
 })
 require('nvim-autopairs').setup({})
+require('tmux').setup({
+    copy_sync = {enable = true},
+    navigation = {enable_default_keybindings = true}
+})
 require('trouble').setup({
     auto_open = true,
     auto_close = true,
@@ -140,4 +144,3 @@ require('hop').setup()
 
 vim.api.nvim_set_keymap('n', '<leader>s',
                         "<cmd>lua require('hop').hint_words()<cr>", {})
-

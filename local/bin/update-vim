@@ -1,6 +1,0 @@
-#!/bin/sh
-
-set -e
-
-pip3 install --user --upgrade pynvim
-npm install -g neovim

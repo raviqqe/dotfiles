@@ -13,8 +13,8 @@ require('packer').startup(function()
 
     use '907th/vim-auto-save'
     use 'airblade/vim-gitgutter'
+    use 'aserowy/tmux.nvim'
     use 'b3nj5m1n/kommentary'
-    use 'christoomey/vim-tmux-navigator'
     use 'cocopon/iceberg.vim'
     use 'farmergreg/vim-lastplace'
     use 'folke/trouble.nvim'
