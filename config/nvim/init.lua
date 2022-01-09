@@ -120,8 +120,7 @@ require('tmux').setup({
 })
 require('trouble').setup({
     auto_open = true,
-    -- TODO Enable auto close.
-    -- auto_close = true,
+    auto_close = true,
     fold_open = 'v',
     fold_closed = '>',
     icons = false,
