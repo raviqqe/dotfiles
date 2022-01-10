@@ -32,6 +32,8 @@ tools:
     format-command: taplo format -
     format-stdin: true
 languages:
+  cucumber:
+    - <<: *sed
   html:
     - <<: *prettier
   javascript:
