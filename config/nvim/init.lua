@@ -118,15 +118,6 @@ require('tmux').setup({
     copy_sync = {enable = true},
     navigation = {enable_default_keybindings = true}
 })
-require('trouble').setup({
-    auto_open = true,
-    auto_close = true,
-    fold_open = 'v',
-    fold_closed = '>',
-    icons = false,
-    padding = false,
-    use_diagnostic_signs = true
-})
 
 --- auto-save
 
