@@ -97,9 +97,9 @@ vim.api.nvim_set_keymap('c', '<c-l>', '<right>', options)
 vim.api.nvim_exec([[
   augroup Init
     autocmd!
-  augroup end
 
-  autocmd Init BufRead,BufNewFile *.ll set filetype=llvm
+    autocmd BufRead,BufNewFile *.ll set filetype=llvm
+  augroup end
 ]], true)
 
 -- Plugins
