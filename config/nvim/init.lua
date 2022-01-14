@@ -144,3 +144,18 @@ require('hop').setup()
 
 vim.api.nvim_set_keymap('n', '<leader>s',
                         "<cmd>lua require('hop').hint_words()<cr>", {})
+
+-- barbar
+
+vim.g.bufferline = {
+    clickable = false,
+    closable = false,
+    icons = false,
+    icon_separator_active = '|',
+    icon_separator_inactive = '|',
+    icon_close_tab = '',
+    icon_close_tab_modified = '',
+    icon_pinned = ''
+}
+
+vim.api.nvim_set_keymap('n', '<leader>v', ':BufferClose<cr>', options)

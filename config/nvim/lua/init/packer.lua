@@ -24,6 +24,7 @@ require('packer').startup(function()
     use 'pbrisbin/vim-mkdir'
     use 'phaazon/hop.nvim'
     use 'rhysd/clever-f.vim'
+    use 'romgrk/barbar.nvim'
     use 'tpope/vim-abolish'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-sleuth'
