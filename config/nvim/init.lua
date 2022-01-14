@@ -97,14 +97,13 @@ vim.api.nvim_set_keymap('c', '<c-l>', '<right>', options)
 vim.api.nvim_exec([[
   augroup Init
     autocmd!
-
-    autocmd BufRead,BufNewFile *.ll set filetype=llvm
   augroup end
+
+  autocmd Init BufRead,BufNewFile *.ll set filetype=llvm
 ]], true)
 
 -- Plugins
 
-require('init.diagnostic')
 require('init.lualine')
 require('init.nvim-cmp')
 require('init.nvim-lspconfig')
@@ -118,6 +117,15 @@ require('nvim-autopairs').setup({})
 require('tmux').setup({
     copy_sync = {enable = true},
     navigation = {enable_default_keybindings = true}
+})
+require('trouble').setup({
+    auto_open = true,
+    auto_close = true,
+    fold_open = 'v',
+    fold_closed = '>',
+    icons = false,
+    padding = false,
+    use_diagnostic_signs = true
 })
 
 --- auto-save

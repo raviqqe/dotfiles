@@ -17,6 +17,7 @@ require('packer').startup(function()
     use 'b3nj5m1n/kommentary'
     use 'cocopon/iceberg.vim'
     use 'farmergreg/vim-lastplace'
+    use 'folke/trouble.nvim'
     use 'hoob3rt/lualine.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'maxbrunsfeld/vim-yankstack'
