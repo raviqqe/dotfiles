@@ -45,6 +45,8 @@ languages:
     - <<: *lua-format
   markdown:
     - <<: *prettier
+  pen:
+    - <<: *sed
   python:
     - <<: *black
   sh:
