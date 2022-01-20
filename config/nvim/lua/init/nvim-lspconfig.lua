@@ -34,7 +34,8 @@ lspconfig.efm.setup({
     capabilities = capabilities,
     filetypes = {
         "cucumber", "html", "javascript", "json", "lua", "markdown", "pen",
-        "python", "sh", "sql", "text", "toml", "typescript", "yaml", "zsh"
+        "python", "sh", "sql", "text", "toml", "typescript", "typescriptreact",
+        "yaml", "zsh"
     }
 })
 
