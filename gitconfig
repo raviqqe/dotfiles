@@ -15,7 +15,7 @@
   compactionHeuristic = true
 
 [core]
-  pager = "if which diff-so-fancy > /dev/null 2>&1; then diff-so-fancy | less --tabs=4 -RFX; else less --tabs=4 -RFX; fi"
+  pager = delta
   excludesfile = ~/.gitignore
   ignorecase = false
 
@@ -24,9 +24,6 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
-
-[diff-so-fancy]
-  useUnicodeRuler = false
 
 [github]
   user = raviqqe

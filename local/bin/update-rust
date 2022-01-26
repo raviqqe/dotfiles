@@ -19,6 +19,7 @@ cargo install-update -i \
   exa \
   fastmod \
   fd-find \
+  git-delta \
   hexyl \
   procs \
   ripgrep \
