@@ -63,6 +63,8 @@ languages:
   typescriptreact:
     - <<: *eslint
     - <<: *prettier
+  xml:
+    - <<: *prettier
   yaml:
     - <<: *prettier
   zsh:
