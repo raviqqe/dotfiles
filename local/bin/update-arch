@@ -2,5 +2,5 @@
 
 set -e
 
-sudo pacman -Syu
-sudo pacman -Sc
+sudo pacman --noconfirm -Syu
+sudo pacman --noconfirm -Sc
