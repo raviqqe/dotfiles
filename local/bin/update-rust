@@ -25,6 +25,7 @@ cargo install-update -i \
   procs \
   ripgrep \
   sccache \
+  stylua \
   taplo-cli \
   tealdeer \
   tokei

@@ -13,8 +13,8 @@ tools:
     lint-formats:
       - "%f(%l,%c): %tarning %m"
       - "%f(%l,%c): %rror %m"
-  lua-format: &lua-format
-    format-command: lua-format -i
+  stylua: &stylua
+    format-command: stylua --stdin-filepath ${INPUT} -
     format-stdin: true
   prettier: &prettier
     format-command: prettier --stdin-filepath ${INPUT}
@@ -42,7 +42,7 @@ languages:
   json:
     - <<: *prettier
   lua:
-    - <<: *lua-format
+    - <<: *stylua
   markdown:
     - <<: *prettier
   pen:
