@@ -74,10 +74,12 @@ vim.api.nvim_set_keymap("v", ":", ";", options)
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", options)
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", options)
 
-vim.api.nvim_set_keymap("n", "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
-vim.api.nvim_set_keymap("n", "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
-vim.api.nvim_set_keymap("n", "gj", "j", options)
-vim.api.nvim_set_keymap("n", "gk", "k", options)
+for _, mode in ipairs({ "n", "v" }) do
+	vim.api.nvim_set_keymap(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
+	vim.api.nvim_set_keymap(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
+	vim.api.nvim_set_keymap(mode, "gj", "j", options)
+	vim.api.nvim_set_keymap(mode, "gk", "k", options)
+end
 
 vim.api.nvim_set_keymap("n", "Q", ":q!<cr>", options)
 vim.api.nvim_set_keymap("n", "Y", "y$", options)
