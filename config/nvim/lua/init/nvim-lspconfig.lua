@@ -27,6 +27,7 @@ lspconfig.tsserver.setup({
 lspconfig.efm.setup({
 	capabilities = capabilities,
 	filetypes = {
+		"c",
 		"cucumber",
 		"html",
 		"javascript",

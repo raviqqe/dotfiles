@@ -6,6 +6,9 @@ tools:
   black: &black
     format-command: black --quiet -
     format-stdin: true
+  clang-format: &clang-format
+    format-command: clang-format
+    format-stdin: true
   eslint: &eslint
     lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
     lint-ignore-exit-code: true
@@ -32,6 +35,8 @@ tools:
     format-command: taplo format -
     format-stdin: true
 languages:
+  c:
+    - <<: *clang-format
   cucumber:
     - <<: *sed
   html:
