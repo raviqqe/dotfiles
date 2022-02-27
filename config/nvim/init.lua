@@ -48,15 +48,15 @@ vim.opt.wrap = true
 
 vim.api.nvim_exec(
 	[[
-  filetype plugin indent on
-  syntax on
+		filetype plugin indent on
+		syntax on
 
-  colorscheme iceberg
+		colorscheme iceberg
 
-  highlight Normal      ctermbg=none
-  highlight NonText     ctermbg=none
-  highlight EndOfBuffer ctermbg=none
-]],
+		highlight Normal ctermbg=none
+		highlight NonText ctermbg=none
+		highlight EndOfBuffer ctermbg=none
+	]],
 	true
 )
 
@@ -99,12 +99,13 @@ vim.api.nvim_set_keymap("c", "<c-l>", "<right>", options)
 
 vim.api.nvim_exec(
 	[[
-  augroup Init
-    autocmd!
+		augroup Init
+			autocmd!
 
-    autocmd BufRead,BufNewFile *.ll set filetype=llvm
-  augroup end
-]],
+			autocmd BufRead,BufNewFile *.ll set filetype=llvm
+			autocmd InsertLeave * ++nested :w
+		augroup end
+	]],
 	true
 )
 

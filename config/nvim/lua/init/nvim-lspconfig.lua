@@ -48,4 +48,4 @@ lspconfig.efm.setup({
 	},
 })
 
-vim.api.nvim_exec([[autocmd Init BufWritePre * lua vim.lsp.buf.formatting()]], true)
+vim.api.nvim_exec([[autocmd Init BufWritePre * lua vim.lsp.buf.formatting_seq_sync()]], true)
