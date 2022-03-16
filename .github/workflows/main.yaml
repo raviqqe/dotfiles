@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        shell: sh -ec ". ~/.profile && . {0}"
+        shell: sh -ec "if [ -r ~/.profile ]; then . ~/.profile; fi && . {0}"
     steps:
       - uses: actions/checkout@main
       - run: cp profile ~/.profile
