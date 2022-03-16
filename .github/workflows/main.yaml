@@ -3,7 +3,7 @@ on:
   - push
 jobs:
   main:
-    strategy
+    strategy:
       matrix: 
         os: 
           - ubuntu-latest
