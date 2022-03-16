@@ -3,7 +3,12 @@ on:
   - push
 jobs:
   main:
-    runs-on: ubuntu-20.04
+    strategy
+      matrix: 
+        os: 
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         shell: sh -ec ". ~/.profile && . {0}"
