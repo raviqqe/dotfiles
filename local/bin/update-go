@@ -19,10 +19,6 @@ packages() {
   done
 }
 
-packages=$(packages)
-
-go get -d $packages
-
-for url in $packages; do
+for url in $(packages); do
   go install $url
 done
