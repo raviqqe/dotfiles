@@ -17,6 +17,10 @@ done
 brew cleanup -s --prune all
 gem cleanup
 npm cache clean --force
-yarn cache clean
+
+if which yarn; then
+  yarn cache clean
+fi
+
 pip3 cache purge || :
 go clean -cache
