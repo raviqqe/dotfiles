@@ -19,6 +19,9 @@ tools:
   stylua: &stylua
     format-command: stylua --stdin-filepath ${INPUT} -
     format-stdin: true
+  pen-format: &pen-format
+    format-command: pen format
+    format-stdin: true
   prettier: &prettier
     format-command: prettier --stdin-filepath ${INPUT}
     format-stdin: true
@@ -51,7 +54,7 @@ languages:
   markdown:
     - <<: *prettier
   pen:
-    - <<: *sed
+    - <<: *pen-format
   python:
     - <<: *black
   sh:
