@@ -6,6 +6,7 @@ vim.api.nvim_set_keymap("n", "<leader>n", "<cmd>lua vim.lsp.buf.rename()<cr>", o
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<cr>", options)
 vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua vim.lsp.buf.implementation()<cr>", options)
 vim.api.nvim_set_keymap("n", "<leader>x", "<cmd>lua vim.diagnostic.goto_next()<cr>", options)
+vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>lua vim.diagnostic.setloclist()<cr>", options)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
