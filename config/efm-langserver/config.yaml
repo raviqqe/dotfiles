@@ -20,7 +20,7 @@ tools:
     format-command: stylua --stdin-filepath ${INPUT} -
     format-stdin: true
   pen-format: &pen-format
-    format-command: pen format
+    format-command: pen format --stdin
     format-stdin: true
   prettier: &prettier
     format-command: prettier --stdin-filepath ${INPUT}
