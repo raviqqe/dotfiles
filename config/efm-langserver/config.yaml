@@ -45,8 +45,8 @@ languages:
   html:
     - <<: *prettier
   javascript:
-    - <<: *eslint
     - <<: *prettier
+    - <<: *eslint
   json:
     - <<: *prettier
   lua:
@@ -66,11 +66,11 @@ languages:
   toml:
     - <<: *taplo
   typescript:
-    - <<: *eslint
     - <<: *prettier
+    - <<: *eslint
   typescriptreact:
-    - <<: *eslint
     - <<: *prettier
+    - <<: *eslint
   xml:
     - <<: *prettier
   yaml:
