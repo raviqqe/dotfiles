@@ -8,10 +8,12 @@ export PAGER=less
 
 export PATH=$HOME/.local/bin:$PATH
 
-## Homebrew
+# Homebrew
 
 export HOMEBREW_NO_EMOJI=1
 export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.homebrew/opt/ruby/bin:$PATH
+
+# Languages
 
 ## Haskell
 
@@ -54,10 +56,11 @@ export NODE_OPTIONS=--max-old-space-size=4096
 export JAVA_HOME=$HOME/.homebrew/opt/openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
-## My languages
+## Pen
 
-export EIN_ROOT=$HOME/src/github.com/ein-lang/ein
 export PEN_ROOT=$HOME/src/github.com/pen-lang/pen
+
+# Tools
 
 ## git
 
