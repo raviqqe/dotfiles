@@ -84,3 +84,11 @@ export NVM_AUTO_USE=true # for zsh-nvm
 ## Google Cloud SDK
 
 export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
+
+# Local profile
+
+local_profile=$HOME/.profile.local
+
+if [ -r $local_profile ]; then
+ . $local_profile
+fi
