@@ -1,12 +1,12 @@
 local options = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua vim.lsp.buf.references()<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>n", "<cmd>lua vim.lsp.buf.rename()<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>y", "<cmd>lua vim.lsp.buf.implementation()<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>x", "<cmd>lua vim.diagnostic.goto_next()<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>lua vim.diagnostic.setloclist()<cr>", options)
+vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, options)
+vim.keymap.set("n", "<leader>e", vim.lsp.buf.references, options)
+vim.keymap.set("n", "<leader>n", vim.lsp.buf.rename, options)
+vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, options)
+vim.keymap.set("n", "<leader>y", vim.lsp.buf.implementation, options)
+vim.keymap.set("n", "<leader>x", vim.diagnostic.goto_next, options)
+vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -49,4 +49,8 @@ lspconfig.efm.setup({
 	},
 })
 
-vim.api.nvim_exec([[autocmd Init BufWritePre * lua vim.lsp.buf.formatting_seq_sync()]], true)
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	group = "Init",
+	pattern = { "*" },
+	callback = vim.lsp.buf.formatting_seq_sync,
+})

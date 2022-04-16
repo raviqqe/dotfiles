@@ -2,11 +2,10 @@
 
 echo >&2
 
-if tmux ls > /dev/null 2>&1
-then
-  tmux ls >&2 2> /dev/null
+if tmux ls >/dev/null 2>&1; then
+  tmux ls >&2 2>/dev/null
   echo >&2
 fi
 
-( ls --color || ls -G ) >&2 2> /dev/null
+(ls --color || ls -G) >&2 2>/dev/null
 echo >&2

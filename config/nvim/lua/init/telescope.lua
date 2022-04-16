@@ -6,16 +6,13 @@ telescope.setup({ defaults = { mappings = { i = { ["<esc>"] = actions.close } } 
 
 local options = { noremap = true }
 
-vim.api.nvim_set_keymap("n", "<leader>b", [[<cmd>lua require('telescope.builtin').buffers()<cr>]], options)
-vim.api.nvim_set_keymap("n", "<leader>c", [[<cmd>lua require('telescope.builtin').command_history()<cr>]], options)
-vim.api.nvim_set_keymap("n", "<leader>f", [[<cmd>lua require('init.telescope').find_files()<cr>]], options)
-vim.api.nvim_set_keymap("n", "<leader>g", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], options)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>r",
-	[[<cmd>lua require('telescope.builtin').git_files({use_git_root=true})<cr>]],
-	options
-)
+vim.keymap.set("n", "<leader>b", builtin.buffers, options)
+vim.keymap.set("n", "<leader>c", builtin.command_history, options)
+vim.keymap.set("n", "<leader>f", builtin.find_files, options)
+vim.keymap.set("n", "<leader>g", builtin.live_grep, options)
+vim.keymap.set("n", "<leader>r", function()
+	builtin.git_files({ use_git_root = true })
+end, options)
 
 return {
 	find_files = function()

@@ -29,4 +29,10 @@ cmp.setup({
 	},
 })
 
-vim.api.nvim_exec([[autocmd Init FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr>]], true)
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = "Init",
+	pattern = { "qf" },
+	callback = function()
+		vim.keymap.set("n", "<cr>", "<cr>:lclose<cr>", { buffer = true, noremap = true })
+	end,
+})

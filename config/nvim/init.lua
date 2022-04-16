@@ -66,48 +66,53 @@ vim.g.mapleader = " "
 
 local options = { noremap = true }
 
-vim.api.nvim_set_keymap("n", ";", ":", options)
-vim.api.nvim_set_keymap("n", ":", ";", options)
-vim.api.nvim_set_keymap("v", ";", ":", options)
-vim.api.nvim_set_keymap("v", ":", ";", options)
+vim.keymap.set("n", ";", ":", options)
+vim.keymap.set("n", ":", ";", options)
+vim.keymap.set("v", ";", ":", options)
+vim.keymap.set("v", ":", ";", options)
 
-vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", options)
-vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", options)
+vim.keymap.set("n", "<leader>w", ":w<cr>", options)
+vim.keymap.set("n", "<leader>q", ":q<cr>", options)
 
 for _, mode in ipairs({ "n", "v" }) do
-	vim.api.nvim_set_keymap(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
-	vim.api.nvim_set_keymap(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
-	vim.api.nvim_set_keymap(mode, "gj", "j", options)
-	vim.api.nvim_set_keymap(mode, "gk", "k", options)
+	vim.keymap.set(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
+	vim.keymap.set(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
+	vim.keymap.set(mode, "gj", "j", options)
+	vim.keymap.set(mode, "gk", "k", options)
 end
 
-vim.api.nvim_set_keymap("n", "Q", ":q!<cr>", options)
-vim.api.nvim_set_keymap("n", "Y", "y$", options)
-vim.api.nvim_set_keymap("n", "<esc><esc>", ":nohlsearch<cr>", options)
+vim.keymap.set("n", "Q", ":q!<cr>", options)
+vim.keymap.set("n", "Y", "y$", options)
+vim.keymap.set("n", "<esc><esc>", ":nohlsearch<cr>", options)
 
-vim.api.nvim_set_keymap("i", "<c-h>", "<left>", options)
-vim.api.nvim_set_keymap("i", "<c-j>", "<down>", options)
-vim.api.nvim_set_keymap("i", "<c-k>", "<up>", options)
-vim.api.nvim_set_keymap("i", "<c-l>", "<right>", options)
+vim.keymap.set("i", "<c-h>", "<left>", options)
+vim.keymap.set("i", "<c-j>", "<down>", options)
+vim.keymap.set("i", "<c-k>", "<up>", options)
+vim.keymap.set("i", "<c-l>", "<right>", options)
 
-vim.api.nvim_set_keymap("c", "<c-h>", "<left>", options)
-vim.api.nvim_set_keymap("c", "<c-j>", "<c-n>", options)
-vim.api.nvim_set_keymap("c", "<c-k>", "<c-p>", options)
-vim.api.nvim_set_keymap("c", "<c-l>", "<right>", options)
+vim.keymap.set("c", "<c-h>", "<left>", options)
+vim.keymap.set("c", "<c-j>", "<c-n>", options)
+vim.keymap.set("c", "<c-k>", "<c-p>", options)
+vim.keymap.set("c", "<c-l>", "<right>", options)
 
 -- Autocmd
 
-vim.api.nvim_exec(
-	[[
-		augroup Init
-			autocmd!
+local group = "Init"
 
-			autocmd BufRead,BufNewFile *.ll set filetype=llvm
-			autocmd InsertLeave * ++nested :w
-		augroup end
-	]],
-	true
-)
+vim.api.nvim_create_augroup(group, {})
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	group = group,
+	pattern = { "*.ll" },
+	callback = function()
+		vim.opt.filetype = "llvm"
+	end,
+})
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+	group = group,
+	pattern = { "*" },
+	command = ":w",
+	nested = true,
+})
 
 -- Plugins
 
@@ -138,6 +143,8 @@ vim.g.go_fmt_autosave = false
 
 --- hop.nvim
 
-require("hop").setup()
+local hop = require("hop")
 
-vim.api.nvim_set_keymap("n", "<leader>s", "<cmd>lua require('hop').hint_words()<cr>", {})
+hop.setup()
+
+vim.keymap.set("n", "<leader>s", hop.hint_words)
