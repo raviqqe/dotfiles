@@ -29,7 +29,7 @@ require("packer").startup(function()
 	use("tpope/vim-surround")
 	use("windwp/nvim-autopairs")
 	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate all" })
 
 	-- languages
 
