@@ -46,19 +46,16 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = true
 
-vim.api.nvim_exec(
-	[[
-		filetype plugin indent on
-		syntax on
+vim.cmd([[
+	filetype plugin indent on
+	syntax on
 
-		colorscheme iceberg
+	colorscheme iceberg
 
-		highlight Normal ctermbg=none
-		highlight NonText ctermbg=none
-		highlight EndOfBuffer ctermbg=none
-	]],
-	true
-)
+	highlight Normal ctermbg=none
+	highlight NonText ctermbg=none
+	highlight EndOfBuffer ctermbg=none
+]])
 
 -- Keymaps
 
