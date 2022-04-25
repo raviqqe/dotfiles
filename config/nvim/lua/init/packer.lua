@@ -33,15 +33,12 @@ require("packer").startup(function()
 
 	-- languages
 
-	use("ap/vim-css-color")
-	use("fatih/vim-go")
 	use("hashivim/vim-hashicorp-tools")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
-	use("L3MON4D3/LuaSnip")
 	use("neovim/nvim-lspconfig")
 	use("pen-lang/pen.vim")
 	use("ray-x/cmp-treesitter")
