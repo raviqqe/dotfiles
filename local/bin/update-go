@@ -2,23 +2,17 @@
 
 set -e
 
-packages() {
-  for url in \
-    github.com/junegunn/fzf \
-    github.com/mattn/efm-langserver \
-    github.com/microsoft/ethr \
-    github.com/muesli/duf \
-    github.com/raviqqe/bstie \
-    github.com/raviqqe/muffet/v2 \
-    github.com/raviqqe/rnm \
-    github.com/traefik/yaegi/cmd/yaegi \
-    github.com/x-motemen/ghq \
-    golang.org/x/tools/gopls \
-    mvdan.cc/sh/v3/cmd/shfmt; do
-    echo $url@latest
-  done
-}
-
-for url in $(packages); do
-  go install $url
+for url in \
+  github.com/junegunn/fzf \
+  github.com/mattn/efm-langserver \
+  github.com/microsoft/ethr \
+  github.com/muesli/duf \
+  github.com/raviqqe/bstie \
+  github.com/raviqqe/muffet/v2 \
+  github.com/raviqqe/rnm \
+  github.com/traefik/yaegi/cmd/yaegi \
+  github.com/x-motemen/ghq \
+  golang.org/x/tools/gopls \
+  mvdan.cc/sh/v3/cmd/shfmt; do
+  go install $url@latest
 done
