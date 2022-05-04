@@ -16,6 +16,7 @@ cargo install-update -i \
   bottom \
   cargo-edit \
   cargo-flamegraph \
+  cargo-release \
   cargo-update \
   du-dust \
   exa \
