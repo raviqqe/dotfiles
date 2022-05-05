@@ -90,8 +90,8 @@ export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
 
 # Local profile
 
-local_profile=$HOME/.profile.local
+local_profile=$HOME/.local/etc/profile
 
 if [ -r $local_profile ]; then
- . $local_profile
+  . $local_profile
 fi
