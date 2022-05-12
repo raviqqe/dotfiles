@@ -2,27 +2,11 @@
 
 set -e
 
-plugins() {
-  echo junegunn/fzf path:shell
-  echo lukechilds/zsh-nvm
-  echo mafredri/zsh-async
-  echo sindresorhus/pure path:pure.zsh
-  echo zsh-users/zsh-autosuggestions
-  echo zsh-users/zsh-completions
-  echo zsh-users/zsh-history-substring-search
-  echo zsh-users/zsh-syntax-highlighting
-}
+directory=$HOME/.local/share/zinit/zinit
 
-brew install antibody
-
-plugins | antibody bundle >~/.cache/zsh_plugins.sh
-
-if [ -d ~/.cache/antibody ]; then
-  cd ~/.cache/antibody
+if [ -d $directory ]; then
+  cd $directory
+  git pull
 else
-  cd ~/Library/Caches/antibody
+  git clone https://github.com/zdharma-continuum/zinit $directory
 fi
-
-for script in **/*.zsh; do
-  zcompile "$script"
-done
