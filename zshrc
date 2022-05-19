@@ -38,7 +38,6 @@ SAVEHIST=$HISTSIZE
 
 for plugin in \
   lukechilds/zsh-nvm \
-  mafredri/zsh-async \
   zsh-users/zsh-autosuggestions \
   zsh-users/zsh-completions \
   zsh-users/zsh-syntax-highlighting; do
