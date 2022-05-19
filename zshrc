@@ -42,13 +42,13 @@ for plugin in \
   zsh-users/zsh-completions \
   zsh-users/zsh-syntax-highlighting; do
   zinit ice wait lucid
-  zinit load $plugin
+  zinit light $plugin
 done
 
 zinit ice pick'shell/completion.zsh' src'shell/key-bindings.zsh'
-zinit load junegunn/fzf
-zinit load zsh-users/zsh-history-substring-search
-zinit load sindresorhus/pure
+zinit light junegunn/fzf
+zinit light zsh-users/zsh-history-substring-search
+zinit light sindresorhus/pure
 
 bindkey -a ? fzf-history-widget
 bindkey -v '^P' history-substring-search-up
