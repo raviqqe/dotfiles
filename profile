@@ -33,20 +33,6 @@ export PATH=$GOPATH/bin:$PATH
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-if which sccache >/dev/null; then
-  export RUSTC_WRAPPER=sccache
-fi
-
-## Python
-
-export PATH=$(python3 -m site --user-base)/bin:$PATH
-
-## Ruby
-
-if which gem >/dev/null; then
-  export PATH=$(gem environment gempath | sed 's/\(:\|$\)/\/bin\1/g'):$PATH
-fi
-
 ## Node.js
 
 export NODE_OPTIONS=--max-old-space-size=4096
@@ -88,10 +74,14 @@ export NVM_AUTO_USE=true # for zsh-nvm
 
 export PATH=$HOME/.google/google-cloud-sdk/bin:$PATH
 
-# Local profile
+# Custom profiles
+
+export CACHED_PROFILE=$HOME/.cache/profile
 
 local_profile=$HOME/.local/etc/profile
 
-if [ -r $local_profile ]; then
-  . $local_profile
-fi
+for file in $CACHED_PROFILE $local_profile; do
+  if [ -r $file ]; then
+    . $file
+  fi
+done

@@ -17,7 +17,7 @@ if [ $# -eq 1 ]; then
   exit
 fi
 
-for subcommand in homebrew zsh tmux python ruby node go rust gcp; do
+for subcommand in homebrew zsh tmux python ruby node go rust gcp profile; do
   if ! echo "$excluded_subcommands" | grep $subcommand >/dev/null; then
     update-$subcommand
   fi
