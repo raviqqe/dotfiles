@@ -22,12 +22,15 @@ alias cr='cd "$(fd -at d . $(git rev-parse --show-toplevel) | fzf)"'
 alias cs='cd "$(ghq list --full-path | fzf)"'
 alias ct='cd "$(git rev-parse --show-toplevel)"'
 
-alias ...=../..
-alias ....=../../..
-alias .....=../../../..
-alias ......=../../../../..
-alias .......=../../../../../..
-alias ........=../../../../../../..
+command=..
+directory=..
+
+for _ in $(seq 10); do
+  command=$command.
+  directory=$directory/..
+
+  alias $command=$directory
+done
 
 c() {
   local dir=$(fd -t d . | fzf)

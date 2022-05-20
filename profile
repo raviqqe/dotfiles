@@ -33,6 +33,10 @@ export PATH=$GOPATH/bin:$PATH
 
 export PATH=$HOME/.cargo/bin:$PATH
 
+if which sccache >/dev/null; then
+  export RUSTC_WRAPPER=sccache
+fi
+
 ## Node.js
 
 export NODE_OPTIONS=--max-old-space-size=4096
