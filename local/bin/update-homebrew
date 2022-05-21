@@ -32,6 +32,8 @@ brew install \
   terraform \
   tig \
   tmux \
+  uutils-coreutils \
+  uutils-findutils \
   wabt \
   watch \
   yq \
