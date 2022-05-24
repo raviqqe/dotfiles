@@ -37,6 +37,9 @@ tools:
   taplo: &taplo
     format-command: taplo format -
     format-stdin: true
+  terraform: &terraform
+    format-command: terraform fmt -
+    format-stdin: true
 languages:
   c:
     - <<: *clang-format
@@ -61,6 +64,8 @@ languages:
     - <<: *shfmt
   sql:
     - <<: *pg_format
+  terraform:
+    - <<: *terraform
   text:
     - <<: *sed
   toml:

@@ -39,6 +39,7 @@ lspconfig.efm.setup({
 		"python",
 		"sh",
 		"sql",
+		"terraform",
 		"text",
 		"toml",
 		"typescript",
