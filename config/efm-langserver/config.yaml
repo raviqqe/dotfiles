@@ -54,6 +54,8 @@ languages:
     - <<: *eslint
   json:
     - <<: *prettier
+  jsonc:
+    - <<: *prettier
   lua:
     - <<: *stylua
   markdown:

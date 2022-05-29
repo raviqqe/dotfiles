@@ -34,6 +34,7 @@ lspconfig.efm.setup({
 		"html",
 		"javascript",
 		"json",
+		"jsonc",
 		"lua",
 		"markdown",
 		"pen",
