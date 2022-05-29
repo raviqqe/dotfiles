@@ -29,6 +29,7 @@ lspconfig.efm.setup({
 	capabilities = capabilities,
 	filetypes = {
 		"c",
+		"css",
 		"cucumber",
 		"html",
 		"javascript",
