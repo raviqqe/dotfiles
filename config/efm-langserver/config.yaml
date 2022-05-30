@@ -28,6 +28,9 @@ tools:
   pg_format: &pg_format
     format-command: pg_format
     format-stdin: true
+  rufo: &rufo
+    format-command: rufo -x
+    format-stdin: true
   sed: &sed
     format-command: sed s/[[:blank:]]*$//g
     format-stdin: true
@@ -64,6 +67,8 @@ languages:
     - <<: *pen-format
   python:
     - <<: *black
+  ruby:
+    - <<: *rufo
   sh:
     - <<: *shfmt
   sql:

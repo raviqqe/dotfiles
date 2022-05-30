@@ -39,6 +39,7 @@ lspconfig.efm.setup({
 		"markdown",
 		"pen",
 		"python",
+		"ruby",
 		"sh",
 		"sql",
 		"terraform",
