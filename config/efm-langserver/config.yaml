@@ -54,6 +54,8 @@ languages:
     - <<: *sed
   html:
     - <<: *prettier
+  html.handlebars:
+    - <<: *prettier
   javascript:
     - <<: *prettier
     - <<: *eslint

@@ -33,6 +33,7 @@ lspconfig.efm.setup({
 		"css",
 		"cucumber",
 		"html",
+		"html.handlebars",
 		"javascript",
 		"json",
 		"jsonc",
