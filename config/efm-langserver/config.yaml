@@ -44,6 +44,8 @@ tools:
     format-command: terraform fmt -
     format-stdin: true
 languages:
+  astro:
+    - <<: *prettier
   c:
     - <<: *clang-format
   css:

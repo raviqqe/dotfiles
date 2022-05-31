@@ -28,6 +28,7 @@ lspconfig.tsserver.setup({
 lspconfig.efm.setup({
 	capabilities = capabilities,
 	filetypes = {
+		"astro",
 		"c",
 		"css",
 		"cucumber",

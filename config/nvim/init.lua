@@ -99,6 +99,13 @@ local group = "Init"
 vim.api.nvim_create_augroup(group, {})
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	group = group,
+	pattern = { "*.astro" },
+	callback = function()
+		vim.opt.filetype = "astro"
+	end,
+})
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	group = group,
 	pattern = { "*.ll" },
 	callback = function()
 		vim.opt.filetype = "llvm"

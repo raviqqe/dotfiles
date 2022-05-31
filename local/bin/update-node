@@ -6,5 +6,6 @@ npm install --global --ignore-scripts \
   @prettier/plugin-xml \
   assemblyscript \
   prettier \
+  prettier-plugin-astro \
   typescript \
   typescript-language-server
