@@ -4,7 +4,13 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
 	defaults = {
-		layout_strategy = "vertical",
+		layout_strategy = "bottom_pane",
+		layout_config = {
+			bottom_pane = {
+				height = 1000,
+				prompt_position = "bottom",
+			},
+		},
 		mappings = { i = { ["<esc>"] = actions.close } },
 	},
 })
