@@ -2,7 +2,12 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
-telescope.setup({ defaults = { mappings = { i = { ["<esc>"] = actions.close } } } })
+telescope.setup({
+	defaults = {
+		layout_strategy = "vertical",
+		mappings = { i = { ["<esc>"] = actions.close } },
+	},
+})
 
 local options = { noremap = true }
 
