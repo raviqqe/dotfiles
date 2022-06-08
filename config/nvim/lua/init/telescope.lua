@@ -11,7 +11,10 @@ telescope.setup({
 				prompt_position = "bottom",
 			},
 		},
-		mappings = { i = { ["<esc>"] = actions.close } },
+		mappings = {
+			i = { ["<esc>"] = actions.close },
+		},
+		path_display = { "truncate" },
 	},
 })
 
