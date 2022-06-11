@@ -21,9 +21,10 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
 		{ name = "buffer" },
+		{ name = "copilot" },
 		{ name = "emoji" },
+		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "treesitter" },
 	},
