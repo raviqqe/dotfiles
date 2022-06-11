@@ -120,11 +120,11 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
 
 -- Plugins
 
+require("init.cmp")
+require("init.lspconfig")
 require("init.lualine")
-require("init.nvim-cmp")
-require("init.nvim-lspconfig")
-require("init.nvim-treesitter")
 require("init.telescope")
+require("init.treesitter")
 
 require("kommentary.config").configure_language("default", {
 	prefer_single_line_comments = true,
