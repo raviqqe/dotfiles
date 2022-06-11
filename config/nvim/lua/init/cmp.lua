@@ -30,6 +30,8 @@ cmp.setup({
 	},
 })
 
+cmp.setup.filetype("gitcommit", { sources = {} })
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = "Init",
 	pattern = { "qf" },
