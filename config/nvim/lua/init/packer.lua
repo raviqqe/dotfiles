@@ -39,12 +39,27 @@ require("packer").startup(function()
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-copilot")
 	use("L3MON4D3/LuaSnip")
 	use("neovim/nvim-lspconfig")
 	use("pen-lang/pen.vim")
 	use("ray-x/cmp-treesitter")
 	use("sheerun/vim-polyglot")
 	use("styled-components/vim-styled-components")
+
+	-- GitHub Copilot
+
 	use({ "github/copilot.vim", run = ":Copilot setup" })
+	use({
+		"zbirenbaum/copilot.lua",
+		event = { "VimEnter" },
+		config = function()
+			vim.defer_fn(function()
+				require("copilot").setup()
+			end, 100)
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua", "nvim-cmp" },
+	})
 end)
