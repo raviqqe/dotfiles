@@ -48,7 +48,7 @@ require("packer").startup(function()
 
 	-- GitHub Copilot
 
-	use({ "github/copilot.vim", run = ":Copilot setup" })
+	use("github/copilot.vim")
 	use({
 		"zbirenbaum/copilot.lua",
 		event = { "VimEnter" },
