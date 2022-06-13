@@ -132,7 +132,7 @@ gwa() {
 
 # Editor
 
-alias e='PATH=$HOME/.homebrew/opt/node@16/bin:$PATH run_command_with_file nvim'
+alias e='run_command_with_file nvim'
 
 eg() {
   line=$(rg -n . | fzf)
