@@ -24,6 +24,7 @@ cargo install-update -i \
   fd-find \
   git-delta \
   hexyl \
+  hyperfine \
   procs \
   ripgrep \
   sccache \
