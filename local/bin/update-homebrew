@@ -12,6 +12,7 @@ brew upgrade
 
 brew install \
   clang-format \
+  comby \
   curl \
   gh \
   git \
