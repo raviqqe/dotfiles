@@ -60,6 +60,6 @@ require("packer").startup(function()
 	})
 	use({
 		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua", "nvim-cmp" },
+		module = "copilot_cmp",
 	})
 end)
