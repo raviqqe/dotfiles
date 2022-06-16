@@ -45,6 +45,7 @@ require("packer").startup(function()
 	use("ray-x/cmp-treesitter")
 	use("sheerun/vim-polyglot")
 	use("styled-components/vim-styled-components")
+	use({ "scalameta/nvim-metals", requires = { "nvim-lua/plenary.nvim" } })
 
 	-- GitHub Copilot
 
