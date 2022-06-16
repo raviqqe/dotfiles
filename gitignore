@@ -3,7 +3,9 @@
 *.log
 *.wasm
 .*_cache
+.bloop
 .cache
+.metals
 .pnp.js
 .ultra.cache.json
 .yarn
@@ -11,6 +13,7 @@ __pycache__
 callgrind.*
 coverage
 dist
+metals.sbt
 node_modules
 target
 vgcore.*
