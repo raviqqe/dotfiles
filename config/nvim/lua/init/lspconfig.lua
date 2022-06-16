@@ -55,7 +55,6 @@ lspconfig.efm.setup({
 	},
 })
 
-
 local group = vim.api.nvim_create_augroup("InitLsp", {})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
