@@ -55,7 +55,7 @@ lspconfig.efm.setup({
 	},
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+vim.api.nvim_create_autocmd("BufWritePre", {
 	group = "Init",
 	pattern = { "*" },
 	callback = vim.lsp.buf.formatting_seq_sync,

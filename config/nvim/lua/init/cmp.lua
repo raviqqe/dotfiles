@@ -30,7 +30,7 @@ cmp.setup({
 	},
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd("FileType", {
 	group = "Init",
 	pattern = { "qf" },
 	callback = function()
