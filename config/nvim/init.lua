@@ -94,9 +94,8 @@ vim.keymap.set("c", "<c-l>", "<right>", options)
 
 -- Autocmd
 
-local group = "Init"
+local group = vim.api.nvim_create_augroup("Init", {})
 
-vim.api.nvim_create_augroup(group, {})
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	group = group,
 	pattern = { "*.astro" },
@@ -104,6 +103,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt.filetype = "astro"
 	end,
 })
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	group = group,
 	pattern = { "*.ll" },
@@ -111,7 +111,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt.filetype = "llvm"
 	end,
 })
-vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+
+vim.api.nvim_create_autocmd("InsertLeave", {
 	group = group,
 	pattern = { "*" },
 	command = ":w",

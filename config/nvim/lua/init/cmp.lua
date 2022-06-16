@@ -31,7 +31,7 @@ cmp.setup({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	group = "Init",
+	group = vim.api.nvim_create_augroup("InitCmp", {}),
 	pattern = { "qf" },
 	callback = function()
 		vim.keymap.set("n", "<cr>", "<cr>:lclose<cr>", { buffer = true, noremap = true })

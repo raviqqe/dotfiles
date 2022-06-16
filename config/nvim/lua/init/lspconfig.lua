@@ -55,8 +55,19 @@ lspconfig.efm.setup({
 	},
 })
 
+
+local group = vim.api.nvim_create_augroup("InitLsp", {})
+
 vim.api.nvim_create_autocmd("BufWritePre", {
-	group = "Init",
+	group = group,
 	pattern = { "*" },
 	callback = vim.lsp.buf.formatting_seq_sync,
+})
+
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+	group = group,
+	pattern = { "*" },
+	callback = function()
+		vim.diagnostic.open_float(nil, { focus = false })
+	end,
 })
