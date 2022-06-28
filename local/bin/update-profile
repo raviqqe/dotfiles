@@ -10,6 +10,6 @@ fi
   echo export PATH=$(python3 -m site --user-base)/bin:\$PATH
 
   if which gem >/dev/null; then
-    echo export PATH=$(gem environment gempath | sed 's/\(:\|$\)/\/bin\1/g'):\$PATH
+    echo export PATH=$(echo $(gem environment gempath): | sed s%:%/bin:%g)\$PATH
   fi
 ) >$CACHED_PROFILE
