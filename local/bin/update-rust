@@ -14,7 +14,6 @@ cargo install cargo-update || :
 cargo install-update -i \
   bat \
   bottom \
-  cargo-edit \
   cargo-flamegraph \
   cargo-release \
   cargo-update \
