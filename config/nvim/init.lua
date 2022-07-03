@@ -148,10 +148,6 @@ vim.g.auto_save_silent = true
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_node_command = "~/.homebrew/opt/node@16/bin/node"
 
---- vim-go
-
-vim.g.go_fmt_autosave = false
-
 --- hop.nvim
 
 local hop = require("hop")
