@@ -52,6 +52,7 @@ alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gc="git commit"
 alias gca="git commit --amend"
+alias gcr='git commit -m Refactor'
 alias gcw='git commit -m WIP'
 alias gco='git checkout'
 alias gcom='git checkout $(git_default_branch)'
