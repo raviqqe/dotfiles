@@ -20,14 +20,15 @@ cmp.setup({
 			require("luasnip").lsp_expand(args.body)
 		end,
 	},
-	sources = {
-		{ name = "buffer" },
-		{ name = "copilot" },
+	sources = cmp.config.sources({
 		{ name = "emoji" },
 		{ name = "nvim_lsp" },
 		{ name = "path" },
+	}, {
+		{ name = "buffer" },
+		{ name = "copilot" },
 		{ name = "treesitter" },
-	},
+	}),
 })
 
 vim.api.nvim_create_autocmd("FileType", {
