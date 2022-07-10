@@ -14,7 +14,7 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 local lspconfig = require("lspconfig")
 
-for _, command in ipairs({ "gopls", "solargraph", "rust_analyzer" }) do
+for _, command in ipairs({ "clangd", "gopls", "solargraph", "rust_analyzer" }) do
 	lspconfig[command].setup({ capabilities = capabilities })
 end
 
