@@ -12,7 +12,6 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Insert,
-			select = true,
 		}),
 	},
 	snippet = {
