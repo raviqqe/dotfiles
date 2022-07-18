@@ -14,13 +14,13 @@ cargo install cargo-update || :
 cargo install-update -i \
   bat \
   bottom \
-  cargo-flamegraph \
   cargo-release \
   cargo-update \
   du-dust \
   exa \
   fastmod \
   fd-find \
+  flamegraph \
   git-delta \
   hexyl \
   hyperfine \
