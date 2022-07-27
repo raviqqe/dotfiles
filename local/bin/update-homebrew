@@ -37,6 +37,7 @@ brew install \
   uutils-coreutils \
   uutils-findutils \
   wabt \
+  wasmtime \
   watch \
   yq \
   zig \
