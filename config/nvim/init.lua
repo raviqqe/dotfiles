@@ -150,8 +150,4 @@ vim.g.copilot_node_command = "~/.homebrew/opt/node@16/bin/node"
 
 --- hop.nvim
 
-local hop = require("hop")
-
-hop.setup()
-
-vim.keymap.set("n", "<leader>s", hop.hint_words)
+vim.keymap.set("n", "<leader>s", ":Pounce<cr>")
