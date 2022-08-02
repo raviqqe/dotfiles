@@ -11,7 +11,14 @@ export PATH=$HOME/.local/bin:$PATH
 # Homebrew
 
 export HOMEBREW_NO_EMOJI=1
-export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.homebrew/opt/ruby/bin:$PATH
+
+for directory in \
+  bin \
+  sbin \
+  opt/ruby/bin \
+  opt/uutils-coreutils/libexec/uubin; do
+  export PATH=$HOME/.homebrew/$directory:$PATH
+done
 
 # Languages
 
