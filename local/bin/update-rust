@@ -16,6 +16,7 @@ cargo install-update -i \
   bottom \
   cargo-release \
   cargo-update \
+  cargo-watch \
   du-dust \
   exa \
   fastmod \
