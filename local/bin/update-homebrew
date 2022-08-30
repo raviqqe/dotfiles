@@ -39,6 +39,7 @@ brew install \
   wabt \
   wasmtime \
   watch \
+  watchexec \
   yq \
   zig \
   zsh
