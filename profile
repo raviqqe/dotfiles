@@ -15,6 +15,7 @@ export HOMEBREW_NO_EMOJI=1
 for directory in \
   bin \
   sbin \
+  opt/llvm/bin \
   opt/ruby/bin; do
   export PATH=$HOME/.homebrew/$directory:$PATH
 done
