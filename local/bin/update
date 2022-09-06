@@ -22,7 +22,3 @@ for subcommand in homebrew zsh tmux python ruby node go rust gcp profile; do
     update-$subcommand
   fi
 done
-
-if [ $(uname) = Darwin ]; then
-  update mac
-fi
