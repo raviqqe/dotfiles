@@ -2,4 +2,4 @@
 
 set -e
 
-brew install alacritty bitwarden firefox
+brew install alacritty firefox
