@@ -1,0 +1,25 @@
+arch: x86_64
+cpus: 8
+memory: 8GiB
+provision:
+  - mode: system
+    script: |
+      set -ex
+      export DEBIAN_FRONTEND=noninteractive
+      apt -y update --fix-missing
+      apt -y install build-essential git rcm zsh
+      apt -y upgrade
+      chsh -s /usr/bin/zsh raviqqe
+  - mode: user
+    script: |
+      set -ex
+      if [ ! -r ~/.ssh/*.pub ]; then
+        yes '' | ssh-keygen -t ed25519
+      fi
+      if [ ! -d ~/.dotfiles ]; then
+        git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
+      fi
+      rcup -f
+      if [ -x update ]; then
+        update
+      fi
