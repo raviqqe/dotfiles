@@ -1,6 +1,8 @@
 arch: x86_64
 cpus: 8
 memory: 8GiB
+cpuType:
+  x86_64: Icelake-Server-v4
 provision:
   - mode: system
     script: |
