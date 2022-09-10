@@ -52,15 +52,18 @@ require("packer").startup(function()
 	use("github/copilot.vim")
 	use({
 		"zbirenbaum/copilot.lua",
-		event = { "VimEnter" },
+		event = "InsertEnter",
 		config = function()
-			vim.defer_fn(function()
+			vim.schedule(function()
 				require("copilot").setup()
-			end, 100)
+			end)
 		end,
 	})
 	use({
 		"zbirenbaum/copilot-cmp",
-		module = "copilot_cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot-cmp").setup()
+		end,
 	})
 end)
