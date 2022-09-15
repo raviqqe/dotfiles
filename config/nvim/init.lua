@@ -131,7 +131,7 @@ require("init.treesitter")
 require("kommentary.config").configure_language("default", {
 	prefer_single_line_comments = true,
 })
-require("lsp_signature").setup({})
+require("lsp_signature").setup({ hint_prefix = "" })
 require("nvim-autopairs").setup({})
 require("tmux").setup({
 	copy_sync = { enable = true },
