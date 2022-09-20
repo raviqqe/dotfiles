@@ -10,6 +10,7 @@ vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.hidden = true
 vim.opt.lazyredraw = true
 vim.opt.swapfile = true
+vim.opt.termguicolors = true
 vim.opt.tildeop = true
 vim.opt.ttyfast = true
 vim.opt.updatetime = 500
@@ -128,6 +129,7 @@ require("init.metals")
 require("init.telescope")
 require("init.treesitter")
 
+require("colorizer").setup()
 require("kommentary.config").configure_language("default", {
 	prefer_single_line_comments = true,
 })
