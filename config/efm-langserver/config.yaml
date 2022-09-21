@@ -48,6 +48,8 @@ languages:
     - <<: *prettier
   c:
     - <<: *clang-format
+  cpp:
+    - <<: *clang-format
   css:
     - <<: *prettier
   cucumber:
