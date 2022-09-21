@@ -9,7 +9,7 @@ require("null-ls").setup({
 		require("null-ls").builtins.formatting.pg_format,
 		require("null-ls").builtins.formatting.prettier,
 		require("null-ls").builtins.formatting.rubocop,
-		require("null-ls").builtins.formatting.shfmt,
+		require("null-ls").builtins.formatting.shfmt.with({ extra_args = { "-i", "2" } }),
 		require("null-ls").builtins.formatting.stylua,
 		require("null-ls").builtins.formatting.taplo,
 		require("null-ls").builtins.formatting.terraform_fmt,
