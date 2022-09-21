@@ -25,36 +25,6 @@ lspconfig.tsserver.setup({
 	end,
 })
 
-lspconfig.efm.setup({
-	capabilities = capabilities,
-	filetypes = {
-		"astro",
-		"c",
-		"css",
-		"cucumber",
-		"html",
-		"html.handlebars",
-		"javascript",
-		"json",
-		"jsonc",
-		"lua",
-		"markdown",
-		"pen",
-		"python",
-		"ruby",
-		"sh",
-		"sql",
-		"terraform",
-		"text",
-		"toml",
-		"typescript",
-		"typescriptreact",
-		"xml",
-		"yaml",
-		"zsh",
-	},
-})
-
 local group = vim.api.nvim_create_augroup("InitLsp", {})
 
 vim.api.nvim_create_autocmd("BufWritePre", {

@@ -126,6 +126,7 @@ require("init.cmp")
 require("init.lspconfig")
 require("init.lualine")
 require("init.metals")
+require("init.null_ls")
 require("init.telescope")
 require("init.treesitter")
 
