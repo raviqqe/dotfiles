@@ -1,17 +1,19 @@
-require("null-ls").setup({
+local null_ls = require("null-ls")
+
+null_ls.setup({
 	sources = {
-		require("null-ls").builtins.completion.spell,
-		require("null-ls").builtins.diagnostics.eslint,
-		require("null-ls").builtins.formatting.black,
-		require("null-ls").builtins.formatting.clang_format,
-		require("null-ls").builtins.formatting.elm_format,
-		require("null-ls").builtins.formatting.eslint,
-		require("null-ls").builtins.formatting.pg_format,
-		require("null-ls").builtins.formatting.prettier,
-		require("null-ls").builtins.formatting.rubocop,
-		require("null-ls").builtins.formatting.shfmt.with({ extra_args = { "-i", "2" } }),
-		require("null-ls").builtins.formatting.stylua,
-		require("null-ls").builtins.formatting.taplo,
-		require("null-ls").builtins.formatting.terraform_fmt,
+		null_ls.builtins.completion.spell,
+		null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.formatting.black,
+		null_ls.builtins.formatting.clang_format,
+		null_ls.builtins.formatting.elm_format,
+		null_ls.builtins.formatting.eslint,
+		null_ls.builtins.formatting.pg_format,
+		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.rubocop,
+		null_ls.builtins.formatting.shfmt.with({ extra_args = { "-i", "2" } }),
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.taplo,
+		null_ls.builtins.formatting.terraform_fmt,
 	},
 })
