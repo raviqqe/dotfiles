@@ -11,7 +11,10 @@ null_ls.setup({
 		null_ls.builtins.formatting.pg_format,
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.rubocop,
-		null_ls.builtins.formatting.shfmt.with({ extra_args = { "-i", "2" } }),
+		null_ls.builtins.formatting.shfmt.with({
+			extra_args = { "-i", "2" },
+			extra_filetypes = { "zsh" },
+		}),
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.taplo,
 		null_ls.builtins.formatting.terraform_fmt,
