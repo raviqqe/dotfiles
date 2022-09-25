@@ -8,9 +8,9 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<Tab>"] = cmp.mapping.select_next_item(),
-		["<S-Tab>"] = cmp.mapping.select_prev_item(),
-		["<CR>"] = cmp.mapping.confirm({
+		["<tab>"] = cmp.mapping.select_next_item(),
+		["<s-tab>"] = cmp.mapping.select_prev_item(),
+		["<cr>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Insert,
 		}),
 	},
@@ -20,12 +20,11 @@ cmp.setup({
 		end,
 	},
 	sources = cmp.config.sources({
-		{ name = "emoji" },
-		{ name = "nvim_lsp" },
-		{ name = "path" },
-	}, {
 		{ name = "buffer" },
 		{ name = "copilot" },
+		{ name = "emoji" },
+		{ name = "nvim_lsp", priority = 100 },
+		{ name = "path" },
 		{ name = "treesitter" },
 	}),
 })
