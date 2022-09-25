@@ -1,8 +1,5 @@
-arch: x86_64
 cpus: 8
 memory: 8GiB
-cpuType:
-  x86_64: Icelake-Server-v4
 provision:
   - mode: system
     script: |
@@ -22,6 +19,3 @@ provision:
         git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
       fi
       rcup -f
-      if [ -x update ]; then
-        update
-      fi
