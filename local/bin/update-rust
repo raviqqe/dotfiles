@@ -7,7 +7,7 @@ if ! which rustup; then
     sh -s -- -y --no-modify-path --default-toolchain stable
 fi
 
-rustup component add clippy rls rustfmt rust-analysis rust-src
+rustup component add clippy rls rustfmt rust-analysis rust-analyzer rust-src
 rustup update
 
 cargo install cargo-update || :
