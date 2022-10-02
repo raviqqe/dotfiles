@@ -8,4 +8,5 @@ npm install --global --ignore-scripts \
   prettier \
   prettier-plugin-astro \
   typescript \
-  typescript-language-server
+  typescript-language-server \
+  wasm-run
