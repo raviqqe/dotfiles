@@ -63,7 +63,7 @@ vim.cmd([[
 
 vim.g.mapleader = " "
 
-local options = { noremap = true, silent = true }
+local options = { noremap = true }
 
 vim.keymap.set("n", ";", ":", options)
 vim.keymap.set("n", ":", ";", options)
