@@ -14,6 +14,7 @@ brew install \
   clang-format \
   comby \
   curl \
+  deno \
   gh \
   git \
   go \
