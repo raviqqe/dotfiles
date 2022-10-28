@@ -8,11 +8,8 @@ vim.keymap.set("n", "<leader>y", vim.lsp.buf.implementation, options)
 vim.keymap.set("n", "<leader>x", vim.diagnostic.goto_next, options)
 vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-
 local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 for _, command in ipairs({ "clangd", "gopls", "solargraph", "rust_analyzer" }) do
 	lspconfig[command].setup({ capabilities = capabilities })

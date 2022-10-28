@@ -3,7 +3,7 @@ local config = metals.bare_config()
 
 config.settings = { showImplicitArguments = true }
 config.init_options.statusBarProvider = "on"
-config.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "scala", "sbt", "java" },
