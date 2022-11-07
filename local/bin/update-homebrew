@@ -19,6 +19,7 @@ brew install \
   git \
   go \
   htop \
+  jq \
   koka \
   ldns \
   lua \
