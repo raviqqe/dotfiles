@@ -139,7 +139,7 @@ eg() {
   line=$(rg -n . | fzf)
 
   field() {
-    echo "$line" | cut -f $1 -d :
+    echo "$line" | head -n 1 | cut -f $1 -d :
   }
 
   file=$(field 1)
