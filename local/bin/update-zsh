@@ -10,3 +10,5 @@ if [ -d $directory ]; then
 else
   git clone https://github.com/zdharma-continuum/zinit $directory
 fi
+
+zsh -lc '. ~/.zshrc && zinit update'
