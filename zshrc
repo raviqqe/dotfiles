@@ -37,7 +37,6 @@ SAVEHIST=$HISTSIZE
 . ~/.local/share/zinit/zinit/zinit.zsh
 
 for plugin in \
-  lukechilds/zsh-nvm \
   zsh-users/zsh-autosuggestions \
   zsh-users/zsh-completions \
   zsh-users/zsh-syntax-highlighting; do

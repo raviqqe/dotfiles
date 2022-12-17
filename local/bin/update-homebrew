@@ -27,7 +27,6 @@ brew install \
   luarocks \
   neovim \
   node \
-  nvm \
   pen-lang/pen/pen \
   pgformatter \
   python \
