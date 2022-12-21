@@ -39,6 +39,7 @@ export PATH=$GOPATH/bin:$PATH
 ## Rust
 
 export PATH=$HOME/.cargo/bin:$PATH
+export OPENSSL_STATIC=1 # for openssl-sys
 
 ## Node.js
 
