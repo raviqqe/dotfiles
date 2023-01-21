@@ -53,9 +53,9 @@ require("lazy").setup({
 
 	-- GitHub Copilot
 
-	"github/copilot.vim",
 	{
 		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
 		event = "InsertEnter",
 		config = function()
 			vim.schedule(function()
