@@ -28,7 +28,12 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim",
 		},
 		config = function()
-			require("chatgpt").setup({})
+			require("chatgpt").setup({
+				welcome_message = "",
+				question_sign = "Q",
+				answer_sign = "A",
+				chat_input = { prompt = "> " },
+			})
 		end,
 	},
 	"jose-elias-alvarez/null-ls.nvim",
