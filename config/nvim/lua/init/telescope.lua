@@ -27,11 +27,3 @@ vim.keymap.set("n", "<leader>g", builtin.live_grep, options)
 vim.keymap.set("n", "<leader>r", function()
 	builtin.git_files({ use_git_root = true })
 end, options)
-
-return {
-	find_files = function()
-		if not pcall(builtin.git_files, { use_git_root = false }) then
-			builtin.find_files()
-		end
-	end,
-}
