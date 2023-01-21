@@ -131,6 +131,12 @@ require("init.null_ls")
 require("init.telescope")
 require("init.treesitter")
 
+require("chatgpt").setup({
+	welcome_message = "",
+	question_sign = "Q",
+	answer_sign = "A",
+	chat_input = { prompt = "> " },
+})
 require("colorizer").setup()
 require("kommentary.config").configure_language("default", {
 	prefer_single_line_comments = true,

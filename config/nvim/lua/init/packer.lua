@@ -27,14 +27,6 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
-		config = function()
-			require("chatgpt").setup({
-				welcome_message = "",
-				question_sign = "Q",
-				answer_sign = "A",
-				chat_input = { prompt = "> " },
-			})
-		end,
 	},
 	"jose-elias-alvarez/null-ls.nvim",
 	"lukas-reineke/indent-blankline.nvim",
