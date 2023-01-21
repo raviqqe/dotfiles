@@ -148,11 +148,6 @@ vim.g.auto_save = true
 vim.g.auto_save_in_insert_mode = false
 vim.g.auto_save_silent = true
 
---- copilot
-
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_node_command = "~/.homebrew/opt/node@16/bin/node"
-
 --- hop.nvim
 
 vim.keymap.set("n", "<leader>s", ":Pounce<cr>")
