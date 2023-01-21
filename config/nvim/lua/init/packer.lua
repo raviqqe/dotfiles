@@ -1,59 +1,60 @@
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+if not vim.loop.fs_stat(path) then
 	vim.fn.system({
 		"git",
 		"clone",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim",
+		"--branch=stable",
+		path,
 	})
 end
 
-require("packer").startup(function()
-	use("wbthomason/packer.nvim")
+vim.opt.rtp:prepend(path)
 
-	use("airblade/vim-gitgutter")
-	use("aserowy/tmux.nvim")
-	use("b3nj5m1n/kommentary")
-	use("cocopon/iceberg.vim")
-	use("farmergreg/vim-lastplace")
-	use("hoob3rt/lualine.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("maxbrunsfeld/vim-yankstack")
-	use("NvChad/nvim-colorizer.lua")
-	use("pbrisbin/vim-mkdir")
-	use("rhysd/clever-f.vim")
-	use("rlane/pounce.nvim")
-	use("tpope/vim-abolish")
-	use("tpope/vim-fugitive")
-	use("tpope/vim-sleuth")
-	use("tpope/vim-surround")
-	use("windwp/nvim-autopairs")
-	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate all" })
+require("lazy").setup({
+	"airblade/vim-gitgutter",
+	"aserowy/tmux.nvim",
+	"b3nj5m1n/kommentary",
+	"cocopon/iceberg.vim",
+	"farmergreg/vim-lastplace",
+	"hoob3rt/lualine.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"maxbrunsfeld/vim-yankstack",
+	"NvChad/nvim-colorizer.lua",
+	"pbrisbin/vim-mkdir",
+	"rhysd/clever-f.vim",
+	"rlane/pounce.nvim",
+	"tpope/vim-abolish",
+	"tpope/vim-fugitive",
+	"tpope/vim-surround",
+	"windwp/nvim-autopairs",
+	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate all" },
 
-	-- languages
+	-- Languages
 
-	use("hashivim/vim-hashicorp-tools")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-emoji")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/nvim-cmp")
-	use("L3MON4D3/LuaSnip")
-	use("neovim/nvim-lspconfig")
-	use("pen-lang/pen.vim")
-	use("ray-x/cmp-treesitter")
-	use("ray-x/lsp_signature.nvim")
-	use("sheerun/vim-polyglot")
-	use("styled-components/vim-styled-components")
-	use({ "scalameta/nvim-metals", requires = { "nvim-lua/plenary.nvim" } })
+	"hashivim/vim-hashicorp-tools",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-emoji",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-path",
+	"hrsh7th/nvim-cmp",
+	"L3MON4D3/LuaSnip",
+	"neovim/nvim-lspconfig",
+	"pen-lang/pen.vim",
+	"ray-x/cmp-treesitter",
+	"ray-x/lsp_signature.nvim",
+	"sheerun/vim-polyglot", -- includes vim-sleuth
+	"styled-components/vim-styled-components",
+	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 
 	-- GitHub Copilot
 
-	use("github/copilot.vim")
-	use({
+	"github/copilot.vim",
+	{
 		"zbirenbaum/copilot.lua",
 		event = "InsertEnter",
 		config = function()
@@ -61,12 +62,12 @@ require("packer").startup(function()
 				require("copilot").setup()
 			end)
 		end,
-	})
-	use({
+	},
+	{
 		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
+		dependencies = { "zbirenbaum/copilot.lua" },
 		config = function()
 			require("copilot_cmp").setup()
 		end,
-	})
-end)
+	},
+})
