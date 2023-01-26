@@ -57,7 +57,6 @@ require("lazy").setup({
 	"ray-x/lsp_signature.nvim",
 	"sheerun/vim-polyglot", -- includes vim-sleuth
 	"styled-components/vim-styled-components",
-	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 
 	-- GitHub Copilot
 
