@@ -3,6 +3,7 @@
 set -e
 
 npm install --global --ignore-scripts \
+  @aws-amplify/cli \
   @prettier/plugin-xml \
   assemblyscript \
   prettier \
