@@ -1,6 +1,7 @@
 *.bookmark
 *.egg-info
 *.log
+*.tsbuildinfo
 *.wasm
 .*_cache
 .bloop
