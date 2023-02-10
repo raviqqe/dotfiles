@@ -6,6 +6,8 @@
 .*_cache
 .bloop
 .cache
+.env
+.env.local
 .metals
 .pnp.js
 .ultra.cache.json
@@ -18,3 +20,11 @@ metals.sbt
 node_modules
 target
 vgcore.*
+
+# Android
+*.aab
+*.apk
+*.idsig
+*.keystore
+.gradle
+
