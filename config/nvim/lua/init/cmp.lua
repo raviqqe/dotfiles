@@ -14,11 +14,6 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Insert,
 		}),
 	},
-	snippet = {
-		expand = function(args)
-			require("luasnip").lsp_expand(args.body)
-		end,
-	},
 	sources = cmp.config.sources({
 		{ name = "buffer" },
 		{ name = "copilot" },

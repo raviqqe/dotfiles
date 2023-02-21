@@ -50,7 +50,6 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-path",
 	"hrsh7th/nvim-cmp",
-	"L3MON4D3/LuaSnip",
 	"neovim/nvim-lspconfig",
 	"pen-lang/pen.vim",
 	"ray-x/cmp-treesitter",
