@@ -32,7 +32,7 @@ cargo install-update -i \
   stylua \
   taplo-cli \
   tealdeer \
-  tokei \ 
+  tokei \
   zoxide
 
 tldr --update
