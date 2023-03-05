@@ -53,10 +53,6 @@ vim.cmd([[
 	syntax on
 
 	colorscheme iceberg
-
-	highlight Normal ctermbg=none
-	highlight NonText ctermbg=none
-	highlight EndOfBuffer ctermbg=none
 ]])
 
 -- Keymaps
