@@ -48,12 +48,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = true
 
-vim.cmd([[
-	filetype plugin indent on
-	syntax on
-
-	colorscheme iceberg
-]])
+vim.cmd.colorscheme("iceberg")
 
 -- Keymaps
 
