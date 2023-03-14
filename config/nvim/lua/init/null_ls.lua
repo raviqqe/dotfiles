@@ -8,7 +8,9 @@ null_ls.setup({
 		null_ls.builtins.formatting.clang_format,
 		null_ls.builtins.formatting.elm_format,
 		null_ls.builtins.formatting.pg_format,
-		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.prettier.with({
+			extra_filetypes = { "astro" },
+		}),
 		null_ls.builtins.formatting.rubocop,
 		null_ls.builtins.formatting.shfmt.with({
 			extra_args = { "-i", "2" },
