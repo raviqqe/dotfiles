@@ -47,5 +47,3 @@ brew install \
   yq \
   zig \
   zsh
-
-brew install node@16 # for GitHub Copilot
