@@ -53,7 +53,6 @@ require("lazy").setup({
 	"pen-lang/pen.vim",
 	"ray-x/cmp-treesitter",
 	"ray-x/lsp_signature.nvim",
-	"sheerun/vim-polyglot", -- includes vim-sleuth
 	"styled-components/vim-styled-components",
 
 	-- GitHub Copilot

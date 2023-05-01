@@ -48,6 +48,13 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = true
 
+vim.filetype.add({
+	extension = {
+		astro = "astro",
+		llvm = "llvm",
+	},
+})
+
 vim.cmd.colorscheme("iceberg")
 
 -- Keymaps
@@ -88,22 +95,6 @@ vim.keymap.set("c", "<c-l>", "<right>", options)
 -- Autocmd
 
 local group = vim.api.nvim_create_augroup("Init", {})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	group = group,
-	pattern = { "*.astro" },
-	callback = function()
-		vim.opt.filetype = "astro"
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	group = group,
-	pattern = { "*.ll" },
-	callback = function()
-		vim.opt.filetype = "llvm"
-	end,
-})
 
 vim.api.nvim_create_autocmd("InsertLeave", {
 	group = group,
