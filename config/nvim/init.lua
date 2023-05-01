@@ -1,4 +1,4 @@
-require("init.packer")
+require("init.lazy")
 
 -- General
 
