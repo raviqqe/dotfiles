@@ -33,6 +33,7 @@ require("lazy").setup({
 	"maxbrunsfeld/vim-yankstack",
 	"NvChad/nvim-colorizer.lua",
 	"pbrisbin/vim-mkdir",
+	"phaazon/hop.nvim",
 	"rhysd/clever-f.vim",
 	"tpope/vim-abolish",
 	"tpope/vim-fugitive",
