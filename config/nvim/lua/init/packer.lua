@@ -34,7 +34,6 @@ require("lazy").setup({
 	"NvChad/nvim-colorizer.lua",
 	"pbrisbin/vim-mkdir",
 	"rhysd/clever-f.vim",
-	"rlane/pounce.nvim",
 	"tpope/vim-abolish",
 	"tpope/vim-fugitive",
 	"tpope/vim-surround",
