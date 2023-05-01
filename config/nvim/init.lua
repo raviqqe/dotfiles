@@ -108,6 +108,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- Plugins
 
 require("init.cmp")
+require("init.hop")
 require("init.lspconfig")
 require("init.lualine")
 require("init.null_ls")
@@ -130,7 +131,3 @@ require("tmux").setup({
 	copy_sync = { enable = true },
 	navigation = { enable_default_keybindings = true },
 })
-
---- pounce.nvim
-
-vim.keymap.set("n", "<leader>s", ":Pounce<cr>")
