@@ -138,12 +138,6 @@ require("tmux").setup({
 	navigation = { enable_default_keybindings = true },
 })
 
---- auto-save
-
-vim.g.auto_save = true
-vim.g.auto_save_in_insert_mode = false
-vim.g.auto_save_silent = true
-
---- hop.nvim
+--- pounce.nvim
 
 vim.keymap.set("n", "<leader>s", ":Pounce<cr>")
