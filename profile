@@ -13,7 +13,7 @@ export PATH=$HOME/.local/bin:$PATH
 export HOMEBREW_NO_EMOJI=1
 
 if [ $(uname) = Linux ]; then
-  directory=/home/linuxbrew
+  directory=/home/linuxbrew/.linuxbrew
 else
   directory=/opt/homebrew
 fi
