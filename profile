@@ -17,7 +17,7 @@ for directory in \
   sbin \
   opt/llvm/bin \
   opt/ruby/bin; do
-  export PATH=$HOME/.homebrew/$directory:$PATH
+  export PATH=/opt/homebrew/bin:$PATH
 done
 
 # Languages
