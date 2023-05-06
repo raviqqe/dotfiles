@@ -4,10 +4,10 @@ on:
 jobs:
   main:
     strategy:
+      fail-fast: false
       matrix:
         os:
-          # TODO
-          # - ubuntu-latest
+          - ubuntu-latest
           - macos-latest
     runs-on: ${{ matrix.os }}
     defaults:
