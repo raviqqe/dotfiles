@@ -23,7 +23,7 @@ for directory in \
   sbin \
   opt/llvm/bin \
   opt/ruby/bin; do
-  export PATH=base/$directory:$PATH
+  export PATH=$base/$directory:$PATH
 done
 
 # Languages
