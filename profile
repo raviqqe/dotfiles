@@ -12,12 +12,18 @@ export PATH=$HOME/.local/bin:$PATH
 
 export HOMEBREW_NO_EMOJI=1
 
+if [ $(uname) = Linux ]; then
+  base=/home/linuxbrew/.linuxbrew
+else
+  base=/opt/homebrew
+fi
+
 for directory in \
   bin \
   sbin \
   opt/llvm/bin \
   opt/ruby/bin; do
-  export PATH=$HOME/.homebrew/$directory:$PATH
+  export PATH=$base/$directory:$PATH
 done
 
 # Languages
