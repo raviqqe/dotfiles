@@ -10,8 +10,11 @@ fi
 brew update
 brew upgrade
 
+if [ -n "$CI" ]; then
+  brew install --overwrite go
+fi
+
 brew install \
-  ${CI:+--overwrite} \
   clang-format \
   comby \
   csvq \
