@@ -13,9 +13,9 @@ export PATH=$HOME/.local/bin:$PATH
 export HOMEBREW_NO_EMOJI=1
 
 if [ $(uname) = Linux ]; then
-  directory=/home/linuxbrew/.linuxbrew
+  base=/home/linuxbrew/.linuxbrew
 else
-  directory=/opt/homebrew
+  base=/opt/homebrew
 fi
 
 for directory in \
@@ -23,7 +23,7 @@ for directory in \
   sbin \
   opt/llvm/bin \
   opt/ruby/bin; do
-  export PATH=/opt/homebrew/$directory:$PATH
+  export PATH=base/$directory:$PATH
 done
 
 # Languages
