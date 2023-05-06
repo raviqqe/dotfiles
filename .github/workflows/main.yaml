@@ -15,6 +15,7 @@ jobs:
         shell: sh -ec "if [ -r ~/.profile ]; then . ~/.profile; fi && . {0}"
     steps:
       - uses: actions/checkout@v3
+      - run: sudo rm -f /usr/local/bin/brew
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
