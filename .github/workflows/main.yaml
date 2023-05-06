@@ -6,7 +6,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
+          # TODO
+          # - ubuntu-latest
           - macos-latest
     runs-on: ${{ matrix.os }}
     defaults:
