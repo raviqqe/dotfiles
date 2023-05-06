@@ -11,7 +11,7 @@ brew update
 brew upgrade
 
 brew install \
-  ${CI:+--overwrite} \
+  --overwrite \
   clang-format \
   comby \
   csvq \
