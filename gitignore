@@ -7,7 +7,7 @@
 .bloop
 .cache
 .env
-.env.local
+.env.*
 .eslintcache
 .metals
 .pnp.js

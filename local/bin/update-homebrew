@@ -11,6 +11,7 @@ brew update
 brew upgrade
 
 brew install \
+  cmake \
   clang-format \
   comby \
   csvq \
