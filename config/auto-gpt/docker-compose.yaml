@@ -7,9 +7,10 @@ services:
     env_file:
       - .env
     environment:
-      MEMORY_BACKEND: ${MEMORY_BACKEND:-redis}
-      REDIS_HOST: ${REDIS_HOST:-redis}
-    profiles: ["exclude-from-up"]
+      MEMORY_BACKEND: redis
+      REDIS_HOST: redis
+    profiles:
+      - exclude-from-up
     volumes:
       - ./auto_gpt_workspace:/app/autogpt/auto_gpt_workspace
       - ./data:/app/data
