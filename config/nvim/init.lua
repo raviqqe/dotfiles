@@ -11,7 +11,6 @@ vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.hidden = true
 vim.opt.lazyredraw = true
 vim.opt.smartcase = true
-vim.opt.smarttab = true
 vim.opt.swapfile = true
 vim.opt.termguicolors = true
 vim.opt.tildeop = true
