@@ -17,6 +17,7 @@ require("lazy").setup({
 	"airblade/vim-gitgutter",
 	"aserowy/tmux.nvim",
 	"b3nj5m1n/kommentary",
+	"cappyzawa/trim.nvim",
 	"cocopon/iceberg.vim",
 	"farmergreg/vim-lastplace",
 	"hoob3rt/lualine.nvim",
