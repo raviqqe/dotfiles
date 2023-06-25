@@ -37,6 +37,7 @@ brew install \
   rcm \
   ruby \
   rust-analyzer \
+  sbcl \
   teaxyz/pkgs/tea-cli \
   terraform \
   tig \
