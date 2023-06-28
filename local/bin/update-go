@@ -3,6 +3,7 @@
 set -e
 
 for url in \
+  github.com/golangci/golangci-lint/cmd/golangci-lint \
   github.com/junegunn/fzf \
   github.com/microsoft/ethr \
   github.com/muesli/duf \
