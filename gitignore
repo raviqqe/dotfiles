@@ -1,5 +1,6 @@
 *.bookmark
 *.egg-info
+*.info
 *.log
 *.tsbuildinfo
 *.wasm
@@ -28,4 +29,3 @@ vgcore.*
 *.idsig
 *.keystore
 .gradle
-
