@@ -56,6 +56,10 @@ export NODE_OPTIONS=--max-old-space-size=4096
 export JAVA_HOME=$HOME/.homebrew/opt/openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
+## Scheme
+
+export PATH=/opt/homebrew/opt/gambit-scheme/bin:$PATH
+
 ## Pen
 
 export PEN_ROOT=$HOME/src/github.com/pen-lang/pen
