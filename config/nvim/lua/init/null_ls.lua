@@ -30,5 +30,16 @@ null_ls.setup({
 			},
 			factory = helpers.formatter_factory,
 		}),
+		helpers.make_builtin({
+			name = "schemat",
+			method = null_ls.methods.FORMATTING,
+			filetypes = { "scheme" },
+			generator_opts = {
+				command = "schemat",
+				args = {},
+				to_stdin = true,
+			},
+			factory = helpers.formatter_factory,
+		}),
 	},
 })
