@@ -29,6 +29,7 @@ cargo install-update -i \
   procs \
   ripgrep \
   sccache \
+  schemat \
   stylua \
   taplo-cli \
   tealdeer \
