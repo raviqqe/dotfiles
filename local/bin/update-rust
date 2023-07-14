@@ -29,11 +29,12 @@ cargo install-update -i \
   procs \
   ripgrep \
   sccache \
-  schemat \
   stylua \
   taplo-cli \
   tealdeer \
   tokei \
   zoxide
+
+cargo +nightly install-update -i schemat
 
 tldr --update
