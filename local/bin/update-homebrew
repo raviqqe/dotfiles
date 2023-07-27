@@ -37,7 +37,6 @@ brew install \
   python \
   rcm \
   ruby \
-  rust-analyzer \
   sbcl \
   teaxyz/pkgs/tea-cli \
   terraform \
