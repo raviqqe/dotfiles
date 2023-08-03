@@ -49,7 +49,7 @@ zinit light junegunn/fzf
 zinit light zsh-users/zsh-history-substring-search
 zinit light sindresorhus/pure
 
-bindkey -a ? fzf-history-widget
+bindkey -a '?' fzf-history-widget
 bindkey -v '^P' history-substring-search-up
 bindkey -v '^N' history-substring-search-down
 bindkey -a k history-substring-search-up
