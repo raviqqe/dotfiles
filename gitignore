@@ -2,6 +2,7 @@
 *.egg-info
 *.info
 *.log
+*.o
 *.out
 *.tsbuildinfo
 *.wasm
