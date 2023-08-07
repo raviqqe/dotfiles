@@ -1,3 +1,5 @@
+*.bc
+*.bin
 *.bookmark
 *.egg-info
 *.info
