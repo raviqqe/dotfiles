@@ -52,6 +52,7 @@ vim.opt.wrap = true
 vim.filetype.add({
 	extension = {
 		astro = "astro",
+		mdx = "markdown",
 	},
 	pattern = {
 		[".*%.ll"] = { "llvm", { priority = 10 } },
