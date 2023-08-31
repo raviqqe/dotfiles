@@ -3,6 +3,7 @@
 set -e
 
 npm install --global --ignore-scripts \
+  @astrojs/language-server \
   @prettier/plugin-xml \
   assemblyscript \
   prettier \
