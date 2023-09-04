@@ -22,6 +22,7 @@
 __pycache__
 callgrind.*
 coverage
+dhat-heap.json
 dist
 metals.sbt
 node_modules
