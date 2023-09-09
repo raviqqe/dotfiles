@@ -156,7 +156,7 @@ er() {
 
 # ls
 
-alias ls="$(which exa >/dev/null 2>&1 && echo exa || echo /bin/ls --color)"
+alias ls="$(which eza >/dev/null 2>&1 && echo eza || echo /bin/ls --color)"
 alias d=ls
 alias d1='ls -1'
 alias da='ls -a'

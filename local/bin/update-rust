@@ -19,7 +19,7 @@ cargo install-update -i \
   cargo-update \
   cargo-watch \
   du-dust \
-  exa \
+  eza \
   fastmod \
   fd-find \
   flamegraph \
