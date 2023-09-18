@@ -21,7 +21,6 @@ brew install \
   gh \
   git \
   go \
-  htop \
   imagemagick \
   jq \
   koka \
