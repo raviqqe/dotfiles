@@ -29,7 +29,6 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim",
 		},
 	},
-	"jose-elias-alvarez/null-ls.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"maxbrunsfeld/vim-yankstack",
 	"NvChad/nvim-colorizer.lua",
