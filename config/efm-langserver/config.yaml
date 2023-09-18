@@ -1,0 +1,106 @@
+version: 2
+log-file: /tmp/efm.log
+log-level: 1
+root-markers:
+  - .git
+lint-debounce: 1s
+tools:
+  black: &black
+    format-command: black --quiet -
+    format-stdin: true
+  clang-format: &clang-format
+    format-command: clang-format
+    format-stdin: true
+  eslint: &eslint
+    lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - "%f(%l,%c): %tarning %m"
+      - "%f(%l,%c): %rror %m"
+  stylua: &stylua
+    format-command: stylua --stdin-filepath ${INPUT} -
+    format-stdin: true
+  pen-format: &pen-format
+    format-command: pen format --stdin
+    format-stdin: true
+  prettier: &prettier
+    format-command: prettier --stdin-filepath ${INPUT}
+    format-stdin: true
+  pg_format: &pg_format
+    format-command: pg_format
+    format-stdin: true
+  rufo: &rufo
+    format-command: rufo -x
+    format-stdin: true
+  schemat: &schemat
+    format-command: schemat
+    format-stdin: true
+  sed: &sed
+    format-command: sed s/[[:blank:]]*$//g
+    format-stdin: true
+  shfmt: &shfmt
+    format-command: shfmt -i 2 -s
+    format-stdin: true
+  taplo: &taplo
+    format-command: taplo format -
+    format-stdin: true
+  terraform: &terraform
+    format-command: terraform fmt -
+    format-stdin: true
+languages:
+  astro:
+    - <<: *prettier
+  c:
+    - <<: *clang-format
+  cpp:
+    - <<: *clang-format
+  css:
+    - <<: *prettier
+  cucumber:
+    - <<: *sed
+  html:
+    - <<: *prettier
+  html.handlebars:
+    - <<: *prettier
+  javascript:
+    - <<: *prettier
+    - <<: *eslint
+  json:
+    - <<: *prettier
+  jsonc:
+    - <<: *prettier
+  lua:
+    - <<: *stylua
+  markdown:
+    - <<: *prettier
+  pen:
+    - <<: *pen-format
+  python:
+    - <<: *black
+  ruby:
+    - <<: *rufo
+  scheme:
+    - <<: *schemat
+  sh:
+    - <<: *shfmt
+  sql:
+    - <<: *pg_format
+  terraform:
+    - <<: *terraform
+  text:
+    - <<: *sed
+  toml:
+    - <<: *taplo
+  typescript:
+    - <<: *prettier
+    - <<: *eslint
+  typescriptreact:
+    - <<: *prettier
+    - <<: *eslint
+  xml:
+    - <<: *prettier
+  yaml:
+    - <<: *prettier
+  zsh:
+    - <<: *shfmt

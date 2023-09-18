@@ -113,7 +113,6 @@ require("init.cmp")
 require("init.hop")
 require("init.lspconfig")
 require("init.lualine")
-require("init.null_ls")
 require("init.telescope")
 require("init.treesitter")
 

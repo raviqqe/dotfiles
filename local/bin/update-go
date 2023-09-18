@@ -5,6 +5,7 @@ set -e
 for url in \
   github.com/golangci/golangci-lint/cmd/golangci-lint \
   github.com/junegunn/fzf \
+  github.com/mattn/efm-langserver \
   github.com/microsoft/ethr \
   github.com/muesli/duf \
   github.com/raviqqe/bstie \
