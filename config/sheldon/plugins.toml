@@ -1,0 +1,20 @@
+shell = "zsh"
+
+[plugins.autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+
+[plugins.completions]
+github = 'zsh-users/zsh-completions'
+
+[plugins.syntax-highlighting]
+github = 'zsh-users/zsh-syntax-highlighting'
+
+[plugins.fzf]
+github = 'junegunn/fzf'
+
+[plugins.history-substring-search]
+github = 'zsh-users/zsh-history-substring-search'
+
+[plugins.pure]
+github = 'sindresorhus/pure'
+use = ["*.zsh"]

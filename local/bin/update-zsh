@@ -2,13 +2,4 @@
 
 set -e
 
-directory=$HOME/.local/share/zinit/zinit
-
-if [ -d $directory ]; then
-  cd $directory
-  git pull
-else
-  git clone https://github.com/zdharma-continuum/zinit $directory
-fi
-
-zsh -lc '. ~/.zshrc && zinit update'
+sheldon source

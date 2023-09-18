@@ -36,6 +36,7 @@ brew install \
   rcm \
   ruby \
   sbcl \
+  sheldon \
   teaxyz/pkgs/tea-cli \
   terraform \
   tig \

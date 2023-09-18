@@ -34,20 +34,7 @@ SAVEHIST=$HISTSIZE
 
 # Plugins
 
-. ~/.local/share/zinit/zinit/zinit.zsh
-
-for plugin in \
-  zsh-users/zsh-autosuggestions \
-  zsh-users/zsh-completions \
-  zsh-users/zsh-syntax-highlighting; do
-  zinit ice wait lucid
-  zinit light $plugin
-done
-
-zinit ice pick'shell/completion.zsh' src'shell/key-bindings.zsh'
-zinit light junegunn/fzf
-zinit light zsh-users/zsh-history-substring-search
-zinit light sindresorhus/pure
+eval "$(sheldon source)"
 
 bindkey -a '?' fzf-history-widget
 bindkey -v '^P' history-substring-search-up
