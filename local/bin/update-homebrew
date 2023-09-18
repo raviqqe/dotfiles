@@ -18,7 +18,6 @@ brew install \
   csvq \
   curl \
   deno \
-  gambit-scheme \
   gh \
   git \
   go \
