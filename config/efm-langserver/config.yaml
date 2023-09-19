@@ -18,6 +18,9 @@ tools:
     lint-formats:
       - "%f(%l,%c): %tarning %m"
       - "%f(%l,%c): %rror %m"
+  gherkin-format: &gherkin-format
+    format-command: gherkin-format
+    format-stdin: true
   stylua: &stylua
     format-command: stylua --stdin-filepath ${INPUT} -
     format-stdin: true
@@ -58,7 +61,7 @@ languages:
   css:
     - <<: *prettier
   cucumber:
-    - <<: *sed
+    - <<: *gherkin-format
   html:
     - <<: *prettier
   html.handlebars:
