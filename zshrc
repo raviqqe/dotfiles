@@ -28,7 +28,6 @@ bindkey -v '^U' backward-kill-line
 bindkey -v '^W' forward-word
 bindkey -v '^Y' yank
 
-HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 32))
 SAVEHIST=$HISTSIZE
 
