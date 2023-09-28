@@ -15,6 +15,7 @@ cargo install-update -i \
   bat \
   bottom \
   cargo-expand \
+  cargo-insta \
   cargo-release \
   cargo-update \
   cargo-watch \
