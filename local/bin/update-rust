@@ -31,10 +31,11 @@ cargo install-update -i \
   ripgrep \
   sccache \
   stylua \
-  taplo-cli \
   tealdeer \
   tokei \
   zoxide
+
+# TODO Install taplo-cli.
 
 cargo +nightly install-update -i schemat
 
