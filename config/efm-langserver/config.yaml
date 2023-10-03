@@ -101,6 +101,8 @@ languages:
   typescriptreact:
     - <<: *prettier
     - <<: *eslint
+  wat:
+    - <<: *schemat
   xml:
     - <<: *prettier
   yaml:

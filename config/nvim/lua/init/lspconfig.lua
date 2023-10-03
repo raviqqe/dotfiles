@@ -51,6 +51,7 @@ lspconfig.efm.setup({
 		"toml",
 		"typescript",
 		"typescriptreact",
+		"wat",
 		"xml",
 		"yaml",
 		"zsh",
