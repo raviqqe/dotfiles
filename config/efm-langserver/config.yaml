@@ -28,7 +28,7 @@ tools:
     format-command: pen format --stdin
     format-stdin: true
   prettier: &prettier
-    format-command: prettier --stdin-filepath ${INPUT}
+    format-command: prettier --stdin-filepath '${INPUT}'
     format-stdin: true
   pg_format: &pg_format
     format-command: pg_format
