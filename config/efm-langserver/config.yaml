@@ -85,6 +85,8 @@ languages:
     - <<: *rufo
   scheme:
     - <<: *schemat
+  scss:
+    - <<: *prettier
   sh:
     - <<: *shfmt
   sql:

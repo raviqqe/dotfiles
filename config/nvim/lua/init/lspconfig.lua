@@ -44,6 +44,7 @@ lspconfig.efm.setup({
 		"python",
 		"ruby",
 		"scheme",
+		"scss",
 		"sh",
 		"sql",
 		"terraform",
