@@ -73,6 +73,8 @@ languages:
     - <<: *prettier
   jsonc:
     - <<: *prettier
+  lisp:
+    - <<: *schemat
   lua:
     - <<: *stylua
   markdown:
