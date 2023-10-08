@@ -1,17 +1,18 @@
 images:
-  - location: "https://geo.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2"
-    arch: x86_64
-  - location: "https://github.com/mcginty/arch-boxes-arm/releases/download/v20220323/Arch-Linux-aarch64-cloudimg-20220323.0.qcow2"
+  - location: https://cloud-images.ubuntu.com/releases/23.04/release/ubuntu-23.04-server-cloudimg-arm64.img
     arch: aarch64
-    digest: "sha512:27524910bf41cb9b3223c8749c6e67fd2f2fdb8b70d40648708e64d6b03c0b4a01b3c5e72d51fefd3e0c3f58487dbb400a79ca378cde2da341a3a19873612be8"
 provision:
   - mode: system
     script: |
+      #!/bin/bash
       set -ex
-      pacman -Syu git rcm zsh
+      apt update -y --fix-missing
+      apt upgrade -y
+      apt install -y git rcm zsh
       chsh -s /usr/bin/zsh raviqqe
   - mode: user
     script: |
+      #!/bin/bash
       set -ex
       if [ ! -r ~/.ssh/*.pub ]; then
         yes '' | ssh-keygen -t ed25519

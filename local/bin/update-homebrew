@@ -14,10 +14,12 @@ brew install \
   automake \
   cmake \
   clang-format \
+  colima \
   comby \
   csvq \
   curl \
   deno \
+  docker \
   gh \
   git \
   go \
