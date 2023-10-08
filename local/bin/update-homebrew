@@ -38,14 +38,12 @@ brew install \
   rcm \
   ruby \
   sbcl \
-  sheldon \
   terraform \
   tig \
   tmux \
   uutils-coreutils \
   uutils-findutils \
   wabt \
-  wasmtime \
   watch \
   watchexec \
   yq \

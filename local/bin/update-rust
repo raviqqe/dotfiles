@@ -31,9 +31,11 @@ cargo install-update -i \
   procs \
   ripgrep \
   sccache \
+  sheldon \
   stylua \
   tealdeer \
   tokei \
+  wasmtime \
   zoxide
 
 # TODO Install taplo-cli.
