@@ -1,0 +1,11 @@
+{
+  "words": [
+    "autoload",
+    "bindkey",
+    "chpwd",
+    "histsize",
+    "nomatch",
+    "savehist",
+    "shrc"
+  ]
+}
