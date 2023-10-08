@@ -20,3 +20,8 @@ jobs:
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update
+  spell_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: streetsidesoftware/cspell-action@v3
