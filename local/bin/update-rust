@@ -8,6 +8,7 @@ if ! which rustup; then
 fi
 
 rustup component add clippy rls rustfmt rust-analysis rust-analyzer rust-src
+rustup install nightly
 rustup update
 
 cargo install cargo-update || :
