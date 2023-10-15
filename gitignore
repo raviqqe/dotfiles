@@ -24,6 +24,7 @@ callgrind.*
 coverage
 dhat-heap.json
 dist
+flamegraph.svg
 metals.sbt
 node_modules
 target
