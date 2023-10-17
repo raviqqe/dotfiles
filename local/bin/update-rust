@@ -7,8 +7,12 @@ if ! which rustup; then
     sh -s -- -y --no-modify-path --default-toolchain stable
 fi
 
-rustup component add clippy rls rustfmt rust-analysis rust-analyzer rust-src
 rustup install nightly
+
+for channel in stable nightly; do
+  rustup +$channel component add clippy rls rustfmt rust-analysis rust-analyzer rust-src
+done
+
 rustup update
 
 cargo install cargo-update || :
