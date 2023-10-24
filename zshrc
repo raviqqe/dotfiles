@@ -45,14 +45,6 @@ bindkey -a j history-substring-search-down
 
 eval "$(pkgx integrate)"
 
-# Google Cloud SDK
-
-include_file=~/.google/google-cloud-sdk/completion.zsh.inc
-
-if [ -f $include_file ]; then
-  . $include_file
-fi
-
 # ssh-agent
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
