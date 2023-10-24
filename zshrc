@@ -41,6 +41,10 @@ bindkey -v '^N' history-substring-search-down
 bindkey -a k history-substring-search-up
 bindkey -a j history-substring-search-down
 
+# pkgx
+
+eval "$(pkgx integrate)"
+
 # Google Cloud SDK
 
 include_file=~/.google/google-cloud-sdk/completion.zsh.inc
