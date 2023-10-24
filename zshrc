@@ -43,7 +43,7 @@ bindkey -a j history-substring-search-down
 
 # pkgx
 
-eval "$(pkgx integrate)"
+source <(pkgx --shellcode)
 
 # ssh-agent
 
