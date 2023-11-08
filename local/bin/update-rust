@@ -17,6 +17,7 @@ rustup update
 
 cargo install cargo-update || :
 cargo install-update -i \
+  ast-grep \
   bat \
   bottom \
   cargo-expand \
@@ -37,6 +38,7 @@ cargo install-update -i \
   sccache \
   sheldon \
   stylua \
+  tailspin \
   tealdeer \
   tokei \
   wasmtime-cli \
