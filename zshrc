@@ -28,6 +28,7 @@ bindkey -v '^U' backward-kill-line
 bindkey -v '^W' forward-word
 bindkey -v '^Y' yank
 
+HISTFILE=~/.zsh_history
 HISTSIZE=$((2 ** 32))
 SAVEHIST=$HISTSIZE
 
