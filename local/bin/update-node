@@ -4,6 +4,7 @@ set -e
 
 npm install --global --ignore-scripts \
   @astrojs/language-server \
+  @biomejs/biome \
   @prettier/plugin-xml \
   assemblyscript \
   prettier \
