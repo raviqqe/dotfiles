@@ -42,6 +42,7 @@ lspconfig.efm.setup({
 		"lua",
 		"markdown",
 		"pen",
+		"proto",
 		"python",
 		"ruby",
 		"scheme",

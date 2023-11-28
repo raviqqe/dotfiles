@@ -12,7 +12,7 @@ tools:
     format-command: black --quiet -
     format-stdin: true
   clang-format: &clang-format
-    format-command: clang-format
+    format-command: clang-format --assume-filename ${INPUT}
     format-stdin: true
   eslint: &eslint
     lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
@@ -84,6 +84,8 @@ languages:
     - <<: *prettier
   pen:
     - <<: *pen-format
+  proto:
+    - <<: *clang-format
   python:
     - <<: *black
   ruby:
