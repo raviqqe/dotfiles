@@ -8,8 +8,8 @@ tools:
   biome: &biome
     format-command: biome format --config-path ~/.config --stdin-file-path ${INPUT}
     format-stdin: true
-  black: &black
-    format-command: black --quiet -
+  ruff: &ruff
+    format-command: ruff format --stdin-filename ${INPUT} -
     format-stdin: true
   clang-format: &clang-format
     format-command: clang-format --assume-filename ${INPUT}
@@ -87,7 +87,7 @@ languages:
   proto:
     - <<: *clang-format
   python:
-    - <<: *black
+    - <<: *ruff
   ruby:
     - <<: *rufo
   scheme:
