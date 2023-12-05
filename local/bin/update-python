@@ -2,4 +2,4 @@
 
 set -e
 
-pip3 install --user --upgrade awscli black httpie mypy pip pylint python-language-server ruff
+pip3 install --user --upgrade awscli httpie mypy pip ruff

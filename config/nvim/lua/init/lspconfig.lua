@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-for _, command in ipairs({ "astro", "clangd", "gopls", "solargraph", "rust_analyzer" }) do
+for _, command in ipairs({ "astro", "clangd", "gopls", "rust_analyzer", "solargraph" }) do
 	lspconfig[command].setup({
 		capabilities = capabilities,
 		on_attach = function(client)
