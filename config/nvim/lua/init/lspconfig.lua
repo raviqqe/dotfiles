@@ -12,7 +12,13 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 for _, command in ipairs({ "astro", "clangd", "gopls", "solargraph", "rust_analyzer" }) do
-	lspconfig[command].setup({ capabilities = capabilities })
+	lspconfig[command].setup({
+		capabilities = capabilities,
+		on_attach = function(client)
+			-- Disable syntax highlight by LSP because treesitter works better.
+			client.server_capabilities.semanticTokensProvider = false
+		end,
+	})
 end
 
 lspconfig.tsserver.setup({
