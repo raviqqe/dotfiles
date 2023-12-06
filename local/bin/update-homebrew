@@ -29,6 +29,7 @@ brew install \
   ldns \
   lua \
   luarocks \
+  make \
   neovim \
   node \
   pen-lang/pen/pen \
