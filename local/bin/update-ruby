@@ -2,7 +2,7 @@
 
 set -e
 
-gems='bundler gitlab solargraph rubocop rufo'
+gems='bundler gitlab rubocop ruby-lsp rufo'
 
 gem install $gems
 gem update $gems
