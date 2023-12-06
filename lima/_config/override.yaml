@@ -1,18 +1,15 @@
 images:
-  - location: https://cloud-images.ubuntu.com/releases/23.04/release/ubuntu-23.04-server-cloudimg-arm64.img
-    arch: aarch64
+  - location: https://geo.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
+    arch: x86_64
 provision:
   - mode: system
     script: |
-      #!/bin/bash
+      #!/bin/sh
       set -ex
-      apt update -y --fix-missing
-      apt upgrade -y
-      apt install -y git libssl-dev pkg-config rcm zsh
-      chsh -s /usr/bin/zsh raviqqe
+      pacman -Syu --noconfirm git zsh
   - mode: user
     script: |
-      #!/bin/bash
+      #!/bin/sh
       set -ex
       if [ ! -r ~/.ssh/*.pub ]; then
         yes '' | ssh-keygen -t ed25519
@@ -20,4 +17,3 @@ provision:
       if [ ! -d ~/.dotfiles ]; then
         git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
       fi
-      rcup -f
