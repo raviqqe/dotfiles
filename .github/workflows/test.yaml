@@ -1,8 +1,8 @@
-name: main
+name: test
 on:
   - push
 jobs:
-  main:
+  test:
     strategy:
       fail-fast: false
       matrix:
