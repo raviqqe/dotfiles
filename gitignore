@@ -1,3 +1,4 @@
+*.backup
 *.bc
 *.bin
 *.bookmark
@@ -17,6 +18,7 @@
 .eslintcache
 .metals
 .pnp.js
+.terraform
 .ultra.cache.json
 .yarn
 __pycache__
