@@ -8,6 +8,7 @@
 *.o
 *.out
 *.stacks
+*.tfstate
 *.tsbuildinfo
 *.wasm
 .*_cache
