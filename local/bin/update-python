@@ -2,4 +2,4 @@
 
 set -e
 
-pip3 install --user --upgrade awscli httpie mypy pip ruff
+pip3 install --user --upgrade httpie mypy pip ruff
