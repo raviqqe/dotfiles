@@ -1,36 +1,22 @@
-*.backup
 *.bc
 *.bin
 *.bookmark
-*.egg-info
 *.info
 *.log
 *.o
 *.out
 *.stacks
-*.tfstate
-*.tsbuildinfo
 *.wasm
 .*_cache
 .bloop
 .cache
 .env
 .env.*
-.eslintcache
-.metals
-.pnp.js
-.terraform
-.ultra.cache.json
-.yarn
-__pycache__
 callgrind.*
 coverage
 dhat-heap.json
 dist
 flamegraph.svg
-metals.sbt
-node_modules
-target
 tmp
 vgcore.*
 
@@ -40,3 +26,31 @@ vgcore.*
 *.idsig
 *.keystore
 .gradle
+
+# AWS CDK
+.cdk.staging
+cdk.out
+
+# Metals
+.metals
+metals.sbt
+
+# Python
+*.egg-info
+__pycache__
+
+# Rust
+target
+
+# Terraform
+*.backup
+*.tfstate
+.terraform
+
+# TypeScript
+*.tsbuildinfo
+.eslintcache
+.pnp.js
+.ultra.cache.json
+.yarn
+node_modules
