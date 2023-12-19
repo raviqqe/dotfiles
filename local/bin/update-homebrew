@@ -23,6 +23,7 @@ brew install \
   docker \
   gh \
   git \
+  gnupg \
   go \
   imagemagick \
   jq \
