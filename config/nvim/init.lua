@@ -21,6 +21,8 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "full"
 vim.opt.writebackup = false
 
+vim.loader.enable()
+
 -- Spacing
 
 vim.opt.autoindent = true
