@@ -45,7 +45,6 @@ vim.opt.inccommand = "nosplit"
 vim.opt.incsearch = true
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 10000
 vim.opt.shortmess = vim.opt.shortmess + { c = true, F = false }
 vim.opt.showcmd = true
 vim.opt.showmatch = true
