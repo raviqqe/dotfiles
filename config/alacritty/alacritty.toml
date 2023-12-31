@@ -1,0 +1,45 @@
+[font]
+size = 10
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0000"
+key = "Space"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B "
+key = "Space"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = true
+
+[shell]
+args = ["-l"]
+program = "/bin/zsh"
+
+[window]
+startup_mode = "Fullscreen"
