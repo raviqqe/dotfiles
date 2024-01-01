@@ -127,6 +127,7 @@ require("chatgpt").setup({
 	chat_input = { prompt = "> " },
 })
 require("colorizer").setup()
+require("ibl").setup()
 require("kommentary.config").configure_language("default", {
 	prefer_single_line_comments = true,
 })
