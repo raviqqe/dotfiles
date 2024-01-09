@@ -12,4 +12,8 @@ fi
   if which gem >/dev/null; then
     echo export PATH=$(echo $(gem environment gempath): | sed s%:%/bin:%g)\$PATH
   fi
+
+  if which sccache >/dev/null; then
+    echo export RUSTC_WRAPPER=sccache
+  fi
 ) >$CACHED_PROFILE
