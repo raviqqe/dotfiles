@@ -21,6 +21,7 @@ brew install \
   curl \
   deno \
   docker \
+  gauche \
   gh \
   git \
   gnupg \
