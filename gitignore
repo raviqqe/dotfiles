@@ -35,6 +35,9 @@ cdk.out
 .metals
 metals.sbt
 
+# Ninja
+.ninja_log
+
 # Python
 *.egg-info
 __pycache__
