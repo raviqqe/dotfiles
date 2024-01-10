@@ -7,7 +7,7 @@ run_command_with_file() {
   shift
 
   if [ $# -eq 0 ]; then
-    local file=$(fd -t f . | fzf)
+    local file=$(fd -t f . | sk)
 
     [ -n "$file" ] && "$command" "$file"
   else
@@ -17,9 +17,9 @@ run_command_with_file() {
 
 # cd
 
-alias ch='cd "$(dirs -lp | sort -u | fzf)"'
-alias cr='cd "$(fd -at d . $(git rev-parse --show-toplevel) | fzf)"'
-alias cs='cd "$(ghq list --full-path | fzf)"'
+alias ch='cd "$(dirs -lp | sort -u | sk)"'
+alias cr='cd "$(fd -at d . $(git rev-parse --show-toplevel) | sk)"'
+alias cs='cd "$(ghq list --full-path | sk)"'
 alias ct='cd "$(git rev-parse --show-toplevel)"'
 
 command=..
@@ -33,7 +33,7 @@ for _ in $(seq 10); do
 done
 
 c() {
-  local dir=$(fd -t d . | fzf)
+  local dir=$(fd -t d . | sk)
 
   [ -n "$dir" ] && cd "$dir"
 }
@@ -68,7 +68,7 @@ alias gm='git merge'
 alias gpl='git pull'
 alias gpp='git pull && git push'
 alias gppa='git pull --all && git push'
-alias gpr='gh pr checkout $(gh pr list | fzf | cut -f 1)'
+alias gpr='gh pr checkout $(gh pr list | sk | cut -f 1)'
 alias gps='git push'
 alias gpsu='git push -u origin $(git symbolic-ref --short HEAD)'
 alias grc='git rebase --continue'
@@ -79,9 +79,9 @@ alias gsm='git submodule'
 alias gsma='git submodule add'
 alias gsmu='git submodule update --init --recursive'
 alias gw='git worktree'
-alias gwc='cd "$(git worktree list | fzf | cut -f 1 -d " ")"'
+alias gwc='cd "$(git worktree list | sk | cut -f 1 -d " ")"'
 alias gwl='git worktree list'
-alias gwr='git worktree remove "$(git worktree list | fzf | cut -f 1 -d " ")"'
+alias gwr='git worktree remove "$(git worktree list | sk | cut -f 1 -d " ")"'
 alias gz='git stash'
 alias gzd='git stash drop'
 alias gzl='git stash list'
@@ -128,7 +128,7 @@ gwa() {
 
   local dir=~/worktree/$(openssl rand -hex 8)
 
-  git worktree add $dir "$(git branch --format '%(refname:short)' | fzf)" && cd $dir
+  git worktree add $dir "$(git branch --format '%(refname:short)' | sk)" && cd $dir
 }
 
 # Editor
@@ -136,7 +136,7 @@ gwa() {
 alias e='run_command_with_file nvim'
 
 eg() {
-  line=$(rg -n . | fzf)
+  line=$(rg -n . | sk)
 
   field() {
     echo "$line" | head -n 1 | cut -f $1 -d :
@@ -149,7 +149,7 @@ eg() {
 
 er() {
   root_directory=$(git rev-parse --show-toplevel)
-  file=$(git ls-files --full-name $root_directory | fzf)
+  file=$(git ls-files --full-name $root_directory | sk)
 
   [ -n "$file" ] && nvim "$root_directory/$file"
 }

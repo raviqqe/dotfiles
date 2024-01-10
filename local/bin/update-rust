@@ -38,6 +38,7 @@ cargo install-update -i \
   ripgrep \
   sccache \
   sheldon \
+  skim \
   stak \
   stylua \
   tailspin \
