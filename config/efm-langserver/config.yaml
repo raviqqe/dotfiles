@@ -6,7 +6,7 @@ root-markers:
 lint-debounce: 1s
 tools:
   biome: &biome
-    format-command: biome format --config-path ~/.config --stdin-file-path ${INPUT}
+    format-command: biome format --config-path ~/.config --stdin-file-path dummy.json
     format-stdin: true
   ruff: &ruff
     format-command: ruff format --stdin-filename ${INPUT} -
