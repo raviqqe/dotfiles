@@ -133,8 +133,4 @@ require("kommentary.config").configure_language("default", {
 })
 require("lsp_signature").setup({ hint_prefix = "" })
 require("nvim-autopairs").setup({})
-require("tmux").setup({
-	copy_sync = { enable = true },
-	navigation = { enable_default_keybindings = true },
-})
 require("trim").setup({})
