@@ -60,7 +60,6 @@ require("lazy").setup({
 	"pen-lang/pen.vim",
 	"ray-x/cmp-treesitter",
 	"ray-x/lsp_signature.nvim",
-	"styled-components/vim-styled-components",
 
 	-- GitHub Copilot
 
