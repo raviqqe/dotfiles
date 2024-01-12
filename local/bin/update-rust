@@ -45,6 +45,7 @@ cargo install-update -i \
   tealdeer \
   tokei \
   wasmtime-cli \
+  xh \
   zoxide
 
 # TODO Install taplo-cli.
