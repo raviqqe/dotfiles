@@ -2,4 +2,6 @@
 
 set -e
 
+shift 1
+
 cargo asm "$@" $(cargo asm "$@" | fzf | cut -d ' ' -f 1)
