@@ -172,11 +172,3 @@ alias f='run_command_with_file bat'
 alias btm='btm -b'
 alias less='less -R'
 alias s="$(which rg >/dev/null 2>&1 && echo 'rg --column --line-number' || echo 'grep -Hnr --color')"
-
-di() {
-  if [ $# -ne 2 ]; then
-    return 1
-  fi
-
-  diff "$1" "$2" | bat -l diff
-}
