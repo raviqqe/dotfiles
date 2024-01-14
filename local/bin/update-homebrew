@@ -21,7 +21,6 @@ brew install \
   curl \
   deno \
   docker \
-  fzf \
   gauche \
   gh \
   git \
