@@ -42,13 +42,12 @@ cargo install-update -i \
   stak \
   stylua \
   tailspin \
+  taplo-cli \
   tealdeer \
   tokei \
   wasmtime-cli \
   xh \
   zoxide
-
-# TODO Install taplo-cli.
 
 cargo +nightly install-update -i schemat
 
