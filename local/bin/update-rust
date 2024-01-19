@@ -49,6 +49,6 @@ cargo install-update -i \
   xh \
   zoxide
 
-cargo +nightly install-update -i schemat
+cargo +nightly install-update -i cargo-udeps schemat
 
 tldr --update
