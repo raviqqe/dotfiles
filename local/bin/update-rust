@@ -3,7 +3,7 @@
 set -e
 
 if ! which rustup; then
-  curl -sSf https://sh.rustup.rs |
+  curl -fsS https://sh.rustup.rs |
     sh -s -- -y --no-modify-path --default-toolchain stable
 fi
 

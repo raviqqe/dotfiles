@@ -33,6 +33,7 @@ brew install \
   lua \
   luarocks \
   make \
+  mold \
   neovim \
   node \
   pen-lang/pen/pen \
