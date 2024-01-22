@@ -1,4 +1,7 @@
 {
+  "files": {
+    "maxSize": 1073741824
+  },
   "formatter": {
     "indentStyle": "space"
   }
