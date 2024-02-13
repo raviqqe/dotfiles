@@ -1,12 +1,10 @@
-images:
-  - location: https://geo.mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-cloudimg.qcow2
-    arch: x86_64
 provision:
   - mode: system
     script: |
       #!/bin/sh
       set -ex
-      pacman -Syu --noconfirm git zsh
+      apt -y update --fix-missing
+      apt -y install git rcm zsh
   - mode: user
     script: |
       #!/bin/sh
@@ -17,3 +15,4 @@ provision:
       if [ ! -d ~/.dotfiles ]; then
         git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
       fi
+      rcup -f
