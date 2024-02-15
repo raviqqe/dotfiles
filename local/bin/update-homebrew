@@ -13,6 +13,7 @@ brew upgrade
 brew install \
   automake \
   awscli \
+  chezscheme \
   cmake \
   clang-format \
   colima \
