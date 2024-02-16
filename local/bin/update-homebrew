@@ -40,7 +40,7 @@ brew install \
   pen-lang/pen/pen \
   pgformatter \
   pkgxdev/made/pkgx \
-  python@3.12 \
+  python \
   rcm \
   ruby \
   sbcl \
