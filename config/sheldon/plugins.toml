@@ -1,8 +1,5 @@
 shell = "zsh"
 
-[plugins.autocomplete]
-github = "marlonrichert/zsh-autocomplete"
-
 [plugins.autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 
