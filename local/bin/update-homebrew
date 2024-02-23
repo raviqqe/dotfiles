@@ -37,6 +37,7 @@ brew install \
   mold \
   neovim \
   node \
+  pen-lang/pen/pen \
   pgformatter \
   pkgxdev/made/pkgx \
   python \
@@ -55,5 +56,3 @@ brew install \
   yq \
   zig \
   zsh
-
-# TODO Install `pen-lang/pen/pen`.
