@@ -36,6 +36,11 @@ tools:
   pg_format: &pg_format
     format-command: pg_format
     format-stdin: true
+  pyright: &pyright
+    lint-command: pyright
+    lint-ignore-exit-code: true
+    lint-formats:
+      - "  %f:%l:%c - error: %m"
   rufo: &rufo
     format-command: rufo -x
     format-stdin: true
@@ -87,6 +92,7 @@ languages:
   proto:
     - <<: *clang-format
   python:
+    - <<: *pyright
     - <<: *ruff
   ruby:
     - <<: *rufo
