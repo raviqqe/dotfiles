@@ -29,9 +29,5 @@ mods = "Alt"
 [mouse]
 hide_when_typing = true
 
-[shell]
-args = ["-l"]
-program = "/bin/zsh"
-
 [window]
 startup_mode = "Fullscreen"
