@@ -41,6 +41,9 @@ cargo install-update -i \
   sheldon \
   skim \
   stak \
+  stak-compile \
+  stak-decode \
+  stak-interpret \
   stylua \
   tailspin \
   taplo-cli \
