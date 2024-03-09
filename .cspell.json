@@ -192,6 +192,7 @@
     "treesitter",
     "tsbuildinfo",
     "ttyfast",
+    "udeps",
     "unnamedplus",
     "unsetopt",
     "updatetime",
