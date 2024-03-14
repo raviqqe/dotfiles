@@ -104,6 +104,8 @@ languages:
     - <<: *shfmt
   sql:
     - <<: *pg_format
+  tablegen:
+    - <<: *clang-format
   terraform:
     - <<: *terraform
   text:
