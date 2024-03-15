@@ -111,6 +111,14 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 	nested = true,
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = group,
+	pattern = { "qf" },
+	callback = function()
+		vim.opt.winheight = math.min(vim.api.nvim_buf_line_count(0), 20)
+	end,
+})
+
 -- Plugins
 
 require("init.cmp")
