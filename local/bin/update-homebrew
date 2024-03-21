@@ -39,6 +39,7 @@ brew install \
   node \
   pen-lang/pen/pen \
   pgformatter \
+  pipx \
   pkgxdev/made/pkgx \
   python \
   rcm \

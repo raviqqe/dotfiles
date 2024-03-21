@@ -2,4 +2,4 @@
 
 set -e
 
-pip3 install --break-system-packages --user --upgrade pyright ruff
+pipx install pyright ruff
