@@ -2,4 +2,8 @@
 
 set -e
 
-pipx install pyright ruff
+for package in pyright ruff; do
+  pipx install $package
+done
+
+pipx upgrade-all
