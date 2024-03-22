@@ -33,6 +33,7 @@ cargo install-update -i \
   git-delta \
   hexyl \
   jaq \
+  jnv \
   jj-cli \
   hyperfine \
   procs \
