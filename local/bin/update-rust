@@ -22,6 +22,7 @@ cargo install-update -i \
   bottom \
   cargo-expand \
   cargo-insta \
+  cargo-machete \
   cargo-release \
   cargo-update \
   cargo-watch \
@@ -54,6 +55,6 @@ cargo install-update -i \
   xh \
   zoxide
 
-cargo +nightly install-update -i cargo-udeps schemat
+cargo +nightly install-update -i schemat
 
 tldr --update
