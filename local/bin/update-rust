@@ -46,6 +46,7 @@ cargo install-update -i \
   stak-compile \
   stak-decode \
   stak-interpret \
+  stak-minify \
   stylua \
   tailspin \
   taplo-cli \
