@@ -51,11 +51,6 @@ export OPENSSL_STATIC=1 # for openssl-sys
 
 export NODE_OPTIONS=--max-old-space-size=4096
 
-## Java
-
-export JAVA_HOME=$HOME/.homebrew/opt/openjdk
-export PATH=$JAVA_HOME/bin:$PATH
-
 ## Scheme
 
 export PATH=/opt/homebrew/opt/gambit-scheme/bin:$PATH
