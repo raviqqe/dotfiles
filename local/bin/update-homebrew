@@ -13,6 +13,7 @@ brew upgrade
 brew install \
   automake \
   awscli \
+  ccache \
   chezscheme \
   cmake \
   clang-format \
