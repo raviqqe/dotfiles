@@ -136,6 +136,7 @@ require("chatgpt").setup({
 })
 require("colorizer").setup()
 require("ibl").setup()
+-- TODO Remove this on Neovim v0.10.0.
 require("kommentary.config").configure_language("default", {
 	prefer_single_line_comments = true,
 })
