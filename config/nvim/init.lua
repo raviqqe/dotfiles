@@ -9,6 +9,7 @@ vim.opt.backup = false
 vim.opt.clipboard = vim.opt.clipboard + { "unnamedplus" }
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.hidden = true
+vim.opt.ignorecase = true
 vim.opt.lazyredraw = true
 vim.opt.smartcase = true
 vim.opt.swapfile = true
