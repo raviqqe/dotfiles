@@ -15,7 +15,8 @@ done
 
 rustup update
 
-cargo install \
+cargo install cargo-update || :
+cargo install-update -i \
   ast-grep \
   bat \
   bottom \
@@ -56,6 +57,6 @@ cargo install \
   xh \
   zoxide
 
-cargo +nightly install schemat
+cargo +nightly install-update -i schemat
 
 tldr --update
