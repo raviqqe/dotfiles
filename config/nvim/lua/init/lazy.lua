@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(path)
 
 require("lazy").setup({
 	"airblade/vim-gitgutter",
-	"b3nj5m1n/kommentary",
 	"cappyzawa/trim.nvim",
 	"christoomey/vim-tmux-navigator",
 	"cocopon/iceberg.vim",
