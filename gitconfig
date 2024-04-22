@@ -30,3 +30,6 @@
 
 [init]
   defaultBranch = main
+
+[fetch]
+  parallel = 0
