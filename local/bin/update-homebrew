@@ -11,12 +11,14 @@ brew update
 brew upgrade
 
 brew install \
+  agg \
+  asciinema \
   automake \
   awscli \
   ccache \
   chezscheme \
-  cmake \
   clang-format \
+  cmake \
   colima \
   comby \
   csvq \
