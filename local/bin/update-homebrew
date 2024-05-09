@@ -52,7 +52,6 @@ brew install \
   tmux \
   uutils-coreutils \
   uutils-findutils \
-  vim \
   wabt \
   watch \
   watchexec \
