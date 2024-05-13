@@ -37,6 +37,7 @@ metals.sbt
 
 # Ninja
 .ninja_log
+.turtle
 
 # Python
 *.egg-info
