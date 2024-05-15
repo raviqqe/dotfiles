@@ -3,6 +3,7 @@
 *.bookmark
 *.info
 *.log
+*.map
 *.o
 *.out
 *.stacks
