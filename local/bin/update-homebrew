@@ -38,6 +38,7 @@ brew install \
   luarocks \
   make \
   mold \
+  neovim \
   node \
   pen-lang/pen/pen \
   pgformatter \
@@ -58,5 +59,3 @@ brew install \
   yq \
   zig \
   zsh
-
-brew install --HEAD neovim
