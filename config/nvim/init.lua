@@ -13,7 +13,6 @@ vim.opt.ignorecase = true
 vim.opt.lazyredraw = true
 vim.opt.smartcase = true
 vim.opt.swapfile = true
-vim.opt.termguicolors = true
 vim.opt.tildeop = true
 vim.opt.ttyfast = true
 vim.opt.updatetime = 500
