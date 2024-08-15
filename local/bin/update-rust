@@ -28,11 +28,9 @@ cargo install \
   hexyl \
   jaq \
   jnv \
-  jj-cli \
   hyperfine \
   procs \
   ripgrep \
-  sccache \
   sheldon \
   skim \
   stak \

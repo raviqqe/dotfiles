@@ -31,6 +31,7 @@ brew install \
   gnupg \
   go \
   imagemagick \
+  jj \
   jq \
   koka \
   ldns \
@@ -49,6 +50,7 @@ brew install \
   ruby \
   rustup \
   sbcl \
+  sccache \
   terraform \
   tig \
   tmux \
