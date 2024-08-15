@@ -2,12 +2,7 @@
 
 set -e
 
-if ! which rustup; then
-  curl -fsS https://sh.rustup.rs |
-    sh -s -- -y --no-modify-path --default-toolchain stable
-fi
-
-rustup install nightly
+rustup install stable nightly
 
 for channel in stable nightly; do
   rustup +$channel component add clippy rls rustfmt rust-analysis rust-analyzer rust-src
@@ -15,8 +10,7 @@ done
 
 rustup update
 
-cargo install cargo-update || :
-cargo install-update -i \
+cargo install \
   ast-grep \
   bat \
   bottom \
@@ -24,7 +18,6 @@ cargo install-update -i \
   cargo-insta \
   cargo-machete \
   cargo-release \
-  cargo-update \
   cargo-watch \
   du-dust \
   eza \
@@ -59,6 +52,6 @@ cargo install-update -i \
   xh \
   zoxide
 
-cargo +nightly install-update -i schemat
+cargo +nightly install schemat
 
 tldr --update

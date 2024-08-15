@@ -22,7 +22,8 @@ for directory in \
   bin \
   sbin \
   opt/llvm/bin \
-  opt/ruby/bin; do
+  opt/ruby/bin \
+  opt/rustup/bin; do
   export PATH=$base/$directory:$PATH
 done
 

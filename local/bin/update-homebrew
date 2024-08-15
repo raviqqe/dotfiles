@@ -47,6 +47,7 @@ brew install \
   python \
   rcm \
   ruby \
+  rustup \
   sbcl \
   terraform \
   tig \
