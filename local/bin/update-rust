@@ -10,7 +10,7 @@ done
 
 rustup update
 
-cargo install \
+for crate in \
   ast-grep \
   bat \
   bottom \
@@ -48,7 +48,9 @@ cargo install \
   tokei \
   wasmtime-cli \
   xh \
-  zoxide
+  zoxide; do
+  cargo install $crate
+done
 
 cargo +nightly install schemat
 
