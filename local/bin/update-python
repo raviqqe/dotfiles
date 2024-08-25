@@ -3,7 +3,5 @@
 set -e
 
 for package in pyright ruff; do
-  pipx install $package
+  uv tool install --upgrade $package
 done
-
-pipx upgrade-all

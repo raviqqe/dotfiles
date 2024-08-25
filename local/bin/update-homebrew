@@ -43,7 +43,6 @@ brew install \
   node \
   pen-lang/pen/pen \
   pgformatter \
-  pipx \
   pkgxdev/made/pkgx \
   python \
   rcm \
@@ -56,6 +55,7 @@ brew install \
   tmux \
   uutils-coreutils \
   uutils-findutils \
+  uv \
   wabt \
   watch \
   watchexec \
