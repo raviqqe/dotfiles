@@ -61,7 +61,7 @@ tools:
     format-stdin: true
 languages:
   astro:
-    - <<: *prettier
+    - <<: *biome
   c:
     - <<: *clang-format
   cpp:
