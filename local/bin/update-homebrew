@@ -31,7 +31,6 @@ brew install \
   gnupg \
   go \
   imagemagick \
-  jj \
   jq \
   koka \
   ldns \
