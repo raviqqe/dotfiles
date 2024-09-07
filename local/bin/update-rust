@@ -26,9 +26,10 @@ for crate in \
   flamegraph \
   git-delta \
   hexyl \
+  hyperfine \
   jaq \
   jnv \
-  hyperfine \
+  mstak \
   procs \
   ripgrep \
   sheldon \
