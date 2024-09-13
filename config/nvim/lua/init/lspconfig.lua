@@ -15,7 +15,7 @@ for _, command in ipairs({ "astro", "clangd", "gopls", "rust_analyzer", "solargr
 	lspconfig[command].setup({ capabilities = capabilities })
 end
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	capabilities = capabilities,
 	on_attach = function(client)
 		client.server_capabilities.documentFormattingProvider = false
