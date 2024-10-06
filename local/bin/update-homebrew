@@ -30,7 +30,6 @@ brew install \
   git \
   gnupg \
   go \
-  imagemagick \
   jq \
   koka \
   ldns \

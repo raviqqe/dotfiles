@@ -9,6 +9,7 @@ npm install --global --ignore-scripts \
   assemblyscript \
   prettier \
   prettier-plugin-astro \
+  sharp-cli \
   typescript \
   typescript-language-server \
   wasm-run
