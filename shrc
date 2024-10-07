@@ -128,7 +128,9 @@ gwa() {
 
   local dir=~/worktree/$(openssl rand -hex 8)
 
-  git worktree add $dir "$(git branch --format '%(refname:short)' | fzf)" && cd $dir
+  git worktree add $dir "$(git branch --format '%(refname:short)' | fzf)" &&
+    cd $dir &&
+    git submodule update --init --recursive
 }
 
 # Editor
