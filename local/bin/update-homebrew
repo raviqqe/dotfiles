@@ -36,6 +36,7 @@ brew install \
   lua \
   luarocks \
   make \
+  minimal-racket \
   mold \
   neovim \
   node \
