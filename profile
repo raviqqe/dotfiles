@@ -79,6 +79,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
+## sccache
+
+export SCCACHE_CACHE_SIZE=64G
+
 ## skim
 
 export SKIM_DEFAULT_OPTIONS='--ansi --exit-0 --select-1'
