@@ -128,12 +128,6 @@ require("init.lualine")
 require("init.telescope")
 require("init.treesitter")
 
-require("chatgpt").setup({
-	welcome_message = "",
-	question_sign = "Q",
-	answer_sign = "A",
-	chat_input = { prompt = "> " },
-})
 require("colorizer").setup()
 require("ibl").setup()
 require("lsp_signature").setup({ hint_prefix = "" })

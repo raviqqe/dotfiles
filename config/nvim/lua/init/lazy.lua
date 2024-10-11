@@ -20,14 +20,6 @@ require("lazy").setup({
 	"cocopon/iceberg.vim",
 	"farmergreg/vim-lastplace",
 	"hoob3rt/lualine.nvim",
-	{
-		"jackMort/ChatGPT.nvim",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	},
 	"lukas-reineke/indent-blankline.nvim",
 	"maxbrunsfeld/vim-yankstack",
 	"NvChad/nvim-colorizer.lua",
