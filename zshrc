@@ -42,6 +42,10 @@ bindkey -v '^N' history-substring-search-down
 bindkey -a k history-substring-search-up
 bindkey -a j history-substring-search-down
 
+# pkgx
+
+. <(pkgx --shellcode)
+
 # ssh-agent
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
