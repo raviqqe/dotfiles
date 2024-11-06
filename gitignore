@@ -11,8 +11,8 @@
 .*_cache
 .bloop
 .cache
-.env
-.env.*
+.env.local
+.env.*.local
 callgrind.*
 coverage
 dhat-heap.json
