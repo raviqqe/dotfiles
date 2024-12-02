@@ -30,6 +30,7 @@ for crate in \
   jaq \
   jnv \
   mstak \
+  mstak-interpret \
   procs \
   ripgrep \
   sheldon \
