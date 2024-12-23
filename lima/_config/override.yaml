@@ -4,7 +4,7 @@ provision:
       #!/bin/sh
       set -ex
       apt -y update --fix-missing
-      apt -y install git neovim rcm zsh
+      apt -y install build-essential git golang neovim python3 rcm ruby rustup zsh
   - mode: user
     script: |
       #!/bin/sh
