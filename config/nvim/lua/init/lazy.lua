@@ -17,7 +17,6 @@ require("lazy").setup({
 	"airblade/vim-gitgutter",
 	"cappyzawa/trim.nvim",
 	"christoomey/vim-tmux-navigator",
-	"cocopon/iceberg.vim",
 	"farmergreg/vim-lastplace",
 	"hoob3rt/lualine.nvim",
 	"lukas-reineke/indent-blankline.nvim",

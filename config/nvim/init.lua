@@ -63,8 +63,6 @@ vim.filetype.add({
 	},
 })
 
-vim.cmd.colorscheme("iceberg")
-
 -- Keymaps
 
 vim.g.mapleader = " "
