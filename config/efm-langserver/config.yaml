@@ -8,6 +8,9 @@ tools:
   biome: &biome
     format-command: biome format --config-path ~/.config --stdin-file-path dummy.json
     format-stdin: true
+  kdlfmt: &kdlfmt
+    format-command: kdlfmt format -
+    format-stdin: true
   ruff: &ruff
     format-command: ruff format --stdin-filename ${INPUT} -
     format-stdin: true
@@ -84,6 +87,8 @@ languages:
     - <<: *biome
   jsonc:
     - <<: *biome
+  kdl:
+    - <<: *kdlfmt
   lisp:
     - <<: *schemat
   lua:

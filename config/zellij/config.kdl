@@ -1,0 +1,112 @@
+attach_to_session true
+auto_layout false
+pane_frames false
+session_serialization false
+simplified_ui true
+theme "ansi"
+keybinds clear-defaults=true {
+    normal {
+        bind "Ctrl x" {
+            SwitchToMode "locked"
+        }
+        bind "Ctrl h" {
+            MoveFocus "Left"
+        }
+        bind "Ctrl j" {
+            MoveFocus "Down"
+        }
+        bind "Ctrl k" {
+            MoveFocus "Up"
+        }
+        bind "Ctrl l" {
+            MoveFocus "Right"
+        }
+    }
+    locked {
+        bind "%" {
+            NewPane "Right"
+            SwitchToMode "normal"
+        }
+        bind "\"" {
+            NewPane "Down"
+            SwitchToMode "normal"
+        }
+        bind "x" {
+            CloseFocus
+        }
+        bind "h" {
+            Resize "Left"
+        }
+        bind "j" {
+            Resize "Down"
+        }
+        bind "k" {
+            Resize "Up"
+        }
+        bind "l" {
+            Resize "Right"
+        }
+        bind "c" {
+            NewTab
+            SwitchToMode "normal"
+        }
+        bind "n" {
+            GoToNextTab
+            SwitchToMode "normal"
+        }
+        bind "p" {
+            GoToPreviousTab
+            SwitchToMode "normal"
+        }
+        bind "u" {
+            PageScrollUp
+        }
+        bind "d" {
+            PageScrollDown
+        }
+        bind "[" {
+            SwitchToMode "scroll"
+        }
+        bind "q" {
+            Quit
+        }
+    }
+    scroll {
+        bind "k" {
+            ScrollUp
+        }
+        bind "j" {
+            ScrollDown
+        }
+        bind "u" {
+            PageScrollUp
+        }
+        bind "d" {
+            PageScrollDown
+        }
+        bind "/" {
+            SwitchToMode "entersearch"
+        }
+    }
+    search {
+        bind "Enter" {
+            SwitchToMode "normal"
+        }
+        bind "p" {
+            Search "Up"
+        }
+        bind "n" {
+            Search "Down"
+        }
+    }
+    entersearch {
+        bind "Enter" {
+            SwitchToMode "search"
+        }
+    }
+    shared_except "normal" {
+        bind "Esc" "Ctrl [" {
+            SwitchToMode "normal"
+        }
+    }
+}

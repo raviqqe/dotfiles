@@ -44,6 +44,12 @@ alias t=tmux
 alias ta='tmux a'
 alias tl='tmux ls'
 
+# Zellij
+
+alias z=zellij
+alias za='zellij a'
+alias zl='zellij ls'
+
 # git
 
 alias gap='git add --patch'

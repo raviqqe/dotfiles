@@ -29,6 +29,7 @@ for crate in \
   hyperfine \
   jaq \
   jnv \
+  kdlfmt \
   mstak \
   mstak-interpret \
   procs \
@@ -50,6 +51,7 @@ for crate in \
   tokei \
   wasmtime-cli \
   xh \
+  zellij \
   zoxide; do
   cargo install $crate
 done
