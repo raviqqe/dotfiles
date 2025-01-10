@@ -8,12 +8,6 @@ tools:
   biome: &biome
     format-command: biome format --config-path ~/.config --stdin-file-path dummy.json
     format-stdin: true
-  kdlfmt: &kdlfmt
-    format-command: kdlfmt format -
-    format-stdin: true
-  ruff: &ruff
-    format-command: ruff format --stdin-filename ${INPUT} -
-    format-stdin: true
   clang-format: &clang-format
     format-command: clang-format --assume-filename ${INPUT}
     format-stdin: true
@@ -27,8 +21,8 @@ tools:
   gherkin-format: &gherkin-format
     format-command: gherkin-format
     format-stdin: true
-  stylua: &stylua
-    format-command: stylua --stdin-filepath ${INPUT} -
+  kdlfmt: &kdlfmt
+    format-command: kdlfmt format -
     format-stdin: true
   pen-format: &pen-format
     format-command: pen format --stdin
@@ -44,6 +38,9 @@ tools:
     lint-ignore-exit-code: true
     lint-formats:
       - "  %f:%l:%c - error: %m"
+  ruff: &ruff
+    format-command: ruff format --stdin-filename ${INPUT} -
+    format-stdin: true
   rufo: &rufo
     format-command: rufo -x
     format-stdin: true
@@ -55,6 +52,9 @@ tools:
     format-stdin: true
   shfmt: &shfmt
     format-command: shfmt -i 2 -s
+    format-stdin: true
+  stylua: &stylua
+    format-command: stylua --stdin-filepath ${INPUT} -
     format-stdin: true
   taplo: &taplo
     format-command: taplo format -
