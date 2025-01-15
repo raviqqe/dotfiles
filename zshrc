@@ -44,7 +44,7 @@ bindkey -a j history-substring-search-down
 
 # pkgx
 
-. <(pkgx --shellcode)
+eval "$(pkgx dev --shellcode)"
 
 # ssh-agent
 
