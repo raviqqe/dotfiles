@@ -11,6 +11,7 @@
 .*_cache
 .bloop
 .cache
+.zig-cache
 .env.local
 .env.*.local
 callgrind.*
