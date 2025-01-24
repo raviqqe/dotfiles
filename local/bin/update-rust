@@ -12,13 +12,13 @@ rustup update
 
 for crate in \
   ast-grep \
+  bacon \
   bat \
   bottom \
   cargo-expand \
   cargo-insta \
   cargo-machete \
   cargo-release \
-  cargo-watch \
   du-dust \
   eza \
   fastmod \
