@@ -12,7 +12,6 @@ rustup update
 
 for crate in \
   ast-grep \
-  bacon \
   bat \
   bottom \
   cargo-expand \
@@ -56,6 +55,7 @@ for crate in \
   cargo install $crate
 done
 
+cargo install --no-default-features bacon
 cargo +nightly install schemat
 
 tldr --update
