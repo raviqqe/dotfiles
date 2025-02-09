@@ -31,6 +31,7 @@ for crate in \
   kdlfmt \
   mstak \
   mstak-interpret \
+  pkgx \
   procs \
   ripgrep \
   sheldon \
