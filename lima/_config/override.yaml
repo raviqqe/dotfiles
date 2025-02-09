@@ -16,4 +16,5 @@ provision:
         git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
       fi
       rcup -f
-      curl -fsS https://pkgx.sh | sh
+      cargo install pkgx
+      pkgx dev integrate
