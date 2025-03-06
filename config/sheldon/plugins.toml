@@ -3,6 +3,9 @@ shell = "zsh"
 [plugins.autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 
+[plugins.autoswitch-virtualenv]
+github = "MichaelAquilina/zsh-autoswitch-virtualenv"
+
 [plugins.completions]
 github = "zsh-users/zsh-completions"
 

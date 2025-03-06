@@ -27,6 +27,10 @@ for directory in \
   export PATH=$base/$directory:$PATH
 done
 
+## Python
+
+export AUTOSWITCH_DEFAULT_PYTHON=$base/bin/python3
+
 # Languages
 
 ## Haskell
