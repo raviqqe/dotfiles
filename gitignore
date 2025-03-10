@@ -11,8 +11,9 @@
 .*_cache
 .bloop
 .cache
-.env.local
 .env.*.local
+.env.local
+.venv
 .zig-cache
 callgrind.*
 coverage

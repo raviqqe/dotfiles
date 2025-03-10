@@ -55,6 +55,7 @@ brew install \
   uutils-coreutils \
   uutils-findutils \
   uv \
+  virtualenv \
   wabt \
   watch \
   watchexec \
