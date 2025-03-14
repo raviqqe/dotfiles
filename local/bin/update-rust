@@ -23,6 +23,7 @@ for crate in \
   fastmod \
   fd-find \
   flamegraph \
+  fnm \
   git-delta \
   hexyl \
   hyperfine \

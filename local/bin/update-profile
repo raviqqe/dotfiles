@@ -16,4 +16,8 @@ fi
   if which sccache >/dev/null; then
     echo export RUSTC_WRAPPER=sccache
   fi
+
+  if which fnm >/dev/null; then
+    fnm env --use-on-cd --shell zsh
+  fi
 ) >$CACHED_PROFILE
