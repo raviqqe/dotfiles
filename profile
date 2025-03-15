@@ -105,7 +105,7 @@ export CACHED_PROFILE=$HOME/.cache/profile
 
 local_profile=$HOME/.local/etc/profile
 
-for file in $local_profile $CACHED_PROFILE; do
+for file in $CACHED_PROFILE $local_profile; do
   if [ -r $file ]; then
     . $file
   fi
