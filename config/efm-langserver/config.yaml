@@ -39,7 +39,7 @@ tools:
     lint-formats:
       - "  %f:%l:%c - error: %m"
   ruff: &ruff
-    format-command: ruff format --stdin-filename ${INPUT} -
+    format-command: ruff check --select I --fix --stdin-filename ${INPUT} - | ruff format --stdin-filename ${INPUT} -
     format-stdin: true
   rufo: &rufo
     format-command: rufo -x
