@@ -29,6 +29,7 @@ done
 
 ## Python
 
+export PYTHON_JIT=1
 export AUTOSWITCH_DEFAULT_PYTHON=$base/bin/python3
 
 # Languages
