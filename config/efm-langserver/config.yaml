@@ -98,7 +98,6 @@ languages:
   proto:
     - <<: *clang-format
   python:
-    - <<: *pyright
     - <<: *ruff
   ruby:
     - <<: *rufo
