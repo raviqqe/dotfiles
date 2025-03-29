@@ -53,6 +53,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = true
 
+vim.diagnostic.config({ virtual_text = true })
+
 vim.filetype.add({
 	extension = {
 		astro = "astro",
