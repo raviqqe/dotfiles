@@ -24,7 +24,7 @@ tools:
   kdlfmt: &kdlfmt
     format-command: kdlfmt format -
     format-stdin: true
-  pyright: &mypy
+  mypy: &mypy
     lint-command: mypy
     lint-ignore-exit-code: true
   pen-format: &pen-format
