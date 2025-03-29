@@ -36,11 +36,6 @@ tools:
   pg_format: &pg_format
     format-command: pg_format
     format-stdin: true
-  pyright: &pyright
-    lint-command: pyright
-    lint-ignore-exit-code: true
-    lint-formats:
-      - "  %f:%l:%c - %m"
   ruff: &ruff
     format-command: ruff check --select I --fix --stdin-filename ${INPUT} - | ruff format --stdin-filename ${INPUT} -
     format-stdin: true
