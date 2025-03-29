@@ -121,7 +121,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 require("init.cmp")
 require("init.hop")
-require("init.lspconfig")
+require("init.lsp")
 require("init.lualine")
 require("init.telescope")
 require("init.treesitter")
