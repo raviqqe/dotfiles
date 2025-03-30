@@ -13,7 +13,6 @@ for url in \
   github.com/raviqqe/gherkin2markdown \
   github.com/raviqqe/muffet/v2 \
   github.com/raviqqe/rnm \
-  github.com/shenwei356/rush \
   github.com/traefik/yaegi/cmd/yaegi \
   github.com/wader/fq \
   github.com/x-motemen/ghq \
