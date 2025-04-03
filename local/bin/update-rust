@@ -5,7 +5,7 @@ set -e
 rustup install stable nightly
 
 for channel in stable nightly; do
-  rustup +$channel component add clippy rls rustfmt rust-analysis rust-analyzer rust-src
+  rustup +$channel component add clippy rustfmt rust-analysis rust-analyzer rust-src
 done
 
 rustup update
