@@ -57,8 +57,7 @@ vim.diagnostic.config({ virtual_text = true })
 
 vim.filetype.add({
 	extension = {
-		astro = "astro",
-		mdx = "markdown",
+		mdx = "markdown.mdx",
 	},
 	pattern = {
 		[".*%.ll"] = { "llvm", { priority = 10 } },
