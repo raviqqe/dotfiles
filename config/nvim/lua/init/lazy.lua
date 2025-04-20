@@ -57,7 +57,11 @@ require("lazy").setup({
 		event = "InsertEnter",
 		config = function()
 			vim.schedule(function()
-				require("copilot").setup()
+				require("copilot").setup({
+					filetypes = {
+						markdown = true,
+					},
+				})
 			end)
 		end,
 	},
