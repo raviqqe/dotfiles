@@ -93,6 +93,8 @@ languages:
     - <<: *stylua
   markdown:
     - <<: *prettier
+  markdown.mdx:
+    - <<: *prettier
   pen:
     - <<: *pen-format
   proto:
