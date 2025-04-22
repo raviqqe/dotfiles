@@ -35,6 +35,7 @@ for crate in \
   pkgx \
   procs \
   ripgrep \
+  schemat \
   sheldon \
   skim \
   stak \
@@ -58,6 +59,5 @@ for crate in \
 done
 
 cargo install --no-default-features bacon
-cargo +nightly install schemat
 
 tldr --update
