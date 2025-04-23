@@ -39,6 +39,9 @@ tools:
   ruff: &ruff
     format-command: ruff check --select I --fix --stdin-filename ${INPUT} - | ruff format --stdin-filename ${INPUT} -
     format-stdin: true
+    lint-command: ruff check --stdin-filename ${INPUT} -
+    lint-ignore-exit-code: true
+    lint-stdin: true
   rufo: &rufo
     format-command: rufo -x
     format-stdin: true
