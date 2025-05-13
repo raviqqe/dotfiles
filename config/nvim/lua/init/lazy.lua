@@ -61,6 +61,9 @@ require("lazy").setup({
 					filetypes = {
 						markdown = true,
 					},
+					server = {
+						type = "nodejs",
+					},
 				})
 			end)
 		end,
