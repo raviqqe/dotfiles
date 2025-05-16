@@ -142,6 +142,7 @@
     "pushd",
     "pycache",
     "pylint",
+    "pyrefly",
     "pyright",
     "raviqqe",
     "rcup",
