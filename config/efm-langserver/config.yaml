@@ -11,6 +11,10 @@ tools:
   clang-format: &clang-format
     format-command: clang-format --assume-filename ${INPUT}
     format-stdin: true
+  cspell: &cspell
+    lint-command: cspell --no-summary --no-progress stdin://${INPUT}
+    lint-ignore-exit-code: true
+    lint-stdin: true
   eslint: &eslint
     lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
     lint-ignore-exit-code: true
@@ -95,8 +99,10 @@ languages:
   lua:
     - <<: *stylua
   markdown:
+    - <<: *cspell
     - <<: *prettier
   markdown.mdx:
+    - <<: *cspell
     - <<: *prettier
   pen:
     - <<: *pen-format
@@ -119,6 +125,7 @@ languages:
   terraform:
     - <<: *terraform
   text:
+    - <<: *cspell
     - <<: *sed
   toml:
     - <<: *taplo

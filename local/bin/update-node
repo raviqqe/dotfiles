@@ -8,6 +8,7 @@ npm install --global --ignore-scripts \
   @mdx-js/language-server \
   @prettier/plugin-xml \
   assemblyscript \
+  cspell \
   prettier \
   prettier-plugin-astro \
   sharp-cli \
