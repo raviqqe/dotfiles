@@ -99,10 +99,8 @@ languages:
   lua:
     - <<: *stylua
   markdown:
-    - <<: *cspell
     - <<: *prettier
   markdown.mdx:
-    - <<: *cspell
     - <<: *prettier
   pen:
     - <<: *pen-format
@@ -125,7 +123,6 @@ languages:
   terraform:
     - <<: *terraform
   text:
-    - <<: *cspell
     - <<: *sed
   toml:
     - <<: *taplo
@@ -143,3 +140,5 @@ languages:
     - <<: *prettier
   zsh:
     - <<: *shfmt
+  =:
+    - <<: *cspell
