@@ -73,6 +73,8 @@ tools:
 languages:
   astro:
     - <<: *prettier
+  bib:
+    - <<: *tex-fmt
   c:
     - <<: *clang-format
   cpp:
