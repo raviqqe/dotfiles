@@ -67,6 +67,9 @@ tools:
   terraform: &terraform
     format-command: terraform fmt -
     format-stdin: true
+  tex-fmt: &tex-fmt
+    format-command: tex-fmt -s
+    format-stdin: true
 languages:
   astro:
     - <<: *prettier
@@ -122,6 +125,8 @@ languages:
     - <<: *clang-format
   terraform:
     - <<: *terraform
+  tex:
+    - <<: *tex-fmt
   text:
     - <<: *sed
   toml:

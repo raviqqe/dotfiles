@@ -50,6 +50,7 @@ for crate in \
   tailspin \
   taplo-cli \
   tealdeer \
+  tex-fmt \
   tokei \
   wasmtime-cli \
   xh \
