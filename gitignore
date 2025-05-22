@@ -9,6 +9,7 @@
 *.stacks
 *.wasm
 .*_cache
+.aider.*
 .bloop
 .cache
 .env.*.local
