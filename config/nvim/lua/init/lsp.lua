@@ -15,6 +15,7 @@ for _, command in ipairs({
 	"gopls",
 	"mdx_analyzer",
 	"pylsp",
+	"pyrefly",
 	"pyright",
 	"rust_analyzer",
 	"solargraph",
