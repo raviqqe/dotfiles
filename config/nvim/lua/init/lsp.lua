@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>y", vim.lsp.buf.implementation, options)
 vim.keymap.set("n", "<leader>x", vim.diagnostic.goto_next, options)
 vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
-for _, command in ipairs({
+vim.lsp.enable({
 	"astro",
 	"efm",
 	"clangd",
@@ -20,11 +20,9 @@ for _, command in ipairs({
 	"rust_analyzer",
 	"solargraph",
 	"ts_ls",
-}) do
-	vim.lsp.enable(command, {
-		capabilities = require("cmp_nvim_lsp").default_capabilities(),
-	})
-end
+}, {
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
 
 local group = vim.api.nvim_create_augroup("InitLsp", {})
 
