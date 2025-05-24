@@ -3,6 +3,7 @@
 set -e
 
 for url in \
+  github.com/danielgatis/imgcat \
   github.com/golangci/golangci-lint/cmd/golangci-lint \
   github.com/junegunn/fzf \
   github.com/mattn/efm-langserver \
