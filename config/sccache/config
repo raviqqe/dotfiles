@@ -1,0 +1,3 @@
+[cache.disk.preprocessor_cache_mode]
+hash_working_directory = true
+use_preprocessor_cache_mode = true
