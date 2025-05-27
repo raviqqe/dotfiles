@@ -1,3 +1,6 @@
+[cache.disk]
+size = 68719476736
+
 [cache.disk.preprocessor_cache_mode]
 hash_working_directory = false
 use_preprocessor_cache_mode = true
