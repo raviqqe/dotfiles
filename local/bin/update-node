@@ -5,6 +5,7 @@ set -e
 npm install --global --ignore-scripts \
   @astrojs/language-server \
   @biomejs/biome \
+  @getgrit/cli \
   @mdx-js/language-server \
   @prettier/plugin-xml \
   assemblyscript \
