@@ -127,6 +127,7 @@ require("init.lualine")
 require("init.telescope")
 require("init.treesitter")
 
+require("treesitter-context").setup()
 require("colorizer").setup()
 require("ibl").setup()
 require("lsp_signature").setup({ hint_prefix = "" })
