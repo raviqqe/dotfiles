@@ -38,6 +38,7 @@ for crate in \
   schemat \
   sheldon \
   skim \
+  sqruff \
   stak \
   stak-compile \
   stak-decode \

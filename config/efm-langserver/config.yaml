@@ -39,9 +39,6 @@ tools:
   prettier: &prettier
     format-command: prettier --stdin-filepath '${INPUT}'
     format-stdin: true
-  pg_format: &pg_format
-    format-command: pg_format
-    format-stdin: true
   ruff: &ruff
     format-command: ruff check --select I --fix --stdin-filename ${INPUT} - | ruff format --stdin-filename ${INPUT} -
     format-stdin: true
@@ -123,8 +120,6 @@ languages:
     - <<: *prettier
   sh:
     - <<: *shfmt
-  sql:
-    - <<: *pg_format
   tablegen:
     - <<: *clang-format
   terraform:

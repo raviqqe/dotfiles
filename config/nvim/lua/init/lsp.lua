@@ -19,6 +19,7 @@ vim.lsp.enable({
 	"pyright",
 	"rust_analyzer",
 	"solargraph",
+	"sqruff",
 	"ts_ls",
 }, {
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
