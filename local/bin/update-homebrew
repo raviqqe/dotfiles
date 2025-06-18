@@ -29,6 +29,7 @@ brew install \
   gauche \
   gh \
   git \
+  git-lfs \
   gnupg \
   go \
   jq \
