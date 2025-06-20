@@ -17,13 +17,6 @@ tools:
     lint-stdin: true
     lint-formats:
       - "%f:%l:%c - %m"
-  eslint: &eslint
-    lint-command: eslint -f visualstudio --stdin --stdin-filename ${INPUT}
-    lint-ignore-exit-code: true
-    lint-stdin: true
-    lint-formats:
-      - "%f(%l,%c): %tarning %m"
-      - "%f(%l,%c): %rror %m"
   gherkin-format: &gherkin-format
     format-command: gherkin-format
     format-stdin: true
@@ -88,10 +81,8 @@ languages:
     - <<: *prettier
   javascript:
     - <<: *prettier
-    - <<: *eslint
   javascriptreact:
     - <<: *prettier
-    - <<: *eslint
   json:
     - <<: *biome
   jsonc:
@@ -132,10 +123,8 @@ languages:
     - <<: *taplo
   typescript:
     - <<: *prettier
-    - <<: *eslint
   typescriptreact:
     - <<: *prettier
-    - <<: *eslint
   wat:
     - <<: *schemat
   xml:
