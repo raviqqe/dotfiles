@@ -15,4 +15,5 @@ npm install --global --ignore-scripts \
   sharp-cli \
   typescript \
   typescript-language-server \
+  vscode-langservers-extracted \
   wasm-run

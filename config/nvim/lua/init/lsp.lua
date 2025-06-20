@@ -10,8 +10,9 @@ vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
 vim.lsp.enable({
 	"astro",
-	"efm",
 	"clangd",
+	"efm",
+	"eslint",
 	"gopls",
 	"mdx_analyzer",
 	"pylsp",
