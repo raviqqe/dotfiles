@@ -18,6 +18,7 @@ vim.lsp.enable({
 	"pylsp",
 	"pyrefly",
 	"pyright",
+	"ruff",
 	"rust_analyzer",
 	"solargraph",
 	"sqruff",

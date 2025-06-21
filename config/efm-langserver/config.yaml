@@ -23,9 +23,6 @@ tools:
   kdlfmt: &kdlfmt
     format-command: kdlfmt format -
     format-stdin: true
-  mypy: &mypy
-    lint-command: mypy
-    lint-ignore-exit-code: true
   pen-format: &pen-format
     format-command: pen format --stdin
     format-stdin: true
@@ -35,9 +32,6 @@ tools:
   ruff: &ruff
     format-command: ruff check --select I --fix --stdin-filename ${INPUT} - | ruff format --stdin-filename ${INPUT} -
     format-stdin: true
-    lint-command: ruff check --stdin-filename ${INPUT} -
-    lint-ignore-exit-code: true
-    lint-stdin: true
   rufo: &rufo
     format-command: rufo -x
     format-stdin: true
