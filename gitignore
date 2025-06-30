@@ -40,6 +40,7 @@ cdk.out
 metals.sbt
 
 # Ninja
+.ninja_lock
 .ninja_log
 .turtle
 
