@@ -80,6 +80,10 @@ export GHQ_ROOT=$HOME/src
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+## cucumber
+
+export CUCUMBER_PUBLISH_ENABLED=
+
 ## fzf
 
 export FZF_DEFAULT_OPTS='--exit-0 --select-1'
