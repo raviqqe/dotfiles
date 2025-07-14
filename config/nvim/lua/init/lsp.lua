@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 vim.lsp.enable({
 	"astro",
 	"clangd",
+	"cucumber_language_server",
 	"efm",
 	"eslint",
 	"gopls",

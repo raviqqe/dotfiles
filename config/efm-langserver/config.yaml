@@ -17,9 +17,6 @@ tools:
     lint-stdin: true
     lint-formats:
       - "%f:%l:%c - %m"
-  gherkin-format: &gherkin-format
-    format-command: gherkin-format
-    format-stdin: true
   kdlfmt: &kdlfmt
     format-command: kdlfmt format -
     format-stdin: true
@@ -67,8 +64,6 @@ languages:
     - <<: *clang-format
   css:
     - <<: *prettier
-  cucumber:
-    - <<: *gherkin-format
   html:
     - <<: *prettier
   html.handlebars:
