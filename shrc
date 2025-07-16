@@ -175,6 +175,7 @@ alias dla='ls -la'
 alias dm='ls ~'
 alias dma='ls -a ~'
 alias ds='ghq list --full-path'
+alias dt='ls --tree --level 2'
 
 # Others
 
