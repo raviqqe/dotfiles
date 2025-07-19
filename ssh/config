@@ -1,3 +1,4 @@
+AddKeysToAgent yes
 ForwardAgent yes
 Host *
   ServerAliveInterval 10
