@@ -24,6 +24,7 @@ vim.lsp.enable({
 	"ruff",
 	"rust_analyzer",
 	"solargraph",
+	"solidity_ls_nomicfoundation",
 	"sqruff",
 	"ts_ls",
 }, {

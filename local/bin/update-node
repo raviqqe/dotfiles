@@ -8,6 +8,7 @@ npm install --global --ignore-scripts \
   @cucumber/language-server \
   @getgrit/cli \
   @mdx-js/language-server \
+  @nomicfoundation/solidity-language-server \
   @prettier/plugin-xml \
   assemblyscript \
   cspell \
