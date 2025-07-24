@@ -10,12 +10,14 @@ vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
 vim.lsp.enable({
 	"astro",
+	"biome",
 	"clangd",
 	"cucumber_language_server",
 	"efm",
 	"eslint",
 	"gopls",
 	"mdx_analyzer",
+	"move_analyzer",
 	"pylsp",
 	"pyrefly",
 	"pyright",
