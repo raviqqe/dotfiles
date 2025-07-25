@@ -16,6 +16,7 @@ vim.lsp.enable({
 	"efm",
 	"eslint",
 	"gopls",
+	"lua_ls",
 	"mdx_analyzer",
 	"move_analyzer",
 	"pylsp",

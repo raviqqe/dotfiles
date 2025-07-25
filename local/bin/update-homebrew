@@ -37,6 +37,7 @@ brew install \
   ldns \
   lld \
   lua \
+  lua-language-server \
   luarocks \
   make \
   minimal-racket \
