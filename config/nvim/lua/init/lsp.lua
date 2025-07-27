@@ -12,7 +12,6 @@ vim.lsp.enable({
 	"astro",
 	"biome",
 	"clangd",
-	"cucumber_language_server",
 	"efm",
 	"eslint",
 	"gopls",
