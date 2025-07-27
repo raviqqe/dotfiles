@@ -1,6 +1,7 @@
 [user]
   name = Yota Toyama
   email = raviqqe@gmail.com
+  signingkey = ~/.ssh/id_ed25519.pub
 
 [push]
   default = simple
@@ -33,3 +34,12 @@
 
 [fetch]
   parallel = 0
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  allowedSignersFile = ~/.ssh/signers
