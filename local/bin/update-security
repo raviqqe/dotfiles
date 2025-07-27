@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+curl -fsS https://github.com/web-flow.gpg | gpg --import

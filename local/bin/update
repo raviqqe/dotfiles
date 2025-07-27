@@ -17,7 +17,7 @@ if [ $# -eq 1 ]; then
   exit
 fi
 
-for subcommand in homebrew tmux python ruby node go rust zsh profile; do
+for subcommand in homebrew tmux python ruby node go rust zsh profile security; do
   if ! echo "$excluded_subcommands" | grep $subcommand >/dev/null; then
     update-$subcommand
   fi
