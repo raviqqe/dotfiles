@@ -59,7 +59,9 @@ target
 # TypeScript
 *.tsbuildinfo
 .eslintcache
+.npmrc
 .pnp.js
+.pnpm-store
 .ultra.cache.json
 .yarn
 node_modules
