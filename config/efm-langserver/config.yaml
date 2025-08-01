@@ -5,9 +5,6 @@ root-markers:
   - .git
 lint-debounce: 1s
 tools:
-  biome: &biome
-    format-command: biome format --config-path ~/.config --stdin-file-path dummy.json
-    format-stdin: true
   clang-format: &clang-format
     format-command: clang-format --assume-filename ${INPUT}
     format-stdin: true
@@ -65,22 +62,12 @@ languages:
     - <<: *clang-format
   cpp:
     - <<: *clang-format
-  css:
-    - <<: *prettier
   cucumber:
     - <<: *gherkin-format
   html:
     - <<: *prettier
   html.handlebars:
     - <<: *prettier
-  javascript:
-    - <<: *prettier
-  javascriptreact:
-    - <<: *prettier
-  json:
-    - <<: *biome
-  jsonc:
-    - <<: *biome
   kdl:
     - <<: *kdlfmt
   lisp:
@@ -115,10 +102,6 @@ languages:
     - <<: *sed
   toml:
     - <<: *taplo
-  typescript:
-    - <<: *prettier
-  typescriptreact:
-    - <<: *prettier
   wat:
     - <<: *schemat
   xml:
