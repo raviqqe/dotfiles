@@ -52,10 +52,6 @@ languages:
     - <<: *prettier
   bib:
     - <<: *tex-fmt
-  c:
-    - <<: *clang-format
-  cpp:
-    - <<: *clang-format
   cucumber:
     - <<: *gherkin-format
   html:
@@ -66,8 +62,6 @@ languages:
     - <<: *kdlfmt
   lisp:
     - <<: *schemat
-  lua:
-    - <<: *stylua
   markdown:
     - <<: *prettier
   markdown.mdx:
