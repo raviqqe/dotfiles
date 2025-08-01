@@ -14,6 +14,7 @@ npm install --global --ignore-scripts \
   prettier \
   prettier-plugin-astro \
   sharp-cli \
+  tombi \
   typescript \
   typescript-language-server \
   vscode-langservers-extracted \

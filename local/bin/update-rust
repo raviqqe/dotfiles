@@ -48,7 +48,6 @@ for crate in \
   stak-repl \
   static-web-server \
   tailspin \
-  taplo-cli \
   tealdeer \
   tex-fmt \
   tokei \

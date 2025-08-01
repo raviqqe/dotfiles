@@ -27,7 +27,9 @@ vim.lsp.enable({
   -- spell-checker: disable-next-line
   "solidity_ls_nomicfoundation",
   "sqruff",
+  -- spell-checker: disable-next-line
   "terraformls",
+  "tombi",
   "ts_ls",
 }, {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),

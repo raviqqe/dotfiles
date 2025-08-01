@@ -26,9 +26,6 @@ tools:
   prettier: &prettier
     format-command: prettier --stdin-filepath '${INPUT}'
     format-stdin: true
-  ruff: &ruff
-    format-command: ruff check --select I --fix --stdin-filename ${INPUT} - | ruff format --stdin-filename ${INPUT} -
-    format-stdin: true
   rufo: &rufo
     format-command: rufo -x
     format-stdin: true
@@ -40,9 +37,6 @@ tools:
     format-stdin: true
   shfmt: &shfmt
     format-command: shfmt -i 2 -s
-    format-stdin: true
-  taplo: &taplo
-    format-command: taplo format -
     format-stdin: true
   tex-fmt: &tex-fmt
     format-command: tex-fmt -s
@@ -84,8 +78,6 @@ languages:
     - <<: *tex-fmt
   text:
     - <<: *sed
-  toml:
-    - <<: *taplo
   wat:
     - <<: *schemat
   xml:
