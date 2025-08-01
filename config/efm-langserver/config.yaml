@@ -70,8 +70,6 @@ languages:
     - <<: *pen-format
   proto:
     - <<: *clang-format
-  python:
-    - <<: *ruff
   ruby:
     - <<: *rufo
   scheme:
