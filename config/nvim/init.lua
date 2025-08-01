@@ -58,12 +58,12 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.diagnostic.config({ virtual_text = true })
 
 vim.filetype.add({
-	extension = {
-		mdx = "markdown.mdx",
-	},
-	pattern = {
-		[".*%.ll"] = { "llvm", { priority = 10 } },
-	},
+  extension = {
+    mdx = "markdown.mdx",
+  },
+  pattern = {
+    [".*%.ll"] = { "llvm", { priority = 10 } },
+  },
 })
 
 -- Keymaps
@@ -81,10 +81,10 @@ vim.keymap.set("n", "<leader>w", ":w<cr>", options)
 vim.keymap.set("n", "<leader>q", ":q<cr>", options)
 
 for _, mode in ipairs({ "n", "v" }) do
-	vim.keymap.set(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
-	vim.keymap.set(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
-	vim.keymap.set(mode, "gj", "j", options)
-	vim.keymap.set(mode, "gk", "k", options)
+  vim.keymap.set(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
+  vim.keymap.set(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
+  vim.keymap.set(mode, "gj", "j", options)
+  vim.keymap.set(mode, "gk", "k", options)
 end
 
 vim.keymap.set("n", "Q", ":q!<cr>", options)
@@ -106,18 +106,18 @@ vim.keymap.set("c", "<c-l>", "<right>", options)
 local group = vim.api.nvim_create_augroup("Init", {})
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-	group = group,
-	pattern = { "*" },
-	command = ":w",
-	nested = true,
+  group = group,
+  pattern = { "*" },
+  command = ":w",
+  nested = true,
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	group = group,
-	pattern = { "qf" },
-	callback = function()
-		vim.opt.winheight = math.min(vim.api.nvim_buf_line_count(0), 20)
-	end,
+  group = group,
+  pattern = { "qf" },
+  callback = function()
+    vim.opt.winheight = math.min(vim.api.nvim_buf_line_count(0), 20)
+  end,
 })
 
 -- Plugins
