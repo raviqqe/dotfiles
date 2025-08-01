@@ -41,9 +41,6 @@ tools:
   shfmt: &shfmt
     format-command: shfmt -i 2 -s
     format-stdin: true
-  stylua: &stylua
-    format-command: stylua --stdin-filepath ${INPUT} -
-    format-stdin: true
   taplo: &taplo
     format-command: taplo format -
     format-stdin: true

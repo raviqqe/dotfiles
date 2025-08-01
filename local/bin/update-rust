@@ -47,7 +47,6 @@ for crate in \
   stak-profile \
   stak-repl \
   static-web-server \
-  stylua \
   tailspin \
   taplo-cli \
   tealdeer \
