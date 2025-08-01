@@ -47,9 +47,6 @@ tools:
   taplo: &taplo
     format-command: taplo format -
     format-stdin: true
-  terraform: &terraform
-    format-command: terraform fmt -
-    format-stdin: true
   tex-fmt: &tex-fmt
     format-command: tex-fmt -s
     format-stdin: true
@@ -94,8 +91,6 @@ languages:
     - <<: *shfmt
   tablegen:
     - <<: *clang-format
-  terraform:
-    - <<: *terraform
   tex:
     - <<: *tex-fmt
   text:

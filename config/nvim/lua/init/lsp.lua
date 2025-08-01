@@ -9,43 +9,44 @@ vim.keymap.set("n", "<leader>x", vim.diagnostic.goto_next, options)
 vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
 vim.lsp.enable({
-	"astro",
-	"biome",
-	"clangd",
-	"efm",
-	"eslint",
-	"gopls",
-	"lua_ls",
-	"mdx_analyzer",
-	"move_analyzer",
-	"pylsp",
-	"pyrefly",
-	"pyright",
-	"ruff",
-	"rust_analyzer",
-	"solargraph",
-	-- spell-checker: disable-next-line
-	"solidity_ls_nomicfoundation",
-	"sqruff",
-	"ts_ls",
+  "astro",
+  "biome",
+  "clangd",
+  "efm",
+  "eslint",
+  "gopls",
+  "lua_ls",
+  "mdx_analyzer",
+  "move_analyzer",
+  "pylsp",
+  "pyrefly",
+  "pyright",
+  "ruff",
+  "rust_analyzer",
+  "solargraph",
+  -- spell-checker: disable-next-line
+  "solidity_ls_nomicfoundation",
+  "sqruff",
+  "terraformls",
+  "ts_ls",
 }, {
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
 local group = vim.api.nvim_create_augroup("InitLsp", {})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	group = group,
-	pattern = { "*" },
-	callback = function()
-		vim.lsp.buf.format()
-	end,
+  group = group,
+  pattern = { "*" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
 })
 
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-	group = group,
-	pattern = { "*" },
-	callback = function()
-		vim.diagnostic.open_float(nil, { focus = false })
-	end,
+  group = group,
+  pattern = { "*" },
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false })
+  end,
 })

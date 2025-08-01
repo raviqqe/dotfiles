@@ -6,6 +6,7 @@ for url in \
   github.com/danielgatis/imgcat \
   github.com/docker/docker-language-server/cmd/docker-language-server \
   github.com/golangci/golangci-lint/cmd/golangci-lint \
+  github.com/hashicorp/terraform-ls \
   github.com/junegunn/fzf \
   github.com/mattn/efm-langserver \
   github.com/microsoft/ethr \
