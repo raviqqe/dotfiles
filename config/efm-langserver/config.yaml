@@ -5,6 +5,9 @@ root-markers:
   - .git
 lint-debounce: 1s
 tools:
+  biome: &biome
+    format-command: biome format --config-path ~/.config --stdin-file-path ${INPUT}
+    format-stdin: true
   clang-format: &clang-format
     format-command: clang-format --assume-filename ${INPUT}
     format-stdin: true
@@ -52,6 +55,10 @@ languages:
     - <<: *prettier
   html.handlebars:
     - <<: *prettier
+  json:
+    - <<: *biome
+  jsonc:
+    - <<: *biome
   kdl:
     - <<: *kdlfmt
   lisp:
