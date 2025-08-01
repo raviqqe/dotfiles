@@ -11,7 +11,9 @@ vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 vim.lsp.enable({
   "astro",
   "biome",
+  "cairo_ls",
   "clangd",
+  "docker_language_server",
   "efm",
   "eslint",
   "gopls",
