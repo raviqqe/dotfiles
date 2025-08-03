@@ -29,9 +29,6 @@ tools:
   prettier: &prettier
     format-command: prettier --stdin-filepath '${INPUT}'
     format-stdin: true
-  rufo: &rufo
-    format-command: rufo -x
-    format-stdin: true
   schemat: &schemat
     format-command: schemat
     format-stdin: true
@@ -71,8 +68,6 @@ languages:
     - <<: *pen-format
   proto:
     - <<: *clang-format
-  ruby:
-    - <<: *rufo
   scheme:
     - <<: *schemat
   scss:
