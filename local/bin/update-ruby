@@ -2,7 +2,6 @@
 
 set -e
 
-gems='bundler rubocop'
-
-gem install $gems
-gem update $gems
+for command in install update; do
+  gem $command bundler rubocop
+done
