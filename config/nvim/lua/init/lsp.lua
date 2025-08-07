@@ -8,6 +8,16 @@ vim.keymap.set("n", "<leader>y", vim.lsp.buf.implementation, options)
 vim.keymap.set("n", "<leader>x", vim.diagnostic.goto_next, options)
 vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
 
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
+    },
+  },
+})
+
 vim.lsp.enable({
   "astro",
   "biome",
