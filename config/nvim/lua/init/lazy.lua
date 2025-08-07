@@ -50,7 +50,7 @@ require("lazy").setup({
   "ray-x/cmp-treesitter",
   "ray-x/lsp_signature.nvim",
 
-  -- GitHub Copilot
+  -- AI 🤖
 
   {
     "zbirenbaum/copilot.lua",
@@ -73,4 +73,15 @@ require("lazy").setup({
       require("copilot_cmp").setup()
     end,
   },
+  {
+    -- spell-checker: disable-next-line
+    "yetone/avante.nvim",
+    build = "make",
+    event = "VeryLazy",
+    opts = { provider = "copilot" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+  }
 })

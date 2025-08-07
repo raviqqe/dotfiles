@@ -108,8 +108,12 @@ local group = vim.api.nvim_create_augroup("Init", {})
 vim.api.nvim_create_autocmd("InsertLeave", {
   group = group,
   pattern = { "*" },
-  command = ":w",
   nested = true,
+  callback = function()
+    if vim.api.nvim_buf_get_option(0, "buftype") == "" then
+      vim.cmd("write")
+    end
+  end,
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -122,6 +126,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Plugins
 
+require("init.avante")
 require("init.cmp")
 require("init.hop")
 require("init.lsp")
