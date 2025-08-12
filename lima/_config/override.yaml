@@ -4,7 +4,7 @@ provision:
       #!/bin/sh
       set -ex
       apt -y update --fix-missing
-      apt -y install build-essential git golang libssl-dev neovim python3 rcm ruby rustup zsh
+      apt -y install build-essential git libssl-dev rcm ruby zsh
   - mode: user
     script: |
       #!/bin/sh
@@ -16,5 +16,3 @@ provision:
         git clone https://github.com/raviqqe/dotfiles ~/.dotfiles
       fi
       rcup -f
-      cargo install pkgx
-      pkgx dev integrate
