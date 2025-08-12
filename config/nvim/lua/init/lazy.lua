@@ -29,13 +29,10 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-surround",
   "windwp/nvim-autopairs",
-  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-  "nvim-treesitter/nvim-treesitter",
+  { "nvim-telescope/telescope.nvim",   dependencies = { "nvim-lua/plenary.nvim" } },
+  { "nvim-treesitter/nvim-treesitter", branch = "main" },
   "nvim-treesitter/nvim-treesitter-context",
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-  },
+  { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main", },
 
   -- Languages
 
