@@ -1,10 +1,17 @@
 require("treesitter-context").setup()
 require("nvim-treesitter-textobjects").setup()
 
+require("nvim-treesitter").install({
+  "bash",
+})
+
 vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("Treesitter", {}),
   callback = function()
     pcall(vim.treesitter.start)
+    -- spell-checker: disable-next-line
+    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    -- spell-checker: disable-next-line
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
 
