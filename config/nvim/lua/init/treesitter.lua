@@ -24,6 +24,7 @@ require("nvim-treesitter").install({
   "ruby",
   "rust",
   "scala",
+  "scheme",
   "solidity",
   "sql",
   "swift",
