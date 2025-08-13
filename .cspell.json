@@ -221,6 +221,7 @@
     "uutils",
     "vgcore",
     "vicmd",
+    "virtualenv",
     "visualbell",
     "vsnip",
     "wabt",

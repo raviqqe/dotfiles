@@ -55,6 +55,7 @@ brew install \
   terraform \
   tig \
   tmux \
+  tree-sitter-cli \
   uutils-coreutils \
   uutils-findutils \
   uv \

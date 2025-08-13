@@ -4,6 +4,7 @@ require("nvim-treesitter-textobjects").setup()
 require("nvim-treesitter").install({
   "bash",
 })
+vim.treesitter.language.register("bash", { "sh", "zsh" })
 
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
