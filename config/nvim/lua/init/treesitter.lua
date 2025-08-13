@@ -7,6 +7,7 @@ require("nvim-treesitter").install({
   "cpp",
   "css",
   "go",
+  "graphql",
   "guile",
   "haskell",
   "html",
@@ -17,13 +18,18 @@ require("nvim-treesitter").install({
   "julia",
   "kotlin",
   "lua",
+  "markdown",
   "ocaml",
   "python",
   "ruby",
   "rust",
+  "scala",
   "solidity",
+  "sql",
   "swift",
+  "toml",
   "typescript",
+  "xml",
 })
 vim.treesitter.language.register("bash", { "sh", "zsh" })
 
