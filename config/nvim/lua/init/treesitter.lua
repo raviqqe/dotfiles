@@ -3,6 +3,27 @@ require("nvim-treesitter-textobjects").setup()
 
 require("nvim-treesitter").install({
   "bash",
+  "cairo",
+  "cpp",
+  "css",
+  "go",
+  "guile",
+  "haskell",
+  "html",
+  "java",
+  "javascript",
+  "jsdoc",
+  "json",
+  "julia",
+  "kotlin",
+  "lua",
+  "ocaml",
+  "python",
+  "ruby",
+  "rust",
+  "solidity",
+  "swift",
+  "typescript",
 })
 vim.treesitter.language.register("bash", { "sh", "zsh" })
 
