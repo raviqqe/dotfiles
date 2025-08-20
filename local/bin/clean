@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -ex
 
 pids=$(ps ax | grep -e tsserver -e eslint -e typescript-language-server | grep -v grep | awk '{ print $1 }')
 
@@ -17,6 +17,7 @@ done
 brew cleanup -s --prune all
 gem cleanup
 npm cache clean --force
+pnpm cache delete
 
 if which yarn; then
   yarn cache clean
