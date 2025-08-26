@@ -17,7 +17,6 @@
 
 [core]
   pager = delta --max-line-length 0
-  excludesfile = ~/.gitignore
   ignorecase = false
 
 [filter "lfs"]
