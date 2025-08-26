@@ -23,6 +23,7 @@ vim.lsp.enable({
   "biome",
   "cairo_ls",
   "clangd",
+  "copilot",
   "docker_language_server",
   "efm",
   "eslint",
