@@ -13,6 +13,7 @@ rustup update
 for crate in \
   ast-grep \
   bat \
+  bob-nvim \
   bottom \
   cargo-expand \
   cargo-insta \

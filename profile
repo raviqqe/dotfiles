@@ -88,6 +88,10 @@ export CUCUMBER_PUBLISH_ENABLED=
 
 export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
+## neovim
+
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
 ## skim
 
 export SKIM_DEFAULT_OPTIONS='--ansi --exit-0 --select-1'
