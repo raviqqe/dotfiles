@@ -16,7 +16,6 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = "buffer" },
-    { name = "copilot" },
     { name = "emoji" },
     { name = "nvim_lsp",  priority = 100 },
     { name = "path" },

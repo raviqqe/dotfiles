@@ -50,27 +50,6 @@ require("lazy").setup({
   -- AI 🤖
 
   {
-    "zbirenbaum/copilot.lua",
-    config = function()
-      vim.schedule(function()
-        require("copilot").setup({
-          filetypes = {
-            markdown = true,
-          },
-          server = {
-            type = "nodejs",
-          },
-        })
-      end)
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
-  {
     -- spell-checker: disable-next-line
     "yetone/avante.nvim",
     build = "make",

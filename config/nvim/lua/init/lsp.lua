@@ -1,3 +1,5 @@
+vim.lsp.inline_completion.enable(true)
+
 local options = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, options)
@@ -7,6 +9,7 @@ vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, options)
 vim.keymap.set("n", "<leader>y", vim.lsp.buf.implementation, options)
 vim.keymap.set("n", "<leader>x", vim.diagnostic.goto_next, options)
 vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist, options)
+vim.keymap.set('i', '<c-o>', '<cmd>lua vim.lsp.inline_completion.get()<cr>', options)
 
 vim.lsp.config("lua_ls", {
   settings = {
