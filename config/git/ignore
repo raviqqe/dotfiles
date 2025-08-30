@@ -65,3 +65,4 @@ target
 .ultra.cache.json
 .yarn
 node_modules
+package-lock.json
