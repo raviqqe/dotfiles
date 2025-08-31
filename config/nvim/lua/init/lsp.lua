@@ -47,7 +47,7 @@ vim.lsp.enable({
   -- spell-checker: disable-next-line
   "terraformls",
   "tombi",
-  "ts_ls",
+  "tsgo",
 }, {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
