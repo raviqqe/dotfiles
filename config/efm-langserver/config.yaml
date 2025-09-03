@@ -42,8 +42,6 @@ tools:
     format-command: tex-fmt -s
     format-stdin: true
 languages:
-  astro:
-    - <<: *prettier
   bib:
     - <<: *tex-fmt
   cucumber:
