@@ -19,6 +19,7 @@ for crate in \
   cargo-insta \
   cargo-machete \
   cargo-release \
+  cargo-show-asm \
   du-dust \
   eza \
   fastmod \
