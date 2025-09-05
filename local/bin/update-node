@@ -2,6 +2,7 @@
 
 set -e
 
+# spell-checker: disable
 npm install --global --ignore-scripts \
   @astrojs/language-server \
   @biomejs/biome \
@@ -18,3 +19,4 @@ npm install --global --ignore-scripts \
   typescript \
   vscode-langservers-extracted \
   wasm-run
+# spell-checker: enable
