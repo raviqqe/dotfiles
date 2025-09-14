@@ -21,7 +21,7 @@ require("lazy").setup({
   "hoob3rt/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
   "maxbrunsfeld/vim-yankstack",
-  "NvChad/nvim-colorizer.lua",
+  "catgoose/nvim-colorizer.lua",
   "pbrisbin/vim-mkdir",
   "phaazon/hop.nvim",
   "rhysd/clever-f.vim",
