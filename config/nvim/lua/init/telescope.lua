@@ -1,29 +1,18 @@
-local telescope = require("telescope")
-local actions = require("telescope.actions")
-local builtin = require("telescope.builtin")
+local fzf = require("fzf-lua")
 
-telescope.setup({
-  defaults = {
-    layout_strategy = "bottom_pane",
-    layout_config = {
-      bottom_pane = {
-        height = 1000,
-        prompt_position = "bottom",
-      },
-    },
-    mappings = {
-      i = { ["<esc>"] = actions.close },
-    },
-    path_display = { "truncate" },
-  },
+vim.env.FZF_DEFAULT_OPTS = nil
+
+fzf.setup({
+  defaults = { file_icons = false },
+  -- spell-checker: disable-next-line
+  winopts = { fullscreen = true },
+  fzf_opts = { ['--layout'] = 'default' },
 })
 
 local options = { noremap = true }
 
-vim.keymap.set("n", "<leader>b", builtin.buffers, options)
-vim.keymap.set("n", "<leader>c", builtin.command_history, options)
-vim.keymap.set("n", "<leader>f", builtin.find_files, options)
-vim.keymap.set("n", "<leader>g", builtin.live_grep, options)
-vim.keymap.set("n", "<leader>r", function()
-  builtin.git_files({ use_git_root = true })
-end, options)
+vim.keymap.set("n", "<leader>b", fzf.buffers, options)
+vim.keymap.set("n", "<leader>c", fzf.command_history, options)
+vim.keymap.set("n", "<leader>f", fzf.files, options)
+vim.keymap.set("n", "<leader>g", fzf.live_grep, options)
+vim.keymap.set("n", "<leader>r", fzf.git_files, options)
