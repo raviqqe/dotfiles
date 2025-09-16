@@ -128,10 +128,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 require("init.avante")
 require("init.cmp")
+require("init.fuzzy")
 require("init.hop")
 require("init.lsp")
 require("init.lualine")
-require("init.telescope")
 require("init.treesitter")
 
 require("colorizer").setup()
