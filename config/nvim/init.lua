@@ -2,8 +2,7 @@ require("init.lazy")
 
 -- General
 
--- TODO Set this to 0.
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.autochdir = true
 vim.opt.autoread = true
 vim.opt.backup = false
