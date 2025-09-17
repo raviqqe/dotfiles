@@ -3,6 +3,7 @@ local fzf = require("fzf-lua")
 vim.env.FZF_DEFAULT_OPTS = nil
 
 fzf.setup({
+  buffers = { actions = { ["ctrl-x"] = false } },
   defaults = { file_icons = false },
   fzf_opts = { ['--layout'] = 'default' },
   git = { files = { cwd_header = false } },
