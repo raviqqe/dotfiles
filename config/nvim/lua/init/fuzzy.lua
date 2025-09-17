@@ -5,6 +5,7 @@ vim.env.FZF_DEFAULT_OPTS = nil
 fzf.setup({
   defaults = { file_icons = false },
   fzf_opts = { ['--layout'] = 'default' },
+  git = { files = { cwd_header = false } },
   grep = { no_header_i = true },
   -- spell-checker: disable-next-line
   winopts = { fullscreen = true },
