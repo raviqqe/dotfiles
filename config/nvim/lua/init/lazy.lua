@@ -36,7 +36,6 @@ require("lazy").setup({
 
   -- Languages
 
-  "hashivim/vim-hashicorp-tools",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-emoji",
   "hrsh7th/cmp-nvim-lsp",
