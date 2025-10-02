@@ -59,7 +59,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     vim.lsp.buf.format({
       filter = function(client)
-        return client.name ~= "ts_ls"
+        return client.name ~= "tsgo"
       end
     })
   end,
