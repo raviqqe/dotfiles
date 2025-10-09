@@ -45,18 +45,4 @@ require("lazy").setup({
   "pen-lang/pen.vim",
   "ray-x/cmp-treesitter",
   "ray-x/lsp_signature.nvim",
-
-  -- AI 🤖
-
-  {
-    -- spell-checker: disable-next-line
-    "yetone/avante.nvim",
-    build = "make",
-    event = "VeryLazy",
-    opts = { provider = "copilot" },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
-  }
 })

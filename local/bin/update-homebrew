@@ -12,7 +12,6 @@ brew upgrade
 
 brew install \
   agg \
-  aider \
   asciinema \
   automake \
   awscli \
