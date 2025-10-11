@@ -1,6 +1,0 @@
-#!/bin/sh
-
-set -e
-
-sudo pacman --noconfirm -Syu
-sudo pacman --noconfirm -Sc

@@ -56,6 +56,7 @@ brew install \
   tmux \
   tree-sitter-cli \
   uutils-coreutils \
+  uutils-diffutils \
   uutils-findutils \
   uv \
   virtualenv \

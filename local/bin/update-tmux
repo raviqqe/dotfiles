@@ -2,4 +2,8 @@
 
 set -e
 
-git clone-or-update https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+directory=~/.tmux/plugins/tpm
+
+if [ ! -d $directory ]; then
+  git clone https://github.com/tmux-plugins/tpm $directory
+fi
