@@ -1,5 +1,6 @@
 *.bc
 *.bin
+*.bkp
 *.bookmark
 *.info
 *.log
