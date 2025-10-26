@@ -36,7 +36,6 @@ vim.lsp.enable({
   "move_analyzer",
   "pylsp",
   "pyrefly",
-  "pyright",
   "rubocop",
   "ruff",
   "rust_analyzer",

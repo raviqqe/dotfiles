@@ -2,6 +2,6 @@
 
 set -e
 
-for package in pyrefly pyright python-lsp-server ruff; do
+for package in pyrefly python-lsp-server ruff; do
   uv tool install --upgrade $package
 done
