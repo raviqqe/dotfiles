@@ -46,10 +46,6 @@ languages:
     - <<: *tex-fmt
   cucumber:
     - <<: *gherkin-format
-  html:
-    - <<: *prettier
-  html.handlebars:
-    - <<: *prettier
   json:
     - <<: *biome
   jsonc:
