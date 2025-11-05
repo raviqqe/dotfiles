@@ -12,6 +12,7 @@ npm install --global --ignore-scripts \
   @nomicfoundation/solidity-language-server \
   @prettier/plugin-xml \
   @typescript/native-preview \
+  corepack \
   cspell \
   prettier \
   sharp-cli \
