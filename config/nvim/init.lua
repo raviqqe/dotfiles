@@ -58,10 +58,9 @@ vim.diagnostic.config({ virtual_text = true })
 
 vim.filetype.add({
   extension = {
+    daml = "haskell",
     mdx = "markdown.mdx",
-  },
-  pattern = {
-    [".*%.ll"] = { "llvm", { priority = 10 } },
+    ll = "llvm",
   },
 })
 
