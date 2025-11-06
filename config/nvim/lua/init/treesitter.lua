@@ -17,6 +17,7 @@ require("nvim-treesitter").install({
   "json",
   "julia",
   "kotlin",
+  "llvm",
   "lua",
   "markdown",
   "ocaml",
