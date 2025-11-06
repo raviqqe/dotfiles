@@ -2,26 +2,16 @@
 
 set -ex
 
-pids=$(ps ax | grep -e tsserver -e eslint -e typescript-language-server | grep -v grep | awk '{ print $1 }')
-
-if [ -n "$pids" ]; then
-  kill $pids
-fi
-
-set -x
-
 for directory in .rustup/downloads/* .rustup/tmp/* .cache/sccache; do
   rm -rf ~/$directory
 done
 
 brew cleanup -s --prune all
 gem cleanup
+go clean -cache
 npm cache clean --force
 pnpm cache delete
 
-if which yarn; then
-  yarn cache clean
+if which pip3; then
+  pip3 cache purge || :
 fi
-
-pip3 cache purge || :
-go clean -cache
