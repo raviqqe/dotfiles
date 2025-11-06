@@ -2,12 +2,20 @@ require("treesitter-context").setup()
 require("nvim-treesitter-textobjects").setup()
 
 require("nvim-treesitter").install({
+  "ada",
+  "agda",
+  "asm",
+  "astro",
   "bash",
+  "c",
   "cairo",
+  "commonlisp",
   "cpp",
   "css",
-  "gitattributes",
+  "dockerfile",
+  "forth",
   "git_config",
+  "gitattributes",
   "gitignore",
   "go",
   "graphql",
@@ -23,6 +31,7 @@ require("nvim-treesitter").install({
   "llvm",
   "lua",
   "markdown",
+  "nasm",
   "ocaml",
   "python",
   "ruby",
@@ -34,6 +43,8 @@ require("nvim-treesitter").install({
   "swift",
   "toml",
   "typescript",
+  "verilog",
+  "yaml",
   "xml",
 })
 vim.treesitter.language.register("bash", { "sh", "zsh" })

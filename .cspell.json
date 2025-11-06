@@ -1,6 +1,7 @@
 {
   "words": [
     "aarch",
+    "agda",
     "agoa",
     "airblade",
     "alacritty",
@@ -46,6 +47,7 @@
     "colorcolumn",
     "colour",
     "comby",
+    "commonlisp",
     "completeopt",
     "coreutils",
     "cpus",
@@ -122,6 +124,7 @@
     "munif",
     "mvdan",
     "mypy",
+    "nasm",
     "neovim",
     "noconfirm",
     "nohlsearch",
@@ -221,6 +224,7 @@
     "unsetopt",
     "updatetime",
     "uutils",
+    "verilog",
     "vgcore",
     "vicmd",
     "virtualenv",
