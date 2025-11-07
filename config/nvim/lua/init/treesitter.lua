@@ -46,6 +46,7 @@ require("nvim-treesitter").install({
   "verilog",
   "yaml",
   "xml",
+  "zsh",
 })
 vim.treesitter.language.register("bash", { "sh", "zsh" })
 
