@@ -24,7 +24,6 @@ require("lazy").setup({
   "lewis6991/gitsigns.nvim",
   "lukas-reineke/indent-blankline.nvim",
   "mateuszwieloch/automkdir.nvim",
-  "maxbrunsfeld/vim-yankstack",
   "nxhung2304/lastplace.nvim",
   "tpope/vim-abolish",
   "tpope/vim-fugitive",
