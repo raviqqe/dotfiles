@@ -1,3 +1,5 @@
-require("hop").setup()
+local flash = require("flash")
 
-vim.keymap.set("n", "<leader>s", ":HopWord<cr>")
+flash.setup()
+
+vim.keymap.set("n", "<leader>s", function() flash.jump() end)
