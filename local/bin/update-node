@@ -7,6 +7,7 @@ npm install --global --ignore-scripts \
   @astrojs/language-server \
   @biomejs/biome \
   @getgrit/cli \
+  @github/copilot \
   @github/copilot-language-server \
   @mdx-js/language-server \
   @nomicfoundation/solidity-language-server \
