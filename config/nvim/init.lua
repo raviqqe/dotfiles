@@ -130,6 +130,7 @@ require("init.fuzzy")
 require("init.hop")
 require("init.lsp")
 require("init.lualine")
+require("init.tmux")
 require("init.treesitter")
 
 require("automkdir").setup()

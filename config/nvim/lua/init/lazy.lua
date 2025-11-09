@@ -14,9 +14,9 @@ end
 vim.opt.rtp:prepend(path)
 
 require("lazy").setup({
+  "alexghergh/nvim-tmux-navigation",
   "cappyzawa/trim.nvim",
   "catgoose/nvim-colorizer.lua",
-  "christoomey/vim-tmux-navigator",
   "folke/flash.nvim",
   "hoob3rt/lualine.nvim",
   "ibhagwan/fzf-lua",
