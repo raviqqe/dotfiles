@@ -19,6 +19,5 @@ npm install --global --ignore-scripts \
   sharp-cli \
   tombi \
   typescript \
-  vscode-langservers-extracted \
-  wasm-run
+  vscode-langservers-extracted
 # spell-checker: enable
