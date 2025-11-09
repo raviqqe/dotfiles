@@ -32,9 +32,6 @@ tools:
   schemat: &schemat
     format-command: schemat
     format-stdin: true
-  sed: &sed
-    format-command: sed s/[[:blank:]]*$//g
-    format-stdin: true
   shfmt: &shfmt
     format-command: shfmt -i 2 -s
     format-stdin: true
@@ -72,8 +69,6 @@ languages:
     - <<: *clang-format
   tex:
     - <<: *tex-fmt
-  text:
-    - <<: *sed
   wat:
     - <<: *schemat
   xml:
