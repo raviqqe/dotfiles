@@ -70,34 +70,40 @@ vim.g.mapleader = " "
 
 local options = { noremap = true }
 
-vim.keymap.set("n", ";", ":", options)
-vim.keymap.set("n", ":", ";", options)
-vim.keymap.set("v", ";", ":", options)
-vim.keymap.set("v", ":", ";", options)
+local function set_keymap(mode, from, to)
+  vim.keymap.set(mode, from, to, options)
+end
 
-vim.keymap.set("n", "<leader>w", ":w<cr>", options)
-vim.keymap.set("n", "<leader>q", ":q<cr>", options)
+set_keymap("n", ";", ":")
+set_keymap("n", ":", ";")
+set_keymap("v", ";", ":")
+set_keymap("v", ":", ";")
+
+set_keymap("n", "<leader>w", ":w<cr>")
+set_keymap("n", "<leader>q", ":q<cr>")
 
 for _, mode in ipairs({ "n", "v" }) do
   vim.keymap.set(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
   vim.keymap.set(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
-  vim.keymap.set(mode, "gj", "j", options)
-  vim.keymap.set(mode, "gk", "k", options)
+  set_keymap(mode, "gj", "j")
+  set_keymap(mode, "gk", "k")
 end
 
-vim.keymap.set("n", "Q", ":q!<cr>", options)
-vim.keymap.set("n", "Y", "y$", options)
-vim.keymap.set("n", "<esc><esc>", ":nohlsearch<cr>", options)
+set_keymap("n", "Q", ":q!<cr>")
+set_keymap("n", "Y", "y$")
+set_keymap("n", "<esc><esc>", ":nohlsearch<cr>")
 
-vim.keymap.set("i", "<c-h>", "<left>", options)
-vim.keymap.set("i", "<c-j>", "<down>", options)
-vim.keymap.set("i", "<c-k>", "<up>", options)
-vim.keymap.set("i", "<c-l>", "<right>", options)
+set_keymap("i", "<c-h>", "<left>")
+set_keymap("i", "<c-j>", "<down>")
+set_keymap("i", "<c-k>", "<up>")
+set_keymap("i", "<c-l>", "<right>")
 
-vim.keymap.set("c", "<c-h>", "<left>", options)
-vim.keymap.set("c", "<c-j>", "<c-n>", options)
-vim.keymap.set("c", "<c-k>", "<c-p>", options)
-vim.keymap.set("c", "<c-l>", "<right>", options)
+set_keymap("c", "<c-h>", "<left>")
+set_keymap("c", "<c-j>", "<c-n>")
+set_keymap("c", "<c-k>", "<c-p>")
+set_keymap("c", "<c-l>", "<right>")
+
+set_keymap("v", "p", "P")
 
 -- Autocmd
 
