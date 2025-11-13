@@ -68,10 +68,8 @@ vim.filetype.add({
 
 vim.g.mapleader = " "
 
-local options = { noremap = true }
-
 local function set_keymap(mode, from, to)
-  vim.keymap.set(mode, from, to, options)
+  vim.keymap.set(mode, from, to, { noremap = true, silent = true })
 end
 
 set_keymap("n", ";", ":")
