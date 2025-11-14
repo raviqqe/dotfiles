@@ -68,21 +68,24 @@ vim.filetype.add({
 
 vim.g.mapleader = " "
 
-local function set_keymap(mode, from, to)
-  vim.keymap.set(mode, from, to, { noremap = true, silent = true })
-end
+local function set_keymap(mode, from, to, overrides)
+  local options = { noremap = true, silent = true }
 
-set_keymap("n", ";", ":")
-set_keymap("n", ":", ";")
-set_keymap("v", ";", ":")
-set_keymap("v", ":", ";")
+  for key, value in pairs(overrides or {}) do
+    options[key] = value
+  end
+
+  vim.keymap.set(mode, from, to, options)
+end
 
 set_keymap("n", "<leader>w", ":w<cr>")
 set_keymap("n", "<leader>q", ":q<cr>")
 
 for _, mode in ipairs({ "n", "v" }) do
-  vim.keymap.set(mode, "j", "v:count ? 'j' : 'gj'", { expr = true, noremap = true })
-  vim.keymap.set(mode, "k", "v:count ? 'k' : 'gk'", { expr = true, noremap = true })
+  set_keymap(mode, ";", ":", { silent = false })
+  set_keymap(mode, ":", ";")
+  set_keymap(mode, "j", "v:count ? 'j' : 'gj'", { expr = true })
+  set_keymap(mode, "k", "v:count ? 'k' : 'gk'", { expr = true })
   set_keymap(mode, "gj", "j")
   set_keymap(mode, "gk", "k")
 end
