@@ -69,7 +69,7 @@ vim.filetype.add({
 vim.g.mapleader = " "
 
 local function set_keymap(mode, from, to, overrides)
-  local options = { noremap = true, silent = true }
+  local options = { noremap = true }
 
   for key, value in pairs(overrides or {}) do
     options[key] = value
@@ -78,11 +78,11 @@ local function set_keymap(mode, from, to, overrides)
   vim.keymap.set(mode, from, to, options)
 end
 
-set_keymap("n", "<leader>w", ":w<cr>")
-set_keymap("n", "<leader>q", ":q<cr>")
+set_keymap("n", "<leader>w", ":w<cr>", { silent = true })
+set_keymap("n", "<leader>q", ":q<cr>", { silent = true })
 
 for _, mode in ipairs({ "n", "v" }) do
-  set_keymap(mode, ";", ":", { silent = false })
+  set_keymap(mode, ";", ":")
   set_keymap(mode, ":", ";")
   set_keymap(mode, "j", "v:count ? 'j' : 'gj'", { expr = true })
   set_keymap(mode, "k", "v:count ? 'k' : 'gk'", { expr = true })
@@ -90,9 +90,9 @@ for _, mode in ipairs({ "n", "v" }) do
   set_keymap(mode, "gk", "k")
 end
 
-set_keymap("n", "Q", ":q!<cr>")
+set_keymap("n", "Q", ":q!<cr>", { silent = true })
 set_keymap("n", "Y", "y$")
-set_keymap("n", "<esc><esc>", ":nohlsearch<cr>")
+set_keymap("n", "<esc><esc>", ":nohlsearch<cr>", { silent = true })
 
 set_keymap("i", "<c-h>", "<left>")
 set_keymap("i", "<c-j>", "<down>")
@@ -131,7 +131,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Plugins
 
-require("init.avante")
 require("init.cmp")
 require("init.fuzzy")
 require("init.hop")
