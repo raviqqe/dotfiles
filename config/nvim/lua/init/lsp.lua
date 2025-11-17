@@ -21,6 +21,12 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+vim.lsp.config("rumdl", {
+  cmd = { 'rumdl', 'server' },
+  filetypes = { 'markdown' },
+  root_markers = { '.git' },
+})
+
 vim.lsp.enable({
   "astro",
   "biome",
@@ -38,6 +44,7 @@ vim.lsp.enable({
   "pyrefly",
   "rubocop",
   "ruff",
+  "rumdl",
   "rust_analyzer",
   -- spell-checker: disable-next-line
   "solidity_ls_nomicfoundation",

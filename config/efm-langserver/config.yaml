@@ -51,8 +51,6 @@ languages:
     - <<: *kdlfmt
   lisp:
     - <<: *schemat
-  markdown:
-    - <<: *prettier
   markdown.mdx:
     - <<: *prettier
   pen:

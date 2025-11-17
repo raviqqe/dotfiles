@@ -164,6 +164,7 @@
     "rror",
     "rubocop",
     "rufo",
+    "rumdl",
     "rustc",
     "rustflags",
     "rustfmt",
