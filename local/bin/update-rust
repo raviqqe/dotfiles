@@ -34,6 +34,7 @@ for crate in \
   kdlfmt \
   mstak \
   mstak-interpret \
+  muffy \
   pkgx \
   procs \
   ripgrep \
