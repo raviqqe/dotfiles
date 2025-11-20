@@ -90,7 +90,7 @@ export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
 ## neovim
 
-export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 ## skim
 

@@ -19,5 +19,6 @@ fi
 
   if which fnm >/dev/null; then
     fnm env --use-on-cd --shell zsh --version-file-strategy recursive
+    echo fnm default system
   fi
 ) >$CACHED_PROFILE
