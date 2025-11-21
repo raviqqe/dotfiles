@@ -14,7 +14,7 @@ jobs:
       run:
         shell: sh -ec "if [ -r ~/.profile ]; then . ~/.profile; fi && . {0}"
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
@@ -23,5 +23,5 @@ jobs:
   spell_check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: streetsidesoftware/cspell-action@v8
