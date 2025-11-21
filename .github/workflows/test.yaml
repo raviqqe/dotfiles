@@ -15,7 +15,9 @@ jobs:
         shell: sh -ec "if [ -r ~/.profile ]; then . ~/.profile; fi && . {0}"
     steps:
       - uses: actions/checkout@v6
-      - run: sudo apt remove -y ^dotnet-* ^ghc-* ^google-* ^php*
+      - run: |
+          sudo apt -y remove ^dotnet-* ^ghc-* ^google-* ^php*
+          auto apt -y autoremove
         if: runner.os == 'Linux'
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
