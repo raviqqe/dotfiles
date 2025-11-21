@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: |
-          sudo apt -y remove ^dotnet-* ^ghc-* ^google-* ^php*
+          sudo apt -y remove ^dotnet* ^ghc* ^google-* ^llvm* ^php*
           sudo apt -y autoremove
         if: runner.os == 'Linux'
       - run: cp profile ~/.profile
