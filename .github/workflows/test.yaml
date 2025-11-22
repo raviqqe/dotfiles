@@ -19,6 +19,7 @@ jobs:
           sudo apt -y remove firefox google-* llvm* microsoft-* php*
           sudo apt -y autoremove
         if: runner.os == 'Linux'
+      - run: rm -rf /usr/local/lib/android
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
