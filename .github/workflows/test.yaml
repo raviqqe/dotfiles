@@ -19,6 +19,7 @@ jobs:
           sudo apt -y remove ^dotnet* ^ghc* ^google-* ^llvm* ^php*
           sudo apt -y autoremove
         if: runner.os == 'Linux'
+      - run: sudo apt list
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
