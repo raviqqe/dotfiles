@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: |
-          sudo apt -y remove firefox google-* llvm* microsoft-* mono-devel php*
+          sudo apt -y remove firefox google-* llvm* microsoft-* php*
           sudo apt -y autoremove
         if: runner.os == 'Linux'
       - run: cp profile ~/.profile
