@@ -18,6 +18,7 @@ jobs:
       - run: |
           sudo apt -y remove firefox google-* llvm* microsoft-* php*
           sudo apt -y autoremove
+          sudo apt -y clean
         if: runner.os == 'Linux'
       - run: rm -rf /usr/local/lib/android
       - run: cp profile ~/.profile
