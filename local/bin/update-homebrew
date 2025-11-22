@@ -63,5 +63,4 @@ brew install \
   watch \
   watchexec \
   yq \
-  zig \
   zsh
