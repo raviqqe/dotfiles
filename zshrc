@@ -52,6 +52,6 @@ fi >/dev/null 2>&1
 
 . ~/.shrc
 
-chpwd() {
+chpwd() (
   ls
-}
+)
