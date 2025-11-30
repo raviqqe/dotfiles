@@ -125,7 +125,8 @@ gls() (
   git show $(
     git log --oneline --graph |
       fzf --exit-0 --no-sort |
-      grep -o "[a-f0-9]+"
+      grep -o '[a-f0-9]\+' |
+      head -1
   )
 )
 
