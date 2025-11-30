@@ -11,6 +11,7 @@ gem cleanup
 go clean -cache
 npm cache clean --force
 pnpm cache delete
+uv clean
 
 if which pip3; then
   pip3 cache purge
