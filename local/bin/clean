@@ -13,5 +13,5 @@ npm cache clean --force
 pnpm cache delete
 
 if which pip3; then
-  pip3 cache purge || :
+  pip3 cache purge
 fi
