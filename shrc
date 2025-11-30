@@ -35,14 +35,12 @@ for _ in $(seq 10); do
   alias $command=$directory
 done
 
-c() (
-  set -e
+c() {
+  local directory=$(fd -t d . | fzf)
 
-  directory=$(fd -t d . | fzf)
-
-  [ -n "$directory" ]
-  cd "$directory"
-)
+  [ -n "$directory" ] &&
+    cd "$directory"
+}
 
 # tmux
 
@@ -149,17 +147,15 @@ gsw() (
   fi
 )
 
-gwa() (
-  set -e
+gwa() {
+  [ $# -eq 0 ] || return 1
 
-  [ $# -eq 0 ]
-
-  directory=~/worktree/$(openssl rand -hex 8)
+  local directory=~/worktree/$(openssl rand -hex 8)
 
   git worktree add "$directory" $(git branch --format '%(refname:short)' | fzf)
   cd "$directory"
   git submodule update --init --recursive
-)
+}
 
 # Editor
 
