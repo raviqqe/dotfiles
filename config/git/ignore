@@ -9,6 +9,7 @@
 *.out
 *.stacks
 *.wasm
+.*-cache
 .*_cache
 .aider.*
 .bloop
@@ -16,7 +17,6 @@
 .env.*.local
 .env.local
 .venv
-.zig-cache
 callgrind.*
 coverage
 dhat-heap.json
