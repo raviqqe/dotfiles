@@ -74,11 +74,8 @@ alias gdc='git diff --cached'
 alias gdh='git diff HEAD^ HEAD'
 alias gl='git log'
 alias glf='git log -p --name-only'
-alias glg='git log --decorate --graph --oneline'
-alias glo='git log --oneline'
+alias glo='git log --graph --oneline'
 alias glp='git log -p'
-alias glp='git log -p'
-alias gls='git log --show-signature'
 alias gm='git merge'
 alias gpl='git pull'
 alias gpp='git pull && git push'
@@ -120,6 +117,16 @@ ga() (
   fi
 
   git status
+)
+
+gls() (
+  set -e
+
+  git show $(
+    git log --oneline --graph |
+      fzf --exit-0 --no-sort |
+      grep -o "[a-f0-9]+"
+  )
 )
 
 grh() (
