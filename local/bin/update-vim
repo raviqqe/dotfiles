@@ -4,4 +4,3 @@ set -e
 
 bob install nightly
 bob use nightly
-bob update
