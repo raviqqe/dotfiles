@@ -59,7 +59,6 @@ local group = vim.api.nvim_create_augroup("InitLsp", {})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = group,
-  pattern = { "*" },
   callback = function()
     vim.lsp.buf.format({
       filter = function(client)
@@ -71,8 +70,18 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = group,
-  pattern = { "*" },
   callback = function()
     vim.diagnostic.open_float(nil, { focus = false })
+  end,
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = group,
+  callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+    if client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, event.buf)
+    end
   end,
 })
