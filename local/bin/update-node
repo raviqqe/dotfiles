@@ -11,7 +11,6 @@ npm install --global --ignore-scripts \
   @github/copilot-language-server \
   @mdx-js/language-server \
   @nomicfoundation/solidity-language-server \
-  @prettier/plugin-xml \
   @typescript/native-preview \
   corepack \
   cspell \

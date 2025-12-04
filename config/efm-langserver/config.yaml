@@ -69,8 +69,6 @@ languages:
     - <<: *tex-fmt
   wat:
     - <<: *schemat
-  xml:
-    - <<: *prettier
   yaml:
     - <<: *prettier
   zsh:
