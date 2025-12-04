@@ -53,8 +53,6 @@ vim.lsp.enable({
   "terraformls",
   "tombi",
   "tsgo",
-}, {
-  capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
 local group = vim.api.nvim_create_augroup("InitLsp", {})

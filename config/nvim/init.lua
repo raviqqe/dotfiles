@@ -7,7 +7,6 @@ vim.opt.autochdir = true
 vim.opt.autoread = true
 vim.opt.backup = false
 vim.opt.clipboard = vim.opt.clipboard + { "unnamedplus" }
-vim.opt.completeopt = { "fuzzy", "menuone", "noselect", "popup" }
 vim.opt.hidden = true
 vim.opt.ignorecase = true
 vim.opt.lazyredraw = true
@@ -22,6 +21,22 @@ vim.opt.wildmode = "full"
 vim.opt.writebackup = false
 
 vim.loader.enable()
+
+-- Completion
+
+vim.opt.autocomplete = true
+vim.opt.complete = { ".", "o", "s", "w" }
+vim.opt.completeopt = { "fuzzy", "menuone", "noselect", "popup" }
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+    if client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, event.buf)
+    end
+  end,
+})
 
 -- Spacing
 
@@ -131,7 +146,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Plugins
 
-require("init.cmp")
 require("init.fuzzy")
 require("init.hop")
 require("init.lsp")
