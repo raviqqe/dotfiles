@@ -51,7 +51,6 @@ brew install \
   rustup \
   sbcl \
   sccache \
-  tig \
   tmux \
   tree-sitter-cli \
   uutils-coreutils \
