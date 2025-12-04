@@ -128,7 +128,7 @@ gls() (
   )
 
   [ -n "$commit" ]
-  git show --show-signature
+  git show --show-signature $commit
 )
 
 grh() (
