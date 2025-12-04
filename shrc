@@ -121,7 +121,7 @@ gls() (
   set -e
 
   git show --show-signature $(
-    git log --oneline --graph |
+    git log --oneline --graph "$@" |
       fzf --exit-0 --no-sort |
       grep -o '[a-f0-9]\+' |
       head -1
