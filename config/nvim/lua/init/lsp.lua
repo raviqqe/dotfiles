@@ -21,12 +21,6 @@ vim.lsp.config("lua_ls", {
   },
 })
 
-vim.lsp.config("rumdl", {
-  cmd = { 'rumdl', 'server' },
-  filetypes = { 'markdown' },
-  root_markers = { '.git' },
-})
-
 vim.lsp.enable({
   "astro",
   "biome",
