@@ -3,7 +3,6 @@ log-file: /tmp/efm.log
 log-level: 1
 root-markers:
   - .git
-lint-debounce: 1s
 tools:
   biome: &biome
     format-command: biome format --config-path ~/.config --stdin-file-path ${INPUT}
@@ -19,9 +18,6 @@ tools:
       - "%f:%l:%c - %m"
   gherkin-format: &gherkin-format
     format-command: gherkin-format
-    format-stdin: true
-  kdlfmt: &kdlfmt
-    format-command: kdlfmt format -
     format-stdin: true
   pen-format: &pen-format
     format-command: pen format --stdin
@@ -47,8 +43,6 @@ languages:
     - <<: *biome
   jsonc:
     - <<: *biome
-  kdl:
-    - <<: *kdlfmt
   lisp:
     - <<: *schemat
   markdown.mdx:

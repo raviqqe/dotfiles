@@ -31,7 +31,6 @@ for crate in \
   hyperfine \
   jaq \
   jnv \
-  kdlfmt \
   mstak \
   mstak-interpret \
   muffy \
