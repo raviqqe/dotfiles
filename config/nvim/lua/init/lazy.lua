@@ -28,7 +28,7 @@ require("lazy").setup({
   "tpope/vim-abolish",
   "tpope/vim-fugitive",
   "windwp/nvim-autopairs",
-  "nvim-treesitter/nvim-treesitter",
+  { "nvim-treesitter/nvim-treesitter",             branch = "main" },
   "nvim-treesitter/nvim-treesitter-context",
   { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main", },
 
