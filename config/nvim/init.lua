@@ -1,4 +1,4 @@
-require("init.lazy")
+require("init.pack")
 
 -- General
 
