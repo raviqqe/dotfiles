@@ -2,13 +2,16 @@
 *.bin
 *.bkp
 *.bookmark
+*.gz
 *.info
 *.log
+*.lz
 *.map
 *.o
 *.out
 *.stacks
 *.wasm
+*.zst
 .*-cache
 .*_cache
 .aider.*
