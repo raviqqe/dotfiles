@@ -139,6 +139,7 @@
     "opam",
     "optarg",
     "optind",
+    "oxfmt",
     "pacman",
     "pbcopy",
     "pbrisbin",

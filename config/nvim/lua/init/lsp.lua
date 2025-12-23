@@ -21,6 +21,13 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+vim.lsp.config("oxfmt", {
+  cmd = { 'oxfmt', '--lsp' },
+  filetypes = { 'json', 'jsonc', 'markdown', 'markdown.mdx', 'scss', 'yaml' },
+  root_markers = { '.git', 'pnpm-lock.yaml' },
+})
+
+
 vim.lsp.enable({
   "astro",
   "biome",
@@ -34,11 +41,11 @@ vim.lsp.enable({
   "lua_ls",
   "mdx_analyzer",
   "move_analyzer",
+  "oxfmt",
   "pylsp",
   "pyrefly",
   "rubocop",
   "ruff",
-  "rumdl",
   "rust_analyzer",
   -- spell-checker: disable-next-line
   "solidity_ls_nomicfoundation",

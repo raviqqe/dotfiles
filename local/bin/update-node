@@ -6,7 +6,6 @@ set -e
 npm install --global --ignore-scripts \
   @astrojs/language-server \
   @biomejs/biome \
-  @getgrit/cli \
   @github/copilot \
   @github/copilot-language-server \
   @mdx-js/language-server \
@@ -14,7 +13,7 @@ npm install --global --ignore-scripts \
   @typescript/native-preview \
   corepack \
   cspell \
-  prettier \
+  oxfmt \
   sharp-cli \
   tombi \
   typescript \
