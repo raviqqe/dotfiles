@@ -57,7 +57,7 @@ for crate in \
   xh \
   zellij \
   zoxide; do
-  cargo install $crate
+  cargo install --locked $crate
 done
 
 cargo install --no-default-features bacon
