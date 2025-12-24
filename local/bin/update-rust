@@ -37,7 +37,6 @@ for crate in \
   pkgx \
   procs \
   ripgrep \
-  rumdl \
   schemat \
   sheldon \
   skim \
