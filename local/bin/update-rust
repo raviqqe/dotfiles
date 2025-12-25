@@ -58,6 +58,4 @@ for crate in \
   cargo install --locked $crate
 done
 
-cargo install --no-default-features bacon
-
 tldr --update
