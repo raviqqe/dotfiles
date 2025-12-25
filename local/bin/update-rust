@@ -34,7 +34,6 @@ for crate in \
   mstak \
   mstak-interpret \
   muffy \
-  pkgx \
   procs \
   ripgrep \
   schemat \
@@ -55,8 +54,7 @@ for crate in \
   tokei \
   wasmtime-cli \
   xh \
-  zellij \
-  zoxide; do
+  zellij; do
   cargo install --locked $crate
 done
 

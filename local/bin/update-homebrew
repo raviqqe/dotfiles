@@ -11,8 +11,6 @@ brew update
 brew upgrade
 
 brew install \
-  agg \
-  asciinema \
   automake \
   awscli \
   ccache \
@@ -44,7 +42,6 @@ brew install \
   neovim \
   node \
   pen-lang/pen/pen \
-  pgformatter \
   python \
   rcm \
   ruby \
