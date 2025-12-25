@@ -14,7 +14,7 @@ for crate in \
   ast-grep \
   bat \
   bob-nvim \
-  bottom \
+  '--bin btm bottom' \
   cargo-expand \
   cargo-insta \
   cargo-machete \
@@ -39,7 +39,7 @@ for crate in \
   schemat \
   sheldon \
   skim \
-  sqruff \
+  '--bin sqruff sqruff' \
   stak \
   stak-compile \
   stak-decode \
