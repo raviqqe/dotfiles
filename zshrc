@@ -31,8 +31,9 @@ bindkey -a j history-substring-search-down
 # ssh-agent
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
-  eval $(ssh-agent) && ssh-add
-fi >/dev/null 2>&1
+  eval $(ssh-agent)
+  ssh-add
+fi
 
 # Extra commands
 
