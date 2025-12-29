@@ -9,7 +9,7 @@ run_command_with_file() (
   shift
 
   if [ $# -eq 0 ]; then
-    file=$( (git ls-files 2>/dev/null || fd -t f .) | fzf)
+    file=$( (git ls-files -co --exclude-standard 2>/dev/null || fd -t f .) | fzf)
 
     [ -n "$file" ]
     "$command" "$file"
