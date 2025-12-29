@@ -143,11 +143,13 @@ gsw() (
 
   [ $# -eq 1 ]
 
-  if git rev-parse --verify >/dev/null 2>&1; then
-    git checkout $1
-  else
-    git switch -C $1
+  option=
+
+  if ! git rev-parse --verify $1 >/dev/null 2>&1; then
+    option=-c
   fi
+
+  git switch $option $1
 )
 
 gwa() {
