@@ -44,6 +44,7 @@ for crate in \
   stak-compile \
   stak-decode \
   stak-interpret \
+  stak-lzss \
   stak-minify \
   stak-profile \
   stak-repl \
