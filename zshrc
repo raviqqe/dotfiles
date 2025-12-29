@@ -14,7 +14,6 @@ zle -N select-quoted
 
 bindkey -v
 bindkey -v ^f forward-char
-bindkey -v ^r history-incremental-pattern-search-forward
 
 HISTFILE=~/.zsh_history
 HISTSIZE=$((2 ** 32))
