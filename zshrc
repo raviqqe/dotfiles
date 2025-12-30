@@ -13,7 +13,9 @@ zle -N select-bracketed
 zle -N select-quoted
 
 bindkey -v
+bindkey -v ^? backward-delete-char
 bindkey -v ^f forward-char
+bindkey -v ^h backward-delete-char
 
 HISTFILE=~/.zsh_history
 HISTSIZE=$((2 ** 32))
