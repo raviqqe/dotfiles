@@ -88,6 +88,8 @@ alias gs='git status'
 alias gsm='git submodule'
 alias gsma='git submodule add'
 alias gsmu='git submodule update --init --recursive'
+alias gsw='git switch'
+alias gswc='git switch -C'
 alias gw='git worktree'
 alias gwc='cd "$(git worktree list | fzf | cut -f 1 -d " ")"'
 alias gwl='git worktree list'
@@ -136,20 +138,6 @@ grh() (
   message=$(git log --format=%B -n 1 HEAD^)
   git reset --soft HEAD^^
   git commit -m "$message"
-)
-
-gsw() (
-  set -e
-
-  [ $# -eq 1 ]
-
-  option=
-
-  if ! git rev-parse --verify $1 >/dev/null 2>&1; then
-    option=-c
-  fi
-
-  git switch $option $1
 )
 
 gwa() {
