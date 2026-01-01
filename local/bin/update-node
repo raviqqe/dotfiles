@@ -8,6 +8,7 @@ npm install --global --ignore-scripts \
   @biomejs/biome \
   @github/copilot \
   @github/copilot-language-server \
+  @google/gemini-cli \
   @mdx-js/language-server \
   @nomicfoundation/solidity-language-server \
   @typescript/native-preview \
