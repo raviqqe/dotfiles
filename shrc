@@ -123,7 +123,7 @@ gls() (
 
   commit=$(
     git log --oneline "$@" |
-      fzf --exit-0 --no-sort --preview 'git show --color --stat $(echo {} | grep -o "[a-f0-9]\+" | head -1)' |
+      fzf --exit-0 --no-sort --preview 'git show --color $(echo {} | cut -d " " -f 1)' |
       grep -o '[a-f0-9]\+' |
       head -1
   )
