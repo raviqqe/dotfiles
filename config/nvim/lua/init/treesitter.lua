@@ -19,7 +19,6 @@ require("nvim-treesitter").install({
   "gitignore",
   "go",
   "graphql",
-  "guile",
   "haskell",
   "html",
   "java",
