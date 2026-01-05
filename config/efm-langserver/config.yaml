@@ -4,9 +4,6 @@ log-level: 1
 root-markers:
   - .git
 tools:
-  biome: &biome
-    format-command: biome format --config-path ~/.config --stdin-file-path ${INPUT}
-    format-stdin: true
   clang-format: &clang-format
     format-command: clang-format --assume-filename ${INPUT}
     format-stdin: true
