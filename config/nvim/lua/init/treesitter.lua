@@ -40,11 +40,12 @@ require("nvim-treesitter").install({
   "solidity",
   "sql",
   "swift",
+  -- spell-checker: disable-next-line
+  "systemverilog",
   "toml",
   "typescript",
-  "verilog",
-  "yaml",
   "xml",
+  "yaml",
   "zsh",
 })
 vim.treesitter.language.register("bash", { "sh", "zsh" })
