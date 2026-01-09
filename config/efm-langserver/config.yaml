@@ -15,6 +15,9 @@ tools:
   gherkin-format: &gherkin-format
     format-command: gherkin-format
     format-stdin: true
+  oxfmt: &oxfmt
+    format-command: oxfmt --stdin-filepath '${INPUT}'
+    format-stdin: true
   pen-format: &pen-format
     format-command: pen format --stdin
     format-stdin: true
@@ -32,14 +35,24 @@ languages:
     - <<: *tex-fmt
   cucumber:
     - <<: *gherkin-format
+  json:
+    - <<: *oxfmt
+  jsonc:
+    - <<: *oxfmt
   lisp:
     - <<: *schemat
+  markdown:
+    - <<: *oxfmt
+  markdown.mdx:
+    - <<: *oxfmt
   pen:
     - <<: *pen-format
   proto:
     - <<: *clang-format
   scheme:
     - <<: *schemat
+  scss:
+    - <<: *oxfmt
   sh:
     - <<: *shfmt
   tablegen:
@@ -48,6 +61,8 @@ languages:
     - <<: *tex-fmt
   wat:
     - <<: *schemat
+  yaml:
+    - <<: *oxfmt
   zsh:
     - <<: *shfmt
   =:
