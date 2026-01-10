@@ -17,6 +17,7 @@
 .aider.*
 .bloop
 .cache
+.claude
 .env.*.local
 .env.local
 .venv
