@@ -16,7 +16,7 @@ with_file() (
 
   if [ $# -eq 0 ]; then
     file=$(
-      (git ls-files -co --exclude-standard 2>/dev/null || fd -t f .) |
+      (git ls-files -co --deduplicate --exclude-standard 2>/dev/null || fd -t f .) |
         fzf --preview "$cat {}"
     )
 
