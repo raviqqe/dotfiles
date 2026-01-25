@@ -151,9 +151,14 @@ grh() (
 gwa() {
   [ $# -eq 0 ] || return 1
 
-  local directory=~/worktree/$(openssl rand -hex 8)
+  local ref=$(git branch --format '%(refname:short)' | fzf)
 
-  git worktree add "$directory" $(git branch --format '%(refname:short)' | fzf)
+  [ -n "$ref" ] || return 1
+
+  local origin=$(git remote get-url origin | sed 's%.*://\([^@]*@\)*%%')
+  local directory=~/worktree/$origin/$(openssl rand -hex 8)
+
+  git worktree add "$directory" "$ref"
   cd "$directory"
   git submodule update --init --recursive
 }
