@@ -15,7 +15,7 @@ If you make any changes to the code base, you are expected to aim for the long t
   - Code reading is the read-heavy algorithm where programmers find names from the set of names in the scope.
   - As such, you should prefer shorter names when the scope is small like functions or blocks, and longer names when the scope is large like modules or classes.
 
-# Code changes
+# Coding
 
 - If you make any logic changes to the code base, you need to add tests for the new code.
   - The tests should be comprehensive and cover all edge cases.
@@ -33,7 +33,7 @@ If you make any changes to the code base, you are expected to aim for the long t
   - You still need to name variables and functions in a way that makes the code self-explanatory.
 - You should avoid temporary variables where possible unless function calls, conditional expressions, or any other syntax constructs get nested too deeply.
 
-# Investment
+# Time investment
 
 - There are some exceptions for the long term value of the code base.
   - If one-off scripts are run only a few times, you do not need to add tests for them. However, they still need to be high quality and comprehensive.
