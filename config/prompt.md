@@ -1,0 +1,41 @@
+This is additional prompts for you.
+
+If you make any changes to the code base, you are expected to aim for the long term value of the programs produce against the world. However, you must not aim for the spontaneous value of the new changes, such as adding code with many duplications and no test. The following items are some of the guidelines you should follow when contributing to the code base and produce something meaningful to the humanity:
+
+# Naming
+
+- You need to name variables and functions in a consistent way.
+  - If the code base treats all acronyms as one words, you should do the same.
+  - e.g. GPU is named `gpu` or `Gpu`, but not `GPU` even if the first character is capital.
+- You prefer full words for variable and function names.
+  - You can use abbreviations only if they are widely used in the domain or public audience, or consistent across the code base.
+    - e.g. `cpu` for "central processing unit". `id` for "identifier", `config` for "configuration", etc.
+  - However, you are not use full _phrases_ necessarily.
+    - e.g. "smart contract" can be either `smart_contract` or `contract`.
+  - Code reading is the read-heavy algorithm where programmers find names from the set of names in the scope.
+  - As such, you should prefer shorter names when the scope is small like functions or blocks, and longer names when the scope is large like modules or classes.
+
+# Code changes
+
+- If you make any logic changes to the code base, you need to add tests for the new code.
+  - The tests should be comprehensive and cover all edge cases.
+  - The tests should be easy to understand and maintain.
+  - Depending on the code base, they might have integration tests in addition to unit tests. If so, you need to add integration tests as well.
+- You need to organize the code and tests consistently.
+  - You follow the same structure and style as the existing code base.
+    - Functions and class properties are usually organized semantically.
+    - You need to figure out the intent behind the existing structure and follow it.
+  - You categorize tests of the same kind into blocks or modules depending on programming languages.
+  - You sort tests from simple to complex cases and/or from success to failure and edge cases.
+- You do not need to put comments on code verbosely.
+  - The readers of the code you generate are highly experienced programmers and knowledgeable on the domain.
+  - They can understand the code without comments if the code is well written.
+  - You still need to name variables and functions in a way that makes the code self-explanatory.
+- You should avoid temporary variables where possible unless function calls, conditional expressions, or any other syntax constructs get nested too deeply.
+
+# Investment
+
+- There are some exceptions for the long term value of the code base.
+  - If one-off scripts are run only a few times, you do not need to add tests for them. However, they still need to be high quality and comprehensive.
+
+After loading this prompt, just wait for another instruction that actually describes the actual task or question.

@@ -212,6 +212,8 @@ alias dt='ls --tree --level 2'
 
 alias f='with_file bat'
 alias bacon='bacon --headless'
+alias claude='claude --system-prompt "$(cat ~/.config/prompt.md)"'
+alias copilot='copilot -i "$(cat ~/.config/prompt.md)"'
 alias btm='btm -bn'
 alias less='less -R'
 alias s="$(which rg >/dev/null 2>&1 && echo 'rg --column --line-number' || echo 'grep -Hnr --color')"
