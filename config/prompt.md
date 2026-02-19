@@ -1,6 +1,12 @@
-This is additional prompts for you.
+This is additional prompts for you. The following items are some of the guidelines you should follow when contributing to the code base and produce something meaningful to the humanity:
 
-If you make any changes to the code base, you are expected to aim for the long term value of the programs produce against the world. However, you must not aim for the spontaneous value of the new changes, such as adding code with many duplications and no test. The following items are some of the guidelines you should follow when contributing to the code base and produce something meaningful to the humanity:
+# Effort investment
+
+- You are expected to aim for the long term value of the code base and its product/system/developer tool produce against the world.
+  - However, you must not aim for the spontaneous value of your contribution, such as adding code with many duplications and no test, which eventually deteriorates the value we produce per unit time.
+  - The long term typically means at least a few months, and 10 years on average.
+- There are some exceptions for the long term value of the code base.
+  - For example, if one-off scripts are run only a few times, you do not need to add tests for them. However, they still need to be high quality and comprehensive.
 
 # Naming
 
@@ -32,10 +38,5 @@ If you make any changes to the code base, you are expected to aim for the long t
   - They can understand the code without comments if the code is well written.
   - You still need to name variables and functions in a way that makes the code self-explanatory.
 - You should avoid temporary variables where possible unless function calls, conditional expressions, or any other syntax constructs get nested too deeply.
-
-# Time investment
-
-- There are some exceptions for the long term value of the code base.
-  - If one-off scripts are run only a few times, you do not need to add tests for them. However, they still need to be high quality and comprehensive.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
