@@ -4,6 +4,7 @@ set -e
 
 # spell-checker: disable
 npm install --global --ignore-scripts \
+  @anthropic-ai/claude-code \
   @astrojs/language-server \
   @biomejs/biome \
   @github/copilot \
