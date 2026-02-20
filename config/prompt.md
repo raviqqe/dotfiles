@@ -50,7 +50,8 @@ This is additional prompts for you. The following items are some of the guidelin
 
 # Testing
 
-- After making changes, make sure.
+- Ensure building, linting, and testing work as expected after making changes.
+  - Figure out which tools or scripts you need to run depending on the languages and platforms.
 
 # Concurrency
 
