@@ -21,6 +21,8 @@ This is additional prompts for you. The following items are some of the guidelin
   - Code reading is the read-heavy algorithm where programmers find names from the set of names in the scope.
   - As such, you should prefer shorter names when the scope is small like functions or blocks, and longer names when the scope is large like modules or classes.
 - Never use one-letter names for variables or functions.
+- Ensure filenames are consistent with their contents.
+  - Each directory might have its own convention for file naming.
 
 # Coding
 
