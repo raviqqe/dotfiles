@@ -49,6 +49,9 @@ This is additional prompts for you. The following items are some of the guidelin
 - Avoid any unsound type features as much as possible.
   - For example, never use the `any` type but the `unknown` type instead.
   - Avoid the `as` type coercion. It cannot be proven that the type coercion is valid or not without manual validation by human eyes.
+- Prefer arrow functions.
+  - They look simpler visually.
+  - It also prevents the misuse of the `this` keyword.
 
 # Testing
 
