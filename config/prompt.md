@@ -43,7 +43,7 @@ This is additional prompts for you. The following items are some of the guidelin
   - The readers of the code you generate are highly experienced programmers and knowledgeable on the domain.
   - They can understand the code without comments if the code is well written.
   - Note that you should still name variables and functions in a way that makes the code self-explanatory.
-- Avoid temporary variables where possible unless function calls, conditional expressions, or any other syntax constructs get nested too deeply.
+- Avoid any temporary variables or intermediate functions where possible unless that makes the code less DRY or function calls, conditional expressions, or any other syntax constructs get nested too deeply.
 
 ## Language specific guides
 
