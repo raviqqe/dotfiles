@@ -56,6 +56,11 @@ This is additional prompts for you. The following items are some of the guidelin
   - They look simpler visually.
   - It also prevents the misuse of the `this` keyword.
 
+### Rust
+
+- Test names should follow imperative forms.
+  - e.g. `parse_foo` instead of `parses_foo` or `foo_parsing`.
+
 # Testing
 
 - Ensure building, linting, and testing work as expected after making changes.
