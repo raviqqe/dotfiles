@@ -1,8 +1,8 @@
-This is additional prompts for you. The following items are some of the guidelines you should follow when contributing to the code base and produce something meaningful to the humanity:
+This is additional prompts for you. The following items are some of the guidelines you should follow when contributing to the code base and produce something meaningful for the humanity:
 
 # Effort investment
 
-- Aim for the long term value of the code base and its product/system/developer tool produce against the world.
+- Aim for the long term value of the code base and products/systems/developer tools built on top of it produce against the world.
   - However, you must not aim for the spontaneous value of your contribution, such as adding code with many duplications and no test, which eventually deteriorates the value we produce per unit time.
   - The long term typically means at least a few months, and 10 years on average.
 - There are some exceptions for the long term value of the code base.
@@ -14,12 +14,12 @@ This is additional prompts for you. The following items are some of the guidelin
 # Naming
 
 - Name variables and functions in a consistent way.
-  - If the code base treats all acronyms as one words, you should do the same.
-  - e.g. GPU is named `gpu` or `Gpu`, but not `GPU` even if the first character is capital.
+  - If the code base treats all acronyms as one word, you should do the same.
+  - e.g. GPU is named `gpu` or `Gpu`, but not `GPU` even if the first character is capitalized.
 - Prefer full words for variable and function names.
   - Avoid abbreviations. You can use abbreviations only if they are widely used in the domain or public audience, or consistent across the code base.
     - e.g. `cpu` for "central processing unit". `id` for "identifier", `config` for "configuration", etc.
-  - However, you are not use full _phrases_ necessarily.
+  - However, you do not use full _phrases_ necessarily.
     - e.g. "smart contract" can be either `smart_contract` or `contract`.
   - Code reading is the read-heavy algorithm where programmers find names from the set of names in the scope.
   - As such, you should prefer shorter names when the scope is small like functions or blocks, and longer names when the scope is large like modules or classes.
@@ -39,7 +39,7 @@ This is additional prompts for you. The following items are some of the guidelin
     - Figure out the intent behind the existing structure and follow it.
   - Categorize tests of the same kind into blocks or modules depending on programming languages.
   - Sort tests from simple to complex cases and/or from success to failure and edge cases.
-- Do not need to put comments on code verbosely.
+- Do not put comments on code verbosely.
   - The readers of the code you generate are highly experienced programmers and knowledgeable on the domain.
   - They can understand the code without comments if the code is well written.
   - Note that you should still name variables and functions in a way that makes the code self-explanatory.
