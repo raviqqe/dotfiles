@@ -68,6 +68,8 @@ This is additional prompts for you. The following items are some of the guidelin
   - Depending on projects, they might use other tools and scripts, or might not use the ones listed above.
 - Test names should follow imperative forms.
   - e.g. `parse_foo` instead of `parses_foo` or `foo_parsing`.
+- Do not prefix test names with `test_` because the test functions are already annotated with `#[test]`.
+- Do not prefix test sub-modules under the `#[cfg(test)] tests { ... }` modules with `tests_` as they are also redundant.
 
 # Testing
 
