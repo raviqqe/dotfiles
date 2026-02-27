@@ -63,11 +63,11 @@ This is additional prompts for you. The following items are some of the guidelin
 
 ### Rust
 
-- Test names should follow imperative forms.
-  - e.g. `parse_foo` instead of `parses_foo` or `foo_parsing`.
 - Ensure building, linting, format check, testing work as expected after making changes.
   - e.g. `cargo build`, `cargo clippy`, `cargo fmt --check`, and `cargo test`.
   - Depending on projects, they might use other tools and scripts, or might not use the ones listed above.
+- Test names should follow imperative forms.
+  - e.g. `parse_foo` instead of `parses_foo` or `foo_parsing`.
 
 # Testing
 
