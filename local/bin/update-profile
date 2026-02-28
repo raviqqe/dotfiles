@@ -21,4 +21,12 @@ fi
     fnm env --use-on-cd --shell zsh --version-file-strategy recursive
     echo fnm default system
   fi
+
+  for version in $(seq 18 22); do
+    directory=$(brew --prefix llvm@$version)
+
+    echo export LLVM_SYS_${version}0_PREFIX=$directory
+    echo export MLIR_SYS_${version}0_PREFIX=$directory
+    echo export TABLEGEN_${version}0_PREFIX=$directory
+  done
 ) >$CACHED_PROFILE
