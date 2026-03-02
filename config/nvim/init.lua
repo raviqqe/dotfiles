@@ -56,6 +56,7 @@ vim.opt.showmatch = true
 vim.opt.showmode = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.termguicolors = true
 vim.opt.wrap = true
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
