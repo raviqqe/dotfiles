@@ -70,6 +70,7 @@ This is additional prompts for you. The following items are some of the guidelin
   - e.g. `parse_foo` instead of `parses_foo` or `foo_parsing`.
 - Do not prefix test names with `test_` because the test functions are already annotated with `#[test]`.
 - Do not prefix test sub-modules under the `#[cfg(test)] tests { ... }` modules with `tests_` as they are also redundant.
+- Ensure that all the code is formatted well with `cargo +nightly fmt --all` after code changes.
 
 # Testing
 
