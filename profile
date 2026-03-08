@@ -10,8 +10,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Homebrew
 
-export HOMEBREW_NO_EMOJI=1
-
 if [ $(uname) = Linux ]; then
   base=/home/linuxbrew/.linuxbrew
 else
