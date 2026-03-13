@@ -10,6 +10,7 @@ This is additional prompts for you. The following items are some of the guidelin
 - Do not make any unnecessary changes.
   - Reviewing code is very costly and requires human intervention.
   - Think twice before making changes if they are truly necessary for the given task.
+- If you are stuck on thinking or finding solutions over 5 minutes, do not hesitate to ask for help, get feedback from, or ask questions to users.
 
 # Naming
 
@@ -39,11 +40,35 @@ This is additional prompts for you. The following items are some of the guidelin
     - Figure out the intent behind the existing structure and follow it.
   - Categorize tests of the same kind into blocks or modules depending on programming languages.
   - Sort tests from simple to complex cases and/or from success to failure and edge cases.
+- Avoid any temporary variables as much as possible unless that makes the code less DRY.
+  - Inline expressions or statements used only once into their use locations even when they nest deeply.
+  - Remembering state of the code flow is much more costly for readers of the code.
+
+# Styling
+
+- If you see any differences on the coding standards or styling in the existing code base, take the one written by Yota Toyama as the gold standard.
+  - You can use `git blame` to find out who wrote which lines of code.
+
+# Commenting
+
 - Do not put comments on code verbosely.
   - The readers of the code you generate are highly experienced programmers and knowledgeable on the domain.
   - They can understand the code without comments if the code is well written.
   - Note that you should still name variables and functions in a way that makes the code self-explanatory.
-- Avoid any temporary variables or intermediate functions as much as possible unless that makes the code less DRY or function calls, conditional expressions, or any other syntax constructs get nested too deeply.
+- Write comments in natural language.
+  - You should not use function or variable names in the code directly in comments.
+  - e.g. `GPU usage` instead of `gpuUsage`
+
+# Testing
+
+- Ensure building, linting, and testing work as expected after making changes.
+  - Figure out which tools or scripts you need to run depending on the languages and platforms.
+
+# Concurrency
+
+- There might be other agents or programmers working on the same worktree concurrently. You need to be careful about conflicts before writing back your changes to the file system.
+  - Before file writes, you should make sure that you made the changes based on the latest file contents.
+  - You should resolve any conflicts or merge changes if you think your changes are still necessary on conflicts.
 
 ## Language specific guides
 
@@ -60,6 +85,9 @@ This is additional prompts for you. The following items are some of the guidelin
     - e.g. `parses foo` instead of `parse foo` or `parsing works`.
   - Use words in the natural language instead of variable and function names used in the code.
     - e.g. `GPU usage` instead of `gpuUsage`.
+- Use tools used in each project.
+  - For example, when you find a lock file for npm packages, use the corresponding package manager to install dependencies and run scripts.
+    - e.g. `npm` for `package-lock.json`, `yarn` for `yarn.lock`, and `pnpm` for `pnpm-lock.yaml`.
 
 ### Rust
 
@@ -71,16 +99,5 @@ This is additional prompts for you. The following items are some of the guidelin
 - Do not prefix test names with `test_` because the test functions are already annotated with `#[test]`.
 - Do not prefix test sub-modules under the `#[cfg(test)] tests { ... }` modules with `tests_` as they are also redundant.
 - Ensure that all the code is formatted well with `cargo +nightly fmt --all` after code changes.
-
-# Testing
-
-- Ensure building, linting, and testing work as expected after making changes.
-  - Figure out which tools or scripts you need to run depending on the languages and platforms.
-
-# Concurrency
-
-- There might be other agents or programmers working on the same worktree concurrently. You need to be careful about conflicts before writing back your changes to the file system.
-  - Before file writes, you should make sure that you made the changes based on the latest file contents.
-  - You should resolve any conflicts or merge changes if you think your changes are still necessary on conflicts.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
