@@ -70,6 +70,18 @@ This is additional prompts for you. The following items are some of the guidelin
   - Before file writes, you should make sure that you made the changes based on the latest file contents.
   - You should resolve any conflicts or merge changes if you think your changes are still necessary on conflicts.
 
+# Software architecture
+
+- Follow the principles in Clean Architecture by Robert C. Martin.
+- Follow the SOLID principles.
+- Do not apply the terminology in these principles naively or strictly.
+  - The existing code base might have different conventions already. Then, follow the existing ones.
+- However, do not need to follow these principles strictly if that incurs too much development cost.
+- At the very least level, separate layers of software when you find significant gaps between them.
+  - For example, abstract away details of databases, key management systems, external APIs, etc. using general data types and interfaces.
+- Note that the most important principle is still the one mentioned at the top:
+  - Aim for the long-term value of the software.
+
 ## Language specific guides
 
 ### TypeScript
