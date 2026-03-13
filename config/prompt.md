@@ -2,8 +2,8 @@ This is additional prompts for you. The following items are some of the guidelin
 
 # Effort investment
 
-- Aim for the long term value of the code base and products/systems/developer tools built on top of it produce against the world.
-  - However, you must not aim for the spontaneous value of your contribution, such as adding code with many duplications and no test, which eventually deteriorates the value we produce per unit time.
+- Aim for the long-term value that the code base and the products/systems/developer tools built on top of it provide to the world.
+  - However, you must not aim for the short-term value of your contribution, such as adding code with many duplications and no tests, which eventually deteriorates the value we produce per unit time.
   - The long term typically means at least a few months, and 10 years on average.
 - There are some exceptions for the long term value of the code base.
   - For example, if one-off scripts are run only a few times, you do not need to add tests for them. However, they still need to be high quality and comprehensive.
@@ -76,7 +76,8 @@ This is additional prompts for you. The following items are some of the guidelin
 
 - Avoid any unsound type features as much as possible.
   - For example, never use the `any` type but the `unknown` type instead.
-  - Avoid the `as` type coercion. It cannot be proven that the type coercion is valid or not without manual validation by human eyes.
+  - Avoid the `as` type coercion unless strictly necessary (e.g. interfacing with external libraries, or complex type narrowing that cannot be achieved otherwise).
+    - It cannot be proven that the type coercion is valid or not without manual validation by human eyes because the `as` operator is unsound.
 - Prefer arrow functions.
   - They look simpler visually.
   - It also prevents the misuse of the `this` keyword.
