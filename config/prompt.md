@@ -58,6 +58,9 @@ This is additional prompts for you. The following items are some of the guidelin
 - Write comments in natural language.
   - You should not use function or variable names in the code directly in comments.
   - e.g. `GPU usage` instead of `gpuUsage`
+- Synchronize all comments and documentation with code changes in the code base.
+  - If you make any logic changes to the code base, you should also update comments and documentation accordingly if any.
+  - Outdated comments and documentation are worse than no comments and documentation because they mislead readers of the code.
 
 # Testing
 
@@ -114,5 +117,6 @@ This is additional prompts for you. The following items are some of the guidelin
 - Ensure that all the code is formatted well with `cargo +nightly fmt --all` after code changes.
 - Prefer the functional programming and immutable data always.
   - The programming style without state mutation always simplifies the logic even when they result in deeply nested expressions or long method chains.
+- Specify full semantic versions (e.g. `1.2.3`) in `Cargo.toml` files always.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
