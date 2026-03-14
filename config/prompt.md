@@ -112,5 +112,7 @@ This is additional prompts for you. The following items are some of the guidelin
 - Do not prefix test names with `test_` because the test functions are already annotated with `#[test]`.
 - Do not prefix test sub-modules under the `#[cfg(test)] tests { ... }` modules with `tests_` as they are also redundant.
 - Ensure that all the code is formatted well with `cargo +nightly fmt --all` after code changes.
+- Prefer the functional programming and immutable data always.
+  - The programming style without state mutation always simplifies the logic even when they result in deeply nested expressions or long method chains.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
