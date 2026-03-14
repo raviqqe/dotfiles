@@ -118,5 +118,7 @@ This is additional prompts for you. The following items are some of the guidelin
 - Prefer the functional programming and immutable data always.
   - The programming style without state mutation always simplifies the logic even when they result in deeply nested expressions or long method chains.
 - Specify full semantic versions (e.g. `1.2.3`) in `Cargo.toml` files always.
+- Use names from external crates without prefixing them with the crate or module names if there is no ambiguity.
+  - e.g. `Result` instead of `std::result::Result` and `join_all` for `futures::future::join_all`.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
