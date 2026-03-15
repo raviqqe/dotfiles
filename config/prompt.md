@@ -120,5 +120,7 @@ This is additional prompts for you. The following items are some of the guidelin
 - Specify full semantic versions (e.g. `1.2.3`) in `Cargo.toml` files always.
 - Use names from external crates without prefixing them with the crate or module names if there is no ambiguity.
   - e.g. `Result` instead of `std::result::Result` and `join_all` for `futures::future::join_all`.
+- Never use `mod.rs` files for module definitions.
+  - Instead, use `<module_name>.rs` files and `<module_name>` directories.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
