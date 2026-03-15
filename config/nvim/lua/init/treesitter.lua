@@ -1,4 +1,4 @@
-require("treesitter-context").setup()
+require("treesitter-context").setup({ separator = "-" })
 require("nvim-treesitter-textobjects").setup()
 
 require("nvim-treesitter").install({
