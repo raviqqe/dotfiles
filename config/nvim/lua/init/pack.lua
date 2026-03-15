@@ -19,10 +19,7 @@ vim.pack.add({
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/nvim-treesitter/nvim-treesitter-context",
+  "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
   "https://github.com/pen-lang/pen.vim",
   "https://github.com/ray-x/lsp_signature.nvim",
-  {
-    src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-    version = "main",
-  },
 })
