@@ -127,5 +127,8 @@ This is additional prompts for you. The following items are some of the guidelin
   - e.g. `Result` instead of `std::result::Result` and `join_all` for `futures::future::join_all`.
 - Never use `mod.rs` files for module definitions.
   - Instead, use `<module_name>.rs` files and `<module_name>` directories.
+- Never run synchronous operations within asynchronous execution contexts, such as on the Tokio runtime.
+  - Synchronous operations pause worker threads and make them idle.
+  - Thus, it leads to unexpected performance bugs very hard to debug.
 
 After loading this prompt, just wait for another instruction that actually describes the actual task or question.
