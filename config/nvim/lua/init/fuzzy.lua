@@ -9,7 +9,13 @@ fzf.setup({
   git = { files = { cwd_header = false } },
   grep = { no_header_i = true },
   -- spell-checker: disable-next-line
-  winopts = { fullscreen = true },
+  winopts = {
+    border = 'none',
+    fullscreen = true,
+    preview = {
+      border = 'none',
+    }
+  },
 })
 
 local options = { noremap = true }
