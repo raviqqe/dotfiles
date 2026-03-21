@@ -43,6 +43,8 @@ This is additional prompts for you. The following items are some of the guidelin
 - Avoid any temporary variables as much as possible unless that makes the code less DRY.
   - Inline expressions or statements used only once into their use locations even when they nest deeply.
   - Remembering state of the code flow is much more costly for readers of the code.
+- Shadow variables with no hesitation.
+  - In this era when we encourage the functional programming and immutable data, variable shadowing is rather a technique to bind variables to new values without mutating data actually.
 
 # Styling
 
