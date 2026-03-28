@@ -73,6 +73,7 @@ vim.filetype.add({
 -- Keymaps
 
 vim.g.mapleader = " "
+vim.g.omni_sql_no_default_maps = true
 
 local function set_keymap(mode, from, to, overrides)
   local options = { noremap = true }
