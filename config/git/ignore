@@ -18,6 +18,7 @@
 .bloop
 .cache
 .claude
+.env
 .env.*.local
 .env.local
 .venv
