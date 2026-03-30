@@ -6,7 +6,6 @@ set -e
 npm install --global --ignore-scripts \
   @astrojs/language-server \
   @biomejs/biome \
-  @anthropic-ai/claude-code \
   @github/copilot \
   @github/copilot-language-server \
   @google/gemini-cli \
