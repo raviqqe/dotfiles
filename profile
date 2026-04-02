@@ -54,6 +54,8 @@ export OPENSSL_STATIC=1 # for openssl-sys
 ## Node.js
 
 export NODE_OPTIONS=--max-old-space-size=4096
+export PNPM_HOME=$HOME/.local/share/pnpm
+export PATH=$PNPM_HOME:$PATH
 
 ## Scheme
 
