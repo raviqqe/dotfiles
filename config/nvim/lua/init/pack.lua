@@ -20,7 +20,6 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/nvim-treesitter/nvim-treesitter-context",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-  "https://github.com/pen-lang/pen.vim",
   "https://github.com/ray-x/lsp_signature.nvim",
   "https://github.com/vim-scripts/dbext.vim",
 })

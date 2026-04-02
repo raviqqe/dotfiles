@@ -41,7 +41,6 @@ brew install \
   mold \
   neovim \
   node \
-  pen-lang/pen/pen \
   python \
   rcm \
   ruby \
