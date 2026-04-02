@@ -61,10 +61,6 @@ export PATH=$PNPM_HOME:$PATH
 
 export PATH=/opt/homebrew/opt/gambit-scheme/bin:$PATH
 
-## Pen
-
-export PEN_ROOT=$HOME/src/github.com/pen-lang/pen
-
 # Tools
 
 ## git

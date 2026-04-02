@@ -15,9 +15,6 @@ tools:
   gherkin-format: &gherkin-format
     format-command: gherkin-format
     format-stdin: true
-  pen-format: &pen-format
-    format-command: pen format --stdin
-    format-stdin: true
   schemat: &schemat
     format-command: schemat
     format-stdin: true
@@ -34,8 +31,6 @@ languages:
     - <<: *gherkin-format
   lisp:
     - <<: *schemat
-  pen:
-    - <<: *pen-format
   proto:
     - <<: *clang-format
   scheme:
