@@ -2,5 +2,5 @@
 
 set -e
 
+bob install stable
 bob install nightly
-bob use nightly
