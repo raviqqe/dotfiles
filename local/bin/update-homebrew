@@ -18,6 +18,7 @@ brew install \
   clang-format \
   cmake \
   colima \
+  corepack \
   csvq \
   curl \
   deno \

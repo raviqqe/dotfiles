@@ -12,7 +12,6 @@ pnpm install --global \
   @mdx-js/language-server \
   @nomicfoundation/solidity-language-server \
   @typescript/native-preview \
-  corepack \
   cspell \
   oxfmt \
   sharp-cli \
