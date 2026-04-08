@@ -16,8 +16,9 @@
   compactionHeuristic = true
 
 [core]
-  pager = delta --max-line-length 0
+  hooksPath = /dev/null
   ignorecase = false
+  pager = delta --max-line-length 0
 
 [filter "lfs"]
   required = true
