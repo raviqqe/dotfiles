@@ -59,7 +59,6 @@ vim.opt.splitright = true
 vim.opt.termguicolors = true
 vim.opt.wrap = true
 
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.diagnostic.config({ virtual_text = true })
 
 vim.filetype.add({
@@ -69,6 +68,10 @@ vim.filetype.add({
     ll = "llvm",
   },
 })
+
+for _, group in ipairs({ "Normal", "NormalFloat" }) do
+  vim.api.nvim_set_hl(0, group, { bg = "none" })
+end
 
 -- Keymaps
 
