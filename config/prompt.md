@@ -77,6 +77,7 @@ This is additional prompts for you. The following items are some of the guidelin
 - Never amend commits.
   - The existing commits might potentially be made by developers or agents working on the same worktree concurrently.
   - Instead, leave the changes without committing them or create new commits on top of the existing commits.
+- Never use concurrency-unsafe tools, such as `git stash`.
 
 # Software architecture
 
