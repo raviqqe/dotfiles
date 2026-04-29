@@ -8,6 +8,10 @@ export PAGER=less
 
 export PATH=$HOME/.local/bin:$PATH
 
+# Colima
+
+export COLIMA_SSH_CONFIG=false
+
 # Homebrew
 
 if [ $(uname) = Linux ]; then
@@ -25,12 +29,13 @@ for directory in \
   export PATH=$base/$directory:$PATH
 done
 
-## Python
-
-export PYTHON_JIT=1
-export AUTOSWITCH_DEFAULT_PYTHON=$base/bin/python3
-
 # Languages
+
+## Go
+
+export GOPATH=$HOME/.go
+export GO111MODULE=on
+export PATH=$GOPATH/bin:$PATH
 
 ## Haskell
 
@@ -39,12 +44,6 @@ export PATH=$HOME/.cabal/bin:$PATH
 ## OCaml
 
 export PATH=$HOME/.opam/default/bin:$PATH
-
-## Go
-
-export GOPATH=$HOME/.go
-export GO111MODULE=on
-export PATH=$GOPATH/bin:$PATH
 
 ## Rust
 
