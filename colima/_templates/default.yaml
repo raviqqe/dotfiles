@@ -1,0 +1,5 @@
+cpu: 8
+disk: 100
+memory: 4
+vmType: vz
+sshConfig: false

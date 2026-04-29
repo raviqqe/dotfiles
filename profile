@@ -8,10 +8,6 @@ export PAGER=less
 
 export PATH=$HOME/.local/bin:$PATH
 
-# Colima
-
-export COLIMA_SSH_CONFIG=false
-
 # Homebrew
 
 if [ $(uname) = Linux ]; then
