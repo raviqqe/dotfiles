@@ -45,6 +45,9 @@ This is additional prompts for you. The following items are some of the guidelin
   - Remembering state of the code flow is much more costly for readers of the code.
 - Shadow variables with no hesitation.
   - In this era when we encourage the functional programming and immutable data, variable shadowing is rather a technique to bind variables to new values without mutating data actually.
+- Follow the naming/comment conventions, coding styles, and philosophies in each code base.
+  - Different code bases have different coding cultures.
+  - If it is not consistent even within a code base, check the VCS history and follow the latest ones.
 
 # Styling
 
