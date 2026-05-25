@@ -3,9 +3,6 @@ log-level: 1
 root-markers:
   - .git
 tools:
-  clang-format: &clang-format
-    format-command: clang-format --assume-filename ${INPUT}
-    format-stdin: true
   cspell: &cspell
     lint-command: cspell --no-summary --no-progress stdin://${INPUT}
     lint-ignore-exit-code: true
@@ -31,14 +28,10 @@ languages:
     - <<: *gherkin-format
   lisp:
     - <<: *schemat
-  proto:
-    - <<: *clang-format
   scheme:
     - <<: *schemat
   sh:
     - <<: *shfmt
-  tablegen:
-    - <<: *clang-format
   tex:
     - <<: *tex-fmt
   wat:

@@ -41,6 +41,7 @@ vim.lsp.config('rust_analyzer', {
 vim.lsp.enable({
   "astro",
   "biome",
+  "buf_ls",
   "cairo_ls",
   "clangd",
   "copilot",
