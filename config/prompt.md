@@ -127,8 +127,8 @@ This is additional prompts for you. The following items are some of the guidelin
 - Prefer the functional programming and immutable data always.
   - The programming style without state mutation always simplifies the logic even when they result in deeply nested expressions or long method chains.
 - Specify full semantic versions (e.g. `1.2.3`) in `Cargo.toml` files always.
-- Use names from external crates without prefixing them with the crate or module names if there is no ambiguity.
-  - e.g. `Result` instead of `std::result::Result` and `join_all` for `futures::future::join_all`.
+- Use names from different crates or modules without prefixing them with the crate or module names if there is no ambiguity.
+  - e.g. `Result` instead of `std::result::Result`, `join_all` for `futures::future::join_all`, and `bar` for `crate::foo::bar`.
 - Never use `mod.rs` files for module definitions.
   - Instead, use `<module_name>.rs` files and `<module_name>` directories.
 - Never run synchronous operations within asynchronous execution contexts, such as on the Tokio runtime.
