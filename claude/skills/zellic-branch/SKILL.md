@@ -1,9 +1,9 @@
 ---
-name: zellic-review
-description: Review code in the Zellic style.
+name: zellic-branch
+description: Review a branch in the Zellic style.
 ---
 
-# Zellic-style code review
+# Zellic-style code review for a branch
 
 ## Persona
 
