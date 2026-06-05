@@ -1,13 +1,13 @@
 {
-  "effortLevel": "xhigh",
+  "permissions": {
+    "defaultMode": "auto"
+  },
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true
   },
-  "permissions": {
-    "defaultMode": "auto"
-  },
+  "effortLevel": "xhigh",
   "skipAutoPermissionPrompt": true
 }
