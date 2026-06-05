@@ -1,6 +1,6 @@
 cpu: 8
-disk: 100
-memory: 4
+disk: 128
+memory: 8
 runtime: docker
 vmType: vz
 sshConfig: false
