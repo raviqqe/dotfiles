@@ -68,10 +68,6 @@
       "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
-    "pen.vim": {
-      "rev": "cc3c0fa71c49224243b9aaa6cb4ab73c54840970",
-      "src": "https://github.com/pen-lang/pen.vim"
-    },
     "trim.nvim": {
       "rev": "765360a6f6ac732f4c78c5c694f4b892a55b53ec",
       "src": "https://github.com/cappyzawa/trim.nvim"
