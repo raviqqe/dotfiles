@@ -8,9 +8,9 @@ if ! which brew; then
 fi
 
 brew update
-brew upgrade
+brew upgrade -y
 
-brew install \
+brew install -y \
   automake \
   awscli \
   buf \
