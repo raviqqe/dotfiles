@@ -2,6 +2,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
@@ -9,6 +10,5 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
-  "skipAutoPermissionPrompt": true,
-  "model": "opus[1m]"
+  "skipAutoPermissionPrompt": true
 }
