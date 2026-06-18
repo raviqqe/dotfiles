@@ -9,5 +9,6 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "model": "opus[1m]"
 }
