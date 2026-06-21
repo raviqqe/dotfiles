@@ -1,6 +1,5 @@
-AddKeysToAgent yes
-ForwardAgent yes
 Host *
+  AddKeysToAgent yes
   ServerAliveInterval 10
 Host github.com
   Hostname ssh.github.com
