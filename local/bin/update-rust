@@ -57,8 +57,4 @@ for crate in \
   cargo install --locked $crate
 done
 
-for skim; do
-  cargo +nightly install --locked $crate
-done
-
 tldr --update
