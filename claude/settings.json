@@ -10,5 +10,6 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "skipWorkflowUsageWarning": true
 }
