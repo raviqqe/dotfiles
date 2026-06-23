@@ -10,6 +10,7 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
-  "skipAutoPermissionPrompt": true,
-  "skipWorkflowUsageWarning": true
+  "skipWorkflowUsageWarning": true,
+  "editorMode": "vim",
+  "skipAutoPermissionPrompt": true
 }
