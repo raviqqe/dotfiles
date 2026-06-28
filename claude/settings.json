@@ -11,6 +11,5 @@
   },
   "effortLevel": "xhigh",
   "skipWorkflowUsageWarning": true,
-  "editorMode": "vim",
   "skipAutoPermissionPrompt": true
 }
