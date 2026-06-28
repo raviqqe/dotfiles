@@ -48,7 +48,6 @@ vim.lsp.enable({
   "copilot",
   "docker_language_server",
   "efm",
-  "eslint",
   "gopls",
   "lua_ls",
   "mdx_analyzer",
