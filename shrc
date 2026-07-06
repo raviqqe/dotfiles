@@ -62,7 +62,7 @@ alias tl='tmux ls'
 alias gap='git add --patch'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gbd='git branch -d'
+alias gbd='git branch -d $(git_branch)'
 alias gc="git commit"
 alias gca="git commit --amend"
 alias gcr='git commit -m Refactor'
@@ -103,6 +103,12 @@ alias gzd='git stash drop'
 alias gzl='git stash list'
 alias gzp='git stash pop'
 alias gzs='git stash show -p'
+
+git_branch() (
+  [ $# -eq 0 ] || return 1
+
+  git branch --format '%(refname:short)' | fzf
+)
 
 git_default_branch() (
   set -e
@@ -146,7 +152,7 @@ grh() (
 gwa() {
   [ $# -eq 0 ] || return 1
 
-  local ref=$(git branch --format '%(refname:short)' | fzf)
+  local ref=$(git_branch)
 
   [ -n "$ref" ] || return 1
 
