@@ -15,7 +15,6 @@ pnpm install \
   @mdx-js/language-server \
   @nomicfoundation/solidity-language-server \
   @openai/codex \
-  @typescript/native-preview \
   cspell \
   oxfmt \
   sharp-cli \
