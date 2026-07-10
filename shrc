@@ -62,7 +62,6 @@ alias tl='tmux ls'
 alias gap='git add --patch'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gbd='git branch -d $(git_branch)'
 alias gc="git commit"
 alias gca="git commit --amend"
 alias gcr='git commit -m Refactor'
@@ -126,6 +125,14 @@ ga() (
   fi
 
   git status
+)
+
+gbd() (
+  if [ $# -eq 0 ]; then
+    git branch -d $(git_branch)
+  else
+    git branch -d "$@"
+  fi
 )
 
 gls() (
