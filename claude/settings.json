@@ -11,5 +11,6 @@
   },
   "effortLevel": "xhigh",
   "skipWorkflowUsageWarning": true,
+  "autoCompactEnabled": true,
   "skipAutoPermissionPrompt": true
 }
