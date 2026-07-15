@@ -1,6 +1,0 @@
-#!/bin/sh
-
-set -e
-
-bob install stable
-bob install nightly
