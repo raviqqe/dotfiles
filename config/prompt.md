@@ -76,6 +76,10 @@ After loading this prompt, just wait for another instruction that actually descr
 - Follow the naming/comment conventions, coding styles, and philosophies in each code base.
   - Different code bases have different coding cultures.
   - If it is not consistent even within a code base, check the VCS history and follow the latest ones.
+- Never copy code you did not verify yourself.
+  - You should not trust any code you did not read and understand yourself.
+  - Even if the code is from a reputable source, it might contain bugs or vulnerabilities that are not yet discovered.
+  - You should verify the code yourself and ensure it is correct and safe to use.
 
 ## Styling
 
