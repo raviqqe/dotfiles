@@ -39,6 +39,10 @@ vim.lsp.config('rust_analyzer', {
   },
 })
 
+vim.lsp.config("tsgo", {
+  cmd = { 'tsc', '--lsp', '--stdio' },
+})
+
 vim.lsp.enable({
   "astro",
   "biome",
