@@ -20,6 +20,8 @@ After loading this prompt, just wait for another instruction that actually descr
   - Its purpose is to save tokens spent on repetitive research about code bases, such as file organization, coding styles, build/lint/test commands, and architectural conventions used in different locations on the file system and repositories.
   - Create the directory if it does not exist yet.
 - Store notes as Markdown files mirroring paths of repositories or directories they describe.
+  - Paths are relative to the home directory and the knowledge base root.
+  - Never store notes about locations outside the home directory.
   - e.g. Notes about the coding style of a repository at `~/src/foo/bar` go to `~/.cache/prompt/knowledge/src/foo/bar/coding-style.md`.
   - When you are on a worktree but not at the normal repository location, resolve the canonical repository location first and use it for the note path.
     - e.g. `git worktree list` shows the main worktree of the repository.
