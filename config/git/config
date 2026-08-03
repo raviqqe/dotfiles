@@ -16,7 +16,6 @@
   compactionHeuristic = true
 
 [core]
-  hooksPath = /dev/null
   ignorecase = false
   pager = delta --max-line-length 0
 
