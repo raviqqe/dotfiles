@@ -2,6 +2,8 @@
 
 set -e
 
+corepack install -g pnpm@latest
+
 # spell-checker: disable
 pnpm install \
   --global \
