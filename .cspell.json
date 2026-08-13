@@ -76,6 +76,7 @@
     "gcom",
     "gempath",
     "getopts",
+    "ghcup",
     "gitgutter",
     "golangci",
     "gopath",

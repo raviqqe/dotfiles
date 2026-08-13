@@ -39,10 +39,6 @@ vim.lsp.config('rust_analyzer', {
   },
 })
 
-vim.lsp.config("tsgo", {
-  cmd = { 'tsc', '--lsp', '--stdio' },
-})
-
 vim.lsp.enable({
   "astro",
   "biome",
@@ -53,6 +49,7 @@ vim.lsp.enable({
   "docker_language_server",
   "efm",
   "gopls",
+  "hls",
   "lua_ls",
   "mdx_analyzer",
   "move_analyzer",
@@ -68,7 +65,7 @@ vim.lsp.enable({
   -- spell-checker: disable-next-line
   "terraformls",
   "tombi",
-  "tsgo",
+  "tsc",
 })
 
 local group = vim.api.nvim_create_augroup("InitLsp", {})
@@ -78,7 +75,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     vim.lsp.buf.format({
       filter = function(client)
-        return client.name ~= "tsgo"
+        return client.name ~= "tsc"
       end
     })
   end,

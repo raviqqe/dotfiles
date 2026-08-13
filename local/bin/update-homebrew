@@ -27,6 +27,7 @@ brew install -y \
   docker-compose \
   gauche \
   gh \
+  ghcup \
   git \
   git-lfs \
   gnupg \
