@@ -128,8 +128,10 @@ ga() (
 )
 
 gbd() (
-  if [ $# -eq 0 ]; then
-    git branch -d $(git_branch)
+  while getopts : option; do :; done
+
+  if [ $OPTIND -gt $# ]; then
+    git branch -d "$@" $(git_branch)
   else
     git branch -d "$@"
   fi
