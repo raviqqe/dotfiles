@@ -52,6 +52,7 @@ vim.lsp.enable({
   "hls",
   "lua_ls",
   "mdx_analyzer",
+  "metals",
   "move_analyzer",
   "oxfmt",
   "pylsp",
