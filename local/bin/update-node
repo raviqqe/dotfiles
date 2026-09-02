@@ -13,7 +13,6 @@ pnpm install \
   @biomejs/biome \
   @github/copilot \
   @github/copilot-language-server \
-  @google/gemini-cli \
   @mdx-js/language-server \
   @nomicfoundation/solidity-language-server \
   @openai/codex \
