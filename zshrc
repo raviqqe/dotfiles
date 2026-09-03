@@ -9,7 +9,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 
 zstyle :chpwd:* recent-dirs-insert fallback
 zstyle :chpwd:* recent-dirs-pushd true
-zstyle :vcs_info:git:* formats '%F{yellow}%b%f %F{cyan}%m%f '
+zstyle :vcs_info:git:* formats '%F{yellow}%b%f %F{cyan}%m%f'
 zstyle :vcs_info:git*+set-message:* hooks git-remote
 zstyle completion:*:*:cdr:*:* menu selection
 
@@ -43,7 +43,7 @@ precmd() {
   local ahead=$(commit_count @{upstream}..HEAD)
   local behind=$(commit_count HEAD..@{upstream})
 
-  if [ -z "$ahead" ]; then
+  if [ -z $ahead ]; then
     return
   elif [ $ahead -gt 0 ]; then
     hook_com[misc]+=^
@@ -51,6 +51,10 @@ precmd() {
 
   if [ $behind -lt 0 ]; then
     hook_com[misc]+=v
+  fi
+
+  if [ -n "$hook_com[misc]" ]; then
+    hook_com[misc]+=' '
   fi
 }
 
