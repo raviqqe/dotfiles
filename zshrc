@@ -6,6 +6,7 @@ unsetopt banghist beep nomatch notify
 autoload -Uz add-zsh-hook cdr chpwd_recent_dirs select-bracketed select-quoted vcs_info
 
 add-zsh-hook chpwd chpwd_recent_dirs
+add-zsh-hook precmd vcs_info
 
 zstyle :chpwd:* recent-dirs-insert fallback
 zstyle :chpwd:* recent-dirs-pushd true
@@ -31,21 +32,14 @@ chpwd() (
   ls
 )
 
-precmd() {
-  vcs_info
-}
-
 +vi-git-remote() {
-  commit_count() (
-    git rev-list --count $1 2>/dev/null
-  )
+  local behind ahead
 
-  local ahead=$(commit_count @{upstream}..HEAD)
-  local behind=$(commit_count HEAD..@{upstream})
+  git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null |
+    read behind ahead ||
+    return 0
 
-  if [ -z $ahead ]; then
-    return
-  elif [ $ahead -gt 0 ]; then
+  if [ $ahead -gt 0 ]; then
     hook_com[misc]+=^
   fi
 
@@ -60,9 +54,9 @@ precmd() {
 
 zle-keymap-select() {
   if [ $KEYMAP = vicmd ]; then
-    VI_MODE='<'
+    vi_mode='<'
   else
-    VI_MODE='>'
+    vi_mode='>'
   fi
 
   zle reset-prompt
@@ -76,7 +70,7 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 
 PROMPT='%F{blue}%~%f ${vcs_info_msg_0_}%(?..%F{red}[%?]%f )
-%F{magenta}$VI_MODE%f '
+%F{magenta}$vi_mode%f '
 
 # Plugins
 
