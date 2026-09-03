@@ -49,7 +49,7 @@ precmd() {
     hook_com[misc]+=^
   fi
 
-  if [ $behind -lt 0 ]; then
+  if [ $behind -gt 0 ]; then
     hook_com[misc]+=v
   fi
 
