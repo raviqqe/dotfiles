@@ -83,14 +83,6 @@ export FZF_DEFAULT_OPTS='--exit-0 --select-1'
 
 export SKIM_DEFAULT_OPTIONS='--ansi --exit-0 --select-1'
 
-## zsh
-
-export PURE_PROMPT_SYMBOL='>'
-export PURE_PROMPT_VICMD_SYMBOL='<'
-export PURE_GIT_DOWN_ARROW=v
-export PURE_GIT_UP_ARROW=^
-export PURE_GIT_STASH_SYMBOL==
-
 # Custom profiles
 
 export CACHED_PROFILE=$HOME/.cache/profile
