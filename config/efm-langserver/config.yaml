@@ -16,7 +16,7 @@ tools:
     format-command: schemat
     format-stdin: true
   shfmt: &shfmt
-    format-command: shfmt -i 2 -s
+    format-command: shfmt -i 2 -ln zsh -s
     format-stdin: true
   tex-fmt: &tex-fmt
     format-command: tex-fmt -s
