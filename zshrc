@@ -38,7 +38,9 @@ chpwd() (
 
   git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null |
     read behind ahead ||
-    return 0
+    return
+
+  git fetch >/dev/null 2>&1 &|
 
   if [ -n "$hook_com[staged]" -o -n "$hook_com[unstaged]" ]; then
     hook_com[misc]+=*
