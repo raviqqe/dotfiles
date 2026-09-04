@@ -59,7 +59,7 @@ chpwd() (
   fi
 }
 
-zle-keymap-select() {
+function zle-keymap-select zle-line-init {
   if [ $KEYMAP = vicmd ]; then
     vi_mode='<'
   else
@@ -67,10 +67,6 @@ zle-keymap-select() {
   fi
 
   zle reset-prompt
-}
-
-zle-line-init() {
-  zle-keymap-select
 }
 
 zle -N zle-keymap-select
