@@ -40,7 +40,7 @@ chpwd() (
     read behind ahead ||
     return
 
-  git fetch >/dev/null 2>&1 &|
+  git fetch --no-write-fetch-head >/dev/null 2>&1 &|
 
   if [ -n "$hook_com[staged]" -o -n "$hook_com[unstaged]" ]; then
     hook_com[misc]+=*
