@@ -51,6 +51,7 @@ for crate in \
   tealdeer \
   tex-fmt \
   tokei \
+  turtle-build \
   wasmtime-cli \
   xh; do
   cargo install --locked $crate
