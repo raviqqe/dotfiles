@@ -16,5 +16,4 @@ github = "junegunn/fzf"
 github = "zsh-users/zsh-history-substring-search"
 
 [plugins.pure]
-github = "sindresorhus/pure"
-use = ["async.zsh", "pure.zsh"]
+github = "raviqqe/zep"
