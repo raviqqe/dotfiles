@@ -1,12 +1,11 @@
 . ~/.shrc
 
-setopt autocd autopushd hist_ignore_all_dups hist_reduce_blanks inc_append_history interactive_comments prompt_subst sh_word_split share_history
+setopt autocd autopushd hist_ignore_all_dups hist_reduce_blanks inc_append_history interactive_comments sh_word_split share_history
 unsetopt banghist beep nomatch notify
 
-autoload -Uz add-zsh-hook cdr chpwd_recent_dirs select-bracketed select-quoted vcs_info
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs select-bracketed select-quoted
 
 add-zsh-hook chpwd chpwd_recent_dirs
-add-zsh-hook precmd vcs_info
 
 zstyle :chpwd:* recent-dirs-insert fallback
 zstyle :chpwd:* recent-dirs-pushd true
