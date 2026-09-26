@@ -10,6 +10,14 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "skipWorkflowUsageWarning": true,
   "autoCompactEnabled": true,
   "skipAutoPermissionPrompt": true
