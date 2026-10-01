@@ -229,7 +229,7 @@ alias dt='ls --tree --level 2'
 # Others
 
 alias agent='at_cafe cursor-agent --disable-auto-update "$(cat ~/.agents/AGENTS.md)"'
-alias agy='at_cafe agy --mode accept-edits'
+alias agy='at_cafe agy --dangerously-skip-permissions --mode accept-edits'
 alias btm='btm -bn'
 alias claude='at_cafe claude --permission-mode auto --system-prompt "$(cat ~/.agents/AGENTS.md)"'
 alias codex='at_cafe codex --approve-for-me'
