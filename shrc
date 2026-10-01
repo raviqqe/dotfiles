@@ -228,10 +228,10 @@ alias dt='ls --tree --level 2'
 
 # Others
 
-alias agent='at_cafe cursor-agent --disable-auto-update "$(cat ~/.config/prompt.md)"'
+alias agent='at_cafe cursor-agent --disable-auto-update "$(cat ~/.agents/AGENTS.md)"'
 alias btm='btm -bn'
-alias claude='at_cafe claude --permission-mode auto --system-prompt "$(cat ~/.config/prompt.md)"'
-alias copilot='copilot -i "$(cat ~/.config/prompt.md)"'
+alias claude='at_cafe claude --permission-mode auto --system-prompt "$(cat ~/.agents/AGENTS.md)"'
+alias copilot='copilot -i "$(cat ~/.agents/AGENTS.md)"'
 alias f='with_file bat'
 alias less='less -R'
 alias s="$(which rg >/dev/null 2>&1 && echo 'rg --column --line-number' || echo 'grep -Hnr --color')"

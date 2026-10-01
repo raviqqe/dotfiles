@@ -1,1 +1,1 @@
-../config/prompt.md
+../agents/AGENTS.md
