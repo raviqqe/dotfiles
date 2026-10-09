@@ -76,6 +76,7 @@ end
 -- Keymaps
 
 vim.g.mapleader = " "
+vim.g.lean_config = { mappings = true }
 
 local function set_keymap(mode, from, to, overrides)
   local options = { noremap = true }
