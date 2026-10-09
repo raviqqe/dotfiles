@@ -16,6 +16,7 @@ vim.pack.add({
 
   -- Languages
 
+  "https://github.com/julian/lean.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",

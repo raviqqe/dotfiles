@@ -25,6 +25,7 @@ brew install -y \
   deno \
   docker \
   docker-compose \
+  elan-init \
   gauche \
   gh \
   ghcup \
