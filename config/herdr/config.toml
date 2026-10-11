@@ -1,0 +1,4 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+x"
