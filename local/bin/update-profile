@@ -22,7 +22,7 @@ fi
     echo fnm default system
   fi
 
-  for version in $(seq 18 22); do
+  for version in $(seq 18 23); do
     directory=$(brew --prefix llvm@$version)
 
     echo export LLVM_SYS_${version}0_PREFIX=$directory
