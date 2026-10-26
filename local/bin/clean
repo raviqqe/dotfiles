@@ -10,7 +10,8 @@ brew cleanup -s --prune all
 gem cleanup
 go clean -cache
 npm cache clean --force
-pnpm cache delete
+pnpm cache prune
+pnpm store prune
 uv clean
 
 if which pip3; then
