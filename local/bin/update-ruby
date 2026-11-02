@@ -3,5 +3,5 @@
 set -e
 
 for command in install update; do
-  gem $command bundler rubocop
+  gem $command --user-install bundler rubocop
 done
