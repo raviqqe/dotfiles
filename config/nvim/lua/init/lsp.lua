@@ -26,7 +26,6 @@ vim.lsp.config('oxfmt', {
     'handlebars',
     'json',
     'markdown',
-    'scss',
     'yaml',
   },
 })
