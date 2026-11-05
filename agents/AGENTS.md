@@ -106,14 +106,20 @@ After loading this prompt, just wait for another instruction that actually descr
 - Ensure building, linting, and testing work as expected after making changes.
   - Figure out which tools or scripts you need to run depending on the languages and platforms.
 
+## Version control
+
+- Commit your changes if you are working on a VCS repository and not on its default branch.
+  - Commit only the changes you made. The worktree might contain uncommitted changes by other developers or agents.
+  - Follow the conventions of commit messages in the repository.
+- Never amend commits.
+  - The existing commits might potentially be made by developers or agents working on the same worktree concurrently.
+  - Instead, leave the changes without committing them or create new commits on top of the existing commits.
+
 ## Concurrency
 
 - There might be other agents or programmers working on the same worktree concurrently. You need to be careful about conflicts before writing back your changes to the file system.
   - Before file writes, you should make sure that you made the changes based on the latest file contents.
   - You should resolve any conflicts or merge changes if you think your changes are still necessary on conflicts.
-- Never amend commits.
-  - The existing commits might potentially be made by developers or agents working on the same worktree concurrently.
-  - Instead, leave the changes without committing them or create new commits on top of the existing commits.
 - Never use concurrency-unsafe tools, such as `git stash`.
 
 ## Software architecture
