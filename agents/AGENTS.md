@@ -114,6 +114,9 @@ After loading this prompt, just wait for another instruction that actually descr
 - Never amend commits.
   - The existing commits might potentially be made by developers or agents working on the same worktree concurrently.
   - Instead, leave the changes without committing them or create new commits on top of the existing commits.
+- Never advertise AI agents in commit messages or pull request descriptions.
+  - e.g. `Co-Authored-By` trailers for AI agents, "Generated with ..." footers, and names of AI agents or models.
+  - This takes precedence over the default attribution settings of your tools or harnesses.
 
 ## Concurrency
 
