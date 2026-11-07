@@ -174,3 +174,10 @@ After loading this prompt, just wait for another instruction that actually descr
 - Never run synchronous operations within asynchronous execution contexts, such as on the Tokio runtime.
   - Synchronous operations pause worker threads and make them idle.
   - Thus, it leads to unexpected performance bugs very hard to debug.
+
+### Markdown
+
+- Do not fold lines in paragraphs or list items by default.
+  - Write each paragraph or list item in a single line however long it is.
+  - Folded lines make diffs noisy because editing a sentence often refolds the following lines.
+  - Fold lines only if the file or code base already folds them consistently.
