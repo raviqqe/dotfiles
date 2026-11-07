@@ -5,6 +5,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
+  "attribution": false,
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
@@ -22,7 +23,7 @@
     }
   },
   "skipWorkflowUsageWarning": true,
+  "verbose": true,
   "autoCompactEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "verbose": true
+  "skipAutoPermissionPrompt": true
 }
