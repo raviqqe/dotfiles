@@ -25,5 +25,6 @@
   "skipWorkflowUsageWarning": true,
   "verbose": true,
   "autoCompactEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "enableWorkflows": true
 }
