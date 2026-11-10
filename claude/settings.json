@@ -28,7 +28,6 @@
     }
   },
   "skipWorkflowUsageWarning": true,
-  "verbose": true,
   "autoCompactEnabled": true,
   "skipAutoPermissionPrompt": true
 }
