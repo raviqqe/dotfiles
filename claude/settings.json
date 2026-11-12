@@ -32,6 +32,6 @@
   },
   "skipWorkflowUsageWarning": true,
   "autoCompactEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "switchModelsOnFlag": true
+  "switchModelsOnFlag": true,
+  "skipAutoPermissionPrompt": true
 }
