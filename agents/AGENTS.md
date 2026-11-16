@@ -117,6 +117,10 @@ After loading this prompt, just wait for another instruction that actually descr
 - Never advertise AI agents in commit messages or pull request descriptions.
   - e.g. `Co-Authored-By` trailers for AI agents, "Generated with ..." footers, and names of AI agents or models.
   - This takes precedence over the default attribution settings of your tools or harnesses.
+- Create pull requests as drafts by default.
+  - e.g. `gh pr create --draft`
+  - Create pull requests ready for review only if users ask for them explicitly.
+  - Pull requests ready for review notify reviewers and code owners before the users check the changes themselves.
 
 ## Concurrency
 
