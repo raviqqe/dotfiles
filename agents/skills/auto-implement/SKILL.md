@@ -11,12 +11,12 @@ description: Implement a design as pull requests in relevant repositories.
    - The design document might be given as a local file, an online document, etc.
 2. Plan pull requests that implement the design in all relevant repositories.
    - Decide the interfaces, protocols, and data formats shared among the pull requests so that they can be implemented independently.
-3. Implement the pull requests concurrently with a sub-agent per pull request if sub-agents are available.
-   - Give each sub-agent all the details of the design and the plan that it needs because sub-agents might not see the chat.
-   - Implement each pull request in its own worktree or clone so that implementations never interfere with each other or with any existing worktree.
-4. Audit each pull request following the `review-branch` skill after its implementation.
-   - Delegate the audit to another sub-agent, giving it all necessary information, if sub-agents are available.
-   - If there are any findings of medium severity or above, fix them and audit the pull request again until only findings of low severity or lower remain.
-5. Create the pull requests.
-6. Report a summary of each pull request and its resolved and remaining findings with their resolution verdicts if any at the end.
+3. Run the following steps for each pull request concurrently with the others, delegating each step to a sub-agent if sub-agents are available.
+   1. Implement the pull request.
+   2. Audit it following the `review-branch` skill with a sub-agent other than the one that implemented it.
+   3. If there are any findings of medium severity or above, fix them and repeat from the audit until only findings of low severity or lower remain.
+   4. Create the pull request.
+   - Give each sub-agent all the details of the design, the plan, and the earlier steps that it needs because sub-agents might not see the chat.
+   - Work on each pull request in its own worktree or clone so that pull requests never interfere with each other or with any existing worktree.
+4. Report a summary of each pull request and its resolved and remaining findings with their resolution verdicts if any at the end.
    - The agent that the user asked to run this skill reports them rather than its sub-agents.
