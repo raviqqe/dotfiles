@@ -8,19 +8,16 @@ usage() (
   cat <<EOF
 Usage: agent-board <command> [<argument>...]
 
-Exchanges messages with other agents working concurrently on the same channel.
+Exchanges messages with other agents working concurrently on this machine.
 
 Commands:
-  join [<task>]             Join the channel, and list its agents and unread messages.
-  list                      List the agents on the channel.
+  join [<task>]             Join the board, and list its agents and unread messages.
+  list                      List the agents on the board.
   send [-t <agent>] <text>  Send a message to an agent, or to all the others by default.
   read                      Read unread messages.
   wait [-t <seconds>]       Wait for messages and read them.
-  leave                     Leave the channel.
+  leave                     Leave the board.
   help                      Show this help.
-
-Environment variables:
-  AGENT_BOARD_CHANNEL    Name of the channel, derived from the repository by default.
 EOF
 )
 
@@ -39,63 +36,47 @@ agent_name() (
   fi
 )
 
-channel_name() (
-  if [ -n "$AGENT_BOARD_CHANNEL" ]; then
-    printf '%s\n' "$AGENT_BOARD_CHANNEL"
-  else
-    # Every worktree of a repository shares the channel of its main worktree.
-    if directory=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null); then
-      directory=$(dirname "$directory")
-    else
-      directory=$(pwd -P)
-    fi
-
-    home=$(cd "$HOME" && pwd -P)
-    printf '%s\n' "${directory#"$home"/}"
-  fi
-)
-
 prune() (
-  find "$channel/agents" -type f -mtime +0 | while read -r entry; do
+  find "$board/agents" -type f -mtime +0 | while read -r entry; do
     if [ "${entry##*/}" != "$agent" ]; then
-      rm -rf "$entry" "$channel/inboxes/${entry##*/}"
+      rm -rf "$entry" "$board/inboxes/${entry##*/}"
     fi
   done
 
-  find "$channel/messages" -type f -mtime +6 -exec rm -f {} +
+  find "$board/messages" -type f -mtime +6 -exec rm -f {} +
 )
 
 deliver() (
-  mkdir -p "$channel/inboxes/$2"
-  ln -f "$channel/messages/$1" "$channel/inboxes/$2"
+  mkdir -p "$board/inboxes/$2"
+  ln -f "$board/messages/$1" "$board/inboxes/$2"
 )
 
 register() (
-  mkdir -p "$channel/agents" "$channel/messages" "$channel/inboxes/$agent"
+  mkdir -p "$board/agents" "$board/messages" "$board/inboxes/$agent"
   prune
 
-  if [ -e "$channel/agents/$agent" ] && [ $# -eq 0 ]; then
-    touch "$channel/agents/$agent"
+  if [ -e "$board/agents/$agent" ] && [ $# -eq 0 ]; then
+    touch "$board/agents/$agent"
     exit
   fi
 
-  if [ ! -e "$channel/agents/$agent" ]; then
+  if [ ! -e "$board/agents/$agent" ]; then
     # A newcomer catches up on what the agents present have told everyone.
-    for message in "$channel"/messages/*; do
+    for message in "$board"/messages/*; do
       if [ -e "$message" ] &&
-        [ -e "$channel/agents/$(sed -n '1s/^From: //p' "$message")" ] &&
+        [ -e "$board/agents/$(sed -n '1s/^From: //p' "$message")" ] &&
         [ "$(sed -n '2s/^To: //p' "$message")" = all ]; then
         deliver "${message##*/}" "$agent"
       fi
     done
   fi
 
-  printf 'Directory: %s\nTask: %s\n' "$(pwd)" "$*" >"$channel/agents/.$agent"
-  mv "$channel/agents/.$agent" "$channel/agents/$agent"
+  printf 'Directory: %s\nTask: %s\n' "$(pwd)" "$*" >"$board/agents/.$agent"
+  mv "$board/agents/.$agent" "$board/agents/$agent"
 )
 
 list_agents() (
-  for entry in "$channel"/agents/*; do
+  for entry in "$board"/agents/*; do
     if [ "${entry##*/}" = "$agent" ]; then
       echo "${entry##*/} (you)"
     else
@@ -107,7 +88,7 @@ list_agents() (
 )
 
 show_messages() (
-  messages=$(ls -tr "$channel/inboxes/$agent")
+  messages=$(ls -tr "$board/inboxes/$agent")
 
   if [ -z "$messages" ]; then
     echo "No unread messages."
@@ -118,8 +99,8 @@ show_messages() (
 
   for message in $messages; do
     echo
-    cat "$channel/inboxes/$agent/$message"
-    rm -f "$channel/inboxes/$agent/$message"
+    cat "$board/inboxes/$agent/$message"
+    rm -f "$board/inboxes/$agent/$message"
   done
 )
 
@@ -143,16 +124,16 @@ send_message() (
 
   register
 
-  [ "$recipient" = all ] || [ -e "$channel/agents/$recipient" ] || fail "No such agent: $recipient"
+  [ "$recipient" = all ] || [ -e "$board/agents/$recipient" ] || fail "No such agent: $recipient"
 
   message=$(date -u +%Y%m%dT%H%M%SZ)-$agent-$$
 
   printf 'From: %s\nTo: %s\nDate: %s\n\n%s\n' \
-    "$agent" "$recipient" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" >"$channel/messages/.$message"
-  mv "$channel/messages/.$message" "$channel/messages/$message"
+    "$agent" "$recipient" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" >"$board/messages/.$message"
+  mv "$board/messages/.$message" "$board/messages/$message"
 
   if [ "$recipient" = all ]; then
-    for entry in "$channel"/agents/*; do
+    for entry in "$board"/agents/*; do
       [ "${entry##*/}" = "$agent" ] || deliver "$message" "${entry##*/}"
     done
   else
@@ -184,7 +165,7 @@ wait_for_messages() (
 
   seconds=0
 
-  while [ -z "$(ls "$channel/inboxes/$agent")" ]; do
+  while [ -z "$(ls "$board/inboxes/$agent")" ]; do
     if [ -n "$timeout" ] && [ $seconds -ge "$timeout" ]; then
       fail "No messages arrived in $timeout seconds."
     fi
@@ -224,15 +205,7 @@ case $agent in
   ;;
 esac
 
-channel=$(channel_name)
-
-case $channel in
-'' | . | ..)
-  fail "Invalid channel name: $channel"
-  ;;
-esac
-
-channel=$HOME/.cache/agents/board/$(printf '%s\n' "$channel" | sed 's/%/%25/g; s|/|%2F|g')
+board=$HOME/.cache/agents/board
 
 case $command in
 join)
@@ -255,6 +228,6 @@ wait)
   wait_for_messages "$@"
   ;;
 leave)
-  rm -rf "$channel/agents/$agent" "$channel/inboxes/$agent"
+  rm -rf "$board/agents/$agent" "$board/inboxes/$agent"
   ;;
 esac

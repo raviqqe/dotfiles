@@ -3,7 +3,6 @@
 set -e
 
 command=$(cd "$(dirname "$0")/../.." && pwd)/local/bin/agent-board
-channel=test
 
 fail() (
   printf '%s\n' "$@" >&2
@@ -41,7 +40,7 @@ board() (
   agent=$1
   shift
 
-  run_board CLAUDE_CODE_SESSION_ID="$agent" AGENT_BOARD_CHANNEL="$channel" "$command" "$@"
+  run_board CLAUDE_CODE_SESSION_ID="$agent" "$command" "$@"
 )
 
 join() (
@@ -154,7 +153,7 @@ run send_message_to_unknown_agent
 
 # Agents
 
-join_channel() (
+join_board() (
   agents=$(board alice join Fix a bug)
 
   assert_contains "$agents" "claude-alice (you)"
@@ -162,14 +161,14 @@ join_channel() (
   assert_contains "$agents" "Task: Fix a bug"
   assert_contains "$agents" "No unread messages."
 )
-run join_channel
+run join_board
 
-join_channel_without_command() (
+join_board_implicitly() (
   board alice read >/dev/null
 
   assert_contains "$(board bob list)" alice
 )
-run join_channel_without_command
+run join_board_implicitly
 
 list_agents() (
   board alice join Fix a bug >/dev/null
@@ -184,6 +183,18 @@ list_agents() (
   assert_contains "$agents" "Task: Review a fix"
 )
 run list_agents
+
+share_board_among_directories() (
+  mkdir "$home/work" "$home/other"
+
+  (cd "$home/work" && board alice join >/dev/null)
+  (cd "$home/other" && board bob join >/dev/null)
+  (cd "$home/work" && board alice send hello)
+
+  assert_contains "$(cd "$home/other" && board bob list)" /work
+  assert_contains "$(cd "$home/other" && board bob read)" hello
+)
+run share_board_among_directories
 
 update_task() (
   board alice join Fix a bug >/dev/null
@@ -229,15 +240,15 @@ catch_up_on_no_message_from_absent_agent() (
 )
 run catch_up_on_no_message_from_absent_agent
 
-leave_channel() (
+leave_board() (
   join alice bob
   board bob leave
 
   assert_not_contains "$(board alice list)" bob
 )
-run leave_channel
+run leave_board
 
-leave_channel_with_unread_message() (
+leave_board_with_unread_message() (
   join alice bob
   board alice send hello
   board bob leave
@@ -245,22 +256,22 @@ leave_channel_with_unread_message() (
   assert_contains "$(board bob join)" hello
   assert_contains "$(board bob read)" "No unread messages."
 )
-run leave_channel_with_unread_message
+run leave_board_with_unread_message
 
 prune_stale_agent() (
   join alice bob
   board alice send hello
-  touch -t 200001010000 "$directory/test/agents/claude-bob"
+  touch -t 200001010000 "$directory/agents/claude-bob"
 
   assert_not_contains "$(board alice list)" bob
-  assert_not_contains "$(ls "$directory/test/inboxes")" bob
+  assert_not_contains "$(ls "$directory/inboxes")" bob
 )
 run prune_stale_agent
 
 keep_stale_agent_itself() (
   join alice bob
   board alice send hello
-  touch -t 200001010000 "$directory/test/agents/claude-bob"
+  touch -t 200001010000 "$directory/agents/claude-bob"
 
   assert_contains "$(board bob read)" hello
 )
@@ -269,10 +280,10 @@ run keep_stale_agent_itself
 prune_old_message() (
   join alice bob
   board alice send hello
-  touch -t 200001010000 "$directory"/test/messages/*
+  touch -t 200001010000 "$directory"/messages/*
   board alice list >/dev/null
 
-  assert_contains "$(ls "$directory/test/messages" | wc -l)" 0
+  assert_contains "$(ls "$directory/messages" | wc -l)" 0
   assert_contains "$(board bob read)" hello
 )
 run prune_old_message
@@ -280,7 +291,7 @@ run prune_old_message
 keep_board_private() (
   join alice
 
-  assert_contains "$(find "$directory/test" -prune -perm 700)" test
+  assert_contains "$(find "$directory" -prune -perm 700)" board
 )
 run keep_board_private
 
@@ -317,73 +328,11 @@ wait_with_invalid_timeout() (
 )
 run wait_with_invalid_timeout
 
-# Channels
-
-separate_channels() (
-  join alice
-  board alice send hello
-  channel=other
-
-  assert_contains "$(board bob join)" "No unread messages."
-  assert_not_contains "$(board bob list)" alice
-)
-run separate_channels
-
-name_channel_with_slash() (
-  channel=team/100%
-  join alice bob
-  board alice send hello
-
-  assert_contains "$(board bob read)" hello
-  assert_contains "$(ls "$directory")" team%2F100%25
-)
-run name_channel_with_slash
-
-share_channel_in_directory() (
-  mkdir "$home/work" "$home/other"
-
-  (cd "$home/work" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
-
-  assert_contains "$(cd "$home/work" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
-  assert_not_contains "$(cd "$home/other" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
-)
-run share_channel_in_directory
-
-share_channel_with_worktree() (
-  git init -q "$home/repository"
-  git -C "$home/repository" -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false \
-    commit -q --allow-empty -m Test
-  git -C "$home/repository" worktree add -q "$home/worktree"
-  mkdir "$home/repository/directory"
-
-  (cd "$home/repository/directory" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
-
-  assert_contains "$(cd "$home/worktree" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
-)
-run share_channel_with_worktree
-
-name_channel_relative_to_home() (
-  mkdir "$home/work"
-
-  (cd "$home/work" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
-
-  assert_contains "$(ls "$directory")" work
-  assert_not_contains "$(ls "$directory")" %
-)
-run name_channel_relative_to_home
-
-reject_invalid_channel_name() (
-  for channel in . ..; do
-    assert_fails board alice list
-  done
-)
-run reject_invalid_channel_name
-
 # Names
 
 name_agent_after_codex_session() (
   agents=$(
-    run_board AGENT_BOARD_CHANNEL=test CODEX_THREAD_ID=01a1f7ab-354e-7d02-8d1c-0123456789ab "$command" list
+    run_board CODEX_THREAD_ID=01a1f7ab-354e-7d02-8d1c-0123456789ab "$command" list
   )
 
   assert_contains "$agents" "codex-0123456789ab (you)"
@@ -392,7 +341,7 @@ run name_agent_after_codex_session
 
 name_agent_after_claude_session() (
   agents=$(
-    run_board AGENT_BOARD_CHANNEL=test CLAUDE_CODE_SESSION_ID=a66b24e8-9d15-4f74-b8c5-ba9876543210 "$command" list
+    run_board CLAUDE_CODE_SESSION_ID=a66b24e8-9d15-4f74-b8c5-ba9876543210 "$command" list
   )
 
   assert_contains "$agents" "claude-ba9876543210 (you)"
@@ -401,7 +350,7 @@ run name_agent_after_claude_session
 
 name_agent_after_inner_session() (
   agents=$(
-    run_board AGENT_BOARD_CHANNEL=test CLAUDE_CODE_SESSION_ID=a66b24e8-9d15-4f74-b8c5-ba9876543210 \
+    run_board CLAUDE_CODE_SESSION_ID=a66b24e8-9d15-4f74-b8c5-ba9876543210 \
       CODEX_THREAD_ID=01a1f7ab-354e-7d02-8d1c-0123456789ab "$command" list
   )
 
@@ -410,7 +359,7 @@ name_agent_after_inner_session() (
 run name_agent_after_inner_session
 
 name_no_agent() (
-  assert_fails run_board AGENT_BOARD_CHANNEL=test "$command" list
+  assert_fails run_board "$command" list
 )
 run name_no_agent
 
