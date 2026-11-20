@@ -1,5 +1,5 @@
 ---
-name: zellic-repository
+name: review-repository
 description: Review a repository in the Zellic style.
 ---
 

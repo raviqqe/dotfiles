@@ -1,5 +1,5 @@
 ---
-name: zellic-branch
+name: review-branch
 description: Review a branch in the Zellic style.
 ---
 
