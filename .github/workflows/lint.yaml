@@ -12,3 +12,19 @@ jobs:
       - run: corepack pnpm install --frozen-lockfile
         working-directory: .ci
       - run: .ci/node_modules/.bin/oxfmt --check
+  spell_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: streetsidesoftware/cspell-action@v9.2.0
+  lint:
+    needs:
+      - format
+      - spell_check
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for result in ${{ join(needs.*.result, ' ') }}; do
+            [ $result = success ]
+          done

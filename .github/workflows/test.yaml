@@ -29,8 +29,3 @@ jobs:
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update
-  spell_check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: streetsidesoftware/cspell-action@v9.2.0
