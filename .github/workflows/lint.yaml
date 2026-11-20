@@ -1,0 +1,11 @@
+name: lint
+on:
+  - push
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - run: corepack pnpm install --frozen-lockfile
+        working-directory: .ci
+      - run: .ci/node_modules/.bin/oxfmt --check

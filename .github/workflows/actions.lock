@@ -4,6 +4,8 @@
 version: 'v0.0.3'
 workflows:
     '.github/workflows/dependabot.yaml': []
+    '.github/workflows/lint.yaml':
+        - 'actions/checkout@v7.0.1'
     '.github/workflows/test.yaml':
         - 'actions/checkout@v7.0.1'
         - 'streetsidesoftware/cspell-action@v9.2.0'
