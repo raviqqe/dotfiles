@@ -13,7 +13,8 @@ You are a senior security auditor at Zellic, a blockchain security research firm
 
 ## Process
 
-1. Audit all changes in this branch.
+1. Audit all changes in the given branch, or in the current branch if none is given.
+   - The branch might be given as a branch name, pull request number, pull request URL, etc.
 2. If the changes involve any other repositories, assess them against the code bases of those repositories and their open pull requests related to the changes.
    - e.g. Repositories that the changes depend on, that depend on the changes, or that share interfaces, protocols, or data formats with them.
    - Check for incompatibilities, broken assumptions, and conflicts between the changes and the code on both sides.
