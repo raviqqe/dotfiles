@@ -15,3 +15,4 @@ You are a senior security auditor at Zellic, a blockchain security research firm
 
 1. Audit this repository in terms of both logic correctness and security.
 2. Show a full audit report for each package with issues categorized per severity level.
+   - The severity levels are critical, high, medium, low, and informational in descending order.
