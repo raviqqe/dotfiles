@@ -10,6 +10,7 @@ Usage: agent-board <command> [<argument>...]
 
 Exchanges messages with other agents working concurrently on this machine.
 Each repository has its own channel named after its path.
+A channel is given as its name or the absolute path of a directory in its repository.
 
 Commands:
   join [<task>]        Join the channel, and list all agents and unread messages.
@@ -20,7 +21,7 @@ Commands:
   send -t <agent> <text>
                        Send a message to an agent on any channel.
   read                 Read unread messages.
-  wait [-t <seconds>]  Wait for messages and read them.
+  wait [-t <seconds>]  Wait for messages for a minute by default and read them.
   leave                Leave every channel.
   help                 Show this help.
 EOF
@@ -29,6 +30,14 @@ EOF
 fail() (
   printf '%s\n' "$*" >&2
   exit 1
+)
+
+validate_agent_name() (
+  case $1 in
+  *[!A-Za-z0-9._-]*)
+    fail "Invalid agent name: $1"
+    ;;
+  esac
 )
 
 agent_name() (
@@ -40,34 +49,39 @@ agent_name() (
     fail "No agent session is detected"
   fi
 
-  case $agent in
-  *[!A-Za-z0-9._-]*)
-    fail "Invalid agent name: $agent"
-    ;;
-  esac
+  validate_agent_name "$agent"
 
   echo "$agent"
 )
 
-channel_name() (
+repository_directory() (
   # Every worktree of a repository shares the channel of its main worktree.
-  if directory=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null); then
-    directory=$(dirname "$directory")
+  if directory=$(git -C "$1" rev-parse --path-format=absolute --git-common-dir 2>/dev/null); then
+    dirname "$directory"
   else
-    directory=$(pwd -P)
+    cd "$1" && pwd -P
   fi
-
-  printf '%s\n' "${directory#"$(cd "$HOME" && pwd -P)"/}"
 )
 
 channel_directory() (
-  case $1 in
+  name=$1
+
+  # A directory stands for the channel of its repository.
+  case $name in
+  /*)
+    [ ! -d "$name" ] || name=$(repository_directory "$name")
+    ;;
+  esac
+
+  name=${name#"$(cd "$HOME" && pwd -P)"/}
+
+  case $name in
   '' | . | .. | *[[:cntrl:]]*)
     fail "Invalid channel name: $1"
     ;;
   esac
 
-  printf '%s\n' "$board/$(printf '%s' "$1" | tr /. __)"
+  printf '%s\n' "$board/$(printf '%s' "$name" | tr /. __)"
 )
 
 agent_channel() (
@@ -131,11 +145,7 @@ list_agents() (
     printf '%s\n' "${directory##*/}"
 
     for entry in "$directory"/agents/*; do
-      if [ "${entry##*/}" = "$agent" ]; then
-        echo "  ${entry##*/} (you)"
-      else
-        echo "  ${entry##*/}"
-      fi
+      echo "  ${entry##*/}$([ "${entry##*/}" != "$agent" ] || echo " (you)")"
 
       sed 's/^/    /' "$entry"
     done
@@ -188,12 +198,7 @@ send_message() (
   register
 
   if [ "$recipient" != all ]; then
-    case $recipient in
-    *[!A-Za-z0-9._-]*)
-      fail "No such agent: $recipient"
-      ;;
-    esac
-
+    validate_agent_name "$recipient"
     target=$(agent_channel "$recipient") || fail "No such agent: $recipient"
   fi
 
@@ -209,15 +214,20 @@ send_message() (
     exit
   fi
 
+  delivered=
+
   for entry in "$target"/agents/*; do
     if [ -f "$entry" ] && [ "${entry##*/}" != "$agent" ]; then
       deliver "$target" "$message" "${entry##*/}"
+      delivered=true
     fi
   done
+
+  [ -n "$delivered" ] || echo "No other agents are on the channel: ${target##*/}"
 )
 
 wait_for_messages() (
-  timeout=
+  timeout=60
 
   while getopts t: option; do
     case $option in
@@ -231,7 +241,7 @@ wait_for_messages() (
   done
 
   case $timeout in
-  *[!0-9]*)
+  '' | *[!0-9]*)
     fail "Invalid timeout: $timeout"
     ;;
   esac
@@ -241,7 +251,7 @@ wait_for_messages() (
   seconds=0
 
   while [ -z "$(unread_messages)" ]; do
-    if [ -n "$timeout" ] && [ $seconds -ge "$timeout" ]; then
+    if [ $seconds -ge "$timeout" ]; then
       fail "No messages arrived in $timeout seconds."
     fi
 
@@ -262,7 +272,7 @@ shift
 
 agent=$(agent_name)
 board=$HOME/.cache/agents/board
-channel=$(channel_directory "$(channel_name)")
+channel=$(channel_directory "$(pwd)")
 
 case $command in
 join)

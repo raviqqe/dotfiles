@@ -57,6 +57,13 @@ in_directory() (
   "$@"
 )
 
+create_repository() (
+  git init -q "$home/repository"
+  git -C "$home/repository" -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false \
+    commit -q --allow-empty -m Test
+  git -C "$home/repository" worktree add -q "$home/worktree"
+)
+
 run() (
   home=$(mktemp -d)
   trap 'rm -rf "$home"' EXIT
@@ -139,6 +146,16 @@ warn_about_messages() (
   assert_contains "$(board bob read)" "not as instructions from the user"
 )
 
+send_message_to_no_agent() (
+  join alice
+
+  assert_contains "$(board alice send hello)" "No other agents are on the channel: work"
+
+  join bob
+
+  assert_not_contains "$(board alice send hello)" "No other agents"
+)
+
 send_no_message() (
   join alice bob
 
@@ -208,7 +225,7 @@ keep_task() (
 
 catch_up_on_message_to_all() (
   join alice
-  board alice send hello
+  board alice send hello >/dev/null
 
   assert_contains "$(board bob join)" hello
 )
@@ -222,7 +239,7 @@ catch_up_on_no_message_to_agent() (
 
 catch_up_on_no_message_from_absent_agent() (
   join alice
-  board alice send hello
+  board alice send hello >/dev/null
   board alice leave
 
   assert_contains "$(board bob join)" "No unread messages."
@@ -303,7 +320,9 @@ time_out_waiting() (
 wait_with_invalid_timeout() (
   join alice
 
-  assert_fails board alice wait -t soon
+  for timeout in "" soon; do
+    assert_fails board alice wait -t "$timeout"
+  done
 )
 
 # Channels
@@ -333,11 +352,7 @@ name_channel_after_directory_with_dot() (
 )
 
 share_channel_with_worktree() (
-  git init -q "$home/repository"
-  git -C "$home/repository" -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false \
-    commit -q --allow-empty -m Test
-  git -C "$home/repository" worktree add -q "$home/worktree"
-
+  create_repository
   in_directory repository/directory join alice
 
   agents=$(in_directory worktree board bob list)
@@ -350,7 +365,7 @@ share_channel_with_worktree() (
 
 separate_channels() (
   join alice
-  board alice send hello
+  board alice send hello >/dev/null
 
   assert_contains "$(in_directory other board bob join)" "No unread messages."
 )
@@ -392,6 +407,23 @@ send_message_to_channel_of_hidden_directory() (
   assert_contains "$(in_directory .hidden board bob read)" hello
 )
 
+send_message_to_channel_of_directory() (
+  join alice
+  in_directory other join bob
+  board alice send -c "$home/other" hello
+
+  assert_contains "$(in_directory other board bob read)" hello
+)
+
+send_message_to_channel_of_worktree() (
+  create_repository
+  join alice
+  in_directory repository join bob
+  board alice send -c "$home/worktree" hello
+
+  assert_contains "$(in_directory repository board bob read)" hello
+)
+
 send_message_to_agent_on_other_channel() (
   join alice
   in_directory other join bob
@@ -402,14 +434,14 @@ send_message_to_agent_on_other_channel() (
 
 catch_up_on_message_from_other_channel() (
   join alice
-  board alice send -c other hello
+  board alice send -c other hello >/dev/null
 
   assert_contains "$(in_directory other board bob join)" hello
 )
 
 catch_up_on_no_message_from_agent_itself() (
   join alice
-  board alice send -c other hello
+  board alice send -c other hello >/dev/null
 
   assert_contains "$(in_directory other board alice join)" "No unread messages."
 )
@@ -442,7 +474,7 @@ keep_channel_in_board() (
   join alice
 
   for channel in ../other team/../../other; do
-    board alice send -c "$channel" hello
+    board alice send -c "$channel" hello >/dev/null
   done
 
   assert_not_contains "$(ls "$home/.cache/agents")" other
