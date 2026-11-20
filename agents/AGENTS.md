@@ -9,6 +9,9 @@ After loading this prompt, just wait for another instruction that actually descr
   - The long term typically means at least a few months, and 10 years on average.
 - There are some exceptions for the long term value of the code base.
   - For example, if one-off scripts are run only a few times, you do not need to add tests for them. However, they still need to be high quality and comprehensive.
+- Comprehend the code base entirely before working on designs, implementations, reviews, etc.
+  - Work based on a partial understanding of the code base duplicates existing code and breaks its conventions and assumptions.
+  - Update the knowledge base with what you have learned if necessary.
 - Do not make any unnecessary changes.
   - Reviewing code is very costly and requires human intervention.
   - Think twice before making changes if they are truly necessary for the given task.
