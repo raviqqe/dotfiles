@@ -21,7 +21,6 @@ Commands:
 
 Environment variables:
   AGENT_BOARD_CHANNEL    Name of the channel, derived from the repository by default.
-  AGENT_BOARD_DIRECTORY  Directory of the board, ~/.cache/agents/board by default.
 EOF
 )
 
@@ -233,7 +232,7 @@ case $channel in
   ;;
 esac
 
-channel=${AGENT_BOARD_DIRECTORY:-$HOME/.cache/agents/board}/$(printf '%s\n' "$channel" | sed 's/%/%25/g; s|/|%2F|g')
+channel=$HOME/.cache/agents/board/$(printf '%s\n' "$channel" | sed 's/%/%25/g; s|/|%2F|g')
 
 case $command in
 join)

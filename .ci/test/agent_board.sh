@@ -34,7 +34,7 @@ assert_fails() (
 )
 
 run_board() (
-  env -i PATH="$PATH" HOME="$HOME" AGENT_BOARD_DIRECTORY="$directory" "$@"
+  env -i PATH="$PATH" HOME="$home" "$@"
 )
 
 board() (
@@ -51,8 +51,10 @@ join() (
 )
 
 run() (
-  directory=$(mktemp -d)
-  trap 'rm -rf "$directory"' EXIT
+  home=$(mktemp -d)
+  trap 'rm -rf "$home"' EXIT
+
+  directory=$home/.cache/agents/board
 
   echo "$1"
   "$1"
@@ -338,32 +340,32 @@ name_channel_with_slash() (
 run name_channel_with_slash
 
 share_channel_in_directory() (
-  mkdir "$directory/work" "$directory/other"
+  mkdir "$home/work" "$home/other"
 
-  (cd "$directory/work" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
+  (cd "$home/work" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
 
-  assert_contains "$(cd "$directory/work" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
-  assert_not_contains "$(cd "$directory/other" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
+  assert_contains "$(cd "$home/work" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
+  assert_not_contains "$(cd "$home/other" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
 )
 run share_channel_in_directory
 
 share_channel_with_worktree() (
-  git init -q "$directory/repository"
-  git -C "$directory/repository" -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false \
+  git init -q "$home/repository"
+  git -C "$home/repository" -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false \
     commit -q --allow-empty -m Test
-  git -C "$directory/repository" worktree add -q "$directory/worktree"
-  mkdir "$directory/repository/directory"
+  git -C "$home/repository" worktree add -q "$home/worktree"
+  mkdir "$home/repository/directory"
 
-  (cd "$directory/repository/directory" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
+  (cd "$home/repository/directory" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
 
-  assert_contains "$(cd "$directory/worktree" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
+  assert_contains "$(cd "$home/worktree" && run_board CLAUDE_CODE_SESSION_ID=bob "$command" list)" alice
 )
 run share_channel_with_worktree
 
 name_channel_relative_to_home() (
-  mkdir -p "$directory/home/work"
+  mkdir "$home/work"
 
-  (cd "$directory/home/work" && HOME=$directory/home run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
+  (cd "$home/work" && run_board CLAUDE_CODE_SESSION_ID=alice "$command" join >/dev/null)
 
   assert_contains "$(ls "$directory")" work
   assert_not_contains "$(ls "$directory")" %
