@@ -5,7 +5,18 @@ on:
       - main
   pull_request:
 jobs:
-  test:
+  agent_board:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - run: .ci/test/agent_board.sh
+  install:
     strategy:
       fail-fast: false
       matrix:
@@ -24,19 +35,21 @@ jobs:
           sudo apt -y clean
           sudo rm -rf /usr/local/lib/android
         if: runner.os == 'Linux'
+      - run: brew upgrade -y --overwrite
+        if: runner.os == 'macOS'
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update
-  agent_board:
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
+  test:
+    needs:
+      - agent_board
+      - install
+    if: always()
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.1
-      - run: .ci/test/agent_board.sh
+      - run: |
+          for result in ${{ join(needs.*.result, ' ') }}; do
+            [ $result = success ]
+          done

@@ -33,12 +33,20 @@ fail() (
 
 agent_name() (
   if [ -n "$CODEX_THREAD_ID" ]; then
-    echo "codex-${CODEX_THREAD_ID##*-}"
+    agent=codex-${CODEX_THREAD_ID##*-}
   elif [ -n "$CLAUDE_CODE_SESSION_ID" ]; then
-    echo "claude-${CLAUDE_CODE_SESSION_ID##*-}"
+    agent=claude-${CLAUDE_CODE_SESSION_ID##*-}
   else
-    fail "No agent session is detected."
+    fail "No agent session is detected"
   fi
+
+  case $agent in
+  *[!A-Za-z0-9._-]*)
+    fail "Invalid agent name: $agent"
+    ;;
+  esac
+
+  echo "$agent"
 )
 
 channel_name() (
@@ -49,18 +57,17 @@ channel_name() (
     directory=$(pwd -P)
   fi
 
-  home=$(cd "$HOME" && pwd -P)
-  printf '%s\n' "${directory#"$home"/}"
+  printf '%s\n' "${directory#"$(cd "$HOME" && pwd -P)"/}"
 )
 
 channel_directory() (
   case $1 in
-  '' | . | ..)
+  '' | . | .. | *[[:cntrl:]]*)
     fail "Invalid channel name: $1"
     ;;
   esac
 
-  printf '%s\n' "$board/$(printf '%s\n' "$1" | sed 's/%/%25/g; s|/|%2F|g; s/^\./%2E/')"
+  printf '%s\n' "$board/$(printf '%s' "$1" | tr /. __)"
 )
 
 agent_channel() (
@@ -93,15 +100,15 @@ register() (
   mkdir -p "$channel/agents" "$channel/messages"
   prune
 
-  if [ -e "$channel/agents/$agent" ] && [ $# -eq 0 ]; then
+  if [ -f "$channel/agents/$agent" ] && [ $# -eq 0 ]; then
     touch "$channel/agents/$agent"
     exit
   fi
 
-  if [ ! -e "$channel/agents/$agent" ]; then
+  if [ ! -f "$channel/agents/$agent" ]; then
     # A newcomer catches up on what the agents present have told everyone.
     for message in "$channel"/messages/*; do
-      [ -e "$message" ] || continue
+      [ -f "$message" ] || continue
 
       sender=$(sed -n '1s/^From: //p' "$message")
 
@@ -121,7 +128,7 @@ list_agents() (
   for directory in "$board"/*; do
     [ -n "$(ls "$directory/agents" 2>/dev/null)" ] || continue
 
-    printf '%s\n' "${directory##*/}" | sed 's/^%2E/./; s|%2F|/|g; s/%25/%/g'
+    printf '%s\n' "${directory##*/}"
 
     for entry in "$directory"/agents/*; do
       if [ "${entry##*/}" = "$agent" ]; then
@@ -253,26 +260,7 @@ fi
 command=$1
 shift
 
-case $command in
-help)
-  usage
-  exit
-  ;;
-join | list | send | read | wait | leave) ;;
-*)
-  usage >&2
-  exit 1
-  ;;
-esac
-
 agent=$(agent_name)
-
-case $agent in
-*[!A-Za-z0-9._-]*)
-  fail "Invalid agent name: $agent"
-  ;;
-esac
-
 board=$HOME/.cache/agents/board
 channel=$(channel_directory "$(channel_name)")
 
@@ -298,5 +286,12 @@ wait)
   ;;
 leave)
   rm -rf "$board"/*/agents/"$agent" "$board"/*/inboxes/"$agent"
+  ;;
+help)
+  usage
+  ;;
+*)
+  usage >&2
+  exit 1
   ;;
 esac
