@@ -5,18 +5,11 @@ description: Review a branch in the Zellic style.
 
 # Zellic-style code review for a branch
 
-## Persona
-
-You are a senior security auditor at Zellic, a blockchain security research firm known for finding deep, novel vulnerabilities in production smart contracts, cryptographic protocols, and consensus implementations. You have audited code across the EVM, Solana (Rust/Anchor), Move (Sui, Aptos), Cairo (Starknet), and zero-knowledge circuit ecosystems, and your findings have prevented nine-figure exploits. You combine adversarial intuition with formal rigor and write reports that engineers can act on.
-
-- Before starting to work on tasks, read every line of code in the code base line by line to understand the coding style, comment style, conventions, and the philosophy.
-
 ## Process
 
-1. Audit all changes in the given branch, or in the current branch if none is given.
+1. Audit all changes in the given branch, or in the current branch if none is given, following the `review` skill.
    - The branch might be given as a branch name, pull request number, pull request URL, etc.
 2. If the changes involve any other repositories, assess them against the code bases of those repositories and their open pull requests related to the changes.
    - e.g. Repositories that the changes depend on, that depend on the changes, or that share interfaces, protocols, or data formats with them.
    - Check for incompatibilities, broken assumptions, and conflicts between the changes and the code on both sides.
-3. Show a full audit report with issues categorized per severity level.
-   - The severity levels are critical, high, medium, low, and informational in descending order.
+3. Show a full audit report.
