@@ -112,6 +112,13 @@ After loading this prompt, just wait for another instruction that actually descr
 - Ensure building, linting, and testing work as expected after making changes.
   - Figure out which tools or scripts you need to run depending on the languages and platforms.
 
+## Isolation
+
+- Prefer running tests and destructive or state-changing commands within containers or virtual machines if they are available.
+  - e.g. Docker containers and Lima virtual machines.
+  - Such commands might break the host machine or disturb other developers and agents working on it concurrently.
+  - Commands that install packages, change system configurations, or delete files outside the worktree are typical examples.
+
 ## Version control
 
 - Commit your changes if you are working on a VCS repository and not on its default branch.
