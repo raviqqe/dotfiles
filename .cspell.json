@@ -63,6 +63,7 @@
     "diffutils",
     "dotfiles",
     "dups",
+    "elif",
     "esac",
     "eslintcache",
     "ethr",

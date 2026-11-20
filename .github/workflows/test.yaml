@@ -29,3 +29,14 @@ jobs:
       - run: ~/.dotfiles/local/bin/update-homebrew
       - run: rcup -f
       - run: update
+  agent_board:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - run: .ci/test/agent_board.sh
