@@ -49,11 +49,21 @@ join() (
   done
 )
 
+in_directory() (
+  mkdir -p "$home/$1"
+  cd "$home/$1"
+  shift
+
+  "$@"
+)
+
 run() (
   home=$(mktemp -d)
   trap 'rm -rf "$home"' EXIT
 
   directory=$home/.cache/agents/board
+  mkdir "$home/work"
+  cd "$home/work"
 
   echo "$1"
   "$1"
@@ -151,24 +161,33 @@ send_message_to_unknown_agent() (
 )
 run send_message_to_unknown_agent
 
+send_message_to_invalid_agent() (
+  join alice
+
+  for agent in . .. ../messages "claude alice"; do
+    assert_fails board alice send -t "$agent" hello
+  done
+)
+run send_message_to_invalid_agent
+
 # Agents
 
-join_board() (
+join_channel() (
   agents=$(board alice join Fix a bug)
 
   assert_contains "$agents" "claude-alice (you)"
-  assert_contains "$agents" "Directory: $(pwd)"
+  assert_contains "$agents" "Directory: $(pwd -P)"
   assert_contains "$agents" "Task: Fix a bug"
   assert_contains "$agents" "No unread messages."
 )
-run join_board
+run join_channel
 
-join_board_implicitly() (
+join_channel_implicitly() (
   board alice read >/dev/null
 
   assert_contains "$(board bob list)" alice
 )
-run join_board_implicitly
+run join_channel_implicitly
 
 list_agents() (
   board alice join Fix a bug >/dev/null
@@ -183,18 +202,6 @@ list_agents() (
   assert_contains "$agents" "Task: Review a fix"
 )
 run list_agents
-
-share_board_among_directories() (
-  mkdir "$home/work" "$home/other"
-
-  (cd "$home/work" && board alice join >/dev/null)
-  (cd "$home/other" && board bob join >/dev/null)
-  (cd "$home/work" && board alice send hello)
-
-  assert_contains "$(cd "$home/other" && board bob list)" /work
-  assert_contains "$(cd "$home/other" && board bob read)" hello
-)
-run share_board_among_directories
 
 update_task() (
   board alice join Fix a bug >/dev/null
@@ -240,15 +247,15 @@ catch_up_on_no_message_from_absent_agent() (
 )
 run catch_up_on_no_message_from_absent_agent
 
-leave_board() (
+leave_channel() (
   join alice bob
   board bob leave
 
   assert_not_contains "$(board alice list)" bob
 )
-run leave_board
+run leave_channel
 
-leave_board_with_unread_message() (
+leave_channel_with_unread_message() (
   join alice bob
   board alice send hello
   board bob leave
@@ -256,22 +263,22 @@ leave_board_with_unread_message() (
   assert_contains "$(board bob join)" hello
   assert_contains "$(board bob read)" "No unread messages."
 )
-run leave_board_with_unread_message
+run leave_channel_with_unread_message
 
 prune_stale_agent() (
   join alice bob
   board alice send hello
-  touch -t 200001010000 "$directory/agents/claude-bob"
+  touch -t 200001010000 "$directory/work/agents/claude-bob"
 
   assert_not_contains "$(board alice list)" bob
-  assert_not_contains "$(ls "$directory/inboxes")" bob
+  assert_not_contains "$(ls "$directory/work/inboxes")" bob
 )
 run prune_stale_agent
 
 keep_stale_agent_itself() (
   join alice bob
   board alice send hello
-  touch -t 200001010000 "$directory/agents/claude-bob"
+  touch -t 200001010000 "$directory/work/agents/claude-bob"
 
   assert_contains "$(board bob read)" hello
 )
@@ -280,10 +287,10 @@ run keep_stale_agent_itself
 prune_old_message() (
   join alice bob
   board alice send hello
-  touch -t 200001010000 "$directory"/messages/*
+  touch -t 200001010000 "$directory"/work/messages/*
   board alice list >/dev/null
 
-  assert_contains "$(ls "$directory/messages" | wc -l)" 0
+  assert_contains "$(ls "$directory/work/messages" | wc -l)" 0
   assert_contains "$(board bob read)" hello
 )
 run prune_old_message
@@ -291,7 +298,7 @@ run prune_old_message
 keep_board_private() (
   join alice
 
-  assert_contains "$(find "$directory" -prune -perm 700)" board
+  assert_contains "$(find "$directory/work" -prune -perm 700)" work
 )
 run keep_board_private
 
@@ -328,21 +335,159 @@ wait_with_invalid_timeout() (
 )
 run wait_with_invalid_timeout
 
+# Channels
+
+name_channel_after_directory() (
+  assert_contains "$(board alice list)" "work
+  claude-alice (you)"
+)
+run name_channel_after_directory
+
+name_channel_after_nested_directory() (
+  assert_contains "$(in_directory team/100% board alice list)" "team/100%
+  claude-alice (you)"
+)
+run name_channel_after_nested_directory
+
+name_channel_after_hidden_directory() (
+  in_directory .hidden join alice bob
+  in_directory .hidden board alice send hello
+
+  assert_contains "$(in_directory .hidden board alice list)" ".hidden
+  claude-alice (you)"
+  assert_contains "$(in_directory .hidden board bob read)" hello
+)
+run name_channel_after_hidden_directory
+
+share_channel_with_worktree() (
+  git init -q "$home/repository"
+  git -C "$home/repository" -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false \
+    commit -q --allow-empty -m Test
+  git -C "$home/repository" worktree add -q "$home/worktree"
+
+  in_directory repository/directory join alice
+
+  agents=$(in_directory worktree board bob list)
+
+  assert_contains "$agents" "repository
+  claude-alice"
+  assert_contains "$agents" "  claude-bob (you)"
+  assert_contains "$(echo "$agents" | grep -c '^[^ ]')" 1
+)
+run share_channel_with_worktree
+
+separate_channels() (
+  join alice
+  board alice send hello
+
+  assert_contains "$(in_directory other board bob join)" "No unread messages."
+)
+run separate_channels
+
+list_agents_on_other_channel() (
+  join alice
+
+  agents=$(in_directory other board bob list)
+
+  assert_contains "$agents" "other
+  claude-bob (you)"
+  assert_contains "$agents" "work
+  claude-alice"
+)
+run list_agents_on_other_channel
+
+send_message_to_channel() (
+  join alice dave
+  in_directory other join bob carol
+  board alice send -c other hello
+
+  assert_contains "$(in_directory other board bob read)" hello
+  assert_contains "$(in_directory other board carol read)" hello
+  assert_contains "$(board dave read)" "No unread messages."
+)
+run send_message_to_channel
+
+send_message_to_channel_of_nested_directory() (
+  join alice
+  in_directory team/100% join bob
+  board alice send -c team/100% hello
+
+  assert_contains "$(in_directory team/100% board bob read)" hello
+)
+run send_message_to_channel_of_nested_directory
+
+send_message_to_agent_on_other_channel() (
+  join alice
+  in_directory other join bob
+  board alice send -t claude-bob hello
+
+  assert_contains "$(in_directory other board bob read)" hello
+)
+run send_message_to_agent_on_other_channel
+
+catch_up_on_message_from_other_channel() (
+  join alice
+  board alice send -c other hello
+
+  assert_contains "$(in_directory other board bob join)" hello
+)
+run catch_up_on_message_from_other_channel
+
+catch_up_on_no_message_from_agent_itself() (
+  join alice
+  board alice send -c other hello
+
+  assert_contains "$(in_directory other board alice join)" "No unread messages."
+)
+run catch_up_on_no_message_from_agent_itself
+
+read_message_in_other_directory() (
+  join alice bob
+  in_directory other join bob
+  board alice send hello
+
+  assert_contains "$(in_directory other board bob read)" hello
+)
+run read_message_in_other_directory
+
+leave_every_channel() (
+  join alice bob
+  in_directory other join bob
+  board bob leave
+
+  assert_not_contains "$(board alice list)" bob
+)
+run leave_every_channel
+
+prune_stale_agent_on_other_channel() (
+  join alice
+  in_directory other join bob
+  touch -t 200001010000 "$directory/other/agents/claude-bob"
+
+  assert_not_contains "$(board alice list)" bob
+)
+run prune_stale_agent_on_other_channel
+
+send_message_to_invalid_channel() (
+  join alice
+
+  for channel in "" . ..; do
+    assert_fails board alice send -c "$channel" hello
+  done
+)
+run send_message_to_invalid_channel
+
 # Names
 
 name_agent_after_codex_session() (
-  agents=$(
-    run_board CODEX_THREAD_ID=01a1f7ab-354e-7d02-8d1c-0123456789ab "$command" list
-  )
+  agents=$(run_board CODEX_THREAD_ID=01a1f7ab-354e-7d02-8d1c-0123456789ab "$command" list)
 
   assert_contains "$agents" "codex-0123456789ab (you)"
 )
 run name_agent_after_codex_session
 
 name_agent_after_claude_session() (
-  agents=$(
-    run_board CLAUDE_CODE_SESSION_ID=a66b24e8-9d15-4f74-b8c5-ba9876543210 "$command" list
-  )
+  agents=$(run_board CLAUDE_CODE_SESSION_ID=a66b24e8-9d15-4f74-b8c5-ba9876543210 "$command" list)
 
   assert_contains "$agents" "claude-ba9876543210 (you)"
 )

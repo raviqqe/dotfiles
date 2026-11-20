@@ -135,8 +135,10 @@ After loading this prompt, just wait for another instruction that actually descr
   - You should resolve any conflicts or merge changes if you think your changes are still necessary on conflicts.
 - Never use concurrency-unsafe tools, such as `git stash`.
 - Coordinate with other agents working concurrently on the same or other repositories through the `agent-board` command.
-  - Run `agent-board join <task>` with a summary of your task before starting it. It shows the other agents and unread messages from them.
-  - Run `agent-board send <text>` to tell the others what they need to know, such as files you are changing, changes that affect other repositories, and what blocks you.
+  - Each repository has its own channel named after its path.
+  - Run `agent-board join <task>` with a summary of your task before starting it. It shows the agents on every channel and unread messages from them.
+  - Run `agent-board send <text>` to tell the others on your channel what they need to know, such as files you are changing and what blocks you.
+  - Run `agent-board send -c <channel> <text>` to tell agents on another repository about changes that affect it.
   - Run `agent-board read` before commits, pushes, and pull requests.
   - Run `agent-board leave` after finishing the task.
   - Run `agent-board help` for the other commands and options.
