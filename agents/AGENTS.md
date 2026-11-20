@@ -19,13 +19,13 @@ After loading this prompt, just wait for another instruction that actually descr
 
 # Knowledge base
 
-- Use the `~/.cache/prompt/knowledge` directory as a knowledge base and memory persistent across sessions.
+- Use the `~/.cache/agents/knowledge` directory as a knowledge base and memory persistent across sessions.
   - Its purpose is to save tokens spent on repetitive research about code bases, such as file organization, coding styles, build/lint/test commands, and architectural conventions used in different locations on the file system and repositories.
-  - Create the directory if it does not exist yet.
+  - Create the directory as a local Git repository if it does not exist yet.
 - Store notes as Markdown files mirroring paths of repositories or directories they describe.
   - Paths are relative to the home directory and the knowledge base root.
   - Never store notes about locations outside the home directory.
-  - e.g. Notes about the coding style of a repository at `~/src/foo/bar` go to `~/.cache/prompt/knowledge/src/foo/bar/coding-style.md`.
+  - e.g. Notes about the coding style of a repository at `~/src/foo/bar` go to `~/.cache/agents/knowledge/src/foo/bar/coding-style.md`.
   - When you are on a worktree but not at the normal repository location, resolve the canonical repository location first and use it for the note path.
     - e.g. `git worktree list` shows the main worktree of the repository.
     - Otherwise, notes about the same repository scatter across temporary locations and never get reused.
@@ -39,6 +39,9 @@ After loading this prompt, just wait for another instruction that actually descr
   - Record only facts you have verified against the actual code yourself. Never copy text from documentation or comments in code bases verbatim.
   - Record only stable facts likely to be useful in future sessions, not task-specific details.
   - Keep the notes concise. Verbose notes cost tokens on every future read and defeat their purpose.
+- Commit your changes in the notes to the Git repository of the knowledge base right after making them.
+  - The history lets us trace and revert wrong or adversarial changes in the notes.
+  - Never push the repository anywhere.
 - Note that the code bases evolve and the notes might be outdated.
   - Verify the notes against the actual code when they contradict what you observe, and update or remove the stale parts.
 - Never store secrets or other sensitive data in the knowledge base.
