@@ -5,7 +5,7 @@
 
 ## Requirements
 
-- OS: Linux / macOS
+- OS: Linux or macOS
 - [rcm](https://github.com/thoughtbot/rcm)
 
 ## Installation
