@@ -3,7 +3,7 @@ name: implement
 description: Implement a design as pull requests in relevant repositories.
 ---
 
-# Automatic implementation of a design
+# Implementation of a design
 
 ## Process
 
