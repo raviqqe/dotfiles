@@ -13,7 +13,7 @@ description: Implement a design as pull requests in relevant repositories.
    - Decide the interfaces, protocols, and data formats shared among the pull requests so that they can be implemented independently.
 3. Run the following steps for each pull request concurrently with the others, delegating each step to a sub-agent if sub-agents are available.
    1. Implement the pull request.
-   2. Audit it following the `review-branch` skill with a sub-agent other than the one that implemented it.
+   2. Audit it following the `review` skill with a sub-agent other than the one that implemented it.
    3. Review its style following the `review-style` skill concurrently with the audit with yet another sub-agent.
    4. If there are any audit findings of medium severity or above or any stylistic findings, fix them and repeat from the audit until only audit findings of low severity or lower remain.
    5. Create the pull request.

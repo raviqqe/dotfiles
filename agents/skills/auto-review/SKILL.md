@@ -10,7 +10,7 @@ description: Review pull requests awaiting the user's review continuously.
 1. List open pull requests that specify the user's individual account as a requested reviewer.
    - e.g. `gh search prs --state open -- 'user-review-requested:@me'`
    - Exclude pull requests that request reviews only from teams the user belongs to, etc.
-2. Review each of them following the `review-branch` skill.
+2. Review each of them following the `review` skill.
    - Skip pull requests whose latest commits are already reviewed.
    - Review them concurrently with a sub-agent per pull request if sub-agents are available.
    - Review each pull request in its own temporary worktree or clone so that reviews never interfere with each other or with any existing worktree.
