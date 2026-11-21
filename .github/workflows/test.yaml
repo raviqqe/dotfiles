@@ -43,6 +43,15 @@ jobs:
       - run: cp profile ~/.profile
       - run: cp -r . ~/.dotfiles
       - run: ~/.dotfiles/local/bin/update-homebrew
+      - id: go
+        run: echo version=$(go env GOVERSION) >>$GITHUB_OUTPUT
+      - uses: actions/cache@v6.1.0
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/.go
+            ~/Library/Caches/go-build
+          key: go-${{ runner.os }}-${{ runner.arch }}-${{ steps.go.outputs.version }}-${{ hashFiles('local/bin/update-go') }}
       - run: rcup -f
       - run: update
   test:
