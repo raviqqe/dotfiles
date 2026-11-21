@@ -17,3 +17,9 @@ uv clean
 if which pip3; then
   pip3 cache purge
 fi
+
+if docker info >/dev/null; then
+  docker container prune -f
+  docker image prune -af
+  docker volume prune -af
+fi
