@@ -115,7 +115,7 @@ After loading this prompt, just wait for another instruction that actually descr
 ## Isolation
 
 - Prefer running tests and destructive or state-changing commands within containers or virtual machines if they are available.
-  - e.g. Docker containers and Lima virtual machines.
+  - e.g. `microsandbox` on Linux and macOS, and the `container` command on macOS.
   - Such commands might break the host machine or disturb other developers and agents working on it concurrently.
   - Commands that install packages, change system configurations, or delete files outside the worktree are typical examples.
 
