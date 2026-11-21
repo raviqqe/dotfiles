@@ -29,6 +29,7 @@ jobs:
         shell: sh -ec "if [ -r ~/.profile ]; then . ~/.profile; fi && . {0}"
     steps:
       - uses: actions/checkout@v7.0.1
+      - uses: swatinem/rust-cache@v2.9.3
       - run: |
           sudo apt -y remove firefox google-* llvm* microsoft-* php*
           sudo apt -y autoremove
