@@ -1,5 +1,5 @@
 ---
-name: auto-implement
+name: implement
 description: Implement a design as pull requests in relevant repositories.
 ---
 
