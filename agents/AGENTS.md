@@ -134,6 +134,11 @@ After loading this prompt, just wait for another instruction that actually descr
   - e.g. `gh pr create --draft`
   - Create pull requests ready for review only if users ask for them explicitly.
   - Pull requests ready for review notify reviewers and code owners before the users check the changes themselves.
+- Remove worktrees you created after completing your task.
+  - e.g. `git worktree remove <path>`
+  - Abandoned worktrees pile up on the file system and keep their branches from being checked out elsewhere.
+  - Never remove worktrees you did not create. Other developers or agents might be working on them.
+  - Never remove worktrees with uncommitted changes. The removal loses them.
 
 ## Concurrency
 
