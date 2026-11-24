@@ -17,7 +17,10 @@ description: Implement a design as pull requests in relevant repositories.
    3. Review its style following the `review-style` skill concurrently with the audit with yet another sub-agent.
    4. If there are any audit findings of medium severity or above or any stylistic findings, fix them and repeat from the audit until only audit findings of low severity or lower remain.
    5. Create the pull request.
+   6. Keep monitoring the pull request every few minutes with the sub-agent that implemented it until it is merged or closed.
+      - Address review comments on it.
+      - Resolve conflicts with its base branch by merging the base branch, or by rebasing onto it if the conflicts are too large or the repository enforces rebases.
    - Give each sub-agent all the details of the design, the plan, and the earlier steps that it needs because sub-agents might not see the chat.
    - Work on each pull request in its own worktree or clone so that pull requests never interfere with each other or with any existing worktree.
-4. Report a summary of each pull request and its resolved and remaining findings with their resolution verdicts if any at the end.
+4. Report a summary of each pull request and its resolved and remaining findings with their resolution verdicts if any once all the pull requests are created.
    - The agent that the user asked to run this skill reports them rather than its sub-agents.
