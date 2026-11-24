@@ -11,6 +11,7 @@ description: Implement a design as pull requests in relevant repositories.
    - The design document might be given as a local file, an online document, etc.
 2. Plan pull requests that implement the design in all relevant repositories.
    - Decide the interfaces, protocols, and data formats shared among the pull requests so that they can be implemented independently.
+   - If pull requests in the same repository depend on each other, stack them on the branches of the pull requests they depend on.
 3. Run the following steps for each pull request concurrently with the others, delegating each step to a sub-agent if sub-agents are available.
    1. Implement the pull request.
    2. Audit it following the `review` skill with a sub-agent other than the one that implemented it.
