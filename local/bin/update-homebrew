@@ -62,3 +62,6 @@ brew install -y \
   watchexec \
   yq \
   zsh
+
+gh extension install github/gh-actions-lock
+gh extension install github/gh-stack
