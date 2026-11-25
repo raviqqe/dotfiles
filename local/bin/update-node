@@ -17,7 +17,6 @@ pnpm install \
   @nomicfoundation/solidity-language-server \
   @openai/codex \
   cspell \
-  microsandbox \
   oxfmt \
   sharp-cli \
   tombi \
