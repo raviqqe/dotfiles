@@ -10,6 +10,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
+  "model": "fable",
   "enableWorkflows": true,
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
