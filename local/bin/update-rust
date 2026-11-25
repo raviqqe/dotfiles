@@ -30,6 +30,7 @@ for crate in \
   hyperfine \
   jaq \
   jnv \
+  kache \
   microsandbox \
   mstak \
   mstak-interpret \

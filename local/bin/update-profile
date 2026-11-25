@@ -9,17 +9,17 @@ fi
 (
   echo export PATH=$(python3 -m site --user-base)/bin:\$PATH
 
+  if which fnm >/dev/null; then
+    fnm env --use-on-cd --shell zsh --version-file-strategy recursive
+    echo fnm default system
+  fi
+
   if which gem >/dev/null; then
     echo export PATH=$(echo $(gem environment gempath): | sed s%:%/bin:%g)\$PATH
   fi
 
-  if which sccache >/dev/null; then
-    echo export RUSTC_WRAPPER=sccache
-  fi
-
-  if which fnm >/dev/null; then
-    fnm env --use-on-cd --shell zsh --version-file-strategy recursive
-    echo fnm default system
+  if which kache >/dev/null; then
+    echo export RUSTC_WRAPPER=kache
   fi
 
   for version in $(seq 18 23); do

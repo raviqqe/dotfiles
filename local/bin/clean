@@ -2,13 +2,14 @@
 
 set -ex
 
-for directory in .rustup/downloads/* .rustup/tmp/* .cache/sccache; do
+for directory in .rustup/downloads/* .rustup/tmp/*; do
   rm -rf ~/$directory
 done
 
 brew cleanup -s --prune all
 gem cleanup
 go clean -cache
+kache clean --stale 2d --yes
 npm cache clean --force
 pnpm cache prune
 pnpm store prune

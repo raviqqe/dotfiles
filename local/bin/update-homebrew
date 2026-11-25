@@ -51,7 +51,6 @@ brew install -y \
   ruby \
   rustup \
   sbcl \
-  sccache \
   tmux \
   tree-sitter-cli \
   uutils-coreutils \
