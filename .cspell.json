@@ -1,5 +1,5 @@
 {
-  "ignorePaths": ["**/nvim-pack-lock.json"],
+  "ignorePaths": ["**/nvim-pack-lock.json", "**/pnpm-lock.yaml"],
   "words": [
     "aarch",
     "agda",
