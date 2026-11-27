@@ -20,6 +20,7 @@ if which pip3; then
 fi
 
 if docker info >/dev/null; then
+  docker builder prune -af
   docker container prune -f
   docker image prune -af
   docker volume prune -af
