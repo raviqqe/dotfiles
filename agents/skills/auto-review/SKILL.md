@@ -19,6 +19,7 @@ description: Review pull requests awaiting the user's review continuously.
    - Request changes if any findings are of medium severity or above.
    - Otherwise, comment without requesting changes if any findings are of low severity.
    - Otherwise, approve the pull request.
+   - In reviews visible to anyone without access to private repositories or packages, never disclose their names or contents.
    - End the main review comment with a signature that names your agent and model.
      - e.g. `> Reviewed by Bastard Yota (Claude Code, Opus 5.5)`
 4. Wait for a few minutes and repeat from the first step until the user stops you.
